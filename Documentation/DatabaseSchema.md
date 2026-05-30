@@ -191,21 +191,6 @@ This section contains the complete database schema for the Gym Management System
 ---
 
 <details>
-<summary><b>🏋️ tblTrainer</b></summary>
-
-#### Table: tblTrainerCertificateDocument
-
-| Column Name    | Data Type                       |
-| -------------- | --------------------------------|
-| CertificateId  | INT PRIMARY KEY IDENTITY(1,1)   |
-| TrainerId      | INT FOREIGN KEY                 |
-| DOCUMENT       | VARBINARY(200)                  |
-
-</details>
-
----
-
-<details>
 <summary><b>⏰ tblTrainerShift</b></summary>
 
 #### Table: tblTrainerShift
@@ -235,6 +220,8 @@ This section contains the complete database schema for the Gym Management System
 | IsActive                  | BIT                           |
 
 </details>
+
+---
 
 <details>
 <summary><b>💰 tblRegistrationFees</b></summary>
@@ -360,3 +347,79 @@ This section contains the complete database schema for the Gym Management System
 
 ---
 
+<details>
+<summary><b>🏋️‍♂️ tblWorkoutPlans</b></summary>
+
+#### Table: `tblWorkoutPlans`
+
+| Column Name   | Data Type                     |
+| ------------- | ----------------------------- |
+| WorkoutPlanId | INT PRIMARY KEY IDENTITY(1,1) |
+| WorkoutName   | VARCHAR(100)                  |
+| Description   | VARCHAR(MAX)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>🏃 tblExercises</b></summary>
+
+#### Table: `tblExercises`
+
+| Column Name  | Data Type                     |
+| ------------ | ----------------------------- |
+| ExerciseId   | INT PRIMARY KEY IDENTITY(1,1) |
+| ExerciseName | VARCHAR(100)                  |
+| MuscletType  | VARCHAR(100)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>📅 tblWorkoutSchedule</b></summary>
+
+#### Table: `tblWorkoutSchedule`
+
+| Column Name       | Data Type                     |
+| ----------------- | ----------------------------- |
+| WorkoutScheduleId | INT PRIMARY KEY IDENTITY(1,1) |
+| WorkoutPlanId     | INT FOREIGN KEY               |
+| ExerciseId        | INT FOREIGN KEY               |
+| WorkoutDay        | VARCHAR(20)                   |
+
+</details>
+
+---
+
+<details>
+<summary><b>🥗 tblDietPlans</b></summary>
+
+#### Table: `tblDietPlans`
+
+| Column Name      | Data Type                     |
+| ---------------- | ----------------------------- |
+| DietPlanId       | INT PRIMARY KEY IDENTITY(1,1) |
+| CaloriesPerDay   | INT                           |
+| DietPlanDocument | VARCHAR(255)                  |
+| ConditionStatus  | VARCHAR(100)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>🍎 tblMemberDietAssignment</b></summary>
+
+#### Table: `tblMemberDietAssignment`
+
+| Column Name      | Data Type                     |
+| ---------------- | ----------------------------- |
+| DietAssignmentId | INT PRIMARY KEY IDENTITY(1,1) |
+| MemberId         | INT FOREIGN KEY               |
+| DietPlanId       | INT FOREIGN KEY               |
+| AssignDate       | DATE                          |
+| IsActive         | BIT                           |
+
+</details>
