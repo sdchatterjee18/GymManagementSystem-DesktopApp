@@ -2,7 +2,6 @@
 
 ![Database](https://img.shields.io/badge/Database-SQL%20Server-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-3--Tier-green)
-![UI](https://img.shields.io/badge/UI-WinForms-orange)
 
 ## 📊 Database Schema
 
@@ -16,13 +15,13 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | SuperAdminId | INT PRIMARY KEY IDENTITY(1,1) |
-| UserName | NVARCHAR(100) |
-| PasswordHash | NVARCHAR(255) |
-| Email_Id | NVARCHAR(150) |
-| PhoneNumber | NVARCHAR(20) |
+| UserName | VARCHAR(100) |
+| PasswordHash | VARCHAR(255) |
+| Email_Id | VARCHAR(150) |
+| PhoneNumber | VARCHAR(20) |
 | LastLogin | DATETIME |
 | IsActive | BIT |
-| CreatedAt | DATETIME |
+| CreatedAt | GETDATE() |
 
 </details>
 
@@ -35,8 +34,8 @@ This section contains the complete database schema for the Gym Management System
 |------------|------------|
 | AdminId | INT PRIMARY KEY IDENTITY(1,1) |
 | SuperAdminID | INT FOREIGN KEY |
-| UserName | NVARCHAR(100) |
-| PasswordHash | NVARCHAR(255) |
+| UserName | VARCHAR(100) |
+| PasswordHash | VARCHAR(255) |
 | LastLogin | DATETIME |
 
 </details>
@@ -49,11 +48,11 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | MembershipPlanId | INT PRIMARY KEY IDENTITY(1,1) |
-| MembershipPlanName | NVARCHAR(100) |
-| PlanType | NVARCHAR(50) |
+| MembershipPlanName | VARCHAR(100) |
+| PlanType | VARCHAR(50) |
 | DurationInDays | INT |
 | Price | DECIMAL(10,2) |
-| Description | NVARCHAR(MAX) |
+| Description | VARCHAR(MAX) |
 | IsActive | BIT |
 
 </details>
@@ -66,24 +65,22 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | MemberId | INT PRIMARY KEY IDENTITY(1,1) |
-| FirstName | NVARCHAR(50) |
-| MiddleName | NVARCHAR(50) |
-| LastName | NVARCHAR(50) |
-| FullName | NVARCHAR(150) |
-| Gender | NVARCHAR(20) |
+| FullName | VARCHAR(50) |
+| FirstName | VARCHAR(50) |
+| MiddleName | VARCHAR(50) |
+| LastName | VARCHAR(50) |
+| Gender | VARCHAR(20) |
 | DOB | DATE |
-| Age | INT |
-| PhoneNo | NVARCHAR(20) |
-| Email_Id | NVARCHAR(150) |
-| Address | NVARCHAR(300) |
-| City | NVARCHAR(100) |
-| District | NVARCHAR(100) |
-| State | NVARCHAR(100) |
-| EmergencyContact | NVARCHAR(20) |
-| ProfilePhoto | NVARCHAR(255) |
-| JoiningDate | DATE |
+| PhoneNo | VARCHAR(20) |
+| Email_Id | VARCHAR(150) |
+| Address | VARCHAR(300) |
+| City | VARCHAR(100) |
+| District | VARCHAR(100) |
+| State | VARCHAR(100) |
+| EmergencyContact | VARCHAR(20) |
+| ProfilePhoto | VARBINARY(255) |
+| JoiningDate | GETDATE() |
 | IsActive | BIT |
-| CreatedAt | DATETIME |
 | UpdatedAt | DATETIME |
 
 </details>
@@ -100,7 +97,7 @@ This section contains the complete database schema for the Gym Management System
 | MembershipPlanId | INT FOREIGN KEY |
 | StartDate | DATE |
 | ExpiryDate | DATE |
-| Status | NVARCHAR(50) |
+| Status | VARCHAR(50) |
 | IsActive | BIT |
 
 </details>
@@ -113,7 +110,7 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | ShiftId | INT PRIMARY KEY IDENTITY(1,1) |
-| ShiftName | NVARCHAR(100) |
+| ShiftName | VARCHAR(100) |
 | StartTime | TIME |
 | EndTime | TIME |
 
@@ -155,8 +152,8 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | LockerId | INT PRIMARY KEY IDENTITY(1,1) |
-| LockerNo | NVARCHAR(20) |
-| LockerStatus | NVARCHAR(50) |
+| LockerNo | VARCHAR(20) |
+| LockerStatus | VARCHAR(50) |
 
 </details>
 
@@ -171,5 +168,58 @@ This section contains the complete database schema for the Gym Management System
 | LockerId | INT FOREIGN KEY |
 | MemberId | INT FOREIGN KEY |
 | ExpiryDate | DATE |
+
+</details>
+<details>
+<summary><b>🏋️ tblTrainer</b></summary>
+
+#### Table: tblTrainer
+
+| Column Name    | Data Type                     |
+| -------------- | ----------------------------- |
+| TrainerId      | INT PRIMARY KEY IDENTITY(1,1) |
+| FirstName      | NVARCHAR(50)                  |
+| MiddleName     | NVARCHAR(50)                  |
+| LastName       | NVARCHAR(50)                  |
+| FullName       | NVARCHAR(150)                 |
+| TrainerType    | NVARCHAR(100)                 |
+| PhoneNo        | NVARCHAR(20)                  |
+| Email_Id       | NVARCHAR(150)                 |
+| Specialization | NVARCHAR(200)                 |
+| JoiningDate    | DATE                          |
+| IsActive       | BIT                           |
+
+</details>
+
+---
+
+<details>
+<summary><b>⏰ tblTrainerShift</b></summary>
+
+#### Table: `tblTrainerShift`
+
+| Column Name    | Data Type                     |
+| -------------- | ----------------------------- |
+| TrainerShiftId | INT PRIMARY KEY IDENTITY(1,1) |
+| TrainerId      | INT FOREIGN KEY               |
+| ShiftId        | INT FOREIGN KEY               |
+| IsActive       | BIT                           |
+
+</details>
+
+---
+
+<details>
+<summary><b>🤝 tblMemberTrainerAssignment</b></summary>
+
+#### Table: `tblMemberTrainerAssignment`
+
+| Column Name               | Data Type                     |
+| ------------------------- | ----------------------------- |
+| MemberTrainerAssignmentId | INT PRIMARY KEY IDENTITY(1,1) |
+| MemberId                  | INT FOREIGN KEY               |
+| TrainerId                 | INT FOREIGN KEY               |
+| AssignedDate              | DATE                          |
+| IsActive                  | BIT                           |
 
 </details>
