@@ -33,6 +33,7 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | AdminId | INT PRIMARY KEY IDENTITY(1,1) |
+| EmployeeId | INT FOERIGN KEY |
 | SuperAdminID | INT FOREIGN KEY |
 | UserName | VARCHAR(100) |
 | PasswordHash | VARCHAR(255) |
@@ -65,7 +66,6 @@ This section contains the complete database schema for the Gym Management System
 | Column Name | Data Type |
 |------------|------------|
 | MemberId | INT PRIMARY KEY IDENTITY(1,1) |
-| FullName | VARCHAR(50) |
 | FirstName | VARCHAR(50) |
 | MiddleName | VARCHAR(50) |
 | LastName | VARCHAR(50) |
@@ -97,7 +97,6 @@ This section contains the complete database schema for the Gym Management System
 | MembershipPlanId | INT FOREIGN KEY |
 | StartDate | DATE |
 | ExpiryDate | DATE |
-| Status | VARCHAR(50) |
 | IsActive | BIT |
 
 </details>
@@ -181,6 +180,7 @@ This section contains the complete database schema for the Gym Management System
 | Column Name    | Data Type                     |
 | -------------- | ----------------------------- |
 | TrainerId      | INT PRIMARY KEY IDENTITY(1,1) |
+| EmployeeId     | INT FOREIGN KEY               |
 | TrainerType    | NVARCHAR(100)                 |
 | Specialization | NVARCHAR(200)                 |
 | JoiningDate    | DATE                          |
