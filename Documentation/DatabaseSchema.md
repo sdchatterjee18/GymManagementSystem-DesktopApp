@@ -3,9 +3,11 @@
 ![Database](https://img.shields.io/badge/Database-SQL%20Server-blue)
 ![Architecture](https://img.shields.io/badge/Architecture-3--Tier-green)
 
-## 📊 Database Schema
+## 📊 Database Schema Overview
 
-This section contains the complete database schema for the Gym Management System.
+The Gym Management System database is designed using a relational database model to efficiently manage gym operations, member activities, staff management, workout planning, diet planning, attendance tracking, payments, and expense management.
+
+The database follows normalization principles to minimize data redundancy, improve consistency, and maintain scalability. Foreign key relationships are used throughout the schema to enforce referential integrity and ensure reliable data management across all modules of the Gym Management System.
 
 ---
 
@@ -423,3 +425,64 @@ This section contains the complete database schema for the Gym Management System
 | IsActive         | BIT                           |
 
 </details>
+
+---
+
+## 🔗 Foreign Key Relationships
+
+| Parent Table          | Child Table                | Foreign Key       | Relationship Type |
+| --------------------- | -------------------------- | ----------------- | ----------------- |
+| tblEmployee           | tblAdmin                   | EmployeeId        | One-to-One (1:1)  |
+| tblSuperAdmin         | tblAdmin                   | SuperAdminID      | One-to-Many (1:N) |
+| tblMember             | tblMembershipSubscription  | MemberId          | One-to-Many (1:N) |
+| tblMembershipPlans    | tblMembershipSubscription  | MembershipPlanId  | One-to-Many (1:N) |
+| tblMember             | tblMemberShift             | MemberId          | One-to-Many (1:N) |
+| tblShift              | tblMemberShift             | ShiftId           | One-to-Many (1:N) |
+| tblMember             | tblMemberAttendance        | MemberId          | One-to-Many (1:N) |
+| tblShift              | tblMemberAttendance        | ShiftId           | One-to-Many (1:N) |
+| tblLocker             | tblLockerAllocation        | LockerId          | One-to-Many (1:N) |
+| tblMember             | tblLockerAllocation        | MemberId          | One-to-Many (1:N) |
+| tblEmployee           | tblTrainer                 | EmployeeId        | One-to-One (1:1)  |
+| tblTrainer            | tblTrainerShift            | TrainerId         | One-to-Many (1:N) |
+| tblShift              | tblTrainerShift            | ShiftId           | One-to-Many (1:N) |
+| tblMember             | tblMemberTrainerAssignment | MemberId          | One-to-Many (1:N) |
+| tblTrainer            | tblMemberTrainerAssignment | TrainerId         | One-to-Many (1:N) |
+| tblMember             | tblSubscriptionPayment     | MemberId          | One-to-Many (1:N) |
+| tblMembershipPlans    | tblSubscriptionPayment     | MembershipPlanId  | One-to-Many (1:N) |
+| tblExpensesCategories | tblExpenses                | ExpenseCategoryId | One-to-Many (1:N) |
+| tblEmployee           | tblSalary                  | EmployeeId        | One-to-One (1:1)  |
+| tblSalary             | tblSalaryPayment           | SalaryId          | One-to-Many (1:N) |
+| tblWorkoutPlans       | tblWorkoutSchedule         | WorkoutPlanId     | One-to-Many (1:N) |
+| tblExercises          | tblWorkoutSchedule         | ExerciseId        | One-to-Many (1:N) |
+| tblMember             | tblMemberDietAssignment    | MemberId          | One-to-Many (1:N) |
+| tblDietPlans          | tblMemberDietAssignment    | DietPlanId        | One-to-Many (1:N) |
+
+---
+
+### 📌 Master Tables
+
+The following tables act as master/parent tables:
+
+* 🔐 tblSuperAdmin
+* 📋 tblMembershipPlans
+* ⏰ tblShift
+* 🔒 tblLocker
+* 💰 tblRegistrationFees
+* 📂 tblExpensesCategories
+* 👨‍💼 tblEmployee
+* 🏋️‍♂️ tblWorkoutPlans
+* 🏃 tblExercises
+* 🥗 tblDietPlans
+
+---
+
+### 📊 Junction / Mapping Tables
+
+These tables are used to connect two entities:
+
+* 🏃 tblMemberShift
+* ⏰ tblTrainerShift
+* 🤝 tblMemberTrainerAssignment
+* 🗄️ tblLockerAllocation
+* 🍎 tblMemberDietAssignment
+* 📅 tblWorkoutSchedule
