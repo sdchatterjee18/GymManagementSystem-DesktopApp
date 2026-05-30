@@ -454,7 +454,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | tblSalary             | tblSalaryPayment           | SalaryId          | One-to-Many (1:N) |
 | tblWorkoutPlans       | tblWorkoutSchedule         | WorkoutPlanId     | One-to-Many (1:N) |
 | tblExercises          | tblWorkoutSchedule         | ExerciseId        | One-to-Many (1:N) |
-| tblMember             | tblMemberDietAssignment    | MemberId          | One-to-Many (1:N) |
+| tblMember             | tblMemberDietAssignment    | MemberId          | One-to-Many (1:1) |
 | tblDietPlans          | tblMemberDietAssignment    | DietPlanId        | One-to-Many (1:N) |
 
 ---
