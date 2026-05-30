@@ -170,6 +170,9 @@ This section contains the complete database schema for the Gym Management System
 | ExpiryDate | DATE |
 
 </details>
+
+---
+
 <details>
 <summary><b>🏋️ tblTrainer</b></summary>
 
@@ -178,13 +181,7 @@ This section contains the complete database schema for the Gym Management System
 | Column Name    | Data Type                     |
 | -------------- | ----------------------------- |
 | TrainerId      | INT PRIMARY KEY IDENTITY(1,1) |
-| FirstName      | NVARCHAR(50)                  |
-| MiddleName     | NVARCHAR(50)                  |
-| LastName       | NVARCHAR(50)                  |
-| FullName       | NVARCHAR(150)                 |
 | TrainerType    | NVARCHAR(100)                 |
-| PhoneNo        | NVARCHAR(20)                  |
-| Email_Id       | NVARCHAR(150)                 |
 | Specialization | NVARCHAR(200)                 |
 | JoiningDate    | DATE                          |
 | IsActive       | BIT                           |
@@ -194,9 +191,24 @@ This section contains the complete database schema for the Gym Management System
 ---
 
 <details>
+<summary><b>🏋️ tblTrainer</b></summary>
+
+#### Table: tblTrainerCertificateDocument
+
+| Column Name    | Data Type                       |
+| -------------- | --------------------------------|
+| CertificateId  | INT PRIMARY KEY IDENTITY(1,1)   |
+| TrainerId      | INT FOREIGN KEY                 |
+| DOCUMENT       | VARBINARY(200)                  |
+
+</details>
+
+---
+
+<details>
 <summary><b>⏰ tblTrainerShift</b></summary>
 
-#### Table: `tblTrainerShift`
+#### Table: tblTrainerShift
 
 | Column Name    | Data Type                     |
 | -------------- | ----------------------------- |
@@ -212,7 +224,7 @@ This section contains the complete database schema for the Gym Management System
 <details>
 <summary><b>🤝 tblMemberTrainerAssignment</b></summary>
 
-#### Table: `tblMemberTrainerAssignment`
+#### Table: tblMemberTrainerAssignment
 
 | Column Name               | Data Type                     |
 | ------------------------- | ----------------------------- |
@@ -223,3 +235,128 @@ This section contains the complete database schema for the Gym Management System
 | IsActive                  | BIT                           |
 
 </details>
+
+<details>
+<summary><b>💰 tblRegistrationFees</b></summary>
+
+#### Table: tblRegistrationFees
+
+| Column Name        | Data Type                     |
+| ------------------ | ----------------------------- |
+| RegistrationFeesId | INT PRIMARY KEY IDENTITY(1,1) |
+| FeeAmount          | DECIMAL(10,2)                 |
+| IsActive           | BIT                           |
+| CreatedAt          | GETDATE()                     |
+
+</details>
+
+---
+
+<details>
+<summary><b>💳 tblSubscriptionPayment</b></summary>
+
+#### Table: tblSubscriptionPayment
+
+| Column Name        | Data Type                     |
+| ------------------ | ----------------------------- |
+| PaymentId          | INT PRIMARY KEY IDENTITY(1,1) |
+| MemberId           | INT FOREIGN KEY               |
+| MembershipPlanId   | INT FOREIGN KEY               |
+| PaymentDate        | DATETIME                      |
+| PaymentMethod      | VARCHAR(50)                   |
+| Amount             | DECIMAL(10,2)                 |
+| FeesType           | VARCHAR(50)                   |
+| TransactionId      | VARCHAR(100)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>📂 tblExpensesCategories</b></summary>
+
+#### Table: tblExpensesCategories
+
+| Column Name       | Data Type                     |
+| ----------------- | ----------------------------- |
+| ExpenseCategoryID | INT PRIMARY KEY IDENTITY(1,1) |
+| CategoryName      | VARCHAR(100)                  |
+| Category          | VARCHAR(100)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>📉 tblExpenses</b></summary>
+
+#### Table: tblExpenses
+
+| Column Name       | Data Type                     |
+| ----------------- | ----------------------------- |
+| ExpenseId         | INT PRIMARY KEY IDENTITY(1,1) |
+| ExpenseCategoryId | INT FOREIGN KEY               |
+| ExpenseAmount     | DECIMAL(10,2)                 |
+| ExpenseDate       | DATE                          |
+| Notes             | VARCHAR(MAX)                  |
+
+</details>
+
+---
+
+<details>
+<summary><b>👨‍💼 tblEmployee</b></summary>
+
+#### Table: `tblEmployee`
+
+| Column Name   | Data Type                     |
+| ------------- | ----------------------------- |
+| EmployeeId    | INT PRIMARY KEY IDENTITY(1,1) |
+| MiddleName    | VARCHAR(50)                   |
+| LastName      | VARCHAR(50)                   |
+| FullName      | VARCHAR(150)                  |
+| PhoneNo       | VARCHAR(20)                   |
+| EmailId       | VARCHAR(150)                  |
+| JoiningDate   | DATE                          |
+| IsActive      | BIT                           |
+| RoleName      | VARCHAR(100)                  |
+| BankAccountNo | VARCHAR(50)                   |
+
+</details>
+
+---
+
+<details>
+<summary><b>💵 tblSalary</b></summary>
+
+#### Table: `tblSalary`
+
+| Column Name | Data Type                     |
+| ----------- | ----------------------------- |
+| SalaryId    | INT PRIMARY KEY IDENTITY(1,1) |
+| EmployeeId  | INT FOREIGN KEY               |
+| Amount      | DECIMAL(10,2)                 |
+
+</details>
+
+---
+
+<details>
+<summary><b>💸 tblSalaryPayment</b></summary>
+
+#### Table: `tblSalaryPayment`
+
+| Column Name   | Data Type                     |
+| ------------- | ----------------------------- |
+| PaymentId     | INT PRIMARY KEY IDENTITY(1,1) |
+| SalaryId      | INT FOREIGN KEY               |
+| PaymentMode   | VARCHAR(50)                   |
+| PaymentMonth  | VARCHAR(10)                   |
+| PaymentYear   | INT                           |
+| PaymentDate   | DATE                          |
+| PaymentStatus | VARCHAR(50)                   |
+
+</details>
+
+---
+
