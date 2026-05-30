@@ -478,7 +478,7 @@ The following tables act as master/parent tables:
 
 ### 📊 Junction / Mapping Tables
 
-These tables are used to connect or create bridge between two entities:
+These tables are used to connect two entities:
 
 * 🏃 tblMemberShift
 * ⏰ tblTrainerShift
