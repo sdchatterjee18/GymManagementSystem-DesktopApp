@@ -1,6 +1,6 @@
 CREATE TABLE tblSalaryPayment
 (
-    PaymentId INT  PRIMARY KEY IDENTITY(1,1) not null,
+    PaymentId INT  PRIMARY KEY NOT NULL IDENTITY(1,1),
     SalaryId INT NOT NULL,
     PaymentMode VARCHAR(50) NOT NULL,
     PaymentMonth VARCHAR(10) NOT NULL,
