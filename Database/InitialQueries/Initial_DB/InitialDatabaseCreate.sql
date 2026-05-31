@@ -1,0 +1,5 @@
+CREATE DATABASE dbsGymManagementSystem
+GO
+
+USE dbsGymManagementSystem
+GO
