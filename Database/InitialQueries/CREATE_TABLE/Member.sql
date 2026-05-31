@@ -15,5 +15,7 @@ CREATE TABLE tblMember (
     JoiningDate DATETIME NOT NULL DEFAULT(GETDATE()),
     IsActive BIT NOT NULL DEFAULT(1),
     UpdatedAt DATETIME NULL,
-    CONSTRAINT FK_tblMember_GenderIdtblGender FOREIGN KEY (GenderId) REFERENCES tblGender(GenderId)
+    CONSTRAINT FK_tblMember_GenderIdtblGender
+		FOREIGN KEY (GenderId) 
+		REFERENCES tblGender(GenderId)
 );
