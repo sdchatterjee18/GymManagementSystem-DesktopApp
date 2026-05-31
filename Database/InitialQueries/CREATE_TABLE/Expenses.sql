@@ -10,3 +10,4 @@ CREATE TABLE tblExpense
         FOREIGN KEY (ExpenseCategoryId)
         REFERENCES tblExpensesCategories(ExpenseCategoryId)
 );
+
