@@ -1,6 +1,6 @@
 CREATE TABLE tblLocker
 (
-    LockerId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+    LockerId INT PRIMARY KEY IDENTITY(1,1),
     LockerNo VARCHAR(20) UNIQUE NOT NULL,
     LockerStatus VARCHAR(50) NOT NULL DEFAULT('Available')
 );
