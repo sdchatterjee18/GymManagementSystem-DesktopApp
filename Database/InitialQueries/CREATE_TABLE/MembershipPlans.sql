@@ -1,6 +1,6 @@
 CREATE TABLE tblMembershipPlans
 (
-    MembershipPlanId INT PRIMARY KEY IDENTITY(1,1),
+    MembershipPlanId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
     MembershipPlanName VARCHAR(100) NOT NULL,
     PlanType VARCHAR(50) NOT NULL,
     DurationInDays INT NOT NULL
