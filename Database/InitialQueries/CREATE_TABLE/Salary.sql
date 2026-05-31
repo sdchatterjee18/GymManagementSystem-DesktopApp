@@ -1,6 +1,6 @@
 CREATE TABLE tblSalary
 (
-    SalaryId INT PRIMARY KEY IDENTITY(1,1) not null,
+    SalaryId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
     EmployeeId INT NOT NULL,
     Amount DECIMAL(10,2) NOT NULL 
         CHECK (Amount >= 0),
