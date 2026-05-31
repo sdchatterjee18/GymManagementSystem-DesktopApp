@@ -1,4 +1,4 @@
-CREATE TABLE tblMemberSubscription (
+CREATE TABLE tblMembershipSubscription (
     MemberSubscriptionId  INT PRIMARY KEY IDENTITY(1,1),
     MemberId INT NOT NULL,
     MembershipPlanId INT NOT NULL,
