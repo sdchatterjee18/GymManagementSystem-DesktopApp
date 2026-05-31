@@ -100,14 +100,16 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>💳 tblMembershipSubscription</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| MemberSubscriptionId | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId | INT FOREIGN KEY |
-| MembershipPlanId | INT FOREIGN KEY |
-| StartDate | DATE |
-| ExpiryDate | DATE |
-| IsActive | BIT |
+#### Table: `tblMembershipSubscription`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| MemberSubscriptionId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the membership subscription. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member who purchased the subscription. |
+| MembershipPlanId | INT | FOREIGN KEY | ❌ No | References the selected membership plan. |
+| StartDate | DATE | - | ❌ No | Subscription start date. |
+| ExpiryDate | DATE | - | ❌ No | Subscription expiration date. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the subscription is currently active. |
 
 </details>
 
@@ -116,12 +118,14 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>⏰ tblShift</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| ShiftId | INT PRIMARY KEY IDENTITY(1,1) |
-| ShiftName | VARCHAR(100) |
-| StartTime | TIME |
-| EndTime | TIME |
+#### Table: `tblShift`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| ShiftId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the shift. |
+| ShiftName | VARCHAR(100) | UNIQUE | ❌ No | Name of the shift (Morning, Evening, etc.). |
+| StartTime | TIME | - | ❌ No | Shift start time. |
+| EndTime | TIME | - | ❌ No | Shift end time. |
 
 </details>
 
@@ -130,12 +134,14 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>🏃 tblMemberShift</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| MemberShiftId | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId | INT FOREIGN KEY |
-| ShiftId | INT FOREIGN KEY |
-| IsActive | BIT |
+#### Table: `tblMemberShift`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| MemberShiftId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the member-shift assignment. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the assigned member. |
+| ShiftId | INT | FOREIGN KEY | ❌ No | References the assigned shift. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the shift assignment is active. |
 
 </details>
 
@@ -144,25 +150,28 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>📅 tblMemberAttendance</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| AttendanceId | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId | INT FOREIGN KEY |
-| ShiftId | INT FOREIGN KEY |
-| AttendanceDate | DATETIME |
+#### Table: `tblMemberAttendance`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| AttendanceId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the attendance record. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member whose attendance is recorded. |
+| ShiftId | INT | FOREIGN KEY | ❌ No | References the shift attended by the member. |
+| AttendanceDate | DATETIME | DEFAULT(GETDATE()) | ❌ No | Date and time when attendance was marked. |
 
 </details>
-
 ---
 
 <details>
 <summary><b>🔒 tblLocker</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| LockerId | INT PRIMARY KEY IDENTITY(1,1) |
-| LockerNo | VARCHAR(20) |
-| LockerStatus | VARCHAR(50) |
+#### Table: `tblLocker`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| LockerId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the locker. |
+| LockerNo | VARCHAR(20) | UNIQUE | ❌ No | Unique locker number assigned within the gym. |
+| LockerStatus | VARCHAR(50) | DEFAULT('Available') | ❌ No | Current status of the locker (Available, Occupied, Maintenance, etc.). |
 
 </details>
 
@@ -171,12 +180,14 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>🗄️ tblLockerAllocation</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| LockerAllocationId | INT PRIMARY KEY IDENTITY(1,1) |
-| LockerId | INT FOREIGN KEY |
-| MemberId | INT FOREIGN KEY |
-| ExpiryDate | DATE |
+#### Table: `tblLockerAllocation`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| LockerAllocationId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the locker allocation record. |
+| LockerId | INT | FOREIGN KEY | ❌ No | References the locker assigned to a member. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member who is assigned the locker. |
+| ExpiryDate | DATE | - | ❌ No | Date when the locker allocation expires. |
 
 </details>
 
@@ -185,16 +196,16 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>🏋️ tblTrainer</b></summary>
 
-#### Table: tblTrainer
+#### Table: `tblTrainer`
 
-| Column Name    | Data Type                     |
-| -------------- | ----------------------------- |
-| TrainerId      | INT PRIMARY KEY IDENTITY(1,1) |
-| EmployeeId     | INT FOREIGN KEY               |
-| TrainerType    | NVARCHAR(100)                 |
-| Specialization | NVARCHAR(200)                 |
-| JoiningDate    | DATE                          |
-| IsActive       | BIT                           |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| TrainerId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the trainer. |
+| EmployeeId | INT | FOREIGN KEY | ❌ No | References the employee record associated with the trainer. |
+| TrainerType | VARCHAR(100) | - | ❌ No | Type of trainer (Personal Trainer, Fitness Coach, Yoga Instructor, etc.). |
+| Specialization | VARCHAR(200) | - | ✅ Yes | Trainer's area of expertise or specialization. |
+| JoiningDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the trainer joined the gym. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the trainer is currently active. |
 
 </details>
 
@@ -203,14 +214,14 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>⏰ tblTrainerShift</b></summary>
 
-#### Table: tblTrainerShift
+#### Table: `tblTrainerShift`
 
-| Column Name    | Data Type                     |
-| -------------- | ----------------------------- |
-| TrainerShiftId | INT PRIMARY KEY IDENTITY(1,1) |
-| TrainerId      | INT FOREIGN KEY               |
-| ShiftId        | INT FOREIGN KEY               |
-| IsActive       | BIT                           |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| TrainerShiftId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the trainer shift assignment. |
+| TrainerId | INT | FOREIGN KEY | ❌ No | References the assigned trainer. |
+| ShiftId | INT | FOREIGN KEY | ❌ No | References the assigned shift. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the trainer shift assignment is active. |
 
 </details>
 
@@ -219,31 +230,30 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>🤝 tblMemberTrainerAssignment</b></summary>
 
-#### Table: tblMemberTrainerAssignment
+#### Table: `tblMemberTrainerAssignment`
 
-| Column Name               | Data Type                     |
-| ------------------------- | ----------------------------- |
-| MemberTrainerAssignmentId | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId                  | INT FOREIGN KEY               |
-| TrainerId                 | INT FOREIGN KEY               |
-| AssignedDate              | DATE                          |
-| IsActive                  | BIT                           |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| MemberTrainerAssignmentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the member-trainer assignment. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member assigned to the trainer. |
+| TrainerId | INT | FOREIGN KEY | ❌ No | References the assigned trainer. |
+| AssignedDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the trainer was assigned to the member. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the assignment is currently active. |
 
 </details>
-
 ---
 
 <details>
 <summary><b>💰 tblRegistrationFees</b></summary>
 
-#### Table: tblRegistrationFees
+#### Table: `tblRegistrationFees`
 
-| Column Name        | Data Type                     |
-| ------------------ | ----------------------------- |
-| RegistrationFeesId | INT PRIMARY KEY IDENTITY(1,1) |
-| FeeAmount          | DECIMAL(10,2)                 |
-| IsActive           | BIT                           |
-| CreatedAt          | GETDATE()                     |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| RegistrationFeesId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the registration fee record. |
+| FeeAmount | DECIMAL(10,2) | CHECK(FeeAmount >= 0) | ❌ No | Registration fee amount charged to new members. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the registration fee is currently active. |
+| CreatedAt | DATETIME | DEFAULT(GETDATE()) | ❌ No | Stores the date and time when the record was created. |
 
 </details>
 
@@ -252,18 +262,18 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>💳 tblSubscriptionPayment</b></summary>
 
-#### Table: tblSubscriptionPayment
+#### Table: `tblSubscriptionPayment`
 
-| Column Name        | Data Type                     |
-| ------------------ | ----------------------------- |
-| PaymentId          | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId           | INT FOREIGN KEY               |
-| MembershipPlanId   | INT FOREIGN KEY               |
-| PaymentDate        | DATETIME                      |
-| PaymentMethod      | VARCHAR(50)                   |
-| Amount             | DECIMAL(10,2)                 |
-| FeesType           | VARCHAR(50)                   |
-| TransactionId      | VARCHAR(100)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| PaymentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the payment transaction. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member who made the payment. |
+| MembershipPlanId | INT | FOREIGN KEY | ❌ No | References the membership plan purchased. |
+| PaymentDate | DATETIME | DEFAULT(GETDATE()) | ❌ No | Date and time when the payment was made. |
+| PaymentMethod | VARCHAR(50) | - | ❌ No | Method used for payment (Cash, UPI, Card, Bank Transfer, etc.). |
+| Amount | DECIMAL(10,2) | CHECK(Amount >= 0) | ❌ No | Total amount paid by the member. |
+| FeesType | VARCHAR(50) | - | ❌ No | Type of fee being paid (Registration, Renewal, Subscription, etc.). |
+| TransactionId | VARCHAR(100) | UNIQUE | ✅ Yes | External transaction reference number for digital payments. |
 
 </details>
 
@@ -272,13 +282,13 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>📂 tblExpensesCategories</b></summary>
 
-#### Table: tblExpensesCategories
+#### Table: `tblExpensesCategories`
 
-| Column Name       | Data Type                     |
-| ----------------- | ----------------------------- |
-| ExpenseCategoryID | INT PRIMARY KEY IDENTITY(1,1) |
-| CategoryName      | VARCHAR(100)                  |
-| Category          | VARCHAR(100)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| ExpenseCategoryID | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the expense category. |
+| CategoryName | VARCHAR(100) | UNIQUE | ❌ No | Name of the expense category. |
+| Category | VARCHAR(100) | - | ❌ No | General classification of the expense. |
 
 </details>
 
@@ -287,15 +297,15 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>📉 tblExpenses</b></summary>
 
-#### Table: tblExpenses
+#### Table: `tblExpenses`
 
-| Column Name       | Data Type                     |
-| ----------------- | ----------------------------- |
-| ExpenseId         | INT PRIMARY KEY IDENTITY(1,1) |
-| ExpenseCategoryId | INT FOREIGN KEY               |
-| ExpenseAmount     | DECIMAL(10,2)                 |
-| ExpenseDate       | DATE                          |
-| Notes             | VARCHAR(MAX)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| ExpenseId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the expense record. |
+| ExpenseCategoryId | INT | FOREIGN KEY | ❌ No | References the expense category. |
+| ExpenseAmount | DECIMAL(10,2) | CHECK(ExpenseAmount >= 0) | ❌ No | Amount spent for the expense. |
+| ExpenseDate | DATE | - | ❌ No | Date when the expense occurred. |
+| Notes | VARCHAR(MAX) | - | ✅ Yes | Additional remarks or details about the expense. |
 
 </details>
 
@@ -306,18 +316,18 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblEmployee`
 
-| Column Name   | Data Type                     |
-| ------------- | ----------------------------- |
-| EmployeeId    | INT PRIMARY KEY IDENTITY(1,1) |
-| MiddleName    | VARCHAR(50)                   |
-| LastName      | VARCHAR(50)                   |
-| FullName      | VARCHAR(150)                  |
-| PhoneNo       | VARCHAR(20)                   |
-| EmailId       | VARCHAR(150)                  |
-| JoiningDate   | DATE                          |
-| IsActive      | BIT                           |
-| RoleName      | VARCHAR(100)                  |
-| BankAccountNo | VARCHAR(50)                   |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| EmployeeId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the employee. |
+| MiddleName | VARCHAR(50) | - | ✅ Yes | Employee's middle name. |
+| LastName | VARCHAR(50) | - | ❌ No | Employee's last name. |
+| FullName | VARCHAR(150) | - | ❌ No | Complete name of the employee. |
+| PhoneNo | VARCHAR(20) | UNIQUE | ❌ No | Employee's contact number. |
+| EmailId | VARCHAR(150) | UNIQUE | ❌ No | Employee's email address. |
+| JoiningDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the employee joined the organization. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the employee is currently active. |
+| RoleName | VARCHAR(100) | - | ❌ No | Designation or role of the employee. |
+| BankAccountNo | VARCHAR(50) | UNIQUE | ❌ No | Employee's bank account number for salary processing. |
 
 </details>
 
@@ -328,11 +338,11 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblSalary`
 
-| Column Name | Data Type                     |
-| ----------- | ----------------------------- |
-| SalaryId    | INT PRIMARY KEY IDENTITY(1,1) |
-| EmployeeId  | INT FOREIGN KEY               |
-| Amount      | DECIMAL(10,2)                 |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| SalaryId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the salary record. |
+| EmployeeId | INT | FOREIGN KEY | ❌ No | References the employee receiving the salary. |
+| Amount | DECIMAL(10,2) | CHECK(Amount >= 0) | ❌ No | Monthly salary amount assigned to the employee. |
 
 </details>
 
@@ -343,18 +353,17 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblSalaryPayment`
 
-| Column Name   | Data Type                     |
-| ------------- | ----------------------------- |
-| PaymentId     | INT PRIMARY KEY IDENTITY(1,1) |
-| SalaryId      | INT FOREIGN KEY               |
-| PaymentMode   | VARCHAR(50)                   |
-| PaymentMonth  | VARCHAR(10)                   |
-| PaymentYear   | INT                           |
-| PaymentDate   | DATE                          |
-| PaymentStatus | VARCHAR(50)                   |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| PaymentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the salary payment. |
+| SalaryId | INT | FOREIGN KEY | ❌ No | References the salary record being paid. |
+| PaymentMode | VARCHAR(50) | - | ❌ No | Mode of salary payment (Cash, Bank Transfer, Cheque, etc.). |
+| PaymentMonth | VARCHAR(10) | - | ❌ No | Month for which the salary is paid. |
+| PaymentYear | INT | - | ❌ No | Year for which the salary is paid. |
+| PaymentDate | DATE | DEFAULT(GETDATE()) | ❌ No | Actual date when the salary payment was processed. |
+| PaymentStatus | VARCHAR(50) | DEFAULT('Pending') | ❌ No | Current payment status (Pending, Paid, Failed, etc.). |
 
 </details>
-
 ---
 
 <details>
@@ -362,11 +371,11 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblWorkoutPlans`
 
-| Column Name   | Data Type                     |
-| ------------- | ----------------------------- |
-| WorkoutPlanId | INT PRIMARY KEY IDENTITY(1,1) |
-| WorkoutName   | VARCHAR(100)                  |
-| Description   | VARCHAR(MAX)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| WorkoutPlanId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the workout plan. |
+| WorkoutName | VARCHAR(100) | UNIQUE | ❌ No | Name of the workout plan. |
+| Description | VARCHAR(MAX) | - | ✅ Yes | Detailed description of the workout plan, exercises, and objectives. |
 
 </details>
 
@@ -377,11 +386,11 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblExercises`
 
-| Column Name  | Data Type                     |
-| ------------ | ----------------------------- |
-| ExerciseId   | INT PRIMARY KEY IDENTITY(1,1) |
-| ExerciseName | VARCHAR(100)                  |
-| MuscletType  | VARCHAR(100)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| ExerciseId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the exercise. |
+| ExerciseName | VARCHAR(100) | UNIQUE | ❌ No | Name of the exercise. |
+| MuscletType | VARCHAR(100) | - | ❌ No | Target muscle group for the exercise (Chest, Back, Legs, etc.). |
 
 </details>
 
@@ -392,12 +401,12 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblWorkoutSchedule`
 
-| Column Name       | Data Type                     |
-| ----------------- | ----------------------------- |
-| WorkoutScheduleId | INT PRIMARY KEY IDENTITY(1,1) |
-| WorkoutPlanId     | INT FOREIGN KEY               |
-| ExerciseId        | INT FOREIGN KEY               |
-| WorkoutDay        | VARCHAR(20)                   |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| WorkoutScheduleId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the workout schedule. |
+| WorkoutPlanId | INT | FOREIGN KEY | ❌ No | References the associated workout plan. |
+| ExerciseId | INT | FOREIGN KEY | ❌ No | References the exercise included in the workout plan. |
+| WorkoutDay | VARCHAR(20) | - | ❌ No | Scheduled day for performing the exercise. |
 
 </details>
 
@@ -408,12 +417,12 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblDietPlans`
 
-| Column Name      | Data Type                     |
-| ---------------- | ----------------------------- |
-| DietPlanId       | INT PRIMARY KEY IDENTITY(1,1) |
-| CaloriesPerDay   | INT                           |
-| DietPlanDocument | VARCHAR(255)                  |
-| ConditionStatus  | VARCHAR(100)                  |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| DietPlanId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the diet plan. |
+| CaloriesPerDay | INT | CHECK(CaloriesPerDay > 0) | ❌ No | Recommended daily calorie intake. |
+| DietPlanDocument | VARCHAR(255) | - | ✅ Yes | File path or document containing the detailed diet plan. |
+| ConditionStatus | VARCHAR(100) | - | ❌ No | Intended condition or fitness goal (Weight Loss, Muscle Gain, Maintenance, etc.). |
 
 </details>
 
@@ -424,16 +433,15 @@ The database follows normalization principles to minimize data redundancy, impro
 
 #### Table: `tblMemberDietAssignment`
 
-| Column Name      | Data Type                     |
-| ---------------- | ----------------------------- |
-| DietAssignmentId | INT PRIMARY KEY IDENTITY(1,1) |
-| MemberId         | INT FOREIGN KEY               |
-| DietPlanId       | INT FOREIGN KEY               |
-| AssignDate       | DATE                          |
-| IsActive         | BIT                           |
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| DietAssignmentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the diet assignment. |
+| MemberId | INT | FOREIGN KEY | ❌ No | References the member assigned to the diet plan. |
+| DietPlanId | INT | FOREIGN KEY | ❌ No | References the assigned diet plan. |
+| AssignDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the diet plan was assigned. |
+| IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the diet plan assignment is currently active. |
 
 </details>
-
 ---
 
 ## 🔗 Foreign Key Relationships
@@ -449,7 +457,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | tblMember             | tblMemberAttendance        | MemberId          | One-to-Many (1:N) |
 | tblShift              | tblMemberAttendance        | ShiftId           | One-to-Many (1:N) |
 | tblLocker             | tblLockerAllocation        | LockerId          | One-to-Many (1:N) |
-| tblMember             | tblLockerAllocation        | MemberId          | One-to-Many (1:N) |
+| tblMember             | tblLockerAllocation        | MemberId          | One-to-Many (1:1) |
 | tblEmployee           | tblTrainer                 | EmployeeId        | One-to-One (1:1)  |
 | tblTrainer            | tblTrainerShift            | TrainerId         | One-to-Many (1:N) |
 | tblShift              | tblTrainerShift            | ShiftId           | One-to-Many (1:N) |
