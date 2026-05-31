@@ -1,6 +1,6 @@
 CREATE TABLE tblMemberShift
 (
-	MemberShiftId INT PRIMARY KEY IDENTITY(1,1),
+	MemberShiftId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	MemberId INT NOT NULL,  
 	ShiftId INT NOT NULL,
 	IsActive BIT DEFAULT(1),
