@@ -366,6 +366,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | PaymentStatus | VARCHAR(50) | DEFAULT('Pending') | ❌ No | Current payment status (Pending, Paid, Failed, etc.). |
 
 </details>
+
 ---
 
 <details>
@@ -444,6 +445,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the diet plan assignment is currently active. |
 
 </details>
+
 ---
 
 ## 🔗 Foreign Key Relationships
