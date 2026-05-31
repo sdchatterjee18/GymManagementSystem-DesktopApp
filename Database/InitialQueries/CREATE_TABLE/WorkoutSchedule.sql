@@ -3,10 +3,11 @@ CREATE TABLE tblWorkoutSchedule(
 	WorkoutPlanId INT NOT NULL,
 	ExerciseId INT NOT NULL,
 	WorkoutDay VARCHAR(20) NOT NULL,
-	CONSTRAINT FK_WorkoutPlanIdtblWorkoutPlansWorkoutPlanId 
+
+	CONSTRAINT FK_tblWorkoutSchedule_WorkoutPlanIdtblWorkoutPlans 
 		FOREIGN KEY (WorkoutPlanId) 
 		REFERENCES tblWorkoutPlans(WorkoutPlanId),
-	CONSTRAINT FK_ExerciseIdtblExercisesExerciseId 
+	CONSTRAINT FK_tblWorkoutSchedule_ExerciseIdtblExercises 
 		FOREIGN KEY (ExerciseId) 
 		REFERENCES tblExercises(ExerciseId) 
 );
