@@ -14,16 +14,18 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>🔐 tblSuperAdmin</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| SuperAdminId | INT PRIMARY KEY IDENTITY(1,1) |
-| UserName | VARCHAR(100) |
-| PasswordHash | VARCHAR(255) |
-| Email_Id | VARCHAR(150) |
-| PhoneNumber | VARCHAR(20) |
-| LastLogin | DATETIME |
-| IsActive | BIT |
-| CreatedAt | GETDATE() |
+#### Table: `tblSuperAdmin`
+
+| Column Name | Data Type | Null Allowed | Description |
+|------------|------------|------------|------------|
+| SuperAdminId | INT PRIMARY KEY IDENTITY(1,1) | ❌ No | Unique identifier for the Super Admin. |
+| UserName | VARCHAR(100) | ❌ No | Login username of the Super Admin. |
+| PasswordHash | VARCHAR(255) | ❌ No | Encrypted password used for authentication. |
+| Email_Id | VARCHAR(150) | ❌ No | Email address of the Super Admin. |
+| PhoneNumber | VARCHAR(20) | ✅ Yes | Contact number of the Super Admin. |
+| LastLogin | DATETIME | ✅ Yes | Stores the last login date and time. |
+| IsActive | BIT | ❌ No | Indicates whether the account is active or inactive. |
+| CreatedAt | GETDATE() | ❌ No | Stores the account creation date and time. |
 
 </details>
 
@@ -32,14 +34,16 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>👨‍💼 tblAdmin</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| AdminId | INT PRIMARY KEY IDENTITY(1,1) |
-| EmployeeId | INT FOERIGN KEY |
-| SuperAdminID | INT FOREIGN KEY |
-| UserName | VARCHAR(100) |
-| PasswordHash | VARCHAR(255) |
-| LastLogin | DATETIME |
+#### Table: `tblAdmin`
+
+| Column Name | Data Type | Null Allowed | Description |
+|------------|------------|------------|------------|
+| AdminId | INT PRIMARY KEY IDENTITY(1,1) | ❌ No | Unique identifier for the Admin. |
+| EmployeeId | INT FOREIGN KEY | ❌ No | References the employee associated with the admin account. |
+| SuperAdminID | INT FOREIGN KEY | ❌ No | References the Super Admin who manages the Admin. |
+| UserName | VARCHAR(100) | ❌ No | Login username of the Admin. |
+| PasswordHash | VARCHAR(255) | ❌ No | Encrypted password used for authentication. |
+| LastLogin | DATETIME | ✅ Yes | Stores the last login date and time. |
 
 </details>
 
@@ -48,15 +52,17 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>📋 tblMembershipPlans</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| MembershipPlanId | INT PRIMARY KEY IDENTITY(1,1) |
-| MembershipPlanName | VARCHAR(100) |
-| PlanType | VARCHAR(50) |
-| DurationInDays | INT |
-| Price | DECIMAL(10,2) |
-| Description | VARCHAR(MAX) |
-| IsActive | BIT |
+#### Table: `tblMembershipPlans`
+
+| Column Name | Data Type | Null Allowed | Description |
+|------------|------------|------------|------------|
+| MembershipPlanId | INT PRIMARY KEY IDENTITY(1,1) | ❌ No | Unique identifier for the membership plan. |
+| MembershipPlanName | VARCHAR(100) | ❌ No | Name of the membership plan. |
+| PlanType | VARCHAR(50) | ❌ No | Type of membership plan (Monthly, Quarterly, Yearly, etc.). |
+| DurationInDays | INT | ❌ No | Total duration of the plan in days. |
+| Price | DECIMAL(10,2) | ❌ No | Cost of the membership plan. |
+| Description | VARCHAR(MAX) | ✅ Yes | Detailed information about the membership plan. |
+| IsActive | BIT | ❌ No | Indicates whether the plan is currently available. |
 
 </details>
 
@@ -65,25 +71,27 @@ The database follows normalization principles to minimize data redundancy, impro
 <details>
 <summary><b>👤 tblMember</b></summary>
 
-| Column Name | Data Type |
-|------------|------------|
-| MemberId | INT PRIMARY KEY IDENTITY(1,1) |
-| FirstName | VARCHAR(50) |
-| MiddleName | VARCHAR(50) |
-| LastName | VARCHAR(50) |
-| Gender | VARCHAR(20) |
-| DOB | DATE |
-| PhoneNo | VARCHAR(20) |
-| Email_Id | VARCHAR(150) |
-| Address | VARCHAR(300) |
-| City | VARCHAR(100) |
-| District | VARCHAR(100) |
-| State | VARCHAR(100) |
-| EmergencyContact | VARCHAR(20) |
-| ProfilePhoto | VARBINARY(255) |
-| JoiningDate | GETDATE() |
-| IsActive | BIT |
-| UpdatedAt | DATETIME |
+#### Table: `tblMember`
+
+| Column Name | Data Type | Null Allowed | Description |
+|------------|------------|------------|------------|
+| MemberId | INT PRIMARY KEY IDENTITY(1,1) | ❌ No | Unique identifier for the member. |
+| FirstName | VARCHAR(50) | ❌ No | Member's first name. |
+| MiddleName | VARCHAR(50) | ✅ Yes | Member's middle name. |
+| LastName | VARCHAR(50) | ❌ No | Member's last name. |
+| Gender | VARCHAR(20) | ❌ No | Member's gender. |
+| DOB | DATE | ❌ No | Member's date of birth. |
+| PhoneNo | VARCHAR(20) | ❌ No | Contact number of the member. |
+| Email_Id | VARCHAR(150) | ✅ Yes | Email address of the member. |
+| Address | VARCHAR(300) | ❌ No | Residential address of the member. |
+| City | VARCHAR(100) | ❌ No | City of residence. |
+| District | VARCHAR(100) | ❌ No | District of residence. |
+| State | VARCHAR(100) | ❌ No | State of residence. |
+| EmergencyContact | VARCHAR(20) | ✅ Yes | Emergency contact number. |
+| ProfilePhoto | VARBINARY(255) | ✅ Yes | Stores the member's profile photo. |
+| JoiningDate | GETDATE() | ❌ No | Date when the member joined the gym. |
+| IsActive | BIT | ❌ No | Indicates whether the membership is active. |
+| UpdatedAt | DATETIME | ✅ Yes | Stores the last modification date and time. |
 
 </details>
 
