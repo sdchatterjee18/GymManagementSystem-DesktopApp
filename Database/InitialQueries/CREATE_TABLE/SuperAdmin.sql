@@ -1,8 +1,11 @@
-create table tblSuperAdmin(SuperAdminId int primary key not null identity(1,1),
-UserName varchar(100) unique not null,
-PasswordHash varchar(255) not null,
-Email_Id varchar(150) unique not null,
-PhoneNumber varchar(20),
-LastLogin datetime,
-IsActive bit default(1) not null,
-CreatedAt datetime DEFAULT(GETDATE()) not null)
+CREATE TABLE tblSuperAdmin
+(
+    SuperAdminId INT PRIMARY KEY IDENTITY(1,1),
+    UserName VARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Email_Id VARCHAR(150) NOT NULL UNIQUE,
+    PhoneNumber VARCHAR(20) NULL,
+    LastLogin DATETIME NULL,
+    IsActive BIT NOT NULL DEFAULT(1),
+    CreatedAt DATETIME NOT NULL DEFAULT(GETDATE())
+);
