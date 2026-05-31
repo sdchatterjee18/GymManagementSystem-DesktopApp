@@ -23,7 +23,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | PasswordHash | VARCHAR(255) | - | ❌ No | Encrypted password used for authentication. |
 | Email_Id | VARCHAR(150) | UNIQUE | ❌ No | Email address of the Super Admin. |
 | PhoneNumber | VARCHAR(20) | - | ✅ Yes | Contact number of the Super Admin. |
-| LastLogin | DATETIME | - | ✅ Yes | Stores the last login date and time. |
+| LastLogin | DATETIME | DEFAULT(GETDATE()) | ✅ Yes | Stores the last login date and time. |
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the account is active or inactive. |
 | CreatedAt | DATETIME | DEFAULT(GETDATE()) | ❌ No | Stores the account creation date and time. |
 
