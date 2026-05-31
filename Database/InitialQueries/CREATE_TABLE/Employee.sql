@@ -1,6 +1,6 @@
 CREATE TABLE tblEmployee
 (
-    EmployeeId INT PRIMARY KEY IDENTITY(1,1),
+    EmployeeId INT PRIMARY KEY NOT NULL IDENTITY(1,1) ,
     FirstName VARCHAR(150) NOT NULL,
     MiddleName VARCHAR(50) NULL,
     LastName VARCHAR(50) NOT NULL,
