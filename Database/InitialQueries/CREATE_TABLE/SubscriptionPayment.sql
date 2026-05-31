@@ -7,10 +7,11 @@ CREATE TABLE tblSubscriptionPayment(
 	Amount DECIMAL(10,2) CHECK(Amount >= 0) NOT NULL,
 	FeesType VARCHAR(50) Check(TransactionId IN ('Monthly','Quarterly','Half-Yearly','Annually')) NOT NULL,
 	TransactionId VARCHAR(100)  NOT NULL UNIQUE,
-	CONSTRAINT FK_MemberIdtblMemberMemberId 
+
+	CONSTRAINT FK_tblSubscriptionPayment_MemberIdtblMember
 		FOREIGN KEY (MemberId) 
 		REFERENCES tblMember(MemberId),
-	CONSTRAINT FK_MembershipPlanIdtblMembershipPlansMembershipPlanId 
+	CONSTRAINT FK_tblSubscriptionPayment_MembershipPlanIdtblMembershipPlans
 		FOREIGN KEY (MembershipPlanId) 
 		REFERENCES tblMembershipPlans(MembershipPlanId),
 

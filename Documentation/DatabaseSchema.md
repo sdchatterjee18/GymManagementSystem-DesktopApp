@@ -23,7 +23,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | PasswordHash | VARCHAR(255) | - | ❌ No | Encrypted password used for authentication. |
 | Email_Id | VARCHAR(150) | UNIQUE | ❌ No | Email address of the Super Admin. |
 | PhoneNumber | VARCHAR(20) | - | ✅ Yes | Contact number of the Super Admin. |
-| LastLogin | DATETIME | - | ✅ Yes | Stores the last login date and time. |
+| LastLogin | DATETIME | DEFAULT(GETDATE()) | ✅ Yes | Stores the last login date and time. |
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the account is active or inactive. |
 | CreatedAt | DATETIME | DEFAULT(GETDATE()) | ❌ No | Stores the account creation date and time. |
 
@@ -43,7 +43,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | SuperAdminID | INT | FOREIGN KEY | ❌ No | References the Super Admin who manages the Admin. |
 | UserName | VARCHAR(100) | UNIQUE | ❌ No | Login username of the Admin. |
 | PasswordHash | VARCHAR(255) | - | ❌ No | Encrypted password used for authentication. |
-| LastLogin | DATETIME | - | ✅ Yes | Stores the last login date and time. |
+| LastLogin | DATETIME | DEFAULT(GETDATE())	 | ✅ Yes | Stores the last login date and time. |
 
 </details>
 
@@ -212,6 +212,20 @@ The database follows normalization principles to minimize data redundancy, impro
 
 ---
 
+<details>
+<summary><b>🏋️ tblCertificateDocument</b></summary>
+
+#### Table: `tblCertificateDocument`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| DocumentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the Documents. |
+| TrainerId | INT | FOREIGN KEY | ❌ No | References the Trainer for whom the certificate belongs|
+| Document | VARBINARY(100) | - | ❌ No | Stores the actual certification Document |
+
+</details>
+
+---
 <details>
 <summary><b>⏰ tblTrainerShift</b></summary>
 
