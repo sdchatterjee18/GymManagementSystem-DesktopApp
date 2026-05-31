@@ -1,6 +1,6 @@
 CREATE TABLE tblLockerAllocation
 (
-    LockerAllocationId INT IDENTITY(1,1) PRIMARY KEY,
+    LockerAllocationId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     LockerId INT NOT NULL,
     MemberId INT NOT NULL,
     ExpiryDate DATE NOT NULL,
