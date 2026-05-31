@@ -1,6 +1,6 @@
 CREATE TABLE tblExercises
 (
-    ExerciseId INT PRIMARY KEY IDENTITY(1,1),
+    ExerciseId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
     ExerciseName VARCHAR(100) NOT NULL UNIQUE,
     MuscleType VARCHAR(100) NOT NULL
 );
