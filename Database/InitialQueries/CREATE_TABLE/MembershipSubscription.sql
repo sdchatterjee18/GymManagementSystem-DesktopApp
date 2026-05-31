@@ -1,5 +1,5 @@
 CREATE TABLE tblMembershipSubscription (
-    MemberSubscriptionId  INT PRIMARY KEY IDENTITY(1,1),
+    MemberSubscriptionId  INT PRIMARY KEY NOT NULL IDENTITY(1,1),
     MemberId INT NOT NULL,
     MembershipPlanId INT NOT NULL,
     StartDate DATE NOT NULL,
