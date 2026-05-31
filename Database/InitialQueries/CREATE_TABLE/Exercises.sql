@@ -1,6 +1,6 @@
-CREATE TABLE  tblExercises(
-       DietPlanId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	   CaloriesPerDay INT CHECK(CaloriesPerDay > 0) NOT NULL,
-       DietPlanDocument VARCHAR(MAX),
-       ConditionStatus VARCHAR(MAX) NOT NULL
-)
+CREATE TABLE tblExercises
+(
+    ExerciseId INT PRIMARY KEY IDENTITY(1,1),
+    ExerciseName VARCHAR(100) NOT NULL UNIQUE,
+    MuscleType VARCHAR(100) NOT NULL
+);
