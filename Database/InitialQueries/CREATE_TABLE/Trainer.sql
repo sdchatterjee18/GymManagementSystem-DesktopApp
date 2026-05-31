@@ -1,6 +1,6 @@
 CREATE TABLE tblTrainer
 (
-	TrainerId INT PRIMARY KEY IDENTITY(1,1),
+	TrainerId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	EmployeeId INT NOT NULL,
 	TrainerType VARCHAR(100) NOT NULL,
 	Specialization VARCHAR(200),
