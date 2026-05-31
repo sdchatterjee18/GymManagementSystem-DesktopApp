@@ -1,5 +1,5 @@
 Create Table tblMemberDietAssignment(
-	DietAssignmentId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	DietAssignmentId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	MemberId INT NOT NULL,
 	DietPlanId INT NOT NULL,
 	AssignDate Date NOT NULL DEFAULT(GETDATE()),
