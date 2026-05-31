@@ -1,5 +1,5 @@
 CREATE TABLE tblWorkoutSchedule(
-	WorkoutScheduleId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	WorkoutScheduleId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	WorkoutPlanId INT NOT NULL,
 	ExerciseId INT NOT NULL,
 	WorkoutDay VARCHAR(20) NOT NULL,
