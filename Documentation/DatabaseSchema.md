@@ -242,6 +242,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the assignment is currently active. |
 
 </details>
+
 ---
 
 <details>
