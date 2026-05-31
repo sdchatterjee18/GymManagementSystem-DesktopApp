@@ -5,7 +5,11 @@ CREATE TABLE tblAdmin(
     UserName VARCHAR(100) NOT NULL UNIQUE,
     PasswordHash VARCHAR(255) NOT NULL,
     LastLogin DATETIME  NULL ,
-    CONSTRAINT FK_tblAdmin_EmployeeIdtblEmployee FOREIGN KEY (EmployeeId)REFERENCES tblEmployee(EmployeeId),
-    CONSTRAINT FK_tblAdmin_SuperAdminIDtblSuperAdmin FOREIGN KEY (SuperAdminID) REFERENCES tblSuperAdmin(SuperAdminID)
+    CONSTRAINT FK_tblAdmin_EmployeeIdtblEmployee 
+		FOREIGN KEY (EmployeeId)
+		REFERENCES tblEmployee(EmployeeId),
+    CONSTRAINT FK_tblAdmin_SuperAdminIDtblSuperAdmin
+		FOREIGN KEY (SuperAdminID)
+		REFERENCES tblSuperAdmin(SuperAdminID)
 );
 
