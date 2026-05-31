@@ -1,5 +1,5 @@
 CREATE TABLE tblMemberAttendance (
-    AttendanceId INT IDENTITY(1,1) PRIMARY KEY,
+    AttendanceId INT  PRIMARY KEY IDENTITY(1,1),
     MemberId INT NOT NULL,
     ShiftId INT NOT NULL,
     AttendanceDate DATETIME NOT NULL DEFAULT(GETDATE()),
