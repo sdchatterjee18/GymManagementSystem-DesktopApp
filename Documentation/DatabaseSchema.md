@@ -160,6 +160,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | AttendanceDate | DATETIME | DEFAULT(GETDATE()) | ❌ No | Date and time when attendance was marked. |
 
 </details>
+
 ---
 
 <details>
