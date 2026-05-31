@@ -213,6 +213,20 @@ The database follows normalization principles to minimize data redundancy, impro
 ---
 
 <details>
+<summary><b>🏋️ tblCertificateDocument</b></summary>
+
+#### Table: `tblCertificateDocument`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| DocumentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the Documents. |
+| TrainerId | INT | FOREIGN KEY | ❌ No | References the Trainer for whom the certificate belongs|
+| Document | VARBINARY(100) | - | ❌ No | Stores the actual certification Document |
+
+</details>
+
+---
+<details>
 <summary><b>⏰ tblTrainerShift</b></summary>
 
 #### Table: `tblTrainerShift`
