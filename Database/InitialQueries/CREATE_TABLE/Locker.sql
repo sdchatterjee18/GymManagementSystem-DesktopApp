@@ -1,3 +1,6 @@
-create table tblLocker(LockerId int primary key not null identity(1,1),
-LockerNo varchar(20) unique not null,
-LockerStatus varchar(50) not null DEFAULT('Available'))
+CREATE TABLE tblLocker
+(
+    LockerId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+    LockerNo VARCHAR(20) UNIQUE NOT NULL,
+    LockerStatus VARCHAR(50) NOT NULL DEFAULT('Available')
+);

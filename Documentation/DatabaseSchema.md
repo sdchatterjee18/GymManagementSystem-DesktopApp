@@ -79,7 +79,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | FirstName | VARCHAR(50) | - | ❌ No | Member's first name. |
 | MiddleName | VARCHAR(50) | - | ✅ Yes | Member's middle name. |
 | LastName | VARCHAR(50) | - | ❌ No | Member's last name. |
-| Gender | VARCHAR(20) | CHECK(Gender IN ('Male','Female','Other')) | ❌ No | Member's gender. |
+| GenderId | INT | FOREIGN KEY | ❌ No | References member Gender from gender table |
 | DOB | DATE | - | ❌ No | Member's date of birth. |
 | PhoneNo | VARCHAR(20) | UNIQUE | ❌ No | Contact number of the member. |
 | Email_Id | VARCHAR(150) | UNIQUE | ✅ Yes | Email address of the member. |
@@ -321,9 +321,10 @@ The database follows normalization principles to minimize data redundancy, impro
 | Column Name | Data Type | Constraint | Null Allowed | Description |
 |------------|------------|------------|------------|------------|
 | EmployeeId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the employee. |
+| FirstName | VARCHAR(150) | - | ❌ No | Employee's First name. |
 | MiddleName | VARCHAR(50) | - | ✅ Yes | Employee's middle name. |
 | LastName | VARCHAR(50) | - | ❌ No | Employee's last name. |
-| FullName | VARCHAR(150) | - | ❌ No | Complete name of the employee. |
+| GenderId | INT | FOREIGN KEY | ❌ No | References the Gender of the employee from GenderTable |
 | PhoneNo | VARCHAR(20) | UNIQUE | ❌ No | Employee's contact number. |
 | EmailId | VARCHAR(150) | UNIQUE | ❌ No | Employee's email address. |
 | JoiningDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the employee joined the organization. |
@@ -443,6 +444,20 @@ The database follows normalization principles to minimize data redundancy, impro
 | DietPlanId | INT | FOREIGN KEY | ❌ No | References the assigned diet plan. |
 | AssignDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the diet plan was assigned. |
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the diet plan assignment is currently active. |
+
+</details>
+
+---
+
+<details>
+<summary><b>🍎 tblGender</b></summary>
+
+#### Table: `tblGender`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| GendreId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for Genders |
+| Gender | VARCHAR(15) | - | ❌ No | Name of the Gender |
 
 </details>
 
