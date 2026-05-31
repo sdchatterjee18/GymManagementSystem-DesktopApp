@@ -1,5 +1,5 @@
 CREATE TABLE tblMember (
-    MemberId INT IDENTITY(1,1) PRIMARY KEY,
+    MemberId INT  PRIMARY KEY IDENTITY(1,1),
     FirstName VARCHAR(50) NOT NULL,
     MiddleName VARCHAR(50) NULL,
     LastName VARCHAR(50) NOT NULL,
@@ -12,10 +12,8 @@ CREATE TABLE tblMember (
     State VARCHAR(100) NOT NULL,
     EmergencyContact VARCHAR(20) NULL,
     ProfilePhoto VARBINARY(MAX) NULL,
-    JoiningDate DATETIME NOT NULL
-        DEFAULT(GETDATE()),
-    IsActive BIT NOT NULL
-        DEFAULT(1),
+    JoiningDate DATETIME NOT NULL DEFAULT(GETDATE()),
+    IsActive BIT NOT NULL DEFAULT(1),
     UpdatedAt DATETIME NULL,
     CONSTRAINT FK_tblMember_GenderIdtblGender FOREIGN KEY (GenderId) REFERENCES tblGender(GenderId)
 );
