@@ -43,7 +43,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | SuperAdminID | INT | FOREIGN KEY | ❌ No | References the Super Admin who manages the Admin. |
 | UserName | VARCHAR(100) | UNIQUE | ❌ No | Login username of the Admin. |
 | PasswordHash | VARCHAR(255) | - | ❌ No | Encrypted password used for authentication. |
-| LastLogin | DATETIME | - | ✅ Yes | Stores the last login date and time. |
+| LastLogin | DATETIME | DEFAULT(GETDATE())	 | ✅ Yes | Stores the last login date and time. |
 
 </details>
 
