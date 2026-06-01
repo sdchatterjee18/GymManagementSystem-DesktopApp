@@ -54,10 +54,3 @@ BEGIN
     END CATCH
 END
 GO
-
-select * from tblRegistrationFees
-
-
-
-EXEC spInsertDataIntoRegistrationFeesTable 1000.00;
-GO
