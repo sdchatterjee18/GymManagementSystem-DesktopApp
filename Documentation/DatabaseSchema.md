@@ -83,7 +83,6 @@ The database follows normalization principles to minimize data redundancy, impro
 | DOB | DATE | - | ❌ No | Member's date of birth. |
 | PhoneNo | VARCHAR(20) | UNIQUE | ❌ No | Contact number of the member. |
 | Email_Id | VARCHAR(150) | UNIQUE | ✅ Yes | Email address of the member. |
-| Address | VARCHAR(300) | - | ❌ No | Residential address of the member. |
 | City | VARCHAR(100) | - | ❌ No | City of residence. |
 | District | VARCHAR(100) | - | ❌ No | District of residence. |
 | State | VARCHAR(100) | - | ❌ No | State of residence. |
@@ -221,7 +220,7 @@ The database follows normalization principles to minimize data redundancy, impro
 |------------|------------|------------|------------|------------|
 | DocumentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the Documents. |
 | TrainerId | INT | FOREIGN KEY | ❌ No | References the Trainer for whom the certificate belongs|
-| Document | VARBINARY(100) | - | ❌ No | Stores the actual certification Document |
+| Document | VARBINARY(MAX) | - | ❌ No | Stores the actual certification Document |
 
 </details>
 
