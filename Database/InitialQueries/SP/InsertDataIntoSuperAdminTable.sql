@@ -32,10 +32,62 @@ BEGIN TRY
         SELECT 'Phone Number is Required.' AS Message;
         RETURN;
     END
+    IF LEN(@UserName) < 3 OR LEN(@UserName) > 100
+    BEGIN
+        SELECT 'User Name Must Be Between 3 And 100 Characters.' AS Message;
+        RETURN;
+    END
+    IF @UserName LIKE '%[^A-Za-z0-9_]%'
+    BEGIN
+        SELECT 'User Name Can Contain Only Letters, Numbers And Underscore.' AS Message;
+        RETURN;
+    END
+    IF LEN(@PasswordHash) < 8
+    BEGIN
+        SELECT 'Password Must Be At Least 8 Characters Long.' AS Message;
+        RETURN;
+    END
+    IF @PasswordHash NOT LIKE '%[A-Z]%'
+    BEGIN
+        SELECT 'Password Must Contain At Least One Uppercase Letter.' AS Message;
+        RETURN;
+    END
+    IF @PasswordHash NOT LIKE '%[a-z]%'
+    BEGIN
+        SELECT 'Password Must Contain At Least One Lowercase Letter.' AS Message;
+        RETURN;
+    END
+    IF @PasswordHash NOT LIKE '%[0-9]%'
+    BEGIN
+        SELECT 'Password Must Contain At Least One Number.' AS Message;
+        RETURN;
+    END
+    IF @PasswordHash NOT LIKE '%[^A-Za-z0-9]%'
+    BEGIN
+        SELECT 'Password Must Contain At Least One Special Character.' AS Message;
+        RETURN;
+    END
     IF @Email_Id NOT LIKE '%_@_%._%'
        OR @Email_Id LIKE '% %'
     BEGIN
         SELECT 'Invalid Email Format.' AS Message;
+        RETURN;
+    END
+    IF @Email_Id LIKE '%@%@%'
+    BEGIN
+        SELECT 'Email Cannot Contain Multiple @ Symbols.' AS Message;
+        RETURN;
+    END
+
+    IF @Email_Id LIKE '%..%'
+    BEGIN
+        SELECT 'Email Cannot Contain Consecutive Dots.' AS Message;
+        RETURN;
+    END
+    IF LEFT(@Email_Id,1)='.'
+       OR RIGHT(@Email_Id,1)='.'
+    BEGIN
+        SELECT 'Email Cannot Start Or End With Dot.' AS Message;
         RETURN;
     END
     IF @PhoneNumber LIKE '%[^0-9]%'
@@ -48,11 +100,16 @@ BEGIN TRY
         SELECT 'Phone Number Must Be 10 Digits.' AS Message;
         RETURN;
     END
+    IF @PhoneNumber NOT LIKE '[6-9]%'
+    BEGIN
+        SELECT 'Invalid Indian Mobile Number.' AS Message;
+        RETURN;
+    END
     IF EXISTS
     (
         SELECT 1
         FROM tblSuperAdmin
-        WHERE Email_Id = @Email_Id
+        WHERE LOWER(Email_Id) = LOWER(@Email_Id)
     )
     BEGIN
         SELECT 'Email Already Exists.' AS Message;
