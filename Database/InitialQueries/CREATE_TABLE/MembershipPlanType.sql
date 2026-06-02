@@ -1,0 +1,5 @@
+CREATE TABLE tblMembershipPlanType
+(
+    PlanTypeId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+    PlanType VARCHAR(50) NOT NULL UNIQUE
+);
