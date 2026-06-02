@@ -11,7 +11,7 @@ CREATE TABLE tblEmployee
     IsActive BIT NOT NULL DEFAULT(1),
     RoleName VARCHAR(100) NOT NULL,
     BankAccountNo VARCHAR(50) UNIQUE NOT NULL,
-    CONSTRAINT FK_tblEmployee_tblGender
+    CONSTRAINT FK_tblEmployee_GenderIdtblGender
         FOREIGN KEY (GenderId)
         REFERENCES tblGender(GenderId)
 );
