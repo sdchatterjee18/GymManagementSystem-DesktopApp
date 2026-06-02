@@ -6,6 +6,6 @@ CREATE TABLE tblSuperAdmin
     Email_Id VARCHAR(150) NOT NULL UNIQUE,
     PhoneNumber VARCHAR(20) NULL,
     LastLogin DATETIME NULL,
-    IsActive BIT NOT NULL DEFAULT(1),
+    IsActive BIT NOT NULL DEFAULT(0),
     CreatedAt DATETIME NOT NULL DEFAULT(GETDATE())
 );
