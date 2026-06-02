@@ -1,5 +1,5 @@
-CREATE DATABASE dbaGymManagementSystem
+CREATE DATABASE dbGymManagementSystem
 GO
 
-USE dbaGymManagementSystem
+USE dbGymManagementSystem
 GO
