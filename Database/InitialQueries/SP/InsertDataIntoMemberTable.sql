@@ -212,7 +212,7 @@ BEGIN TRY
         @EmergencyContact,
         @ProfilePhoto,
         GETDATE(),
-        1
+        0
     )
 
     SELECT 'Member Inserted Successfully.' AS Message
