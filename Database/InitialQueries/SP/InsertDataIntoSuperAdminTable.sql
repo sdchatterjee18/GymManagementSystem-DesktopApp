@@ -32,9 +32,20 @@ BEGIN TRY
         SELECT 'Phone Number is Required.' AS Message;
         RETURN;
     END
-    IF @Email_Id NOT LIKE '%@%.%'
+    IF @Email_Id NOT LIKE '%_@_%._%'
+       OR @Email_Id LIKE '% %'
     BEGIN
         SELECT 'Invalid Email Format.' AS Message;
+        RETURN;
+    END
+    IF @PhoneNumber LIKE '%[^0-9]%'
+    BEGIN
+        SELECT 'Phone Number Must Contain Only Digits.' AS Message;
+        RETURN;
+    END
+    IF LEN(@PhoneNumber) <> 10
+    BEGIN
+        SELECT 'Phone Number Must Be 10 Digits.' AS Message;
         RETURN;
     END
     IF EXISTS
