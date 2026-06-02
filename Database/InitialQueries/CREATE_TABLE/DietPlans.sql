@@ -5,4 +5,3 @@ CREATE TABLE tblDietPlans(
        DietPlanDocument VARBINARY(MAX),
        ConditionStatus VARCHAR(MAX) NOT NULL
 )
-SELECT * FROM tblDietPlans
