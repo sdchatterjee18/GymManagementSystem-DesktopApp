@@ -8,7 +8,7 @@ CREATE TABLE tblMembershipSubscription (
     CONSTRAINT FK_tblMemberSubscription_MemberIdtblMember
 		FOREIGN KEY (MemberId)
 		REFERENCES tblMember(MemberId),
-    CONSTRAINT FK_tblMemberSubscription_MembershipPlanIdtblMembershipPlans
+    CONSTRAINT FK_tblMemberSubscription_MembershipPlanIdtblMembershipPlan
 		FOREIGN KEY (MembershipPlanId)
 		REFERENCES tblMembershipPlans(MembershipPlanId)
 );
