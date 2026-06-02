@@ -27,27 +27,3 @@ EXEC spInsertDataIntoAdminTable
     @SuperAdminID = 3,
     @UserName = 'Sourav_Admin2',
     @PasswordHash = 'Sourav@124';
-
-EXEC spInsertDataIntoAdminTable
-    @EmployeeId = 3,
-    @SuperAdminID = 1,
-    @UserName = 'Neha_Admin2',
-    @PasswordHash = 'Neha@124';
-
-EXEC spInsertDataIntoAdminTable
-    @EmployeeId = 1,
-    @SuperAdminID = 3,
-    @UserName = 'Rahul_Admin3',
-    @PasswordHash = 'Rahul@125';
-
-EXEC spInsertDataIntoAdminTable
-    @EmployeeId = 2,
-    @SuperAdminID = 1,
-    @UserName = 'Sourav_Admin3',
-    @PasswordHash = 'Sourav@125';
-
-EXEC spInsertDataIntoAdminTable
-    @EmployeeId = 3,
-    @SuperAdminID = 2,
-    @UserName = 'Neha_Admin3',
-    @PasswordHash = 'Neha@125';
