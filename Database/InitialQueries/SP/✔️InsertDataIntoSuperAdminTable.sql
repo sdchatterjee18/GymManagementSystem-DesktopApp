@@ -2,7 +2,7 @@ CREATE PROC spInsertDataIntoSuperAdminTable
 (
     @UserName VARCHAR(100),
     @PasswordHash VARCHAR(255),
-    @Email_Id VARCHAR(150),
+    @EmailId VARCHAR(150),
     @PhoneNumber VARCHAR(20)
 )
 AS
@@ -10,7 +10,7 @@ BEGIN
 BEGIN TRY
     SET @UserName = LTRIM(RTRIM(@UserName));
     SET @PasswordHash = LTRIM(RTRIM(@PasswordHash));
-    SET @Email_Id = LTRIM(RTRIM(@Email_Id));
+    SET @EmailId = LTRIM(RTRIM(@EmailId));
     SET @PhoneNumber = LTRIM(RTRIM(@PhoneNumber));
     IF @UserName IS NULL OR @UserName = ''
     BEGIN
@@ -22,7 +22,7 @@ BEGIN TRY
         SELECT 'Password is Required.' AS Message;
         RETURN;
     END
-    IF @Email_Id IS NULL OR @Email_Id = ''
+    IF @EmailId IS NULL OR @EmailId = ''
     BEGIN
         SELECT 'Email is Required.' AS Message;
         RETURN;
@@ -67,25 +67,25 @@ BEGIN TRY
         SELECT 'Password Must Contain At Least One Special Character.' AS Message;
         RETURN;
     END
-    IF @Email_Id NOT LIKE '%_@_%._%'
-       OR @Email_Id LIKE '% %'
+    IF @EmailId NOT LIKE '%_@_%._%'
+       OR @EmailId LIKE '% %'
     BEGIN
         SELECT 'Invalid Email Format.' AS Message;
         RETURN;
     END
-    IF @Email_Id LIKE '%@%@%'
+    IF @EmailId LIKE '%@%@%'
     BEGIN
         SELECT 'Email Cannot Contain Multiple @ Symbols.' AS Message;
         RETURN;
     END
 
-    IF @Email_Id LIKE '%..%'
+    IF @EmailId LIKE '%..%'
     BEGIN
         SELECT 'Email Cannot Contain Consecutive Dots.' AS Message;
         RETURN;
     END
-    IF LEFT(@Email_Id,1)='.'
-       OR RIGHT(@Email_Id,1)='.'
+    IF LEFT(@EmailId,1)='.'
+       OR RIGHT(@EmailId,1)='.'
     BEGIN
         SELECT 'Email Cannot Start Or End With Dot.' AS Message;
         RETURN;
@@ -109,7 +109,7 @@ BEGIN TRY
     (
         SELECT 1
         FROM tblSuperAdmin
-        WHERE LOWER(Email_Id) = LOWER(@Email_Id)
+        WHERE LOWER(EmailId) = LOWER(@EmailId)
     )
     BEGIN
         SELECT 'Email Already Exists.' AS Message;
@@ -129,7 +129,7 @@ BEGIN TRY
     (
         UserName,
         PasswordHash,
-        Email_Id,
+        EmailId,
         PhoneNumber,
         LastLogin,
         IsActive
@@ -138,7 +138,7 @@ BEGIN TRY
     (
         @UserName,
         @PasswordHash,
-        @Email_Id,
+        @EmailId,
         @PhoneNumber,
         NULL,
         0
