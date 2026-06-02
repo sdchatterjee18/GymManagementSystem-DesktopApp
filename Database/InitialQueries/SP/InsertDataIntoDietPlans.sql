@@ -1,12 +1,7 @@
-
-
-
-
-
-CREATE PROC spInsertDataIntoDietPlanTable
+CREATE PROC spInsertDataIntoDietPlans
 (
     @CaloriesPerDay INT,
-    @DietPlanDocument VARCHAR(MAX),
+    @DietPlanDocument VARBINARY(MAX),
     @ConditionStatus VARCHAR(MAX)
 )
 AS
@@ -15,7 +10,6 @@ BEGIN
 
     BEGIN TRY
 
-        SET @DietPlanDocument = LTRIM(RTRIM(ISNULL(@DietPlanDocument, '')));
         SET @ConditionStatus = LTRIM(RTRIM(ISNULL(@ConditionStatus, '')));
 
         IF @CaloriesPerDay IS NULL OR @CaloriesPerDay <= 0
