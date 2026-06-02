@@ -1,9 +1,7 @@
-
-
-CREATE PROC spInsertDataIntoWorkoutPlansTable
+ALTER PROC spInsertDataIntoWorkoutPlansTable
 (
     @WorkoutName VARCHAR(100),
-    @Description VARCHAR(MAX)
+    @Description VARCHAR(MAX) = NULL
 )
 AS
 BEGIN
@@ -13,7 +11,9 @@ BEGIN
     BEGIN TRY
 
         SET @WorkoutName = LTRIM(RTRIM(ISNULL(@WorkoutName, '')));
-        SET @Description = LTRIM(RTRIM(ISNULL(@Description, '')));
+
+        IF @Description IS NOT NULL
+            SET @Description = LTRIM(RTRIM(@Description));
 
         IF @WorkoutName = ''
         BEGIN
@@ -40,7 +40,7 @@ BEGIN
         VALUES
         (
             @WorkoutName,
-            @Description
+            NULLIF(@Description, '')
         );
 
         SELECT 'Workout Plan Inserted Successfully.' AS Message;
