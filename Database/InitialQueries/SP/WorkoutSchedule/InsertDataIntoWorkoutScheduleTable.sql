@@ -8,15 +8,17 @@ BEGIN
 
     BEGIN TRY
 
+        SET @WorkoutPlanId = LTRIM(RTRIM(ISNULL(@WorkoutPlanId, '')));
+        SET @ExerciseId= LTRIM(RTRIM(ISNULL(@ExerciseId, '')));
         SET @WorkoutDay = LTRIM(RTRIM(ISNULL(@WorkoutDay, '')));
 
-        IF @WorkoutPlanId IS NULL OR @WorkoutPlanId = 0
+        IF @WorkoutPlanId = ''
         BEGIN
             SELECT 'Workout Plan Id is Required.' AS Message;
             RETURN;
         END;
 
-        IF @ExerciseId IS NULL OR @ExerciseId = 0
+        IF @ExerciseId = ''
         BEGIN
             SELECT 'Exercise Id is Required.' AS Message;
             RETURN;
