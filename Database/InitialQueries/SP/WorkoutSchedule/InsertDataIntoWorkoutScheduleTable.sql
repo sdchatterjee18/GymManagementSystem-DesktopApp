@@ -8,19 +8,29 @@ BEGIN
 
     BEGIN TRY
 
-        SET @WorkoutPlanId = LTRIM(RTRIM(ISNULL(@WorkoutPlanId, '')));
-        SET @ExerciseId= LTRIM(RTRIM(ISNULL(@ExerciseId, '')));
         SET @WorkoutDay = LTRIM(RTRIM(ISNULL(@WorkoutDay, '')));
 
-        IF @WorkoutPlanId = ''
+        IF @WorkoutPlanId IS NULL OR @WorkoutPlanId <= 0
         BEGIN
-            SELECT 'Workout Plan Id is Required.' AS Message;
+            SELECT 'Workout Plan Id is Required and must be a positive integer.' AS Message;
             RETURN;
         END;
 
-        IF @ExerciseId = ''
+        IF NOT EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutPlanId = @WorkoutPlanId)
         BEGIN
-            SELECT 'Exercise Id is Required.' AS Message;
+            SELECT 'Workout Plan Id does not exist in tblWorkoutPlans.' AS Message;
+            RETURN;
+        END;
+
+        IF @ExerciseId IS NULL OR @ExerciseId <= 0
+        BEGIN
+            SELECT 'Exercise Id is Required and must be a positive integer.' AS Message;
+            RETURN;
+        END;
+
+        IF NOT EXISTS (SELECT 1 FROM tblExercises WHERE ExerciseId = @ExerciseId)
+        BEGIN
+            SELECT 'Exercise Id does not exist in tblExercises.' AS Message;
             RETURN;
         END;
 
@@ -30,11 +40,17 @@ BEGIN
             RETURN;
         END;
 
+        IF @WorkoutDay NOT IN ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+        BEGIN
+            SELECT 'Workout Day must be one of: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.' AS Message;
+            RETURN;
+        END;
+
         IF EXISTS (
             SELECT 1 FROM tblWorkoutSchedule
-            WHERE WorkoutPlanId = @WorkoutPlanId 
-            AND ExerciseId = @ExerciseId 
-            AND WorkoutDay = @WorkoutDay
+            WHERE WorkoutPlanId = @WorkoutPlanId
+            AND   ExerciseId    = @ExerciseId
+            AND   WorkoutDay    = @WorkoutDay
         )
         BEGIN
             SELECT 'Workout Already Scheduled.' AS Message;
