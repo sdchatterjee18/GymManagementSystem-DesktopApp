@@ -82,7 +82,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | GenderId | INT | FOREIGN KEY | ❌ No | References member Gender from gender table |
 | DOB | DATE | - | ❌ No | Member's date of birth. |
 | PhoneNo | VARCHAR(20) | UNIQUE | ❌ No | Contact number of the member. |
-| Email_Id | VARCHAR(150) | UNIQUE | ✅ Yes | Email address of the member. |
+| EmailId | VARCHAR(150) | UNIQUE | ✅ Yes | Email address of the member. |
 | City | VARCHAR(100) | - | ❌ No | City of residence. |
 | District | VARCHAR(100) | - | ❌ No | District of residence. |
 | State | VARCHAR(100) | - | ❌ No | State of residence. |
