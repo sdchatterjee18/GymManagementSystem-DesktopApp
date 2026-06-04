@@ -5,7 +5,7 @@ CREATE PROC spInsertDataIntoMemberTable
     @LastName VARCHAR(50),
     @GenderId INT,
     @PhoneNo VARCHAR(20),
-    @Email_Id VARCHAR(150) = NULL,
+    @EmailId VARCHAR(150) = NULL,
     @City VARCHAR(100),
     @District VARCHAR(100),
     @State VARCHAR(100),
@@ -26,8 +26,8 @@ BEGIN TRY
     IF @MiddleName IS NOT NULL
         SET @MiddleName = LTRIM(RTRIM(@MiddleName))
 
-    IF @Email_Id IS NOT NULL
-        SET @Email_Id = LTRIM(RTRIM(@Email_Id))
+    IF @EmailId IS NOT NULL
+        SET @EmailId = LTRIM(RTRIM(@EmailId))
 
     IF @EmergencyContact IS NOT NULL
         SET @EmergencyContact = LTRIM(RTRIM(@EmergencyContact))
@@ -129,11 +129,11 @@ BEGIN TRY
     END
 
 
-    IF @Email_Id IS NOT NULL
-       AND @Email_Id <> ''
+    IF @EmailId IS NOT NULL
+       AND @EmailId <> ''
     BEGIN
-        IF @Email_Id NOT LIKE '%_@_%._%'
-           OR @Email_Id LIKE '% %'
+        IF @EmailId NOT LIKE '%_@_%._%'
+           OR @EmailId LIKE '% %'
         BEGIN
             SELECT 'Invalid Email Format.' AS Message
             RETURN
@@ -143,7 +143,7 @@ BEGIN TRY
         (
             SELECT 1
             FROM tblMember
-            WHERE LOWER(Email_Id) = LOWER(@Email_Id)
+            WHERE LOWER(EmailId) = LOWER(@EmailId)
         )
         BEGIN
             SELECT 'Email Id Already Exists.' AS Message
@@ -183,7 +183,7 @@ BEGIN TRY
         LastName,
         GenderId,
         PhoneNo,
-        Email_Id,
+        EmailId,
         City,
         District,
         State,
@@ -199,7 +199,7 @@ BEGIN TRY
         @LastName,
         @GenderId,
         @PhoneNo,
-        @Email_Id,
+        @EmailId,
         @City,
         @District,
         @State,
