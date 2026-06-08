@@ -16,7 +16,7 @@ BEGIN
                 s.PaymentDate,
                 s.PaymentMethod,
                 s.Amount,
-                m.Email_Id,
+                m.EmailId,
                 mp.MembershipPlanName,
                 ms.StartDate,
                 ms.ExpiryDate,
