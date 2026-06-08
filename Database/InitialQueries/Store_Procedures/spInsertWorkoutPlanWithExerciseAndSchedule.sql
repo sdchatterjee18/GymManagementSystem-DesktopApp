@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_InsertWorkoutPlanWithExerciseAndSchedule
+CREATE PROCEDURE spInsertWorkoutPlanWithExerciseAndSchedule
     @WorkoutName    VARCHAR(100),
     @Description    VARCHAR(MAX) = NULL,
 
