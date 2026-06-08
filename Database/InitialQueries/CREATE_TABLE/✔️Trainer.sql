@@ -5,7 +5,6 @@ CREATE TABLE tblTrainer
 	TrainerType VARCHAR(100) NOT NULL,
 	Specialization VARCHAR(200),
 	JoiningDate DATE DEFAULT(GETDATE()) NOT NULL,
-	IsActive BIT DEFAULT(1) NOT NULL,
 
 	CONSTRAINT FK_tblTrainer_EmployeeIdtblEmployee
 	FOREIGN KEY(EmployeeId)
