@@ -9,10 +9,13 @@ CREATE TABLE tblEmployee
     EmailId VARCHAR(150) UNIQUE NOT NULL,
     JoiningDate DATE NOT NULL DEFAULT(GETDATE()),
     IsActive BIT NOT NULL DEFAULT(1),
-    RoleName VARCHAR(100) NOT NULL,
+    RoleId INT NOT NULL,
     BankAccountNo VARCHAR(50) UNIQUE NOT NULL,
     CONSTRAINT FK_tblEmployee_GenderIdtblGender
         FOREIGN KEY (GenderId)
-        REFERENCES tblGender(GenderId)
+        REFERENCES tblGender(GenderId),
+   CONSTRAINT FK_tblEmployee_RoleIdtblEmployeeRoleType
+       FOREIGN KEY (RoleId)
+	   REFERENCES tblEmployeeRoleType(RoleId)
 );
 
