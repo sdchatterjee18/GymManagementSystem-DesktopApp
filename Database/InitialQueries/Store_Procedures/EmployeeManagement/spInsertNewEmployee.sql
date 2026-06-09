@@ -6,8 +6,9 @@ CREATE PROC spInsertEmployee
     @GenderId INT,
     @PhoneNo VARCHAR(20),
     @EmailId VARCHAR(150),
-    @RoleName VARCHAR(100),
     @BankAccountNo VARCHAR(50),
+
+    @RoleId INT,
 
     @Amount DECIMAL(10,2),
 
@@ -15,7 +16,9 @@ CREATE PROC spInsertEmployee
     @PasswordHash VARCHAR(255) = NULL,
 
     @TrainerType VARCHAR(100) = NULL,
-    @Specialization VARCHAR(200) = NULL
+    @Specialization VARCHAR(200) = NULL,
+
+    @Document VARBINARY(MAX) = NULL
 )
 AS
 BEGIN
@@ -25,7 +28,6 @@ BEGIN
     SET @LastName = LTRIM(RTRIM(@LastName))
     SET @PhoneNo = LTRIM(RTRIM(@PhoneNo))
     SET @EmailId = LTRIM(RTRIM(@EmailId))
-    SET @RoleName = LTRIM(RTRIM(@RoleName))
     SET @BankAccountNo = LTRIM(RTRIM(@BankAccountNo))
 
     IF @MiddleName IS NOT NULL
@@ -98,12 +100,6 @@ BEGIN
         RETURN
     END
 
-    IF @RoleName IS NULL OR @RoleName = ''
-    BEGIN
-        SELECT 'Role Name is Required.' AS Message
-        RETURN
-    END
-
     IF @BankAccountNo IS NULL OR @BankAccountNo = ''
     BEGIN
         SELECT 'Bank Account Number is Required.' AS Message
@@ -170,6 +166,8 @@ BEGIN
             SELECT 'No Active Super Admin Found.' AS Message
             RETURN
         END
+    DECLARE @RoleName VARCHAR(MAX)
+    SELECT @RoleName=Role FROM tblEmployeeRoleType WHERE RoleId=@RoleId
 
     IF @RoleName = 'Admin'
     BEGIN
@@ -198,6 +196,8 @@ BEGIN
         END
 
     END
+
+    
 
     IF @RoleName = 'Trainer'
     BEGIN
@@ -228,7 +228,7 @@ BEGIN
             GenderId,
             PhoneNo,
             EmailId,
-            RoleName,
+            RoleId,
             BankAccountNo
         )
         VALUES
@@ -239,7 +239,7 @@ BEGIN
             @GenderId,
             @PhoneNo,
             @EmailId,
-            @RoleName,
+            @RoleId,
             @BankAccountNo
         )
 
@@ -298,24 +298,36 @@ BEGIN
 
             SET @TrainerId = SCOPE_IDENTITY()
 
-            INSERT INTO tblTrainerShift
-            (
+            INSERT INTO tblCertificateDocument
+            ( 
                 TrainerId,
-                ShiftId,
-                IsActive
+                Document
             )
-            SELECT
+            VALUES
+            ( 
                 @TrainerId,
-                ShiftId,
-                0
-            FROM tblShift
-
+                @Document
+            )
+            IF @TrainerType = 'Personal'
+            BEGIN
+               INSERT INTO tblTrainerShift
+               (
+                   TrainerId,
+                   ShiftId,
+                   IsActive
+               )
+               SELECT
+                   @TrainerId,
+                   ShiftId,
+                   0
+               FROM tblShift
+            END
         END
 
         COMMIT TRANSACTION
 
         SELECT
-            'Employee Added Successfully.' AS Message,
+            'Employee Added Successfully.' AS Message
 
     END TRY
 
@@ -331,4 +343,3 @@ BEGIN
     END CATCH
 
 END
-GO
