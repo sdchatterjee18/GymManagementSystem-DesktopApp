@@ -1,6 +1,6 @@
 CREATE PROC spRegisterNewMember
 (
-    -- tblMember
+    -- Member
     @FirstName VARCHAR(50),
     @MiddleName VARCHAR(50) = NULL,
     @LastName VARCHAR(50),
@@ -12,29 +12,31 @@ CREATE PROC spRegisterNewMember
     @State VARCHAR(100),
     @EmergencyContact VARCHAR(20) = NULL,
     @ProfilePhoto VARBINARY(MAX) = NULL,
-	@UpdatedAt DATETIME = NULL,
+    @UpdatedAt DATETIME = NULL,
 
-    -- tblMembershipSubscription
+    -- Subscription
     @MembershipPlanId INT,
     @StartDate DATE,
     @ExpiryDate DATE,
 
-    -- tblMemberShift
+    -- Shift
     @ShiftId INT,
 
-    -- tblMemberDietAssignment
-    @DietPlanId INT
+    -- Diet
+    @DietPlanId INT,
+
+    -- Locker
+    @NeedLocker BIT = 0
 )
 AS
 BEGIN
 
-SET NOCOUNT ON;
-SET XACT_ABORT ON;
+
 
 BEGIN TRY
 
     ------------------------------------------------
-    -- VALIDATIONS
+    -- VALIDATION
     ------------------------------------------------
 
     IF LTRIM(RTRIM(@FirstName)) = ''
@@ -46,18 +48,6 @@ BEGIN TRY
     IF LTRIM(RTRIM(@LastName)) = ''
     BEGIN
         SELECT 'Last Name Is Required.' AS Message;
-        RETURN;
-    END
-
-    IF @GenderId IS NULL
-    BEGIN
-        SELECT 'Gender Id Is Required.' AS Message;
-        RETURN;
-    END
-
-    IF @PhoneNo IS NULL OR LTRIM(RTRIM(@PhoneNo)) = ''
-    BEGIN
-        SELECT 'Phone Number Is Required.' AS Message;
         RETURN;
     END
 
@@ -95,39 +85,6 @@ BEGIN TRY
         RETURN;
     END
 
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblMembershipPlans
-        WHERE MembershipPlanId = @MembershipPlanId
-    )
-    BEGIN
-        SELECT 'Invalid Membership Plan Id.' AS Message;
-        RETURN;
-    END
-
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblShift
-        WHERE ShiftId = @ShiftId
-    )
-    BEGIN
-        SELECT 'Invalid Shift Id.' AS Message;
-        RETURN;
-    END
-
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblDietPlans
-        WHERE DietPlanId = @DietPlanId
-    )
-    BEGIN
-        SELECT 'Invalid Diet Plan Id.' AS Message;
-        RETURN;
-    END
-
     IF @StartDate > @ExpiryDate
     BEGIN
         SELECT 'Expiry Date Must Be Greater Than Start Date.' AS Message;
@@ -135,13 +92,13 @@ BEGIN TRY
     END
 
     ------------------------------------------------
-    -- TRANSACTION START
+    -- START TRANSACTION
     ------------------------------------------------
 
     BEGIN TRANSACTION;
 
     ------------------------------------------------
-    -- INSERT MEMBER
+    -- MEMBER INSERT
     ------------------------------------------------
 
     INSERT INTO tblMember
@@ -157,7 +114,7 @@ BEGIN TRY
         State,
         EmergencyContact,
         ProfilePhoto,
-		UpdatedAt
+        UpdatedAt
     )
     VALUES
     (
@@ -172,15 +129,17 @@ BEGIN TRY
         @State,
         @EmergencyContact,
         @ProfilePhoto,
-		@UpdatedAt
+        @UpdatedAt
     );
 
     DECLARE @MemberId INT;
+    DECLARE @LockerId INT = NULL;
+    DECLARE @Message VARCHAR(300);
 
     SET @MemberId = SCOPE_IDENTITY();
 
     ------------------------------------------------
-    -- INSERT SUBSCRIPTION
+    -- SUBSCRIPTION
     ------------------------------------------------
 
     INSERT INTO tblMembershipSubscription
@@ -199,7 +158,7 @@ BEGIN TRY
     );
 
     ------------------------------------------------
-    -- INSERT SHIFT
+    -- SHIFT
     ------------------------------------------------
 
     INSERT INTO tblMemberShift
@@ -214,7 +173,7 @@ BEGIN TRY
     );
 
     ------------------------------------------------
-    -- INSERT DIET PLAN
+    -- DIET
     ------------------------------------------------
 
     INSERT INTO tblMemberDietAssignment
@@ -229,14 +188,67 @@ BEGIN TRY
     );
 
     ------------------------------------------------
+    -- LOCKER ALLOCATION
+    ------------------------------------------------
+
+    IF @NeedLocker = 1
+    BEGIN
+
+        SELECT TOP 1
+            @LockerId = LockerId
+        FROM tblLocker
+        WHERE LockerStatus = 'Available'
+        ORDER BY LockerId;
+
+        IF @LockerId IS NOT NULL
+        BEGIN
+
+            INSERT INTO tblLockerAllocation
+            (
+                LockerId,
+                MemberId
+            )
+            VALUES
+            (
+                @LockerId,
+                @MemberId
+            );
+
+            UPDATE tblLocker
+            SET LockerStatus = 'Occupied'
+            WHERE LockerId = @LockerId;
+
+            SET @Message =
+            'Member Registered Successfully. Locker Allocated.';
+
+        END
+        ELSE
+        BEGIN
+
+            SET @Message =
+            'Member Registered Successfully. No Locker Available. Added To Waiting List.';
+
+        END
+
+    END
+    ELSE
+    BEGIN
+
+        SET @Message =
+        'Member Registered Successfully. No Locker Requested.';
+
+    END
+
+    ------------------------------------------------
     -- COMMIT
     ------------------------------------------------
 
     COMMIT TRANSACTION;
 
     SELECT
-        'Member Registered Successfully.' AS Message,
-        @MemberId AS MemberId;
+        @Message AS Message,
+        @MemberId AS MemberId,
+        @LockerId AS AllocatedLockerId;
 
 END TRY
 
