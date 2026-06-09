@@ -2,6 +2,8 @@ CREATE PROC spGetSubscriptionHistoryByMemberId
 @MemberId INT
 AS
 BEGIN
+	SET NOCOUNT ON;
+
 	IF @MemberId IS NOT NULL
 		BEGIN
 			SELECT 
