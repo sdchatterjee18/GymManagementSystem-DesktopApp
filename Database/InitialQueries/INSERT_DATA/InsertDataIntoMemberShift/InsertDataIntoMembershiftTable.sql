@@ -1,49 +1,49 @@
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 11,
+    @MemberId = 1,
     @ShiftId = 1,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 12,
+    @MemberId = 2,
     @ShiftId = 2,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 13,
+    @MemberId = 3,
     @ShiftId = 3,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 14,
+    @MemberId = 4,
     @ShiftId = 1,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 15,
+    @MemberId = 5,
     @ShiftId = 2,
     @IsActive = 0;
 
     EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 16,
-    @ShiftId = 1,
-    @IsActive = 1;
-
-EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 17,
-    @ShiftId = 2,
-    @IsActive = 1;
-
-EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 18,
+    @MemberId = 6,
     @ShiftId = 3,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 19,
+    @MemberId = 7,
+    @ShiftId = 2,
+    @IsActive = 1;
+
+EXEC spInsertDataIntoMembershiftTable
+    @MemberId = 8,
+    @ShiftId = 3,
+    @IsActive = 1;
+
+EXEC spInsertDataIntoMembershiftTable
+    @MemberId = 9,
     @ShiftId = 1,
     @IsActive = 1;
 
 EXEC spInsertDataIntoMembershiftTable
-    @MemberId = 20,
+    @MemberId = 10,
     @ShiftId = 2,
     @IsActive = 0;
