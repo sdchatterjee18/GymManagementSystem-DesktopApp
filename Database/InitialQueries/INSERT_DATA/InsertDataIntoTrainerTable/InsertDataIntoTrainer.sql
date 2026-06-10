@@ -6,24 +6,24 @@ EXEC spInsertDataIntoTrainerTable
 
 EXEC spInsertDataIntoTrainerTable
     @EmployeeId = 3,
-    @TrainerType = 'Yoga Trainer',
+    @TrainerType = 'Personal Trainer',
     @Specialization = 'Yoga',
     @JoiningDate = '2026-06-10';
 
 EXEC spInsertDataIntoTrainerTable
     @EmployeeId = 4,
-    @TrainerType = 'Cardio Trainer',
+    @TrainerType = 'Genaral Trainer',
     @Specialization = 'Cardio Fitness',
     @JoiningDate = '2026-06-10';
 
 EXEC spInsertDataIntoTrainerTable
     @EmployeeId = 5,
-    @TrainerType = 'Strength Trainer',
+    @TrainerType = 'Personal Trainer',
     @Specialization = 'Muscle Building',
     @JoiningDate = '2026-06-10';
 
 EXEC spInsertDataIntoTrainerTable
     @EmployeeId = 6,
-    @TrainerType = 'CrossFit Trainer',
+    @TrainerType = 'Genaral Trainer',
     @Specialization = 'CrossFit',
     @JoiningDate = '2026-06-10';
