@@ -1,4 +1,4 @@
-CREATE PROC spPaySalaryToEmployeeByEmployeeIdAndPaymentMethod
+CREATE OR ALTER PROC spPaySalaryToEmployeeByEmployeeIdAndPaymentMethod
     @EmployeeId INT = NULL,
     @PaymentMode VARCHAR(50) = NULL
 AS
