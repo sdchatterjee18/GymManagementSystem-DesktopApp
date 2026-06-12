@@ -1,4 +1,4 @@
-CREATE OR ALTER PROC spPaySalaryToEmployeeByEmployeeIdAndPaymentMethod
+CREATE PROC spPaySalaryToEmployeeByEmployeeIdAndPaymentMethod
     @EmployeeId INT = NULL,
     @PaymentMode VARCHAR(50) = NULL
 AS
@@ -14,7 +14,7 @@ BEGIN
             RETURN;
         END
 
-        IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId)
+        IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId AND IsActive = 1)
         BEGIN
             SELECT 
                 0 AS StatusCode, 
@@ -46,7 +46,7 @@ BEGIN
 
         IF @SalaryId IS NULL
         BEGIN
-            SELECT -1 AS StatusCode, 'No salary record found for this employee' AS Message;
+            SELECT 0 AS StatusCode, 'No salary record found for this employee' AS Message;
             RETURN;
         END
 
@@ -59,7 +59,7 @@ BEGIN
         )
         BEGIN
             SELECT 
-                -1 AS StatusCode, 
+                0 AS StatusCode, 
                 'Salary already paid for this month' AS Message;
             RETURN;
         END
