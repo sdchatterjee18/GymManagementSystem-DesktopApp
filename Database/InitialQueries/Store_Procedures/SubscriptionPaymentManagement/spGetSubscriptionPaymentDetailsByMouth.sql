@@ -9,7 +9,9 @@ BEGIN
 			SELECT 
 				s.TransactionId,
 				s.MemberId,
-				CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END,
+				CONCAT(
+                    m.FirstName, 
+                    CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END,
                     ' ', m.LastName
                 ) AS MemberName,
 				s.PaymentDate,
