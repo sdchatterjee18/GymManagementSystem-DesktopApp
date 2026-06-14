@@ -1,1 +1,1 @@
-EXEC spDeactivateTrainerAssignmentAfterMembershipExpiry;
+EXEC spDeactivateTrainerAssignmentAfterMembershipExpiry @MemberId = 5;
