@@ -7,8 +7,8 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @CurrentTrainerId INT,
-            @AssignedDate DATE;
+    DECLARE @CurrentTrainerId INT = NULL,
+            @AssignedDate DATE = NULL;
 
     -- Member Exists
     IF NOT EXISTS
@@ -42,7 +42,8 @@ BEGIN
         SELECT 1
         FROM tblMembershipSubscription
         INNER JOIN tblMembershipPlans
-            ON tblMembershipSubscription.MembershipPlanId = tblMembershipPlans.MembershipPlanId
+            ON tblMembershipSubscription.MembershipPlanId =
+               tblMembershipPlans.MembershipPlanId
         WHERE tblMembershipSubscription.MemberId = @MemberId
           AND tblMembershipSubscription.IsActive = 1
           AND tblMembershipPlans.IsActive = 1
@@ -59,7 +60,8 @@ BEGIN
         @AssignedDate = AssignedDate
     FROM tblMemberTrainerAssignment
     WHERE MemberId = @MemberId
-      AND IsActive = 1;
+      AND IsActive = 1
+    ORDER BY AssignedDate DESC;
 
     -- First Time Assignment
     IF @CurrentTrainerId IS NULL
@@ -107,30 +109,47 @@ BEGIN
         RETURN;
     END
 
-    -- Deactivate Old Assignment
-    UPDATE tblMemberTrainerAssignment
-    SET IsActive = 0
-    WHERE MemberId = @MemberId
-      AND IsActive = 1;
+    BEGIN TRY
 
-    -- Insert New Assignment
-    INSERT INTO tblMemberTrainerAssignment
-    (
-        MemberId,
-        TrainerId,
-        AssignedDate,
-        IsActive
-    )
-    VALUES
-    (
-        @MemberId,
-        @TrainerId,
-        CAST(GETDATE() AS DATE),
-        1
-    );
+        BEGIN TRANSACTION;
 
-    SELECT
-        1 AS Success,
-        'Trainer changed successfully.' AS Message;
+        -- Deactivate Old Assignment
+        UPDATE tblMemberTrainerAssignment
+        SET IsActive = 0
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+
+        -- Insert New Assignment
+        INSERT INTO tblMemberTrainerAssignment
+        (
+            MemberId,
+            TrainerId,
+            AssignedDate,
+            IsActive
+        )
+        VALUES
+        (
+            @MemberId,
+            @TrainerId,
+            CAST(GETDATE() AS DATE),
+            1
+        );
+
+        COMMIT TRANSACTION;
+
+        SELECT
+            1 AS Success,
+            'Trainer changed successfully.' AS Message;
+
+    END TRY
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        THROW;
+
+    END CATCH
+
 END
 GO
