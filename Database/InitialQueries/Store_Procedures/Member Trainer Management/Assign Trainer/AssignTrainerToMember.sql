@@ -10,6 +10,50 @@ BEGIN
     DECLARE @CurrentTrainerId INT,
             @AssignedDate DATE;
 
+    -- Member Exists
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE MemberId = @MemberId
+          AND IsActive = 1
+    )
+    BEGIN
+        RAISERROR('Member does not exist.',16,1);
+        RETURN;
+    END
+
+    -- Trainer Exists
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblTrainer
+        WHERE TrainerId = @TrainerId
+          AND IsActive = 1
+    )
+    BEGIN
+        RAISERROR('Trainer does not exist.',16,1);
+        RETURN;
+    END
+
+    -- Active Membership Exists
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMembershipSubscription
+        INNER JOIN tblMembershipPlans
+            ON tblMembershipSubscription.MembershipPlanId = tblMembershipPlans.MembershipPlanId
+        WHERE tblMembershipSubscription.MemberId = @MemberId
+          AND tblMembershipSubscription.IsActive = 1
+          AND tblMembershipPlans.IsActive = 1
+          AND tblMembershipSubscription.ExpiryDate >= CAST(GETDATE() AS DATE)
+    )
+    BEGIN
+        RAISERROR('Member has no active membership.',16,1);
+        RETURN;
+    END
+
+    -- Current Active Trainer
     SELECT TOP 1
         @CurrentTrainerId = TrainerId,
         @AssignedDate = AssignedDate
@@ -17,7 +61,7 @@ BEGIN
     WHERE MemberId = @MemberId
       AND IsActive = 1;
 
-    -- First Time Registration
+    -- First Time Assignment
     IF @CurrentTrainerId IS NULL
     BEGIN
         INSERT INTO tblMemberTrainerAssignment
@@ -31,7 +75,7 @@ BEGIN
         (
             @MemberId,
             @TrainerId,
-            GETDATE(),
+            CAST(GETDATE() AS DATE),
             1
         );
 
@@ -63,9 +107,30 @@ BEGIN
         RETURN;
     END
 
-    -- Next Month Change Allowed
+    -- Deactivate Old Assignment
+    UPDATE tblMemberTrainerAssignment
+    SET IsActive = 0
+    WHERE MemberId = @MemberId
+      AND IsActive = 1;
+
+    -- Insert New Assignment
+    INSERT INTO tblMemberTrainerAssignment
+    (
+        MemberId,
+        TrainerId,
+        AssignedDate,
+        IsActive
+    )
+    VALUES
+    (
+        @MemberId,
+        @TrainerId,
+        CAST(GETDATE() AS DATE),
+        1
+    );
+
     SELECT
         1 AS Success,
-        'Trainer change is allowed.' AS Message;
+        'Trainer changed successfully.' AS Message;
 END
 GO
