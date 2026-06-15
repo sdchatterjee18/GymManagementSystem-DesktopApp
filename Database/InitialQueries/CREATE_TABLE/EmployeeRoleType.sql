@@ -1,5 +1,0 @@
-CREATE TABLE tblEmployeeRoleType
-(
-    RoleId INT PRIMARY KEY IDENTITY(1,1),
-    Role VARCHAR(100) NOT NULL UNIQUE
-);
