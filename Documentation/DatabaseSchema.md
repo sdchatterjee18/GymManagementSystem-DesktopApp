@@ -220,7 +220,7 @@ The database follows normalization principles to minimize data redundancy, impro
 |------------|------------|------------|------------|------------|
 | DocumentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the Documents. |
 | TrainerId | INT | FOREIGN KEY | ❌ No | References the Trainer for whom the certificate belongs|
-| Document | VARBINARY(MAX) | - | ❌ No | Stores the actual certification Document |
+| Document | VARBINARY(MAX) | - | ✅ YES | Stores the actual certification Document |
 
 </details>
 
