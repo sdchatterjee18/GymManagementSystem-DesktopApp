@@ -476,6 +476,18 @@ The database follows normalization principles to minimize data redundancy, impro
 
 ---
 
+<details>
+<summary><b>🏃 tblRoleType</b></summary>
+
+#### Table: `tblRoleType`
+
+| Column Name | Data Type | Constraint | Null Allowed | Description |
+|------------|------------|------------|------------|------------|
+| RoleId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the Employee roles |
+| Role | Varchar(20) | Unique | ❌ No | Stores the roles of the employees |
+
+</details>
+
 ## 🔗 Foreign Key Relationships
 
 | Parent Table          | Child Table                | Foreign Key       | Relationship Type |
