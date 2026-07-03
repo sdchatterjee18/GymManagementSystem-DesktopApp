@@ -6,7 +6,6 @@ CREATE TABLE tblSubscriptionPayment(
 	PaymentMethod VARCHAR(50) NOT NULL,
 	Amount DECIMAL(10,2) CHECK(Amount >= 0) NOT NULL,
 	FeesType VARCHAR(50) NOT NULL,
-	TransactionId VARCHAR(100)  NOT NULL UNIQUE,
 
 	CONSTRAINT FK_tblSubscriptionPayment_MemberIdtblMember
 		FOREIGN KEY (MemberId) 
