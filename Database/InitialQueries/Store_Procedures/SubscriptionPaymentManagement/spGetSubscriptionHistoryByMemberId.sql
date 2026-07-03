@@ -7,7 +7,7 @@ BEGIN
 	IF @MemberId IS NOT NULL
 		BEGIN
 			SELECT 
-				s.TransactionId,
+				s.PaymentId,
 				s.MemberId,
 				CONCAT(
                     m.FirstName, 

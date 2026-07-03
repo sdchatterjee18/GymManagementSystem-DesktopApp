@@ -7,7 +7,7 @@ BEGIN
 	IF @Month <> '' AND @Month IN ('January', 'February', 'March', 'April', 'May', 'June','July', 'August', 'September', 'October', 'November', 'December')
 		BEGIN
 			SELECT 
-				s.TransactionId,
+				s.PaymentId,
 				s.MemberId,
 				CONCAT(
                     m.FirstName, 
