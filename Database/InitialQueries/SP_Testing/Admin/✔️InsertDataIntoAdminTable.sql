@@ -9,110 +9,138 @@ AS
 BEGIN
 BEGIN TRY
 
-    SET @UserName = LTRIM(RTRIM(@UserName))
-    SET @PasswordHash = LTRIM(RTRIM(@PasswordHash))
+    SET NOCOUNT ON;
 
+    SET @UserName = LTRIM(RTRIM(@UserName));
+    SET @PasswordHash = LTRIM(RTRIM(@PasswordHash));
 
     IF @EmployeeId IS NULL
     BEGIN
-        SELECT 'Employee Id is Required.' AS Message
-        RETURN
+        SELECT 'Employee Id is Required.' AS Message;
+        RETURN;
     END
 
     IF @SuperAdminID IS NULL
     BEGIN
-        SELECT 'Super Admin Id is Required.' AS Message
-        RETURN
+        SELECT 'Super Admin Id is Required.' AS Message;
+        RETURN;
     END
 
     IF @UserName IS NULL OR @UserName = ''
     BEGIN
-        SELECT 'Username is Required.' AS Message
-        RETURN
+        SELECT 'Username is Required.' AS Message;
+        RETURN;
     END
 
     IF @PasswordHash IS NULL OR @PasswordHash = ''
     BEGIN
-        SELECT 'Password is Required.' AS Message
-        RETURN
+        SELECT 'Password is Required.' AS Message;
+        RETURN;
     END
 
-      IF NOT EXISTS
+    IF NOT EXISTS
     (
         SELECT 1
         FROM tblEmployee
         WHERE EmployeeId = @EmployeeId
     )
     BEGIN
-        SELECT 'Invalid Employee Id.' AS Message
-        RETURN
+        SELECT 'Invalid Employee Id.' AS Message;
+        RETURN;
     END
 
-   IF NOT EXISTS
+    IF NOT EXISTS
     (
         SELECT 1
         FROM tblSuperAdmin
         WHERE SuperAdminID = @SuperAdminID
     )
     BEGIN
-        SELECT 'Invalid Super Admin Id.' AS Message
-        RETURN
+        SELECT 'Invalid Super Admin Id.' AS Message;
+        RETURN;
+    END
+
+    -- Check Employee Role
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblEmployee E
+        INNER JOIN tblEmployeeRoleType R
+            ON E.RoleId = R.RoleId
+        WHERE E.EmployeeId = @EmployeeId
+          AND R.Role = 'Admin'
+    )
+    BEGIN
+        SELECT 'Selected Employee is not an Admin.' AS Message;
+        RETURN;
+    END
+
+    -- Employee Already Registered As Admin
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblAdmin
+        WHERE EmployeeId = @EmployeeId
+    )
+    BEGIN
+        SELECT 'This Employee is already registered as Admin.' AS Message;
+        RETURN;
     END
 
     IF LEN(@UserName) < 4
     BEGIN
-        SELECT 'Username Must Be At Least 4 Characters.' AS Message
-        RETURN
+        SELECT 'Username Must Be At Least 4 Characters.' AS Message;
+        RETURN;
     END
 
     IF @UserName LIKE '% %'
     BEGIN
-        SELECT 'Username Cannot Contain Spaces.' AS Message
-        RETURN
+        SELECT 'Username Cannot Contain Spaces.' AS Message;
+        RETURN;
     END
 
     IF @UserName LIKE '%[^A-Za-z0-9_]%'
     BEGIN
-        SELECT 'Username Can Contain Only Letters, Numbers And Underscore.' AS Message
-        RETURN
+        SELECT 'Username Can Contain Only Letters, Numbers And Underscore.' AS Message;
+        RETURN;
     END
 
-   IF EXISTS
+    IF EXISTS
     (
         SELECT 1
         FROM tblAdmin
         WHERE LOWER(UserName) = LOWER(@UserName)
     )
     BEGIN
-        SELECT 'Username Already Exists.' AS Message
-        RETURN
+        SELECT 'Username Already Exists.' AS Message;
+        RETURN;
     END
 
     IF LEN(@PasswordHash) < 8
     BEGIN
-        SELECT 'Password Must Be At Least 8 Characters.' AS Message
-        RETURN
+        SELECT 'Password Must Be At Least 8 Characters.' AS Message;
+        RETURN;
     END
 
     IF @PasswordHash NOT LIKE '%[A-Z]%'
     BEGIN
-        SELECT 'Password Must Contain At Least One Uppercase Letter.' AS Message
-        RETURN
+        SELECT 'Password Must Contain At Least One Uppercase Letter.' AS Message;
+        RETURN;
     END
 
     IF @PasswordHash NOT LIKE '%[a-z]%'
     BEGIN
-        SELECT 'Password Must Contain At Least One Lowercase Letter.' AS Message
-        RETURN
+        SELECT 'Password Must Contain At Least One Lowercase Letter.' AS Message;
+        RETURN;
     END
 
     IF @PasswordHash NOT LIKE '%[0-9]%'
     BEGIN
-        SELECT 'Password Must Contain At Least One Number.' AS Message
-        RETURN
+        SELECT 'Password Must Contain At Least One Number.' AS Message;
+        RETURN;
     END
 
-IF @PasswordHash NOT LIKE '%[^A-Za-z0-9]%'
+    IF @PasswordHash NOT LIKE '%[^A-Za-z0-9]%'
     BEGIN
         SELECT 'Password Must Contain At Least One Special Character.' AS Message;
         RETURN;
@@ -133,9 +161,9 @@ IF @PasswordHash NOT LIKE '%[^A-Za-z0-9]%'
         @UserName,
         @PasswordHash,
         NULL
-    )
+    );
 
-    SELECT 'Admin Inserted Successfully.' AS Message
+    SELECT 'Admin Inserted Successfully.' AS Message;
 
 END TRY
 
@@ -144,8 +172,8 @@ BEGIN CATCH
     SELECT
         ERROR_MESSAGE() AS Message,
         ERROR_LINE() AS ErrorLine,
-        ERROR_PROCEDURE() AS ProcedureName
+        ERROR_PROCEDURE() AS ProcedureName;
 
 END CATCH
-END
+END;
 GO
