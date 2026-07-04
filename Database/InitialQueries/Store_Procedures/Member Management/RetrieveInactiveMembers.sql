@@ -34,7 +34,7 @@ BEGIN
             FROM tblMembershipSubscription
             WHERE MemberId = M.MemberId
         )
-        AND MS.IsActive = 0;
+        AND M.IsActive = 0;
 
     END TRY
 
