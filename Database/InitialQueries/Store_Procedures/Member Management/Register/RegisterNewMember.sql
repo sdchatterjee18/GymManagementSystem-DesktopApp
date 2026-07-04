@@ -12,12 +12,13 @@ CREATE PROC spRegisterNewMember
     @State VARCHAR(100),
     @EmergencyContact VARCHAR(20) = NULL,
     @ProfilePhoto VARBINARY(MAX) = NULL,
-    @UpdatedAt DATETIME = NULL,
 
     -- Subscription
     @MembershipPlanId INT,
-    @StartDate DATE,
-    @ExpiryDate DATE,
+
+	-- Payment
+    @PaymentMethod VARCHAR(50),
+    @FeesType VARCHAR(50),
 
     -- Shift
     @ShiftId INT,
@@ -31,7 +32,14 @@ CREATE PROC spRegisterNewMember
 AS
 BEGIN
 
+    DECLARE @MemberId INT;
+	DECLARE @LockerId INT = NULL;
+	DECLARE @Message VARCHAR(300);
 
+	DECLARE @StartDate DATE;
+	DECLARE @ExpiryDate DATE;
+	DECLARE @DurationInDays INT;
+	DECLARE @Price DECIMAL(10,2);
 
 BEGIN TRY
 
@@ -85,11 +93,51 @@ BEGIN TRY
         RETURN;
     END
 
-    IF @StartDate > @ExpiryDate
-    BEGIN
-        SELECT 'Expiry Date Must Be Greater Than Start Date.' AS Message;
-        RETURN;
-    END
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblMembershipPlans
+		WHERE MembershipPlanId = @MembershipPlanId
+		  AND IsActive = 1
+	)
+	BEGIN
+		SELECT 'Invalid Membership Plan.' AS Message;
+		RETURN;
+	END
+
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblShift
+		WHERE ShiftId=@ShiftId
+	)
+	BEGIN
+		SELECT 'Invalid Shift.' AS Message;
+		RETURN;
+	END
+
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblDietPlans
+		WHERE DietPlanId=@DietPlanId
+	)
+	BEGIN
+		SELECT 'Invalid Diet Plan.' AS Message;
+		RETURN;
+	END
+
+	SELECT
+		@Price = Price,
+		@DurationInDays = DurationInDays
+	FROM tblMembershipPlans
+	WHERE MembershipPlanId = @MembershipPlanId;
+	------------------------------------------------
+    -- START EXPIRE DATE CALCULATION
+    ------------------------------------------------
+
+	SET @StartDate = CAST(GETDATE() AS DATE);
+	SET @ExpiryDate = DATEADD(DAY, @DurationInDays, @StartDate);
 
     ------------------------------------------------
     -- START TRANSACTION
@@ -129,12 +177,9 @@ BEGIN TRY
         @State,
         @EmergencyContact,
         @ProfilePhoto,
-        @UpdatedAt
+        GETDATE()
     );
 
-    DECLARE @MemberId INT;
-    DECLARE @LockerId INT = NULL;
-    DECLARE @Message VARCHAR(300);
 
     SET @MemberId = SCOPE_IDENTITY();
 
@@ -142,20 +187,20 @@ BEGIN TRY
     -- SUBSCRIPTION
     ------------------------------------------------
 
-    INSERT INTO tblMembershipSubscription
-    (
-        MemberId,
-        MembershipPlanId,
-        StartDate,
-        ExpiryDate
-    )
-    VALUES
-    (
-        @MemberId,
-        @MembershipPlanId,
-        @StartDate,
-        @ExpiryDate
-    );
+		INSERT INTO tblMembershipSubscription
+      (
+		MemberId,
+		MembershipPlanId,
+		StartDate,
+		ExpiryDate
+      )
+		VALUES
+		(
+			@MemberId,
+			@MembershipPlanId,
+			@StartDate,
+			@ExpiryDate
+		);
 
     ------------------------------------------------
     -- SHIFT
@@ -171,6 +216,27 @@ BEGIN TRY
         @MemberId,
         @ShiftId
     );
+
+	------------------------------------------------
+    -- SUBCRIPTION PAYMENT
+    ------------------------------------------------
+
+		INSERT INTO tblSubscriptionPayment
+	  (
+		MemberId,
+		MembershipPlanId,
+		PaymentMethod,
+		Amount,
+		FeesType
+	  )
+	  VALUES
+	 (
+		@MemberId,
+		@MembershipPlanId,
+		@PaymentMethod,
+		@Price,
+		@FeesType
+	 );
 
     ------------------------------------------------
     -- DIET
