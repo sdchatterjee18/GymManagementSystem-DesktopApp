@@ -59,6 +59,16 @@ BEGIN TRY
         RETURN;
     END
 
+	IF LTRIM(RTRIM(@PaymentMethod))=''
+	BEGIN
+		SELECT 'Payment Method Required.' AS Message;
+		RETURN;
+	END
+	IF LTRIM(RTRIM(@FeesType)) = ''
+	BEGIN
+		SELECT 'Fees Type Required.' AS Message;
+		RETURN;
+	END
     IF NOT EXISTS
     (
         SELECT 1
@@ -69,7 +79,21 @@ BEGIN TRY
         SELECT 'Invalid Gender Id.' AS Message;
         RETURN;
     END
-
+	IF LTRIM(RTRIM(@PhoneNo)) = ''
+	BEGIN
+		SELECT 'Phone Number Required.' AS Message;
+		RETURN;
+	END
+	IF LEN(@PhoneNo) <> 10
+	BEGIN
+		SELECT 'Phone Number Must Be 10 Digits.' AS Message;
+		RETURN;
+	END
+	IF @PhoneNo LIKE '%[^0-9]%'
+	BEGIN
+		SELECT 'Phone Number Must Contain Only Digits.' AS Message;
+		RETURN;
+	END
     IF EXISTS
     (
         SELECT 1
@@ -80,7 +104,12 @@ BEGIN TRY
         SELECT 'Phone Number Already Exists.' AS Message;
         RETURN;
     END
-
+	IF @EmailId IS NOT NULL
+	AND @EmailId NOT LIKE '%@%.%'
+	BEGIN
+		SELECT 'Invalid Email Format.' AS Message;
+		RETURN;
+	END
     IF @EmailId IS NOT NULL
     AND EXISTS
     (
@@ -115,6 +144,7 @@ BEGIN TRY
 		SELECT 'Invalid Shift.' AS Message;
 		RETURN;
 	END
+
 
 		IF NOT EXISTS
 	(
