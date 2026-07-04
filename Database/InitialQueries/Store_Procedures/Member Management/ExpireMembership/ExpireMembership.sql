@@ -20,7 +20,7 @@ BEGIN
         ---------------------------------------------------------
         UPDATE MTA
         SET MTA.IsActive = 0
-        FROM tblMemberTrainerAssignment MTA
+        FROM tblMemberTrainerAssignment MTA    
         INNER JOIN tblMembershipSubscription MS
             ON MTA.MemberId = MS.MemberId
         WHERE MTA.IsActive = 1

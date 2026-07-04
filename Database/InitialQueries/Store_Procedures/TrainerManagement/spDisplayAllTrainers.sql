@@ -1,0 +1,13 @@
+CREATE PROCEDURE spDisplayAllTrainers
+AS
+BEGIN
+	BEGIN TRY
+		SELECT * FROM tblTrainer;
+	END TRY
+	BEGIN CATCH
+		SELECT 0 AS ERROR,'Fail to display all Trainers' AS MESSAGE;
+		SELECT ERROR_MESSAGE() AS ERROR
+	END CATCH
+END
+
+ 
