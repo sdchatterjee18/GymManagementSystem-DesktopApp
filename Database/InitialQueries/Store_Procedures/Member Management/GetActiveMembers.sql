@@ -1,4 +1,4 @@
-CREATE PROC spGetActiveMembers
+CREATE PROC spRetrieveActiveMembers
 AS
 BEGIN
     SET NOCOUNT ON;
