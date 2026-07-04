@@ -16,7 +16,7 @@ BEGIN
           AND ExpiryDate < CAST(GETDATE() AS DATE);
 
         ---------------------------------------------------------
-        -- Deactivate Trainer Assignment
+        -- Deactivate Member Trainer Assignment
         ---------------------------------------------------------
         UPDATE MTA
         SET MTA.IsActive = 0
@@ -26,6 +26,20 @@ BEGIN
         WHERE MTA.IsActive = 1
           AND MS.IsActive = 0;
 
+        ---------------------------------------------------------
+        -- Deactivate Trainer Shift
+        ---------------------------------------------------------
+        UPDATE TS
+        SET TS.IsActive = 0
+        FROM tblTrainerShift TS
+        INNER JOIN tblMemberTrainerAssignment MTA
+            ON TS.TrainerId = MTA.TrainerId
+        INNER JOIN tblMembershipSubscription MS
+            ON MTA.MemberId = MS.MemberId
+        WHERE TS.IsActive = 1
+          AND MTA.IsActive = 0
+          AND MS.IsActive = 0;
+
         COMMIT TRANSACTION;
 
         SELECT
@@ -33,7 +47,6 @@ BEGIN
             'Expired memberships processed successfully.' AS Message;
 
     END TRY
-
     BEGIN CATCH
 
         IF @@TRANCOUNT > 0
