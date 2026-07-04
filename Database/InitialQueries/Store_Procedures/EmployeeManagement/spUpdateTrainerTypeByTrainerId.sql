@@ -1,4 +1,4 @@
-CREATE PROCEDURE spUpdateTrainerType
+CREATE PROCEDURE spUpdateTrainerTypeByTrainerId
 (
     @TrainerId INT,
     @TrainerType VARCHAR(100)

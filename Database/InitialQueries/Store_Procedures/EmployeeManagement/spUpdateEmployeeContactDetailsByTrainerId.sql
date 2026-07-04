@@ -1,4 +1,4 @@
-CREATE PROCEDURE spUpdateEmployeeContactDetails
+CREATE PROCEDURE spUpdateEmployeeContactDetailsByTrainerId
 (
     @EmployeeId INT,
     @PhoneNo VARCHAR(20),
