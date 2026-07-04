@@ -19,7 +19,12 @@ BEGIN
         M.District + ', ' +
         M.State AS Address,
 
+        M.EmergencyContact,
+
         M.ProfilePhoto,
+
+        M.JoiningDate,
+        M.UpdatedAt,
         M.IsActive AS MemberIsActive,
 
         MP.MembershipPlanName,
@@ -34,7 +39,6 @@ BEGIN
 
         L.LockerNo,
 
-        -- Payment Details
         SP.PaymentDate,
         SP.PaymentMethod,
         SP.Amount,
@@ -73,6 +77,5 @@ BEGIN
         ON M.MemberId = SP.MemberId
 
     ORDER BY M.MemberId;
-
 END;
 GO
