@@ -1,4 +1,4 @@
-CREATE PROC spRetriveRegisterMemberDetails
+CREATE PROC spRetrieveRegisterMemberDetails
 AS
 BEGIN
     SET NOCOUNT ON;
