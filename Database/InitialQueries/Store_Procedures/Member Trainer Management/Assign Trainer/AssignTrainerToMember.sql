@@ -10,7 +10,9 @@ BEGIN
     DECLARE @CurrentTrainerId INT = NULL,
             @AssignedDate DATE = NULL;
 
+    ------------------------------------------------
     -- Member Exists
+    ------------------------------------------------
     IF NOT EXISTS
     (
         SELECT 1
@@ -23,38 +25,41 @@ BEGIN
         RETURN;
     END
 
-    -- Trainer Exists
+    ------------------------------------------------
+    -- Trainer Exists (FIXED USING EMPLOYEE RELATION)
+    ------------------------------------------------
     IF NOT EXISTS
     (
         SELECT 1
-        FROM tblTrainer
-        WHERE TrainerId = @TrainerId
-          AND IsActive = 1
+        FROM tblTrainer T
+        INNER JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        WHERE T.TrainerId = @TrainerId
+          AND E.IsActive = 1
     )
     BEGIN
-        RAISERROR('Trainer does not exist.',16,1);
+        RAISERROR('Trainer does not exist or inactive.',16,1);
         RETURN;
     END
 
-    -- Active Membership Exists
+    ------------------------------------------------
+    -- Active Membership Check
+    ------------------------------------------------
     IF NOT EXISTS
     (
         SELECT 1
-        FROM tblMembershipSubscription
-        INNER JOIN tblMembershipPlans
-            ON tblMembershipSubscription.MembershipPlanId =
-               tblMembershipPlans.MembershipPlanId
-        WHERE tblMembershipSubscription.MemberId = @MemberId
-          AND tblMembershipSubscription.IsActive = 1
-          AND tblMembershipPlans.IsActive = 1
-          AND tblMembershipSubscription.ExpiryDate >= CAST(GETDATE() AS DATE)
+        FROM tblMembershipSubscription MS
+        WHERE MS.MemberId = @MemberId
+          AND MS.ExpiryDate >= CAST(GETDATE() AS DATE)
     )
     BEGIN
         RAISERROR('Member has no active membership.',16,1);
         RETURN;
     END
 
+    ------------------------------------------------
     -- Current Active Trainer
+    ------------------------------------------------
     SELECT TOP 1
         @CurrentTrainerId = TrainerId,
         @AssignedDate = AssignedDate
@@ -63,7 +68,9 @@ BEGIN
       AND IsActive = 1
     ORDER BY AssignedDate DESC;
 
-    -- First Time Assignment
+    ------------------------------------------------
+    -- FIRST TIME ASSIGNMENT
+    ------------------------------------------------
     IF @CurrentTrainerId IS NULL
     BEGIN
         INSERT INTO tblMemberTrainerAssignment
@@ -81,45 +88,40 @@ BEGIN
             1
         );
 
-        SELECT
-            1 AS Success,
-            'Trainer assigned successfully.' AS Message;
-
+        SELECT 1 AS Success, 'Trainer assigned successfully.' AS Message;
         RETURN;
     END
 
-    -- Same Trainer
+    ------------------------------------------------
+    -- SAME TRAINER
+    ------------------------------------------------
     IF @CurrentTrainerId = @TrainerId
     BEGIN
-        SELECT
-            1 AS Success,
-            'Member continues with current trainer.' AS Message;
-
+        SELECT 1 AS Success, 'Already assigned to this trainer.' AS Message;
         RETURN;
     END
 
-    -- Same Month Change Not Allowed
+    ------------------------------------------------
+    -- SAME MONTH RESTRICTION
+    ------------------------------------------------
     IF YEAR(@AssignedDate) = YEAR(GETDATE())
        AND MONTH(@AssignedDate) = MONTH(GETDATE())
     BEGIN
-        SELECT
-            0 AS Success,
-            'Trainer change is allowed only from next month.' AS Message;
-
+        SELECT 0 AS Success, 'Trainer change allowed only from next month.' AS Message;
         RETURN;
     END
 
+    ------------------------------------------------
+    -- CHANGE TRAINER
+    ------------------------------------------------
     BEGIN TRY
-
         BEGIN TRANSACTION;
 
-        -- Deactivate Old Assignment
         UPDATE tblMemberTrainerAssignment
         SET IsActive = 0
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        -- Insert New Assignment
         INSERT INTO tblMemberTrainerAssignment
         (
             MemberId,
@@ -137,18 +139,14 @@ BEGIN
 
         COMMIT TRANSACTION;
 
-        SELECT
-            1 AS Success,
-            'Trainer changed successfully.' AS Message;
+        SELECT 1 AS Success, 'Trainer changed successfully.' AS Message;
 
     END TRY
     BEGIN CATCH
-
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        THROW;
-
+        SELECT ERROR_MESSAGE() AS Message;
     END CATCH
 
 END
