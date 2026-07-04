@@ -1,4 +1,4 @@
-CREATE PROC spAssignTrainerToMember
+CREATE PROC spAssignPersonalTrainerToMember
 (
     @MemberId INT,
     @TrainerId INT
@@ -26,7 +26,7 @@ BEGIN
     END
 
     ------------------------------------------------
-    -- Trainer Exists (FIXED USING EMPLOYEE RELATION)
+    -- Trainer Exists (Employee-based validation)
     ------------------------------------------------
     IF NOT EXISTS
     (
@@ -58,7 +58,7 @@ BEGIN
     END
 
     ------------------------------------------------
-    -- Current Active Trainer
+    -- Current Trainer
     ------------------------------------------------
     SELECT TOP 1
         @CurrentTrainerId = TrainerId,
