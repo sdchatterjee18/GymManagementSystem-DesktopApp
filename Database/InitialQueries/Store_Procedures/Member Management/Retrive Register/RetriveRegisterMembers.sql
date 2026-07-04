@@ -2,46 +2,77 @@ CREATE PROC spRetriveRegisterMemberDetails
 AS
 BEGIN
     SET NOCOUNT ON;
+
     SELECT
-        tblMember.MemberId,
-        tblMember.FirstName + ' ' +
-        ISNULL(tblMember.MiddleName + ' ', '') +
-        tblMember.LastName AS MemberName,
-        tblGender.GenderName AS Gender,
-        tblMember.PhoneNo,
-        tblMember.EmailId,
-        tblMember.City + ', ' +
-        tblMember.District + ', ' +
-        tblMember.State AS Address,
-        tblMember.ProfilePhoto,
-        tblMember.IsActive AS MemberIsActive,
-        tblMembershipPlans.MembershipPlanName,
-        tblMembershipSubscription.StartDate,
-        tblMembershipSubscription.ExpiryDate,
-        tblShift.ShiftName,
-        tblDietPlans.ConditionStatus,
-        tblDietPlans.DietPlanDocument,
-        tblLocker.LockerNo
-    FROM tblMember
-    LEFT JOIN tblGender
-        ON tblMember.GenderId = tblGender.GenderId
-    LEFT JOIN tblMembershipSubscription
-        ON tblMember.MemberId = tblMembershipSubscription.MemberId
-    LEFT JOIN tblMembershipPlans
-        ON tblMembershipSubscription.MembershipPlanId = tblMembershipPlans.MembershipPlanId
-    LEFT JOIN tblMemberShift
-        ON tblMember.MemberId = tblMemberShift.MemberId
-    LEFT JOIN tblShift
-        ON tblMemberShift.ShiftId = tblShift.ShiftId
-    LEFT JOIN tblMemberDietAssignment
-        ON tblMember.MemberId = tblMemberDietAssignment.MemberId
-    LEFT JOIN tblDietPlans
-        ON tblMemberDietAssignment.DietPlanId = tblDietPlans.DietPlanId
-    LEFT JOIN tblLockerAllocation
-        ON tblMember.MemberId = tblLockerAllocation.MemberId
-    LEFT JOIN tblLocker
-        ON tblLockerAllocation.LockerId = tblLocker.LockerId
-    ORDER BY tblMember.MemberId;
+        M.MemberId,
+
+        M.FirstName + ' ' +
+        ISNULL(M.MiddleName + ' ', '') +
+        M.LastName AS MemberName,
+
+        G.GenderName AS Gender,
+
+        M.PhoneNo,
+        M.EmailId,
+
+        M.City + ', ' +
+        M.District + ', ' +
+        M.State AS Address,
+
+        M.ProfilePhoto,
+        M.IsActive AS MemberIsActive,
+
+        MP.MembershipPlanName,
+
+        MS.StartDate,
+        MS.ExpiryDate,
+
+        S.ShiftName,
+
+        DP.ConditionStatus,
+        DP.DietPlanDocument,
+
+        L.LockerNo,
+
+        -- Payment Details
+        SP.PaymentDate,
+        SP.PaymentMethod,
+        SP.Amount,
+        SP.FeesType
+
+    FROM tblMember M
+
+    LEFT JOIN tblGender G
+        ON M.GenderId = G.GenderId
+
+    LEFT JOIN tblMembershipSubscription MS
+        ON M.MemberId = MS.MemberId
+
+    LEFT JOIN tblMembershipPlans MP
+        ON MS.MembershipPlanId = MP.MembershipPlanId
+
+    LEFT JOIN tblMemberShift MSH
+        ON M.MemberId = MSH.MemberId
+
+    LEFT JOIN tblShift S
+        ON MSH.ShiftId = S.ShiftId
+
+    LEFT JOIN tblMemberDietAssignment MDA
+        ON M.MemberId = MDA.MemberId
+
+    LEFT JOIN tblDietPlans DP
+        ON MDA.DietPlanId = DP.DietPlanId
+
+    LEFT JOIN tblLockerAllocation LA
+        ON M.MemberId = LA.MemberId
+
+    LEFT JOIN tblLocker L
+        ON LA.LockerId = L.LockerId
+
+    LEFT JOIN tblSubscriptionPayment SP
+        ON M.MemberId = SP.MemberId
+
+    ORDER BY M.MemberId;
+
 END;
 GO
-
