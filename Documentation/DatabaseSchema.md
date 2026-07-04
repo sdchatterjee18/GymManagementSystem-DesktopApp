@@ -288,7 +288,6 @@ The database follows normalization principles to minimize data redundancy, impro
 | PaymentMethod | VARCHAR(50) | - | ❌ No | Method used for payment (Cash, UPI, Card, Bank Transfer, etc.). |
 | Amount | DECIMAL(10,2) | CHECK(Amount >= 0) | ❌ No | Total amount paid by the member. |
 | FeesType | VARCHAR(50) | - | ❌ No | Type of fee being paid (Registration, Renewal, Subscription, etc.). |
-| TransactionId | VARCHAR(100) | UNIQUE | ✅ Yes | External transaction reference number for digital payments. |
 
 </details>
 
