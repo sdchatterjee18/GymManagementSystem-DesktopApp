@@ -1,10 +1,10 @@
-EXEC spInsertDataIntoEmployeeTable
+EXEC   spInsertDataIntoEmployeeTable
 @FirstName='Amit',
 @MiddleName='Kumar',
 @LastName='Sharma',
 @GenderId=1,
-@PhoneNo='9876543210',
-@EmailId='amit@gmail.com',
+@PhoneNo='9816543210',
+@EmailId='amit1@gmail.com',
 @RoleId=1,
 @BankAccountNo='100000000001';
 
@@ -14,7 +14,7 @@ EXEC spInsertDataIntoEmployeeTable
 @LastName='Das',
 @GenderId=1,
 @PhoneNo='9876543211',
-@EmailId='rahul@gmail.com',
+@EmailId='rahul1@gmail.com',
 @RoleId=2,
 @BankAccountNo='100000000002';
 
@@ -91,11 +91,10 @@ EXEC spInsertDataIntoEmployeeTable
 EXEC spInsertDataIntoEmployeeTable
 @FirstName='Rina',
 @MiddleName='',
-@LastName='Saha',
+@LastName='Sahu',
 @GenderId=2,
-@PhoneNo='9876543219',
-@EmailId='rina@gmail.com',
+@PhoneNo='9876443219',
+@EmailId='rinasahu@gmail.com',
 @RoleId=3,
-@BankAccountNo='100000000010';
+@BankAccountNo='1000000010';
 
-SELECT *FROM tblEmployee
