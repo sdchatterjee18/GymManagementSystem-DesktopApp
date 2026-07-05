@@ -1,8 +1,8 @@
-
 CREATE PROC spInsertDataIntoMembershipSubscriptionTableWhileReneweal
-( 
+(
     @MemberId INT,
-    @MembershipPlanId INT
+    @MembershipPlanId INT,
+    @PaymentMethod VARCHAR(50)
 )
 AS
 BEGIN
@@ -16,41 +16,47 @@ BEGIN
         DECLARE @StartDate DATE;
         DECLARE @ExpiryDate DATE;
         DECLARE @LastExpiryDate DATE;
+        DECLARE @Amount DECIMAL(10,2);
 
+        -- Check whether member exists and is active
         IF NOT EXISTS
         (
             SELECT 1
             FROM tblMember
             WHERE MemberId = @MemberId
-            AND IsActive = 1
+              AND IsActive = 1
         )
         BEGIN
-            RAISERROR('', 16, 1);
-            SELECT 'Member does not exist or is inactive.' AS Message
-            RETURN
+            RAISERROR('Member does not exist or is inactive.',16,1);
         END
 
+        -- Check whether membership plan exists and is active
         IF NOT EXISTS
         (
             SELECT 1
             FROM tblMembershipPlans
             WHERE MembershipPlanId = @MembershipPlanId
-            AND IsActive = 1
+              AND IsActive = 1
         )
         BEGIN
-            SELECT 'Membership plan does not exist or is inactive.' AS Message
-            RETURN
+            RAISERROR('Membership plan does not exist or is inactive.',16,1);
         END
 
-        SELECT @DurationInDays = DurationInDays
+        -- Get plan details
+        SELECT
+            @DurationInDays = DurationInDays,
+            @Amount = Amount
         FROM tblMembershipPlans
         WHERE MembershipPlanId = @MembershipPlanId;
 
+        -- Get last expiry date
         SELECT @LastExpiryDate = MAX(ExpiryDate)
         FROM tblMembershipSubscription
         WHERE MemberId = @MemberId;
 
-        IF @LastExpiryDate IS NOT NULL AND @LastExpiryDate >= CAST(GETDATE() AS DATE)
+        -- Decide start date
+        IF @LastExpiryDate IS NOT NULL
+           AND @LastExpiryDate >= CAST(GETDATE() AS DATE)
         BEGIN
             SET @StartDate = DATEADD(DAY, 1, @LastExpiryDate);
         END
@@ -59,8 +65,10 @@ BEGIN
             SET @StartDate = CAST(GETDATE() AS DATE);
         END
 
+        -- Calculate expiry date
         SET @ExpiryDate = DATEADD(DAY, @DurationInDays - 1, @StartDate);
 
+        -- Insert membership subscription
         INSERT INTO tblMembershipSubscription
         (
             MemberId,
@@ -78,9 +86,27 @@ BEGIN
             1
         );
 
+        -- Insert payment record
+        INSERT INTO tblSubscriptionPayment
+        (
+            MemberId,
+            MembershipPlanId,
+            PaymentMethod,
+            Amount,
+            FeesType
+        )
+        VALUES
+        (
+            @MemberId,
+            @MembershipPlanId,
+            @PaymentMethod,
+            @Amount,
+            'Renewal'
+        );
+
         COMMIT TRANSACTION;
 
-        SELECT 'Membership subscription created successfully.' AS Message
+        SELECT 'Membership renewed successfully.' AS Message;
 
     END TRY
 
@@ -89,6 +115,7 @@ BEGIN
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        SELECT ERROR_MESSAGE() AS Message
+        SELECT ERROR_MESSAGE() AS Message;
+
     END CATCH
-END
+END;
