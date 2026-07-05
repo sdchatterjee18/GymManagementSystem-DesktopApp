@@ -35,11 +35,12 @@ BEGIN
     DECLARE @MemberId INT;
 	DECLARE @LockerId INT = NULL;
 	DECLARE @Message VARCHAR(300);
-
 	DECLARE @StartDate DATE;
 	DECLARE @ExpiryDate DATE;
 	DECLARE @DurationInDays INT;
 	DECLARE @Price DECIMAL(10,2);
+	DECLARE @RegistrationFee DECIMAL(10,2);
+	DECLARE @TotalAmount DECIMAL(10,2);
 
 BEGIN TRY
 
@@ -156,12 +157,34 @@ BEGIN TRY
 		SELECT 'Invalid Diet Plan.' AS Message;
 		RETURN;
 	END
+	   ------------------------------------------------
+	-- REGISTRATION FEE VALIDATION
+	------------------------------------------------
+
+	IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblRegistrationFees
+		WHERE IsActive = 1
+	)
+	BEGIN
+		SELECT 'Registration Fee Is Not Active.' AS Message;
+		RETURN;
+	END
 
 	SELECT
 		@Price = Price,
 		@DurationInDays = DurationInDays
 	FROM tblMembershipPlans
 	WHERE MembershipPlanId = @MembershipPlanId;
+
+	SELECT TOP 1
+    @RegistrationFee = FeeAmount
+	FROM tblRegistrationFees
+	WHERE IsActive = 1
+	ORDER BY RegistrationFeesId DESC;
+
+	SET @TotalAmount = @Price + @RegistrationFee;
 	------------------------------------------------
     -- START EXPIRE DATE CALCULATION
     ------------------------------------------------
@@ -251,22 +274,22 @@ BEGIN TRY
     -- SUBCRIPTION PAYMENT
     ------------------------------------------------
 
-		INSERT INTO tblSubscriptionPayment
-	  (
+	INSERT INTO tblSubscriptionPayment
+	(
 		MemberId,
 		MembershipPlanId,
 		PaymentMethod,
 		Amount,
 		FeesType
-	  )
-	  VALUES
-	 (
+	)
+	VALUES
+	(
 		@MemberId,
 		@MembershipPlanId,
 		@PaymentMethod,
-		@Price,
+		@TotalAmount,
 		@FeesType
-	 );
+	);
 
     ------------------------------------------------
     -- DIET

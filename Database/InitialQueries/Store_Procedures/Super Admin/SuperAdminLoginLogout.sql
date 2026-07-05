@@ -1,7 +1,7 @@
-CREATE PROC spSuperAdminLogin
+CREATE PROC spSuperAdminLoginLogout
 (
-    @UserName VARCHAR(100),
-    @PasswordHash VARCHAR(255)
+    @UserName      VARCHAR(100),
+    @PasswordHash  VARCHAR(255) = NULL
 )
 AS
 BEGIN
@@ -9,24 +9,19 @@ BEGIN
 
     BEGIN TRY
 
-        SET @UserName = LTRIM(RTRIM(@UserName));
-        SET @PasswordHash = LTRIM(RTRIM(@PasswordHash));
+        ---------------------------------------------------------
+        -- Trim Inputs
+        ---------------------------------------------------------
+        SET @UserName = LTRIM(RTRIM(ISNULL(@UserName, '')));
+        SET @PasswordHash = LTRIM(RTRIM(ISNULL(@PasswordHash, '')));
 
         ---------------------------------------------------------
         -- Username Validation
         ---------------------------------------------------------
-        IF @UserName IS NULL OR @UserName = ''
+        IF @UserName = ''
         BEGIN
-            SELECT 0 AS Success, 'Username is Required.' AS Message;
-            RETURN;
-        END
-
-        ---------------------------------------------------------
-        -- Password Validation
-        ---------------------------------------------------------
-        IF @PasswordHash IS NULL OR @PasswordHash = ''
-        BEGIN
-            SELECT 0 AS Success, 'Password is Required.' AS Message;
+            SELECT 0 AS Success,
+                   'Username is Required.' AS Message;
             RETURN;
         END
 
@@ -40,27 +35,13 @@ BEGIN
             WHERE UserName = @UserName
         )
         BEGIN
-            SELECT 0 AS Success, 'Invalid Username.' AS Message;
+            SELECT 0 AS Success,
+                   'Invalid Username.' AS Message;
             RETURN;
         END
 
         ---------------------------------------------------------
-        -- Username & Password Check
-        ---------------------------------------------------------
-        IF NOT EXISTS
-        (
-            SELECT 1
-            FROM tblSuperAdmin
-            WHERE UserName = @UserName
-              AND PasswordHash = @PasswordHash
-        )
-        BEGIN
-            SELECT 0 AS Success, 'Invalid Password.' AS Message;
-            RETURN;
-        END
-
-        ---------------------------------------------------------
-        -- Already Logged In
+        -- If Already Logged In -> Logout
         ---------------------------------------------------------
         IF EXISTS
         (
@@ -70,12 +51,43 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            SELECT 0 AS Success, 'Super Admin is Already Logged In.' AS Message;
+            UPDATE tblSuperAdmin
+            SET IsActive = 0
+            WHERE UserName = @UserName;
+
+            SELECT 1 AS Success,
+                   'Logout Successful.' AS Message;
             RETURN;
         END
 
         ---------------------------------------------------------
-        -- Login Success
+        -- Password Validation
+        ---------------------------------------------------------
+        IF @PasswordHash = ''
+        BEGIN
+            SELECT 0 AS Success,
+                   'Password is Required.' AS Message;
+            RETURN;
+        END
+
+        ---------------------------------------------------------
+        -- Password Check
+        ---------------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblSuperAdmin
+            WHERE UserName = @UserName
+              AND PasswordHash = @PasswordHash
+        )
+        BEGIN
+            SELECT 0 AS Success,
+                   'Invalid Password.' AS Message;
+            RETURN;
+        END
+
+        ---------------------------------------------------------
+        -- Login
         ---------------------------------------------------------
         UPDATE tblSuperAdmin
         SET
@@ -83,12 +95,10 @@ BEGIN
             LastLogin = GETDATE()
         WHERE UserName = @UserName;
 
-        SELECT
-            1 AS Success,
-            'Login Successful.' AS Message;
+        SELECT 1 AS Success,
+               'Login Successful.' AS Message;
 
     END TRY
-
     BEGIN CATCH
 
         SELECT

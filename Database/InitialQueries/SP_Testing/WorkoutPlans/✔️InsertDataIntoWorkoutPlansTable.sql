@@ -1,4 +1,4 @@
-ALTER PROC spInsertDataIntoWorkoutPlansTable
+CREATE PROC spInsertDataIntoWorkoutPlansTable
 (
     @WorkoutName VARCHAR(100),
     @Description VARCHAR(MAX) = NULL
