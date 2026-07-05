@@ -10,7 +10,9 @@ BEGIN
         
         IF @WorkoutPlanId IS NULL OR @ExerciseId IS NULL OR LTRIM(RTRIM(ISNULL(@WorkoutDay, ''))) = ''
         BEGIN
-            RAISERROR('WorkoutPlanId, ExerciseId and WorkoutDay are required.', 16, 1);
+            SELECT 
+                0 AS STATUS_CODE,
+                'WorkoutPlanId, ExerciseId and WorkoutDay are required.'
             RETURN;
         END
 
