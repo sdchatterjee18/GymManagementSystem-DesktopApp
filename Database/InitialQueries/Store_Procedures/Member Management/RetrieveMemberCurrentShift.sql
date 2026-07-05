@@ -1,4 +1,4 @@
-CREATE OR ALTER PROC spRetrieveMemberCurrentShift
+CREATE PROC spRetrieveMemberCurrentShift
 (
     @MemberId INT
 )
