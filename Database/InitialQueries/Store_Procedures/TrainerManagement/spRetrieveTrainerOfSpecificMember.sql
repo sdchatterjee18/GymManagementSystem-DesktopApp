@@ -63,9 +63,7 @@ BEGIN
     BEGIN CATCH
 
         SELECT
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+            ERROR_MESSAGE() AS Message
 
     END CATCH
 END;
