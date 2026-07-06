@@ -20,10 +20,9 @@ BEGIN
         ---------------------------------------------------------
         IF @UserName = ''
         BEGIN
-            SELECT 0 AS Success,
-                   'Username is Required.' AS Message;
+            SELECT 'Username is Required.' AS Message;
             RETURN;
-        END
+        END;
 
         ---------------------------------------------------------
         -- Username Exists
@@ -35,10 +34,9 @@ BEGIN
             WHERE UserName = @UserName
         )
         BEGIN
-            SELECT 0 AS Success,
-                   'Invalid Username.' AS Message;
+            SELECT 'Invalid Username.' AS Message;
             RETURN;
-        END
+        END;
 
         ---------------------------------------------------------
         -- If Already Logged In -> Logout
@@ -55,20 +53,18 @@ BEGIN
             SET IsActive = 0
             WHERE UserName = @UserName;
 
-            SELECT 1 AS Success,
-                   'Logout Successful.' AS Message;
+            SELECT 'Logout Successful.' AS Message;
             RETURN;
-        END
+        END;
 
         ---------------------------------------------------------
         -- Password Validation
         ---------------------------------------------------------
         IF @PasswordHash = ''
         BEGIN
-            SELECT 0 AS Success,
-                   'Password is Required.' AS Message;
+            SELECT 'Password is Required.' AS Message;
             RETURN;
-        END
+        END;
 
         ---------------------------------------------------------
         -- Password Check
@@ -81,10 +77,9 @@ BEGIN
               AND PasswordHash = @PasswordHash
         )
         BEGIN
-            SELECT 0 AS Success,
-                   'Invalid Password.' AS Message;
+            SELECT 'Invalid Password.' AS Message;
             RETURN;
-        END
+        END;
 
         ---------------------------------------------------------
         -- Login
@@ -95,18 +90,15 @@ BEGIN
             LastLogin = GETDATE()
         WHERE UserName = @UserName;
 
-        SELECT 1 AS Success,
-               'Login Successful.' AS Message;
+        SELECT 'Login Successful.' AS Message;
 
     END TRY
+
     BEGIN CATCH
 
-        SELECT
-            0 AS Success,
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
+
 END;
 GO
