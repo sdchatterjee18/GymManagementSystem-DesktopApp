@@ -1,4 +1,4 @@
-CREATE OR ALTER PROC spDeactivateInactiveMembers
+CREATE PROC spDeactivateInactiveMembers
 AS
 BEGIN
     SET NOCOUNT ON;
