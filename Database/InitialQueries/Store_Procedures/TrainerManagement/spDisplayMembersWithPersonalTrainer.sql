@@ -28,9 +28,7 @@ BEGIN
     BEGIN CATCH
 
         SELECT
-            ERROR_NUMBER() AS ErrorNumber,
-            ERROR_MESSAGE() AS ErrorMessage;
-
+            ERROR_NUMBER() AS ErrorNumber
     END CATCH
 END;
 GO
