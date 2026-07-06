@@ -3,79 +3,90 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT
-        M.MemberId,
+    BEGIN TRY
 
-        M.FirstName + ' ' +
-        ISNULL(M.MiddleName + ' ', '') +
-        M.LastName AS MemberName,
+        SELECT
+            M.MemberId,
 
-        G.GenderName AS Gender,
+            M.FirstName + ' ' +
+            ISNULL(M.MiddleName + ' ', '') +
+            M.LastName AS MemberName,
 
-        M.PhoneNo,
-        M.EmailId,
+            G.GenderName AS Gender,
 
-        M.City + ', ' +
-        M.District + ', ' +
-        M.State AS Address,
+            M.PhoneNo,
+            M.EmailId,
 
-        M.EmergencyContact,
+            M.City + ', ' +
+            M.District + ', ' +
+            M.State AS Address,
 
-        M.ProfilePhoto,
+            M.EmergencyContact,
 
-        M.JoiningDate,
-        M.UpdatedAt,
-        M.IsActive AS MemberIsActive,
+            M.ProfilePhoto,
 
-        MP.MembershipPlanName,
+            M.JoiningDate,
+            M.UpdatedAt,
+            M.IsActive AS MemberIsActive,
 
-        MS.StartDate,
-        MS.ExpiryDate,
+            MP.MembershipPlanName,
 
-        S.ShiftName,
+            MS.StartDate,
+            MS.ExpiryDate,
 
-        DP.ConditionStatus,
-        DP.DietPlanDocument,
+            S.ShiftName,
 
-        L.LockerNo,
+            DP.ConditionStatus,
+            DP.DietPlanDocument,
 
-        SP.PaymentDate,
-        SP.PaymentMethod,
-        SP.Amount,
-        SP.FeesType
+            L.LockerNo,
 
-    FROM tblMember M
+            SP.PaymentDate,
+            SP.PaymentMethod,
+            SP.Amount,
+            SP.FeesType
 
-    LEFT JOIN tblGender G
-        ON M.GenderId = G.GenderId
+        FROM tblMember M
 
-    LEFT JOIN tblMembershipSubscription MS
-        ON M.MemberId = MS.MemberId
+        LEFT JOIN tblGender G
+            ON M.GenderId = G.GenderId
 
-    LEFT JOIN tblMembershipPlans MP
-        ON MS.MembershipPlanId = MP.MembershipPlanId
+        LEFT JOIN tblMembershipSubscription MS
+            ON M.MemberId = MS.MemberId
 
-    LEFT JOIN tblMemberShift MSH
-        ON M.MemberId = MSH.MemberId
+        LEFT JOIN tblMembershipPlans MP
+            ON MS.MembershipPlanId = MP.MembershipPlanId
 
-    LEFT JOIN tblShift S
-        ON MSH.ShiftId = S.ShiftId
+        LEFT JOIN tblMemberShift MSH
+            ON M.MemberId = MSH.MemberId
 
-    LEFT JOIN tblMemberDietAssignment MDA
-        ON M.MemberId = MDA.MemberId
+        LEFT JOIN tblShift S
+            ON MSH.ShiftId = S.ShiftId
 
-    LEFT JOIN tblDietPlans DP
-        ON MDA.DietPlanId = DP.DietPlanId
+        LEFT JOIN tblMemberDietAssignment MDA
+            ON M.MemberId = MDA.MemberId
 
-    LEFT JOIN tblLockerAllocation LA
-        ON M.MemberId = LA.MemberId
+        LEFT JOIN tblDietPlans DP
+            ON MDA.DietPlanId = DP.DietPlanId
 
-    LEFT JOIN tblLocker L
-        ON LA.LockerId = L.LockerId
+        LEFT JOIN tblLockerAllocation LA
+            ON M.MemberId = LA.MemberId
 
-    LEFT JOIN tblSubscriptionPayment SP
-        ON M.MemberId = SP.MemberId
+        LEFT JOIN tblLocker L
+            ON LA.LockerId = L.LockerId
 
-    ORDER BY M.MemberId;
+        LEFT JOIN tblSubscriptionPayment SP
+            ON M.MemberId = SP.MemberId
+
+        ORDER BY M.MemberId;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
 END;
 GO
