@@ -1,4 +1,4 @@
-CREATE OR ALTER PROC spRetrieveYearlyTotalExpense
+CREATE PROC spRetrieveYearlyTotalExpense
 (
     @Year INT
 )
