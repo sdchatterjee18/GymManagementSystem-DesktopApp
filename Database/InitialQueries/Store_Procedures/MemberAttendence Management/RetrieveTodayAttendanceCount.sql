@@ -1,4 +1,4 @@
-CREATE OR ALTER PROC spRetrieveTodayAttendanceCount
+CREATE PROC spRetrieveTodayAttendanceCount
 AS
 BEGIN
     SET NOCOUNT ON;
