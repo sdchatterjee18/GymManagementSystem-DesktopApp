@@ -26,9 +26,7 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            SELECT
-                0 AS Success,
-                'Member does not exist or is inactive.' AS Message;
+            SELECT 'Member does not exist or is inactive.' AS Message;
             RETURN;
         END;
 
@@ -43,9 +41,7 @@ BEGIN
               AND ExpiryDate >= CAST(GETDATE() AS DATE)
         )
         BEGIN
-            SELECT
-                0 AS Success,
-                'Member has no active membership.' AS Message;
+            SELECT 'Member has no active membership.' AS Message;
             RETURN;
         END;
 
@@ -59,9 +55,7 @@ BEGIN
             WHERE ShiftId = @NewShiftId
         )
         BEGIN
-            SELECT
-                0 AS Success,
-                'Invalid Shift.' AS Message;
+            SELECT 'Invalid Shift.' AS Message;
             RETURN;
         END;
 
@@ -76,9 +70,7 @@ BEGIN
 
         IF @CurrentShiftId IS NULL
         BEGIN
-            SELECT
-                0 AS Success,
-                'Current Active Shift Not Found.' AS Message;
+            SELECT 'Current active shift not found.' AS Message;
             RETURN;
         END;
 
@@ -87,29 +79,25 @@ BEGIN
         ------------------------------------------------
         IF @CurrentShiftId = @NewShiftId
         BEGIN
-            SELECT
-                0 AS Success,
-                'Member Is Already Assigned To This Shift.' AS Message;
+            SELECT 'Member is already assigned to this shift.' AS Message;
             RETURN;
         END;
 
         ------------------------------------------------
-        -- Shift Capacity
+        -- Get Shift Capacity
         ------------------------------------------------
-        SELECT TOP 1
+        SELECT TOP (1)
             @MaxCapacity = MaxCapacity
         FROM tblShiftCapacity;
 
         IF @MaxCapacity IS NULL
         BEGIN
-            SELECT
-                0 AS Success,
-                'Shift Capacity Is Not Configured.' AS Message;
+            SELECT 'Shift capacity is not configured.' AS Message;
             RETURN;
         END;
 
         ------------------------------------------------
-        -- Count Active Members In New Shift
+        -- Check Current Member Count
         ------------------------------------------------
         SELECT
             @CurrentMemberCount = COUNT(*)
@@ -119,16 +107,14 @@ BEGIN
 
         IF @CurrentMemberCount >= @MaxCapacity
         BEGIN
-            SELECT
-                0 AS Success,
-                'Selected Shift Is Already Full.' AS Message;
+            SELECT 'Selected shift is already full.' AS Message;
             RETURN;
         END;
 
         ------------------------------------------------
         -- Personal Trainer Validation
         ------------------------------------------------
-        SELECT TOP 1
+        SELECT TOP (1)
             @TrainerId = TrainerId
         FROM tblMemberTrainerAssignment
         WHERE MemberId = @MemberId
@@ -145,29 +131,21 @@ BEGIN
                   AND IsActive = 1
             )
             BEGIN
-                SELECT
-                    0 AS Success,
-                    'Assigned Personal Trainer Is Not Available In The Selected Shift.' AS Message;
+                SELECT 'Assigned personal trainer is not available in the selected shift.' AS Message;
                 RETURN;
             END;
         END;
 
         ------------------------------------------------
-        -- Start Transaction
+        -- Change Shift
         ------------------------------------------------
         BEGIN TRANSACTION;
 
-        ------------------------------------------------
-        -- Deactivate Current Shift
-        ------------------------------------------------
         UPDATE tblMemberShift
         SET IsActive = 0
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        ------------------------------------------------
-        -- Insert New Active Shift
-        ------------------------------------------------
         INSERT INTO tblMemberShift
         (
             MemberId,
@@ -181,17 +159,9 @@ BEGIN
             1
         );
 
-        ------------------------------------------------
-        -- Commit
-        ------------------------------------------------
         COMMIT TRANSACTION;
 
-        SELECT
-            1 AS Success,
-            'Member Shift Changed Successfully.' AS Message,
-            @MemberId AS MemberId,
-            @CurrentShiftId AS OldShiftId,
-            @NewShiftId AS NewShiftId;
+        SELECT 'Member shift changed successfully.' AS Message;
 
     END TRY
 
@@ -200,13 +170,8 @@ BEGIN
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        SELECT
-            0 AS Success,
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-
 END;
 GO
