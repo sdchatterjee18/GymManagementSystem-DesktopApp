@@ -1,18 +1,16 @@
-CREATE PROC spChangeMemberDietPlan
+CREATE PROC spAssignPersonalTrainerToMember
 (
     @MemberId INT,
-    @DietPlanId INT
+    @TrainerId INT
 )
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE
-        @CurrentDietPlanId INT,
-        @AssignDate DATE;
+    DECLARE @CurrentTrainerId INT = NULL,
+            @AssignedDate DATE = NULL;
 
     BEGIN TRY
-        BEGIN TRANSACTION;
 
         ------------------------------------------------
         -- Member Validation
@@ -25,114 +23,124 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            SELECT
-                0 AS Success,
-                'Member does not exist or is inactive.' AS Message;
-
-            ROLLBACK TRANSACTION;
+            SELECT 'Member does not exist.' AS Message;
             RETURN;
-        END
+        END;
 
         ------------------------------------------------
-        -- Diet Plan Validation
+        -- Trainer Validation
         ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
-            FROM tblDietPlans
-            WHERE DietPlanId = @DietPlanId
+            FROM tblTrainer T
+            INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+            WHERE T.TrainerId = @TrainerId
+              AND E.IsActive = 1
         )
         BEGIN
-            SELECT
-                0 AS Success,
-                'Invalid Diet Plan.' AS Message;
-
-            ROLLBACK TRANSACTION;
+            SELECT 'Trainer does not exist or inactive.' AS Message;
             RETURN;
-        END
+        END;
 
         ------------------------------------------------
-        -- Current Active Diet Plan
+        -- Active Membership Validation
         ------------------------------------------------
-        SELECT TOP 1
-            @CurrentDietPlanId = DietPlanId,
-            @AssignDate = AssignDate
-        FROM tblMemberDietAssignment
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipSubscription
+            WHERE MemberId = @MemberId
+              AND ExpiryDate >= CAST(GETDATE() AS DATE)
+        )
+        BEGIN
+            SELECT 'Member has no active membership.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Current Active Trainer
+        ------------------------------------------------
+        SELECT TOP (1)
+            @CurrentTrainerId = TrainerId,
+            @AssignedDate = AssignedDate
+        FROM tblMemberTrainerAssignment
         WHERE MemberId = @MemberId
           AND IsActive = 1
-        ORDER BY AssignDate DESC;
+        ORDER BY AssignedDate DESC;
 
         ------------------------------------------------
-        -- Active Diet Plan Exists
+        -- First Time Assignment
         ------------------------------------------------
-        IF @CurrentDietPlanId IS NULL
+        IF @CurrentTrainerId IS NULL
         BEGIN
-            SELECT
-                0 AS Success,
-                'No active diet plan found for this member.' AS Message;
+            INSERT INTO tblMemberTrainerAssignment
+            (
+                MemberId,
+                TrainerId,
+                AssignedDate,
+                IsActive
+            )
+            VALUES
+            (
+                @MemberId,
+                @TrainerId,
+                CAST(GETDATE() AS DATE),
+                1
+            );
 
-            ROLLBACK TRANSACTION;
+            SELECT 'Trainer assigned successfully.' AS Message;
             RETURN;
-        END
+        END;
 
         ------------------------------------------------
-        -- Same Diet Plan
+        -- Already Assigned
         ------------------------------------------------
-        IF @CurrentDietPlanId = @DietPlanId
+        IF @CurrentTrainerId = @TrainerId
         BEGIN
-            SELECT
-                0 AS Success,
-                'Member is already assigned to this Diet Plan.' AS Message;
-
-            ROLLBACK TRANSACTION;
+            SELECT 'Member is already assigned to this trainer.' AS Message;
             RETURN;
-        END
+        END;
 
         ------------------------------------------------
-        -- Same Month Restriction
+        -- Trainer Change Restriction
         ------------------------------------------------
-        IF YEAR(@AssignDate) = YEAR(GETDATE())
-           AND MONTH(@AssignDate) = MONTH(GETDATE())
+        IF YEAR(@AssignedDate) = YEAR(GETDATE())
+           AND MONTH(@AssignedDate) = MONTH(GETDATE())
         BEGIN
-            SELECT
-                0 AS Success,
-                'Diet Plan can be changed only from next month.' AS Message;
-
-            ROLLBACK TRANSACTION;
+            SELECT 'Trainer can be changed only from next month.' AS Message;
             RETURN;
-        END
+        END;
 
         ------------------------------------------------
-        -- Deactivate Previous Diet Plan
+        -- Change Trainer
         ------------------------------------------------
-        UPDATE tblMemberDietAssignment
+        BEGIN TRANSACTION;
+
+        UPDATE tblMemberTrainerAssignment
         SET IsActive = 0
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        ------------------------------------------------
-        -- Assign New Diet Plan
-        ------------------------------------------------
-        INSERT INTO tblMemberDietAssignment
+        INSERT INTO tblMemberTrainerAssignment
         (
             MemberId,
-            DietPlanId,
-            AssignDate,
+            TrainerId,
+            AssignedDate,
             IsActive
         )
         VALUES
         (
             @MemberId,
-            @DietPlanId,
+            @TrainerId,
             CAST(GETDATE() AS DATE),
             1
         );
 
         COMMIT TRANSACTION;
 
-        SELECT
-            1 AS Success,
-            'Diet Plan changed successfully.' AS Message;
+        SELECT 'Trainer changed successfully.' AS Message;
 
     END TRY
 
@@ -141,12 +149,8 @@ BEGIN
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        SELECT
-            0 AS Success,
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-END
+END;
 GO
