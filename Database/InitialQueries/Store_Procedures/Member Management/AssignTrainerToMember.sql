@@ -11,7 +11,7 @@ BEGIN
             @AssignedDate DATE = NULL;
 
     ------------------------------------------------
-    -- Member Exists
+    -- Member Validation
     ------------------------------------------------
     IF NOT EXISTS
     (
@@ -21,12 +21,12 @@ BEGIN
           AND IsActive = 1
     )
     BEGIN
-        RAISERROR('Member does not exist.',16,1);
+        SELECT 'Member does not exist.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- Trainer Exists (Employee-based validation)
+    -- Trainer Validation
     ------------------------------------------------
     IF NOT EXISTS
     (
@@ -38,27 +38,27 @@ BEGIN
           AND E.IsActive = 1
     )
     BEGIN
-        RAISERROR('Trainer does not exist or inactive.',16,1);
+        SELECT 'Trainer does not exist or inactive.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- Active Membership Check
+    -- Active Membership Validation
     ------------------------------------------------
     IF NOT EXISTS
     (
         SELECT 1
-        FROM tblMembershipSubscription MS
-        WHERE MS.MemberId = @MemberId
-          AND MS.ExpiryDate >= CAST(GETDATE() AS DATE)
+        FROM tblMembershipSubscription
+        WHERE MemberId = @MemberId
+          AND ExpiryDate >= CAST(GETDATE() AS DATE)
     )
     BEGIN
-        RAISERROR('Member has no active membership.',16,1);
+        SELECT 'Member has no active membership.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- Current Trainer
+    -- Current Active Trainer
     ------------------------------------------------
     SELECT TOP 1
         @CurrentTrainerId = TrainerId,
@@ -69,7 +69,7 @@ BEGIN
     ORDER BY AssignedDate DESC;
 
     ------------------------------------------------
-    -- FIRST TIME ASSIGNMENT
+    -- First Time Assignment
     ------------------------------------------------
     IF @CurrentTrainerId IS NULL
     BEGIN
@@ -88,31 +88,31 @@ BEGIN
             1
         );
 
-        SELECT 1 AS Success, 'Trainer assigned successfully.' AS Message;
+        SELECT 'Trainer assigned successfully.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- SAME TRAINER
+    -- Already Assigned
     ------------------------------------------------
     IF @CurrentTrainerId = @TrainerId
     BEGIN
-        SELECT 1 AS Success, 'Already assigned to this trainer.' AS Message;
+        SELECT 'Member is already assigned to this trainer.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- SAME MONTH RESTRICTION
+    -- Trainer Change Restriction
     ------------------------------------------------
     IF YEAR(@AssignedDate) = YEAR(GETDATE())
        AND MONTH(@AssignedDate) = MONTH(GETDATE())
     BEGIN
-        SELECT 0 AS Success, 'Trainer change allowed only from next month.' AS Message;
+        SELECT 'Trainer can be changed only from next month.' AS Message;
         RETURN;
-    END
+    END;
 
     ------------------------------------------------
-    -- CHANGE TRAINER
+    -- Change Trainer
     ------------------------------------------------
     BEGIN TRY
         BEGIN TRANSACTION;
@@ -139,15 +139,16 @@ BEGIN
 
         COMMIT TRANSACTION;
 
-        SELECT 1 AS Success, 'Trainer changed successfully.' AS Message;
+        SELECT 'Trainer changed successfully.' AS Message;
 
     END TRY
     BEGIN CATCH
+
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
         SELECT ERROR_MESSAGE() AS Message;
-    END CATCH
 
-END
+    END CATCH
+END;
 GO
