@@ -42,9 +42,12 @@ BEGIN
         ------------------------------------------------
         SELECT
             M.MemberId,
-            CONCAT(M.FirstName,' ',
-                   ISNULL(M.MiddleName + ' ',''),
-                   M.LastName) AS MemberName,
+            CONCAT
+            (
+                M.FirstName, ' ',
+                ISNULL(M.MiddleName + ' ', ''),
+                M.LastName
+            ) AS MemberName,
             S.ShiftId,
             S.ShiftName,
             S.StartTime,
@@ -61,11 +64,8 @@ BEGIN
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-END
+END;
 GO
