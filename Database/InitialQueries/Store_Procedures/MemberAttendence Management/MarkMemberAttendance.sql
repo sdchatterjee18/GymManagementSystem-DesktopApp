@@ -104,10 +104,7 @@ BEGIN
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
 

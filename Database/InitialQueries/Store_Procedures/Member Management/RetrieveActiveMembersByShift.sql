@@ -1,4 +1,4 @@
-CREATE  PROC spRetrieveActiveMembersByShift
+CREATE PROC spRetrieveActiveMembersByShift
 (
     @ShiftId INT
 )
@@ -8,6 +8,9 @@ BEGIN
 
     BEGIN TRY
 
+        ------------------------------------------------
+        -- Shift Validation
+        ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
@@ -15,29 +18,31 @@ BEGIN
             WHERE ShiftId = @ShiftId
         )
         BEGIN
-            RAISERROR('Invalid Shift.', 16, 1);
+            SELECT 'Invalid Shift.' AS Message;
             RETURN;
         END;
 
+        ------------------------------------------------
+        -- Retrieve Active Members
+        ------------------------------------------------
         SELECT
-            m.MemberId,
-            CONCAT(m.FirstName, ' ', m.LastName) AS MemberName,
-            m.PhoneNo,
-            m.EmailId
-        FROM tblMemberShift ms
-        INNER JOIN tblMember m
-            ON ms.MemberId = m.MemberId
-        WHERE ms.ShiftId = @ShiftId
-          AND ms.IsActive = 1
-          AND m.IsActive = 1
-        ORDER BY m.FirstName, m.LastName;
+            M.MemberId,
+            CONCAT(M.FirstName, ' ', M.LastName) AS MemberName,
+            M.PhoneNo,
+            M.EmailId
+        FROM tblMemberShift MS
+        INNER JOIN tblMember M
+            ON MS.MemberId = M.MemberId
+        WHERE MS.ShiftId = @ShiftId
+          AND MS.IsActive = 1
+          AND M.IsActive = 1
+        ORDER BY M.FirstName, M.LastName;
 
     END TRY
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS Message;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
 END;

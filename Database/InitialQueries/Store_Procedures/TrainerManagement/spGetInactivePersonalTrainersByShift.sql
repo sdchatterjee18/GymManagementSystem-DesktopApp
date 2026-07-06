@@ -1,4 +1,4 @@
-CREATE PROC spGetInactivePersonalTrainersByShift
+CREATE PROC spGetInactivePersonalTrainersByShift 
 (
     @ShiftId INT
 )
@@ -57,10 +57,7 @@ BEGIN
     BEGIN CATCH
 
         SELECT
-            ERROR_MESSAGE() AS ErrorMessage,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ErrorProcedure;
-
+            ERROR_MESSAGE() AS ErrorMessage
     END CATCH
 END
 GO
