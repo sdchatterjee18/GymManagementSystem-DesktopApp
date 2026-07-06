@@ -29,7 +29,7 @@ BEGIN
 
         SELECT 
             1 AS STATUS_CODE,
-            'Record Inserted successfuly' AS ERROR_MESSAGE
+            'Record Deleted successfuly' AS ERROR_MESSAGE
 
     END TRY
     BEGIN CATCH

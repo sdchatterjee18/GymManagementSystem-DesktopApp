@@ -30,7 +30,7 @@ BEGIN
 
         SELECT 
             1 AS STATUS_CODE,
-            'Record was assigned null as soft delete' AS MESSAGE
+            'Record was assigned null as soft delete' AS ERROR_MESSAGE
 
     END TRY
     BEGIN CATCH
