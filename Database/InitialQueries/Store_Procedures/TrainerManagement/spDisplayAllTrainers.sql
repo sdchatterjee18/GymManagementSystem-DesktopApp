@@ -5,7 +5,7 @@ BEGIN
 		SELECT * FROM tblTrainer;
 	END TRY
 	BEGIN CATCH
-		SELECT 0 AS ERROR,'Fail to display all Trainers' AS MESSAGE;
+		SELECT 'Fail to display all Trainers' AS MESSAGE;
 		SELECT ERROR_MESSAGE() AS ERROR
 	END CATCH
 END
