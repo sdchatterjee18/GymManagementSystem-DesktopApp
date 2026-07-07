@@ -11,7 +11,6 @@ BEGIN
         IF @WorkoutPlanId IS NULL OR @ExerciseId IS NULL OR LTRIM(RTRIM(ISNULL(@WorkoutDay, ''))) = ''
         BEGIN
             SELECT 
-                0 AS STATUS_CODE,
                 'WorkoutPlanId, ExerciseId and WorkoutDay are required.'
             RETURN;
         END
@@ -22,7 +21,6 @@ BEGIN
         IF @WorkoutDay NOT IN ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')
         BEGIN
             SELECT
-                0 AS STATUS_CODE,
                 'WorkoutDay must be a valid day name (Monday-Sunday).' AS ERROR_MESSAGE
             RETURN;
         END
@@ -30,7 +28,6 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutPlanId = @WorkoutPlanId)
         BEGIN
             SELECT
-                0 AS STATUS_CODE,
                 'Invalid WorkoutPlanId: no matching WorkoutPlan found.' AS ERROR_MESSAGE
             RETURN;
         END
@@ -38,7 +35,6 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblExercises WHERE ExerciseId = @ExerciseId)
         BEGIN
             SELECT
-                0 AS STATUS_CODE,
                 'Invalid ExerciseId: no matching Exercise found.' AS ERROR_MESSAGE
             RETURN;
         END
@@ -51,7 +47,6 @@ BEGIN
         )
         BEGIN
             SELECT
-                0 AS STATUS_CODE,
                 'This exercise is already scheduled for this day in the selected workout plan.' AS ERROR_MESSAGE
             RETURN;
         END
@@ -66,6 +61,6 @@ BEGIN
     END TRY
     BEGIN CATCH
         DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR(@ErrMsg, 16, 1);
+        SELECT @ErrMsg AS ERROR_MESSAGE
     END CATCH
 END
