@@ -22,11 +22,8 @@ BEGIN
     BEGIN CATCH
 
         SELECT
-            ERROR_NUMBER() AS ErrorNumber,
-            ERROR_MESSAGE() AS ErrorMessage,
-            ERROR_PROCEDURE() AS ErrorProcedure,
-            ERROR_LINE() AS ErrorLine;
-
+            ERROR_MESSAGE() AS ErrorMessage
+           
     END CATCH
 END;
 GO

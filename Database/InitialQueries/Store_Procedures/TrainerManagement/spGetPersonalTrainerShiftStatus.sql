@@ -1,4 +1,4 @@
-CREATE PROC spGetPersonalTrainerShiftStatus
+CREATE PROC spGetPersonalTrainerShiftStatus 
 (
     @TrainerId INT
 )
@@ -66,9 +66,7 @@ BEGIN
 
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE() AS ErrorMessage,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ErrorProcedure;
+            ERROR_MESSAGE() AS ErrorMessage
     END CATCH
 END;
 GO

@@ -20,17 +20,7 @@ BEGIN
 
         SELECT
             E.EmployeeId,
-            E.FirstName,
-            E.MiddleName,
-            E.LastName,
-            E.PhoneNo,
-            E.EmailId,
-            E.BankAccountNo,
-            E.JoiningDate,
-            E.IsActive AS EmployeeStatus,
-
-            
-            ERT.Role,
+            CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
 
             T.TrainerId,
             T.Specialization,
@@ -62,12 +52,7 @@ BEGIN
     BEGIN CATCH
 
         SELECT
-            ERROR_MESSAGE() AS ErrorMessage,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ErrorProcedure;
-
+            ERROR_MESSAGE() AS ErrorMessage
     END CATCH
 END
 GO
-
-EXEC spGetAllTrainerEmployeeDetails

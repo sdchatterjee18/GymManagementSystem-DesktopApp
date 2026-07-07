@@ -8,7 +8,7 @@ BEGIN
         BEGIN TRANSACTION;
 
         ---------------------------------------------------------
-        -- Inactivate Member
+        -- Deactivate Members
         ---------------------------------------------------------
         UPDATE M
         SET M.IsActive = 0
@@ -17,21 +17,22 @@ BEGIN
             ON M.MemberId = MS.MemberId
         WHERE M.IsActive = 1
           AND MS.IsActive = 0
-          AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
 
         ---------------------------------------------------------
-        -- Inactivate Member Shift
+        -- Deactivate Member Shifts
         ---------------------------------------------------------
         UPDATE MSH
         SET MSH.IsActive = 0
         FROM tblMemberShift MSH
         INNER JOIN tblMembershipSubscription MS
             ON MSH.MemberId = MS.MemberId
-        WHERE MS.IsActive = 0
-          AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+        WHERE MSH.IsActive = 1
+          AND MS.IsActive = 0
+          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
 
         ---------------------------------------------------------
-        -- Release Locker
+        -- Release Lockers
         ---------------------------------------------------------
         UPDATE L
         SET LockerStatus = 'Available'
@@ -41,13 +42,21 @@ BEGIN
         INNER JOIN tblMembershipSubscription MS
             ON LA.MemberId = MS.MemberId
         WHERE MS.IsActive = 0
-          AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+
+        ---------------------------------------------------------
+        -- Remove Locker Allocation
+        ---------------------------------------------------------
+        DELETE LA
+        FROM tblLockerAllocation LA
+        INNER JOIN tblMembershipSubscription MS
+            ON LA.MemberId = MS.MemberId
+        WHERE MS.IsActive = 0
+          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
 
         COMMIT TRANSACTION;
 
-        SELECT
-            1 AS Success,
-            'Inactive members processed successfully.' AS Message;
+        SELECT 'Inactive members processed successfully.' AS Message;
 
     END TRY
 
@@ -56,12 +65,8 @@ BEGIN
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        SELECT
-            0 AS Success,
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-END
+END;
 GO

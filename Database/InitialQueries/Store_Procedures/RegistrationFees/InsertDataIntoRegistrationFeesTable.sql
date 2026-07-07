@@ -71,8 +71,7 @@ BEGIN
 
         COMMIT TRANSACTION;
 
-        SELECT
-            'Registration Fee Updated Successfully.' AS Message;
+        SELECT 'Registration Fee Updated Successfully.' AS Message;
 
     END TRY
 
@@ -81,11 +80,9 @@ BEGIN
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        SELECT
-            ERROR_MESSAGE() AS Message,
-            ERROR_LINE() AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+        SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-END
+
+END;
 GO
