@@ -9,7 +9,6 @@ BEGIN
         IF @EmployeeId IS NULL
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'EmployeeId is required' AS Message;
             RETURN;
         END
@@ -17,7 +16,6 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId AND IsActive = 1)
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'EmployeeId does not exist' AS Message;
             RETURN;
         END
@@ -25,7 +23,6 @@ BEGIN
         IF @PaymentMode IS NULL OR LTRIM(RTRIM(@PaymentMode)) = ''
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'PaymentMode is required' AS Message;
             RETURN;
         END
@@ -33,7 +30,6 @@ BEGIN
         IF @PaymentMode NOT IN ('Cash', 'Bank Transfer', 'UPI','Cheque')
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'Invalid PaymentMode. Allowed values are: Cash, Net Banking, UPI' AS Message;
             RETURN;
         END
@@ -46,7 +42,8 @@ BEGIN
 
         IF @SalaryId IS NULL
         BEGIN
-            SELECT 0 AS StatusCode, 'No salary record found for this employee' AS Message;
+            SELECT 
+                'No salary record found for this employee' AS Message;
             RETURN;
         END
 
@@ -59,7 +56,6 @@ BEGIN
         )
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'Salary already paid for this month' AS Message;
             RETURN;
         END
@@ -84,14 +80,11 @@ BEGIN
         );
 
         SELECT 
-            1 AS StatusCode, 
             'Payment recorded successfully' AS Message;
 
     END TRY
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE()   AS Message,
-            ERROR_LINE()      AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+            ERROR_MESSAGE()   AS Message
     END CATCH
 END;

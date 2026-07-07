@@ -18,7 +18,6 @@ BEGIN
         DECLARE @LastExpiryDate DATE;
         DECLARE @Amount DECIMAL(10,2);
 
-        -- Check whether member exists and is active
         IF NOT EXISTS
         (
             SELECT 1
@@ -27,10 +26,9 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            RAISERROR('Member does not exist or is inactive.',16,1);
+            SELECT 'Member does not exist or is inactive.' AS ERROR_MESSAGE
         END
 
-        -- Check whether membership plan exists and is active
         IF NOT EXISTS
         (
             SELECT 1
@@ -39,22 +37,19 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            RAISERROR('Membership plan does not exist or is inactive.',16,1);
+            SELECT 'Membership plan does not exist or is inactive.' AS ERROR_MESSAGE
         END
 
-        -- Get plan details
         SELECT
             @DurationInDays = DurationInDays,
             @Amount = Amount
         FROM tblMembershipPlans
         WHERE MembershipPlanId = @MembershipPlanId;
 
-        -- Get last expiry date
         SELECT @LastExpiryDate = MAX(ExpiryDate)
         FROM tblMembershipSubscription
         WHERE MemberId = @MemberId;
 
-        -- Decide start date
         IF @LastExpiryDate IS NOT NULL
            AND @LastExpiryDate >= CAST(GETDATE() AS DATE)
         BEGIN
@@ -65,10 +60,8 @@ BEGIN
             SET @StartDate = CAST(GETDATE() AS DATE);
         END
 
-        -- Calculate expiry date
         SET @ExpiryDate = DATEADD(DAY, @DurationInDays - 1, @StartDate);
 
-        -- Insert membership subscription
         INSERT INTO tblMembershipSubscription
         (
             MemberId,
@@ -86,7 +79,6 @@ BEGIN
             1
         );
 
-        -- Insert payment record
         INSERT INTO tblSubscriptionPayment
         (
             MemberId,
