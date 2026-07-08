@@ -8,8 +8,8 @@ BEGIN
 
         SELECT 
     MTA.MemberTrainerAssignmentId,
-    M.FirstName+' '+M.LastName As MemberName,
-    Employee.FirstName+' '+Employee.LastName As TrainerName,
+    CONCAT(M.FirstName,' ',M.MiddleName,' ',M.LastName) As MemberName,
+    CONCAT(Employee.FirstName,' ',Employee.MiddleName,' ',Employee.LastName) As TrainerName,
     T.TrainerType,
     Sh.ShiftName,
     Sh.StartTime,
@@ -23,7 +23,7 @@ BEGIN
     ON MTA.TrainerId = T.TrainerId
     INNER JOIN tblEmployee AS Employee 
     ON T.EmployeeId = Employee.EmployeeId
-    WHERE T.TrainerType = 'Personal Trainer';
+    WHERE T.TrainerType = 'Personal';
 
     END TRY
 

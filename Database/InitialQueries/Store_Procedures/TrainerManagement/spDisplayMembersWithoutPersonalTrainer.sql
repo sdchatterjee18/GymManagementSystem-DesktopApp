@@ -7,14 +7,14 @@ BEGIN
 
         SELECT
             M.MemberId,
-            M.FirstName + ' ' + M.LastName AS MemberName
+            CONCAT(M.FirstName,' ',M.MiddleName,' ',M.LastName) AS MemberName
             
         FROM tblMember AS M
         LEFT JOIN tblMemberTrainerAssignment AS MTA
             ON M.MemberId = MTA.MemberId
         LEFT JOIN tblTrainer AS T
             ON MTA.TrainerId = T.TrainerId
-            AND T.TrainerType = 'Personal Trainer'
+            AND T.TrainerType = 'Personal'
         WHERE T.TrainerId IS NULL;
 
     END TRY

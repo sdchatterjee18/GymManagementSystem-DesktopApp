@@ -32,9 +32,7 @@ BEGIN
            
             T.TrainerId,
            
-            E.FirstName,
-            E.MiddleName,
-            E.LastName,
+            CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
             E.PhoneNo,
             
             T.Specialization,
@@ -50,7 +48,7 @@ BEGIN
             ON TS.ShiftId = S.ShiftId
         WHERE TS.ShiftId = @ShiftId
               AND TS.IsActive = 0
-              AND T.TrainerType = 'Personal Trainer'
+              AND T.TrainerType = 'Personal'
         ORDER BY E.FirstName, E.LastName;
 
     END TRY

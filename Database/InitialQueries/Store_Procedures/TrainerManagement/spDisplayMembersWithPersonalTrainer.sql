@@ -7,8 +7,8 @@ BEGIN
 
         SELECT
             M.MemberId,
-            M.FirstName + ' ' + M.LastName AS MemberName,
-            E.FirstName + ' ' + E.LastName AS TrainerName,
+            CONCAT(M.FirstName ,' ',M.MiddleName,' ',M.LastName) AS MemberName,
+            CONCAT(E.FirstName ,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
             T.TrainerType,
             Sh.StartTime,
             Sh.EndTime
@@ -22,7 +22,7 @@ BEGIN
             ON Sh.ShiftId=T.TrainerId
         INNER JOIN tblEmployee AS E
             ON T.EmployeeId = E.EmployeeId
-        WHERE T.TrainerType = 'Personal Trainer';
+        WHERE T.TrainerType = 'Personal';
 
     END TRY
     BEGIN CATCH
