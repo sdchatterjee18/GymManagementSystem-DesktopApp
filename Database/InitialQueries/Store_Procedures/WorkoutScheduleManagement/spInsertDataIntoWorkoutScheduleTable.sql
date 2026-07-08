@@ -11,7 +11,7 @@ BEGIN
         IF @WorkoutPlanId IS NULL OR @ExerciseId IS NULL OR LTRIM(RTRIM(ISNULL(@WorkoutDay, ''))) = ''
         BEGIN
             SELECT 
-                'WorkoutPlanId, ExerciseId and WorkoutDay are required.'
+                'WorkoutPlanId, ExerciseId and WorkoutDay are required.' AS Message
             RETURN;
         END
 
@@ -21,21 +21,21 @@ BEGIN
         IF @WorkoutDay NOT IN ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')
         BEGIN
             SELECT
-                'WorkoutDay must be a valid day name (Monday-Sunday).' AS ERROR_MESSAGE
+                'WorkoutDay must be a valid day name (Monday-Sunday).' AS Message
             RETURN;
         END
 
         IF NOT EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutPlanId = @WorkoutPlanId)
         BEGIN
             SELECT
-                'Invalid WorkoutPlanId: no matching WorkoutPlan found.' AS ERROR_MESSAGE
+                'Invalid WorkoutPlanId: no matching WorkoutPlan found.' AS Message
             RETURN;
         END
 
         IF NOT EXISTS (SELECT 1 FROM tblExercises WHERE ExerciseId = @ExerciseId)
         BEGIN
             SELECT
-                'Invalid ExerciseId: no matching Exercise found.' AS ERROR_MESSAGE
+                'Invalid ExerciseId: no matching Exercise found.' AS Message
             RETURN;
         END
 
@@ -47,20 +47,18 @@ BEGIN
         )
         BEGIN
             SELECT
-                'This exercise is already scheduled for this day in the selected workout plan.' AS ERROR_MESSAGE
+                'This exercise is already scheduled for this day in the selected workout plan.' AS Message
             RETURN;
         END
 
         INSERT INTO tblWorkoutSchedule (WorkoutPlanId, ExerciseId, WorkoutDay)
         VALUES (@WorkoutPlanId, @ExerciseId, @WorkoutDay);
 
-        SELECT 
-            1 AS STATUS_CODE,
-            'Record inserted successfuly' AS ERROR_MESSAGE
+        SELECT
+            'Record inserted successfuly' AS Message
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        SELECT @ErrMsg AS ERROR_MESSAGE
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

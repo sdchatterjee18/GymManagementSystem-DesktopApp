@@ -10,21 +10,21 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM tblExercises WHERE ExerciseId = @ExerciseId)
     BEGIN
         SELECT 
-            'ExerciseId not found in Exercises table.'
+            'ExerciseId not found in Exercises table.' AS Message
         RETURN;
     END
 
     IF NOT EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutPlanId = @WorkoutPlanId)
     BEGIN
         SELECT 
-            'WorkoutPlaneId not found in WorkoutPlans table.'
+            'WorkoutPlaneId not found in WorkoutPlans table.' AS Message
         RETURN;
     END
 
     IF NOT EXISTS (SELECT 1 FROM tblWorkoutSchedule WHERE WorkoutScheduleId = @WorkoutScheduleId)
     BEGIN
         SELECT 
-            'WorkoutSchedule record with ScheduleId not found.'
+            'WorkoutSchedule record with ScheduleId not found.' AS Message
         RETURN;
     END
 

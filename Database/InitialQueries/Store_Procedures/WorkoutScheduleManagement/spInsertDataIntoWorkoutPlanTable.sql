@@ -13,21 +13,21 @@ BEGIN
         IF @WorkoutName IS NULL OR @WorkoutName = ''
         BEGIN
             SELECT
-                'WorkoutName cannot be NULL or empty.' AS ERROR_MESSAGE
+                'WorkoutName cannot be NULL or empty.' AS Message
             RETURN;
         END
 
         IF LEN(@WorkoutName) > 100
         BEGIN
             SELECT
-                'WorkoutName cannot exceed 100 characters.' AS ERROR_MESSAGE
+                'WorkoutName cannot exceed 100 characters.' AS Message
             RETURN;
         END
 
         IF @Description IS NULL OR @Description = ''
         BEGIN
             SELECT
-                'Description cannot be NULL or empty.' AS ERROR_MESSAGE
+                'Description cannot be NULL or empty.' AS Message
             RETURN;
         END
 
@@ -35,14 +35,14 @@ BEGIN
         IF @WorkoutName LIKE '%[^a-zA-Z0-9 ,''&/-]%'
         BEGIN
             SELECT
-                'WorkoutName contains invalid characters.' AS ERROR_MESSAGE
+                'WorkoutName contains invalid characters.' AS Message
             RETURN;
         END
 
         IF EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutName = @WorkoutName)
         BEGIN
             SELECT 
-                'A workout plan with this name already exists.' AS ERROR_MESSAGE
+                'A workout plan with this name already exists.' AS Message
             RETURN;
         END
 
@@ -50,12 +50,10 @@ BEGIN
         VALUES (@WorkoutName, @Description);
 
         SELECT 
-            'Record inserted successfuly' AS ERROR_MESSAGE
+            'Record inserted successfuly' AS Message
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        
-        SELECT @ErrMsg AS ERROR_MESSAGE
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END
