@@ -67,41 +67,6 @@ BEGIN TRY
         RETURN;
     END
 
-    -- Password Length
-    IF LEN(@NewPasswordHash) < 8
-    BEGIN
-        SELECT 'Password Must Be At Least 8 Characters.' AS Message;
-        RETURN;
-    END
-
-    -- Uppercase Check
-    IF @NewPasswordHash NOT LIKE '%[A-Z]%'
-    BEGIN
-        SELECT 'Password Must Contain At Least One Uppercase Letter.' AS Message;
-        RETURN;
-    END
-
-    -- Lowercase Check
-    IF @NewPasswordHash NOT LIKE '%[a-z]%'
-    BEGIN
-        SELECT 'Password Must Contain At Least One Lowercase Letter.' AS Message;
-        RETURN;
-    END
-
-    -- Number Check
-    IF @NewPasswordHash NOT LIKE '%[0-9]%'
-    BEGIN
-        SELECT 'Password Must Contain At Least One Number.' AS Message;
-        RETURN;
-    END
-
-    -- Special Character Check
-    IF @NewPasswordHash NOT LIKE '%[^A-Za-z0-9]%'
-    BEGIN
-        SELECT 'Password Must Contain At Least One Special Character.' AS Message;
-        RETURN;
-    END
-
     -- Update Password
     UPDATE tblAdmin
     SET PasswordHash = @NewPasswordHash
