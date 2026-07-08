@@ -1,4 +1,4 @@
-CREATE PROC spGetWorkoutScheduleByWorkoutPlanNameAndExerciseName
+CREATE PROC spGetWorkoutScheduleByWorkoutPlanNameAndExerciseName 
     @WorkoutPlanName NVARCHAR(100) = NULL,
     @ExerciseName    NVARCHAR(100) = NULL
 AS
@@ -23,3 +23,4 @@ BEGIN
         e.ExerciseName;
 END
 GO
+

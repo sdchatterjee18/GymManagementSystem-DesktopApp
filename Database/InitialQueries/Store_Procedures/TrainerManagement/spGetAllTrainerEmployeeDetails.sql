@@ -20,14 +20,11 @@ BEGIN
 
         SELECT
             E.EmployeeId,
-            CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
-
             T.TrainerId,
+            CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
             T.Specialization,
             T.TrainerType,
             T.IsActive AS TrainerStatus,
-
-           
             CD.Document
 
         FROM tblEmployee E
@@ -50,9 +47,7 @@ BEGIN
     END TRY
 
     BEGIN CATCH
-
-        SELECT
-            ERROR_MESSAGE() AS ErrorMessage
+            SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END
 GO
