@@ -1,4 +1,4 @@
-CREATE PROC spGetInactivePersonalTrainersByShift 
+CREATE PROC spGetInactivePersonalTrainersByShift
 (
     @ShiftId INT
 )
@@ -50,16 +50,13 @@ BEGIN
             ON TS.ShiftId = S.ShiftId
         WHERE TS.ShiftId = @ShiftId
               AND TS.IsActive = 0
-              AND T.TrainerType = 'Personal'
+              AND T.TrainerType = 'Personal Trainer'
         ORDER BY E.FirstName, E.LastName;
 
     END TRY
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS ErrorMessage
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END
 GO
-
-

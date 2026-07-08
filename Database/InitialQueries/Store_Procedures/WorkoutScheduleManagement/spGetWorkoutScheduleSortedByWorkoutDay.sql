@@ -22,7 +22,6 @@ BEGIN
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR(@ErrMsg, 16, 1);
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

@@ -8,15 +8,13 @@ BEGIN
         IF @PaymentMonth IS NULL OR LTRIM(RTRIM(@PaymentMonth)) = ''
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'PaymentMonth is required' AS Message;
             RETURN;
         END
 
-        IF @PaymentMonth NOT IN ( 'January', 'February', 'March',     'April', 'May',     'June',     'July',       'August','September','October', 'November',   'December')
+        IF @PaymentMonth NOT IN ( 'January', 'February', 'March','April', 'May',     'June',     'July',       'August','September','October','November','December')
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'Invalid PaymentMonth. Allowed values are: January, February, March, April, May, June, July, August, September, October, November, December' AS Message;
             RETURN;
         END
@@ -24,7 +22,6 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblSalaryPayment WHERE PaymentMonth = @PaymentMonth)
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'No payment records found for ' + @PaymentMonth AS Message;
             RETURN;
         END
@@ -57,8 +54,6 @@ BEGIN
     END TRY
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE()   AS Message,
-            ERROR_LINE()      AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+            ERROR_MESSAGE()   AS Message
     END CATCH
 END;

@@ -1,13 +1,13 @@
-CREATE PROC spGetWorkoutScheduleByWorkoutPlanNameAndExerciseName 
-    @WorkoutPlanName NVARCHAR(100) = NULL,
-    @ExerciseName    NVARCHAR(100) = NULL
+CREATE PROC spDisplayAllWorkoutScheduleRecords
 AS
 BEGIN
     SET NOCOUNT ON;
 
     SELECT 
         ws.WorkoutScheduleId,
+        wp.WorkoutPlanId,
         wp.WorkoutName,
+        e.ExerciseId,
         e.ExerciseName,
         ws.WorkoutDay
     FROM tblWorkoutSchedule ws
@@ -15,12 +15,8 @@ BEGIN
         ON ws.ExerciseId = e.ExerciseId
     INNER JOIN tblWorkoutPlans wp 
         ON ws.WorkoutPlanId = wp.WorkoutPlanId
-    WHERE ws.WorkoutDay IS NOT NULL
-        AND (@WorkoutPlanName IS NULL OR wp.WorkoutName = @WorkoutPlanName)
-        AND (@ExerciseName IS NULL OR e.ExerciseName = @ExerciseName)
     ORDER BY 
         wp.WorkoutName, 
         e.ExerciseName;
 END
 GO
-

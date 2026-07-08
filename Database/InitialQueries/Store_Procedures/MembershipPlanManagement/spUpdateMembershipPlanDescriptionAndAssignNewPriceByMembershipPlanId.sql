@@ -12,20 +12,20 @@ BEGIN
 
         IF NOT EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId)
         BEGIN
-            SELECT 'MembershipPlanId not found.' AS ERROR_MESSAGE
+            SELECT 'MembershipPlanId not found.' AS Message
             RETURN;
         END
 
         IF @Description IS NULL AND @NewPrice IS NULL
         BEGIN
-            SELECT 'No values supplied. Provide a Description and/or a NewPrice to update.' AS ERROR_MESSAGE
+            SELECT 'No values supplied. Provide a Description and/or a NewPrice to update.' AS MESSAGE
             RETURN;
         END
 
 
         IF @NewPrice IS NOT NULL AND @NewPrice <= 0
         BEGIN
-            SELECT 'Price cannot be negative or zero.' AS ERROR_MESSAGE
+            SELECT 'Price cannot be negative or zero.' AS Message
             RETURN;
         END
 
@@ -50,7 +50,7 @@ BEGIN
 
         IF @DescriptionChanged = 0 AND @PriceChanged = 0
         BEGIN
-            SELECT 'The supplied value(s) match the current record. No update performed.' AS ERROR_MESSAGE
+            SELECT 'The supplied value(s) match the current record. No update performed.' AS Message
             RETURN;
         END
 
@@ -68,9 +68,7 @@ BEGIN
             END AS Message;
 
     END TRY
-    BEGIN CATCH
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-       
-        SELECT @ErrorMessage AS ErrorMessage
+    BEGIN CATCH 
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

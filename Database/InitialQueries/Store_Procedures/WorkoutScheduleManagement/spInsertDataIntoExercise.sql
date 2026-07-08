@@ -10,28 +10,28 @@ BEGIN
         IF @ExerciseName IS NULL OR LTRIM(RTRIM(@ExerciseName)) = ''
         BEGIN
             SELECT 
-                'ExerciseName cannot be NULL or empty.' AS ERROR_MESSAGE
+                'ExerciseName cannot be NULL or empty.' AS Message
             RETURN;
         END
 
         IF @MuscleType IS NULL OR LTRIM(RTRIM(@MuscleType)) = ''
         BEGIN
             SELECT 
-                'MuscleType cannot be NULL or empty.' AS ERROR_MESSAGE
+                'MuscleType cannot be NULL or empty.' AS Message
             RETURN;
         END
 
         IF LEN(@ExerciseName) > 100
         BEGIN
             SELECT
-                'ExerciseName cannot exceed 100 characters.' AS ERROR_MESSAGE
+                'ExerciseName cannot exceed 100 characters.' AS Message
             RETURN;
         END
 
         IF LEN(@MuscleType) > 100
         BEGIN
             SELECT 
-                'MuscleType cannot exceed 100 characters.' AS ERROR_MESSAGE
+                'MuscleType cannot exceed 100 characters.' AS Message
             RETURN;
         END
 
@@ -41,7 +41,7 @@ BEGIN
         )
         BEGIN
             SELECT
-                'An exercise with this name already exists.' AS ERROR_MESSAGE
+                'An exercise with this name already exists.' AS Message
             RETURN;
         END
 
@@ -49,12 +49,10 @@ BEGIN
             VALUES (LTRIM(RTRIM(@ExerciseName)), LTRIM(RTRIM(@MuscleType)));
             
             SELECT 
-                'Record inserted successfuly' AS ERROR_MESSAGE
+                'Record inserted successfuly' AS Message
     END TRY
     BEGIN CATCH
-        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        
-        SELECT @ErrMsg AS ERROR_MESSAGE
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END
 GO
