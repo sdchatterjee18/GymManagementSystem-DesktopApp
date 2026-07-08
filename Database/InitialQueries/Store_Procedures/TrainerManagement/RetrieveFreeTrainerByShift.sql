@@ -5,7 +5,7 @@ BEGIN
 
     BEGIN TRY
 
-        DECLARE @FreeTrainer INT;
+        DECLARE @FreeTrainer INT = 0;
 
         SELECT
             @FreeTrainer = COUNT(*)
@@ -20,10 +20,10 @@ BEGIN
           );
 
         SELECT
-            ShiftName,
-            @FreeTrainer AS TotalFreeTrainer
-        FROM tblShift
-        ORDER BY StartTime;
+            S.ShiftName,
+            ISNULL(@FreeTrainer, 0) AS TotalFreeTrainer
+        FROM tblShift S
+        ORDER BY S.StartTime;
 
     END TRY
 
