@@ -2,7 +2,7 @@ CREATE PROCEDURE DisplayGeneralTrainers
 AS
 BEGIN
 	BEGIN TRY
-		SELECT   * FROM tblTrainer WHERE TrainerType='Genaral Trainer';
+		SELECT * FROM tblTrainer WHERE TrainerType='General';
 	END TRY
 	BEGIN CATCH
 		SELECT ERROR_MESSAGE() AS Message;
