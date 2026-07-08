@@ -32,6 +32,7 @@ BEGIN
 
     END TRY
     BEGIN CATCH
-        THROW;
+        SELECT 
+            ERROR_MESSAGE() AS Message
     END CATCH
 END
