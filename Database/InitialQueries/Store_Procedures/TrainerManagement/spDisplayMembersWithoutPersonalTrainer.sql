@@ -21,8 +21,7 @@ BEGIN
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS ErrorMessage
+        SELECT ERROR_MESSAGE() AS Message
            
     END CATCH
 END;
