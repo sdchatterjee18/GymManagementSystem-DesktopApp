@@ -1,4 +1,4 @@
-CREATE PROC spRetrieveTrainerOfSpecificMember   
+CREATE PROC spRetrieveTrainerOfSpecificMember
 (
     @MemberId INT
 )
@@ -62,8 +62,7 @@ BEGIN
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS Message
+        SELECT ERROR_MESSAGE() AS Message
 
     END CATCH
 END;

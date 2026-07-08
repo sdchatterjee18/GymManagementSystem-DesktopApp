@@ -15,31 +15,31 @@ BEGIN
        
         IF @MembershipPlanName IS NULL OR LTRIM(RTRIM(@MembershipPlanName)) = ''
         BEGIN
-            SELECT 'MembershipPlanName cannot be empty.' AS ERROR_MESSAGE
+            SELECT 'MembershipPlanName cannot be empty.' AS Message
             RETURN;
         END
 
         IF @DurationInDays IS NULL OR @DurationInDays <= 0
         BEGIN
-            SELECT 'DurationInDays must be greater than zero.' AS ERROR_MESSAGE
+            SELECT 'DurationInDays must be greater than zero.' AS Message
             RETURN;
         END
 
         IF @Price IS NULL OR @Price < 0
         BEGIN
-            SELECT 'Price cannot be negative.' AS ERROR_MESSAGE
+            SELECT 'Price cannot be negative.' AS Message
             RETURN;
         END
 
         IF NOT EXISTS (SELECT 1 FROM tblMembershipPlanType WHERE PlanTypeId = @PlanTypeId)
         BEGIN
-            SELECT 'Invalid PlanTypeId. No matching record found in tblMembershipPlanType.' AS ERROR_MESSAGE
+            SELECT 'Invalid PlanTypeId. No matching record found in tblMembershipPlanType.' AS Message
             RETURN;
         END
 
         IF EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanName = @MembershipPlanName)
         BEGIN
-            SELECT 'A membership plan with this name already exists.' AS ERROR_MESSAGE
+            SELECT 'A membership plan with this name already exists.' AS Message            
             RETURN;
         END
 
@@ -62,14 +62,10 @@ BEGIN
             @IsActive
         );
 
-         RETURN SCOPE_IDENTITY();
+         SELECT 'New record was added successfuly.' AS Message
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
-        DECLARE @ErrorState INT = ERROR_STATE();
-
-        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+       SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

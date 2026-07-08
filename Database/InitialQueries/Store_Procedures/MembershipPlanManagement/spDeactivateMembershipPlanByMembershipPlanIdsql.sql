@@ -10,13 +10,13 @@ BEGIN
         
         IF NOT EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId)
         BEGIN
-            SELECT 'MembershipPlanId not found.' AS ERROR_MESSAGE
+            SELECT 'MembershipPlanId not found.' AS Message
             RETURN;
         END
 
         IF EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId AND IsActive = 0)
         BEGIN
-            SELECT 'This membership plan is already inactive.' AS ERROR_MESSAGE
+            SELECT 'This membership plan is already inactive.' AS Message
             RETURN;
         END
 
@@ -26,10 +26,6 @@ BEGIN
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        DECLARE @ErrorSeverity INT = ERROR_SEVERITY();
-        DECLARE @ErrorState INT = ERROR_STATE();
-
-        RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState);
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

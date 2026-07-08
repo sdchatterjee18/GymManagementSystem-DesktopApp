@@ -64,8 +64,7 @@ BEGIN
 
     BEGIN CATCH
 
-        SELECT
-            ERROR_MESSAGE() AS Message
+        SELECT ERROR_MESSAGE() AS Message
 
     END CATCH
 END;

@@ -8,8 +8,7 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblWorkoutSchedule WHERE WorkoutScheduleId = @WorkoutScheduleId)
         BEGIN
             SELECT
-                0 AS STATUS_CODE,
-                'Invalid WorkoutScheduleId: no matching record found.' AS ERROR_MESSAGE
+                'Invalid WorkoutScheduleId: no matching record found.' AS Message
             RETURN;
         END
 
@@ -19,8 +18,7 @@ BEGIN
         )
         BEGIN
             SELECT 
-                0 AS STATUS_CODE,
-                'This schedule has already been removed.' AS ERROR_MESSAGE
+                'This schedule has already been removed.' AS Message
             RETURN;
         END
 
@@ -29,12 +27,10 @@ BEGIN
         WHERE WorkoutScheduleId = @WorkoutScheduleId;
 
         SELECT 
-            1 AS STATUS_CODE,
-            'Record was assigned null as soft delete' AS ERROR_MESSAGE
+            'Record was assigned null as soft delete' AS Message
 
     END TRY
     BEGIN CATCH
-        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR(@ErrMsg, 16, 1);
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END

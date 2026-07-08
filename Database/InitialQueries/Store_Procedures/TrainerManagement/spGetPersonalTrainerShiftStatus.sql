@@ -33,7 +33,7 @@ BEGIN
             SELECT 1
             FROM tblTrainer
             WHERE TrainerId = @TrainerId
-                  AND TrainerType = 'Personal'
+                  AND TrainerType = 'Personal Trainer'
         )
         BEGIN
             SELECT 'Specified trainer is not a Personal Trainer.' AS Message;
@@ -59,14 +59,13 @@ BEGIN
         INNER JOIN tblShift S
             ON TS.ShiftId = S.ShiftId
         WHERE T.TrainerId = @TrainerId
-              AND T.TrainerType = 'Personal '
+              AND T.TrainerType = 'Personal Trainer'
         ORDER BY S.StartTime;
 
     END TRY
 
     BEGIN CATCH
-        SELECT
-            ERROR_MESSAGE() AS ErrorMessage
+        SELECT ERROR_MESSAGE() AS Message
     END CATCH
 END;
 GO

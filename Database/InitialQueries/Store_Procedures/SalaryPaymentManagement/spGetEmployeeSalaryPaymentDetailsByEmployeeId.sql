@@ -8,7 +8,6 @@ BEGIN
         IF @EmployeeId IS NULL
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'EmployeeId is required' AS Message;
             RETURN;
         END
@@ -16,7 +15,6 @@ BEGIN
         IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId)
         BEGIN
             SELECT 
-                0 AS StatusCode, 
                 'EmployeeId does not exist' AS Message;
             RETURN;
         END
@@ -49,8 +47,6 @@ BEGIN
     END TRY
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE()   AS Message,
-            ERROR_LINE()      AS ErrorLine,
-            ERROR_PROCEDURE() AS ProcedureName;
+            ERROR_MESSAGE()   AS Message
     END CATCH
 END;
