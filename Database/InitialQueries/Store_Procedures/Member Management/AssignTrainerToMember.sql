@@ -7,10 +7,6 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE
-        @CurrentTrainerId INT,
-        @AssignedDate DATE;
-
     BEGIN TRY
 
         ------------------------------------------------
@@ -61,73 +57,43 @@ BEGIN
         END;
 
         ------------------------------------------------
-        -- Get Current Active Trainer
+        -- Trainer Shift Validation
         ------------------------------------------------
-        SELECT TOP (1)
-            @CurrentTrainerId = TrainerId,
-            @AssignedDate = AssignedDate
-        FROM tblMemberTrainerAssignment
-        WHERE MemberId = @MemberId
-          AND IsActive = 1
-        ORDER BY AssignedDate DESC,
-                 MemberTrainerAssignmentId DESC;
-
-        ------------------------------------------------
-        -- First Time Assignment
-        ------------------------------------------------
-        IF @CurrentTrainerId IS NULL
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMemberShift MS
+            INNER JOIN tblTrainerShift TS
+                ON MS.ShiftId = TS.ShiftId
+            WHERE MS.MemberId = @MemberId
+              AND TS.TrainerId = @TrainerId
+              AND MS.IsActive = 1
+              AND TS.IsActive = 1
+        )
         BEGIN
-            BEGIN TRANSACTION;
-
-            INSERT INTO tblMemberTrainerAssignment
-            (
-                MemberId,
-                TrainerId,
-                AssignedDate,
-                IsActive
-            )
-            VALUES
-            (
-                @MemberId,
-                @TrainerId,
-                CAST(GETDATE() AS DATE),
-                1
-            );
-
-            COMMIT TRANSACTION;
-
-            SELECT 'Trainer assigned successfully.' AS Message;
+            SELECT 'Trainer is not available in the member''s shift.' AS Message;
             RETURN;
         END;
 
         ------------------------------------------------
-        -- Same Trainer Validation
+        -- Personal Trainer Already Assigned Validation
         ------------------------------------------------
-        IF @CurrentTrainerId = @TrainerId
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblMemberTrainerAssignment
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
         BEGIN
-            SELECT 'Member is already assigned to this trainer.' AS Message;
+            SELECT 'Personal trainer is already assigned to this member.' AS Message;
             RETURN;
         END;
 
         ------------------------------------------------
-        -- Restrict Trainer Change Within Same Month
-        ------------------------------------------------
-        IF YEAR(@AssignedDate) = YEAR(GETDATE())
-           AND MONTH(@AssignedDate) = MONTH(GETDATE())
-        BEGIN
-            SELECT 'Trainer can be changed only from next month.' AS Message;
-            RETURN;
-        END;
-
-        ------------------------------------------------
-        -- Change Trainer
+        -- Assign Personal Trainer
         ------------------------------------------------
         BEGIN TRANSACTION;
-
-        UPDATE tblMemberTrainerAssignment
-        SET IsActive = 0
-        WHERE MemberId = @MemberId
-          AND IsActive = 1;
 
         INSERT INTO tblMemberTrainerAssignment
         (
@@ -146,7 +112,7 @@ BEGIN
 
         COMMIT TRANSACTION;
 
-        SELECT 'Trainer changed successfully.' AS Message;
+        SELECT 'Personal trainer assigned successfully.' AS Message;
 
     END TRY
 
@@ -158,5 +124,6 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
+
 END;
 GO
