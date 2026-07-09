@@ -65,8 +65,9 @@ BEGIN
         INNER JOIN tblExpensesCategories EC
             ON E.ExpenseCategoryId = EC.ExpenseCategoryId
         WHERE E.ExpenseDate BETWEEN @FromDate AND @ToDate
-        ORDER BY E.ExpenseDate ASC,
-                 E.ExpenseId ASC;
+        ORDER BY
+            E.ExpenseDate DESC,
+            E.ExpenseId DESC;
 
     END TRY
 
