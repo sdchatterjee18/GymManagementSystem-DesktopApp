@@ -15,9 +15,15 @@ BEGIN
         FROM tblMember M
         INNER JOIN tblMembershipSubscription MS
             ON M.MemberId = MS.MemberId
-        WHERE M.IsActive = 1
-          AND MS.IsActive = 0
-          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = M.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE)
+        AND M.IsActive = 1;
 
         ---------------------------------------------------------
         -- Deactivate Member Shifts
@@ -27,9 +33,15 @@ BEGIN
         FROM tblMemberShift MSH
         INNER JOIN tblMembershipSubscription MS
             ON MSH.MemberId = MS.MemberId
-        WHERE MSH.IsActive = 1
-          AND MS.IsActive = 0
-          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = MSH.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE)
+        AND MSH.IsActive = 1;
 
         ---------------------------------------------------------
         -- Release Lockers
@@ -41,8 +53,14 @@ BEGIN
             ON L.LockerId = LA.LockerId
         INNER JOIN tblMembershipSubscription MS
             ON LA.MemberId = MS.MemberId
-        WHERE MS.IsActive = 0
-          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = LA.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
 
         ---------------------------------------------------------
         -- Remove Locker Allocation
@@ -51,8 +69,14 @@ BEGIN
         FROM tblLockerAllocation LA
         INNER JOIN tblMembershipSubscription MS
             ON LA.MemberId = MS.MemberId
-        WHERE MS.IsActive = 0
-          AND DATEADD(MONTH, 3, MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = LA.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
 
         COMMIT TRANSACTION;
 
