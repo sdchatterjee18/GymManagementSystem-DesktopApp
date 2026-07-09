@@ -32,6 +32,7 @@ BEGIN
             SELECT 1
             FROM tblMembershipSubscription
             WHERE MemberId = @MemberId
+              AND IsActive = 1
               AND ExpiryDate >= CAST(GETDATE() AS DATE)
         )
         BEGIN
@@ -57,19 +58,19 @@ BEGIN
         END;
 
         ------------------------------------------------
-        -- First Time Assignment Validation
+        -- Personal Trainer Already Assigned Validation
         ------------------------------------------------
-       IF EXISTS
-		(
-			SELECT 1
-			FROM tblMemberTrainerAssignment
-			WHERE MemberId = @MemberId
-			  AND IsActive = 1
-		)
-		BEGIN
-			SELECT 'Personal trainer is already assigned to this member.' AS Message;
-			RETURN;
-		END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblMemberTrainerAssignment
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Personal trainer is already assigned to this member.' AS Message;
+            RETURN;
+        END;
 
         ------------------------------------------------
         -- Assign Personal Trainer
@@ -105,5 +106,6 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
+
 END;
 GO
