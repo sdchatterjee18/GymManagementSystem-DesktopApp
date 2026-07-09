@@ -7,6 +7,8 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
+    DECLARE @ShiftId INT;
+
     BEGIN TRY
 
         ------------------------------------------------
@@ -58,6 +60,20 @@ BEGIN
         END;
 
         ------------------------------------------------
+        -- Get Member Active Shift
+        ------------------------------------------------
+        SELECT @ShiftId = ShiftId
+        FROM tblMemberShift
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+
+        IF @ShiftId IS NULL
+        BEGIN
+            SELECT 'Member has no active shift.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
         -- Trainer Availability Validation
         ------------------------------------------------
         IF EXISTS
@@ -65,10 +81,11 @@ BEGIN
             SELECT 1
             FROM tblTrainerShift
             WHERE TrainerId = @TrainerId
+              AND ShiftId = @ShiftId
               AND IsActive = 0
         )
         BEGIN
-            SELECT 'Trainer is not available.' AS Message;
+            SELECT 'Trainer is not available in this shift.' AS Message;
             RETURN;
         END;
 
@@ -108,11 +125,13 @@ BEGIN
         );
 
         ------------------------------------------------
-        -- Make Trainer Unavailable
+        -- Make Trainer Unavailable For This Shift
         ------------------------------------------------
         UPDATE tblTrainerShift
         SET IsActive = 0
-        WHERE TrainerId = @TrainerId;
+        WHERE TrainerId = @TrainerId
+          AND ShiftId = @ShiftId
+          AND IsActive = 1;
 
         COMMIT TRANSACTION;
 
@@ -128,6 +147,5 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-
 END;
 GO
