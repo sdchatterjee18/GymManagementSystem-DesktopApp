@@ -6,6 +6,7 @@ CREATE PROC spChangeMemberShift
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
     DECLARE
         @CurrentShiftId INT,
@@ -39,6 +40,7 @@ BEGIN
             FROM tblMembershipSubscription
             WHERE MemberId = @MemberId
               AND ExpiryDate >= CAST(GETDATE() AS DATE)
+              AND IsActive = 1
         )
         BEGIN
             SELECT 'Member has no active membership.' AS Message;
@@ -110,16 +112,28 @@ BEGIN
             SELECT 'Selected shift is already full.' AS Message;
             RETURN;
         END;
+
+        ------------------------------------------------
+        -- Get Active Personal Trainer
+        ------------------------------------------------
+        SELECT TOP (1)
+            @TrainerId = TrainerId
+        FROM tblMemberTrainerAssignment
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+
         ------------------------------------------------
         -- Change Shift
         ------------------------------------------------
         BEGIN TRANSACTION;
 
+        -- Deactivate Current Shift
         UPDATE tblMemberShift
         SET IsActive = 0
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
+        -- Assign New Shift
         INSERT INTO tblMemberShift
         (
             MemberId,
@@ -133,9 +147,19 @@ BEGIN
             1
         );
 
+        -- Deactivate Personal Trainer Assignment
+        IF @TrainerId IS NOT NULL
+        BEGIN
+            UPDATE tblMemberTrainerAssignment
+            SET IsActive = 0
+            WHERE MemberId = @MemberId
+              AND TrainerId = @TrainerId
+              AND IsActive = 1;
+        END;
+
         COMMIT TRANSACTION;
 
-        SELECT 'Member shift changed successfully.' AS Message;
+        SELECT 'Member shift changed successfully. Personal trainer assignment has been removed.' AS Message;
 
     END TRY
 
