@@ -110,32 +110,6 @@ BEGIN
             SELECT 'Selected shift is already full.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Personal Trainer Validation
-        ------------------------------------------------
-        SELECT TOP (1)
-            @TrainerId = TrainerId
-        FROM tblMemberTrainerAssignment
-        WHERE MemberId = @MemberId
-          AND IsActive = 1;
-
-        IF @TrainerId IS NOT NULL
-        BEGIN
-            IF NOT EXISTS
-            (
-                SELECT 1
-                FROM tblTrainerShift
-                WHERE TrainerId = @TrainerId
-                  AND ShiftId = @NewShiftId
-                  AND IsActive = 1
-            )
-            BEGIN
-                SELECT 'Assigned personal trainer is not available in the selected shift.' AS Message;
-                RETURN;
-            END;
-        END;
-
         ------------------------------------------------
         -- Change Shift
         ------------------------------------------------
