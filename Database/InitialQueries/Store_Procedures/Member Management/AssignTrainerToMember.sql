@@ -58,6 +58,21 @@ BEGIN
         END;
 
         ------------------------------------------------
+        -- Trainer Availability Validation
+        ------------------------------------------------
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblTrainerShift
+            WHERE TrainerId = @TrainerId
+              AND IsActive = 0
+        )
+        BEGIN
+            SELECT 'Trainer is not available.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
         -- Personal Trainer Already Assigned Validation
         ------------------------------------------------
         IF EXISTS
@@ -91,6 +106,13 @@ BEGIN
             CAST(GETDATE() AS DATE),
             1
         );
+
+        ------------------------------------------------
+        -- Make Trainer Unavailable
+        ------------------------------------------------
+        UPDATE tblTrainerShift
+        SET IsActive = 0
+        WHERE TrainerId = @TrainerId;
 
         COMMIT TRANSACTION;
 
