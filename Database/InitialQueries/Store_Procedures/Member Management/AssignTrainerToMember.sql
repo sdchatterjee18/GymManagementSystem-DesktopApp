@@ -57,36 +57,16 @@ BEGIN
         END;
 
         ------------------------------------------------
-        -- Trainer Shift Validation
-        ------------------------------------------------
-        IF NOT EXISTS
-        (
-            SELECT 1
-            FROM tblMemberShift MS
-            INNER JOIN tblTrainerShift TS
-                ON MS.ShiftId = TS.ShiftId
-            WHERE MS.MemberId = @MemberId
-              AND TS.TrainerId = @TrainerId
-              AND MS.IsActive = 1
-              AND TS.IsActive = 1
-        )
-        BEGIN
-            SELECT 'Trainer is not available in the member''s shift.' AS Message;
-            RETURN;
-        END;
-
-        ------------------------------------------------
-        -- Personal Trainer Already Assigned Validation
+        -- First Time Assignment Validation
         ------------------------------------------------
         IF EXISTS
         (
             SELECT 1
             FROM tblMemberTrainerAssignment
             WHERE MemberId = @MemberId
-              AND IsActive = 1
         )
         BEGIN
-            SELECT 'Personal trainer is already assigned to this member.' AS Message;
+            SELECT 'Trainer has already been assigned to this member.' AS Message;
             RETURN;
         END;
 
@@ -124,6 +104,5 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message;
 
     END CATCH
-
 END;
 GO
