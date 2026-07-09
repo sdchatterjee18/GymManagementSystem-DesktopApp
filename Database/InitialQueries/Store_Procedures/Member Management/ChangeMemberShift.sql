@@ -155,11 +155,19 @@ BEGIN
             WHERE MemberId = @MemberId
               AND TrainerId = @TrainerId
               AND IsActive = 1;
+	    	  ------------------------------------------------
+			-- Activate Trainer Current Shift
+			------------------------------------------------
+				UPDATE tblTrainerShift
+				SET IsActive = 1
+				WHERE TrainerId = @TrainerId
+				  AND ShiftId = @CurrentShiftId
+				  AND IsActive = 0;
         END;
 
         COMMIT TRANSACTION;
 
-        SELECT 'Member shift changed successfully. Personal trainer assignment has been removed.' AS Message;
+        SELECT 'Member shift changed successfully.' AS Message;
 
     END TRY
 
