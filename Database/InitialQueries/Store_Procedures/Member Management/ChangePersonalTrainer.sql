@@ -69,11 +69,6 @@ BEGIN
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        IF @ShiftId IS NULL
-        BEGIN
-            SELECT 'Member has no active shift.' AS Message;
-            RETURN;
-        END;
 
         ------------------------------------------------
         -- Current Active Trainer
@@ -83,11 +78,7 @@ BEGIN
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        IF @OldTrainerId IS NULL
-        BEGIN
-            SELECT 'No personal trainer is assigned to this member.' AS Message;
-            RETURN;
-        END;
+      
 
         ------------------------------------------------
         -- Same Trainer Validation
@@ -98,22 +89,7 @@ BEGIN
             RETURN;
         END;
 
-        ------------------------------------------------
-        -- New Trainer Availability Validation
-        ------------------------------------------------
-        IF EXISTS
-        (
-            SELECT 1
-            FROM tblTrainerShift
-            WHERE TrainerId = @NewTrainerId
-              AND ShiftId = @ShiftId
-              AND IsActive = 0
-        )
-        BEGIN
-            SELECT 'New trainer is not available in this shift.' AS Message;
-            RETURN;
-        END;
-
+        
         ------------------------------------------------
         -- Change Trainer
         ------------------------------------------------
