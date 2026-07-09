@@ -59,16 +59,17 @@ BEGIN
         ------------------------------------------------
         -- First Time Assignment Validation
         ------------------------------------------------
-        IF EXISTS
-        (
-            SELECT 1
-            FROM tblMemberTrainerAssignment
-            WHERE MemberId = @MemberId
-        )
-        BEGIN
-            SELECT 'Trainer has already been assigned to this member.' AS Message;
-            RETURN;
-        END;
+       IF EXISTS
+		(
+			SELECT 1
+			FROM tblMemberTrainerAssignment
+			WHERE MemberId = @MemberId
+			  AND IsActive = 1
+		)
+		BEGIN
+			SELECT 'Personal trainer is already assigned to this member.' AS Message;
+			RETURN;
+		END;
 
         ------------------------------------------------
         -- Assign Personal Trainer
