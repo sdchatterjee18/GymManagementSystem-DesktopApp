@@ -6,16 +6,15 @@ BEGIN
     BEGIN TRY
 
         SELECT
-            M.MemberId,
-            CONCAT(M.FirstName,' ',M.MiddleName,' ',M.LastName) AS MemberName
-            
-        FROM tblMember AS M
-        LEFT JOIN tblMemberTrainerAssignment AS MTA
-            ON M.MemberId = MTA.MemberId
-        LEFT JOIN tblTrainer AS T
-            ON MTA.TrainerId = T.TrainerId
-            AND T.TrainerType = 'Personal'
-        WHERE T.TrainerId IS NULL;
+    M.MemberId,
+    CONCAT(M.FirstName, ' ', M.MiddleName, ' ', M.LastName) AS MemberName
+    FROM tblMember AS M
+    WHERE NOT EXISTS (
+    SELECT 1
+    FROM tblMemberTrainerAssignment AS MTA
+    WHERE MTA.MemberId = M.MemberId
+      AND MTA.IsActive = 1
+    );
 
     END TRY
 
