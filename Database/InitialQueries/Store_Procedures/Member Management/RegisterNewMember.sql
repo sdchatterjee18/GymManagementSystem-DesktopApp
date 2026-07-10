@@ -124,6 +124,21 @@ BEGIN TRY
         SELECT 'Email Already Exists.' AS Message;
         RETURN;
     END
+	SET @EmergencyContact = NULLIF(LTRIM(RTRIM(@EmergencyContact)), '');
+	IF @EmergencyContact IS NOT NULL
+	BEGIN
+		IF LEN(@EmergencyContact) <> 10
+		BEGIN
+			SELECT 'Emergency Contact Must Be 10 Digits.' AS Message;
+			RETURN;
+		END;
+
+		IF @EmergencyContact LIKE '%[^0-9]%'
+		BEGIN
+			SELECT 'Emergency Contact Must Contain Only Digits.' AS Message;
+			RETURN;
+		END;
+	END;
 	SET @City = LTRIM(RTRIM(@City));
 	SET @District = LTRIM(RTRIM(@District));
     SET @State = LTRIM(RTRIM(@State));
