@@ -1,4 +1,4 @@
-CREATE PROC spGetSubscriptionCountBetweenStartingDateAndEndingDate
+CREATE PROC spGetTotalSubscriptionAmountBetweenStartingDateAndEndingDate
     @StartDate DATE,
     @EndDate DATE
 AS
@@ -20,7 +20,6 @@ BEGIN
         END
 
         SELECT 
-            COUNT(*) AS TotalSubscriptions,
             SUM(sp.Amount) AS TotalRevenue
         FROM tblSubscriptionPayment sp
         JOIN tblMembershipPlans mp 
@@ -34,7 +33,7 @@ BEGIN
     BEGIN CATCH
 
         SELECT 
-            ERROR_MESSAGE()   AS ErrorMessage;
+            ERROR_MESSAGE() AS Message;
 
     END CATCH
 END

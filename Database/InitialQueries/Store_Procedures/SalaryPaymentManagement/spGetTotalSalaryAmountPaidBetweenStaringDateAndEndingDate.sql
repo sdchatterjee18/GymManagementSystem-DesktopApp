@@ -20,7 +20,6 @@ BEGIN
         END
 
         SELECT
-            COUNT(sp.PaymentId) AS TotalPayments,
             SUM(s.Amount)       AS GrandTotalAmountPaid
         FROM tblSalaryPayment sp
         INNER JOIN tblSalary s

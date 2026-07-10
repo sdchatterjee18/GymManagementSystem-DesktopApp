@@ -6,6 +6,7 @@ CREATE PROC spChangeMemberShift
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
     DECLARE
         @CurrentShiftId INT,
@@ -39,6 +40,7 @@ BEGIN
             FROM tblMembershipSubscription
             WHERE MemberId = @MemberId
               AND ExpiryDate >= CAST(GETDATE() AS DATE)
+              AND IsActive = 1
         )
         BEGIN
             SELECT 'Member has no active membership.' AS Message;
@@ -112,7 +114,7 @@ BEGIN
         END;
 
         ------------------------------------------------
-        -- Personal Trainer Validation
+        -- Get Active Personal Trainer
         ------------------------------------------------
         SELECT TOP (1)
             @TrainerId = TrainerId
@@ -120,32 +122,18 @@ BEGIN
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
-        IF @TrainerId IS NOT NULL
-        BEGIN
-            IF NOT EXISTS
-            (
-                SELECT 1
-                FROM tblTrainerShift
-                WHERE TrainerId = @TrainerId
-                  AND ShiftId = @NewShiftId
-                  AND IsActive = 1
-            )
-            BEGIN
-                SELECT 'Assigned personal trainer is not available in the selected shift.' AS Message;
-                RETURN;
-            END;
-        END;
-
         ------------------------------------------------
         -- Change Shift
         ------------------------------------------------
         BEGIN TRANSACTION;
 
+        -- Deactivate Current Shift
         UPDATE tblMemberShift
         SET IsActive = 0
         WHERE MemberId = @MemberId
           AND IsActive = 1;
 
+        -- Assign New Shift
         INSERT INTO tblMemberShift
         (
             MemberId,
@@ -158,6 +146,24 @@ BEGIN
             @NewShiftId,
             1
         );
+
+        -- Deactivate Personal Trainer Assignment
+        IF @TrainerId IS NOT NULL
+        BEGIN
+            UPDATE tblMemberTrainerAssignment
+            SET IsActive = 0
+            WHERE MemberId = @MemberId
+              AND TrainerId = @TrainerId
+              AND IsActive = 1;
+	    	  ------------------------------------------------
+			-- Activate Trainer Current Shift
+			------------------------------------------------
+				UPDATE tblTrainerShift
+				SET IsActive = 1
+				WHERE TrainerId = @TrainerId
+				  AND ShiftId = @CurrentShiftId
+				  AND IsActive = 0;
+        END;
 
         COMMIT TRANSACTION;
 

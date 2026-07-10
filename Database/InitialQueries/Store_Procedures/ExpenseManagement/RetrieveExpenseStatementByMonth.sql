@@ -46,8 +46,8 @@ BEGIN
         WHERE E.ExpenseDate >= DATEFROMPARTS(@Year, @Month, 1)
           AND E.ExpenseDate < DATEADD(MONTH, 1, DATEFROMPARTS(@Year, @Month, 1))
         ORDER BY
-            E.ExpenseDate ASC,
-            E.ExpenseId ASC;
+            E.ExpenseDate DESC,
+            E.ExpenseId DESC;
 
     END TRY
 
