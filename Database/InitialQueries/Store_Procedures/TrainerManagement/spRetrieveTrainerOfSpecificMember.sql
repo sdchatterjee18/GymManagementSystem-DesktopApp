@@ -1,4 +1,4 @@
-CREATE PROC spRetrieveTrainerOfSpecificMember
+CREATE PROC spRetrieveTrainerOfSpecificMember 
 (
     @MemberId INT
 )
@@ -41,13 +41,7 @@ BEGIN
         -- Retrieve Trainer Details
         ------------------------------------------------
         SELECT
-            M.MemberId,
-            M.FirstName + ' ' + M.LastName AS MemberName,
-            T.TrainerId,
-            E.FirstName + ' ' + E.LastName AS TrainerName,
-            E.PhoneNo,
-            E.EmailId,
-            MTA.AssignedDate
+            CONCAT(E.FirstName ,' ',E.MiddleName,' ',E.LastName) AS TrainerName
         FROM tblMemberTrainerAssignment MTA
         INNER JOIN tblTrainer T
             ON MTA.TrainerId = T.TrainerId

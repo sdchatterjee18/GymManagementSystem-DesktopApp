@@ -34,8 +34,8 @@ BEGIN
             ON E.ExpenseCategoryId = EC.ExpenseCategoryId
         WHERE YEAR(E.ExpenseDate) = @Year
         ORDER BY
-            E.ExpenseDate ASC,
-            E.ExpenseId ASC;
+            E.ExpenseDate DESC,
+            E.ExpenseId DESC;
 
     END TRY
 
