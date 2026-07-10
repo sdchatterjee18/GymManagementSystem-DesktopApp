@@ -31,6 +31,7 @@ CREATE PROC spRegisterNewMember
 )
 AS
 BEGIN
+SET NOCOUNT ON;
 
     DECLARE @MemberId INT;
 	DECLARE @LockerId INT = NULL;
@@ -105,6 +106,7 @@ BEGIN TRY
         SELECT 'Phone Number Already Exists.' AS Message;
         RETURN;
     END
+	SET @EmailId = NULLIF(LTRIM(RTRIM(@EmailId)), '');
 	IF @EmailId IS NOT NULL
 	AND @EmailId NOT LIKE '%@%.%'
 	BEGIN
@@ -116,12 +118,32 @@ BEGIN TRY
     (
         SELECT 1
         FROM tblMember
-        WHERE EmailId = @EmailId
+        WHERE LOWER(EmailId)=LOWER(@EmailId)
     )
     BEGIN
         SELECT 'Email Already Exists.' AS Message;
         RETURN;
     END
+	SET @City = LTRIM(RTRIM(@City));
+	SET @District = LTRIM(RTRIM(@District));
+    SET @State = LTRIM(RTRIM(@State));
+	IF @City=''
+	BEGIN
+		SELECT 'City Required.' AS Message;
+		RETURN;
+	END
+
+	IF @District=''
+	BEGIN
+		SELECT 'District Required.' AS Message;
+		RETURN;
+	END
+
+	IF @State=''
+	BEGIN
+		SELECT 'State Required.' AS Message;
+		RETURN;
+	END
 
 		IF NOT EXISTS
 	(
