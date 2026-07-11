@@ -2,7 +2,18 @@ Create PROCEDURE DisplayPersonalTrainers
 AS
 BEGIN
 	BEGIN TRY
-		SELECT  * FROM tblTrainer WHERE TrainerType='Personal';
+		SELECT 
+		CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
+		T.Specialization,
+		E.PhoneNo,
+		G.GenderName
+		FROM tblTrainer T
+		INNER JOIN tblEmployee E
+		ON T.EmployeeId=E.EmployeeId
+		INNER JOIN tblGender G 
+		ON E.GenderId = G.GenderId 
+		WHERE T.TrainerType='Personal' 
+		AND E.IsActive=1;
 	END TRY
 	BEGIN CATCH	
 		SELECT ERROR_MESSAGE() AS Message;

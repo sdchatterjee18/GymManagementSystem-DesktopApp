@@ -24,8 +24,9 @@ BEGIN
             CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
             T.Specialization,
             T.TrainerType,
-            T.IsActive AS TrainerStatus,
-            CD.Document
+            CD.Document,
+            E.PhoneNo,
+            G.GenderName AS Gender
 
         FROM tblEmployee E
 
@@ -38,12 +39,15 @@ BEGIN
         LEFT JOIN tblCertificateDocument CD
             ON T.TrainerId = CD.TrainerId
 
-        WHERE ERT.Role = 'Trainer'
+        INNER JOIN tblGender G
+            ON E.GenderId = G.GenderId
+
+        WHERE ERT.Role = 'Trainer' AND E.IsActive=1
 
         ORDER BY
             E.FirstName,
             E.LastName;
-
+            
     END TRY
 
     BEGIN CATCH
