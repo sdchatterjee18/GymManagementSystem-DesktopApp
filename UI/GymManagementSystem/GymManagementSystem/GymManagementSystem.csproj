@@ -109,6 +109,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="FORMS\RegistrationFees\RegFeesForm.resx">
       <DependentUpon>RegFeesForm.cs</DependentUpon>
 =======
@@ -116,6 +117,15 @@
       <DependentUpon>InsertRegistrationFeesForm.cs</DependentUpon>
 >>>>>>> main
     </EmbeddedResource>
+=======
+<EmbeddedResource Include="FORMS\RegistrationFees\RegFeesForm.resx">
+  <DependentUpon>RegFeesForm.cs</DependentUpon>
+</EmbeddedResource>
+
+<EmbeddedResource Include="FORMS\RegistrationFees\InsertRegistrationFeesForm.resx">
+  <DependentUpon>InsertRegistrationFeesForm.cs</DependentUpon>
+</EmbeddedResource>
+>>>>>>> 648653902c54084bb1fb6d0dbb028ad843891566
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
