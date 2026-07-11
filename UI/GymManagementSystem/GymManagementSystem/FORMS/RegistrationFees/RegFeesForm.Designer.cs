@@ -120,6 +120,7 @@
             this.Controls.Add(this.pnlButtomDisplayRegistrationFees);
             this.Controls.Add(this.pnlMiddleDisplayRegistrationFees);
             this.Controls.Add(this.pnlTopDisplayRegistrationFees);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegFeesForm";
             this.Text = "RegFeesForm";
             this.pnlTopDisplayRegistrationFees.ResumeLayout(false);
