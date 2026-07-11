@@ -15,5 +15,10 @@ namespace GymManagementSystem.FORMS.RegistrationFees
         {
             InitializeComponent();
         }
+
+        private void InsertRegistrationFeesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

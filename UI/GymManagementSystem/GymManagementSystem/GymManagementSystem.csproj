@@ -76,6 +76,12 @@
     <Compile Include="FORMS\MembershipPlans\MembeshipPlanForm.Designer.cs">
       <DependentUpon>MembeshipPlanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\RegistrationFees\InsertRegistrationFeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\RegistrationFees\InsertRegistrationFeesForm.Designer.cs">
+      <DependentUpon>InsertRegistrationFeesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\RegistrationFees\RegFeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\RegistrationFees\InsertRegistrationFeesForm.resx">
+      <DependentUpon>InsertRegistrationFeesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
