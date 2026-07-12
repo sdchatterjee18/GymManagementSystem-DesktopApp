@@ -20,5 +20,10 @@ namespace GymManagementSystem.FORMS.RegistrationFees
         {
 
         }
+
+        private void lblDisplayRegistrationFees_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
