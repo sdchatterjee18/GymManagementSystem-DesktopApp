@@ -16,9 +16,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-         //   Application.Run(new Form1());
-             Application.Run(new DisplayLockerForm());
-            //Application.Run(new InsertNewLockerForm());
+            Application.Run(new Form1());
         }
     }
 }
