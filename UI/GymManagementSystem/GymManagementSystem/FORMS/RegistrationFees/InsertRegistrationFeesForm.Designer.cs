@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertRegistrationFeesForm));
             this.pnlTopInsertRegistrationFees = new System.Windows.Forms.Panel();
             this.tlpNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlBackButtonInsertRegistrationFees = new System.Windows.Forms.Panel();
             this.lblNewRegistrationFees = new System.Windows.Forms.Label();
+            this.pnlBackButtonInsertRegistrationFees = new System.Windows.Forms.Panel();
+            this.picBackButtonInsertNewRegistrationFees = new System.Windows.Forms.PictureBox();
             this.txtFeesAmountInsertRegistrationFees = new System.Windows.Forms.TextBox();
             this.lblFeesAmount = new System.Windows.Forms.Label();
             this.tlpFeesAmountInsertNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tlpSubmitButtonInsertNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSubmitButtonInsertNewRegistrationFees = new System.Windows.Forms.Button();
+            this.btnAddInsertNewRegistrationFees = new System.Windows.Forms.Button();
             this.pnlTopInsertRegistrationFees.SuspendLayout();
             this.tlpNewRegistrationFees.SuspendLayout();
             this.pnlBackButtonInsertRegistrationFees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackButtonInsertNewRegistrationFees)).BeginInit();
             this.tlpFeesAmountInsertNewRegistrationFees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tlpSubmitButtonInsertNewRegistrationFees.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,15 +72,6 @@
             this.tlpNewRegistrationFees.Size = new System.Drawing.Size(857, 77);
             this.tlpNewRegistrationFees.TabIndex = 0;
             // 
-            // pnlBackButtonInsertRegistrationFees
-            // 
-            this.pnlBackButtonInsertRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnlBackButtonInsertRegistrationFees.Controls.Add(this.pictureBox1);
-            this.pnlBackButtonInsertRegistrationFees.Location = new System.Drawing.Point(23, 8);
-            this.pnlBackButtonInsertRegistrationFees.Name = "pnlBackButtonInsertRegistrationFees";
-            this.pnlBackButtonInsertRegistrationFees.Size = new System.Drawing.Size(59, 61);
-            this.pnlBackButtonInsertRegistrationFees.TabIndex = 0;
-            // 
             // lblNewRegistrationFees
             // 
             this.lblNewRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -91,6 +82,31 @@
             this.lblNewRegistrationFees.Size = new System.Drawing.Size(322, 41);
             this.lblNewRegistrationFees.TabIndex = 1;
             this.lblNewRegistrationFees.Text = "New Registration Fees";
+            // 
+            // pnlBackButtonInsertRegistrationFees
+            // 
+            this.pnlBackButtonInsertRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlBackButtonInsertRegistrationFees.Controls.Add(this.picBackButtonInsertNewRegistrationFees);
+            this.pnlBackButtonInsertRegistrationFees.Location = new System.Drawing.Point(23, 8);
+            this.pnlBackButtonInsertRegistrationFees.Name = "pnlBackButtonInsertRegistrationFees";
+            this.pnlBackButtonInsertRegistrationFees.Size = new System.Drawing.Size(59, 61);
+            this.pnlBackButtonInsertRegistrationFees.TabIndex = 0;
+            this.pnlBackButtonInsertRegistrationFees.Click += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_Click);
+            this.pnlBackButtonInsertRegistrationFees.MouseEnter += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_MouseEnter);
+            this.pnlBackButtonInsertRegistrationFees.MouseLeave += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_MouseLeave);
+            // 
+            // picBackButtonInsertNewRegistrationFees
+            // 
+            this.picBackButtonInsertNewRegistrationFees.Image = ((System.Drawing.Image)(resources.GetObject("picBackButtonInsertNewRegistrationFees.Image")));
+            this.picBackButtonInsertNewRegistrationFees.Location = new System.Drawing.Point(3, 10);
+            this.picBackButtonInsertNewRegistrationFees.Name = "picBackButtonInsertNewRegistrationFees";
+            this.picBackButtonInsertNewRegistrationFees.Size = new System.Drawing.Size(53, 41);
+            this.picBackButtonInsertNewRegistrationFees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBackButtonInsertNewRegistrationFees.TabIndex = 0;
+            this.picBackButtonInsertNewRegistrationFees.TabStop = false;
+            this.picBackButtonInsertNewRegistrationFees.Click += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_Click);
+            this.picBackButtonInsertNewRegistrationFees.MouseEnter += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_MouseEnter);
+            this.picBackButtonInsertNewRegistrationFees.MouseLeave += new System.EventHandler(this.pnlBackButtonInsertRegistrationFees_MouseLeave);
             // 
             // txtFeesAmountInsertRegistrationFees
             // 
@@ -110,9 +126,9 @@
             this.lblFeesAmount.AutoSize = true;
             this.lblFeesAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeesAmount.ForeColor = System.Drawing.Color.Silver;
-            this.lblFeesAmount.Location = new System.Drawing.Point(30, 8);
+            this.lblFeesAmount.Location = new System.Drawing.Point(15, 8);
             this.lblFeesAmount.Name = "lblFeesAmount";
-            this.lblFeesAmount.Size = new System.Drawing.Size(196, 38);
+            this.lblFeesAmount.Size = new System.Drawing.Size(227, 38);
             this.lblFeesAmount.TabIndex = 0;
             this.lblFeesAmount.Text = "Fee\'s Amount :   ";
             // 
@@ -132,22 +148,12 @@
             this.tlpFeesAmountInsertNewRegistrationFees.Size = new System.Drawing.Size(857, 55);
             this.tlpFeesAmountInsertNewRegistrationFees.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tlpSubmitButtonInsertNewRegistrationFees
             // 
             this.tlpSubmitButtonInsertNewRegistrationFees.ColumnCount = 2;
             this.tlpSubmitButtonInsertNewRegistrationFees.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.69662F));
             this.tlpSubmitButtonInsertNewRegistrationFees.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.30338F));
-            this.tlpSubmitButtonInsertNewRegistrationFees.Controls.Add(this.btnSubmitButtonInsertNewRegistrationFees, 1, 0);
+            this.tlpSubmitButtonInsertNewRegistrationFees.Controls.Add(this.btnAddInsertNewRegistrationFees, 1, 0);
             this.tlpSubmitButtonInsertNewRegistrationFees.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpSubmitButtonInsertNewRegistrationFees.Location = new System.Drawing.Point(0, 169);
             this.tlpSubmitButtonInsertNewRegistrationFees.Name = "tlpSubmitButtonInsertNewRegistrationFees";
@@ -155,18 +161,19 @@
             this.tlpSubmitButtonInsertNewRegistrationFees.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSubmitButtonInsertNewRegistrationFees.Size = new System.Drawing.Size(857, 177);
             this.tlpSubmitButtonInsertNewRegistrationFees.TabIndex = 2;
+            this.tlpSubmitButtonInsertNewRegistrationFees.Click += new System.EventHandler(this.tlpSubmitButtonInsertNewRegistrationFees_Click);
             // 
-            // btnSubmitButtonInsertNewRegistrationFees
+            // btnAddInsertNewRegistrationFees
             // 
-            this.btnSubmitButtonInsertNewRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSubmitButtonInsertNewRegistrationFees.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitButtonInsertNewRegistrationFees.ForeColor = System.Drawing.Color.Silver;
-            this.btnSubmitButtonInsertNewRegistrationFees.Location = new System.Drawing.Point(686, 50);
-            this.btnSubmitButtonInsertNewRegistrationFees.Name = "btnSubmitButtonInsertNewRegistrationFees";
-            this.btnSubmitButtonInsertNewRegistrationFees.Size = new System.Drawing.Size(159, 76);
-            this.btnSubmitButtonInsertNewRegistrationFees.TabIndex = 0;
-            this.btnSubmitButtonInsertNewRegistrationFees.Text = "Submit";
-            this.btnSubmitButtonInsertNewRegistrationFees.UseVisualStyleBackColor = true;
+            this.btnAddInsertNewRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnAddInsertNewRegistrationFees.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddInsertNewRegistrationFees.ForeColor = System.Drawing.Color.Silver;
+            this.btnAddInsertNewRegistrationFees.Location = new System.Drawing.Point(686, 50);
+            this.btnAddInsertNewRegistrationFees.Name = "btnAddInsertNewRegistrationFees";
+            this.btnAddInsertNewRegistrationFees.Size = new System.Drawing.Size(159, 76);
+            this.btnAddInsertNewRegistrationFees.TabIndex = 0;
+            this.btnAddInsertNewRegistrationFees.Text = "ADD";
+            this.btnAddInsertNewRegistrationFees.UseVisualStyleBackColor = true;
             // 
             // InsertRegistrationFeesForm
             // 
@@ -186,9 +193,9 @@
             this.tlpNewRegistrationFees.ResumeLayout(false);
             this.tlpNewRegistrationFees.PerformLayout();
             this.pnlBackButtonInsertRegistrationFees.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBackButtonInsertNewRegistrationFees)).EndInit();
             this.tlpFeesAmountInsertNewRegistrationFees.ResumeLayout(false);
             this.tlpFeesAmountInsertNewRegistrationFees.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tlpSubmitButtonInsertNewRegistrationFees.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -203,9 +210,9 @@
         private System.Windows.Forms.TextBox txtFeesAmountInsertRegistrationFees;
         private System.Windows.Forms.Label lblFeesAmount;
         private System.Windows.Forms.TableLayoutPanel tlpFeesAmountInsertNewRegistrationFees;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBackButtonInsertNewRegistrationFees;
         private System.Windows.Forms.TableLayoutPanel tlpSubmitButtonInsertNewRegistrationFees;
-        private System.Windows.Forms.Button btnSubmitButtonInsertNewRegistrationFees;
+        private System.Windows.Forms.Button btnAddInsertNewRegistrationFees;
 
     }
 }

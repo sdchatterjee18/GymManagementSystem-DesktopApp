@@ -133,11 +133,15 @@
             // pnlAddNewRegistrationFees
             // 
             this.pnlAddNewRegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlAddNewRegistrationFees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.pnlAddNewRegistrationFees.Controls.Add(this.tlpAddNewRegistrationFees);
             this.pnlAddNewRegistrationFees.Location = new System.Drawing.Point(342, 26);
             this.pnlAddNewRegistrationFees.Name = "pnlAddNewRegistrationFees";
             this.pnlAddNewRegistrationFees.Size = new System.Drawing.Size(594, 100);
             this.pnlAddNewRegistrationFees.TabIndex = 0;
+            this.pnlAddNewRegistrationFees.Click += new System.EventHandler(this.pnlAddNewRegistrationFees_Click);
+            this.pnlAddNewRegistrationFees.MouseEnter += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseEnter);
+            this.pnlAddNewRegistrationFees.MouseLeave += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseLeave);
             // 
             // tlpAddNewRegistrationFees
             // 
@@ -153,6 +157,9 @@
             this.tlpAddNewRegistrationFees.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddNewRegistrationFees.Size = new System.Drawing.Size(589, 100);
             this.tlpAddNewRegistrationFees.TabIndex = 2;
+            this.tlpAddNewRegistrationFees.Click += new System.EventHandler(this.pnlAddNewRegistrationFees_Click);
+            this.tlpAddNewRegistrationFees.MouseEnter += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseEnter);
+            this.tlpAddNewRegistrationFees.MouseLeave += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseLeave);
             // 
             // lblPlashAddNewRegistrationFees
             // 
@@ -165,6 +172,9 @@
             this.lblPlashAddNewRegistrationFees.Size = new System.Drawing.Size(65, 70);
             this.lblPlashAddNewRegistrationFees.TabIndex = 1;
             this.lblPlashAddNewRegistrationFees.Text = "+";
+            this.lblPlashAddNewRegistrationFees.Click += new System.EventHandler(this.pnlAddNewRegistrationFees_Click);
+            this.lblPlashAddNewRegistrationFees.MouseEnter += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseEnter);
+            this.lblPlashAddNewRegistrationFees.MouseLeave += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseLeave);
             // 
             // lblNewRegistratonFees
             // 
@@ -177,13 +187,16 @@
             this.lblNewRegistratonFees.Size = new System.Drawing.Size(386, 41);
             this.lblNewRegistratonFees.TabIndex = 0;
             this.lblNewRegistratonFees.Text = "Add New Registration Fees";
+            this.lblNewRegistratonFees.Click += new System.EventHandler(this.pnlAddNewRegistrationFees_Click);
+            this.lblNewRegistratonFees.MouseEnter += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseEnter);
+            this.lblNewRegistratonFees.MouseLeave += new System.EventHandler(this.pnlAddNewRegistrationFees_MouseLeave);
             // 
             // RegFeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(1256, 795);
+            this.ClientSize = new System.Drawing.Size(1256, 784);
             this.Controls.Add(this.pnlButtomDisplayRegistrationFees);
             this.Controls.Add(this.pnlMiddleDisplayRegistrationFees);
             this.Controls.Add(this.pnlTopDisplayRegistrationFees);
