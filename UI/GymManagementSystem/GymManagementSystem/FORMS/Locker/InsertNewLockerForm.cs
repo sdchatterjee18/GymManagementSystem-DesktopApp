@@ -15,10 +15,5 @@ namespace GymManagementSystem.FORMS.Locker
         {
             InitializeComponent();
         }
-
-        private void InsertNewLockerForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
