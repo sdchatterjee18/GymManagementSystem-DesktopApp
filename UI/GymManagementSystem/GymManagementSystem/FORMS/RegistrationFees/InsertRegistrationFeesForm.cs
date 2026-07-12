@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GymManagementSystem.FORMS.Login
+namespace GymManagementSystem.FORMS.RegistrationFees
 {
-    public partial class LoginForm : Form
+    public partial class InsertRegistrationFeesForm : Form
     {
-        public LoginForm()
+        public InsertRegistrationFeesForm()
         {
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void InsertRegistrationFeesForm_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GymManagementSystem.FORMS.Login
+namespace GymManagementSystem.FORMS.Locker
 {
-    public partial class LoginForm : Form
+    public partial class InsertNewLockerForm : Form
     {
-        public LoginForm()
+        public InsertNewLockerForm()
         {
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void InsertNewLockerForm_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
