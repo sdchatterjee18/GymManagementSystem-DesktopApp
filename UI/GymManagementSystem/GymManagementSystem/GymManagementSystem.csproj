@@ -148,13 +148,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\GymManagementSystem.exe" />
     <Content Include="bin\Debug\GymManagementSystem.pdb" />
     <Content Include="bin\Debug\GymManagementSystem.vshost.exe" />
     <Content Include="obj\x86\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\ChatGPT_Image_Jul_12__2026__04_16_02_PM-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
