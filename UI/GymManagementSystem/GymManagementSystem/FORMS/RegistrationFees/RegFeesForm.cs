@@ -15,5 +15,21 @@ namespace GymManagementSystem.FORMS.RegistrationFees
         {
             InitializeComponent();
         }
+
+
+        private void pnlAddNewRegistrationFees_Click(object sender, EventArgs e)
+        {
+            pnlAddNewRegistrationFees.BackColor = Color.FromArgb(20, 20, 20);
+        }
+
+        private void pnlAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddNewRegistrationFees.BackColor = Color.FromArgb(90, 100, 110);
+        }
+
+        private void pnlAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddNewRegistrationFees.BackColor = Color.FromArgb(60, 60, 60);
+        }
     }
 }
