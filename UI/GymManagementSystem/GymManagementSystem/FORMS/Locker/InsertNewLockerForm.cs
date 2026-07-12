@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace GymManagementSystem.FORMS.Locker
 {
-    public partial class Locker : Form
+    public partial class InsertNewLockerForm : Form
     {
-        public Locker()
+        public InsertNewLockerForm()
         {
             InitializeComponent();
+        }
+
+        private void InsertNewLockerForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GymManagementSystem.FORMS.Locker
 {
-    partial class Locker
+    partial class InsertNewLockerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // InsertNewLockerForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Locker";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "InsertNewLockerForm";
+            this.Text = "InsertNewLockerForm";
+            this.Load += new System.EventHandler(this.InsertNewLockerForm_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
