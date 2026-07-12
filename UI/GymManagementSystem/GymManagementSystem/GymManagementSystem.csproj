@@ -58,6 +58,18 @@
     <Compile Include="FORMS\Authentication\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Locker\DisplayLockerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Locker\DisplayLockerForm.Designer.cs">
+      <DependentUpon>DisplayLockerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Locker\InsertNewLockerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Locker\InsertNewLockerForm.Designer.cs">
+      <DependentUpon>InsertNewLockerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FORMS\Authentication\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Locker\DisplayLockerForm.resx">
+      <DependentUpon>DisplayLockerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Locker\InsertNewLockerForm.resx">
+      <DependentUpon>InsertNewLockerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
