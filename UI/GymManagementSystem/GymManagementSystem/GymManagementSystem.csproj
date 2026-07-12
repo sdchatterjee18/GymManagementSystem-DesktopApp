@@ -105,6 +105,9 @@
     <EmbeddedResource Include="FORMS\Authentication\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Locker\Locker.resx">
+      <DependentUpon>Locker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
