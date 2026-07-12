@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using GymManagementSystem.FORMS.RegistrationFees;
 
 namespace GymManagementSystem
 {
@@ -16,7 +15,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegFeesForm());
+            Application.Run(new Form1());
         }
     }
 }
