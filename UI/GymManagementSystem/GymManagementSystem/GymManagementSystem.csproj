@@ -76,7 +76,7 @@
     </Compile>
     <Compile Include="FORMS\Locker\InsertNewLockerForm.Designer.cs">
       <DependentUpon>InsertNewLockerForm.cs</DependentUpon>
-    </compile>
+    </Compile>
     <Compile Include="FORMS\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
