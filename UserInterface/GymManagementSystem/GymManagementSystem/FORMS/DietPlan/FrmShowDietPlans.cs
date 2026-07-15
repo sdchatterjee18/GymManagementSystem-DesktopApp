@@ -12,9 +12,17 @@ namespace GymManagementSystem.FORMS.DietPlan
 {
     public partial class FrmShowDietPlans : Form
     {
+        private Color originalColor;
+        private Color hoverColor = Color.LightBlue;
+        private Color clickColor;
+
         public FrmShowDietPlans()
         {
             InitializeComponent();
+
+          
+            originalColor = pnlAddNewDietPlan.BackColor;
+            
         }
 
         private void FrmShowDietPlans_Load(object sender, EventArgs e)
@@ -41,6 +49,7 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void pnlAddNewDietPlan_MouseEnter(object sender, EventArgs e)
         {
+            pnlAddNewDietPlan.BackColor = hoverColor;
 
         }
 
@@ -52,8 +61,7 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void pnlAddNewDietPlan_MouseLeave(object sender, EventArgs e)
         {
-
-
+                pnlAddNewDietPlan.BackColor = clickColor;
         }
 
         private void lblAddNewDietPlan_MouseEnter(object sender, EventArgs e)
@@ -77,7 +85,22 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
 
         }
-        
+
+        private void pnlAddNewDietPlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAddNewDietPlan_Enter(object sender, EventArgs e)
+        {
+            pnlAddNewDietPlan.BackColor = clickColor;
+
+        }
+
+        private void pnlAddNewDietPlan_Leave(object sender, EventArgs e)
+        {
+            pnlAddNewDietPlan.BackColor = originalColor;
+        }
 
         }
         

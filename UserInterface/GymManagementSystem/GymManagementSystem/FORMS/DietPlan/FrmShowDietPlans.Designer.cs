@@ -35,8 +35,8 @@
             this.pnlDietPlanDataGridView = new System.Windows.Forms.Panel();
             this.dgvDietPlan = new System.Windows.Forms.DataGridView();
             this.pnlAddNewDietPlan = new System.Windows.Forms.Panel();
-            this.lblAddNewDietPlan = new System.Windows.Forms.Label();
             this.picAddIcon = new System.Windows.Forms.PictureBox();
+            this.lblAddNewDietPlan = new System.Windows.Forms.Label();
             this.pnlDietHeader.SuspendLayout();
             this.pnlDietDetails.SuspendLayout();
             this.pnlDietPlanDataGridView.SuspendLayout();
@@ -112,28 +112,10 @@
             this.pnlAddNewDietPlan.Name = "pnlAddNewDietPlan";
             this.pnlAddNewDietPlan.Size = new System.Drawing.Size(379, 65);
             this.pnlAddNewDietPlan.TabIndex = 2;
+            this.pnlAddNewDietPlan.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
             this.pnlAddNewDietPlan.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAddNewDietPlan_Paint);
-            this.pnlAddNewDietPlan.MouseEnter += new System.EventHandler(this.lblAddNewDietPlan_MouseEnter);
-            this.pnlAddNewDietPlan.MouseLeave += new System.EventHandler(this.lblAddNewDietPlan_MouseLeave);
-            this.pnlAddNewDietPlan.MouseHover += new System.EventHandler(this.lblAddNewDietPlan_MouseHover);
-            this.pnlAddNewDietPlan.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblAddNewDietPlan_MouseUp);
-            // 
-            // lblAddNewDietPlan
-            // 
-            this.lblAddNewDietPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAddNewDietPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewDietPlan.ForeColor = System.Drawing.Color.Black;
-            this.lblAddNewDietPlan.Location = new System.Drawing.Point(3, -1);
-            this.lblAddNewDietPlan.Name = "lblAddNewDietPlan";
-            this.lblAddNewDietPlan.Size = new System.Drawing.Size(371, 64);
-            this.lblAddNewDietPlan.TabIndex = 0;
-            this.lblAddNewDietPlan.Text = " Add New Diet Plan";
-            this.lblAddNewDietPlan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddNewDietPlan.Click += new System.EventHandler(this.lblAddNewDietPlan_Click);
-            this.lblAddNewDietPlan.MouseEnter += new System.EventHandler(this.lblAddNewDietPlan_MouseEnter);
-            this.lblAddNewDietPlan.MouseLeave += new System.EventHandler(this.lblAddNewDietPlan_MouseLeave);
-            this.lblAddNewDietPlan.MouseHover += new System.EventHandler(this.lblAddNewDietPlan_MouseHover);
-            this.lblAddNewDietPlan.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblAddNewDietPlan_MouseUp);
+            this.pnlAddNewDietPlan.Enter += new System.EventHandler(this.pnlAddNewDietPlan_Enter);
+            this.pnlAddNewDietPlan.Leave += new System.EventHandler(this.pnlAddNewDietPlan_Leave);
             // 
             // picAddIcon
             // 
@@ -145,6 +127,28 @@
             this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddIcon.TabIndex = 1;
             this.picAddIcon.TabStop = false;
+            this.picAddIcon.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
+            this.picAddIcon.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
+            this.picAddIcon.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
+            this.picAddIcon.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
+            // 
+            // lblAddNewDietPlan
+            // 
+            this.lblAddNewDietPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAddNewDietPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewDietPlan.ForeColor = System.Drawing.Color.Black;
+            this.lblAddNewDietPlan.Location = new System.Drawing.Point(3, -1);
+            this.lblAddNewDietPlan.Name = "lblAddNewDietPlan";
+            this.lblAddNewDietPlan.Size = new System.Drawing.Size(375, 64);
+            this.lblAddNewDietPlan.TabIndex = 0;
+            this.lblAddNewDietPlan.Text = " Add New Diet Plan";
+            this.lblAddNewDietPlan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAddNewDietPlan.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
+            this.lblAddNewDietPlan.Enter += new System.EventHandler(this.pnlAddNewDietPlan_Enter);
+            this.lblAddNewDietPlan.Leave += new System.EventHandler(this.pnlAddNewDietPlan_Leave);
+            this.lblAddNewDietPlan.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
+            this.lblAddNewDietPlan.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
+            this.lblAddNewDietPlan.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
             // 
             // FrmShowDietPlans
             // 
