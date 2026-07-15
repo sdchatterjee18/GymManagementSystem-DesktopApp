@@ -32,28 +32,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             tlp.Region = new Region(path);
         }
 
-      
-
-private void SetRoundedDataGridView(DataGridView dgv, int radius)
-{
-    GraphicsPath path = new GraphicsPath();
-
-    int d = radius * 2;
-
-    path.AddArc(0, 0, d, d, 180, 90);
-    path.AddArc(dgv.Width - d - 1, 0, d, d, 270, 90);
-    path.AddArc(dgv.Width - d - 1, dgv.Height - d - 1, d, d, 0, 90);
-    path.AddArc(0, dgv.Height - d - 1, d, d, 90, 90);
-    path.CloseFigure();
-
-    dgv.Region = new Region(path);
-}
-
-
-      
-
-
-
+    
         private void FrmAddRegistrationFee_Load(object sender, EventArgs e)
         {
 
