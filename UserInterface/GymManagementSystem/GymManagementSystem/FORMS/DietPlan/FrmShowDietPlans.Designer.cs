@@ -121,9 +121,9 @@
             // 
             this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(4, 9);
+            this.picAddIcon.Location = new System.Drawing.Point(9, 14);
             this.picAddIcon.Name = "picAddIcon";
-            this.picAddIcon.Size = new System.Drawing.Size(53, 46);
+            this.picAddIcon.Size = new System.Drawing.Size(43, 35);
             this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddIcon.TabIndex = 1;
             this.picAddIcon.TabStop = false;
