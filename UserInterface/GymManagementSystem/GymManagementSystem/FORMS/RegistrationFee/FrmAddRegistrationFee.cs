@@ -18,18 +18,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
            
         }
 
-       
-        //private void SetRightRoundedPanel(Panel panel, int radius)
-        //{
-        //    GraphicsPath graphicsPath = new GraphicsPath();
-        //    graphicsPath.StartFigure();
-        //    graphicsPath.AddLine(0, 0, panel.Width - radius, 0);
-        //    graphicsPath.AddArc(panel.Width - radius * 2, 0, radius * 2, radius * 2, 270, 90);
-        //    graphicsPath.AddArc(panel.Width - radius * 2, panel.Height - radius * 2, radius * 2, radius * 2, 0, 90);
-        //    graphicsPath.AddLine(0, panel.Height, 0, 0);
-        //    graphicsPath.CloseFigure();
-        //    panel.Region = new Region(graphicsPath);
-        //}
+     
         private void SetRoundedTableLayoutPanel(TableLayoutPanel tlp, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -43,11 +32,47 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             tlp.Region = new Region(path);
         }
 
+      
+
+private void SetRoundedDataGridView(DataGridView dgv, int radius)
+{
+    GraphicsPath path = new GraphicsPath();
+
+    int d = radius * 2;
+
+    path.AddArc(0, 0, d, d, 180, 90);
+    path.AddArc(dgv.Width - d - 1, 0, d, d, 270, 90);
+    path.AddArc(dgv.Width - d - 1, dgv.Height - d - 1, d, d, 0, 90);
+    path.AddArc(0, dgv.Height - d - 1, d, d, 90, 90);
+    path.CloseFigure();
+
+    dgv.Region = new Region(path);
+}
+
+
+      
+
+
+
         private void FrmAddRegistrationFee_Load(object sender, EventArgs e)
         {
 
             SetRoundedTableLayoutPanel(tlpAddNewRegistrationFees, 20);
+
+          
+       
         }
+
+      
+
+
+
+
+
+
+   
+
+
 
      
     }
