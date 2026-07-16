@@ -51,6 +51,9 @@
             this.lblLogout = new System.Windows.Forms.Label();
             this.picLogout = new System.Windows.Forms.PictureBox();
             this.fnlSidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.lblMenu = new System.Windows.Forms.Label();
+            this.picMenu = new System.Windows.Forms.PictureBox();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.picDashboard = new System.Windows.Forms.PictureBox();
@@ -115,7 +118,9 @@
             this.pnlSettins = new System.Windows.Forms.Panel();
             this.lblSettings = new System.Windows.Forms.Label();
             this.picSettings = new System.Windows.Forms.PictureBox();
+            this.pnlSpecer = new System.Windows.Forms.Panel();
             this.pnlMainPanel = new System.Windows.Forms.Panel();
+            this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
@@ -132,6 +137,8 @@
             this.pnlLogout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             this.fnlSidebar.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
             this.pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).BeginInit();
             this.pnlMembers.SuspendLayout();
@@ -447,6 +454,7 @@
             // fnlSidebar
             // 
             this.fnlSidebar.AutoScroll = true;
+            this.fnlSidebar.Controls.Add(this.pnlMenu);
             this.fnlSidebar.Controls.Add(this.pnlDashboard);
             this.fnlSidebar.Controls.Add(this.pnlMembers);
             this.fnlSidebar.Controls.Add(this.pnlDropDownMembers);
@@ -464,6 +472,7 @@
             this.fnlSidebar.Controls.Add(this.pnlPayment);
             this.fnlSidebar.Controls.Add(this.pnlExpense);
             this.fnlSidebar.Controls.Add(this.pnlSettins);
+            this.fnlSidebar.Controls.Add(this.pnlSpecer);
             this.fnlSidebar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fnlSidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.fnlSidebar.Location = new System.Drawing.Point(5, 5);
@@ -471,12 +480,56 @@
             this.fnlSidebar.Name = "fnlSidebar";
             this.fnlSidebar.Size = new System.Drawing.Size(307, 631);
             this.fnlSidebar.TabIndex = 0;
+            this.fnlSidebar.WrapContents = false;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.Controls.Add(this.lblMenu);
+            this.pnlMenu.Controls.Add(this.picMenu);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(307, 50);
+            this.pnlMenu.TabIndex = 2;
+            this.pnlMenu.Click += new System.EventHandler(this.pnlMenu_Click);
+            this.pnlMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            this.pnlMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
+            // 
+            // lblMenu
+            // 
+            this.lblMenu.AutoSize = true;
+            this.lblMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMenu.Location = new System.Drawing.Point(43, 10);
+            this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMenu.Name = "lblMenu";
+            this.lblMenu.Size = new System.Drawing.Size(65, 28);
+            this.lblMenu.TabIndex = 2;
+            this.lblMenu.Text = "Menu";
+            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMenu.Click += new System.EventHandler(this.pnlMenu_Click);
+            this.lblMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            this.lblMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
+            // 
+            // picMenu
+            // 
+            this.picMenu.Image = global::GymManagementSystem.Properties.Resources.menu;
+            this.picMenu.Location = new System.Drawing.Point(15, 10);
+            this.picMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(25, 25);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMenu.TabIndex = 1;
+            this.picMenu.TabStop = false;
+            this.picMenu.Click += new System.EventHandler(this.pnlMenu_Click);
+            this.picMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            this.picMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
             // 
             // pnlDashboard
             // 
             this.pnlDashboard.Controls.Add(this.lblDashboard);
             this.pnlDashboard.Controls.Add(this.picDashboard);
-            this.pnlDashboard.Location = new System.Drawing.Point(0, 0);
+            this.pnlDashboard.Location = new System.Drawing.Point(0, 50);
             this.pnlDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(307, 50);
@@ -490,7 +543,7 @@
             this.lblDashboard.AutoSize = true;
             this.lblDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDashboard.Location = new System.Drawing.Point(43, 10);
+            this.lblDashboard.Location = new System.Drawing.Point(47, 10);
             this.lblDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.lblDashboard.Name = "lblDashboard";
             this.lblDashboard.Size = new System.Drawing.Size(110, 28);
@@ -520,7 +573,7 @@
             this.pnlMembers.Controls.Add(this.lblMembers);
             this.pnlMembers.Controls.Add(this.picMembers);
             this.pnlMembers.Controls.Add(this.picMembersArrowe);
-            this.pnlMembers.Location = new System.Drawing.Point(0, 50);
+            this.pnlMembers.Location = new System.Drawing.Point(0, 100);
             this.pnlMembers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMembers.Name = "pnlMembers";
             this.pnlMembers.Size = new System.Drawing.Size(307, 50);
@@ -534,7 +587,7 @@
             this.lblMembers.AutoSize = true;
             this.lblMembers.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMembers.Location = new System.Drawing.Point(43, 10);
+            this.lblMembers.Location = new System.Drawing.Point(47, 7);
             this.lblMembers.Margin = new System.Windows.Forms.Padding(0);
             this.lblMembers.Name = "lblMembers";
             this.lblMembers.Size = new System.Drawing.Size(98, 28);
@@ -577,7 +630,7 @@
             // 
             this.pnlDropDownMembers.Controls.Add(this.pnlMemberTrainerAssignment);
             this.pnlDropDownMembers.Controls.Add(this.pnlViewAllMembers);
-            this.pnlDropDownMembers.Location = new System.Drawing.Point(0, 100);
+            this.pnlDropDownMembers.Location = new System.Drawing.Point(0, 150);
             this.pnlDropDownMembers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDropDownMembers.Name = "pnlDropDownMembers";
             this.pnlDropDownMembers.Padding = new System.Windows.Forms.Padding(10);
@@ -615,7 +668,7 @@
             // 
             this.lblMemberTrainerAssignment.AutoSize = true;
             this.lblMemberTrainerAssignment.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberTrainerAssignment.Location = new System.Drawing.Point(35, 6);
+            this.lblMemberTrainerAssignment.Location = new System.Drawing.Point(48, 6);
             this.lblMemberTrainerAssignment.Name = "lblMemberTrainerAssignment";
             this.lblMemberTrainerAssignment.Size = new System.Drawing.Size(226, 23);
             this.lblMemberTrainerAssignment.TabIndex = 0;
@@ -626,8 +679,8 @@
             // 
             // pnlViewAllMembers
             // 
-            this.pnlViewAllMembers.Controls.Add(this.picViewAllMembers);
             this.pnlViewAllMembers.Controls.Add(this.lblViewAllMembers);
+            this.pnlViewAllMembers.Controls.Add(this.picViewAllMembers);
             this.pnlViewAllMembers.Location = new System.Drawing.Point(0, 3);
             this.pnlViewAllMembers.Name = "pnlViewAllMembers";
             this.pnlViewAllMembers.Size = new System.Drawing.Size(304, 35);
@@ -654,7 +707,7 @@
             // 
             this.lblViewAllMembers.AutoSize = true;
             this.lblViewAllMembers.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewAllMembers.Location = new System.Drawing.Point(35, 7);
+            this.lblViewAllMembers.Location = new System.Drawing.Point(48, 7);
             this.lblViewAllMembers.Name = "lblViewAllMembers";
             this.lblViewAllMembers.Size = new System.Drawing.Size(148, 23);
             this.lblViewAllMembers.TabIndex = 0;
@@ -667,7 +720,7 @@
             // 
             this.pnlTrainer.Controls.Add(this.lblTrainer);
             this.pnlTrainer.Controls.Add(this.picTrainer);
-            this.pnlTrainer.Location = new System.Drawing.Point(0, 175);
+            this.pnlTrainer.Location = new System.Drawing.Point(0, 225);
             this.pnlTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTrainer.Name = "pnlTrainer";
             this.pnlTrainer.Size = new System.Drawing.Size(307, 50);
@@ -710,7 +763,7 @@
             // 
             this.pnlFitnessTest.Controls.Add(this.lblFitnessTest);
             this.pnlFitnessTest.Controls.Add(this.picFitnessTest);
-            this.pnlFitnessTest.Location = new System.Drawing.Point(0, 225);
+            this.pnlFitnessTest.Location = new System.Drawing.Point(0, 275);
             this.pnlFitnessTest.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFitnessTest.Name = "pnlFitnessTest";
             this.pnlFitnessTest.Size = new System.Drawing.Size(307, 50);
@@ -754,7 +807,7 @@
             this.pnlMemberAttendance.Controls.Add(lblMemberAttendance);
             this.pnlMemberAttendance.Controls.Add(this.picMemberAttendance);
             this.pnlMemberAttendance.Controls.Add(this.picMemberAttendanceArrowe);
-            this.pnlMemberAttendance.Location = new System.Drawing.Point(0, 275);
+            this.pnlMemberAttendance.Location = new System.Drawing.Point(0, 325);
             this.pnlMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMemberAttendance.Name = "pnlMemberAttendance";
             this.pnlMemberAttendance.Size = new System.Drawing.Size(307, 50);
@@ -795,7 +848,7 @@
             // 
             this.pnlDropDownMemberAttendance.Controls.Add(this.pnlMarkMemberAttendance);
             this.pnlDropDownMemberAttendance.Controls.Add(this.pnlViewMemberAttendance);
-            this.pnlDropDownMemberAttendance.Location = new System.Drawing.Point(0, 325);
+            this.pnlDropDownMemberAttendance.Location = new System.Drawing.Point(0, 375);
             this.pnlDropDownMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDropDownMemberAttendance.Name = "pnlDropDownMemberAttendance";
             this.pnlDropDownMemberAttendance.Padding = new System.Windows.Forms.Padding(10);
@@ -885,7 +938,7 @@
             // 
             this.pnlMembershipPlan.Controls.Add(this.lblMembershipPlan);
             this.pnlMembershipPlan.Controls.Add(this.picMembershipPlan);
-            this.pnlMembershipPlan.Location = new System.Drawing.Point(0, 400);
+            this.pnlMembershipPlan.Location = new System.Drawing.Point(0, 450);
             this.pnlMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMembershipPlan.Name = "pnlMembershipPlan";
             this.pnlMembershipPlan.Size = new System.Drawing.Size(307, 50);
@@ -928,7 +981,7 @@
             // 
             this.pnlShift.Controls.Add(this.lblShift);
             this.pnlShift.Controls.Add(this.picShift);
-            this.pnlShift.Location = new System.Drawing.Point(0, 450);
+            this.pnlShift.Location = new System.Drawing.Point(0, 500);
             this.pnlShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlShift.Name = "pnlShift";
             this.pnlShift.Size = new System.Drawing.Size(307, 50);
@@ -971,7 +1024,7 @@
             // 
             this.pnlLocker.Controls.Add(this.lblLocker);
             this.pnlLocker.Controls.Add(this.picLocker);
-            this.pnlLocker.Location = new System.Drawing.Point(0, 500);
+            this.pnlLocker.Location = new System.Drawing.Point(0, 550);
             this.pnlLocker.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLocker.Name = "pnlLocker";
             this.pnlLocker.Size = new System.Drawing.Size(307, 50);
@@ -1012,7 +1065,7 @@
             this.pnlExerciseAndWorkout.Controls.Add(lblExerciseAndWorkout);
             this.pnlExerciseAndWorkout.Controls.Add(this.picExerciseAndWorkout);
             this.pnlExerciseAndWorkout.Controls.Add(this.picExerciseAndWorkoutArrowe);
-            this.pnlExerciseAndWorkout.Location = new System.Drawing.Point(0, 550);
+            this.pnlExerciseAndWorkout.Location = new System.Drawing.Point(0, 600);
             this.pnlExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
             this.pnlExerciseAndWorkout.Name = "pnlExerciseAndWorkout";
             this.pnlExerciseAndWorkout.Size = new System.Drawing.Size(307, 50);
@@ -1053,7 +1106,7 @@
             // 
             this.pnlDropDownExerciseAndWorkout.Controls.Add(this.pnlWorkoutPlans);
             this.pnlDropDownExerciseAndWorkout.Controls.Add(this.pnlWorkoutShedule);
-            this.pnlDropDownExerciseAndWorkout.Location = new System.Drawing.Point(307, 0);
+            this.pnlDropDownExerciseAndWorkout.Location = new System.Drawing.Point(0, 650);
             this.pnlDropDownExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDropDownExerciseAndWorkout.Name = "pnlDropDownExerciseAndWorkout";
             this.pnlDropDownExerciseAndWorkout.Padding = new System.Windows.Forms.Padding(10);
@@ -1143,7 +1196,7 @@
             // 
             this.pnlRegistrationFees.Controls.Add(this.lblRegistrationFees);
             this.pnlRegistrationFees.Controls.Add(this.picRegistrationFees);
-            this.pnlRegistrationFees.Location = new System.Drawing.Point(307, 75);
+            this.pnlRegistrationFees.Location = new System.Drawing.Point(0, 725);
             this.pnlRegistrationFees.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRegistrationFees.Name = "pnlRegistrationFees";
             this.pnlRegistrationFees.Size = new System.Drawing.Size(307, 50);
@@ -1183,7 +1236,7 @@
             // 
             this.pnlDietPlan.Controls.Add(this.lblDietPlan);
             this.pnlDietPlan.Controls.Add(this.picDietPlan);
-            this.pnlDietPlan.Location = new System.Drawing.Point(307, 125);
+            this.pnlDietPlan.Location = new System.Drawing.Point(0, 775);
             this.pnlDietPlan.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDietPlan.Name = "pnlDietPlan";
             this.pnlDietPlan.Size = new System.Drawing.Size(307, 50);
@@ -1223,7 +1276,7 @@
             // 
             this.pnlPayment.Controls.Add(this.lblPayment);
             this.pnlPayment.Controls.Add(this.picPayment);
-            this.pnlPayment.Location = new System.Drawing.Point(307, 175);
+            this.pnlPayment.Location = new System.Drawing.Point(0, 825);
             this.pnlPayment.Margin = new System.Windows.Forms.Padding(0);
             this.pnlPayment.Name = "pnlPayment";
             this.pnlPayment.Size = new System.Drawing.Size(307, 50);
@@ -1266,7 +1319,7 @@
             // 
             this.pnlExpense.Controls.Add(this.lblExpense);
             this.pnlExpense.Controls.Add(this.picExpense);
-            this.pnlExpense.Location = new System.Drawing.Point(307, 225);
+            this.pnlExpense.Location = new System.Drawing.Point(0, 875);
             this.pnlExpense.Margin = new System.Windows.Forms.Padding(0);
             this.pnlExpense.Name = "pnlExpense";
             this.pnlExpense.Size = new System.Drawing.Size(307, 50);
@@ -1309,7 +1362,7 @@
             // 
             this.pnlSettins.Controls.Add(this.lblSettings);
             this.pnlSettins.Controls.Add(this.picSettings);
-            this.pnlSettins.Location = new System.Drawing.Point(307, 275);
+            this.pnlSettins.Location = new System.Drawing.Point(0, 925);
             this.pnlSettins.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSettins.Name = "pnlSettins";
             this.pnlSettins.Size = new System.Drawing.Size(307, 50);
@@ -1348,6 +1401,14 @@
             this.picSettings.MouseEnter += new System.EventHandler(this.pnlSettins_MouseEnter);
             this.picSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
+            // pnlSpecer
+            // 
+            this.pnlSpecer.Location = new System.Drawing.Point(0, 975);
+            this.pnlSpecer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSpecer.Name = "pnlSpecer";
+            this.pnlSpecer.Size = new System.Drawing.Size(307, 65);
+            this.pnlSpecer.TabIndex = 17;
+            // 
             // pnlMainPanel
             // 
             this.pnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1355,6 +1416,10 @@
             this.pnlMainPanel.Name = "pnlMainPanel";
             this.pnlMainPanel.Size = new System.Drawing.Size(1031, 641);
             this.pnlMainPanel.TabIndex = 2;
+            // 
+            // timerSidebar
+            // 
+            this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
             // FrmMainLayout
             // 
@@ -1388,6 +1453,9 @@
             this.pnlLogout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
             this.fnlSidebar.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
             this.pnlDashboard.ResumeLayout(false);
             this.pnlDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).EndInit();
@@ -1545,6 +1613,11 @@
         private System.Windows.Forms.Label lblSettings;
         private System.Windows.Forms.PictureBox picSettings;
         private System.Windows.Forms.Panel pnlMainPanel;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Label lblMenu;
+        private System.Windows.Forms.PictureBox picMenu;
+        private System.Windows.Forms.Timer timerSidebar;
+        private System.Windows.Forms.Panel pnlSpecer;
 
     }
 }

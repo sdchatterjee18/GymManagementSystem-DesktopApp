@@ -15,15 +15,23 @@ namespace GymManagementSystem.FORMS.Main
         bool isMembersExpanded = false;
         private bool isMemberAttendanceExpanded = false;
         private bool isExerciseAndWorkoutExpanded = false;
+        private bool sidebarExpand = true;
+        private const int ExpandedWidth = 250;
+        private const int CollapsedWidth = 70;
         public FrmMainLayout()
         {
             InitializeComponent();
+
+            pnlSidebar.Width = ExpandedWidth;
+
+            timerSidebar.Interval = 10;
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+
         }
         private void SetRightRoundedPanel(Panel panel, int radius)
         {
@@ -36,7 +44,8 @@ namespace GymManagementSystem.FORMS.Main
             graphicsPath.CloseFigure();
             panel.Region = new Region(graphicsPath);
         }
-
+       
+        
         private void FrmMainLayout_Load(object sender, EventArgs e)
         {
             timer.Start();
@@ -51,6 +60,7 @@ namespace GymManagementSystem.FORMS.Main
             mainLeftBorder.Width = 1;
             mainLeftBorder.BackColor = borderColor;
             pnlMainPanel.Controls.Add(mainLeftBorder);
+            SetRightRoundedPanel(pnlMenu, 15);
             SetRightRoundedPanel(pnlDashboard, 15);
             SetRightRoundedPanel(pnlMembers, 15);
             SetRightRoundedPanel(pnlFitnessTest, 15);
@@ -72,7 +82,7 @@ namespace GymManagementSystem.FORMS.Main
             SetRightRoundedPanel(pnlExpense, 15);
             SetRightRoundedPanel(pnlSettins, 15);
             SetRightRoundedPanel(pnlLogout, 15);
-
+            pnlSidebar.Width = ExpandedWidth;
         }
 
         private void pnlMembers_MouseEnter(object sender, EventArgs e)
@@ -87,6 +97,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMembers_Click(object sender, EventArgs e)
         {
+            ExpandIfCollapsed();
             if (!isMembersExpanded)
             {
                 pnlDropDownMembers.Visible = true;
@@ -113,6 +124,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMemberAttendance_Click(object sender, EventArgs e)
         {
+            ExpandIfCollapsed();
             if (!isMemberAttendanceExpanded)
             {
                 pnlDropDownMemberAttendance.Visible = true;
@@ -141,6 +153,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExerciseAndWorkout_Click(object sender, EventArgs e)
         {
+            ExpandIfCollapsed();
             if (!isExerciseAndWorkoutExpanded)
             {
                 pnlDropDownExerciseAndWorkout.Visible = true;
@@ -167,7 +180,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlDashboard_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlViewAllMembers_MouseEnter(object sender, EventArgs e)
@@ -182,7 +195,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlViewAllMembers_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlMemberTrainerAssignment_MouseEnter(object sender, EventArgs e)
@@ -197,7 +210,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMemberTrainerAssignment_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlTrainer_MouseEnter(object sender, EventArgs e)
@@ -212,7 +225,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlTrainer_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlFitnessTest_MouseEnter(object sender, EventArgs e)
@@ -227,7 +240,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlFitnessTest_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
        
@@ -244,7 +257,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMarkMemberAttendance_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlViewMemberAttendance_MouseEnter(object sender, EventArgs e)
@@ -259,7 +272,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlViewMemberAttendance_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlMembershipPlan_MouseEnter(object sender, EventArgs e)
@@ -274,7 +287,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMembershipPlan_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlShift_MouseEnter(object sender, EventArgs e)
@@ -289,7 +302,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlShift_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlLocker_MouseEnter(object sender, EventArgs e)
@@ -304,7 +317,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlLocker_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlWorkoutPlans_MouseEnter(object sender, EventArgs e)
@@ -319,7 +332,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlWorkoutPlans_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlWorkoutShedule_MouseEnter(object sender, EventArgs e)
@@ -334,7 +347,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlWorkoutShedule_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlRegistrationFees_MouseEnter(object sender, EventArgs e)
@@ -349,7 +362,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlRegistrationFees_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlDietPlan_MouseEnter(object sender, EventArgs e)
@@ -364,7 +377,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlDietPlan_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlPayment_MouseEnter(object sender, EventArgs e)
@@ -379,7 +392,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlPayment_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlExpense_MouseEnter(object sender, EventArgs e)
@@ -394,7 +407,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExpense_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlSettins_MouseEnter(object sender, EventArgs e)
@@ -409,7 +422,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlSettins_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
 
         private void pnlLogout_MouseEnter(object sender, EventArgs e)
@@ -424,7 +437,116 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlLogout_Click(object sender, EventArgs e)
         {
-
+            ExpandIfCollapsed();
         }
-    }
+
+        private void pnlMenu_MouseEnter(object sender, EventArgs e)
+        {
+            pnlMenu.BackColor = Color.FromArgb(190, 216, 230);
+        }
+
+        private void pnlMenu_MouseLeave(object sender, EventArgs e)
+        {
+            pnlMenu.BackColor = Color.FromArgb(247, 247, 247);
+        }
+
+        private void pnlMenu_Click(object sender, EventArgs e)
+        {
+            if (pnlDropDownMembers.Visible || pnlDropDownMemberAttendance.Visible ||pnlDropDownExerciseAndWorkout.Visible)
+            {
+                return;   
+            }
+            CollapseIfExpanded();
+            ExpandIfCollapsed();
+        }
+      
+        private void timerSidebar_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                pnlSidebar.Width -= 12;
+
+                if (pnlSidebar.Width <= CollapsedWidth)
+                {
+                    pnlSidebar.Width = CollapsedWidth;
+
+                    timerSidebar.Stop();
+
+                    sidebarExpand = false;
+
+                    CollapseSidebar();
+                }
+            }
+            else
+            {
+                pnlSidebar.Width += 12;
+
+                if (pnlSidebar.Width >= ExpandedWidth)
+                {
+                    pnlSidebar.Width = ExpandedWidth;
+
+                    timerSidebar.Stop();
+
+                    sidebarExpand = true;
+
+                    ExpandSidebar();
+                }
+            }
+        }
+        private void CollapseSidebar()
+        {
+            foreach (Control c in fnlSidebar.Controls)
+            {
+                c.Width = fnlSidebar.ClientSize.Width;
+
+                foreach (Control child in c.Controls)
+                {
+                    if (child is Label)
+                        child.Visible = false;
+
+                    if (child is PictureBox && !child.Name.ToLower().Contains("arrow"))
+                        child.Left = (CollapsedWidth - child.Width) / 2;
+                }
+            }
+
+            pnlLogout.Width = CollapsedWidth;
+            lblLogout.Visible = false;
+            picLogout.Left = (CollapsedWidth - picLogout.Width) / 2;
+        }
+        private void ExpandSidebar()
+        {
+            foreach (Control c in fnlSidebar.Controls)
+            {
+                c.Width = fnlSidebar.ClientSize.Width;
+
+                foreach (Control child in c.Controls)
+                {
+                    if (child is Label)
+                        child.Visible = true;
+
+                    if (child is PictureBox && !child.Name.ToLower().Contains("arrow"))
+                        child.Left = 15;
+                }
+            }
+
+            pnlLogout.Width = ExpandedWidth;
+            lblLogout.Visible = true;
+            picLogout.Left = 15;
+        }
+        private void CollapseIfExpanded()
+        {
+            if (sidebarExpand && !timerSidebar.Enabled)
+            {
+                timerSidebar.Start();
+            }
+        }
+
+        private void ExpandIfCollapsed()
+        {
+            if (!sidebarExpand && !timerSidebar.Enabled)
+            {
+                timerSidebar.Start();
+            }
+        }
+       }
 }
