@@ -35,20 +35,24 @@
             this.tlpShowDietPlanAndAddNewDietPlan = new System.Windows.Forms.TableLayoutPanel();
             this.tlpShowDietPlan = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDietPlan = new System.Windows.Forms.DataGridView();
-            this.pnlAddNewDietPlan = new System.Windows.Forms.Panel();
-            this.lblAddNewDietPlan = new System.Windows.Forms.Label();
-            this.picAddIcon = new System.Windows.Forms.PictureBox();
-            this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
+            this.DietPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaloriesPerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAddDietPlanAndAddButton = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlAddNewDietPlan = new System.Windows.Forms.Panel();
+            this.picAddIcon = new System.Windows.Forms.PictureBox();
+            this.lblAddNewDietPlan = new System.Windows.Forms.Label();
             this.pnlDietHeader.SuspendLayout();
             this.pnlDietDetails.SuspendLayout();
             this.tlpShowDietPlanAndAddNewDietPlan.SuspendLayout();
             this.tlpShowDietPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietPlan)).BeginInit();
+            this.tlpAddDietPlanAndAddButton.SuspendLayout();
+            this.tlpAddButton.SuspendLayout();
             this.pnlAddNewDietPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).BeginInit();
-            this.tlpAddButton.SuspendLayout();
-            this.tlpAddDietPlanAndAddButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDietHeader
@@ -59,7 +63,7 @@
             this.pnlDietHeader.Controls.Add(this.pnlDietDetails);
             this.pnlDietHeader.Location = new System.Drawing.Point(3, 3);
             this.pnlDietHeader.Name = "pnlDietHeader";
-            this.pnlDietHeader.Size = new System.Drawing.Size(607, 48);
+            this.pnlDietHeader.Size = new System.Drawing.Size(607, 49);
             this.pnlDietHeader.TabIndex = 0;
             // 
             // pnlDietDetails
@@ -70,7 +74,7 @@
             this.pnlDietDetails.Controls.Add(this.lblDietPlan);
             this.pnlDietDetails.Location = new System.Drawing.Point(0, 3);
             this.pnlDietDetails.Name = "pnlDietDetails";
-            this.pnlDietDetails.Size = new System.Drawing.Size(607, 42);
+            this.pnlDietDetails.Size = new System.Drawing.Size(607, 43);
             this.pnlDietDetails.TabIndex = 0;
             // 
             // lblDietPlan
@@ -99,7 +103,7 @@
             this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.57143F));
             this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.85211F));
             this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.64789F));
-            this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tlpShowDietPlanAndAddNewDietPlan.Size = new System.Drawing.Size(613, 452);
             this.tlpShowDietPlanAndAddNewDietPlan.TabIndex = 1;
             // 
@@ -113,12 +117,12 @@
             this.tlpShowDietPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tlpShowDietPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpShowDietPlan.Controls.Add(this.dgvDietPlan, 1, 0);
-            this.tlpShowDietPlan.Location = new System.Drawing.Point(3, 57);
+            this.tlpShowDietPlan.Location = new System.Drawing.Point(3, 58);
             this.tlpShowDietPlan.Name = "tlpShowDietPlan";
             this.tlpShowDietPlan.RowCount = 1;
             this.tlpShowDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShowDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpShowDietPlan.Size = new System.Drawing.Size(607, 265);
+            this.tlpShowDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 272F));
+            this.tlpShowDietPlan.Size = new System.Drawing.Size(607, 272);
             this.tlpShowDietPlan.TabIndex = 0;
             // 
             // dgvDietPlan
@@ -128,11 +132,75 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDietPlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvDietPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDietPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DietPlanId,
+            this.CaloriesPerDay,
+            this.Condition,
+            this.Action});
             this.dgvDietPlan.Location = new System.Drawing.Point(33, 3);
             this.dgvDietPlan.Name = "dgvDietPlan";
             this.dgvDietPlan.RowTemplate.Height = 24;
-            this.dgvDietPlan.Size = new System.Drawing.Size(540, 259);
+            this.dgvDietPlan.Size = new System.Drawing.Size(540, 266);
             this.dgvDietPlan.TabIndex = 0;
+            // 
+            // DietPlanId
+            // 
+            this.DietPlanId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DietPlanId.HeaderText = "DietPlanId";
+            this.DietPlanId.Name = "DietPlanId";
+            // 
+            // CaloriesPerDay
+            // 
+            this.CaloriesPerDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CaloriesPerDay.HeaderText = "CaloriesPerDay";
+            this.CaloriesPerDay.Name = "CaloriesPerDay";
+            this.CaloriesPerDay.Width = 131;
+            // 
+            // Condition
+            // 
+            this.Condition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Condition.HeaderText = "Condition";
+            this.Condition.Name = "Condition";
+            // 
+            // Action
+            // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ToolTipText = "📝Update";
+            // 
+            // tlpAddDietPlanAndAddButton
+            // 
+            this.tlpAddDietPlanAndAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpAddDietPlanAndAddButton.ColumnCount = 1;
+            this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddDietPlanAndAddButton.Controls.Add(this.tlpAddButton, 0, 0);
+            this.tlpAddDietPlanAndAddButton.Location = new System.Drawing.Point(3, 336);
+            this.tlpAddDietPlanAndAddButton.Name = "tlpAddDietPlanAndAddButton";
+            this.tlpAddDietPlanAndAddButton.RowCount = 1;
+            this.tlpAddDietPlanAndAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddDietPlanAndAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddDietPlanAndAddButton.Size = new System.Drawing.Size(607, 103);
+            this.tlpAddDietPlanAndAddButton.TabIndex = 2;
+            // 
+            // tlpAddButton
+            // 
+            this.tlpAddButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpAddButton.ColumnCount = 1;
+            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddButton.Controls.Add(this.pnlAddNewDietPlan, 0, 0);
+            this.tlpAddButton.Location = new System.Drawing.Point(162, 28);
+            this.tlpAddButton.Name = "tlpAddButton";
+            this.tlpAddButton.RowCount = 1;
+            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddButton.Size = new System.Drawing.Size(283, 47);
+            this.tlpAddButton.TabIndex = 1;
             // 
             // pnlAddNewDietPlan
             // 
@@ -143,6 +211,23 @@
             this.pnlAddNewDietPlan.Name = "pnlAddNewDietPlan";
             this.pnlAddNewDietPlan.Size = new System.Drawing.Size(277, 41);
             this.pnlAddNewDietPlan.TabIndex = 1;
+            // 
+            // picAddIcon
+            // 
+            this.picAddIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
+            this.picAddIcon.Location = new System.Drawing.Point(12, 11);
+            this.picAddIcon.Name = "picAddIcon";
+            this.picAddIcon.Size = new System.Drawing.Size(29, 24);
+            this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddIcon.TabIndex = 1;
+            this.picAddIcon.TabStop = false;
+            this.picAddIcon.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
+            this.picAddIcon.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
+            this.picAddIcon.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
+            this.picAddIcon.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
             // 
             // lblAddNewDietPlan
             // 
@@ -163,61 +248,11 @@
             this.lblAddNewDietPlan.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
             this.lblAddNewDietPlan.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
             // 
-            // picAddIcon
-            // 
-            this.picAddIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(12, 11);
-            this.picAddIcon.Name = "picAddIcon";
-            this.picAddIcon.Size = new System.Drawing.Size(29, 24);
-            this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddIcon.TabIndex = 1;
-            this.picAddIcon.TabStop = false;
-            this.picAddIcon.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
-            this.picAddIcon.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
-            this.picAddIcon.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
-            this.picAddIcon.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
-            // 
-            // tlpAddButton
-            // 
-            this.tlpAddButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tlpAddButton.ColumnCount = 1;
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddButton.Controls.Add(this.pnlAddNewDietPlan, 0, 0);
-            this.tlpAddButton.Location = new System.Drawing.Point(162, 26);
-            this.tlpAddButton.Name = "tlpAddButton";
-            this.tlpAddButton.RowCount = 1;
-            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddButton.Size = new System.Drawing.Size(283, 47);
-            this.tlpAddButton.TabIndex = 1;
-            // 
-            // tlpAddDietPlanAndAddButton
-            // 
-            this.tlpAddDietPlanAndAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAddDietPlanAndAddButton.ColumnCount = 1;
-            this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddDietPlanAndAddButton.Controls.Add(this.tlpAddButton, 0, 0);
-            this.tlpAddDietPlanAndAddButton.Location = new System.Drawing.Point(3, 328);
-            this.tlpAddDietPlanAndAddButton.Name = "tlpAddDietPlanAndAddButton";
-            this.tlpAddDietPlanAndAddButton.RowCount = 1;
-            this.tlpAddDietPlanAndAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanAndAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddDietPlanAndAddButton.Size = new System.Drawing.Size(607, 100);
-            this.tlpAddDietPlanAndAddButton.TabIndex = 2;
-            // 
             // FrmShowDietPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(613, 452);
             this.Controls.Add(this.tlpShowDietPlanAndAddNewDietPlan);
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
@@ -231,10 +266,10 @@
             this.tlpShowDietPlanAndAddNewDietPlan.ResumeLayout(false);
             this.tlpShowDietPlan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietPlan)).EndInit();
+            this.tlpAddDietPlanAndAddButton.ResumeLayout(false);
+            this.tlpAddButton.ResumeLayout(false);
             this.pnlAddNewDietPlan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).EndInit();
-            this.tlpAddButton.ResumeLayout(false);
-            this.tlpAddDietPlanAndAddButton.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,5 +287,9 @@
         private System.Windows.Forms.PictureBox picAddIcon;
         private System.Windows.Forms.Label lblAddNewDietPlan;
         private System.Windows.Forms.TableLayoutPanel tlpAddDietPlanAndAddButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DietPlanId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaloriesPerDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Condition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
     }
 }

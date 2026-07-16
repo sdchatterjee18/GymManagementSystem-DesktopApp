@@ -6,16 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 
 namespace GymManagementSystem.FORMS.DietPlan
 {
     public partial class FrmShowDietPlans : Form
     {
         private Color originalColor;
-        private Color hoverColor = Color.LightBlue;
+        private Color hoverColor = Color.SkyBlue;
         private Color MouseLeave;
-        private Color clickColor=Color.Gray;
+        private Color clickColor = Color.FromArgb(184, 195, 179);
 
         public FrmShowDietPlans()
         {
@@ -28,10 +27,15 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void FrmShowDietPlans_Load(object sender, EventArgs e)
         {
+           
+
+        }
+        
+        private void RetrieveDietData()
+        {
             
 
         }
-
 
         private void lblAddNewDietPlan_Click(object sender, EventArgs e)
         {
@@ -91,6 +95,8 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
 
             pnlAddNewDietPlan.BackColor = clickColor;
+            FrmAddNewDietPlan FrmAddNewDietPlan = new FrmAddNewDietPlan();
+            FrmAddNewDietPlan.ShowDialog();
         }
 
 
@@ -108,6 +114,8 @@ namespace GymManagementSystem.FORMS.DietPlan
 
             pnlAddNewDietPlan.BackColor = originalColor;
         }
+
+       
         
 
         }
