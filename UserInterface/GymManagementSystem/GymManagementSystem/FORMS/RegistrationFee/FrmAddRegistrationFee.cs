@@ -25,6 +25,27 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         }
 
+        private void btnExitFrmAddRegistrationFee_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnExitFrmAddRegistrationFee.BackColor = Color.Red;
+            btnExitFrmAddRegistrationFee.ForeColor = Color.White;
+        }
+
+        private void btnExitFrmAddRegistrationFee_MouseLeave(object sender, EventArgs e)
+        {
+            btnExitFrmAddRegistrationFee.BackColor = SystemColors.Control;
+            btnExitFrmAddRegistrationFee.ForeColor = Color.DimGray;
+        }
+
+        private void btnExitFrmAddRegistrationFee_MouseHover(object sender, EventArgs e)
+        {
+            btnExitFrmAddRegistrationFee.BackColor = Color.Red;
+            btnExitFrmAddRegistrationFee.ForeColor = Color.White;
+        }
+
+      
+
+
        
 
 

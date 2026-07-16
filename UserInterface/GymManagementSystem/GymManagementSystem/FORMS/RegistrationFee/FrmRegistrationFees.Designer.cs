@@ -33,14 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistrationFees));
-            this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvShowAllAddRegistrationFees = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrationFeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FeeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Update = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deactivate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Deactivate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tlpMiddleFrmAddRegistrationFee = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickAddNewFegistrationFees = new System.Windows.Forms.Panel();
             this.tlpAddNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
@@ -56,27 +56,19 @@
             this.tlpTopFrmAddRegistrationFee.SuspendLayout();
             this.SuspendLayout();
             // 
-            // CreatedAt
-            // 
-            this.CreatedAt.FillWeight = 80.83756F;
-            this.CreatedAt.HeaderText = "CreatedAt";
-            this.CreatedAt.Name = "CreatedAt";
-            this.CreatedAt.ReadOnly = true;
-            // 
             // dgvShowAllAddRegistrationFees
             // 
             this.dgvShowAllAddRegistrationFees.AllowUserToAddRows = false;
             this.dgvShowAllAddRegistrationFees.AllowUserToDeleteRows = false;
             this.dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowAllAddRegistrationFees.BackgroundColor = System.Drawing.Color.White;
-            this.dgvShowAllAddRegistrationFees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersHeight = 50;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -98,16 +90,16 @@
             this.dgvShowAllAddRegistrationFees.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShowAllAddRegistrationFees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShowAllAddRegistrationFees.EnableHeadersVisualStyles = false;
-            this.dgvShowAllAddRegistrationFees.GridColor = System.Drawing.Color.White;
+            this.dgvShowAllAddRegistrationFees.GridColor = System.Drawing.Color.Red;
             this.dgvShowAllAddRegistrationFees.Location = new System.Drawing.Point(64, 3);
             this.dgvShowAllAddRegistrationFees.Name = "dgvShowAllAddRegistrationFees";
             this.dgvShowAllAddRegistrationFees.ReadOnly = true;
-            this.dgvShowAllAddRegistrationFees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvShowAllAddRegistrationFees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.AppWorkspace;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvShowAllAddRegistrationFees.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -116,11 +108,12 @@
             this.dgvShowAllAddRegistrationFees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShowAllAddRegistrationFees.Size = new System.Drawing.Size(1104, 588);
             this.dgvShowAllAddRegistrationFees.TabIndex = 0;
+            this.dgvShowAllAddRegistrationFees.ColumnHeadersBorderStyleChanged += new System.EventHandler(this.FrmRegistrationFees_Load);
             // 
             // No
             // 
             this.No.FillWeight = 50F;
-            this.No.HeaderText = "";
+            this.No.HeaderText = "R_No";
             this.No.Name = "No";
             this.No.ReadOnly = true;
             // 
@@ -129,7 +122,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegistrationFeeId.DefaultCellStyle = dataGridViewCellStyle2;
             this.RegistrationFeeId.FillWeight = 80.83756F;
-            this.RegistrationFeeId.HeaderText = "R_id";
+            this.RegistrationFeeId.HeaderText = "Registration Id";
             this.RegistrationFeeId.Name = "RegistrationFeeId";
             this.RegistrationFeeId.ReadOnly = true;
             // 
@@ -147,12 +140,22 @@
             this.IsActive.Name = "IsActive";
             this.IsActive.ReadOnly = true;
             // 
+            // CreatedAt
+            // 
+            this.CreatedAt.FillWeight = 80.83756F;
+            this.CreatedAt.HeaderText = "CreatedAt";
+            this.CreatedAt.Name = "CreatedAt";
+            this.CreatedAt.ReadOnly = true;
+            // 
             // Update
             // 
             this.Update.FillWeight = 80.83756F;
             this.Update.HeaderText = "Update";
             this.Update.Name = "Update";
             this.Update.ReadOnly = true;
+            this.Update.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Update.Text = "✏️Update";
             // 
             // Deactivate
             // 
@@ -160,10 +163,13 @@
             this.Deactivate.HeaderText = "Deactivate";
             this.Deactivate.Name = "Deactivate";
             this.Deactivate.ReadOnly = true;
+            this.Deactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Deactivate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Deactivate.Text = "❌";
             // 
             // tlpMiddleFrmAddRegistrationFee
             // 
-            this.tlpMiddleFrmAddRegistrationFee.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tlpMiddleFrmAddRegistrationFee.BackColor = System.Drawing.SystemColors.Control;
             this.tlpMiddleFrmAddRegistrationFee.ColumnCount = 3;
             this.tlpMiddleFrmAddRegistrationFee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpMiddleFrmAddRegistrationFee.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -255,6 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1234, 793);
             this.Controls.Add(this.tlpMiddleFrmAddRegistrationFee);
             this.Controls.Add(this.tlpTopFrmAddRegistrationFee);
@@ -276,14 +283,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
         private System.Windows.Forms.DataGridView dgvShowAllAddRegistrationFees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationFeeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FeeAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsActive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Update;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Deactivate;
         private System.Windows.Forms.TableLayoutPanel tlpMiddleFrmAddRegistrationFee;
         private System.Windows.Forms.Panel pnlClickAddNewFegistrationFees;
         private System.Windows.Forms.TableLayoutPanel tlpAddNewRegistrationFees;
@@ -291,5 +291,12 @@
         private System.Windows.Forms.Label lblAddRegistrationFees;
         private System.Windows.Forms.TableLayoutPanel tlpTopFrmAddRegistrationFee;
         private System.Windows.Forms.Label lblRegistrationFeesFrmAddRegistrationFee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationFeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FeeAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
+        private System.Windows.Forms.DataGridViewButtonColumn Update;
+        private System.Windows.Forms.DataGridViewButtonColumn Deactivate;
     }
 }
