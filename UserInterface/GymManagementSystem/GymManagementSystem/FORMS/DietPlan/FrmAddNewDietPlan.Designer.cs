@@ -36,8 +36,8 @@
             this.tlpCaloriesSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblRequiredCalories = new System.Windows.Forms.Label();
             this.tlpInputRequiredCaloriesAndShowMessage = new System.Windows.Forms.TableLayoutPanel();
-            this.txtRequiredCalories = new System.Windows.Forms.TextBox();
             this.txtShowCaloriesRequiredMessage = new System.Windows.Forms.TextBox();
+            this.txtRequiredCalories = new System.Windows.Forms.TextBox();
             this.pnlPlanDocumentSection = new System.Windows.Forms.Panel();
             this.tlpPlanDocumentSection = new System.Windows.Forms.TableLayoutPanel();
             this.tlpInputPlanDocumentAndBrowsePlan = new System.Windows.Forms.TableLayoutPanel();
@@ -93,7 +93,7 @@
             this.tlpAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.967166F));
             this.tlpAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.57F));
             this.tlpAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.830001F));
-            this.tlpAddNewDietPlan.Size = new System.Drawing.Size(681, 635);
+            this.tlpAddNewDietPlan.Size = new System.Drawing.Size(514, 585);
             this.tlpAddNewDietPlan.TabIndex = 0;
             // 
             // tlpDietPlanAddHeader
@@ -109,8 +109,8 @@
             this.tlpDietPlanAddHeader.Name = "tlpDietPlanAddHeader";
             this.tlpDietPlanAddHeader.RowCount = 1;
             this.tlpDietPlanAddHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDietPlanAddHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tlpDietPlanAddHeader.Size = new System.Drawing.Size(675, 69);
+            this.tlpDietPlanAddHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tlpDietPlanAddHeader.Size = new System.Drawing.Size(508, 63);
             this.tlpDietPlanAddHeader.TabIndex = 0;
             // 
             // lblNewDietPlanHeader
@@ -130,9 +130,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRequiredCaloriesPerDaySection.Controls.Add(this.tlpCaloriesSection);
             this.pnlRequiredCaloriesPerDaySection.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlRequiredCaloriesPerDaySection.Location = new System.Drawing.Point(3, 78);
+            this.pnlRequiredCaloriesPerDaySection.Location = new System.Drawing.Point(3, 72);
             this.pnlRequiredCaloriesPerDaySection.Name = "pnlRequiredCaloriesPerDaySection";
-            this.pnlRequiredCaloriesPerDaySection.Size = new System.Drawing.Size(675, 125);
+            this.pnlRequiredCaloriesPerDaySection.Size = new System.Drawing.Size(508, 114);
             this.pnlRequiredCaloriesPerDaySection.TabIndex = 2;
             // 
             // tlpCaloriesSection
@@ -149,7 +149,7 @@
             this.tlpCaloriesSection.Name = "tlpCaloriesSection";
             this.tlpCaloriesSection.RowCount = 1;
             this.tlpCaloriesSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCaloriesSection.Size = new System.Drawing.Size(672, 119);
+            this.tlpCaloriesSection.Size = new System.Drawing.Size(505, 108);
             this.tlpCaloriesSection.TabIndex = 1;
             this.tlpCaloriesSection.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCaloriesSection_Paint);
             // 
@@ -162,7 +162,7 @@
             this.lblRequiredCalories.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequiredCalories.Location = new System.Drawing.Point(3, 0);
             this.lblRequiredCalories.Name = "lblRequiredCalories";
-            this.lblRequiredCalories.Size = new System.Drawing.Size(303, 119);
+            this.lblRequiredCalories.Size = new System.Drawing.Size(226, 108);
             this.lblRequiredCalories.TabIndex = 0;
             this.lblRequiredCalories.Text = "Required Calories: (Per Day)";
             this.lblRequiredCalories.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,25 +177,13 @@
             this.tlpInputRequiredCaloriesAndShowMessage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpInputRequiredCaloriesAndShowMessage.Controls.Add(this.txtShowCaloriesRequiredMessage, 0, 1);
             this.tlpInputRequiredCaloriesAndShowMessage.Controls.Add(this.txtRequiredCalories, 0, 0);
-            this.tlpInputRequiredCaloriesAndShowMessage.Location = new System.Drawing.Point(312, 3);
+            this.tlpInputRequiredCaloriesAndShowMessage.Location = new System.Drawing.Point(235, 3);
             this.tlpInputRequiredCaloriesAndShowMessage.Name = "tlpInputRequiredCaloriesAndShowMessage";
             this.tlpInputRequiredCaloriesAndShowMessage.RowCount = 2;
-            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.09734F));
-            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.90266F));
-            this.tlpInputRequiredCaloriesAndShowMessage.Size = new System.Drawing.Size(357, 113);
+            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.80392F));
+            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.19608F));
+            this.tlpInputRequiredCaloriesAndShowMessage.Size = new System.Drawing.Size(267, 102);
             this.tlpInputRequiredCaloriesAndShowMessage.TabIndex = 1;
-            // 
-            // txtRequiredCalories
-            // 
-            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequiredCalories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRequiredCalories.Location = new System.Drawing.Point(3, 26);
-            this.txtRequiredCalories.Name = "txtRequiredCalories";
-            this.txtRequiredCalories.Size = new System.Drawing.Size(351, 30);
-            this.txtRequiredCalories.TabIndex = 1;
-            this.txtRequiredCalories.Text = "             e.g. 2000";
-            this.txtRequiredCalories.Click += new System.EventHandler(this.txtRequiredCalories_Click);
             // 
             // txtShowCaloriesRequiredMessage
             // 
@@ -204,11 +192,22 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtShowCaloriesRequiredMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtShowCaloriesRequiredMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShowCaloriesRequiredMessage.Location = new System.Drawing.Point(3, 62);
+            this.txtShowCaloriesRequiredMessage.Location = new System.Drawing.Point(3, 63);
             this.txtShowCaloriesRequiredMessage.Multiline = true;
             this.txtShowCaloriesRequiredMessage.Name = "txtShowCaloriesRequiredMessage";
-            this.txtShowCaloriesRequiredMessage.Size = new System.Drawing.Size(351, 48);
+            this.txtShowCaloriesRequiredMessage.Size = new System.Drawing.Size(261, 36);
             this.txtShowCaloriesRequiredMessage.TabIndex = 2;
+            // 
+            // txtRequiredCalories
+            // 
+            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtRequiredCalories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRequiredCalories.Location = new System.Drawing.Point(3, 27);
+            this.txtRequiredCalories.Name = "txtRequiredCalories";
+            this.txtRequiredCalories.Size = new System.Drawing.Size(261, 30);
+            this.txtRequiredCalories.TabIndex = 1;
+            this.txtRequiredCalories.Text = "             e.g. 2000";
+            this.txtRequiredCalories.Click += new System.EventHandler(this.txtRequiredCalories_Click);
             // 
             // pnlPlanDocumentSection
             // 
@@ -217,9 +216,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlanDocumentSection.Controls.Add(this.tlpPlanDocumentSection);
             this.pnlPlanDocumentSection.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlPlanDocumentSection.Location = new System.Drawing.Point(3, 228);
+            this.pnlPlanDocumentSection.Location = new System.Drawing.Point(3, 210);
             this.pnlPlanDocumentSection.Name = "pnlPlanDocumentSection";
-            this.pnlPlanDocumentSection.Size = new System.Drawing.Size(675, 124);
+            this.pnlPlanDocumentSection.Size = new System.Drawing.Size(508, 113);
             this.pnlPlanDocumentSection.TabIndex = 3;
             // 
             // tlpPlanDocumentSection
@@ -236,8 +235,8 @@
             this.tlpPlanDocumentSection.Name = "tlpPlanDocumentSection";
             this.tlpPlanDocumentSection.RowCount = 1;
             this.tlpPlanDocumentSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPlanDocumentSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tlpPlanDocumentSection.Size = new System.Drawing.Size(669, 118);
+            this.tlpPlanDocumentSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tlpPlanDocumentSection.Size = new System.Drawing.Size(502, 107);
             this.tlpPlanDocumentSection.TabIndex = 0;
             // 
             // tlpInputPlanDocumentAndBrowsePlan
@@ -250,12 +249,12 @@
             this.tlpInputPlanDocumentAndBrowsePlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.84906F));
             this.tlpInputPlanDocumentAndBrowsePlan.Controls.Add(this.tlpInputPlanAndShowDocumentMessage, 0, 0);
             this.tlpInputPlanDocumentAndBrowsePlan.Controls.Add(this.picPlanDouement, 1, 0);
-            this.tlpInputPlanDocumentAndBrowsePlan.Location = new System.Drawing.Point(309, 3);
+            this.tlpInputPlanDocumentAndBrowsePlan.Location = new System.Drawing.Point(233, 3);
             this.tlpInputPlanDocumentAndBrowsePlan.Name = "tlpInputPlanDocumentAndBrowsePlan";
             this.tlpInputPlanDocumentAndBrowsePlan.RowCount = 1;
             this.tlpInputPlanDocumentAndBrowsePlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInputPlanDocumentAndBrowsePlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tlpInputPlanDocumentAndBrowsePlan.Size = new System.Drawing.Size(357, 112);
+            this.tlpInputPlanDocumentAndBrowsePlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tlpInputPlanDocumentAndBrowsePlan.Size = new System.Drawing.Size(266, 101);
             this.tlpInputPlanDocumentAndBrowsePlan.TabIndex = 1;
             // 
             // tlpInputPlanAndShowDocumentMessage
@@ -271,9 +270,9 @@
             this.tlpInputPlanAndShowDocumentMessage.Location = new System.Drawing.Point(3, 3);
             this.tlpInputPlanAndShowDocumentMessage.Name = "tlpInputPlanAndShowDocumentMessage";
             this.tlpInputPlanAndShowDocumentMessage.RowCount = 2;
-            this.tlpInputPlanAndShowDocumentMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.81132F));
-            this.tlpInputPlanAndShowDocumentMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.18868F));
-            this.tlpInputPlanAndShowDocumentMessage.Size = new System.Drawing.Size(294, 106);
+            this.tlpInputPlanAndShowDocumentMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.36842F));
+            this.tlpInputPlanAndShowDocumentMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.63158F));
+            this.tlpInputPlanAndShowDocumentMessage.Size = new System.Drawing.Size(217, 95);
             this.tlpInputPlanAndShowDocumentMessage.TabIndex = 0;
             // 
             // txtBrowsePlan
@@ -281,9 +280,9 @@
             this.txtBrowsePlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBrowsePlan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrowsePlan.Location = new System.Drawing.Point(3, 36);
+            this.txtBrowsePlan.Location = new System.Drawing.Point(3, 27);
             this.txtBrowsePlan.Name = "txtBrowsePlan";
-            this.txtBrowsePlan.Size = new System.Drawing.Size(288, 34);
+            this.txtBrowsePlan.Size = new System.Drawing.Size(211, 34);
             this.txtBrowsePlan.TabIndex = 1;
             this.txtBrowsePlan.Text = "          Browse Plan";
             this.txtBrowsePlan.Click += new System.EventHandler(this.txtBrowsePlan_Click);
@@ -295,21 +294,18 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtShowPlanDocumentRequiredMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtShowPlanDocumentRequiredMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShowPlanDocumentRequiredMessage.Location = new System.Drawing.Point(3, 76);
+            this.txtShowPlanDocumentRequiredMessage.Location = new System.Drawing.Point(3, 67);
             this.txtShowPlanDocumentRequiredMessage.Multiline = true;
             this.txtShowPlanDocumentRequiredMessage.Name = "txtShowPlanDocumentRequiredMessage";
-            this.txtShowPlanDocumentRequiredMessage.Size = new System.Drawing.Size(288, 27);
+            this.txtShowPlanDocumentRequiredMessage.Size = new System.Drawing.Size(211, 25);
             this.txtShowPlanDocumentRequiredMessage.TabIndex = 2;
             // 
             // picPlanDouement
             // 
-            this.picPlanDouement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.picPlanDouement.Image = ((System.Drawing.Image)(resources.GetObject("picPlanDouement.Image")));
-            this.picPlanDouement.Location = new System.Drawing.Point(303, 3);
+            this.picPlanDouement.Location = new System.Drawing.Point(226, 3);
             this.picPlanDouement.Name = "picPlanDouement";
-            this.picPlanDouement.Size = new System.Drawing.Size(51, 106);
+            this.picPlanDouement.Size = new System.Drawing.Size(37, 56);
             this.picPlanDouement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPlanDouement.TabIndex = 1;
             this.picPlanDouement.TabStop = false;
@@ -323,7 +319,7 @@
             this.lblPlanDocument.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlanDocument.Location = new System.Drawing.Point(3, 0);
             this.lblPlanDocument.Name = "lblPlanDocument";
-            this.lblPlanDocument.Size = new System.Drawing.Size(300, 118);
+            this.lblPlanDocument.Size = new System.Drawing.Size(224, 107);
             this.lblPlanDocument.TabIndex = 0;
             this.lblPlanDocument.Text = "Plan Document:";
             this.lblPlanDocument.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -334,9 +330,9 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlanConditionSection.Controls.Add(this.tlpPlanConditionSection);
-            this.pnlPlanConditionSection.Location = new System.Drawing.Point(3, 377);
+            this.pnlPlanConditionSection.Location = new System.Drawing.Point(3, 347);
             this.pnlPlanConditionSection.Name = "pnlPlanConditionSection";
-            this.pnlPlanConditionSection.Size = new System.Drawing.Size(675, 129);
+            this.pnlPlanConditionSection.Size = new System.Drawing.Size(508, 118);
             this.pnlPlanConditionSection.TabIndex = 4;
             // 
             // tlpPlanConditionSection
@@ -347,14 +343,14 @@
             this.tlpPlanConditionSection.ColumnCount = 2;
             this.tlpPlanConditionSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpPlanConditionSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPlanConditionSection.Controls.Add(this.tlpInputPlanConditionAndShowMessaage, 1, 0);
             this.tlpPlanConditionSection.Controls.Add(this.lblPlanCondition, 0, 0);
+            this.tlpPlanConditionSection.Controls.Add(this.tlpInputPlanConditionAndShowMessaage, 1, 0);
             this.tlpPlanConditionSection.Location = new System.Drawing.Point(3, 3);
             this.tlpPlanConditionSection.Name = "tlpPlanConditionSection";
             this.tlpPlanConditionSection.RowCount = 1;
             this.tlpPlanConditionSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPlanConditionSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tlpPlanConditionSection.Size = new System.Drawing.Size(669, 123);
+            this.tlpPlanConditionSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tlpPlanConditionSection.Size = new System.Drawing.Size(502, 112);
             this.tlpPlanConditionSection.TabIndex = 0;
             // 
             // lblPlanCondition
@@ -366,7 +362,7 @@
             this.lblPlanCondition.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlanCondition.Location = new System.Drawing.Point(3, 0);
             this.lblPlanCondition.Name = "lblPlanCondition";
-            this.lblPlanCondition.Size = new System.Drawing.Size(328, 123);
+            this.lblPlanCondition.Size = new System.Drawing.Size(245, 112);
             this.lblPlanCondition.TabIndex = 0;
             this.lblPlanCondition.Text = "Plan Condition:";
             this.lblPlanCondition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,14 +375,14 @@
             this.tlpInputPlanConditionAndShowMessaage.ColumnCount = 1;
             this.tlpInputPlanConditionAndShowMessaage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpInputPlanConditionAndShowMessaage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpInputPlanConditionAndShowMessaage.Controls.Add(this.txtPlanCondition, 0, 0);
             this.tlpInputPlanConditionAndShowMessaage.Controls.Add(this.txtPlanConditionShowMessage, 0, 1);
-            this.tlpInputPlanConditionAndShowMessaage.Location = new System.Drawing.Point(337, 3);
+            this.tlpInputPlanConditionAndShowMessaage.Controls.Add(this.txtPlanCondition, 0, 0);
+            this.tlpInputPlanConditionAndShowMessaage.Location = new System.Drawing.Point(254, 3);
             this.tlpInputPlanConditionAndShowMessaage.Name = "tlpInputPlanConditionAndShowMessaage";
             this.tlpInputPlanConditionAndShowMessaage.RowCount = 2;
-            this.tlpInputPlanConditionAndShowMessaage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.10256F));
-            this.tlpInputPlanConditionAndShowMessaage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.89743F));
-            this.tlpInputPlanConditionAndShowMessaage.Size = new System.Drawing.Size(329, 117);
+            this.tlpInputPlanConditionAndShowMessaage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.75471F));
+            this.tlpInputPlanConditionAndShowMessaage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.24528F));
+            this.tlpInputPlanConditionAndShowMessaage.Size = new System.Drawing.Size(245, 106);
             this.tlpInputPlanConditionAndShowMessaage.TabIndex = 1;
             // 
             // txtPlanCondition
@@ -396,7 +392,7 @@
             this.txtPlanCondition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlanCondition.Location = new System.Drawing.Point(3, 37);
             this.txtPlanCondition.Name = "txtPlanCondition";
-            this.txtPlanCondition.Size = new System.Drawing.Size(323, 34);
+            this.txtPlanCondition.Size = new System.Drawing.Size(239, 34);
             this.txtPlanCondition.TabIndex = 1;
             // 
             // txtPlanConditionShowMessage
@@ -409,14 +405,14 @@
             this.txtPlanConditionShowMessage.Location = new System.Drawing.Point(3, 77);
             this.txtPlanConditionShowMessage.Multiline = true;
             this.txtPlanConditionShowMessage.Name = "txtPlanConditionShowMessage";
-            this.txtPlanConditionShowMessage.Size = new System.Drawing.Size(323, 37);
+            this.txtPlanConditionShowMessage.Size = new System.Drawing.Size(239, 26);
             this.txtPlanConditionShowMessage.TabIndex = 2;
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(575, 564);
+            this.btnAdd.Location = new System.Drawing.Point(408, 515);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 46);
             this.btnAdd.TabIndex = 5;
@@ -428,7 +424,7 @@
             this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCancel.AutoSize = true;
             this.lblCancel.Font = new System.Drawing.Font("Segoe UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.Location = new System.Drawing.Point(676, -6);
+            this.lblCancel.Location = new System.Drawing.Point(509, -6);
             this.lblCancel.Name = "lblCancel";
             this.lblCancel.Size = new System.Drawing.Size(29, 32);
             this.lblCancel.TabIndex = 1;
@@ -442,7 +438,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(708, 668);
+            this.ClientSize = new System.Drawing.Size(541, 618);
             this.Controls.Add(this.lblCancel);
             this.Controls.Add(this.tlpAddNewDietPlan);
             this.Margin = new System.Windows.Forms.Padding(4);
