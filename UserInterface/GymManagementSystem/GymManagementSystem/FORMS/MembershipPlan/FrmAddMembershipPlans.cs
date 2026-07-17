@@ -15,5 +15,10 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             InitializeComponent();
         }
+
+        private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
