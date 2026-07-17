@@ -210,10 +210,10 @@
             // lblTitleShift
             // 
             this.lblTitleShift.AutoSize = true;
-            this.lblTitleShift.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleShift.Location = new System.Drawing.Point(3, 6);
+            this.lblTitleShift.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleShift.Location = new System.Drawing.Point(3, 10);
             this.lblTitleShift.Name = "lblTitleShift";
-            this.lblTitleShift.Size = new System.Drawing.Size(165, 37);
+            this.lblTitleShift.Size = new System.Drawing.Size(126, 30);
             this.lblTitleShift.TabIndex = 0;
             this.lblTitleShift.Text = "Shift Details";
             this.lblTitleShift.Click += new System.EventHandler(this.lblTitleShift_Click);
