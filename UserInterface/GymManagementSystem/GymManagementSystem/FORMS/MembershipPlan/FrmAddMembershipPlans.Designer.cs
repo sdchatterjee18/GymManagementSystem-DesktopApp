@@ -68,7 +68,7 @@
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.80788F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.19212F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
-            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblPlanName, 1, 0);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblPlanType, 1, 1);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblDuration, 1, 2);
@@ -98,7 +98,7 @@
             // 
             this.lblPlanName.AutoSize = true;
             this.lblPlanName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanName.Location = new System.Drawing.Point(25, 0);
+            this.lblPlanName.Location = new System.Drawing.Point(24, 0);
             this.lblPlanName.Name = "lblPlanName";
             this.lblPlanName.Size = new System.Drawing.Size(122, 28);
             this.lblPlanName.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             this.lblPlanType.AutoSize = true;
             this.lblPlanType.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanType.Location = new System.Drawing.Point(25, 54);
+            this.lblPlanType.Location = new System.Drawing.Point(24, 54);
             this.lblPlanType.Name = "lblPlanType";
             this.lblPlanType.Size = new System.Drawing.Size(111, 28);
             this.lblPlanType.TabIndex = 0;
@@ -118,7 +118,7 @@
             // 
             this.lblDuration.AutoSize = true;
             this.lblDuration.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuration.Location = new System.Drawing.Point(25, 108);
+            this.lblDuration.Location = new System.Drawing.Point(24, 108);
             this.lblDuration.Name = "lblDuration";
             this.lblDuration.Size = new System.Drawing.Size(102, 28);
             this.lblDuration.TabIndex = 0;
@@ -128,7 +128,7 @@
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(25, 167);
+            this.lblAmount.Location = new System.Drawing.Point(24, 167);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(97, 28);
             this.lblAmount.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(25, 232);
+            this.lblDescription.Location = new System.Drawing.Point(24, 232);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(126, 28);
             this.lblDescription.TabIndex = 0;
@@ -148,7 +148,7 @@
             // 
             this.txtAmount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(175, 170);
+            this.txtAmount.Location = new System.Drawing.Point(173, 170);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(308, 30);
             this.txtAmount.TabIndex = 1;
@@ -157,7 +157,7 @@
             // 
             this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(175, 235);
+            this.txtDescription.Location = new System.Drawing.Point(173, 235);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(308, 92);
@@ -167,7 +167,7 @@
             // 
             this.txtPlanName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPlanName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlanName.Location = new System.Drawing.Point(175, 3);
+            this.txtPlanName.Location = new System.Drawing.Point(173, 3);
             this.txtPlanName.Name = "txtPlanName";
             this.txtPlanName.Size = new System.Drawing.Size(308, 30);
             this.txtPlanName.TabIndex = 2;
@@ -177,7 +177,7 @@
             this.cmbPlanType.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbPlanType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPlanType.FormattingEnabled = true;
-            this.cmbPlanType.Location = new System.Drawing.Point(175, 57);
+            this.cmbPlanType.Location = new System.Drawing.Point(173, 57);
             this.cmbPlanType.Name = "cmbPlanType";
             this.cmbPlanType.Size = new System.Drawing.Size(308, 33);
             this.cmbPlanType.TabIndex = 3;
@@ -187,7 +187,7 @@
             this.cmbDuration.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDuration.FormattingEnabled = true;
-            this.cmbDuration.Location = new System.Drawing.Point(175, 111);
+            this.cmbDuration.Location = new System.Drawing.Point(173, 111);
             this.cmbDuration.Name = "cmbDuration";
             this.cmbDuration.Size = new System.Drawing.Size(308, 33);
             this.cmbDuration.TabIndex = 3;
@@ -200,7 +200,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(84, 373);
+            this.btnClear.Location = new System.Drawing.Point(82, 373);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(85, 34);
             this.btnClear.TabIndex = 4;
@@ -213,7 +213,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(391, 373);
+            this.btnSubmit.Location = new System.Drawing.Point(389, 373);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(92, 34);
             this.btnSubmit.TabIndex = 4;
