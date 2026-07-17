@@ -8,8 +8,8 @@ BEGIN
         SELECT
             ShiftId,
             ShiftName,
-            StartTime,
-            EndTime
+            FORMAT(CAST(StartTime AS datetime), 'hh:mm tt') AS StartTime,  
+            FORMAT(CAST(EndTime AS datetime), 'hh:mm tt') AS EndTime
         FROM tblShift
         ORDER BY StartTime;
 
