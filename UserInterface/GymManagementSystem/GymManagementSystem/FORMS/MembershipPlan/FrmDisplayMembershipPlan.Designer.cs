@@ -43,7 +43,6 @@
             this.pnlAddNewMembarshipPlan = new System.Windows.Forms.TableLayoutPanel();
             this.lblAddNewMembershipPlan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlanType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,10 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deactivate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tlpMembershipPlanSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.txtMembershipPlanSearchBox = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlAllMembershipPlanTitleSubPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlMembershipPlanGridview.SuspendLayout();
@@ -58,15 +61,17 @@
             this.pnlClickAddNewMembershipPlan.SuspendLayout();
             this.pnlAddNewMembarshipPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tlpMembershipPlanSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAllMembershipPlanTitleSubPanel
             // 
+            this.pnlAllMembershipPlanTitleSubPanel.Controls.Add(this.tlpMembershipPlanSearch);
             this.pnlAllMembershipPlanTitleSubPanel.Controls.Add(this.tableLayoutPanel1);
             this.pnlAllMembershipPlanTitleSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAllMembershipPlanTitleSubPanel.Location = new System.Drawing.Point(0, 0);
             this.pnlAllMembershipPlanTitleSubPanel.Name = "pnlAllMembershipPlanTitleSubPanel";
-            this.pnlAllMembershipPlanTitleSubPanel.Size = new System.Drawing.Size(1248, 89);
+            this.pnlAllMembershipPlanTitleSubPanel.Size = new System.Drawing.Size(1248, 136);
             this.pnlAllMembershipPlanTitleSubPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -103,7 +108,7 @@
             this.pnlMembershipPlanGridview.Controls.Add(this.dgvMembershipPlan, 1, 0);
             this.pnlMembershipPlanGridview.Controls.Add(this.pnlClickAddNewMembershipPlan, 1, 1);
             this.pnlMembershipPlanGridview.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMembershipPlanGridview.Location = new System.Drawing.Point(0, 89);
+            this.pnlMembershipPlanGridview.Location = new System.Drawing.Point(0, 136);
             this.pnlMembershipPlanGridview.Name = "pnlMembershipPlanGridview";
             this.pnlMembershipPlanGridview.RowCount = 2;
             this.pnlMembershipPlanGridview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.56165F));
@@ -216,21 +221,10 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 642);
+            this.panel1.Location = new System.Drawing.Point(0, 689);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1248, 88);
             this.panel1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // PlanName
             // 
@@ -274,6 +268,59 @@
             this.Deactivate.Name = "Deactivate";
             this.Deactivate.ReadOnly = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tlpMembershipPlanSearch
+            // 
+            this.tlpMembershipPlanSearch.ColumnCount = 3;
+            this.tlpMembershipPlanSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.29326F));
+            this.tlpMembershipPlanSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.70674F));
+            this.tlpMembershipPlanSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 644F));
+            this.tlpMembershipPlanSearch.Controls.Add(this.txtMembershipPlanSearchBox, 1, 0);
+            this.tlpMembershipPlanSearch.Controls.Add(this.btnSearch, 2, 0);
+            this.tlpMembershipPlanSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpMembershipPlanSearch.Location = new System.Drawing.Point(0, 66);
+            this.tlpMembershipPlanSearch.Name = "tlpMembershipPlanSearch";
+            this.tlpMembershipPlanSearch.RowCount = 1;
+            this.tlpMembershipPlanSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMembershipPlanSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMembershipPlanSearch.Size = new System.Drawing.Size(1248, 68);
+            this.tlpMembershipPlanSearch.TabIndex = 1;
+            // 
+            // txtMembershipPlanSearchBox
+            // 
+            this.txtMembershipPlanSearchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMembershipPlanSearchBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMembershipPlanSearchBox.Location = new System.Drawing.Point(71, 17);
+            this.txtMembershipPlanSearchBox.Name = "txtMembershipPlanSearchBox";
+            this.txtMembershipPlanSearchBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMembershipPlanSearchBox.Size = new System.Drawing.Size(507, 34);
+            this.txtMembershipPlanSearchBox.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(606, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(102, 36);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // FrmDisplayMembershipPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +342,8 @@
             this.pnlAddNewMembarshipPlan.ResumeLayout(false);
             this.pnlAddNewMembarshipPlan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tlpMembershipPlanSearch.ResumeLayout(false);
+            this.tlpMembershipPlanSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -318,5 +367,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Deactivate;
+        private System.Windows.Forms.TableLayoutPanel tlpMembershipPlanSearch;
+        private System.Windows.Forms.TextBox txtMembershipPlanSearchBox;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
