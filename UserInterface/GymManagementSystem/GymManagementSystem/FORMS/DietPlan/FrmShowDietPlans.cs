@@ -32,6 +32,7 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             dgvDietPlan.RowHeadersVisible = false;
             dgvDietPlan.AllowUserToAddRows = false;
+            dgvDietPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection sqlConnetion = null;
             try
