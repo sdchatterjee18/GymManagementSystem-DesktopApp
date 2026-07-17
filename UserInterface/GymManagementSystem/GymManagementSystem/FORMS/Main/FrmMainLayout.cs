@@ -33,18 +33,6 @@ namespace GymManagementSystem.FORMS.Main
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
 
         }
-        private void SetRightRoundedPanel(Panel panel, int radius)
-        {
-            GraphicsPath graphicsPath = new GraphicsPath();
-            graphicsPath.StartFigure();
-            graphicsPath.AddLine(0, 0, panel.Width - radius, 0);
-            graphicsPath.AddArc(panel.Width - radius * 2,0,radius * 2,radius * 2,270,90);
-            graphicsPath.AddArc(panel.Width - radius * 2,panel.Height - radius * 2,radius * 2,radius * 2,0,90);
-            graphicsPath.AddLine(0, panel.Height, 0, 0);
-            graphicsPath.CloseFigure();
-            panel.Region = new Region(graphicsPath);
-        }
-       
         
         private void FrmMainLayout_Load(object sender, EventArgs e)
         {
@@ -60,28 +48,6 @@ namespace GymManagementSystem.FORMS.Main
             mainLeftBorder.Width = 1;
             mainLeftBorder.BackColor = borderColor;
             pnlMainPanel.Controls.Add(mainLeftBorder);
-            SetRightRoundedPanel(pnlMenu, 15);
-            SetRightRoundedPanel(pnlDashboard, 15);
-            SetRightRoundedPanel(pnlMembers, 15);
-            SetRightRoundedPanel(pnlFitnessTest, 15);
-            SetRightRoundedPanel(pnlMemberTrainerAssignment, 15);
-            SetRightRoundedPanel(pnlViewAllMembers, 15);
-            SetRightRoundedPanel(pnlMemberAttendance, 15);
-            SetRightRoundedPanel(pnlViewMemberAttendance, 15);
-            SetRightRoundedPanel(pnlMarkMemberAttendance, 15);
-            SetRightRoundedPanel(pnlExerciseAndWorkout, 15);
-            SetRightRoundedPanel(pnlWorkoutPlans, 15);
-            SetRightRoundedPanel(pnlWorkoutShedule, 15);
-            SetRightRoundedPanel(pnlRegistrationFees, 15);
-            SetRightRoundedPanel(pnlTrainer, 15);
-            SetRightRoundedPanel(pnlMembershipPlan, 15);
-            SetRightRoundedPanel(pnlLocker, 15);
-            SetRightRoundedPanel(pnlShift, 15);
-            SetRightRoundedPanel(pnlDietPlan, 15);
-            SetRightRoundedPanel(pnlPayment, 15);
-            SetRightRoundedPanel(pnlExpense, 15);
-            SetRightRoundedPanel(pnlSettins, 15);
-            SetRightRoundedPanel(pnlLogout, 15);
             pnlSidebar.Width = ExpandedWidth;
         }
 

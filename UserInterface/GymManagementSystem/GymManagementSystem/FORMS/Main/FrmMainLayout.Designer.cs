@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblMemberAttendance;
             System.Windows.Forms.Label lblExerciseAndWorkout;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainLayout));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
             this.picGymLogo = new System.Windows.Forms.PictureBox();
@@ -66,8 +67,8 @@
             this.picMemberTrainerAssignment = new System.Windows.Forms.PictureBox();
             this.lblMemberTrainerAssignment = new System.Windows.Forms.Label();
             this.pnlViewAllMembers = new System.Windows.Forms.Panel();
-            this.picViewAllMembers = new System.Windows.Forms.PictureBox();
             this.lblViewAllMembers = new System.Windows.Forms.Label();
+            this.picViewAllMembers = new System.Windows.Forms.PictureBox();
             this.pnlTrainer = new System.Windows.Forms.Panel();
             this.lblTrainer = new System.Windows.Forms.Label();
             this.picTrainer = new System.Windows.Forms.PictureBox();
@@ -254,7 +255,7 @@
             // picGymLogo
             // 
             this.picGymLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picGymLogo.Image = global::GymManagementSystem.Properties.Resources.Gemini_Generated_Image_lehr1qlehr1qlehr2;
+            this.picGymLogo.Image = ((System.Drawing.Image)(resources.GetObject("picGymLogo.Image")));
             this.picGymLogo.Location = new System.Drawing.Point(3, 3);
             this.picGymLogo.Name = "picGymLogo";
             this.picGymLogo.Size = new System.Drawing.Size(94, 84);
@@ -330,7 +331,7 @@
             // 
             // picCalander
             // 
-            this.picCalander.Image = global::GymManagementSystem.Properties.Resources.time_and_date;
+            this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
             this.picCalander.Location = new System.Drawing.Point(15, 32);
             this.picCalander.Margin = new System.Windows.Forms.Padding(0);
             this.picCalander.Name = "picCalander";
@@ -351,7 +352,7 @@
             // 
             // picClock
             // 
-            this.picClock.Image = global::GymManagementSystem.Properties.Resources.wall_clock;
+            this.picClock.Image = ((System.Drawing.Image)(resources.GetObject("picClock.Image")));
             this.picClock.Location = new System.Drawing.Point(12, 32);
             this.picClock.Margin = new System.Windows.Forms.Padding(0);
             this.picClock.Name = "picClock";
@@ -383,7 +384,7 @@
             // 
             // picModule
             // 
-            this.picModule.Image = global::GymManagementSystem.Properties.Resources.human1;
+            this.picModule.Image = ((System.Drawing.Image)(resources.GetObject("picModule.Image")));
             this.picModule.Location = new System.Drawing.Point(139, 35);
             this.picModule.Margin = new System.Windows.Forms.Padding(0);
             this.picModule.Name = "picModule";
@@ -439,7 +440,7 @@
             // 
             // picLogout
             // 
-            this.picLogout.Image = global::GymManagementSystem.Properties.Resources.logout__4_;
+            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
             this.picLogout.Location = new System.Drawing.Point(62, 18);
             this.picLogout.Margin = new System.Windows.Forms.Padding(0);
             this.picLogout.Name = "picLogout";
@@ -513,7 +514,7 @@
             // 
             // picMenu
             // 
-            this.picMenu.Image = global::GymManagementSystem.Properties.Resources.menu;
+            this.picMenu.Image = ((System.Drawing.Image)(resources.GetObject("picMenu.Image")));
             this.picMenu.Location = new System.Drawing.Point(15, 10);
             this.picMenu.Margin = new System.Windows.Forms.Padding(0);
             this.picMenu.Name = "picMenu";
@@ -556,7 +557,7 @@
             // 
             // picDashboard
             // 
-            this.picDashboard.Image = global::GymManagementSystem.Properties.Resources.home1;
+            this.picDashboard.Image = ((System.Drawing.Image)(resources.GetObject("picDashboard.Image")));
             this.picDashboard.Location = new System.Drawing.Point(15, 10);
             this.picDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.picDashboard.Name = "picDashboard";
@@ -600,7 +601,7 @@
             // 
             // picMembers
             // 
-            this.picMembers.Image = global::GymManagementSystem.Properties.Resources.group__2_;
+            this.picMembers.Image = ((System.Drawing.Image)(resources.GetObject("picMembers.Image")));
             this.picMembers.Location = new System.Drawing.Point(15, 10);
             this.picMembers.Margin = new System.Windows.Forms.Padding(0);
             this.picMembers.Name = "picMembers";
@@ -614,7 +615,7 @@
             // 
             // picMembersArrowe
             // 
-            this.picMembersArrowe.Image = global::GymManagementSystem.Properties.Resources.down_arrow;
+            this.picMembersArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picMembersArrowe.Image")));
             this.picMembersArrowe.Location = new System.Drawing.Point(273, 15);
             this.picMembersArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picMembersArrowe.Name = "picMembersArrowe";
@@ -652,7 +653,7 @@
             // 
             // picMemberTrainerAssignment
             // 
-            this.picMemberTrainerAssignment.Image = global::GymManagementSystem.Properties.Resources.bullet;
+            this.picMemberTrainerAssignment.Image = ((System.Drawing.Image)(resources.GetObject("picMemberTrainerAssignment.Image")));
             this.picMemberTrainerAssignment.Location = new System.Drawing.Point(15, 6);
             this.picMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberTrainerAssignment.Name = "picMemberTrainerAssignment";
@@ -689,20 +690,6 @@
             this.pnlViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
             this.pnlViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
             // 
-            // picViewAllMembers
-            // 
-            this.picViewAllMembers.Image = global::GymManagementSystem.Properties.Resources.bullet;
-            this.picViewAllMembers.Location = new System.Drawing.Point(15, 7);
-            this.picViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
-            this.picViewAllMembers.Name = "picViewAllMembers";
-            this.picViewAllMembers.Size = new System.Drawing.Size(20, 20);
-            this.picViewAllMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picViewAllMembers.TabIndex = 1;
-            this.picViewAllMembers.TabStop = false;
-            this.picViewAllMembers.Click += new System.EventHandler(this.pnlViewAllMembers_Click);
-            this.picViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
-            this.picViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
-            // 
             // lblViewAllMembers
             // 
             this.lblViewAllMembers.AutoSize = true;
@@ -715,6 +702,20 @@
             this.lblViewAllMembers.Click += new System.EventHandler(this.pnlViewAllMembers_Click);
             this.lblViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
             this.lblViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
+            // 
+            // picViewAllMembers
+            // 
+            this.picViewAllMembers.Image = ((System.Drawing.Image)(resources.GetObject("picViewAllMembers.Image")));
+            this.picViewAllMembers.Location = new System.Drawing.Point(15, 7);
+            this.picViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
+            this.picViewAllMembers.Name = "picViewAllMembers";
+            this.picViewAllMembers.Size = new System.Drawing.Size(20, 20);
+            this.picViewAllMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picViewAllMembers.TabIndex = 1;
+            this.picViewAllMembers.TabStop = false;
+            this.picViewAllMembers.Click += new System.EventHandler(this.pnlViewAllMembers_Click);
+            this.picViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
+            this.picViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
             // 
             // pnlTrainer
             // 
@@ -747,7 +748,7 @@
             // 
             // picTrainer
             // 
-            this.picTrainer.Image = global::GymManagementSystem.Properties.Resources.personal_trainer__1_;
+            this.picTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picTrainer.Image")));
             this.picTrainer.Location = new System.Drawing.Point(15, 10);
             this.picTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picTrainer.Name = "picTrainer";
@@ -790,7 +791,7 @@
             // 
             // picFitnessTest
             // 
-            this.picFitnessTest.Image = global::GymManagementSystem.Properties.Resources.report__1_;
+            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
             this.picFitnessTest.Location = new System.Drawing.Point(15, 10);
             this.picFitnessTest.Margin = new System.Windows.Forms.Padding(0);
             this.picFitnessTest.Name = "picFitnessTest";
@@ -818,7 +819,7 @@
             // 
             // picMemberAttendance
             // 
-            this.picMemberAttendance.Image = global::GymManagementSystem.Properties.Resources.attendance__3_;
+            this.picMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendance.Image")));
             this.picMemberAttendance.Location = new System.Drawing.Point(15, 10);
             this.picMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberAttendance.Name = "picMemberAttendance";
@@ -832,7 +833,7 @@
             // 
             // picMemberAttendanceArrowe
             // 
-            this.picMemberAttendanceArrowe.Image = global::GymManagementSystem.Properties.Resources.down_arrow;
+            this.picMemberAttendanceArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendanceArrowe.Image")));
             this.picMemberAttendanceArrowe.Location = new System.Drawing.Point(273, 15);
             this.picMemberAttendanceArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberAttendanceArrowe.Name = "picMemberAttendanceArrowe";
@@ -870,7 +871,7 @@
             // 
             // picMarkMemberAtttendance
             // 
-            this.picMarkMemberAtttendance.Image = global::GymManagementSystem.Properties.Resources.bullet;
+            this.picMarkMemberAtttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMarkMemberAtttendance.Image")));
             this.picMarkMemberAtttendance.Location = new System.Drawing.Point(15, 6);
             this.picMarkMemberAtttendance.Margin = new System.Windows.Forms.Padding(0);
             this.picMarkMemberAtttendance.Name = "picMarkMemberAtttendance";
@@ -909,7 +910,7 @@
             // 
             // picViewMemberAttendance
             // 
-            this.picViewMemberAttendance.Image = global::GymManagementSystem.Properties.Resources.bullet;
+            this.picViewMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picViewMemberAttendance.Image")));
             this.picViewMemberAttendance.Location = new System.Drawing.Point(15, 7);
             this.picViewMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.picViewMemberAttendance.Name = "picViewMemberAttendance";
@@ -965,7 +966,7 @@
             // 
             // picMembershipPlan
             // 
-            this.picMembershipPlan.Image = global::GymManagementSystem.Properties.Resources.plan;
+            this.picMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipPlan.Image")));
             this.picMembershipPlan.Location = new System.Drawing.Point(15, 10);
             this.picMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
             this.picMembershipPlan.Name = "picMembershipPlan";
@@ -1008,7 +1009,7 @@
             // 
             // picShift
             // 
-            this.picShift.Image = global::GymManagementSystem.Properties.Resources.shift__1_;
+            this.picShift.Image = ((System.Drawing.Image)(resources.GetObject("picShift.Image")));
             this.picShift.Location = new System.Drawing.Point(15, 10);
             this.picShift.Margin = new System.Windows.Forms.Padding(0);
             this.picShift.Name = "picShift";
@@ -1051,7 +1052,7 @@
             // 
             // picLocker
             // 
-            this.picLocker.Image = global::GymManagementSystem.Properties.Resources.locker__3_;
+            this.picLocker.Image = ((System.Drawing.Image)(resources.GetObject("picLocker.Image")));
             this.picLocker.Location = new System.Drawing.Point(15, 10);
             this.picLocker.Margin = new System.Windows.Forms.Padding(0);
             this.picLocker.Name = "picLocker";
@@ -1076,7 +1077,7 @@
             // 
             // picExerciseAndWorkout
             // 
-            this.picExerciseAndWorkout.Image = global::GymManagementSystem.Properties.Resources.report__2_;
+            this.picExerciseAndWorkout.Image = ((System.Drawing.Image)(resources.GetObject("picExerciseAndWorkout.Image")));
             this.picExerciseAndWorkout.Location = new System.Drawing.Point(15, 10);
             this.picExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
             this.picExerciseAndWorkout.Name = "picExerciseAndWorkout";
@@ -1090,7 +1091,7 @@
             // 
             // picExerciseAndWorkoutArrowe
             // 
-            this.picExerciseAndWorkoutArrowe.Image = global::GymManagementSystem.Properties.Resources.down_arrow;
+            this.picExerciseAndWorkoutArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picExerciseAndWorkoutArrowe.Image")));
             this.picExerciseAndWorkoutArrowe.Location = new System.Drawing.Point(273, 15);
             this.picExerciseAndWorkoutArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picExerciseAndWorkoutArrowe.Name = "picExerciseAndWorkoutArrowe";
@@ -1128,7 +1129,7 @@
             // 
             // picWorkoutPlans
             // 
-            this.picWorkoutPlans.Image = global::GymManagementSystem.Properties.Resources.bullet;
+            this.picWorkoutPlans.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutPlans.Image")));
             this.picWorkoutPlans.Location = new System.Drawing.Point(15, 6);
             this.picWorkoutPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picWorkoutPlans.Name = "picWorkoutPlans";
@@ -1167,7 +1168,7 @@
             // 
             // picWorkoutShedule
             // 
-            this.picWorkoutShedule.Image = global::GymManagementSystem.Properties.Resources.bullet;
+            this.picWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutShedule.Image")));
             this.picWorkoutShedule.Location = new System.Drawing.Point(15, 7);
             this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(0);
             this.picWorkoutShedule.Name = "picWorkoutShedule";
@@ -1223,7 +1224,7 @@
             // 
             // picRegistrationFees
             // 
-            this.picRegistrationFees.Image = global::GymManagementSystem.Properties.Resources.receipt__1_;
+            this.picRegistrationFees.Image = ((System.Drawing.Image)(resources.GetObject("picRegistrationFees.Image")));
             this.picRegistrationFees.Location = new System.Drawing.Point(15, 10);
             this.picRegistrationFees.Margin = new System.Windows.Forms.Padding(0);
             this.picRegistrationFees.Name = "picRegistrationFees";
@@ -1263,7 +1264,7 @@
             // 
             // picDietPlan
             // 
-            this.picDietPlan.Image = global::GymManagementSystem.Properties.Resources.health;
+            this.picDietPlan.Image = ((System.Drawing.Image)(resources.GetObject("picDietPlan.Image")));
             this.picDietPlan.Location = new System.Drawing.Point(15, 10);
             this.picDietPlan.Margin = new System.Windows.Forms.Padding(0);
             this.picDietPlan.Name = "picDietPlan";
@@ -1303,7 +1304,7 @@
             // 
             // picPayment
             // 
-            this.picPayment.Image = global::GymManagementSystem.Properties.Resources.payment_method__1_;
+            this.picPayment.Image = ((System.Drawing.Image)(resources.GetObject("picPayment.Image")));
             this.picPayment.Location = new System.Drawing.Point(15, 10);
             this.picPayment.Margin = new System.Windows.Forms.Padding(0);
             this.picPayment.Name = "picPayment";
@@ -1346,7 +1347,7 @@
             // 
             // picExpense
             // 
-            this.picExpense.Image = global::GymManagementSystem.Properties.Resources.capital;
+            this.picExpense.Image = ((System.Drawing.Image)(resources.GetObject("picExpense.Image")));
             this.picExpense.Location = new System.Drawing.Point(15, 10);
             this.picExpense.Margin = new System.Windows.Forms.Padding(0);
             this.picExpense.Name = "picExpense";
@@ -1389,7 +1390,7 @@
             // 
             // picSettings
             // 
-            this.picSettings.Image = global::GymManagementSystem.Properties.Resources.settings__1_;
+            this.picSettings.Image = ((System.Drawing.Image)(resources.GetObject("picSettings.Image")));
             this.picSettings.Location = new System.Drawing.Point(15, 10);
             this.picSettings.Margin = new System.Windows.Forms.Padding(0);
             this.picSettings.Name = "picSettings";
