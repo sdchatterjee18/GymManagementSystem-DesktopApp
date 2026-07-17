@@ -175,23 +175,21 @@
             this.tlpInputRequiredCaloriesAndShowMessage.ColumnCount = 1;
             this.tlpInputRequiredCaloriesAndShowMessage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpInputRequiredCaloriesAndShowMessage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpInputRequiredCaloriesAndShowMessage.Controls.Add(this.txtRequiredCalories, 0, 0);
             this.tlpInputRequiredCaloriesAndShowMessage.Controls.Add(this.txtShowCaloriesRequiredMessage, 0, 1);
+            this.tlpInputRequiredCaloriesAndShowMessage.Controls.Add(this.txtRequiredCalories, 0, 0);
             this.tlpInputRequiredCaloriesAndShowMessage.Location = new System.Drawing.Point(247, 3);
             this.tlpInputRequiredCaloriesAndShowMessage.Name = "tlpInputRequiredCaloriesAndShowMessage";
             this.tlpInputRequiredCaloriesAndShowMessage.RowCount = 2;
-            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.01887F));
-            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.98113F));
+            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.82609F));
+            this.tlpInputRequiredCaloriesAndShowMessage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.17391F));
             this.tlpInputRequiredCaloriesAndShowMessage.Size = new System.Drawing.Size(281, 115);
             this.tlpInputRequiredCaloriesAndShowMessage.TabIndex = 1;
             // 
             // txtRequiredCalories
             // 
-            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtRequiredCalories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRequiredCalories.Location = new System.Drawing.Point(3, 3);
+            this.txtRequiredCalories.Location = new System.Drawing.Point(3, 22);
             this.txtRequiredCalories.Name = "txtRequiredCalories";
             this.txtRequiredCalories.Size = new System.Drawing.Size(275, 30);
             this.txtRequiredCalories.TabIndex = 1;
@@ -205,10 +203,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtShowCaloriesRequiredMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtShowCaloriesRequiredMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShowCaloriesRequiredMessage.Location = new System.Drawing.Point(3, 40);
+            this.txtShowCaloriesRequiredMessage.Location = new System.Drawing.Point(3, 58);
             this.txtShowCaloriesRequiredMessage.Multiline = true;
             this.txtShowCaloriesRequiredMessage.Name = "txtShowCaloriesRequiredMessage";
-            this.txtShowCaloriesRequiredMessage.Size = new System.Drawing.Size(275, 72);
+            this.txtShowCaloriesRequiredMessage.Size = new System.Drawing.Size(275, 54);
             this.txtShowCaloriesRequiredMessage.TabIndex = 2;
             // 
             // pnlPlanDocumentSection
