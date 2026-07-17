@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Configuration;
+using System.Data.SqlClient;
+
 
 namespace GymManagementSystem.FORMS.RegistrationFee
 {
@@ -37,7 +40,84 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         private void FrmRegistrationFees_Load(object sender, EventArgs e)
         {
             SetRoundedTableLayoutPanel(tlpAddNewRegistrationFees, 20);
+
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection sqlConnection = null;
+            //DataSet dataSet = null;
+            DataTable dataTable = new DataTable();
+            try
+            {
+                sqlConnection = new SqlConnection(CS);
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("select *from tblRegistrationFees", sqlConnection))
+                {
+                    int a=1;
+                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        dgvShowAllAddRegistrationFees.Rows.Add(a,Convert.ToInt32(sqlDataReader["RegistrationFeesId"]),
+                            Convert.ToDecimal(sqlDataReader["FeeAmount"]),
+                            Convert.ToByte(sqlDataReader["IsActive"]),
+                            Convert.ToDateTime(sqlDataReader["CreatedAt"]));
+                        a++;
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+
+
+
+
+
+
+
+
+           
         }
+
+
+        public void GetRegistrationFees()
+        {
+            
+        }
+
+
+
+
+
+       
+
+
+       
+
+       
+
+       
+
+
+
+
+
+
+      
+
+
+
+        
+
+       
 
 
 

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using GymManagementSystem.FORMS.Shift;
-
 
 namespace GymManagementSystem
 {
@@ -18,9 +16,9 @@ namespace GymManagementSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           
 
-            Application.Run(new FrmDisplayShift());
+
+            Application.Run(new Form1());
 
 
         }

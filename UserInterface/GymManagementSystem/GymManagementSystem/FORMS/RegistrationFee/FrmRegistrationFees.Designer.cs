@@ -109,6 +109,7 @@
             this.dgvShowAllAddRegistrationFees.Size = new System.Drawing.Size(1104, 588);
             this.dgvShowAllAddRegistrationFees.TabIndex = 0;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersBorderStyleChanged += new System.EventHandler(this.FrmRegistrationFees_Load);
+            //this.dgvShowAllAddRegistrationFees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellContentClick);
             // 
             // No
             // 
