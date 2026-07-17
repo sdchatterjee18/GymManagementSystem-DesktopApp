@@ -33,41 +33,7 @@ namespace GymManagementSystem.FORMS.DietPlan
             dgvDietPlan.RowHeadersVisible = false;
             dgvDietPlan.AllowUserToAddRows = false;
             dgvDietPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnetion = null;
-            try
-            {
-                sqlConnetion = new SqlConnection(CS);
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("spDisplayAllDietPlans", sqlConnetion))
-                {
-                    sqlDataAdapter.SelectCommand.CommandType =
-                        CommandType.StoredProcedure;
-                    sqlConnetion.Open();
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    dgvDietPlan.AutoGenerateColumns = false;
-                    
-                    dgvDietPlan.Columns["CaloriesPerDay"].DataPropertyName = "CaloriesPerDay";
-                    dgvDietPlan.Columns["Document"].DataPropertyName = "DietPlanDocument";
-                    dgvDietPlan.Columns["Condition"].DataPropertyName = "ConditionStatus";
-                    dgvDietPlan.DataSource = dataTable;
-
-                    for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
-                    {
-                        dgvDietPlan.Rows[i].Cells["SL_No"].Value = i + 1;
-                    }
-                    
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                dgvDietPlan.DataSource = null;
-            }
-            finally
-            {
-                sqlConnetion.Close();
-            }
+            
            
 
         }
