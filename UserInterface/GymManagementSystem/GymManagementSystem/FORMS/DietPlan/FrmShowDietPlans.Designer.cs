@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShowDietPlans));
             this.pnlDietHeader = new System.Windows.Forms.Panel();
             this.pnlDietDetails = new System.Windows.Forms.Panel();
@@ -131,14 +134,38 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDietPlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDietPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDietPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDietPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DietPlanId,
             this.CaloriesPerDay,
             this.Condition,
             this.Action});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDietPlan.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDietPlan.Location = new System.Drawing.Point(33, 3);
             this.dgvDietPlan.Name = "dgvDietPlan";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDietPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDietPlan.RowTemplate.Height = 24;
             this.dgvDietPlan.Size = new System.Drawing.Size(540, 266);
             this.dgvDietPlan.TabIndex = 0;
@@ -174,10 +201,11 @@
             this.tlpAddDietPlanAndAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAddDietPlanAndAddButton.ColumnCount = 1;
+            this.tlpAddDietPlanAndAddButton.ColumnCount = 2;
             this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 583F));
             this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpAddDietPlanAndAddButton.Controls.Add(this.tlpAddButton, 0, 0);
+            this.tlpAddDietPlanAndAddButton.Controls.Add(this.tlpAddButton, 1, 0);
             this.tlpAddDietPlanAndAddButton.Location = new System.Drawing.Point(3, 336);
             this.tlpAddDietPlanAndAddButton.Name = "tlpAddDietPlanAndAddButton";
             this.tlpAddDietPlanAndAddButton.RowCount = 1;
@@ -188,13 +216,13 @@
             // 
             // tlpAddButton
             // 
-            this.tlpAddButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpAddButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tlpAddButton.ColumnCount = 1;
             this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpAddButton.Controls.Add(this.pnlAddNewDietPlan, 0, 0);
-            this.tlpAddButton.Location = new System.Drawing.Point(162, 28);
+            this.tlpAddButton.Location = new System.Drawing.Point(27, 28);
             this.tlpAddButton.Name = "tlpAddButton";
             this.tlpAddButton.RowCount = 1;
             this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
