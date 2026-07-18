@@ -22,15 +22,15 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void FrmDisplayLocker_Load(object sender, EventArgs e)
         {
-            this.LoadLockers();
-            dgvDisplayLocker.ClearSelection();
+            this.getLockersDetails();
+            this.dgvDisplayLocker.ClearSelection();
         }
 
         private void pnlButton_Click(object sender, EventArgs e)
         {
-            LoadLockers();
             FrmAddLocker frmAddLocker = new FrmAddLocker();
             frmAddLocker.ShowDialog();
+            this.getLockersDetails();
         }
 
         private void pnlButton_MouseEnter(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace GymManagementSystem.FORMS.Locker
             this.pnlButton.BackColor = Color.FromArgb(184, 195, 179);
         }
 
-        private void LoadLockers()
+        private void getLockersDetails()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection sqlConnection = null;
