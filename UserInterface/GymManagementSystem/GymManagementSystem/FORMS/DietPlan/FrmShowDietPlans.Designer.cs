@@ -29,18 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmShowDietPlans));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpShowDietPlanAndAddNewDietPlan = new System.Windows.Forms.TableLayoutPanel();
             this.tlpShowDietPlan = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDietPlan = new System.Windows.Forms.DataGridView();
-            this.SL_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaloriesPerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Document = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tlpAddDietPlanAndAddButton = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
             this.pnlAddNewDietPlan = new System.Windows.Forms.Panel();
@@ -48,6 +44,11 @@
             this.lblAddNewDietPlan = new System.Windows.Forms.Label();
             this.tlpDietPlanHeader = new System.Windows.Forms.TableLayoutPanel();
             this.lblDietPlan = new System.Windows.Forms.Label();
+            this.SL_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaloriesPerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Document = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tlpShowDietPlanAndAddNewDietPlan.SuspendLayout();
             this.tlpShowDietPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietPlan)).BeginInit();
@@ -67,7 +68,7 @@
             this.tlpShowDietPlanAndAddNewDietPlan.Controls.Add(this.tlpDietPlanHeader, 0, 0);
             this.tlpShowDietPlanAndAddNewDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpShowDietPlanAndAddNewDietPlan.Location = new System.Drawing.Point(0, 0);
-            this.tlpShowDietPlanAndAddNewDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpShowDietPlanAndAddNewDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpShowDietPlanAndAddNewDietPlan.Name = "tlpShowDietPlanAndAddNewDietPlan";
             this.tlpShowDietPlanAndAddNewDietPlan.RowCount = 4;
             this.tlpShowDietPlanAndAddNewDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
@@ -89,7 +90,7 @@
             this.tlpShowDietPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.008933F));
             this.tlpShowDietPlan.Controls.Add(this.dgvDietPlan, 1, 0);
             this.tlpShowDietPlan.Location = new System.Drawing.Point(2, 65);
-            this.tlpShowDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpShowDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpShowDietPlan.Name = "tlpShowDietPlan";
             this.tlpShowDietPlan.RowCount = 1;
             this.tlpShowDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -120,70 +121,34 @@
             this.Document,
             this.Condition,
             this.Action});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDietPlan.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDietPlan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDietPlan.GridColor = System.Drawing.Color.Black;
             this.dgvDietPlan.Location = new System.Drawing.Point(25, 2);
-            this.dgvDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDietPlan.Name = "dgvDietPlan";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDietPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvDietPlan.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDietPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dgvDietPlan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDietPlan.RowTemplate.Height = 40;
             this.dgvDietPlan.Size = new System.Drawing.Size(407, 333);
             this.dgvDietPlan.TabIndex = 0;
             this.dgvDietPlan.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietPlan_CellMouseEnter);
             this.dgvDietPlan.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietPlan_CellMouseLeave);
             this.dgvDietPlan.Click += new System.EventHandler(this.dgvDietPlan_Click);
-            // 
-            // SL_No
-            // 
-            this.SL_No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SL_No.HeaderText = "SL No";
-            this.SL_No.Name = "SL_No";
-            this.SL_No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CaloriesPerDay
-            // 
-            this.CaloriesPerDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CaloriesPerDay.HeaderText = "CaloriesPerDay";
-            this.CaloriesPerDay.Name = "CaloriesPerDay";
-            this.CaloriesPerDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Document
-            // 
-            this.Document.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Document.HeaderText = "Document";
-            this.Document.Name = "Document";
-            this.Document.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Condition
-            // 
-            this.Condition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Condition.HeaderText = "Condition";
-            this.Condition.Name = "Condition";
-            this.Condition.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Action
-            // 
-            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.ToolTipText = "📝Update";
             // 
             // tlpAddDietPlanAndAddButton
             // 
@@ -195,7 +160,7 @@
             this.tlpAddDietPlanAndAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.44715F));
             this.tlpAddDietPlanAndAddButton.Controls.Add(this.tlpAddButton, 1, 0);
             this.tlpAddDietPlanAndAddButton.Location = new System.Drawing.Point(2, 406);
-            this.tlpAddDietPlanAndAddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddDietPlanAndAddButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddDietPlanAndAddButton.Name = "tlpAddDietPlanAndAddButton";
             this.tlpAddDietPlanAndAddButton.RowCount = 1;
             this.tlpAddDietPlanAndAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -212,7 +177,7 @@
             this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpAddButton.Controls.Add(this.pnlAddNewDietPlan, 0, 0);
             this.tlpAddButton.Location = new System.Drawing.Point(23, 3);
-            this.tlpAddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddButton.Name = "tlpAddButton";
             this.tlpAddButton.RowCount = 1;
             this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -226,7 +191,7 @@
             this.pnlAddNewDietPlan.Controls.Add(this.lblAddNewDietPlan);
             this.pnlAddNewDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddNewDietPlan.Location = new System.Drawing.Point(2, 2);
-            this.pnlAddNewDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddNewDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddNewDietPlan.Name = "pnlAddNewDietPlan";
             this.pnlAddNewDietPlan.Size = new System.Drawing.Size(208, 34);
             this.pnlAddNewDietPlan.TabIndex = 1;
@@ -238,7 +203,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
             this.picAddIcon.Location = new System.Drawing.Point(9, 9);
-            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picAddIcon.Name = "picAddIcon";
             this.picAddIcon.Size = new System.Drawing.Size(17, 21);
             this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -277,11 +242,11 @@
             this.tlpDietPlanHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.60976F));
             this.tlpDietPlanHeader.Controls.Add(this.lblDietPlan, 1, 0);
             this.tlpDietPlanHeader.Location = new System.Drawing.Point(2, 2);
-            this.tlpDietPlanHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpDietPlanHeader.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDietPlanHeader.Name = "tlpDietPlanHeader";
             this.tlpDietPlanHeader.RowCount = 1;
             this.tlpDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tlpDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpDietPlanHeader.Size = new System.Drawing.Size(462, 59);
             this.tlpDietPlanHeader.TabIndex = 3;
             this.tlpDietPlanHeader.Click += new System.EventHandler(this.tlpDietPlanHeader_Click);
@@ -300,6 +265,49 @@
             this.lblDietPlan.TabIndex = 0;
             this.lblDietPlan.Text = "Diet Plan";
             this.lblDietPlan.Click += new System.EventHandler(this.lblDietPlan_Click);
+            // 
+            // SL_No
+            // 
+            this.SL_No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.SL_No.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SL_No.HeaderText = "SL No";
+            this.SL_No.Name = "SL_No";
+            this.SL_No.ReadOnly = true;
+            this.SL_No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // CaloriesPerDay
+            // 
+            this.CaloriesPerDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CaloriesPerDay.HeaderText = "CaloriesPerDay";
+            this.CaloriesPerDay.Name = "CaloriesPerDay";
+            this.CaloriesPerDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Document
+            // 
+            this.Document.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Document.HeaderText = "Document";
+            this.Document.Name = "Document";
+            this.Document.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Condition
+            // 
+            this.Condition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Condition.HeaderText = "Condition";
+            this.Condition.Name = "Condition";
+            this.Condition.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Action
+            // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Action.Text = "📝Update";
+            this.Action.ToolTipText = "📝Update";
+            this.Action.UseColumnTextForButtonValue = true;
             // 
             // FrmShowDietPlans
             // 

@@ -8,6 +8,10 @@ using System.Text;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Shift;
+using GymManagementSystem.FORMS.RegistrationFee;
+using GymManagementSystem.FORMS.Locker;
+using GymManagementSystem.FORMS.DietPlan;
+using GymManagementSystem.FORMS.MembershipPlan;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -276,6 +280,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlMembershipPlan_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayMembershipPlan());
         }
 
         private void pnlShift_MouseEnter(object sender, EventArgs e)
@@ -308,6 +313,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlLocker_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayLocker());
         }
 
         private void pnlWorkoutPlans_MouseEnter(object sender, EventArgs e)
@@ -353,6 +359,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlRegistrationFees_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmRegistrationFees());
         }
 
         private void pnlDietPlan_MouseEnter(object sender, EventArgs e)
@@ -368,6 +375,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlDietPlan_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmShowDietPlans());
         }
 
         private void pnlPayment_MouseEnter(object sender, EventArgs e)
