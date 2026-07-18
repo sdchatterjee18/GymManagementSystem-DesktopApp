@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.Shift;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -27,6 +28,27 @@ namespace GymManagementSystem.FORMS.Main
             timerSidebar.Interval = 10;
         }
 
+        private Form activeForm = null;
+
+        private void OpenChildForm(Form childForm)
+        {
+            // Close the currently opened form
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            pnlMainPanel.Controls.Clear();
+            pnlMainPanel.Controls.Add(childForm);
+            pnlMainPanel.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
@@ -269,6 +291,8 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlShift_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayShift());
+
         }
 
         private void pnlLocker_MouseEnter(object sender, EventArgs e)
