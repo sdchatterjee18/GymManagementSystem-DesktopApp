@@ -21,8 +21,57 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             
         }
 
+        private void RetrieveRegistrationFees()
+        {
+
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection sqlConnection = null;
+
+            DataTable dataTable = new DataTable();
+            try
+            {
+                sqlConnection = new SqlConnection(CS);
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("spGetAllRegistrationFees", sqlConnection))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    int a = 1;
+                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        dgvShowAllAddRegistrationFees.Rows.Add(a,
+                            Convert.ToDecimal(sqlDataReader["FeeAmount"]),
+                            (sqlDataReader["IsActive"]).ToString(),
+                            Convert.ToDateTime(sqlDataReader["CreatedAt"]).ToString("dd-MM-yyyy"));
+                        a++;
+                    }
+
+
+                }
+                dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvShowAllAddRegistrationFees.ScrollBars = ScrollBars.None;
+                dgvShowAllAddRegistrationFees.ClearSelection();
+            }
+
+            catch (Exception exc)
+            {
+
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+
+        }
+
+
+
         private void FrmRegistrationFees_Load(object sender, EventArgs e)
         {
+            RetrieveRegistrationFees();
             AdjustRowHeights();
         }
 
