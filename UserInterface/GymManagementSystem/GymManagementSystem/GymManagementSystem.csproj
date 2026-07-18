@@ -318,6 +318,7 @@
   <ItemGroup>
     <Folder Include="FORMS\Member\" />
     <Folder Include="FORMS\Settings\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr.png" />
