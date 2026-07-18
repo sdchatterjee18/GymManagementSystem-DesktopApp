@@ -41,6 +41,11 @@ namespace GymManagementSystem.FORMS.Shift
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             StretchRows();
+            dgvShift.ScrollBars = ScrollBars.None;
+            for (int i = 0; i < dgvShift.Rows.Count; i++)
+            {
+                dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
+            }
         }
 
         private void dgvShift_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
