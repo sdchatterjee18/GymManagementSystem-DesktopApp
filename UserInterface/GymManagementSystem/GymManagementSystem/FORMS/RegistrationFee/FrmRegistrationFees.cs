@@ -21,64 +21,9 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             
         }
 
-
-        
-     private void DataUpload()
-    {
-
-        string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-        SqlConnection sqlConnection = null;
-       
-        DataTable dataTable = new DataTable();
-        try
-        {
-            sqlConnection = new SqlConnection(CS);
-            sqlConnection.Open();
-            using (SqlCommand sqlCommand = new SqlCommand("spGetAllRegistrationFees", sqlConnection))
-            {
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                int a = 1;
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    dgvShowAllAddRegistrationFees.Rows.Add(a,
-                        Convert.ToDecimal(sqlDataReader["FeeAmount"]),
-                        (sqlDataReader["IsActive"]).ToString(),
-                        Convert.ToDateTime(sqlDataReader["CreatedAt"]).ToString("dd-MM-yyyy"));
-                    a++;
-                }
-
-
-            }
-            dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvShowAllAddRegistrationFees.ScrollBars = ScrollBars.None;
-            dgvShowAllAddRegistrationFees.ClearSelection();
-        }
-
-        catch (Exception exc)
-        {
-
-        }
-        finally
-        {
-            if (sqlConnection != null)
-            {
-                sqlConnection.Close();
-            }
-        }
-    
-    }
-
-
-
         private void FrmRegistrationFees_Load(object sender, EventArgs e)
         {
-
-
-            DataUpload();
             AdjustRowHeights();
-           
-           
         }
 
 
@@ -142,9 +87,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         }
 
-       
-
-       
 
         private void dgvShowAllAddRegistrationFees_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -193,10 +135,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
         }
 
-        private void dgvShowAllAddRegistrationFees_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void FrmRegistrationFees_Resize(object sender, EventArgs e)
         {
@@ -235,19 +173,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             dgvShowAllAddRegistrationFees.ClearSelection();
 
         }
-
-
-
-        private void dgvShowAllAddRegistrationFees_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
-        private void tlpAddNewRegistrationFees_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pnlClickAddNewFegistrationFees_Click(object sender, EventArgs e)
         {
             FrmAddRegistrationFee frmAddRegistrationFee = new FrmAddRegistrationFee();

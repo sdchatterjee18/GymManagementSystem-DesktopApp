@@ -105,8 +105,6 @@
             this.dgvShowAllAddRegistrationFees.Size = new System.Drawing.Size(1104, 588);
             this.dgvShowAllAddRegistrationFees.TabIndex = 0;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersBorderStyleChanged += new System.EventHandler(this.FrmRegistrationFees_Load);
-            this.dgvShowAllAddRegistrationFees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellClick);
-            this.dgvShowAllAddRegistrationFees.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShowAllAddRegistrationFees_CellMouseClick);
             this.dgvShowAllAddRegistrationFees.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellMouseEnter);
             this.dgvShowAllAddRegistrationFees.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellMouseLeave_1);
             // 
@@ -155,7 +153,6 @@
             this.tlpAddNewRegistrationFees.Size = new System.Drawing.Size(452, 74);
             this.tlpAddNewRegistrationFees.TabIndex = 2;
             this.tlpAddNewRegistrationFees.Click += new System.EventHandler(this.pnlClickAddNewFegistrationFees_Click);
-            this.tlpAddNewRegistrationFees.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAddNewRegistrationFees_Paint);
             this.tlpAddNewRegistrationFees.MouseEnter += new System.EventHandler(this.tlpAddNewRegistrationFees_MouseEnter);
             this.tlpAddNewRegistrationFees.MouseLeave += new System.EventHandler(this.tlpAddNewRegistrationFees_MouseLeave);
             // 
