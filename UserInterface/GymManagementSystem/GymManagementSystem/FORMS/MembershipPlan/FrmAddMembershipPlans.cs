@@ -20,5 +20,22 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
 
         }
+
+        private void btnPageRemove_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPlanName.Clear();
+            txtAmount.Clear();
+            txtDescription.Clear();
+
+            cmbPlanType.Text = "";
+            cmbDuration.Text = "";
+
+            txtPlanName.Focus();
+        }
     }
 }
