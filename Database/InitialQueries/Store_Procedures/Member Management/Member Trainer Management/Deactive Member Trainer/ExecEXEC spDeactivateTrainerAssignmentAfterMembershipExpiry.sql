@@ -1,0 +1,1 @@
+EXEC spDeactivateTrainerAssignmentAfterMembershipExpiry @MemberId = 5;
