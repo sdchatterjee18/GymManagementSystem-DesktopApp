@@ -30,7 +30,6 @@ namespace GymManagementSystem.FORMS.Locker
         {
             FrmAddLocker frmAddLocker = new FrmAddLocker();
             frmAddLocker.ShowDialog();
-            this.getLockersDetails();
         }
 
         private void pnlButton_MouseEnter(object sender, EventArgs e)
