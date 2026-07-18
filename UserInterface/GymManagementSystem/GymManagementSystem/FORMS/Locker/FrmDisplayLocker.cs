@@ -23,7 +23,7 @@ namespace GymManagementSystem.FORMS.Locker
         private void FrmDisplayLocker_Load(object sender, EventArgs e)
         {
             this.LoadLockers();
-
+            dgvDisplayLocker.ClearSelection();
         }
 
         private void pnlButton_Click(object sender, EventArgs e)
@@ -69,8 +69,6 @@ namespace GymManagementSystem.FORMS.Locker
                         }
                     }
                 }
-
-                dgvDisplayLocker.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -80,7 +78,7 @@ namespace GymManagementSystem.FORMS.Locker
             {
                 if (sqlConnection != null)
                     sqlConnection.Close();
-            }
+            }            
         }
 
         private void dgvDisplayLocker_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
