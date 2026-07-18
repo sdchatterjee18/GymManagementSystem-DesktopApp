@@ -36,6 +36,7 @@ BEGIN
         END
 
         IF @UserName LIKE '%[^A-Za-z0-9_]%'
+
         BEGIN
             SELECT 'Username Can Contain Only Letters, Numbers And Underscore.' AS Message;
             RETURN;
@@ -113,6 +114,36 @@ BEGIN
             RETURN;
         END
 
+        IF LEN(@PasswordHash) < 8
+        BEGIN
+            SELECT 'Password Must Be At Least 8 Characters.' AS Message;
+            RETURN;
+        END
+
+        IF @PasswordHash NOT LIKE '%[A-Z]%'
+        BEGIN
+            SELECT 'Password Must Contain At Least One Uppercase Letter.' AS Message;
+            RETURN;
+        END
+
+        IF @PasswordHash NOT LIKE '%[a-z]%'
+        BEGIN
+            SELECT 'Password Must Contain At Least One Lowercase Letter.' AS Message;
+            RETURN;
+        END
+
+        IF @PasswordHash NOT LIKE '%[0-9]%'
+        BEGIN
+            SELECT 'Password Must Contain At Least One Number.' AS Message;
+            RETURN;
+        END
+
+        IF @PasswordHash NOT LIKE '%[^A-Za-z0-9]%'
+        BEGIN
+            SELECT 'Password Must Contain At Least One Special Character.' AS Message;
+            RETURN;
+        END
+
         INSERT INTO tblSuperAdmin
         (
             UserName,
@@ -144,178 +175,3 @@ BEGIN
 
 END;
 GO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
