@@ -300,6 +300,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -317,6 +318,90 @@
   <ItemGroup>
     <Folder Include="FORMS\Member\" />
     <Folder Include="FORMS\Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\human.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time-and-date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wall-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\human1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowhead-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-trainer %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shift %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locker %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-method %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\capital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
