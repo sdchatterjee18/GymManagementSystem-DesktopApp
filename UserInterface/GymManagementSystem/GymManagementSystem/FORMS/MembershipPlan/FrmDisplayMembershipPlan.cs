@@ -170,6 +170,11 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             frm.Show();
         }
 
+        private void tlpAllMembershipPlanTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
    
        
       
