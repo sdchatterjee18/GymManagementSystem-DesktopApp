@@ -24,15 +24,14 @@ namespace GymManagementSystem.FORMS.Locker
             this.Close();
         }
 
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnClose.ForeColor = Color.White;
+        }
+
         private void btnClose_MouseLeave(object sender, EventArgs e)
         {
             this.btnClose.ForeColor = Color.Black;
         }
-
-        private void btnClose_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnClose.BackColor = Color.White;
-        }
-
     }
 }
