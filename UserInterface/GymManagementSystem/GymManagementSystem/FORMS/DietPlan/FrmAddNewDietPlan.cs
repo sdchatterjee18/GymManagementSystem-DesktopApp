@@ -56,13 +56,15 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void lblCancel_MouseEnter(object sender, EventArgs e)
         {
-            lblCancel.BackColor = Color.Red;
+            lblCancel.BackColor = Color.DarkRed;
+            lblCancel.ForeColor = Color.White;
 
         }
 
         private void lblCancel_MouseLeave(object sender, EventArgs e)
         {
             lblCancel.BackColor = Color.Transparent;
+            lblCancel.ForeColor = Color.Black;
         }
 
         

@@ -50,8 +50,8 @@
             this.tlpPlanConditionSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblPlanCondition = new System.Windows.Forms.Label();
             this.tlpInputPlanConditionAndShowMessaage = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPlanCondition = new System.Windows.Forms.TextBox();
             this.txtPlanConditionShowMessage = new System.Windows.Forms.TextBox();
+            this.txtPlanCondition = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblCancel = new System.Windows.Forms.Label();
             this.tlpAddNewDietPlan.SuspendLayout();
@@ -200,7 +200,8 @@
             // 
             // txtRequiredCalories
             // 
-            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtRequiredCalories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequiredCalories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequiredCalories.Location = new System.Drawing.Point(3, 27);
             this.txtRequiredCalories.Name = "txtRequiredCalories";
@@ -302,10 +303,13 @@
             // 
             // picPlanDouement
             // 
+            this.picPlanDouement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.picPlanDouement.Image = ((System.Drawing.Image)(resources.GetObject("picPlanDouement.Image")));
             this.picPlanDouement.Location = new System.Drawing.Point(226, 3);
             this.picPlanDouement.Name = "picPlanDouement";
-            this.picPlanDouement.Size = new System.Drawing.Size(37, 56);
+            this.picPlanDouement.Size = new System.Drawing.Size(37, 95);
             this.picPlanDouement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPlanDouement.TabIndex = 1;
             this.picPlanDouement.TabStop = false;
@@ -385,16 +389,6 @@
             this.tlpInputPlanConditionAndShowMessaage.Size = new System.Drawing.Size(245, 106);
             this.tlpInputPlanConditionAndShowMessaage.TabIndex = 1;
             // 
-            // txtPlanCondition
-            // 
-            this.txtPlanCondition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPlanCondition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlanCondition.Location = new System.Drawing.Point(3, 37);
-            this.txtPlanCondition.Name = "txtPlanCondition";
-            this.txtPlanCondition.Size = new System.Drawing.Size(239, 34);
-            this.txtPlanCondition.TabIndex = 1;
-            // 
             // txtPlanConditionShowMessage
             // 
             this.txtPlanConditionShowMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -402,11 +396,21 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPlanConditionShowMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtPlanConditionShowMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPlanConditionShowMessage.Location = new System.Drawing.Point(3, 77);
+            this.txtPlanConditionShowMessage.Location = new System.Drawing.Point(3, 78);
             this.txtPlanConditionShowMessage.Multiline = true;
             this.txtPlanConditionShowMessage.Name = "txtPlanConditionShowMessage";
-            this.txtPlanConditionShowMessage.Size = new System.Drawing.Size(239, 26);
+            this.txtPlanConditionShowMessage.Size = new System.Drawing.Size(239, 25);
             this.txtPlanConditionShowMessage.TabIndex = 2;
+            // 
+            // txtPlanCondition
+            // 
+            this.txtPlanCondition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlanCondition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlanCondition.Location = new System.Drawing.Point(3, 38);
+            this.txtPlanCondition.Name = "txtPlanCondition";
+            this.txtPlanCondition.Size = new System.Drawing.Size(239, 34);
+            this.txtPlanCondition.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -424,11 +428,11 @@
             this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCancel.AutoSize = true;
             this.lblCancel.Font = new System.Drawing.Font("Segoe UI Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.Location = new System.Drawing.Point(509, -6);
+            this.lblCancel.Location = new System.Drawing.Point(506, -6);
             this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(29, 32);
+            this.lblCancel.Size = new System.Drawing.Size(36, 32);
             this.lblCancel.TabIndex = 1;
-            this.lblCancel.Text = "X";
+            this.lblCancel.Text = " X";
             this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
             this.lblCancel.MouseEnter += new System.EventHandler(this.lblCancel_MouseEnter);
             this.lblCancel.MouseLeave += new System.EventHandler(this.lblCancel_MouseLeave);
