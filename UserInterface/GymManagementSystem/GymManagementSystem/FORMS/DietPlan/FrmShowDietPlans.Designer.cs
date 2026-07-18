@@ -76,7 +76,7 @@
             this.tlpShowDietPlanAndAddNewDietPlan.Size = new System.Drawing.Size(621, 600);
             this.tlpShowDietPlanAndAddNewDietPlan.TabIndex = 1;
             this.tlpShowDietPlanAndAddNewDietPlan.Click += new System.EventHandler(this.tlpShowDietPlanAndAddNewDietPlan_Click);
-            this.tlpShowDietPlanAndAddNewDietPlan.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpShowDietPlanAndAddNewDietPlan_Paint);
+            
             // 
             // tlpShowDietPlan
             // 
@@ -160,7 +160,7 @@
             this.dgvDietPlan.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietPlan_CellMouseEnter);
             this.dgvDietPlan.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietPlan_CellMouseLeave);
             this.dgvDietPlan.Click += new System.EventHandler(this.dgvDietPlan_Click);
-            this.dgvDietPlan.Resize += new System.EventHandler(this.dgvDietPlan_Resize);
+            
             // 
             // tlpAddDietPlanAndAddButton
             // 
@@ -220,7 +220,6 @@
             this.picAddIcon.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
             this.picAddIcon.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
             this.picAddIcon.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
-            this.picAddIcon.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
             // 
             // lblAddNewDietPlan
             // 
@@ -239,8 +238,7 @@
             this.lblAddNewDietPlan.Leave += new System.EventHandler(this.pnlAddNewDietPlan_Leave);
             this.lblAddNewDietPlan.MouseEnter += new System.EventHandler(this.pnlAddNewDietPlan_MouseEnter);
             this.lblAddNewDietPlan.MouseLeave += new System.EventHandler(this.pnlAddNewDietPlan_MouseLeave);
-            this.lblAddNewDietPlan.MouseHover += new System.EventHandler(this.pnlAddNewDietPlan_MouseHover);
-            // 
+            //
             // tlpDietPlanHeader
             // 
             this.tlpDietPlanHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -307,7 +305,6 @@
             this.Name = "FrmShowDietPlans";
             this.Text = "FrmShowDietPlans";
             this.Load += new System.EventHandler(this.FrmShowDietPlans_Load);
-            this.Resize += new System.EventHandler(this.FrmShowDietPlans_Resize);
             this.tlpShowDietPlanAndAddNewDietPlan.ResumeLayout(false);
             this.tlpShowDietPlan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietPlan)).EndInit();

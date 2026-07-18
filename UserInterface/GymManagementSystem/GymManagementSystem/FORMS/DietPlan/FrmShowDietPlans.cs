@@ -84,61 +84,15 @@ namespace GymManagementSystem.FORMS.DietPlan
                 sqlConnetion.Close();
             }
         }
-
-        private void lblAddNewDietPlan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlAddNewDietPlan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pnlAddNewDietPlan_MouseEnter(object sender, EventArgs e)
         {
             pnlAddNewDietPlan.BackColor = hoverColor;
 
         }
-
-        private void pnlAddNewDietPlan_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void pnlAddNewDietPlan_MouseLeave(object sender, EventArgs e)
         {
                 pnlAddNewDietPlan.BackColor = MouseLeave;
         }
-
-        private void lblAddNewDietPlan_MouseEnter(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void lblAddNewDietPlan_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddNewDietPlan_MouseLeave(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void lblAddNewDietPlan_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void pnlAddNewDietPlan_Click(object sender, EventArgs e)
         {
 
@@ -147,14 +101,11 @@ namespace GymManagementSystem.FORMS.DietPlan
             FrmAddNewDietPlan.ShowDialog();
         }
 
-
         private void pnlAddNewDietPlan_Enter(object sender, EventArgs e)
         {
 
             pnlAddNewDietPlan.BackColor = hoverColor;
         }
-
-
 
         private void pnlAddNewDietPlan_Leave(object sender, EventArgs e)
         {
@@ -204,17 +155,6 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         }
 
-        private void FrmShowDietPlans_Resize(object sender, EventArgs e)
-        {
-
-
-        }
-        private void dgvDietPlan_Resize(object sender, EventArgs e)
-        {
-            
-        }
-        
-
         private void tlpShowDietPlanAndAddNewDietPlan_Click(object sender, EventArgs e)
         {
             dgvDietPlan.ClearSelection();
@@ -245,19 +185,11 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             dgvDietPlan.ClearSelection();
         }
-
-        private void tlpShowDietPlanAndAddNewDietPlan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void tlpDietPlanHeader_Click(object sender, EventArgs e)
         {
             dgvDietPlan.ClearSelection();
         }
-       
-        
-
+  
         }
         
 }
