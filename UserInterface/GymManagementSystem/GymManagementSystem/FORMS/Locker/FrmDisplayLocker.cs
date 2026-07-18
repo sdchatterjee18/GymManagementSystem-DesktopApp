@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using GymManagementSystem.FORMS;
+using System.Configuration;
 
 namespace GymManagementSystem.FORMS.Locker
 {
@@ -22,7 +22,8 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void FrmDisplayLocker_Load(object sender, EventArgs e)
         {
-            
+            this.LoadLockers();
+
         }
 
         private void pnlButton_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void pnlButton_MouseEnter(object sender, EventArgs e)
         {
-            this.pnlButton.BackColor = Color.FromArgb(200,200,200);
+            this.pnlButton.BackColor = Color.FromArgb(200, 200, 200);
         }
 
         private void pnlButton_MouseLeave(object sender, EventArgs e)
@@ -47,14 +48,14 @@ namespace GymManagementSystem.FORMS.Locker
             string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection sqlConnection = null;
 
+            string queryStr = "select l.LockerNo as LNo,m.FirstName + CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END +' ' + m.LastName AS MemberName,l.LockerStatus as LStatus from tblLocker l join tblLockerAllocation la on l.LockerId = la.LockerId join tblMember m on m.MemberId = la.MemberId order by l.LockerId,m.MiddleName";
+
             try
             {
                 sqlConnection = new SqlConnection(connectionString);
 
-                using (SqlCommand sqlCommand = new SqlCommand("spGetLockers", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand(queryStr, sqlConnection))
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-
                     using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand))
                     {
                         DataTable dtLockers = new DataTable();
@@ -64,10 +65,12 @@ namespace GymManagementSystem.FORMS.Locker
                         int i = 1;
                         foreach (DataGridViewRow row in dgvDisplayLocker.Rows)
                         {
-                            row.Cells["SLNo"].Value = i++;
+                            row.Cells["colSlNo"].Value = i++;
                         }
                     }
                 }
+
+                dgvDisplayLocker.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -80,5 +83,58 @@ namespace GymManagementSystem.FORMS.Locker
             }
         }
 
-    } 
+        private void dgvDisplayLocker_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void dgvDisplayLocker_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
+                dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
+            }
+        }
+    
+        private void dgvDisplayLocker_Click(object sender, EventArgs e)
+        {
+            Point clientPoint = dgvDisplayLocker.PointToClient(Cursor.Position);
+            var hitTest = dgvDisplayLocker.HitTest(clientPoint.X, clientPoint.Y);
+
+            if (hitTest.Type == DataGridViewHitTestType.None)
+            {
+                dgvDisplayLocker.ClearSelection();
+            }
+        }
+
+        private void FrmDisplayLocker_Resize(object sender, EventArgs e)
+        {
+            int newHeight = this.ClientSize.Height / 12;
+            if (newHeight < 30) newHeight = 30;         
+            if (newHeight > 100) newHeight = 100;       
+
+            dgvDisplayLocker.RowTemplate.Height = newHeight;
+
+            float newFontSize = this.ClientSize.Width / 40f; 
+            if (newFontSize < 12f) newFontSize = 12f;        
+            if (newFontSize > 28f) newFontSize = 28f;        
+            lblLockerManagement.Font = new Font(lblLockerManagement.Font.FontFamily, newFontSize, FontStyle.Bold);
+
+            dgvDisplayLocker.Invalidate();
+        }
+    }
 }

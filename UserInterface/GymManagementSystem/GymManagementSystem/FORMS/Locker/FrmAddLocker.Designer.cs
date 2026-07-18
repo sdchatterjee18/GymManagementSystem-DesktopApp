@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddLocker));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblLockerNumber = new System.Windows.Forms.Label();
             this.txtLockerNumber = new System.Windows.Forms.TextBox();
@@ -42,41 +41,39 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.Location = new System.Drawing.Point(74, 59);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(207, 48);
+            this.lblTitle.Size = new System.Drawing.Size(211, 48);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "New Locker";
             // 
             // lblLockerNumber
             // 
             this.lblLockerNumber.AutoSize = true;
-            this.lblLockerNumber.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLockerNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLockerNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblLockerNumber.Location = new System.Drawing.Point(84, 186);
+            this.lblLockerNumber.Location = new System.Drawing.Point(82, 191);
             this.lblLockerNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLockerNumber.Name = "lblLockerNumber";
-            this.lblLockerNumber.Size = new System.Drawing.Size(208, 38);
+            this.lblLockerNumber.Size = new System.Drawing.Size(228, 38);
             this.lblLockerNumber.TabIndex = 1;
-            this.lblLockerNumber.Text = "Locker Number";
+            this.lblLockerNumber.Text = "Locker Number :";
             // 
             // txtLockerNumber
             // 
             this.txtLockerNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLockerNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLockerNumber.Location = new System.Drawing.Point(310, 192);
+            this.txtLockerNumber.Location = new System.Drawing.Point(316, 192);
             this.txtLockerNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLockerNumber.Name = "txtLockerNumber";
-            this.txtLockerNumber.Size = new System.Drawing.Size(307, 39);
+            this.txtLockerNumber.Size = new System.Drawing.Size(362, 39);
             this.txtLockerNumber.TabIndex = 2;
             // 
             // pnlMain
             // 
-            this.pnlMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMain.Controls.Add(this.btnClose);
             this.pnlMain.Controls.Add(this.lblMessage);
@@ -84,22 +81,28 @@
             this.pnlMain.Controls.Add(this.lblTitle);
             this.pnlMain.Controls.Add(this.lblLockerNumber);
             this.pnlMain.Controls.Add(this.txtLockerNumber);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(779, 388);
+            this.pnlMain.Size = new System.Drawing.Size(797, 435);
             this.pnlMain.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Location = new System.Drawing.Point(716, 9);
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(748, 14);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(51, 46);
+            this.btnClose.Size = new System.Drawing.Size(32, 35);
             this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
             // lblMessage
             // 
@@ -113,16 +116,18 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(552, 285);
+            this.btnSubmit.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(516, 286);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(162, 50);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            this.btnSubmit.MouseEnter += new System.EventHandler(this.btnSubmit_MouseEnter);
-            this.btnSubmit.MouseLeave += new System.EventHandler(this.btnSubmit_MouseLeave);
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmAddLocker
             // 
