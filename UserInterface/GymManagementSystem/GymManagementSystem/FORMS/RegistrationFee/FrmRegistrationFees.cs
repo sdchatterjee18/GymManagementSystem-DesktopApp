@@ -18,106 +18,281 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         public FrmRegistrationFees()
         {
             InitializeComponent();
+            
         }
 
 
+        
+     private void DataUpload()
+    {
 
-        private void SetRoundedTableLayoutPanel(TableLayoutPanel tlp, int radius)
+        string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+        SqlConnection sqlConnection = null;
+       
+        DataTable dataTable = new DataTable();
+        try
         {
-            GraphicsPath path = new GraphicsPath();
+            sqlConnection = new SqlConnection(CS);
+            sqlConnection.Open();
+            using (SqlCommand sqlCommand = new SqlCommand("spGetAllRegistrationFees", sqlConnection))
+            {
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                int a = 1;
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    dgvShowAllAddRegistrationFees.Rows.Add(a,
+                        Convert.ToDecimal(sqlDataReader["FeeAmount"]),
+                        (sqlDataReader["IsActive"]).ToString(),
+                        Convert.ToDateTime(sqlDataReader["CreatedAt"]).ToString("dd-MM-yyyy"));
+                    a++;
+                }
 
-            path.AddArc(0, 0, radius, radius, 180, 90);
-            path.AddArc(tlp.Width - radius, 0, radius, radius, 270, 90);
-            path.AddArc(tlp.Width - radius, tlp.Height - radius, radius, radius, 0, 90);
-            path.AddArc(0, tlp.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
 
-            tlp.Region = new Region(path);
+            }
+            dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvShowAllAddRegistrationFees.ScrollBars = ScrollBars.None;
+            dgvShowAllAddRegistrationFees.ClearSelection();
         }
+
+        catch (Exception exc)
+        {
+
+        }
+        finally
+        {
+            if (sqlConnection != null)
+            {
+                sqlConnection.Close();
+            }
+        }
+    
+    }
 
 
 
         private void FrmRegistrationFees_Load(object sender, EventArgs e)
         {
-            SetRoundedTableLayoutPanel(tlpAddNewRegistrationFees, 20);
 
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-            //DataSet dataSet = null;
-            DataTable dataTable = new DataTable();
+
+            DataUpload();
+            AdjustRowHeights();
+           
+           
+        }
+
+
+        private void AdjustRowHeights()
+        {
             try
             {
-                sqlConnection = new SqlConnection(CS);
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("select *from tblRegistrationFees", sqlConnection))
+                dgvShowAllAddRegistrationFees.SuspendLayout();
+                dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvShowAllAddRegistrationFees.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                int gridHeight = dgvShowAllAddRegistrationFees.ClientSize.Height - dgvShowAllAddRegistrationFees.ColumnHeadersHeight;
+
+                int visibleRowCount = dgvShowAllAddRegistrationFees.Rows.GetRowCount(DataGridViewElementStates.Visible);
+
+                if (dgvShowAllAddRegistrationFees.AllowUserToAddRows)
                 {
-                    int a=1;
-                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                    while (sqlDataReader.Read())
+                    visibleRowCount--;
+                }
+
+                if (visibleRowCount > 0)
+                {
+                    int singlePartHeight = gridHeight / visibleRowCount;
+
+                    foreach (DataGridViewRow row in dgvShowAllAddRegistrationFees.Rows)
                     {
-                        dgvShowAllAddRegistrationFees.Rows.Add(a,Convert.ToInt32(sqlDataReader["RegistrationFeesId"]),
-                            Convert.ToDecimal(sqlDataReader["FeeAmount"]),
-                            Convert.ToByte(sqlDataReader["IsActive"]),
-                            Convert.ToDateTime(sqlDataReader["CreatedAt"]));
-                        a++;
+                        if (row.IsNewRow)
+                            continue;
+
+                        if (row.Visible)
+                        {
+                            row.Height = singlePartHeight;
+                        }
                     }
-
-
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
             finally
             {
-                if (sqlConnection != null)
-                {
-                    sqlConnection.Close();
-                }
+                dgvShowAllAddRegistrationFees.ResumeLayout();
+                dgvShowAllAddRegistrationFees.Refresh();
+            }
+        }
+
+      
+        
+
+        private void dgvShowAllAddRegistrationFees_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightBlue;
+            }
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
+                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
             }
 
+        }
+
+       
+
+       
+
+        private void dgvShowAllAddRegistrationFees_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+            }
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+
+        }
 
 
+        
 
+        private void tlpAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+        }
 
+        private void tlpAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+        }
 
+        private void picAddRegistrationFee_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+        }
 
+        private void picAddRegistrationFee_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+        }
 
+        private void lblAddRegistrationFees_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void lblAddRegistrationFees_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+        }
+
+        private void dgvShowAllAddRegistrationFees_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmRegistrationFees_Resize(object sender, EventArgs e)
+        {
+            AdjustRowHeights();
            
         }
 
-
-        public void GetRegistrationFees()
+        private void tlpTopFrmAddRegistrationFee_Click(object sender, EventArgs e)
         {
-            
+            dgvShowAllAddRegistrationFees.ClearSelection();
+
+        }
+
+        private void tlpMiddleFrmAddRegistrationFee_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+        }
+
+        private void tlpAddNewRegistrationFees_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+        }
+
+        private void lblRegistrationFeesFrmAddRegistrationFee_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+        }
+
+        private void picAddRegistrationFee_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+        }
+
+        private void lblAddRegistrationFees_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+
+        }
+
+
+
+        private void dgvShowAllAddRegistrationFees_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void tlpAddNewRegistrationFees_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlClickAddNewFegistrationFees_Click(object sender, EventArgs e)
+        {
+            FrmAddRegistrationFee frmAddRegistrationFee = new FrmAddRegistrationFee();
+            frmAddRegistrationFee.ShowDialog();
         }
 
 
 
 
-
        
-
-
-       
-
-       
-
-       
-
-
-
-
-
 
       
 
+      
+
+       
+
+        
+
+     
+
+        
+
+       
+
+       
+
+       
+
+
+
+
+       
+
+        
 
 
         
 
        
+
+
+       
+       
+
 
 
 
