@@ -48,7 +48,7 @@ namespace GymManagementSystem.FORMS.Shift
                     dgvShift.DataSource = dt;
                     for (int i = 0; i < dgvShift.Rows.Count; i++)
                     {
-                        dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
+                        dgvShift.Rows[i].Cells["ColSerialNo"].Value = i + 1;
                     }
                     dgvShift.ScrollBars = ScrollBars.None;
                 }
@@ -73,10 +73,6 @@ namespace GymManagementSystem.FORMS.Shift
             }
             StretchRows();
             dgvShift.ScrollBars = ScrollBars.None;
-            for (int i = 0; i < dgvShift.Rows.Count; i++)
-            {
-                dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
-            }
         }
 
         private void dgvShift_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
