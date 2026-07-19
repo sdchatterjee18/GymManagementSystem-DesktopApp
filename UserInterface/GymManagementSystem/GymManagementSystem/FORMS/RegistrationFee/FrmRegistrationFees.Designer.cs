@@ -64,7 +64,7 @@
             this.dgvShowAllAddRegistrationFees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
@@ -88,7 +88,7 @@
             this.dgvShowAllAddRegistrationFees.EnableHeadersVisualStyles = false;
             this.dgvShowAllAddRegistrationFees.GridColor = System.Drawing.Color.Black;
             this.dgvShowAllAddRegistrationFees.Location = new System.Drawing.Point(48, 2);
-            this.dgvShowAllAddRegistrationFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvShowAllAddRegistrationFees.Margin = new System.Windows.Forms.Padding(2);
             this.dgvShowAllAddRegistrationFees.Name = "dgvShowAllAddRegistrationFees";
             this.dgvShowAllAddRegistrationFees.ReadOnly = true;
             this.dgvShowAllAddRegistrationFees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -152,7 +152,7 @@
             this.tlpMiddleFrmAddRegistrationFee.Controls.Add(this.pnlClickAddNewFegistrationFees, 1, 1);
             this.tlpMiddleFrmAddRegistrationFee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMiddleFrmAddRegistrationFee.Location = new System.Drawing.Point(0, 64);
-            this.tlpMiddleFrmAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMiddleFrmAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMiddleFrmAddRegistrationFee.Name = "tlpMiddleFrmAddRegistrationFee";
             this.tlpMiddleFrmAddRegistrationFee.RowCount = 2;
             this.tlpMiddleFrmAddRegistrationFee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.24176F));
@@ -166,7 +166,7 @@
             this.pnlClickAddNewFegistrationFees.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pnlClickAddNewFegistrationFees.Controls.Add(this.tlpAddNewRegistrationFees);
             this.pnlClickAddNewFegistrationFees.Location = new System.Drawing.Point(48, 468);
-            this.pnlClickAddNewFegistrationFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlClickAddNewFegistrationFees.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickAddNewFegistrationFees.Name = "pnlClickAddNewFegistrationFees";
             this.pnlClickAddNewFegistrationFees.Size = new System.Drawing.Size(339, 61);
             this.pnlClickAddNewFegistrationFees.TabIndex = 1;
@@ -182,7 +182,7 @@
             this.tlpAddNewRegistrationFees.Controls.Add(this.lblAddRegistrationFees, 1, 0);
             this.tlpAddNewRegistrationFees.Controls.Add(this.picAddRegistrationFee, 0, 0);
             this.tlpAddNewRegistrationFees.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewRegistrationFees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddNewRegistrationFees.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddNewRegistrationFees.Name = "tlpAddNewRegistrationFees";
             this.tlpAddNewRegistrationFees.RowCount = 1;
             this.tlpAddNewRegistrationFees.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -212,7 +212,7 @@
             this.picAddRegistrationFee.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddRegistrationFee.Image = ((System.Drawing.Image)(resources.GetObject("picAddRegistrationFee.Image")));
             this.picAddRegistrationFee.Location = new System.Drawing.Point(18, 17);
-            this.picAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2);
             this.picAddRegistrationFee.Name = "picAddRegistrationFee";
             this.picAddRegistrationFee.Size = new System.Drawing.Size(31, 26);
             this.picAddRegistrationFee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,7 +230,7 @@
             this.tlpTopFrmAddRegistrationFee.Controls.Add(this.lblRegistrationFeesFrmAddRegistrationFee, 1, 0);
             this.tlpTopFrmAddRegistrationFee.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpTopFrmAddRegistrationFee.Location = new System.Drawing.Point(0, 0);
-            this.tlpTopFrmAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTopFrmAddRegistrationFee.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTopFrmAddRegistrationFee.Name = "tlpTopFrmAddRegistrationFee";
             this.tlpTopFrmAddRegistrationFee.RowCount = 1;
             this.tlpTopFrmAddRegistrationFee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
