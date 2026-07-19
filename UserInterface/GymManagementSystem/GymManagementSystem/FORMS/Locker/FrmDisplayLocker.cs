@@ -117,21 +117,5 @@ namespace GymManagementSystem.FORMS.Locker
                 dgvDisplayLocker.ClearSelection();
             }
         }
-
-        private void FrmDisplayLocker_Resize(object sender, EventArgs e)
-        {
-            int newHeight = this.ClientSize.Height / 12;
-            if (newHeight < 30) newHeight = 30;         
-            if (newHeight > 100) newHeight = 100;       
-
-            dgvDisplayLocker.RowTemplate.Height = newHeight;
-
-            float newFontSize = this.ClientSize.Width / 40f; 
-            if (newFontSize < 12f) newFontSize = 12f;        
-            if (newFontSize > 28f) newFontSize = 28f;        
-            lblLockerManagement.Font = new Font(lblLockerManagement.Font.FontFamily, newFontSize, FontStyle.Bold);
-
-            dgvDisplayLocker.Invalidate();
-        }
     }
 }
