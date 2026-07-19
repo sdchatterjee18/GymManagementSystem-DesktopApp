@@ -33,13 +33,10 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             //dgvMembershipPlan.ScrollBars = ScrollBars.Horizontal;
             dgvMembershipPlan.Dock = DockStyle.Fill;
             //dgvMembershipPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            
-
+            dgvMembershipPlan.EnableHeadersVisualStyles = false;
             LoadMembershipPlans();
 
             dgvMembershipPlan.ClearSelection();
-
-
 
             dgvMembershipPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
@@ -169,19 +166,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
             frm.Show();
         }
-
-        private void tlpAllMembershipPlanTitle_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-   
-       
-      
-        
-       
-
-     
        
     }
 }
