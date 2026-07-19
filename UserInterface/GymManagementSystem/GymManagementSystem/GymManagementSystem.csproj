@@ -143,6 +143,12 @@
     <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Member\FrmDisplayAllMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmDisplayAllMembers.Designer.cs">
+      <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Payments\FrmDisplayPayments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.resx">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmDisplayAllMembers.resx">
+      <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Payments\FrmDisplayPayments.resx">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,9 +325,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FORMS\Member\" />
     <Folder Include="FORMS\Settings\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr.png" />
