@@ -31,6 +31,36 @@ namespace GymManagementSystem.FORMS.Shift
             dtpTime.CloseUp += dtpTime_CloseUp;
             dtpTime.Leave += dtpTime_Leave;
         }
+        private void LoadShiftDetails()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection sqlConnection = null;
+            try
+            {
+                using (sqlConnection = new SqlConnection(CS))
+                {
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("spRetrieveShiftTimeTable", sqlConnection);
+                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    sqlDataAdapter.Fill(dt);
+
+                    dgvShift.DataSource = dt;
+                    for (int i = 0; i < dgvShift.Rows.Count; i++)
+                    {
+                        dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
+                    }
+                    dgvShift.ScrollBars = ScrollBars.None;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
 
         private void FrmDisplayShift_Load(object sender, EventArgs e)
         {
@@ -40,12 +70,11 @@ namespace GymManagementSystem.FORMS.Shift
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            StretchRows();
+            
             dgvShift.ScrollBars = ScrollBars.None;
-            for (int i = 0; i < dgvShift.Rows.Count; i++)
-            {
-                dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
-            }
+            LoadShiftDetails();
+            StretchRows();
+         
         }
 
         private void dgvShift_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
