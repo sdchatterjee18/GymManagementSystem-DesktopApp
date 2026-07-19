@@ -44,12 +44,22 @@ namespace GymManagementSystem.FORMS.Shift
                     sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                     DataTable dt = new DataTable();
                     sqlDataAdapter.Fill(dt);
+                    DataRowCollection dataRows = dt.Rows;
 
-                    dgvShift.DataSource = dt;
-                    for (int i = 0; i < dgvShift.Rows.Count; i++)
+                    dgvShift.Rows.Clear();
+
+                    int serialNo = 1;
+
+                    foreach (DataRow dataRow in dataRows)
                     {
-                        dgvShift.Rows[i].Cells["ColSerialNo"].Value = i + 1;
+                        int rowIndex = dgvShift.Rows.Add();
+
+                        dgvShift.Rows[rowIndex].Cells["ColSerialNo"].Value = serialNo++;
+                        dgvShift.Rows[rowIndex].Cells["ColShiftName"].Value = dataRow["ShiftName"];
+                        dgvShift.Rows[rowIndex].Cells["ColStartTime"].Value = Convert.ToDateTime(dataRow["StartTime"]).ToString("hh:mm tt");
+                        dgvShift.Rows[rowIndex].Cells["ColEndTime"].Value = Convert.ToDateTime(dataRow["EndTime"]).ToString("hh:mm tt");
                     }
+
                     dgvShift.ScrollBars = ScrollBars.None;
                 }
             }
