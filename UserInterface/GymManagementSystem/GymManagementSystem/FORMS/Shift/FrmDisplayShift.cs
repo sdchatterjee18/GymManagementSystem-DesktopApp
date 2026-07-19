@@ -32,10 +32,41 @@ namespace GymManagementSystem.FORMS.Shift
             dtpTime.Leave += dtpTime_Leave;
         }
 
+        private void LoadShiftDetails()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection sqlConnection = null;
+            try
+            {
+                using (sqlConnection = new SqlConnection(CS))
+                {
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("spRetrieveShiftTimeTable", sqlConnection);
+                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    sqlDataAdapter.Fill(dt);
+
+                    dgvShift.DataSource = dt;
+                    for (int i = 0; i < dgvShift.Rows.Count; i++)
+                    {
+                        dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
+                    }
+                    dgvShift.ScrollBars = ScrollBars.None;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
         private void FrmDisplayShift_Load(object sender, EventArgs e)
         {
             dgvShift.AutoGenerateColumns = false;
             dgvShift.RowHeadersVisible = false;
+            LoadShiftDetails();
             foreach (DataGridViewColumn column in dgvShift.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
