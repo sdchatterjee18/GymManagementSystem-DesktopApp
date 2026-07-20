@@ -24,6 +24,7 @@ namespace GymManagementSystem.FORMS.Locker
         {
             this.getLockersDetails();
             this.dgvDisplayLocker.ClearSelection();
+            this.dgvDisplayLocker.DefaultCellStyle.BackColor = Color.White;
         }
 
         private void pnlButton_Click(object sender, EventArgs e)
