@@ -32,11 +32,11 @@
             this.pnlSpaceing = new System.Windows.Forms.Panel();
             this.tlpDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDisplayLocker = new System.Windows.Forms.DataGridView();
+            this.pnlFooter = new System.Windows.Forms.Panel();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAllocatedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlFooter = new System.Windows.Forms.Panel();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpSpaceing.SuspendLayout();
@@ -201,7 +201,7 @@
             this.dgvDisplayLocker.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
@@ -247,6 +247,16 @@
             this.dgvDisplayLocker.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayLocker_CellMouseLeave);
             this.dgvDisplayLocker.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
+            // pnlFooter
+            // 
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(0, 496);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1094, 47);
+            this.pnlFooter.TabIndex = 2;
+            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
+            // 
             // colSlNo
             // 
             this.colSlNo.FillWeight = 50F;
@@ -258,7 +268,7 @@
             // 
             // colLNo
             // 
-            this.colLNo.DataPropertyName = "LNo";
+            this.colLNo.DataPropertyName = "LockerNo";
             this.colLNo.FillWeight = 80F;
             this.colLNo.HeaderText = "Locker No";
             this.colLNo.Name = "colLNo";
@@ -276,22 +286,12 @@
             // 
             // colLStatus
             // 
-            this.colLStatus.DataPropertyName = "LStatus";
+            this.colLStatus.DataPropertyName = "LockerStatus";
             this.colLStatus.FillWeight = 110F;
             this.colLStatus.HeaderText = "Locker Status";
             this.colLStatus.Name = "colLStatus";
             this.colLStatus.ReadOnly = true;
             this.colLStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // pnlFooter
-            // 
-            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 496);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1094, 47);
-            this.pnlFooter.TabIndex = 2;
-            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // FrmDisplayLocker
             // 
