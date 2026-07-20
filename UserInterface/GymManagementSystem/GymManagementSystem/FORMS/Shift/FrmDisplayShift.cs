@@ -32,20 +32,57 @@ namespace GymManagementSystem.FORMS.Shift
             dtpTime.Leave += dtpTime_Leave;
         }
 
+        private void LoadShiftDetails()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            SqlConnection sqlConnection = null;
+            try
+            {
+                using (sqlConnection = new SqlConnection(CS))
+                {
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("spRetrieveShiftTimeTable", sqlConnection);
+                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    sqlDataAdapter.Fill(dt);
+                    DataRowCollection dataRows = dt.Rows;
+
+                    dgvShift.Rows.Clear();
+
+                    int serialNo = 1;
+
+                    foreach (DataRow dataRow in dataRows)
+                    {
+                        int rowIndex = dgvShift.Rows.Add();
+
+                        dgvShift.Rows[rowIndex].Cells["ColSerialNo"].Value = serialNo++;
+                        dgvShift.Rows[rowIndex].Cells["ColShiftName"].Value = dataRow["ShiftName"];
+                        dgvShift.Rows[rowIndex].Cells["ColStartTime"].Value = Convert.ToDateTime(dataRow["StartTime"]).ToString("hh:mm tt");
+                        dgvShift.Rows[rowIndex].Cells["ColEndTime"].Value = Convert.ToDateTime(dataRow["EndTime"]).ToString("hh:mm tt");
+                    }
+
+                    dgvShift.ScrollBars = ScrollBars.None;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
         private void FrmDisplayShift_Load(object sender, EventArgs e)
         {
             dgvShift.AutoGenerateColumns = false;
             dgvShift.RowHeadersVisible = false;
+            LoadShiftDetails();
             foreach (DataGridViewColumn column in dgvShift.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             StretchRows();
             dgvShift.ScrollBars = ScrollBars.None;
-            for (int i = 0; i < dgvShift.Rows.Count; i++)
-            {
-                dgvShift.Rows[i].Cells["colSerialNo"].Value = i + 1;
-            }
         }
 
         private void dgvShift_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

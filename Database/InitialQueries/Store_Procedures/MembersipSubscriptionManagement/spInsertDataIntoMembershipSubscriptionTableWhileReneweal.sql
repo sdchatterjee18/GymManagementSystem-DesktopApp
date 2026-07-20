@@ -42,7 +42,7 @@ BEGIN
 
         SELECT
             @DurationInDays = DurationInDays,
-            @Amount = Amount
+            @Amount = Price
         FROM tblMembershipPlans
         WHERE MembershipPlanId = @MembershipPlanId;
 

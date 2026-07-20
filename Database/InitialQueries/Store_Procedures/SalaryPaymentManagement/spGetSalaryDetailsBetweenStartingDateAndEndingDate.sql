@@ -20,26 +20,26 @@ BEGIN
         END
 
         SELECT
-            e.EmployeeId,
-           (e.FirstName 
-            + CASE 
-                WHEN e.MiddleName IS NULL OR e.MiddleName = '' 
-                    THEN '' 
-                ELSE ' ' + e.MiddleName 
-            END
-            + ' ' + e.LastName) AS FullName,
-            e.PhoneNo,
-            e.EmailId,
-            e.BankAccountNo,
-            r.RoleName,
-            s.SalaryId,
-            s.Amount AS SalaryAmount,
-            sp.PaymentId,
-            sp.PaymentMode,
-            sp.PaymentMonth,
-            sp.PaymentYear,
-            sp.PaymentDate,
-            sp.PaymentStatus
+    e.EmployeeId,
+    (e.FirstName 
+        + CASE 
+            WHEN e.MiddleName IS NULL OR e.MiddleName = '' 
+                THEN '' 
+            ELSE ' ' + e.MiddleName 
+        END
+        + ' ' + e.LastName) AS FullName,
+    e.PhoneNo,
+    e.EmailId,
+    e.BankAccountNo,
+    r.Role AS RoleName,
+    s.SalaryId,
+    s.Amount AS SalaryAmount,
+    sp.PaymentId,
+    sp.PaymentMode,
+    sp.PaymentMonth,
+    sp.PaymentYear,
+    sp.PaymentDate,
+    sp.PaymentStatus
         FROM tblSalaryPayment sp
         INNER JOIN tblSalary s
             ON sp.SalaryId = s.SalaryId

@@ -1,4 +1,4 @@
-ALTER PROC spGetMembershipSubscriptionsByMembershipPlanIdForASpecificMonth
+CREATE PROC spGetMembershipSubscriptionsByMembershipPlanIdForASpecificMonth
 (
     @MembershipPlanId INT,
     @Month INT,
@@ -20,11 +20,11 @@ BEGIN
     END
 
     SELECT
-        MS.MembershipSubscriptionId,
+        MS.MemberSubscriptionId,
         M.MemberId,
         M.FirstName,
         M.LastName,
-        MP.PlanName,
+        MP.MembershipPlanName,
         MS.StartDate,
         MS.ExpiryDate,
         MS.IsActive
