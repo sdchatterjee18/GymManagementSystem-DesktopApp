@@ -310,6 +310,22 @@ namespace GymManagementSystem.FORMS.Main
             ExpandIfCollapsed();
         }
 
+        private void pnlExerCise_MouseEnter(object sender, EventArgs e)
+        {
+            pnlExerCise.BackColor = Color.FromArgb(190, 216, 230);
+        }
+
+
+        private void pnlExerCise_MouseLeave(object sender, EventArgs e)
+        {
+            pnlExerCise.BackColor = Color.FromArgb(247, 247, 247);
+        }
+        private void pnlExerCise_Click(object sender, EventArgs e)
+        {
+            ExpandIfCollapsed();
+        }
+
+
         private void pnlWorkoutPlans_MouseEnter(object sender, EventArgs e)
         {
             pnlWorkoutPlans.BackColor = Color.FromArgb(190, 216, 230);
@@ -538,5 +554,9 @@ namespace GymManagementSystem.FORMS.Main
                 timerSidebar.Start();
             }
         }
+
+       
+       
+       
        }
 }
