@@ -46,6 +46,9 @@
             this.pnlFreePersonalTrains = new System.Windows.Forms.Panel();
             this.tlpFreePersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
             this.picFreePersonalTrainer = new System.Windows.Forms.PictureBox();
+            this.tlpFreePersonalTrainerLabel = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFreePersonalTrainerValue = new System.Windows.Forms.Label();
+            this.lblFreePersonalTrainer = new System.Windows.Forms.Label();
             this.pnlActiveMembers = new System.Windows.Forms.Panel();
             this.tlpActiveMembers = new System.Windows.Forms.TableLayoutPanel();
             this.tlpActiveMembersLabel = new System.Windows.Forms.TableLayoutPanel();
@@ -55,9 +58,15 @@
             this.pnlActivePlans = new System.Windows.Forms.Panel();
             this.tlpActivePlans = new System.Windows.Forms.TableLayoutPanel();
             this.picActivePlans = new System.Windows.Forms.PictureBox();
+            this.tlpActivePlansLabel = new System.Windows.Forms.TableLayoutPanel();
+            this.lblActivePlansValues = new System.Windows.Forms.Label();
+            this.lblActivePlans = new System.Windows.Forms.Label();
             this.pnlTrainers = new System.Windows.Forms.Panel();
             this.tlpTrainer = new System.Windows.Forms.TableLayoutPanel();
             this.picTrainer = new System.Windows.Forms.PictureBox();
+            this.tlpTrainerLabel = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTrainerValues = new System.Windows.Forms.Label();
+            this.lblTrainer = new System.Windows.Forms.Label();
             this.pnlChart = new System.Windows.Forms.Panel();
             this.tlpChart = new System.Windows.Forms.TableLayoutPanel();
             this.pnlShiftWiseMembers = new System.Windows.Forms.Panel();
@@ -103,15 +112,6 @@
             this.lblKeyMonthlyFinancials = new System.Windows.Forms.Label();
             this.tlpMonthlyExpense = new System.Windows.Forms.TableLayoutPanel();
             this.lblMonthlyExpenses = new System.Windows.Forms.Label();
-            this.tlpActivePlansLabel = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpTrainerLabel = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpFreePersonalTrainerLabel = new System.Windows.Forms.TableLayoutPanel();
-            this.lblActivePlans = new System.Windows.Forms.Label();
-            this.lblActivePlansValues = new System.Windows.Forms.Label();
-            this.lblTrainer = new System.Windows.Forms.Label();
-            this.lblTrainerValues = new System.Windows.Forms.Label();
-            this.lblFreePersonalTrainer = new System.Windows.Forms.Label();
-            this.lblFreePersonalTrainerValue = new System.Windows.Forms.Label();
             this.tlpDashboard.SuspendLayout();
             this.pnlRunningShift.SuspendLayout();
             this.tlpRunningShift.SuspendLayout();
@@ -121,6 +121,7 @@
             this.pnlFreePersonalTrains.SuspendLayout();
             this.tlpFreePersonalTrainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFreePersonalTrainer)).BeginInit();
+            this.tlpFreePersonalTrainerLabel.SuspendLayout();
             this.pnlActiveMembers.SuspendLayout();
             this.tlpActiveMembers.SuspendLayout();
             this.tlpActiveMembersLabel.SuspendLayout();
@@ -128,9 +129,11 @@
             this.pnlActivePlans.SuspendLayout();
             this.tlpActivePlans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picActivePlans)).BeginInit();
+            this.tlpActivePlansLabel.SuspendLayout();
             this.pnlTrainers.SuspendLayout();
             this.tlpTrainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrainer)).BeginInit();
+            this.tlpTrainerLabel.SuspendLayout();
             this.pnlChart.SuspendLayout();
             this.tlpChart.SuspendLayout();
             this.pnlShiftWiseMembers.SuspendLayout();
@@ -161,9 +164,6 @@
             this.tlpThisMonthSubscriptionNo.SuspendLayout();
             this.tlpNewMembersInThisMonth.SuspendLayout();
             this.tlpMonthlyExpense.SuspendLayout();
-            this.tlpActivePlansLabel.SuspendLayout();
-            this.tlpTrainerLabel.SuspendLayout();
-            this.tlpFreePersonalTrainerLabel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpDashboard
@@ -326,6 +326,48 @@
             this.picFreePersonalTrainer.TabIndex = 0;
             this.picFreePersonalTrainer.TabStop = false;
             // 
+            // tlpFreePersonalTrainerLabel
+            // 
+            this.tlpFreePersonalTrainerLabel.ColumnCount = 1;
+            this.tlpFreePersonalTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainerValue, 0, 2);
+            this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainer, 0, 0);
+            this.tlpFreePersonalTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpFreePersonalTrainerLabel.Location = new System.Drawing.Point(73, 0);
+            this.tlpFreePersonalTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpFreePersonalTrainerLabel.Name = "tlpFreePersonalTrainerLabel";
+            this.tlpFreePersonalTrainerLabel.RowCount = 3;
+            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpFreePersonalTrainerLabel.Size = new System.Drawing.Size(138, 88);
+            this.tlpFreePersonalTrainerLabel.TabIndex = 1;
+            // 
+            // lblFreePersonalTrainerValue
+            // 
+            this.lblFreePersonalTrainerValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFreePersonalTrainerValue.AutoSize = true;
+            this.lblFreePersonalTrainerValue.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreePersonalTrainerValue.Location = new System.Drawing.Point(53, 52);
+            this.lblFreePersonalTrainerValue.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFreePersonalTrainerValue.Name = "lblFreePersonalTrainerValue";
+            this.lblFreePersonalTrainerValue.Size = new System.Drawing.Size(32, 31);
+            this.lblFreePersonalTrainerValue.TabIndex = 4;
+            this.lblFreePersonalTrainerValue.Text = "2";
+            this.lblFreePersonalTrainerValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFreePersonalTrainer
+            // 
+            this.lblFreePersonalTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblFreePersonalTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreePersonalTrainer.Location = new System.Drawing.Point(0, 15);
+            this.lblFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFreePersonalTrainer.Name = "lblFreePersonalTrainer";
+            this.lblFreePersonalTrainer.Size = new System.Drawing.Size(138, 20);
+            this.lblFreePersonalTrainer.TabIndex = 3;
+            this.lblFreePersonalTrainer.Text = "Free Personal Trainer";
+            this.lblFreePersonalTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlActiveMembers
             // 
             this.pnlActiveMembers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(219)))), ((int)(((byte)(151)))));
@@ -361,6 +403,7 @@
             this.tlpActiveMembersLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpActiveMembersLabel.Controls.Add(this.lblActiveMembersValue, 0, 2);
             this.tlpActiveMembersLabel.Controls.Add(this.lblActiveMembers, 0, 0);
+            this.tlpActiveMembersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpActiveMembersLabel.Location = new System.Drawing.Point(73, 0);
             this.tlpActiveMembersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActiveMembersLabel.Name = "tlpActiveMembersLabel";
@@ -452,6 +495,49 @@
             this.picActivePlans.TabIndex = 0;
             this.picActivePlans.TabStop = false;
             // 
+            // tlpActivePlansLabel
+            // 
+            this.tlpActivePlansLabel.ColumnCount = 1;
+            this.tlpActivePlansLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpActivePlansLabel.Controls.Add(this.lblActivePlansValues, 0, 2);
+            this.tlpActivePlansLabel.Controls.Add(this.lblActivePlans, 0, 0);
+            this.tlpActivePlansLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpActivePlansLabel.Location = new System.Drawing.Point(73, 0);
+            this.tlpActivePlansLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpActivePlansLabel.Name = "tlpActivePlansLabel";
+            this.tlpActivePlansLabel.RowCount = 3;
+            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpActivePlansLabel.Size = new System.Drawing.Size(138, 88);
+            this.tlpActivePlansLabel.TabIndex = 1;
+            // 
+            // lblActivePlansValues
+            // 
+            this.lblActivePlansValues.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblActivePlansValues.AutoSize = true;
+            this.lblActivePlansValues.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivePlansValues.Location = new System.Drawing.Point(44, 52);
+            this.lblActivePlansValues.Margin = new System.Windows.Forms.Padding(0);
+            this.lblActivePlansValues.Name = "lblActivePlansValues";
+            this.lblActivePlansValues.Size = new System.Drawing.Size(49, 31);
+            this.lblActivePlansValues.TabIndex = 2;
+            this.lblActivePlansValues.Text = "20";
+            this.lblActivePlansValues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblActivePlans
+            // 
+            this.lblActivePlans.AutoSize = true;
+            this.lblActivePlans.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblActivePlans.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivePlans.Location = new System.Drawing.Point(0, 15);
+            this.lblActivePlans.Margin = new System.Windows.Forms.Padding(0);
+            this.lblActivePlans.Name = "lblActivePlans";
+            this.lblActivePlans.Size = new System.Drawing.Size(138, 20);
+            this.lblActivePlans.TabIndex = 1;
+            this.lblActivePlans.Text = "Active Plans";
+            this.lblActivePlans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlTrainers
             // 
             this.pnlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(223)))), ((int)(((byte)(249)))));
@@ -493,6 +579,49 @@
             this.picTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainer.TabIndex = 0;
             this.picTrainer.TabStop = false;
+            // 
+            // tlpTrainerLabel
+            // 
+            this.tlpTrainerLabel.ColumnCount = 1;
+            this.tlpTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrainerLabel.Controls.Add(this.lblTrainerValues, 0, 2);
+            this.tlpTrainerLabel.Controls.Add(this.lblTrainer, 0, 0);
+            this.tlpTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerLabel.Location = new System.Drawing.Point(73, 0);
+            this.tlpTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTrainerLabel.Name = "tlpTrainerLabel";
+            this.tlpTrainerLabel.RowCount = 3;
+            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpTrainerLabel.Size = new System.Drawing.Size(138, 88);
+            this.tlpTrainerLabel.TabIndex = 1;
+            // 
+            // lblTrainerValues
+            // 
+            this.lblTrainerValues.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTrainerValues.AutoSize = true;
+            this.lblTrainerValues.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerValues.Location = new System.Drawing.Point(53, 52);
+            this.lblTrainerValues.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainerValues.Name = "lblTrainerValues";
+            this.lblTrainerValues.Size = new System.Drawing.Size(32, 31);
+            this.lblTrainerValues.TabIndex = 3;
+            this.lblTrainerValues.Text = "5";
+            this.lblTrainerValues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTrainer
+            // 
+            this.lblTrainer.AutoSize = true;
+            this.lblTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainer.Location = new System.Drawing.Point(0, 15);
+            this.lblTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainer.Name = "lblTrainer";
+            this.lblTrainer.Size = new System.Drawing.Size(138, 20);
+            this.lblTrainer.TabIndex = 2;
+            this.lblTrainer.Text = "Trainer";
+            this.lblTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlChart
             // 
@@ -1136,134 +1265,6 @@
             this.lblMonthlyExpenses.Text = "Monthly Expenses";
             this.lblMonthlyExpenses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tlpActivePlansLabel
-            // 
-            this.tlpActivePlansLabel.ColumnCount = 1;
-            this.tlpActivePlansLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpActivePlansLabel.Controls.Add(this.lblActivePlansValues, 0, 2);
-            this.tlpActivePlansLabel.Controls.Add(this.lblActivePlans, 0, 0);
-            this.tlpActivePlansLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActivePlansLabel.Location = new System.Drawing.Point(73, 0);
-            this.tlpActivePlansLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpActivePlansLabel.Name = "tlpActivePlansLabel";
-            this.tlpActivePlansLabel.RowCount = 3;
-            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpActivePlansLabel.Size = new System.Drawing.Size(138, 88);
-            this.tlpActivePlansLabel.TabIndex = 1;
-            // 
-            // tlpTrainerLabel
-            // 
-            this.tlpTrainerLabel.ColumnCount = 1;
-            this.tlpTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTrainerLabel.Controls.Add(this.lblTrainerValues, 0, 2);
-            this.tlpTrainerLabel.Controls.Add(this.lblTrainer, 0, 0);
-            this.tlpTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerLabel.Location = new System.Drawing.Point(73, 0);
-            this.tlpTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTrainerLabel.Name = "tlpTrainerLabel";
-            this.tlpTrainerLabel.RowCount = 3;
-            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpTrainerLabel.Size = new System.Drawing.Size(138, 88);
-            this.tlpTrainerLabel.TabIndex = 1;
-            // 
-            // tlpFreePersonalTrainerLabel
-            // 
-            this.tlpFreePersonalTrainerLabel.ColumnCount = 1;
-            this.tlpFreePersonalTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainerValue, 0, 2);
-            this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainer, 0, 0);
-            this.tlpFreePersonalTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreePersonalTrainerLabel.Location = new System.Drawing.Point(73, 0);
-            this.tlpFreePersonalTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpFreePersonalTrainerLabel.Name = "tlpFreePersonalTrainerLabel";
-            this.tlpFreePersonalTrainerLabel.RowCount = 3;
-            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpFreePersonalTrainerLabel.Size = new System.Drawing.Size(138, 88);
-            this.tlpFreePersonalTrainerLabel.TabIndex = 1;
-            // 
-            // lblActivePlans
-            // 
-            this.lblActivePlans.AutoSize = true;
-            this.lblActivePlans.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblActivePlans.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivePlans.Location = new System.Drawing.Point(0, 15);
-            this.lblActivePlans.Margin = new System.Windows.Forms.Padding(0);
-            this.lblActivePlans.Name = "lblActivePlans";
-            this.lblActivePlans.Size = new System.Drawing.Size(138, 20);
-            this.lblActivePlans.TabIndex = 1;
-            this.lblActivePlans.Text = "Active Plans";
-            this.lblActivePlans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblActivePlansValues
-            // 
-            this.lblActivePlansValues.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblActivePlansValues.AutoSize = true;
-            this.lblActivePlansValues.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivePlansValues.Location = new System.Drawing.Point(44, 52);
-            this.lblActivePlansValues.Margin = new System.Windows.Forms.Padding(0);
-            this.lblActivePlansValues.Name = "lblActivePlansValues";
-            this.lblActivePlansValues.Size = new System.Drawing.Size(49, 31);
-            this.lblActivePlansValues.TabIndex = 2;
-            this.lblActivePlansValues.Text = "20";
-            this.lblActivePlansValues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTrainer
-            // 
-            this.lblTrainer.AutoSize = true;
-            this.lblTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainer.Location = new System.Drawing.Point(0, 15);
-            this.lblTrainer.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTrainer.Name = "lblTrainer";
-            this.lblTrainer.Size = new System.Drawing.Size(138, 20);
-            this.lblTrainer.TabIndex = 2;
-            this.lblTrainer.Text = "Trainer";
-            this.lblTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTrainerValues
-            // 
-            this.lblTrainerValues.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTrainerValues.AutoSize = true;
-            this.lblTrainerValues.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainerValues.Location = new System.Drawing.Point(53, 52);
-            this.lblTrainerValues.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTrainerValues.Name = "lblTrainerValues";
-            this.lblTrainerValues.Size = new System.Drawing.Size(32, 31);
-            this.lblTrainerValues.TabIndex = 3;
-            this.lblTrainerValues.Text = "5";
-            this.lblTrainerValues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFreePersonalTrainer
-            // 
-            this.lblFreePersonalTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFreePersonalTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreePersonalTrainer.Location = new System.Drawing.Point(0, 15);
-            this.lblFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
-            this.lblFreePersonalTrainer.Name = "lblFreePersonalTrainer";
-            this.lblFreePersonalTrainer.Size = new System.Drawing.Size(138, 20);
-            this.lblFreePersonalTrainer.TabIndex = 3;
-            this.lblFreePersonalTrainer.Text = "Free Personal Trainer";
-            this.lblFreePersonalTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFreePersonalTrainerValue
-            // 
-            this.lblFreePersonalTrainerValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFreePersonalTrainerValue.AutoSize = true;
-            this.lblFreePersonalTrainerValue.Font = new System.Drawing.Font("Algerian", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreePersonalTrainerValue.Location = new System.Drawing.Point(53, 52);
-            this.lblFreePersonalTrainerValue.Margin = new System.Windows.Forms.Padding(0);
-            this.lblFreePersonalTrainerValue.Name = "lblFreePersonalTrainerValue";
-            this.lblFreePersonalTrainerValue.Size = new System.Drawing.Size(32, 31);
-            this.lblFreePersonalTrainerValue.TabIndex = 4;
-            this.lblFreePersonalTrainerValue.Text = "2";
-            this.lblFreePersonalTrainerValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1272,7 +1273,6 @@
             this.ClientSize = new System.Drawing.Size(1182, 788);
             this.Controls.Add(this.tlpDashboard);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1200, 835);
             this.Name = "FrmDashboard";
             this.Text = "FrmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
@@ -1286,6 +1286,8 @@
             this.pnlFreePersonalTrains.ResumeLayout(false);
             this.tlpFreePersonalTrainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFreePersonalTrainer)).EndInit();
+            this.tlpFreePersonalTrainerLabel.ResumeLayout(false);
+            this.tlpFreePersonalTrainerLabel.PerformLayout();
             this.pnlActiveMembers.ResumeLayout(false);
             this.tlpActiveMembers.ResumeLayout(false);
             this.tlpActiveMembersLabel.ResumeLayout(false);
@@ -1294,9 +1296,13 @@
             this.pnlActivePlans.ResumeLayout(false);
             this.tlpActivePlans.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picActivePlans)).EndInit();
+            this.tlpActivePlansLabel.ResumeLayout(false);
+            this.tlpActivePlansLabel.PerformLayout();
             this.pnlTrainers.ResumeLayout(false);
             this.tlpTrainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTrainer)).EndInit();
+            this.tlpTrainerLabel.ResumeLayout(false);
+            this.tlpTrainerLabel.PerformLayout();
             this.pnlChart.ResumeLayout(false);
             this.tlpChart.ResumeLayout(false);
             this.pnlShiftWiseMembers.ResumeLayout(false);
@@ -1339,12 +1345,6 @@
             this.tlpNewMembersInThisMonth.PerformLayout();
             this.tlpMonthlyExpense.ResumeLayout(false);
             this.tlpMonthlyExpense.PerformLayout();
-            this.tlpActivePlansLabel.ResumeLayout(false);
-            this.tlpActivePlansLabel.PerformLayout();
-            this.tlpTrainerLabel.ResumeLayout(false);
-            this.tlpTrainerLabel.PerformLayout();
-            this.tlpFreePersonalTrainerLabel.ResumeLayout(false);
-            this.tlpFreePersonalTrainerLabel.PerformLayout();
             this.ResumeLayout(false);
 
         }

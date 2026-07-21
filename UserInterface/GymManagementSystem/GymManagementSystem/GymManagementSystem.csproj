@@ -66,16 +66,16 @@
     <Compile Include="FORMS\Attendance\FrmViewAttendance.Designer.cs">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Dashboard\Authentication\FrmLoginPage.cs">
+    <Compile Include="FORMS\Authentication\FrmLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Dashboard\Authentication\FrmLoginPage.Designer.cs">
+    <Compile Include="FORMS\Authentication\FrmLoginPage.Designer.cs">
       <DependentUpon>FrmLoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Dashboard\Authentication\FrmUserRoleSelection.cs">
+    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Dashboard\Authentication\FrmUserRoleSelection.Designer.cs">
+    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.Designer.cs">
       <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\Dashboard\FrmDashboard.cs">
@@ -227,10 +227,10 @@
     <EmbeddedResource Include="FORMS\Attendance\FrmViewAttendance.resx">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Dashboard\Authentication\FrmLoginPage.resx">
+    <EmbeddedResource Include="FORMS\Authentication\FrmLoginPage.resx">
       <DependentUpon>FrmLoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Dashboard\Authentication\FrmUserRoleSelection.resx">
+    <EmbeddedResource Include="FORMS\Authentication\FrmUserRoleSelection.resx">
       <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Dashboard\FrmDashboard.resx">
