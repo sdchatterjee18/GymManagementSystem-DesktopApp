@@ -12,6 +12,7 @@ using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Locker;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.MembershipPlan;
+using GymManagementSystem.FORMS.Dashboard;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -75,6 +76,7 @@ namespace GymManagementSystem.FORMS.Main
             mainLeftBorder.BackColor = borderColor;
             pnlMainPanel.Controls.Add(mainLeftBorder);
             pnlSidebar.Width = ExpandedWidth;
+            OpenChildForm(new FrmDashboard());
         }
 
         private void pnlMembers_MouseEnter(object sender, EventArgs e)
