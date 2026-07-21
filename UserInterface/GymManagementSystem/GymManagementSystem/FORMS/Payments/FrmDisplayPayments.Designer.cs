@@ -131,12 +131,12 @@
             // 
             // btnSearchPayments
             // 
-            this.btnSearchPayments.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSearchPayments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearchPayments.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSearchPayments.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.btnSearchPayments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.btnSearchPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchPayments.Location = new System.Drawing.Point(345, 11);
             this.btnSearchPayments.Name = "btnSearchPayments";
             this.btnSearchPayments.Size = new System.Drawing.Size(92, 36);
@@ -148,10 +148,12 @@
             // 
             this.txtMobileNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMobileNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobileNo.ForeColor = System.Drawing.Color.Gray;
             this.txtMobileNo.Location = new System.Drawing.Point(3, 12);
             this.txtMobileNo.Name = "txtMobileNo";
             this.txtMobileNo.Size = new System.Drawing.Size(336, 34);
             this.txtMobileNo.TabIndex = 1;
+            this.txtMobileNo.Text = "Enter Mobile no.";
             this.txtMobileNo.Click += new System.EventHandler(this.pnlPaymentTitle_Click);
             // 
             // dgvPaymentsManagement
@@ -232,7 +234,6 @@
             // colSerialNo
             // 
             this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSerialNo.DataPropertyName = "colSerialNo";
             this.colSerialNo.HeaderText = "Sl No.";
             this.colSerialNo.Name = "colSerialNo";
             this.colSerialNo.ReadOnly = true;
@@ -241,7 +242,7 @@
             // colMembershipPlanName
             // 
             this.colMembershipPlanName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMembershipPlanName.DataPropertyName = "colMembershipPlanName";
+            this.colMembershipPlanName.DataPropertyName = "MembershipPlanName";
             this.colMembershipPlanName.HeaderText = "Membership Plan Name";
             this.colMembershipPlanName.Name = "colMembershipPlanName";
             this.colMembershipPlanName.ReadOnly = true;
@@ -250,7 +251,7 @@
             // colPaymentDate
             // 
             this.colPaymentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPaymentDate.DataPropertyName = "colPaymentDate";
+            this.colPaymentDate.DataPropertyName = "PaymentDate";
             this.colPaymentDate.HeaderText = "PaymentDate";
             this.colPaymentDate.Name = "colPaymentDate";
             this.colPaymentDate.ReadOnly = true;
@@ -259,7 +260,7 @@
             // colPaymentMethod
             // 
             this.colPaymentMethod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPaymentMethod.DataPropertyName = "colPaymentMethod";
+            this.colPaymentMethod.DataPropertyName = "PaymentMethod";
             this.colPaymentMethod.HeaderText = "Payment Method";
             this.colPaymentMethod.Name = "colPaymentMethod";
             this.colPaymentMethod.ReadOnly = true;
@@ -268,7 +269,7 @@
             // colAmount
             // 
             this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colAmount.DataPropertyName = "colAmount";
+            this.colAmount.DataPropertyName = "Amount";
             this.colAmount.HeaderText = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
@@ -277,7 +278,7 @@
             // colFeesType
             // 
             this.colFeesType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFeesType.DataPropertyName = "colFeesType";
+            this.colFeesType.DataPropertyName = "FeesType";
             this.colFeesType.HeaderText = "FeesType";
             this.colFeesType.Name = "colFeesType";
             this.colFeesType.ReadOnly = true;
