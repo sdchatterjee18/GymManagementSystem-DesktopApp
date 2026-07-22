@@ -129,9 +129,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpCategoryName.ColumnCount = 4;
             this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.118881F));
-            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.41259F));
-            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.04895F));
-            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.244755F));
+            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.49547F));
+            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.14877F));
+            this.tlpCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.40492F));
             this.tlpCategoryName.Controls.Add(this.lblCategoryName, 1, 0);
             this.tlpCategoryName.Controls.Add(this.tlpCategoryNameSection, 2, 0);
             this.tlpCategoryName.Location = new System.Drawing.Point(3, 92);
@@ -150,10 +150,9 @@
             this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoryName.Location = new System.Drawing.Point(50, 0);
             this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(283, 101);
+            this.lblCategoryName.Size = new System.Drawing.Size(221, 101);
             this.lblCategoryName.TabIndex = 0;
             this.lblCategoryName.Text = " Category Name :";
-            this.lblCategoryName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tlpCategoryNameSection
             // 
@@ -165,12 +164,12 @@
             this.tlpCategoryNameSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCategoryNameSection.Controls.Add(this.txtNewExpensesCategoryName, 0, 0);
             this.tlpCategoryNameSection.Controls.Add(this.txtCategoryNameErrorMessage, 0, 1);
-            this.tlpCategoryNameSection.Location = new System.Drawing.Point(339, 3);
+            this.tlpCategoryNameSection.Location = new System.Drawing.Point(277, 3);
             this.tlpCategoryNameSection.Name = "tlpCategoryNameSection";
             this.tlpCategoryNameSection.RowCount = 2;
-            this.tlpCategoryNameSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.60606F));
-            this.tlpCategoryNameSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.39394F));
-            this.tlpCategoryNameSection.Size = new System.Drawing.Size(389, 95);
+            this.tlpCategoryNameSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpCategoryNameSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpCategoryNameSection.Size = new System.Drawing.Size(342, 95);
             this.tlpCategoryNameSection.TabIndex = 1;
             // 
             // txtNewExpensesCategoryName
@@ -182,7 +181,7 @@
             this.txtNewExpensesCategoryName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewExpensesCategoryName.Location = new System.Drawing.Point(3, 3);
             this.txtNewExpensesCategoryName.Name = "txtNewExpensesCategoryName";
-            this.txtNewExpensesCategoryName.Size = new System.Drawing.Size(383, 34);
+            this.txtNewExpensesCategoryName.Size = new System.Drawing.Size(336, 34);
             this.txtNewExpensesCategoryName.TabIndex = 1;
             // 
             // txtCategoryNameErrorMessage
@@ -193,11 +192,12 @@
             this.txtCategoryNameErrorMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtCategoryNameErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCategoryNameErrorMessage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryNameErrorMessage.Location = new System.Drawing.Point(3, 60);
+            this.txtCategoryNameErrorMessage.Location = new System.Drawing.Point(3, 41);
             this.txtCategoryNameErrorMessage.Name = "txtCategoryNameErrorMessage";
             this.txtCategoryNameErrorMessage.ReadOnly = true;
-            this.txtCategoryNameErrorMessage.Size = new System.Drawing.Size(383, 23);
+            this.txtCategoryNameErrorMessage.Size = new System.Drawing.Size(336, 23);
             this.txtCategoryNameErrorMessage.TabIndex = 2;
+            this.txtCategoryNameErrorMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tlpAddButton
             // 
@@ -235,10 +235,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpCategory.ColumnCount = 4;
-            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.118881F));
-            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.41259F));
-            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.04895F));
-            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.244755F));
+            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.209573F));
+            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.49547F));
+            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.40751F));
+            this.tlpCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.14618F));
             this.tlpCategory.Controls.Add(this.lblCategory, 1, 0);
             this.tlpCategory.Controls.Add(this.tlpCategorySection, 2, 0);
             this.tlpCategory.Location = new System.Drawing.Point(3, 199);
@@ -257,10 +257,9 @@
             this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.Location = new System.Drawing.Point(50, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(283, 106);
+            this.lblCategory.Size = new System.Drawing.Size(221, 106);
             this.lblCategory.TabIndex = 0;
             this.lblCategory.Text = " Category :";
-            this.lblCategory.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tlpCategorySection
             // 
@@ -272,12 +271,12 @@
             this.tlpCategorySection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCategorySection.Controls.Add(this.txtCategory, 0, 0);
             this.tlpCategorySection.Controls.Add(this.txtCategoryErrorMessage, 0, 1);
-            this.tlpCategorySection.Location = new System.Drawing.Point(339, 3);
+            this.tlpCategorySection.Location = new System.Drawing.Point(277, 3);
             this.tlpCategorySection.Name = "tlpCategorySection";
             this.tlpCategorySection.RowCount = 2;
-            this.tlpCategorySection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.60606F));
-            this.tlpCategorySection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.39394F));
-            this.tlpCategorySection.Size = new System.Drawing.Size(389, 100);
+            this.tlpCategorySection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39F));
+            this.tlpCategorySection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61F));
+            this.tlpCategorySection.Size = new System.Drawing.Size(344, 100);
             this.tlpCategorySection.TabIndex = 1;
             // 
             // txtCategory
@@ -289,7 +288,7 @@
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.Location = new System.Drawing.Point(3, 3);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(383, 34);
+            this.txtCategory.Size = new System.Drawing.Size(338, 34);
             this.txtCategory.TabIndex = 1;
             // 
             // txtCategoryErrorMessage
@@ -300,11 +299,12 @@
             this.txtCategoryErrorMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtCategoryErrorMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCategoryErrorMessage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryErrorMessage.Location = new System.Drawing.Point(3, 63);
+            this.txtCategoryErrorMessage.Location = new System.Drawing.Point(3, 42);
             this.txtCategoryErrorMessage.Name = "txtCategoryErrorMessage";
             this.txtCategoryErrorMessage.ReadOnly = true;
-            this.txtCategoryErrorMessage.Size = new System.Drawing.Size(383, 23);
+            this.txtCategoryErrorMessage.Size = new System.Drawing.Size(338, 23);
             this.txtCategoryErrorMessage.TabIndex = 2;
+            this.txtCategoryErrorMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmAddExpenseCategory
             // 

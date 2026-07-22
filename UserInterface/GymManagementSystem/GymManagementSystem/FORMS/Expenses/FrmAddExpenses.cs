@@ -27,9 +27,10 @@ namespace GymManagementSystem.FORMS.Expenses
         {
 
         }
-        private void RetrieveCategoryIdAndName()
+        private void RetrieveCategoryName()
         {
             Dictionary<int, string> ExpensesCategories = new Dictionary<int, string>();
+            ExpensesCategories.Add(0, " Select Category");
             string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection sqlConnection = null;
             try
@@ -45,9 +46,9 @@ namespace GymManagementSystem.FORMS.Expenses
                         int CategoryId = Convert.ToInt32(sqlDataReader["ExpenseCategoryID"]);
                         string CategoryName = sqlDataReader["CategoryName"].ToString();
                         ExpensesCategories.Add(CategoryId, CategoryName);
-                       // cmbSelcetCatogory.Items.Add(sqlDataReader["CategoryName"].ToString());
                     }
-                    cmbSelcetCatogory.DataSource = new BindingSource(ExpensesCategories, null);
+                    
+                    cmbSelcetCatogory.DataSource = new BindingSource(ExpensesCategories.Values, null);
                     
                 }
             }
@@ -108,7 +109,7 @@ namespace GymManagementSystem.FORMS.Expenses
             dgvExpenses.AutoGenerateColumns = false;
             
             RetrieveExpenses();
-            RetrieveCategoryIdAndName();
+            RetrieveCategoryName();
         }
         private void RetrieveExpenses()
         {
@@ -183,75 +184,9 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int RowEffected=AddExpensesCategory();
-            if (RowEffected > 0)
-            {
-                MessageBox.Show("Expense is Added Successfully", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Fail to add Expenses", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            RetrieveExpenses();
+           
         }
-        private int AddExpensesCategory()
-        {
-            int CategoryId = 0;
-            string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-            int RowsEffected = 0;
-            try
-            {
-                sqlConnection = new SqlConnection(CS);
-                using (SqlCommand sqlCommand = new SqlCommand("spInsertExpense", sqlConnection))
-                {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                   
-                    
-                    if(cmbSelcetCatogory.SelectedItem != null)
-                    {
-                        var SelectedCategoryAndName =(KeyValuePair<int,string>)cmbSelcetCatogory.SelectedItem;
-                        CategoryId = SelectedCategoryAndName.Key;
-                         
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Select a Category","Info",MessageBoxButtons.OKCancel,MessageBoxIcon.Asterisk);
-                        return RowsEffected;
-                    }
-                    if(string.IsNullOrWhiteSpace(txtAmount.Text))
-                    {
-                        txtAmountErrorMessage.Text = "Please enter Expenses Amount";
-                        txtAmountErrorMessage.ForeColor = Color.Red;
-                        txtAmountErrorMessage.Focus();
-                        //return RowsEffected;
-                    }
-
-                    if (string.IsNullOrWhiteSpace(txtExpensesDefination.Text))
-                    {
-                        txtDefinationErrorMessage.Text = "Please Select Expenses defination";
-                        txtDefinationErrorMessage.ForeColor = Color.Red;
-                        txtDefinationErrorMessage.Focus();
-                        //return RowsEffected;
-                    }
-                    sqlCommand.Parameters.AddWithValue("@ExpenseCategoryId", CategoryId);
-                    sqlCommand.Parameters.AddWithValue("@ExpenseAmount", this.txtAmount.Text);
-                    sqlCommand.Parameters.AddWithValue("@ExpenseDate", DateTime.Today);
-                    sqlCommand.Parameters.AddWithValue("@Notes", this.txtExpensesDefination.Text);
-                    sqlConnection.Open();
-                    RowsEffected = sqlCommand.ExecuteNonQuery();
-                }
-                return RowsEffected;
-            }
-            catch (Exception ex)
-            {
-                return RowsEffected;
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
-        }
+        
 
         private void picRefresh_Click(object sender, EventArgs e)
         {
@@ -260,7 +195,7 @@ namespace GymManagementSystem.FORMS.Expenses
         private void ReFreshData()
         {
             RetrieveExpenses();
-            RetrieveCategoryIdAndName();
+            RetrieveCategoryName();
         }
     }
 }

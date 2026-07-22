@@ -539,7 +539,7 @@
             // ExpensesCategory
             // 
             this.ExpensesCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExpensesCategory.DataPropertyName = "ColExpensesCategory";
+            this.ExpensesCategory.DataPropertyName = "ColCategory";
             this.ExpensesCategory.HeaderText = "Expenses Category";
             this.ExpensesCategory.Name = "ExpensesCategory";
             this.ExpensesCategory.ReadOnly = true;
@@ -548,7 +548,7 @@
             // Amount
             // 
             this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Amount.DataPropertyName = "ColAmount";
+            this.Amount.DataPropertyName = "ColExpenseAmount";
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
@@ -557,7 +557,7 @@
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Date.DataPropertyName = "ColDate";
+            this.Date.DataPropertyName = "ColExpenseDate";
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
@@ -566,7 +566,7 @@
             // Note
             // 
             this.Note.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Note.DataPropertyName = "ColNote";
+            this.Note.DataPropertyName = "ColNotes";
             this.Note.HeaderText = "Note";
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
@@ -580,6 +580,8 @@
             this.ClientSize = new System.Drawing.Size(1158, 788);
             this.Controls.Add(this.tlpAddExpenses);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1176, 835);
+            this.MinimumSize = new System.Drawing.Size(1176, 835);
             this.Name = "FrmAddExpenses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddExpenses";
