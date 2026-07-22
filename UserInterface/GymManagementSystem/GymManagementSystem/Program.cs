@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FORMS.Trainer;
 
 namespace GymManagementSystem
 {
@@ -16,7 +17,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMainLayout());
+            Application.Run(new FrmTrainer());
         }
     }
 }
