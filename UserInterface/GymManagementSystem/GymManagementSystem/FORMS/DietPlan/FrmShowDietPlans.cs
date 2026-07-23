@@ -56,21 +56,27 @@ namespace GymManagementSystem.FORMS.DietPlan
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     dgvDietPlan.AutoGenerateColumns = false;
+                    DataRowCollection dataRows = dataTable.Rows;
 
-                    dgvDietPlan.Columns["CaloriesPerDay"].DataPropertyName = "CaloriesPerDay";
-                    dgvDietPlan.Columns["Document"].DataPropertyName = "DietPlanDocument";
-                    dgvDietPlan.Columns["Condition"].DataPropertyName = "ConditionStatus";
-                    dgvDietPlan.DataSource = dataTable;
+                    dgvDietPlan.Rows.Clear();
 
-                    for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
+                    int serialNo = 1;
+
+                    foreach (DataRow dataRow in dataRows)
                     {
-                        dgvDietPlan.Rows[i].Cells["SL_No"].Value = i + 1;
+                        int rowIndex = dgvDietPlan.Rows.Add();
+
+                        dgvDietPlan.Rows[rowIndex].Cells["ColSL_No"].Value = serialNo++;
+                        dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value = dataRow["CaloriesPerDay"];
+                        dgvDietPlan.Rows[rowIndex].Cells["ColDocument"].Value =dataRow["DietPlanDocument"].ToString();
+                        dgvDietPlan.Rows[rowIndex].Cells["ColCondition"].Value =dataRow["ConditionStatus"].ToString();
                     }
 
-                    for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
-                    {
-                        dgvDietPlan.Rows[i].Cells["Action"].Value ="📝Update";
-                    }
+
+                    //for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
+                    //{
+                    //    dgvDietPlan.Rows[i].Cells["Action"].Value ="📝Update";
+                    //}
 
                 }
                 dgvDietPlan.ClearSelection();

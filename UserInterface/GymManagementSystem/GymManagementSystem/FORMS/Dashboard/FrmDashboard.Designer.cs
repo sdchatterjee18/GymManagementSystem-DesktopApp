@@ -255,17 +255,17 @@
             this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
             this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tlpDashboard.Size = new System.Drawing.Size(1182, 788);
+            this.tlpDashboard.Size = new System.Drawing.Size(886, 609);
             this.tlpDashboard.TabIndex = 0;
             // 
             // pnlRunningShift
             // 
             this.pnlRunningShift.Controls.Add(this.tlpRunningShift);
             this.pnlRunningShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRunningShift.Location = new System.Drawing.Point(0, 15);
+            this.pnlRunningShift.Location = new System.Drawing.Point(0, 12);
             this.pnlRunningShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRunningShift.Name = "pnlRunningShift";
-            this.pnlRunningShift.Size = new System.Drawing.Size(1182, 78);
+            this.pnlRunningShift.Size = new System.Drawing.Size(886, 60);
             this.pnlRunningShift.TabIndex = 0;
             // 
             // tlpRunningShift
@@ -281,8 +281,8 @@
             this.tlpRunningShift.Name = "tlpRunningShift";
             this.tlpRunningShift.RowCount = 2;
             this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpRunningShift.Size = new System.Drawing.Size(1182, 78);
+            this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpRunningShift.Size = new System.Drawing.Size(886, 60);
             this.tlpRunningShift.TabIndex = 1;
             // 
             // tlpRunningShiftDetails
@@ -321,10 +321,10 @@
             // 
             this.pnlDashboardCards.Controls.Add(this.tlpDashboardCards);
             this.pnlDashboardCards.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDashboardCards.Location = new System.Drawing.Point(0, 93);
+            this.pnlDashboardCards.Location = new System.Drawing.Point(0, 72);
             this.pnlDashboardCards.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDashboardCards.Name = "pnlDashboardCards";
-            this.pnlDashboardCards.Size = new System.Drawing.Size(1182, 118);
+            this.pnlDashboardCards.Size = new System.Drawing.Size(886, 91);
             this.pnlDashboardCards.TabIndex = 1;
             // 
             // tlpDashboardCards
@@ -345,11 +345,12 @@
             this.tlpDashboardCards.Controls.Add(this.pnlTrainers, 5, 0);
             this.tlpDashboardCards.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDashboardCards.Location = new System.Drawing.Point(0, 0);
+            this.tlpDashboardCards.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpDashboardCards.Name = "tlpDashboardCards";
             this.tlpDashboardCards.RowCount = 2;
             this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDashboardCards.Size = new System.Drawing.Size(1182, 118);
+            this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpDashboardCards.Size = new System.Drawing.Size(886, 91);
             this.tlpDashboardCards.TabIndex = 1;
             // 
             // pnlFreePersonalTrains
@@ -373,7 +374,7 @@
             this.tlpFreePersonalTrainer.Controls.Add(this.picFreePersonalTrainer, 0, 0);
             this.tlpFreePersonalTrainer.Controls.Add(this.tlpFreePersonalTrainerLabel, 1, 0);
             this.tlpFreePersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreePersonalTrainer.Location = new System.Drawing.Point(5, 5);
+            this.tlpFreePersonalTrainer.Location = new System.Drawing.Point(4, 4);
             this.tlpFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFreePersonalTrainer.Name = "tlpFreePersonalTrainer";
             this.tlpFreePersonalTrainer.RowCount = 1;
@@ -457,7 +458,7 @@
             this.tlpActiveMembers.Controls.Add(this.tlpActiveMembersLabel, 1, 0);
             this.tlpActiveMembers.Controls.Add(this.picActiveMembers, 0, 0);
             this.tlpActiveMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActiveMembers.Location = new System.Drawing.Point(5, 5);
+            this.tlpActiveMembers.Location = new System.Drawing.Point(4, 4);
             this.tlpActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActiveMembers.Name = "tlpActiveMembers";
             this.tlpActiveMembers.RowCount = 1;
@@ -541,7 +542,7 @@
             this.tlpActivePlans.Controls.Add(this.picActivePlans, 0, 0);
             this.tlpActivePlans.Controls.Add(this.tlpActivePlansLabel, 1, 0);
             this.tlpActivePlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActivePlans.Location = new System.Drawing.Point(5, 5);
+            this.tlpActivePlans.Location = new System.Drawing.Point(4, 4);
             this.tlpActivePlans.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActivePlans.Name = "tlpActivePlans";
             this.tlpActivePlans.RowCount = 1;
@@ -626,7 +627,7 @@
             this.tlpTrainer.Controls.Add(this.picTrainer, 0, 0);
             this.tlpTrainer.Controls.Add(this.tlpTrainerLabel, 1, 0);
             this.tlpTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainer.Location = new System.Drawing.Point(5, 5);
+            this.tlpTrainer.Location = new System.Drawing.Point(4, 4);
             this.tlpTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainer.Name = "tlpTrainer";
             this.tlpTrainer.RowCount = 1;
@@ -693,10 +694,10 @@
             // 
             this.pnlChart.Controls.Add(this.tlpChart);
             this.pnlChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChart.Location = new System.Drawing.Point(0, 211);
+            this.pnlChart.Location = new System.Drawing.Point(0, 163);
             this.pnlChart.Margin = new System.Windows.Forms.Padding(0);
             this.pnlChart.Name = "pnlChart";
-            this.pnlChart.Size = new System.Drawing.Size(1182, 354);
+            this.pnlChart.Size = new System.Drawing.Size(886, 274);
             this.pnlChart.TabIndex = 2;
             // 
             // tlpChart
@@ -718,8 +719,8 @@
             this.tlpChart.Name = "tlpChart";
             this.tlpChart.RowCount = 2;
             this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpChart.Size = new System.Drawing.Size(1182, 354);
+            this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpChart.Size = new System.Drawing.Size(886, 274);
             this.tlpChart.TabIndex = 1;
             // 
             // pnlShiftWiseMembers
@@ -803,7 +804,7 @@
             this.lblShiftWiseMemberNumber.Location = new System.Drawing.Point(58, 13);
             this.lblShiftWiseMemberNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblShiftWiseMemberNumber.Name = "lblShiftWiseMemberNumber";
-            this.lblShiftWiseMemberNumber.Size = new System.Drawing.Size(275, 28);
+            this.lblShiftWiseMemberNumber.Size = new System.Drawing.Size(219, 21);
             this.lblShiftWiseMemberNumber.TabIndex = 2;
             this.lblShiftWiseMemberNumber.Text = " Shift-Wise Member Number";
             this.lblShiftWiseMemberNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -884,7 +885,7 @@
             this.lblTodayActiveMembers.Location = new System.Drawing.Point(53, 14);
             this.lblTodayActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.lblTodayActiveMembers.Name = "lblTodayActiveMembers";
-            this.lblTodayActiveMembers.Size = new System.Drawing.Size(218, 28);
+            this.lblTodayActiveMembers.Size = new System.Drawing.Size(177, 21);
             this.lblTodayActiveMembers.TabIndex = 1;
             this.lblTodayActiveMembers.Text = "Today Active Members";
             // 
@@ -1240,7 +1241,7 @@
             this.picEarlyMorning.Location = new System.Drawing.Point(18, 3);
             this.picEarlyMorning.Margin = new System.Windows.Forms.Padding(0);
             this.picEarlyMorning.Name = "picEarlyMorning";
-            this.picEarlyMorning.Size = new System.Drawing.Size(48, 39);
+            this.picEarlyMorning.Size = new System.Drawing.Size(36, 32);
             this.picEarlyMorning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEarlyMorning.TabIndex = 9;
             this.picEarlyMorning.TabStop = false;
@@ -1278,7 +1279,7 @@
             this.lblFreePersonalTrainers.Location = new System.Drawing.Point(120, 13);
             this.lblFreePersonalTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.lblFreePersonalTrainers.Name = "lblFreePersonalTrainers";
-            this.lblFreePersonalTrainers.Size = new System.Drawing.Size(210, 28);
+            this.lblFreePersonalTrainers.Size = new System.Drawing.Size(168, 21);
             this.lblFreePersonalTrainers.TabIndex = 1;
             this.lblFreePersonalTrainers.Text = "Free Personal Trainers";
             this.lblFreePersonalTrainers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1288,10 +1289,10 @@
             this.pnlMembership.BackColor = System.Drawing.Color.Transparent;
             this.pnlMembership.Controls.Add(this.tlpMembership);
             this.pnlMembership.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMembership.Location = new System.Drawing.Point(0, 565);
+            this.pnlMembership.Location = new System.Drawing.Point(0, 437);
             this.pnlMembership.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMembership.Name = "pnlMembership";
-            this.pnlMembership.Size = new System.Drawing.Size(1182, 204);
+            this.pnlMembership.Size = new System.Drawing.Size(886, 158);
             this.pnlMembership.TabIndex = 3;
             // 
             // tlpMembership
@@ -1310,7 +1311,7 @@
             this.tlpMembership.Name = "tlpMembership";
             this.tlpMembership.RowCount = 1;
             this.tlpMembership.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembership.Size = new System.Drawing.Size(1182, 204);
+            this.tlpMembership.Size = new System.Drawing.Size(886, 158);
             this.tlpMembership.TabIndex = 1;
             // 
             // pnlSellMembershipSubscription
@@ -1906,12 +1907,11 @@
             // 
             // FrmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1182, 788);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.ClientSize = new System.Drawing.Size(886, 609);
             this.Controls.Add(this.tlpDashboard);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDashboard";
             this.Text = "FrmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);

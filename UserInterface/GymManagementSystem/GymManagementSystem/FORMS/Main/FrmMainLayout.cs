@@ -86,7 +86,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMembers_MouseLeave(object sender, EventArgs e)
         {
-            pnlMembers.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMembers.BackColor = Color.Transparent;
         }
 
         private void pnlMembers_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
-            pnlMemberAttendance.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMemberAttendance.BackColor = Color.Transparent;
         }
 
         private void pnlMemberAttendance_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExerciseAndWorkout_MouseLeave(object sender, EventArgs e)
         {
-            pnlExerciseAndWorkout.BackColor = Color.FromArgb(247, 247, 247);
+            pnlExerciseAndWorkout.BackColor = Color.Transparent;
         }
 
         private void pnlExerciseAndWorkout_Click(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlDashboard_MouseLeave(object sender, EventArgs e)
         {
-            pnlDashboard.BackColor = Color.FromArgb(247, 247, 247);
+            pnlDashboard.BackColor = Color.Transparent;
         }
 
         private void pnlDashboard_Click(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlViewAllMembers_MouseLeave(object sender, EventArgs e)
         {
-            pnlViewAllMembers.BackColor = Color.FromArgb(247, 247, 247);
+            pnlViewAllMembers.BackColor = Color.Transparent;
         }
 
         private void pnlViewAllMembers_Click(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMemberTrainerAssignment_MouseLeave(object sender, EventArgs e)
         {
-            pnlMemberTrainerAssignment.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMemberTrainerAssignment.BackColor = Color.Transparent;
         }
 
         private void pnlMemberTrainerAssignment_Click(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlTrainer_MouseLeave(object sender, EventArgs e)
         {
-            pnlTrainer.BackColor = Color.FromArgb(247, 247, 247);
+            pnlTrainer.BackColor = Color.Transparent;
         }
 
         private void pnlTrainer_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlFitnessTest_MouseLeave(object sender, EventArgs e)
         {
-            pnlFitnessTest.BackColor = Color.FromArgb(247, 247, 247);
+            pnlFitnessTest.BackColor = Color.Transparent;
         }
 
         private void pnlFitnessTest_Click(object sender, EventArgs e)
@@ -246,7 +246,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMarkMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
-            pnlMarkMemberAttendance.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMarkMemberAttendance.BackColor = Color.Transparent;
         }
 
         private void pnlMarkMemberAttendance_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlViewMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
-            pnlViewMemberAttendance.BackColor = Color.FromArgb(247, 247, 247);
+            pnlViewMemberAttendance.BackColor = Color.Transparent;
         }
 
         private void pnlViewMemberAttendance_Click(object sender, EventArgs e)
@@ -276,7 +276,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlMembershipPlan.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMembershipPlan.BackColor = Color.Transparent;
         }
 
         private void pnlMembershipPlan_Click(object sender, EventArgs e)
@@ -292,7 +292,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlShift_MouseLeave(object sender, EventArgs e)
         {
-            pnlShift.BackColor = Color.FromArgb(247, 247, 247);
+            pnlShift.BackColor = Color.Transparent;
         }
 
         private void pnlShift_Click(object sender, EventArgs e)
@@ -309,7 +309,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlLocker_MouseLeave(object sender, EventArgs e)
         {
-            pnlLocker.BackColor = Color.FromArgb(247, 247, 247);
+            pnlLocker.BackColor = Color.Transparent;
         }
 
         private void pnlLocker_Click(object sender, EventArgs e)
@@ -318,6 +318,22 @@ namespace GymManagementSystem.FORMS.Main
             OpenChildForm(new FrmDisplayLocker());
         }
 
+        private void pnlExerCise_MouseEnter(object sender, EventArgs e)
+        {
+            pnlExerCise.BackColor = Color.FromArgb(190, 216, 230);
+        }
+
+
+        private void pnlExerCise_MouseLeave(object sender, EventArgs e)
+        {
+            pnlExerCise.BackColor = Color.Transparent;
+        }
+        private void pnlExerCise_Click(object sender, EventArgs e)
+        {
+            ExpandIfCollapsed();
+        }
+
+
         private void pnlWorkoutPlans_MouseEnter(object sender, EventArgs e)
         {
             pnlWorkoutPlans.BackColor = Color.FromArgb(190, 216, 230);
@@ -325,7 +341,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlWorkoutPlans_MouseLeave(object sender, EventArgs e)
         {
-            pnlWorkoutPlans.BackColor = Color.FromArgb(247, 247, 247);
+            pnlWorkoutPlans.BackColor = Color.Transparent;
         }
 
         private void pnlWorkoutPlans_Click(object sender, EventArgs e)
@@ -340,7 +356,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlWorkoutShedule_MouseLeave(object sender, EventArgs e)
         {
-            pnlWorkoutShedule.BackColor = Color.FromArgb(247, 247, 247);
+            pnlWorkoutShedule.BackColor = Color.Transparent;
         }
 
         private void pnlWorkoutShedule_Click(object sender, EventArgs e)
@@ -355,7 +371,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlRegistrationFees_MouseLeave(object sender, EventArgs e)
         {
-            pnlRegistrationFees.BackColor = Color.FromArgb(247, 247, 247);
+            pnlRegistrationFees.BackColor = Color.Transparent;
         }
 
         private void pnlRegistrationFees_Click(object sender, EventArgs e)
@@ -371,7 +387,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlDietPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlDietPlan.BackColor = Color.FromArgb(247, 247, 247);
+            pnlDietPlan.BackColor = Color.Transparent;
         }
 
         private void pnlDietPlan_Click(object sender, EventArgs e)
@@ -387,7 +403,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlPayment_MouseLeave(object sender, EventArgs e)
         {
-            pnlPayment.BackColor = Color.FromArgb(247, 247, 247);
+            pnlPayment.BackColor = Color.Transparent;
         }
 
         private void pnlPayment_Click(object sender, EventArgs e)
@@ -402,7 +418,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExpense_MouseLeave(object sender, EventArgs e)
         {
-            pnlExpense.BackColor = Color.FromArgb(247, 247, 247);
+            pnlExpense.BackColor = Color.Transparent;
         }
 
         private void pnlExpense_Click(object sender, EventArgs e)
@@ -417,7 +433,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlSettins_MouseLeave(object sender, EventArgs e)
         {
-            pnlSettins.BackColor = Color.FromArgb(247, 247, 247);
+            pnlSettins.BackColor = Color.Transparent;
         }
 
         private void pnlSettins_Click(object sender, EventArgs e)
@@ -432,7 +448,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlLogout_MouseLeave(object sender, EventArgs e)
         {
-            pnlLogout.BackColor = Color.FromArgb(247, 247, 247);
+            pnlLogout.BackColor = Color.Transparent;
         }
 
         private void pnlLogout_Click(object sender, EventArgs e)
@@ -447,7 +463,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMenu_MouseLeave(object sender, EventArgs e)
         {
-            pnlMenu.BackColor = Color.FromArgb(247, 247, 247);
+            pnlMenu.BackColor = Color.Transparent;
         }
 
         private void pnlMenu_Click(object sender, EventArgs e)
@@ -548,5 +564,9 @@ namespace GymManagementSystem.FORMS.Main
                 timerSidebar.Start();
             }
         }
+
+       
+       
+       
        }
 }

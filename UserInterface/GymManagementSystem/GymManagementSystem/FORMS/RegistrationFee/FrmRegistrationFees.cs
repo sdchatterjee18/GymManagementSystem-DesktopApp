@@ -141,7 +141,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.WhiteSmoke;
             }
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
