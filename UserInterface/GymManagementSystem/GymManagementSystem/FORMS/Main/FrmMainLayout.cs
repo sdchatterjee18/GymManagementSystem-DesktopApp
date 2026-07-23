@@ -46,7 +46,7 @@ namespace GymManagementSystem.FORMS.Main
 
             // Highlight the new panel
             selectedPanel = panel;
-            selectedPanel.BackColor = Color.FromArgb(72, 104, 158); // Selected color
+            selectedPanel.BackColor = Color.FromArgb(68, 97, 174); // Selected color
         }
 
         private void OpenChildForm(Form childForm)
@@ -100,6 +100,7 @@ namespace GymManagementSystem.FORMS.Main
                 pnlMembers.BackColor = Color.FromArgb(190, 216, 230);
                 pnlMembers.ForeColor = Color.Black;
                 picMembers.Image = Properties.Resources.usersHOVER;
+                picMembersArrowe.Image = Properties.Resources.downArrowB;
             }
         }
 
@@ -110,6 +111,7 @@ namespace GymManagementSystem.FORMS.Main
                 pnlMembers.BackColor = Color.Transparent;
                 pnlMembers.ForeColor = Color.White;
                 picMembers.Image = Properties.Resources.users;
+                picMembersArrowe.Image = Properties.Resources.downArrowW;
             }
             
         }
@@ -123,13 +125,13 @@ namespace GymManagementSystem.FORMS.Main
             if (!isMembersExpanded)
             {
                 pnlDropDownMembers.Visible = true;
-                picMembersArrowe.Image = Properties.Resources.arrowhead_up;
+                picMembersArrowe.Image = Properties.Resources.topArrowW;
                 isMembersExpanded = true;
             }
             else
             {
                 pnlDropDownMembers.Visible = false;
-                picMembersArrowe.Image = Properties.Resources.down_arrow;
+                picMembersArrowe.Image = Properties.Resources.downArrowW;
                 isMembersExpanded = false;
             }
 
@@ -137,32 +139,44 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMemberAttendance_MouseEnter(object sender, EventArgs e)
         {
-            pnlMemberAttendance.BackColor = Color.FromArgb(190, 216, 230);
-            pnlMemberAttendance.ForeColor = Color.Black;
-            picMemberAttendance.Image = Properties.Resources.attendanceHOVER__1_;
+            if(selectedPanel!=pnlMemberAttendance)
+            {
+                pnlMemberAttendance.BackColor = Color.FromArgb(190, 216, 230);
+                pnlMemberAttendance.ForeColor = Color.Black;
+                picMemberAttendance.Image = Properties.Resources.attendanceHOVER__1_;
+                picMemberAttendanceArrowe.Image = Properties.Resources.downArrowB;
+            } 
         }
 
         private void pnlMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
-            pnlMemberAttendance.BackColor = Color.Transparent;
-            pnlMemberAttendance.ForeColor = Color.White;
-            picMemberAttendance.Image = Properties.Resources.attendance;
+            if (selectedPanel != pnlMemberAttendance)
+            {
+                pnlMemberAttendance.BackColor = Color.Transparent;
+                pnlMemberAttendance.ForeColor = Color.White;
+                picMemberAttendance.Image = Properties.Resources.attendance;
+                picMemberAttendanceArrowe.Image = Properties.Resources.downArrowW;
+            }  
         }
 
         private void pnlMemberAttendance_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlMemberAttendance);
+            pnlMemberAttendance.ForeColor = Color.White;
+            picMemberAttendance.Image = Properties.Resources.attendance;
             ExpandIfCollapsed();
+            
             if (!isMemberAttendanceExpanded)
             {
                 pnlDropDownMemberAttendance.Visible = true;
-                picMemberAttendanceArrowe.Image = Properties.Resources.arrowhead_up;
+                picMemberAttendanceArrowe.Image = Properties.Resources.topArrowW;
 
                 isMemberAttendanceExpanded = true;
             }
             else
             {
                 pnlDropDownMemberAttendance.Visible = false;
-                picMemberAttendanceArrowe.Image = Properties.Resources.down_arrow;
+                picMemberAttendanceArrowe.Image = Properties.Resources.downArrowW;
 
                 isMemberAttendanceExpanded = false;
             }
@@ -170,31 +184,44 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExerciseAndWorkout_MouseEnter(object sender, EventArgs e)
         {
-            pnlExerciseAndWorkout.BackColor = Color.FromArgb(190, 216, 230);
-            pnlExerciseAndWorkout.ForeColor = Color.Black;
-            picExerciseAndWorkout.Image = Properties.Resources.workoutHOVER__1_;
+            if (selectedPanel != pnlExerciseAndWorkout)
+            {
+                pnlExerciseAndWorkout.BackColor = Color.FromArgb(190, 216, 230);
+                pnlExerciseAndWorkout.ForeColor = Color.Black;
+                picExerciseAndWorkout.Image = Properties.Resources.workoutHOVER__1_;
+                picExerciseAndWorkoutArrowe.Image = Properties.Resources.downArrowB;
+            }
+            
         }
 
         private void pnlExerciseAndWorkout_MouseLeave(object sender, EventArgs e)
         {
-            pnlExerciseAndWorkout.BackColor = Color.Transparent;
-            pnlExerciseAndWorkout.ForeColor = Color.White;
-            picExerciseAndWorkout.Image = Properties.Resources.workout;
+            if (selectedPanel != pnlExerciseAndWorkout)
+            {
+                pnlExerciseAndWorkout.BackColor = Color.Transparent;
+                pnlExerciseAndWorkout.ForeColor = Color.White;
+                picExerciseAndWorkout.Image = Properties.Resources.workout;
+                picExerciseAndWorkoutArrowe.Image = Properties.Resources.downArrowW;
+            }
+            
         }
 
         private void pnlExerciseAndWorkout_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlExerciseAndWorkout);
+            pnlExerciseAndWorkout.ForeColor = Color.White;
+            picExerciseAndWorkout.Image = Properties.Resources.workout;
             ExpandIfCollapsed();
             if (!isExerciseAndWorkoutExpanded)
             {
                 pnlDropDownExerciseAndWorkout.Visible = true;
-                picExerciseAndWorkoutArrowe.Image = Properties.Resources.arrowhead_up;
+                picExerciseAndWorkoutArrowe.Image = Properties.Resources.topArrowW;
                 isExerciseAndWorkoutExpanded = true;
             }
             else
             {
                 pnlDropDownExerciseAndWorkout.Visible = false;
-                picExerciseAndWorkoutArrowe.Image = Properties.Resources.down_arrow;
+                picExerciseAndWorkoutArrowe.Image = Properties.Resources.downArrowW;
                 isExerciseAndWorkoutExpanded = false;
             }
         }
@@ -230,11 +257,15 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlViewAllMembers_MouseEnter(object sender, EventArgs e)
         {
             pnlViewAllMembers.BackColor = Color.FromArgb(190, 216, 230);
+            pnlViewAllMembers.ForeColor = Color.Black;
+            picViewAllMembers.Image = Properties.Resources.record_button;
         }
 
         private void pnlViewAllMembers_MouseLeave(object sender, EventArgs e)
         {
             pnlViewAllMembers.BackColor = Color.Transparent;
+            pnlViewAllMembers.ForeColor = Color.White;
+            picViewAllMembers.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlViewAllMembers_Click(object sender, EventArgs e)
@@ -245,11 +276,15 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlMemberTrainerAssignment_MouseEnter(object sender, EventArgs e)
         {
             pnlMemberTrainerAssignment.BackColor = Color.FromArgb(190, 216, 230);
+            pnlMemberTrainerAssignment.ForeColor = Color.Black;
+            picMemberTrainerAssignment.Image = Properties.Resources.record_button;
         }
 
         private void pnlMemberTrainerAssignment_MouseLeave(object sender, EventArgs e)
         {
             pnlMemberTrainerAssignment.BackColor = Color.Transparent;
+            pnlMemberTrainerAssignment.ForeColor = Color.White;
+            picMemberTrainerAssignment.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlMemberTrainerAssignment_Click(object sender, EventArgs e)
@@ -259,49 +294,72 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlTrainer_MouseEnter(object sender, EventArgs e)
         {
-            pnlTrainer.BackColor = Color.FromArgb(190, 216, 230);
-            pnlTrainer.ForeColor = Color.Black;
-            picTrainer.Image = Properties.Resources.trainerHOVER;
+            if (selectedPanel != pnlTrainer)
+            {
+                pnlTrainer.BackColor = Color.FromArgb(190, 216, 230);
+                pnlTrainer.ForeColor = Color.Black;
+                picTrainer.Image = Properties.Resources.trainerHOVER;
+            }           
         }
 
         private void pnlTrainer_MouseLeave(object sender, EventArgs e)
         {
-            pnlTrainer.BackColor = Color.Transparent;
-            pnlTrainer.ForeColor = Color.White;
-            picTrainer.Image = Properties.Resources.trainer;
+            if(selectedPanel!=pnlTrainer)
+            {
+                pnlTrainer.BackColor = Color.Transparent;
+                pnlTrainer.ForeColor = Color.White;
+                picTrainer.Image = Properties.Resources.trainer;
+            }
         }
 
         private void pnlTrainer_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlTrainer);
+            pnlTrainer.ForeColor = Color.White;
+            picTrainer.Image = Properties.Resources.trainer;
             ExpandIfCollapsed();
         }
 
         private void pnlFitnessTest_MouseEnter(object sender, EventArgs e)
         {
-            pnlFitnessTest.BackColor = Color.FromArgb(190, 216, 230);
-            pnlFitnessTest.ForeColor = Color.Black;
-            picFitnessTest.Image = Properties.Resources.fitnessTestHover;
+            if (selectedPanel != pnlFitnessTest)
+            {
+                pnlFitnessTest.BackColor = Color.FromArgb(190, 216, 230);
+                pnlFitnessTest.ForeColor = Color.Black;
+                picFitnessTest.Image = Properties.Resources.fitnessTestHover;
+            }      
         }
 
         private void pnlFitnessTest_MouseLeave(object sender, EventArgs e)
         {
-            pnlFitnessTest.BackColor = Color.Transparent;
-            pnlFitnessTest.ForeColor = Color.White;
-            picFitnessTest.Image = Properties.Resources.fitnessTest;
+            if (selectedPanel != pnlFitnessTest)
+            {
+                pnlFitnessTest.BackColor = Color.Transparent;
+                pnlFitnessTest.ForeColor = Color.White;
+                picFitnessTest.Image = Properties.Resources.fitnessTest;
+            }  
         }
 
         private void pnlFitnessTest_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlFitnessTest);
+            pnlFitnessTest.ForeColor = Color.White;
+            picFitnessTest.Image = Properties.Resources.fitnessTest;
             ExpandIfCollapsed();
         }
         private void pnlMarkMemberAttendance_MouseEnter(object sender, EventArgs e)
         {
             pnlMarkMemberAttendance.BackColor = Color.FromArgb(190, 216, 230);
+            pnlMarkMemberAttendance.ForeColor = Color.Black;
+            picMarkMemberAtttendance.Image = Properties.Resources.record_button;
+            
         }
 
         private void pnlMarkMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
             pnlMarkMemberAttendance.BackColor = Color.Transparent;
+            pnlMarkMemberAttendance.ForeColor = Color.White;
+            picMarkMemberAtttendance.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlMarkMemberAttendance_Click(object sender, EventArgs e)
@@ -312,11 +370,15 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlViewMemberAttendance_MouseEnter(object sender, EventArgs e)
         {
             pnlViewMemberAttendance.BackColor = Color.FromArgb(190, 216, 230);
+            pnlViewMemberAttendance.ForeColor = Color.Black;
+            picViewMemberAttendance.Image = Properties.Resources.record_button;
         }
 
         private void pnlViewMemberAttendance_MouseLeave(object sender, EventArgs e)
         {
             pnlViewMemberAttendance.BackColor = Color.Transparent;
+            pnlViewMemberAttendance.ForeColor = Color.White;
+            picViewMemberAttendance.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlViewMemberAttendance_Click(object sender, EventArgs e)
@@ -326,60 +388,91 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMembershipPlan_MouseEnter(object sender, EventArgs e)
         {
-            pnlMembershipPlan.BackColor = Color.FromArgb(190, 216, 230);
-            pnlMembershipPlan.ForeColor = Color.Black;
-            picMembershipPlan.Image = Properties.Resources.plansHOVER;
+            if(selectedPanel!=pnlMembershipPlan)
+            {
+                pnlMembershipPlan.BackColor = Color.FromArgb(190, 216, 230);
+                pnlMembershipPlan.ForeColor = Color.Black;
+                picMembershipPlan.Image = Properties.Resources.plansHOVER;
+            }
         }
 
         private void pnlMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlMembershipPlan.BackColor = Color.Transparent;
-            pnlMembershipPlan.ForeColor = Color.White;
-            picMembershipPlan.Image = Properties.Resources.Plans;
+            if (selectedPanel != pnlMembershipPlan)
+            {
+                pnlMembershipPlan.BackColor = Color.Transparent;
+                pnlMembershipPlan.ForeColor = Color.White;
+                picMembershipPlan.Image = Properties.Resources.Plans;
+            }           
         }
 
         private void pnlMembershipPlan_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlMembershipPlan);
+            pnlMembershipPlan.ForeColor = Color.White;
+            picMembershipPlan.Image = Properties.Resources.Plans;
             ExpandIfCollapsed();
             OpenChildForm(new FrmDisplayMembershipPlan());
         }
 
         private void pnlShift_MouseEnter(object sender, EventArgs e)
         {
-            pnlShift.BackColor = Color.FromArgb(190, 216, 230);
-            pnlShift.ForeColor = Color.Black;
-            picShift.Image = Properties.Resources.shiftHover;
+            if(selectedPanel!=pnlShift)
+            {
+                pnlShift.BackColor = Color.FromArgb(190, 216, 230);
+                pnlShift.ForeColor = Color.Black;
+                picShift.Image = Properties.Resources.shiftHover;
+            }
+            
         }
 
         private void pnlShift_MouseLeave(object sender, EventArgs e)
         {
-            pnlShift.BackColor = Color.Transparent;
-            pnlShift.ForeColor = Color.White;
-            picShift.Image = Properties.Resources.shift;
+            if (selectedPanel != pnlShift)
+            {
+                pnlShift.BackColor = Color.Transparent;
+                pnlShift.ForeColor = Color.White;
+                picShift.Image = Properties.Resources.shift;
+            }
+  
         }
 
         private void pnlShift_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlShift);
+            pnlShift.ForeColor = Color.White;
+            picShift.Image = Properties.Resources.shift;
             ExpandIfCollapsed();
             OpenChildForm(new FrmDisplayShift());
         }
 
         private void pnlLocker_MouseEnter(object sender, EventArgs e)
         {
-            pnlLocker.BackColor = Color.FromArgb(190, 216, 230);
-            pnlLocker.ForeColor = Color.White;
-            picLocker.Image = Properties.Resources.lockerHOVER__1_;
+            if(selectedPanel!=pnlLocker)
+            {
+                pnlLocker.BackColor = Color.FromArgb(190, 216, 230);
+                pnlLocker.ForeColor = Color.Black;
+                picLocker.Image = Properties.Resources.lockerHOVER__1_;
+            }
+            
         }
 
         private void pnlLocker_MouseLeave(object sender, EventArgs e)
         {
-            pnlLocker.BackColor = Color.Transparent;
-            pnlLocker.ForeColor = Color.White;
-            picLocker.Image = Properties.Resources.locker;
+            if (selectedPanel != pnlLocker)
+            {
+                pnlLocker.BackColor = Color.Transparent;
+                pnlLocker.ForeColor = Color.White;
+                picLocker.Image = Properties.Resources.locker;
+            }
+            
         }
 
         private void pnlLocker_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlLocker);
+            pnlLocker.ForeColor = Color.White;
+            picLocker.Image = Properties.Resources.locker;
             ExpandIfCollapsed();
             OpenChildForm(new FrmDisplayLocker());
         }
@@ -387,10 +480,14 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlExerCise_MouseEnter(object sender, EventArgs e)
         {
             pnlExerCise.BackColor = Color.FromArgb(190, 216, 230);
+            pnlExerCise.ForeColor = Color.Black;
+            picExercise.Image = Properties.Resources.record_button;
         }
         private void pnlExerCise_MouseLeave(object sender, EventArgs e)
         {
             pnlExerCise.BackColor = Color.Transparent;
+            pnlExerCise.ForeColor = Color.White;
+            picExercise.Image = Properties.Resources.recor_buttonW;
         }
         private void pnlExerCise_Click(object sender, EventArgs e)
         {
@@ -401,11 +498,15 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlWorkoutPlans_MouseEnter(object sender, EventArgs e)
         {
             pnlWorkoutPlans.BackColor = Color.FromArgb(190, 216, 230);
+            pnlWorkoutPlans.ForeColor = Color.Black;
+            picWorkoutPlans.Image = Properties.Resources.record_button;
         }
 
         private void pnlWorkoutPlans_MouseLeave(object sender, EventArgs e)
         {
             pnlWorkoutPlans.BackColor = Color.Transparent;
+            pnlWorkoutPlans.ForeColor = Color.White;
+            picWorkoutPlans.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlWorkoutPlans_Click(object sender, EventArgs e)
@@ -416,11 +517,15 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlWorkoutShedule_MouseEnter(object sender, EventArgs e)
         {
             pnlWorkoutShedule.BackColor = Color.FromArgb(190, 216, 230);
+            pnlWorkoutShedule.ForeColor = Color.Black;
+            picWorkoutShedule.Image = Properties.Resources.record_button;
         }
 
         private void pnlWorkoutShedule_MouseLeave(object sender, EventArgs e)
         {
             pnlWorkoutShedule.BackColor = Color.Transparent;
+            pnlWorkoutShedule.ForeColor = Color.White;
+            picWorkoutShedule.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlWorkoutShedule_Click(object sender, EventArgs e)
@@ -430,99 +535,153 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlRegistrationFees_MouseEnter(object sender, EventArgs e)
         {
-            pnlRegistrationFees.BackColor = Color.FromArgb(190, 216, 230);
-            pnlRegistrationFees.ForeColor = Color.Black;
-            picRegistrationFees.Image = Properties.Resources.regFeesHOVER__1_;
+            if(selectedPanel!=pnlRegistrationFees)
+            {
+                pnlRegistrationFees.BackColor = Color.FromArgb(190, 216, 230);
+                pnlRegistrationFees.ForeColor = Color.Black;
+                picRegistrationFees.Image = Properties.Resources.regFeesHOVER__1_;
+            }
+            
         }
 
         private void pnlRegistrationFees_MouseLeave(object sender, EventArgs e)
         {
-            pnlRegistrationFees.BackColor = Color.Transparent;
-            pnlRegistrationFees.ForeColor = Color.White;
-            picRegistrationFees.Image = Properties.Resources.regfee;
+            if (selectedPanel != pnlRegistrationFees)
+            {
+                pnlRegistrationFees.BackColor = Color.Transparent;
+                pnlRegistrationFees.ForeColor = Color.White;
+                picRegistrationFees.Image = Properties.Resources.regfee;
+            }
+            
         }
 
         private void pnlRegistrationFees_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlRegistrationFees);
+            pnlRegistrationFees.ForeColor = Color.White;
+            picRegistrationFees.Image = Properties.Resources.regfee;
             ExpandIfCollapsed();
             OpenChildForm(new FrmRegistrationFees());
         }
 
         private void pnlDietPlan_MouseEnter(object sender, EventArgs e)
         {
-            pnlDietPlan.BackColor = Color.FromArgb(190, 216, 230);
-            pnlDietPlan.ForeColor = Color.Black;
-            picDietPlan.Image = Properties.Resources.planHOVER__1_;
+            if (selectedPanel != pnlDietPlan)
+            {
+                pnlDietPlan.BackColor = Color.FromArgb(190, 216, 230);
+                pnlDietPlan.ForeColor = Color.Black;
+                picDietPlan.Image = Properties.Resources.planHOVER__1_;
+            }
+            
         }
 
         private void pnlDietPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlDietPlan.BackColor = Color.Transparent;
-            pnlDietPlan.ForeColor = Color.White;
-            picDietPlan.Image = Properties.Resources.plan;
+            if (selectedPanel != pnlDietPlan)
+            {
+                pnlDietPlan.BackColor = Color.Transparent;
+                pnlDietPlan.ForeColor = Color.White;
+                picDietPlan.Image = Properties.Resources.plan;
+            }
+            
         }
 
         private void pnlDietPlan_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlDietPlan);
+            pnlDietPlan.ForeColor = Color.White;
+            picDietPlan.Image = Properties.Resources.plan;
             ExpandIfCollapsed();
             OpenChildForm(new FrmShowDietPlans());
         }
 
         private void pnlPayment_MouseEnter(object sender, EventArgs e)
         {
-            pnlPayment.BackColor = Color.FromArgb(190, 216, 230);
-            pnlPayment.ForeColor = Color.Black;
-            picPayment.Image = Properties.Resources.PaymentHOVER__1_;
+            if(selectedPanel!=pnlPayment)
+            {
+                pnlPayment.BackColor = Color.FromArgb(190, 216, 230);
+                pnlPayment.ForeColor = Color.Black;
+                picPayment.Image = Properties.Resources.PaymentHOVER__1_;
+            }
+            
         }
 
         private void pnlPayment_MouseLeave(object sender, EventArgs e)
         {
-            pnlPayment.BackColor = Color.Transparent;
-            pnlPayment.ForeColor = Color.White;
-            picPayment.Image = Properties.Resources.payment;
+            if (selectedPanel != pnlPayment)
+            {
+                pnlPayment.BackColor = Color.Transparent;
+                pnlPayment.ForeColor = Color.White;
+                picPayment.Image = Properties.Resources.payment;
+            }
+            
         }
 
         private void pnlPayment_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlPayment);
+            pnlPayment.ForeColor = Color.White;
+            picPayment.Image = Properties.Resources.payment;
             ExpandIfCollapsed();
         }
 
         private void pnlExpense_MouseEnter(object sender, EventArgs e)
         {
-            pnlExpense.BackColor = Color.FromArgb(190, 216, 230);
-            pnlExpense.ForeColor = Color.Black;
-            picExpense.Image = Properties.Resources.expenseHOVER__1_;
+            if(selectedPanel!=pnlExpense)
+            {
+                pnlExpense.BackColor = Color.FromArgb(190, 216, 230);
+                pnlExpense.ForeColor = Color.Black;
+                picExpense.Image = Properties.Resources.expenseHOVER__1_;
+            }
+           
         }
 
         private void pnlExpense_MouseLeave(object sender, EventArgs e)
         {
-            pnlExpense.BackColor = Color.Transparent;
-            pnlExpense.ForeColor = Color.White;
-            picExpense.Image = Properties.Resources.expense;
+            if (selectedPanel != pnlExpense)
+            {
+                pnlExpense.BackColor = Color.Transparent;
+                pnlExpense.ForeColor = Color.White;
+                picExpense.Image = Properties.Resources.expense;
+            }
+            
         }
 
         private void pnlExpense_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlExpense);
+            pnlExpense.ForeColor = Color.White;
+            picExpense.Image= Properties.Resources.expense;
             ExpandIfCollapsed();
         }
 
         private void pnlSettins_MouseEnter(object sender, EventArgs e)
         {
-            pnlSettins.BackColor = Color.FromArgb(190, 216, 230);
+            if(selectedPanel!=pnlSettins)
+            {
+                pnlSettins.BackColor = Color.FromArgb(190, 216, 230);
             pnlSettins.ForeColor = Color.Black;
             picSettings.Image = Properties.Resources.settingHOVER;
-
+            }
+            
         }
 
         private void pnlSettins_MouseLeave(object sender, EventArgs e)
         {
-            pnlSettins.BackColor = Color.Transparent;
-            pnlSettins.ForeColor = Color.White;
-            picSettings.Image = Properties.Resources.setting;
+            if (selectedPanel != pnlSettins)
+            {
+                pnlSettins.BackColor = Color.Transparent;
+                pnlSettins.ForeColor = Color.White;
+                picSettings.Image = Properties.Resources.setting;
+            }
+            
         }
 
         private void pnlSettins_Click(object sender, EventArgs e)
         {
+            SelectPanel(pnlSettins);
+            pnlSettins.ForeColor = Color.White;
+            picSettings.Image = Properties.Resources.setting;
             ExpandIfCollapsed();
         }
 
