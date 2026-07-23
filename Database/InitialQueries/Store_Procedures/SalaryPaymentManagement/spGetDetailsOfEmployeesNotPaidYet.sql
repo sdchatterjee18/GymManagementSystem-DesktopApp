@@ -5,7 +5,7 @@ BEGIN
         SET NOCOUNT ON;
 
         DECLARE @CurrentMonth VARCHAR(20) = DATENAME(MONTH, GETDATE());
-        DECLARE @CurrentYear  INT = DATEPART(YEAR,  GETDATE());
+        DECLARE @CurrentYear  INT = DATEPART(YEAR, GETDATE());
         
         SELECT 
             e.EmployeeId,
@@ -14,7 +14,7 @@ BEGIN
                 ISNULL(e.MiddleName + ' ', '') +
                 e.LastName
             ) AS FullName,
-            e.RoleName,
+            ert.Role AS RoleName,
             e.PhoneNo,
             e.EmailId,
             s.SalaryId,
@@ -23,6 +23,8 @@ BEGIN
             @CurrentYear AS CurrentYear,
             'Not Paid' AS PaymentStatus
         FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
         INNER JOIN tblSalary s
             ON e.EmployeeId = s.EmployeeId
         WHERE e.IsActive = 1
@@ -34,11 +36,11 @@ BEGIN
                   AND sp.PaymentYear = @CurrentYear
                   AND sp.PaymentStatus = 'Paid'
           )
-        ORDER BY e.EmployeeId
+        ORDER BY e.EmployeeId;
     
     END TRY
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE()   AS Message
+            ERROR_MESSAGE() AS Message;
     END CATCH
 END;

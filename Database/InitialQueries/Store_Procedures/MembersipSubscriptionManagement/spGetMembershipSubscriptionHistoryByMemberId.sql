@@ -18,8 +18,8 @@ BEGIN
     END
 
     SELECT
-        MS.MembershipSubscriptionId,
-        MP.PlanName,
+        MS.MemberSubscriptionId,
+        MP.MembershipPlanName,
         MS.StartDate,
         MS.ExpiryDate,
         MS.IsActive

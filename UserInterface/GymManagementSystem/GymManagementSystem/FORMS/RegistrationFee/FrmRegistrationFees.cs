@@ -137,6 +137,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         //}
 
 
+
         //private void dgvShowAllAddRegistrationFees_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
         //{
         //    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -148,7 +149,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
         //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
         //    }
-
         //}
 
 

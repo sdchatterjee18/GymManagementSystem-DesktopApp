@@ -1253,5 +1253,458 @@ GO
 
 
 -------------------------------------------------------------------
-                   -- ADMIN MANAGEMENT SPs --
+                   -- TrainerManagement SPs --
 -------------------------------------------------------------------
+
+---------------------------------------
+-- SP: spRetrieveTrainerIdByPhoneNumber
+---------------------------------------
+CREATE PROC spRetrieveTrainerIdByPhoneNumber
+(
+    @PhoneNo VARCHAR(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @PhoneNo = LTRIM(RTRIM(@PhoneNo));
+
+        IF @PhoneNo = ''
+        BEGIN
+            SELECT 'Phone Number is required.' AS Message;
+            RETURN;
+        END;
+
+        IF LEN(@PhoneNo) <> 10
+        BEGIN
+            SELECT 'Phone Number must be 10 digits.' AS Message;
+            RETURN;
+        END;
+
+        IF @PhoneNo LIKE '%[^0-9]%'
+        BEGIN
+            SELECT 'Phone Number must contain only digits.' AS Message;
+            RETURN;
+        END;
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer T
+            INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+            WHERE E.PhoneNo = @PhoneNo
+        )
+        BEGIN
+            SELECT 'Trainer not found.' AS Message;
+            RETURN;
+        END;
+
+        SELECT
+            T.TrainerId
+        FROM tblTrainer T
+        INNER JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        WHERE E.PhoneNo = @PhoneNo;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------------------
+-- SP: spGetAvailableTrainerCountByShift
+----------------------------------------
+CREATE PROC spGetAvailableTrainerCountByShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        s.ShiftID,
+        s.ShiftName,
+        COUNT(ts.TrainerId) AS AvailableTrainerCount
+    FROM tblShift s
+    LEFT JOIN tblTrainerShift ts
+        ON s.ShiftId = ts.ShiftId
+        AND ts.IsActive = 1
+    GROUP BY
+        s.ShiftId,
+        s.ShiftName
+    ORDER BY
+        s.ShiftID;
+END
+GO
+
+--------------------------------------------------
+-- SP: spDisplayAssingedTrainersToMembersWithShift
+--------------------------------------------------
+CREATE PROCEDURE spDisplayAssingedTrainersToMembersWithShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT 
+    MTA.MemberTrainerAssignmentId,
+    CONCAT(M.FirstName,' ',M.MiddleName,' ',M.LastName) As MemberName,
+    CONCAT(Employee.FirstName,' ',Employee.MiddleName,' ',Employee.LastName) As TrainerName,
+    T.TrainerType,
+    Sh.ShiftName,
+    Sh.StartTime,
+    Sh.EndTime 
+    FROM tblMemberTrainerAssignment AS MTA
+    INNER JOIN tblMember AS M
+    ON MTA.MemberId = M.MemberId
+    INNER JOIN tblShift AS Sh 
+    ON M.MemberId=Sh.ShiftId
+    INNER JOIN tblTrainer AS T
+    ON MTA.TrainerId = T.TrainerId
+    INNER JOIN tblEmployee AS Employee 
+    ON T.EmployeeId = Employee.EmployeeId
+    WHERE T.TrainerType = 'Personal';
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+------------------------------
+-- SP: DisplayGeneralTrainers
+------------------------------
+CREATE PROCEDURE DisplayGeneralTrainers
+AS
+BEGIN
+	BEGIN TRY
+		SELECT 
+		CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
+		T.Specialization,
+		E.PhoneNo,
+		G.GenderName
+		FROM tblTrainer T
+		INNER JOIN tblEmployee E
+		ON T.EmployeeId=E.EmployeeId
+		INNER JOIN tblGender G 
+		ON E.GenderId = G.GenderId 
+		WHERE T.TrainerType='General' 
+		AND E.IsActive=1;
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_MESSAGE() AS Message;
+	END CATCH
+END
+GO
+
+-------------------------------
+-- SP: DisplayPersonalTrainers
+-------------------------------
+Create PROCEDURE DisplayPersonalTrainers
+AS
+BEGIN
+	BEGIN TRY
+		SELECT 
+		CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
+		T.Specialization,
+		E.PhoneNo,
+		G.GenderName
+		FROM tblTrainer T
+		INNER JOIN tblEmployee E
+		ON T.EmployeeId=E.EmployeeId
+		INNER JOIN tblGender G 
+		ON E.GenderId = G.GenderId 
+		WHERE T.TrainerType='Personal' 
+		AND E.IsActive=1;
+	END TRY
+	BEGIN CATCH	
+		SELECT ERROR_MESSAGE() AS Message;
+	END CATCH
+END
+GO
+
+-------------------------------------------
+-- SP: spDisplayMembersWithPersonalTrainer
+-------------------------------------------
+
+
+---------------------------------------------
+-- SP: spDisplayMembersWithoutPersonalTrainer
+---------------------------------------------
+
+
+--------------------------------------
+-- SP: spGetAllTrainerEmployeeDetails
+--------------------------------------
+CREATE PROC spGetAllTrainerEmployeeDetails
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblEmployee E
+            INNER JOIN tblEmployeeRoleType ERT
+                ON E.RoleId = ERT.RoleId
+            WHERE ERT.Role = 'Trainer'
+        )
+        BEGIN
+            SELECT 'No Trainer Records Found.' AS Message;
+            RETURN;
+        END
+
+        SELECT
+            E.EmployeeId,
+            T.TrainerId,
+            CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
+            T.Specialization,
+            T.TrainerType,
+            CD.Document,
+            E.PhoneNo,
+            G.GenderName AS Gender
+
+        FROM tblEmployee E
+
+        INNER JOIN tblEmployeeRoleType ERT
+            ON E.RoleId = ERT.RoleId
+
+        INNER JOIN tblTrainer T
+            ON E.EmployeeId = T.EmployeeId
+
+        LEFT JOIN tblCertificateDocument CD
+            ON T.TrainerId = CD.TrainerId
+
+        INNER JOIN tblGender G
+            ON E.GenderId = G.GenderId
+
+        WHERE ERT.Role = 'Trainer' AND E.IsActive=1
+
+        ORDER BY
+            E.FirstName,
+            E.LastName;
+            
+    END TRY
+
+    BEGIN CATCH
+            SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+-------------------------------------------
+-- SP: spGetInactivePersonalTrainersByShift
+-------------------------------------------
+CREATE PROC spGetInactivePersonalTrainersByShift
+(
+    @ShiftId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        -- Validation
+        IF @ShiftId IS NULL OR @ShiftId <= 0
+        BEGIN
+            SELECT 'Valid ShiftId is required.' AS Message;
+            RETURN;
+        END
+
+        -- Check Shift Exists
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblShift
+            WHERE ShiftId = @ShiftId
+        )
+        BEGIN
+            SELECT 'Shift does not exist.' AS Message;
+            RETURN;
+        END
+
+        -- Fetch Personal Trainers whose TrainerShift IsActive = 0
+        SELECT
+           
+            T.TrainerId,
+           
+            CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
+            E.PhoneNo,
+            
+            T.Specialization,
+           
+ 
+            TS.IsActive AS TrainerShiftStatus
+        FROM tblTrainerShift TS
+        INNER JOIN tblTrainer T
+            ON TS.TrainerId = T.TrainerId
+        INNER JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        INNER JOIN tblShift S
+            ON TS.ShiftId = S.ShiftId
+        WHERE TS.ShiftId = @ShiftId
+              AND TS.IsActive = 1
+              AND T.TrainerType = 'Personal'
+        ORDER BY E.FirstName, E.LastName;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+-------------------------------------------
+-- SP: spGetPersonalTrainerShiftStatus
+-------------------------------------------
+CREATE PROC spGetPersonalTrainerShiftStatus 
+(
+    @TrainerId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        -- Validation
+        IF @TrainerId IS NULL OR @TrainerId <= 0
+        BEGIN
+            SELECT 'Valid TrainerId is required.' AS Message;
+            RETURN;
+        END;
+
+        -- Check Trainer Exists
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer
+            WHERE TrainerId = @TrainerId
+        )
+        BEGIN
+            SELECT 'Trainer does not exist.' AS Message;
+            RETURN;
+        END;
+
+        -- Check Trainer is Personal Trainer
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer
+            WHERE TrainerId = @TrainerId
+                  AND TrainerType = 'Personal'
+        )
+        BEGIN
+            SELECT 'Specified trainer is not a Personal Trainer.' AS Message;
+            RETURN;
+        END;
+
+        -- Show Trainer Shift Status
+        SELECT
+            T.TrainerId,
+			CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
+            E.PhoneNo,
+            S.ShiftName,
+            S.StartTime,
+            S.EndTime,
+            TS.IsActive
+        FROM tblTrainer T
+		INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+        INNER JOIN tblTrainerShift TS
+            ON T.TrainerId = TS.TrainerId
+        INNER JOIN tblShift S
+            ON TS.ShiftId = S.ShiftId
+        WHERE T.TrainerId = @TrainerId
+              AND T.TrainerType = 'Personal'
+        ORDER BY S.StartTime;
+
+    END TRY
+
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END;
+GO
+
+-------------------------------------------
+-- SP: spRetrieveTrainerOfSpecificMember
+-------------------------------------------
+CREATE PROC spRetrieveTrainerOfSpecificMember 
+(
+    @MemberId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        ------------------------------------------------
+        -- Member Validation
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Active Trainer Assigned?
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMemberTrainerAssignment
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'No Active Trainer Assigned To This Member.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Retrieve Trainer Details
+        ------------------------------------------------
+        SELECT
+            CONCAT(E.FirstName ,' ',E.MiddleName,' ',E.LastName) AS TrainerName
+        FROM tblMemberTrainerAssignment MTA
+        INNER JOIN tblTrainer T
+            ON MTA.TrainerId = T.TrainerId
+        INNER JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        INNER JOIN tblMember M
+            ON MTA.MemberId = M.MemberId
+        WHERE MTA.MemberId = @MemberId
+          AND MTA.IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message
+
+    END CATCH
+END;
+GO
