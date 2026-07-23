@@ -74,13 +74,12 @@
             // 
             // btnSubmitFrmAddRegistrationFee
             // 
-            this.btnSubmitFrmAddRegistrationFee.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnSubmitFrmAddRegistrationFee.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btnSubmitFrmAddRegistrationFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnSubmitFrmAddRegistrationFee.BackColor = System.Drawing.Color.Lavender;
+            this.btnSubmitFrmAddRegistrationFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(120)))), ((int)(((byte)(182)))));
             this.btnSubmitFrmAddRegistrationFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitFrmAddRegistrationFee.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitFrmAddRegistrationFee.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSubmitFrmAddRegistrationFee.Location = new System.Drawing.Point(565, 252);
+            this.btnSubmitFrmAddRegistrationFee.Location = new System.Drawing.Point(564, 252);
             this.btnSubmitFrmAddRegistrationFee.Name = "btnSubmitFrmAddRegistrationFee";
             this.btnSubmitFrmAddRegistrationFee.Size = new System.Drawing.Size(171, 44);
             this.btnSubmitFrmAddRegistrationFee.TabIndex = 3;

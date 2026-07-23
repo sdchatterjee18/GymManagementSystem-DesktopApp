@@ -122,66 +122,66 @@ namespace GymManagementSystem.FORMS.RegistrationFee
       
         
 
-        private void dgvShowAllAddRegistrationFees_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightBlue;
-            }
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
-            }
+        //private void dgvShowAllAddRegistrationFees_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+        //    {
+        //        dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.LightBlue;
+        //    }
+        //    if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+        //    {
+        //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
+        //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+        //    }
 
-        }
+        //}
 
 
-        private void dgvShowAllAddRegistrationFees_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
-            }
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
+        //private void dgvShowAllAddRegistrationFees_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+        //    {
+        //        dgvShowAllAddRegistrationFees[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+        //    }
+        //    if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+        //    {
+        //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+        //        dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+        //    }
 
-        }
+        //}
 
 
         
 
         private void tlpAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(210, 215, 255);
         }
 
         private void tlpAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(150,120,182);
         }
 
         private void picAddRegistrationFee_MouseEnter(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(150, 120, 182);
         }
 
         private void picAddRegistrationFee_MouseLeave(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(210, 215, 255);
         }
 
         private void lblAddRegistrationFees_MouseEnter(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(200, 200, 200);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(150, 120, 182);
         }
 
         private void lblAddRegistrationFees_MouseLeave(object sender, EventArgs e)
         {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(184, 195, 179);
+            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(210, 215, 255);
         }
 
 

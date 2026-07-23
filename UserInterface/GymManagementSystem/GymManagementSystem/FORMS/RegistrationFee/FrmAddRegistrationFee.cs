@@ -30,7 +30,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         private void btnExitFrmAddRegistrationFee_MouseLeave(object sender, EventArgs e)
         {
-            btnExitFrmAddRegistrationFee.BackColor = Color.Transparent;
+            btnExitFrmAddRegistrationFee.BackColor = Color.Red;
             btnExitFrmAddRegistrationFee.ForeColor = Color.Black;
         }
 
@@ -44,6 +44,10 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         {
             this.Dispose();
         }
+
+       
+
+       
 
        
 
