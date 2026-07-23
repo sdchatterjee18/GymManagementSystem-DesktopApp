@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea39 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend39 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title20 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea40 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend40 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tlpDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRunningShift = new System.Windows.Forms.Panel();
             this.tlpRunningShift = new System.Windows.Forms.TableLayoutPanel();
@@ -249,23 +249,23 @@
             this.tlpDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.tlpDashboard.Name = "tlpDashboard";
             this.tlpDashboard.RowCount = 6;
-            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tlpDashboard.Size = new System.Drawing.Size(886, 609);
+            this.tlpDashboard.Size = new System.Drawing.Size(1181, 750);
             this.tlpDashboard.TabIndex = 0;
             // 
             // pnlRunningShift
             // 
             this.pnlRunningShift.Controls.Add(this.tlpRunningShift);
             this.pnlRunningShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRunningShift.Location = new System.Drawing.Point(0, 12);
+            this.pnlRunningShift.Location = new System.Drawing.Point(0, 15);
             this.pnlRunningShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRunningShift.Name = "pnlRunningShift";
-            this.pnlRunningShift.Size = new System.Drawing.Size(886, 60);
+            this.pnlRunningShift.Size = new System.Drawing.Size(1181, 75);
             this.pnlRunningShift.TabIndex = 0;
             // 
             // tlpRunningShift
@@ -281,8 +281,8 @@
             this.tlpRunningShift.Name = "tlpRunningShift";
             this.tlpRunningShift.RowCount = 2;
             this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpRunningShift.Size = new System.Drawing.Size(886, 60);
+            this.tlpRunningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRunningShift.Size = new System.Drawing.Size(1181, 75);
             this.tlpRunningShift.TabIndex = 1;
             // 
             // tlpRunningShiftDetails
@@ -290,16 +290,16 @@
             this.tlpRunningShiftDetails.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tlpRunningShiftDetails.ColumnCount = 1;
             this.tlpRunningShiftDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRunningShiftDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRunningShiftDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpRunningShiftDetails.Controls.Add(this.lblRunningShift, 0, 0);
             this.tlpRunningShiftDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRunningShiftDetails.Location = new System.Drawing.Point(23, 0);
             this.tlpRunningShiftDetails.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRunningShiftDetails.Name = "tlpRunningShiftDetails";
-            this.tlpRunningShiftDetails.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.tlpRunningShiftDetails.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.tlpRunningShiftDetails.RowCount = 1;
             this.tlpRunningShiftDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRunningShiftDetails.Size = new System.Drawing.Size(1134, 58);
+            this.tlpRunningShiftDetails.Size = new System.Drawing.Size(1133, 55);
             this.tlpRunningShiftDetails.TabIndex = 0;
             // 
             // lblRunningShift
@@ -309,10 +309,10 @@
             this.lblRunningShift.AutoSize = true;
             this.lblRunningShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRunningShift.ForeColor = System.Drawing.Color.White;
-            this.lblRunningShift.Location = new System.Drawing.Point(877, 0);
+            this.lblRunningShift.Location = new System.Drawing.Point(871, 0);
             this.lblRunningShift.Margin = new System.Windows.Forms.Padding(0);
             this.lblRunningShift.Name = "lblRunningShift";
-            this.lblRunningShift.Size = new System.Drawing.Size(242, 58);
+            this.lblRunningShift.Size = new System.Drawing.Size(242, 55);
             this.lblRunningShift.TabIndex = 1;
             this.lblRunningShift.Text = "Morning Shift Is Running";
             this.lblRunningShift.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,10 +321,10 @@
             // 
             this.pnlDashboardCards.Controls.Add(this.tlpDashboardCards);
             this.pnlDashboardCards.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDashboardCards.Location = new System.Drawing.Point(0, 72);
+            this.pnlDashboardCards.Location = new System.Drawing.Point(0, 90);
             this.pnlDashboardCards.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDashboardCards.Name = "pnlDashboardCards";
-            this.pnlDashboardCards.Size = new System.Drawing.Size(886, 91);
+            this.pnlDashboardCards.Size = new System.Drawing.Size(1181, 112);
             this.pnlDashboardCards.TabIndex = 1;
             // 
             // tlpDashboardCards
@@ -345,12 +345,12 @@
             this.tlpDashboardCards.Controls.Add(this.pnlTrainers, 5, 0);
             this.tlpDashboardCards.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDashboardCards.Location = new System.Drawing.Point(0, 0);
-            this.tlpDashboardCards.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpDashboardCards.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpDashboardCards.Name = "tlpDashboardCards";
             this.tlpDashboardCards.RowCount = 2;
             this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpDashboardCards.Size = new System.Drawing.Size(886, 91);
+            this.tlpDashboardCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDashboardCards.Size = new System.Drawing.Size(1181, 112);
             this.tlpDashboardCards.TabIndex = 1;
             // 
             // pnlFreePersonalTrains
@@ -361,8 +361,8 @@
             this.pnlFreePersonalTrains.Location = new System.Drawing.Point(887, 0);
             this.pnlFreePersonalTrains.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFreePersonalTrains.Name = "pnlFreePersonalTrains";
-            this.pnlFreePersonalTrains.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlFreePersonalTrains.Size = new System.Drawing.Size(265, 98);
+            this.pnlFreePersonalTrains.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlFreePersonalTrains.Size = new System.Drawing.Size(265, 92);
             this.pnlFreePersonalTrains.TabIndex = 5;
             // 
             // tlpFreePersonalTrainer
@@ -370,16 +370,16 @@
             this.tlpFreePersonalTrainer.ColumnCount = 2;
             this.tlpFreePersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.57895F));
             this.tlpFreePersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.42105F));
-            this.tlpFreePersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpFreePersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpFreePersonalTrainer.Controls.Add(this.picFreePersonalTrainer, 0, 0);
             this.tlpFreePersonalTrainer.Controls.Add(this.tlpFreePersonalTrainerLabel, 1, 0);
             this.tlpFreePersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreePersonalTrainer.Location = new System.Drawing.Point(4, 4);
+            this.tlpFreePersonalTrainer.Location = new System.Drawing.Point(7, 6);
             this.tlpFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFreePersonalTrainer.Name = "tlpFreePersonalTrainer";
             this.tlpFreePersonalTrainer.RowCount = 1;
             this.tlpFreePersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFreePersonalTrainer.Size = new System.Drawing.Size(255, 88);
+            this.tlpFreePersonalTrainer.Size = new System.Drawing.Size(251, 80);
             this.tlpFreePersonalTrainer.TabIndex = 1;
             // 
             // picFreePersonalTrainer
@@ -390,7 +390,7 @@
             this.picFreePersonalTrainer.Location = new System.Drawing.Point(0, 0);
             this.picFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picFreePersonalTrainer.Name = "picFreePersonalTrainer";
-            this.picFreePersonalTrainer.Size = new System.Drawing.Size(80, 88);
+            this.picFreePersonalTrainer.Size = new System.Drawing.Size(79, 80);
             this.picFreePersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFreePersonalTrainer.TabIndex = 0;
             this.picFreePersonalTrainer.TabStop = false;
@@ -402,21 +402,21 @@
             this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainerValue, 0, 1);
             this.tlpFreePersonalTrainerLabel.Controls.Add(this.lblFreePersonalTrainer, 0, 0);
             this.tlpFreePersonalTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreePersonalTrainerLabel.Location = new System.Drawing.Point(80, 0);
+            this.tlpFreePersonalTrainerLabel.Location = new System.Drawing.Point(79, 0);
             this.tlpFreePersonalTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFreePersonalTrainerLabel.Name = "tlpFreePersonalTrainerLabel";
             this.tlpFreePersonalTrainerLabel.RowCount = 2;
             this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpFreePersonalTrainerLabel.Size = new System.Drawing.Size(175, 88);
+            this.tlpFreePersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpFreePersonalTrainerLabel.Size = new System.Drawing.Size(172, 80);
             this.tlpFreePersonalTrainerLabel.TabIndex = 1;
             // 
             // lblFreePersonalTrainerValue
             // 
             this.lblFreePersonalTrainerValue.AutoSize = true;
             this.lblFreePersonalTrainerValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreePersonalTrainerValue.Location = new System.Drawing.Point(0, 44);
+            this.lblFreePersonalTrainerValue.Location = new System.Drawing.Point(0, 40);
             this.lblFreePersonalTrainerValue.Margin = new System.Windows.Forms.Padding(0);
             this.lblFreePersonalTrainerValue.Name = "lblFreePersonalTrainerValue";
             this.lblFreePersonalTrainerValue.Size = new System.Drawing.Size(23, 28);
@@ -429,10 +429,10 @@
             this.lblFreePersonalTrainer.AutoSize = true;
             this.lblFreePersonalTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblFreePersonalTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreePersonalTrainer.Location = new System.Drawing.Point(0, 21);
+            this.lblFreePersonalTrainer.Location = new System.Drawing.Point(0, 17);
             this.lblFreePersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.lblFreePersonalTrainer.Name = "lblFreePersonalTrainer";
-            this.lblFreePersonalTrainer.Size = new System.Drawing.Size(175, 23);
+            this.lblFreePersonalTrainer.Size = new System.Drawing.Size(172, 23);
             this.lblFreePersonalTrainer.TabIndex = 5;
             this.lblFreePersonalTrainer.Text = "Free Personal Trainer";
             this.lblFreePersonalTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,8 +445,8 @@
             this.pnlActiveMembers.Location = new System.Drawing.Point(23, 0);
             this.pnlActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlActiveMembers.Name = "pnlActiveMembers";
-            this.pnlActiveMembers.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlActiveMembers.Size = new System.Drawing.Size(265, 98);
+            this.pnlActiveMembers.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlActiveMembers.Size = new System.Drawing.Size(265, 92);
             this.pnlActiveMembers.TabIndex = 4;
             // 
             // tlpActiveMembers
@@ -454,16 +454,16 @@
             this.tlpActiveMembers.ColumnCount = 2;
             this.tlpActiveMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.67245F));
             this.tlpActiveMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.32755F));
-            this.tlpActiveMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpActiveMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpActiveMembers.Controls.Add(this.tlpActiveMembersLabel, 1, 0);
             this.tlpActiveMembers.Controls.Add(this.picActiveMembers, 0, 0);
             this.tlpActiveMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActiveMembers.Location = new System.Drawing.Point(4, 4);
+            this.tlpActiveMembers.Location = new System.Drawing.Point(7, 6);
             this.tlpActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActiveMembers.Name = "tlpActiveMembers";
             this.tlpActiveMembers.RowCount = 1;
             this.tlpActiveMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpActiveMembers.Size = new System.Drawing.Size(255, 88);
+            this.tlpActiveMembers.Size = new System.Drawing.Size(251, 80);
             this.tlpActiveMembers.TabIndex = 0;
             // 
             // tlpActiveMembersLabel
@@ -473,21 +473,21 @@
             this.tlpActiveMembersLabel.Controls.Add(this.lblActiveMembersValue, 0, 1);
             this.tlpActiveMembersLabel.Controls.Add(this.lblActiveMembers, 0, 0);
             this.tlpActiveMembersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActiveMembersLabel.Location = new System.Drawing.Point(80, 0);
+            this.tlpActiveMembersLabel.Location = new System.Drawing.Point(79, 0);
             this.tlpActiveMembersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActiveMembersLabel.Name = "tlpActiveMembersLabel";
             this.tlpActiveMembersLabel.RowCount = 2;
             this.tlpActiveMembersLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpActiveMembersLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpActiveMembersLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpActiveMembersLabel.Size = new System.Drawing.Size(175, 88);
+            this.tlpActiveMembersLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpActiveMembersLabel.Size = new System.Drawing.Size(172, 80);
             this.tlpActiveMembersLabel.TabIndex = 1;
             // 
             // lblActiveMembersValue
             // 
             this.lblActiveMembersValue.AutoSize = true;
             this.lblActiveMembersValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveMembersValue.Location = new System.Drawing.Point(0, 44);
+            this.lblActiveMembersValue.Location = new System.Drawing.Point(0, 40);
             this.lblActiveMembersValue.Margin = new System.Windows.Forms.Padding(0);
             this.lblActiveMembersValue.Name = "lblActiveMembersValue";
             this.lblActiveMembersValue.Size = new System.Drawing.Size(34, 28);
@@ -500,10 +500,10 @@
             this.lblActiveMembers.AutoSize = true;
             this.lblActiveMembers.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblActiveMembers.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveMembers.Location = new System.Drawing.Point(0, 21);
+            this.lblActiveMembers.Location = new System.Drawing.Point(0, 17);
             this.lblActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.lblActiveMembers.Name = "lblActiveMembers";
-            this.lblActiveMembers.Size = new System.Drawing.Size(175, 23);
+            this.lblActiveMembers.Size = new System.Drawing.Size(172, 23);
             this.lblActiveMembers.TabIndex = 0;
             this.lblActiveMembers.Text = "Active Members";
             this.lblActiveMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,21 +516,21 @@
             this.picActiveMembers.Location = new System.Drawing.Point(0, 0);
             this.picActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.picActiveMembers.Name = "picActiveMembers";
-            this.picActiveMembers.Size = new System.Drawing.Size(80, 88);
+            this.picActiveMembers.Size = new System.Drawing.Size(79, 80);
             this.picActiveMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picActiveMembers.TabIndex = 0;
             this.picActiveMembers.TabStop = false;
             // 
             // pnlActivePlans
             // 
-            this.pnlActivePlans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.pnlActivePlans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.pnlActivePlans.Controls.Add(this.tlpActivePlans);
             this.pnlActivePlans.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlActivePlans.Location = new System.Drawing.Point(311, 0);
             this.pnlActivePlans.Margin = new System.Windows.Forms.Padding(0);
             this.pnlActivePlans.Name = "pnlActivePlans";
-            this.pnlActivePlans.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlActivePlans.Size = new System.Drawing.Size(265, 98);
+            this.pnlActivePlans.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlActivePlans.Size = new System.Drawing.Size(265, 92);
             this.pnlActivePlans.TabIndex = 6;
             // 
             // tlpActivePlans
@@ -538,16 +538,16 @@
             this.tlpActivePlans.ColumnCount = 2;
             this.tlpActivePlans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.57895F));
             this.tlpActivePlans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.42105F));
-            this.tlpActivePlans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpActivePlans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpActivePlans.Controls.Add(this.picActivePlans, 0, 0);
             this.tlpActivePlans.Controls.Add(this.tlpActivePlansLabel, 1, 0);
             this.tlpActivePlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActivePlans.Location = new System.Drawing.Point(4, 4);
+            this.tlpActivePlans.Location = new System.Drawing.Point(7, 6);
             this.tlpActivePlans.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActivePlans.Name = "tlpActivePlans";
             this.tlpActivePlans.RowCount = 1;
             this.tlpActivePlans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpActivePlans.Size = new System.Drawing.Size(255, 88);
+            this.tlpActivePlans.Size = new System.Drawing.Size(251, 80);
             this.tlpActivePlans.TabIndex = 1;
             // 
             // picActivePlans
@@ -558,7 +558,7 @@
             this.picActivePlans.Location = new System.Drawing.Point(0, 0);
             this.picActivePlans.Margin = new System.Windows.Forms.Padding(0);
             this.picActivePlans.Name = "picActivePlans";
-            this.picActivePlans.Size = new System.Drawing.Size(80, 88);
+            this.picActivePlans.Size = new System.Drawing.Size(79, 80);
             this.picActivePlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picActivePlans.TabIndex = 0;
             this.picActivePlans.TabStop = false;
@@ -570,14 +570,14 @@
             this.tlpActivePlansLabel.Controls.Add(this.lblActivePlansValues, 0, 1);
             this.tlpActivePlansLabel.Controls.Add(this.lblActivePlans, 0, 0);
             this.tlpActivePlansLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpActivePlansLabel.Location = new System.Drawing.Point(80, 0);
+            this.tlpActivePlansLabel.Location = new System.Drawing.Point(79, 0);
             this.tlpActivePlansLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpActivePlansLabel.Name = "tlpActivePlansLabel";
             this.tlpActivePlansLabel.RowCount = 2;
             this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpActivePlansLabel.Size = new System.Drawing.Size(175, 88);
+            this.tlpActivePlansLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpActivePlansLabel.Size = new System.Drawing.Size(172, 80);
             this.tlpActivePlansLabel.TabIndex = 1;
             // 
             // lblActivePlansValues
@@ -585,7 +585,7 @@
             this.lblActivePlansValues.AutoSize = true;
             this.lblActivePlansValues.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivePlansValues.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblActivePlansValues.Location = new System.Drawing.Point(0, 44);
+            this.lblActivePlansValues.Location = new System.Drawing.Point(0, 40);
             this.lblActivePlansValues.Margin = new System.Windows.Forms.Padding(0);
             this.lblActivePlansValues.Name = "lblActivePlansValues";
             this.lblActivePlansValues.Size = new System.Drawing.Size(34, 28);
@@ -598,24 +598,24 @@
             this.lblActivePlans.AutoSize = true;
             this.lblActivePlans.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblActivePlans.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivePlans.Location = new System.Drawing.Point(0, 21);
+            this.lblActivePlans.Location = new System.Drawing.Point(0, 17);
             this.lblActivePlans.Margin = new System.Windows.Forms.Padding(0);
             this.lblActivePlans.Name = "lblActivePlans";
-            this.lblActivePlans.Size = new System.Drawing.Size(175, 23);
+            this.lblActivePlans.Size = new System.Drawing.Size(172, 23);
             this.lblActivePlans.TabIndex = 1;
             this.lblActivePlans.Text = "Active Plans";
             this.lblActivePlans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlTrainers
             // 
-            this.pnlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.pnlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(252)))));
             this.pnlTrainers.Controls.Add(this.tlpTrainer);
             this.pnlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrainers.Location = new System.Drawing.Point(599, 0);
             this.pnlTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTrainers.Name = "pnlTrainers";
-            this.pnlTrainers.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlTrainers.Size = new System.Drawing.Size(265, 98);
+            this.pnlTrainers.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlTrainers.Size = new System.Drawing.Size(265, 92);
             this.pnlTrainers.TabIndex = 4;
             // 
             // tlpTrainer
@@ -623,16 +623,16 @@
             this.tlpTrainer.ColumnCount = 2;
             this.tlpTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.57895F));
             this.tlpTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.42105F));
-            this.tlpTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpTrainer.Controls.Add(this.picTrainer, 0, 0);
             this.tlpTrainer.Controls.Add(this.tlpTrainerLabel, 1, 0);
             this.tlpTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainer.Location = new System.Drawing.Point(4, 4);
+            this.tlpTrainer.Location = new System.Drawing.Point(7, 6);
             this.tlpTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainer.Name = "tlpTrainer";
             this.tlpTrainer.RowCount = 1;
             this.tlpTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTrainer.Size = new System.Drawing.Size(255, 88);
+            this.tlpTrainer.Size = new System.Drawing.Size(251, 80);
             this.tlpTrainer.TabIndex = 1;
             // 
             // picTrainer
@@ -643,7 +643,7 @@
             this.picTrainer.Location = new System.Drawing.Point(0, 0);
             this.picTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picTrainer.Name = "picTrainer";
-            this.picTrainer.Size = new System.Drawing.Size(80, 88);
+            this.picTrainer.Size = new System.Drawing.Size(79, 80);
             this.picTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainer.TabIndex = 0;
             this.picTrainer.TabStop = false;
@@ -655,21 +655,21 @@
             this.tlpTrainerLabel.Controls.Add(this.lblTrainerValues, 0, 1);
             this.tlpTrainerLabel.Controls.Add(this.lblTrainer, 0, 0);
             this.tlpTrainerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerLabel.Location = new System.Drawing.Point(80, 0);
+            this.tlpTrainerLabel.Location = new System.Drawing.Point(79, 0);
             this.tlpTrainerLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerLabel.Name = "tlpTrainerLabel";
             this.tlpTrainerLabel.RowCount = 2;
             this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTrainerLabel.Size = new System.Drawing.Size(175, 88);
+            this.tlpTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpTrainerLabel.Size = new System.Drawing.Size(172, 80);
             this.tlpTrainerLabel.TabIndex = 1;
             // 
             // lblTrainerValues
             // 
             this.lblTrainerValues.AutoSize = true;
             this.lblTrainerValues.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainerValues.Location = new System.Drawing.Point(0, 44);
+            this.lblTrainerValues.Location = new System.Drawing.Point(0, 40);
             this.lblTrainerValues.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerValues.Name = "lblTrainerValues";
             this.lblTrainerValues.Size = new System.Drawing.Size(23, 28);
@@ -682,10 +682,10 @@
             this.lblTrainer.AutoSize = true;
             this.lblTrainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainer.Location = new System.Drawing.Point(0, 21);
+            this.lblTrainer.Location = new System.Drawing.Point(0, 17);
             this.lblTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainer.Name = "lblTrainer";
-            this.lblTrainer.Size = new System.Drawing.Size(175, 23);
+            this.lblTrainer.Size = new System.Drawing.Size(172, 23);
             this.lblTrainer.TabIndex = 2;
             this.lblTrainer.Text = "Trainer";
             this.lblTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -694,22 +694,22 @@
             // 
             this.pnlChart.Controls.Add(this.tlpChart);
             this.pnlChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChart.Location = new System.Drawing.Point(0, 163);
+            this.pnlChart.Location = new System.Drawing.Point(0, 202);
             this.pnlChart.Margin = new System.Windows.Forms.Padding(0);
             this.pnlChart.Name = "pnlChart";
-            this.pnlChart.Size = new System.Drawing.Size(886, 274);
+            this.pnlChart.Size = new System.Drawing.Size(1181, 337);
             this.pnlChart.TabIndex = 2;
             // 
             // tlpChart
             // 
             this.tlpChart.ColumnCount = 7;
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.249512F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.49316F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.5107515F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.49316F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.5107515F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.49316F));
-            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.249511F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.000401F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.65745F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.513416F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.65745F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.513416F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.65745F));
+            this.tlpChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.000401F));
             this.tlpChart.Controls.Add(this.pnlShiftWiseMembers, 1, 0);
             this.tlpChart.Controls.Add(this.pnlTodayActiveMembers, 3, 0);
             this.tlpChart.Controls.Add(this.pnlFreePersonalTrainers, 5, 0);
@@ -719,8 +719,8 @@
             this.tlpChart.Name = "tlpChart";
             this.tlpChart.RowCount = 2;
             this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpChart.Size = new System.Drawing.Size(886, 274);
+            this.tlpChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpChart.Size = new System.Drawing.Size(1181, 337);
             this.tlpChart.TabIndex = 1;
             // 
             // pnlShiftWiseMembers
@@ -729,11 +729,11 @@
             this.pnlShiftWiseMembers.Controls.Add(this.pnlShiftWiseMembersBarchat);
             this.pnlShiftWiseMembers.Controls.Add(this.pnlShiftWiseMembersLable);
             this.pnlShiftWiseMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShiftWiseMembers.Location = new System.Drawing.Point(26, 0);
+            this.pnlShiftWiseMembers.Location = new System.Drawing.Point(23, 0);
             this.pnlShiftWiseMembers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlShiftWiseMembers.Name = "pnlShiftWiseMembers";
-            this.pnlShiftWiseMembers.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlShiftWiseMembers.Size = new System.Drawing.Size(372, 334);
+            this.pnlShiftWiseMembers.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlShiftWiseMembers.Size = new System.Drawing.Size(373, 317);
             this.pnlShiftWiseMembers.TabIndex = 0;
             this.pnlShiftWiseMembers.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlShiftWiseMembers_Paint);
             // 
@@ -742,31 +742,32 @@
             this.pnlShiftWiseMembersBarchat.BackColor = System.Drawing.Color.White;
             this.pnlShiftWiseMembersBarchat.Controls.Add(this.chartShiftWiseMembers);
             this.pnlShiftWiseMembersBarchat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShiftWiseMembersBarchat.Location = new System.Drawing.Point(10, 58);
+            this.pnlShiftWiseMembersBarchat.Location = new System.Drawing.Point(13, 71);
             this.pnlShiftWiseMembersBarchat.Margin = new System.Windows.Forms.Padding(0);
             this.pnlShiftWiseMembersBarchat.Name = "pnlShiftWiseMembersBarchat";
-            this.pnlShiftWiseMembersBarchat.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlShiftWiseMembersBarchat.Size = new System.Drawing.Size(352, 266);
+            this.pnlShiftWiseMembersBarchat.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlShiftWiseMembersBarchat.Size = new System.Drawing.Size(347, 234);
             this.pnlShiftWiseMembersBarchat.TabIndex = 1;
             // 
             // chartShiftWiseMembers
             // 
-            chartArea7.Name = "ShiftWiseChartArea";
-            this.chartShiftWiseMembers.ChartAreas.Add(chartArea7);
+            chartArea39.Name = "ShiftWiseChartArea";
+            this.chartShiftWiseMembers.ChartAreas.Add(chartArea39);
             this.chartShiftWiseMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "ShiftWiseLegend";
-            this.chartShiftWiseMembers.Legends.Add(legend7);
-            this.chartShiftWiseMembers.Location = new System.Drawing.Point(10, 10);
+            legend39.Name = "ShiftWiseLegend";
+            this.chartShiftWiseMembers.Legends.Add(legend39);
+            this.chartShiftWiseMembers.Location = new System.Drawing.Point(13, 12);
+            this.chartShiftWiseMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartShiftWiseMembers.Name = "chartShiftWiseMembers";
-            series7.ChartArea = "ShiftWiseChartArea";
-            series7.Legend = "ShiftWiseLegend";
-            series7.Name = "MemberCountSeries";
-            this.chartShiftWiseMembers.Series.Add(series7);
-            this.chartShiftWiseMembers.Size = new System.Drawing.Size(332, 246);
+            series39.ChartArea = "ShiftWiseChartArea";
+            series39.Legend = "ShiftWiseLegend";
+            series39.Name = "MemberCountSeries";
+            this.chartShiftWiseMembers.Series.Add(series39);
+            this.chartShiftWiseMembers.Size = new System.Drawing.Size(321, 210);
             this.chartShiftWiseMembers.TabIndex = 0;
             this.chartShiftWiseMembers.Text = "MemberCountSeries";
-            title4.Name = "ShiftWiseTitle";
-            this.chartShiftWiseMembers.Titles.Add(title4);
+            title20.Name = "ShiftWiseTitle";
+            this.chartShiftWiseMembers.Titles.Add(title20);
             // 
             // pnlShiftWiseMembersLable
             // 
@@ -775,36 +776,35 @@
             this.pnlShiftWiseMembersLable.Controls.Add(this.picShiftWiseMemberNumber);
             this.pnlShiftWiseMembersLable.Controls.Add(this.lblShiftWiseMemberNumber);
             this.pnlShiftWiseMembersLable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlShiftWiseMembersLable.Location = new System.Drawing.Point(10, 10);
+            this.pnlShiftWiseMembersLable.Location = new System.Drawing.Point(13, 12);
             this.pnlShiftWiseMembersLable.Margin = new System.Windows.Forms.Padding(0);
             this.pnlShiftWiseMembersLable.Name = "pnlShiftWiseMembersLable";
-            this.pnlShiftWiseMembersLable.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlShiftWiseMembersLable.Size = new System.Drawing.Size(352, 48);
+            this.pnlShiftWiseMembersLable.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlShiftWiseMembersLable.Size = new System.Drawing.Size(347, 59);
             this.pnlShiftWiseMembersLable.TabIndex = 0;
             // 
             // picShiftWiseMemberNumber
             // 
+            this.picShiftWiseMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picShiftWiseMemberNumber.Image = ((System.Drawing.Image)(resources.GetObject("picShiftWiseMemberNumber.Image")));
-            this.picShiftWiseMemberNumber.Location = new System.Drawing.Point(35, 16);
+            this.picShiftWiseMemberNumber.Location = new System.Drawing.Point(2, 18);
             this.picShiftWiseMemberNumber.Margin = new System.Windows.Forms.Padding(0);
             this.picShiftWiseMemberNumber.Name = "picShiftWiseMemberNumber";
-            this.picShiftWiseMemberNumber.Size = new System.Drawing.Size(25, 25);
+            this.picShiftWiseMemberNumber.Size = new System.Drawing.Size(33, 31);
             this.picShiftWiseMemberNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShiftWiseMemberNumber.TabIndex = 3;
             this.picShiftWiseMemberNumber.TabStop = false;
             // 
             // lblShiftWiseMemberNumber
             // 
-            this.lblShiftWiseMemberNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblShiftWiseMemberNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblShiftWiseMemberNumber.AutoSize = true;
             this.lblShiftWiseMemberNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShiftWiseMemberNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lblShiftWiseMemberNumber.Location = new System.Drawing.Point(58, 13);
+            this.lblShiftWiseMemberNumber.Location = new System.Drawing.Point(39, 20);
             this.lblShiftWiseMemberNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblShiftWiseMemberNumber.Name = "lblShiftWiseMemberNumber";
-            this.lblShiftWiseMemberNumber.Size = new System.Drawing.Size(219, 21);
+            this.lblShiftWiseMemberNumber.Size = new System.Drawing.Size(275, 28);
             this.lblShiftWiseMemberNumber.TabIndex = 2;
             this.lblShiftWiseMemberNumber.Text = " Shift-Wise Member Number";
             this.lblShiftWiseMemberNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -815,11 +815,11 @@
             this.pnlTodayActiveMembers.Controls.Add(this.pnlTodayActiveMembersBarchat);
             this.pnlTodayActiveMembers.Controls.Add(this.pnlTodayActiveMembersLabel);
             this.pnlTodayActiveMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTodayActiveMembers.Location = new System.Drawing.Point(404, 0);
+            this.pnlTodayActiveMembers.Location = new System.Drawing.Point(402, 0);
             this.pnlTodayActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTodayActiveMembers.Name = "pnlTodayActiveMembers";
-            this.pnlTodayActiveMembers.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlTodayActiveMembers.Size = new System.Drawing.Size(372, 334);
+            this.pnlTodayActiveMembers.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlTodayActiveMembers.Size = new System.Drawing.Size(373, 317);
             this.pnlTodayActiveMembers.TabIndex = 1;
             this.pnlTodayActiveMembers.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTodayActiveMembers_Paint);
             // 
@@ -828,27 +828,28 @@
             this.pnlTodayActiveMembersBarchat.BackColor = System.Drawing.Color.White;
             this.pnlTodayActiveMembersBarchat.Controls.Add(this.chartTodayMemberAttendance);
             this.pnlTodayActiveMembersBarchat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTodayActiveMembersBarchat.Location = new System.Drawing.Point(10, 58);
+            this.pnlTodayActiveMembersBarchat.Location = new System.Drawing.Point(13, 71);
             this.pnlTodayActiveMembersBarchat.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTodayActiveMembersBarchat.Name = "pnlTodayActiveMembersBarchat";
-            this.pnlTodayActiveMembersBarchat.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlTodayActiveMembersBarchat.Size = new System.Drawing.Size(352, 266);
+            this.pnlTodayActiveMembersBarchat.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlTodayActiveMembersBarchat.Size = new System.Drawing.Size(347, 234);
             this.pnlTodayActiveMembersBarchat.TabIndex = 1;
             // 
             // chartTodayMemberAttendance
             // 
-            chartArea8.Name = "TodayAttendanceChartArea";
-            this.chartTodayMemberAttendance.ChartAreas.Add(chartArea8);
+            chartArea40.Name = "TodayAttendanceChartArea";
+            this.chartTodayMemberAttendance.ChartAreas.Add(chartArea40);
             this.chartTodayMemberAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "TodayAttendanceLegend";
-            this.chartTodayMemberAttendance.Legends.Add(legend8);
-            this.chartTodayMemberAttendance.Location = new System.Drawing.Point(10, 10);
+            legend40.Name = "TodayAttendanceLegend";
+            this.chartTodayMemberAttendance.Legends.Add(legend40);
+            this.chartTodayMemberAttendance.Location = new System.Drawing.Point(13, 12);
+            this.chartTodayMemberAttendance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartTodayMemberAttendance.Name = "chartTodayMemberAttendance";
-            series8.ChartArea = "TodayAttendanceChartArea";
-            series8.Legend = "TodayAttendanceLegend";
-            series8.Name = "AttendanceCountSeries";
-            this.chartTodayMemberAttendance.Series.Add(series8);
-            this.chartTodayMemberAttendance.Size = new System.Drawing.Size(332, 246);
+            series40.ChartArea = "TodayAttendanceChartArea";
+            series40.Legend = "TodayAttendanceLegend";
+            series40.Name = "AttendanceCountSeries";
+            this.chartTodayMemberAttendance.Series.Add(series40);
+            this.chartTodayMemberAttendance.Size = new System.Drawing.Size(321, 210);
             this.chartTodayMemberAttendance.TabIndex = 0;
             this.chartTodayMemberAttendance.Text = "chart1";
             // 
@@ -857,19 +858,19 @@
             this.pnlTodayActiveMembersLabel.Controls.Add(this.picTodayActiveMembersBarchart);
             this.pnlTodayActiveMembersLabel.Controls.Add(this.lblTodayActiveMembers);
             this.pnlTodayActiveMembersLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTodayActiveMembersLabel.Location = new System.Drawing.Point(10, 10);
+            this.pnlTodayActiveMembersLabel.Location = new System.Drawing.Point(13, 12);
             this.pnlTodayActiveMembersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTodayActiveMembersLabel.Name = "pnlTodayActiveMembersLabel";
-            this.pnlTodayActiveMembersLabel.Size = new System.Drawing.Size(352, 48);
+            this.pnlTodayActiveMembersLabel.Size = new System.Drawing.Size(347, 59);
             this.pnlTodayActiveMembersLabel.TabIndex = 0;
             // 
             // picTodayActiveMembersBarchart
             // 
             this.picTodayActiveMembersBarchart.Image = ((System.Drawing.Image)(resources.GetObject("picTodayActiveMembersBarchart.Image")));
-            this.picTodayActiveMembersBarchart.Location = new System.Drawing.Point(35, 16);
+            this.picTodayActiveMembersBarchart.Location = new System.Drawing.Point(2, 18);
             this.picTodayActiveMembersBarchart.Margin = new System.Windows.Forms.Padding(0);
             this.picTodayActiveMembersBarchart.Name = "picTodayActiveMembersBarchart";
-            this.picTodayActiveMembersBarchart.Size = new System.Drawing.Size(25, 25);
+            this.picTodayActiveMembersBarchart.Size = new System.Drawing.Size(33, 31);
             this.picTodayActiveMembersBarchart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTodayActiveMembersBarchart.TabIndex = 4;
             this.picTodayActiveMembersBarchart.TabStop = false;
@@ -882,24 +883,24 @@
             this.lblTodayActiveMembers.AutoSize = true;
             this.lblTodayActiveMembers.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayActiveMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.lblTodayActiveMembers.Location = new System.Drawing.Point(53, 14);
+            this.lblTodayActiveMembers.Location = new System.Drawing.Point(41, 20);
             this.lblTodayActiveMembers.Margin = new System.Windows.Forms.Padding(0);
             this.lblTodayActiveMembers.Name = "lblTodayActiveMembers";
-            this.lblTodayActiveMembers.Size = new System.Drawing.Size(177, 21);
+            this.lblTodayActiveMembers.Size = new System.Drawing.Size(218, 28);
             this.lblTodayActiveMembers.TabIndex = 1;
             this.lblTodayActiveMembers.Text = "Today Active Members";
             // 
             // pnlFreePersonalTrainers
             // 
-            this.pnlFreePersonalTrainers.BackColor = System.Drawing.Color.LemonChiffon;
+            this.pnlFreePersonalTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
             this.pnlFreePersonalTrainers.Controls.Add(this.pnlFreePersonalTrainersDetails);
             this.pnlFreePersonalTrainers.Controls.Add(this.pnlFreePersonalTrainersLabel);
             this.pnlFreePersonalTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFreePersonalTrainers.Location = new System.Drawing.Point(782, 0);
+            this.pnlFreePersonalTrainers.Location = new System.Drawing.Point(781, 0);
             this.pnlFreePersonalTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFreePersonalTrainers.Name = "pnlFreePersonalTrainers";
-            this.pnlFreePersonalTrainers.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlFreePersonalTrainers.Size = new System.Drawing.Size(372, 334);
+            this.pnlFreePersonalTrainers.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlFreePersonalTrainers.Size = new System.Drawing.Size(373, 317);
             this.pnlFreePersonalTrainers.TabIndex = 2;
             this.pnlFreePersonalTrainers.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFreePersonalTrainers_Paint);
             // 
@@ -907,10 +908,10 @@
             // 
             this.pnlFreePersonalTrainersDetails.Controls.Add(this.tlpFreePersonalTrainers);
             this.pnlFreePersonalTrainersDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFreePersonalTrainersDetails.Location = new System.Drawing.Point(10, 58);
+            this.pnlFreePersonalTrainersDetails.Location = new System.Drawing.Point(13, 71);
             this.pnlFreePersonalTrainersDetails.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFreePersonalTrainersDetails.Name = "pnlFreePersonalTrainersDetails";
-            this.pnlFreePersonalTrainersDetails.Size = new System.Drawing.Size(352, 266);
+            this.pnlFreePersonalTrainersDetails.Size = new System.Drawing.Size(347, 234);
             this.pnlFreePersonalTrainersDetails.TabIndex = 2;
             // 
             // tlpFreePersonalTrainers
@@ -930,17 +931,17 @@
             this.tlpFreePersonalTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpFreePersonalTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpFreePersonalTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFreePersonalTrainers.Size = new System.Drawing.Size(352, 266);
+            this.tlpFreePersonalTrainers.Size = new System.Drawing.Size(347, 234);
             this.tlpFreePersonalTrainers.TabIndex = 0;
             // 
             // pnlEveningFreeTrainers
             // 
             this.pnlEveningFreeTrainers.Controls.Add(this.pnlFreeEveningTrainers);
             this.pnlEveningFreeTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEveningFreeTrainers.Location = new System.Drawing.Point(0, 198);
+            this.pnlEveningFreeTrainers.Location = new System.Drawing.Point(0, 174);
             this.pnlEveningFreeTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEveningFreeTrainers.Name = "pnlEveningFreeTrainers";
-            this.pnlEveningFreeTrainers.Size = new System.Drawing.Size(352, 68);
+            this.pnlEveningFreeTrainers.Size = new System.Drawing.Size(347, 60);
             this.pnlEveningFreeTrainers.TabIndex = 3;
             // 
             // pnlFreeEveningTrainers
@@ -950,8 +951,8 @@
             this.pnlFreeEveningTrainers.Location = new System.Drawing.Point(0, 0);
             this.pnlFreeEveningTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFreeEveningTrainers.Name = "pnlFreeEveningTrainers";
-            this.pnlFreeEveningTrainers.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlFreeEveningTrainers.Size = new System.Drawing.Size(352, 68);
+            this.pnlFreeEveningTrainers.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlFreeEveningTrainers.Size = new System.Drawing.Size(347, 60);
             this.pnlFreeEveningTrainers.TabIndex = 1;
             // 
             // tlpFreeEveningTrainers
@@ -965,12 +966,12 @@
             this.tlpFreeEveningTrainers.Controls.Add(this.lblEvening, 0, 0);
             this.tlpFreeEveningTrainers.Controls.Add(this.picEvening, 0, 0);
             this.tlpFreeEveningTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreeEveningTrainers.Location = new System.Drawing.Point(10, 10);
+            this.tlpFreeEveningTrainers.Location = new System.Drawing.Point(13, 12);
             this.tlpFreeEveningTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFreeEveningTrainers.Name = "tlpFreeEveningTrainers";
             this.tlpFreeEveningTrainers.RowCount = 1;
             this.tlpFreeEveningTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFreeEveningTrainers.Size = new System.Drawing.Size(332, 48);
+            this.tlpFreeEveningTrainers.Size = new System.Drawing.Size(321, 36);
             this.tlpFreeEveningTrainers.TabIndex = 0;
             // 
             // lblEveningValue
@@ -980,9 +981,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEveningValue.AutoSize = true;
             this.lblEveningValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEveningValue.Location = new System.Drawing.Point(268, 0);
+            this.lblEveningValue.Location = new System.Drawing.Point(260, 0);
+            this.lblEveningValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEveningValue.Name = "lblEveningValue";
-            this.lblEveningValue.Size = new System.Drawing.Size(61, 48);
+            this.lblEveningValue.Size = new System.Drawing.Size(57, 36);
             this.lblEveningValue.TabIndex = 17;
             this.lblEveningValue.Text = "20";
             this.lblEveningValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -994,9 +996,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEvening.AutoSize = true;
             this.lblEvening.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvening.Location = new System.Drawing.Point(69, 0);
+            this.lblEvening.Location = new System.Drawing.Point(68, 0);
+            this.lblEvening.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEvening.Name = "lblEvening";
-            this.lblEvening.Size = new System.Drawing.Size(193, 48);
+            this.lblEvening.Size = new System.Drawing.Size(184, 36);
             this.lblEvening.TabIndex = 16;
             this.lblEvening.Text = "Evening";
             this.lblEvening.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1005,10 +1008,10 @@
             // 
             this.picEvening.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picEvening.Image = ((System.Drawing.Image)(resources.GetObject("picEvening.Image")));
-            this.picEvening.Location = new System.Drawing.Point(18, 6);
+            this.picEvening.Location = new System.Drawing.Point(1, 0);
             this.picEvening.Margin = new System.Windows.Forms.Padding(0);
             this.picEvening.Name = "picEvening";
-            this.picEvening.Size = new System.Drawing.Size(48, 36);
+            this.picEvening.Size = new System.Drawing.Size(63, 36);
             this.picEvening.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEvening.TabIndex = 15;
             this.picEvening.TabStop = false;
@@ -1017,10 +1020,10 @@
             // 
             this.pnlAfternoonFreeTrainers.Controls.Add(this.pnlAfternoonFreeTrainer);
             this.pnlAfternoonFreeTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAfternoonFreeTrainers.Location = new System.Drawing.Point(0, 132);
+            this.pnlAfternoonFreeTrainers.Location = new System.Drawing.Point(0, 116);
             this.pnlAfternoonFreeTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAfternoonFreeTrainers.Name = "pnlAfternoonFreeTrainers";
-            this.pnlAfternoonFreeTrainers.Size = new System.Drawing.Size(352, 66);
+            this.pnlAfternoonFreeTrainers.Size = new System.Drawing.Size(347, 58);
             this.pnlAfternoonFreeTrainers.TabIndex = 2;
             // 
             // pnlAfternoonFreeTrainer
@@ -1031,8 +1034,8 @@
             this.pnlAfternoonFreeTrainer.Location = new System.Drawing.Point(0, 0);
             this.pnlAfternoonFreeTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAfternoonFreeTrainer.Name = "pnlAfternoonFreeTrainer";
-            this.pnlAfternoonFreeTrainer.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlAfternoonFreeTrainer.Size = new System.Drawing.Size(352, 66);
+            this.pnlAfternoonFreeTrainer.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlAfternoonFreeTrainer.Size = new System.Drawing.Size(347, 58);
             this.pnlAfternoonFreeTrainer.TabIndex = 1;
             // 
             // tlpAfternoonFreeTrainer
@@ -1046,12 +1049,12 @@
             this.tlpAfternoonFreeTrainer.Controls.Add(this.lblAfternoon, 0, 0);
             this.tlpAfternoonFreeTrainer.Controls.Add(this.picAfternoon, 0, 0);
             this.tlpAfternoonFreeTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAfternoonFreeTrainer.Location = new System.Drawing.Point(10, 10);
+            this.tlpAfternoonFreeTrainer.Location = new System.Drawing.Point(13, 12);
             this.tlpAfternoonFreeTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpAfternoonFreeTrainer.Name = "tlpAfternoonFreeTrainer";
             this.tlpAfternoonFreeTrainer.RowCount = 1;
             this.tlpAfternoonFreeTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAfternoonFreeTrainer.Size = new System.Drawing.Size(332, 46);
+            this.tlpAfternoonFreeTrainer.Size = new System.Drawing.Size(321, 34);
             this.tlpAfternoonFreeTrainer.TabIndex = 0;
             // 
             // lblAfternoonValue
@@ -1061,9 +1064,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAfternoonValue.AutoSize = true;
             this.lblAfternoonValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAfternoonValue.Location = new System.Drawing.Point(268, 0);
+            this.lblAfternoonValue.Location = new System.Drawing.Point(260, 0);
+            this.lblAfternoonValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAfternoonValue.Name = "lblAfternoonValue";
-            this.lblAfternoonValue.Size = new System.Drawing.Size(61, 46);
+            this.lblAfternoonValue.Size = new System.Drawing.Size(57, 34);
             this.lblAfternoonValue.TabIndex = 15;
             this.lblAfternoonValue.Text = "15";
             this.lblAfternoonValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1075,9 +1079,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAfternoon.AutoSize = true;
             this.lblAfternoon.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAfternoon.Location = new System.Drawing.Point(69, 0);
+            this.lblAfternoon.Location = new System.Drawing.Point(68, 0);
+            this.lblAfternoon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAfternoon.Name = "lblAfternoon";
-            this.lblAfternoon.Size = new System.Drawing.Size(193, 46);
+            this.lblAfternoon.Size = new System.Drawing.Size(184, 34);
             this.lblAfternoon.TabIndex = 14;
             this.lblAfternoon.Text = "Afternoon";
             this.lblAfternoon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1086,10 +1091,10 @@
             // 
             this.picAfternoon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAfternoon.Image = ((System.Drawing.Image)(resources.GetObject("picAfternoon.Image")));
-            this.picAfternoon.Location = new System.Drawing.Point(18, 5);
+            this.picAfternoon.Location = new System.Drawing.Point(1, 0);
             this.picAfternoon.Margin = new System.Windows.Forms.Padding(0);
             this.picAfternoon.Name = "picAfternoon";
-            this.picAfternoon.Size = new System.Drawing.Size(48, 36);
+            this.picAfternoon.Size = new System.Drawing.Size(63, 33);
             this.picAfternoon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAfternoon.TabIndex = 13;
             this.picAfternoon.TabStop = false;
@@ -1098,10 +1103,10 @@
             // 
             this.pnlMorningFreeTrainers.Controls.Add(this.pnlMorningFreeTrainer);
             this.pnlMorningFreeTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMorningFreeTrainers.Location = new System.Drawing.Point(0, 66);
+            this.pnlMorningFreeTrainers.Location = new System.Drawing.Point(0, 58);
             this.pnlMorningFreeTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMorningFreeTrainers.Name = "pnlMorningFreeTrainers";
-            this.pnlMorningFreeTrainers.Size = new System.Drawing.Size(352, 66);
+            this.pnlMorningFreeTrainers.Size = new System.Drawing.Size(347, 58);
             this.pnlMorningFreeTrainers.TabIndex = 1;
             // 
             // pnlMorningFreeTrainer
@@ -1111,8 +1116,8 @@
             this.pnlMorningFreeTrainer.Location = new System.Drawing.Point(0, 0);
             this.pnlMorningFreeTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMorningFreeTrainer.Name = "pnlMorningFreeTrainer";
-            this.pnlMorningFreeTrainer.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlMorningFreeTrainer.Size = new System.Drawing.Size(352, 66);
+            this.pnlMorningFreeTrainer.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlMorningFreeTrainer.Size = new System.Drawing.Size(347, 58);
             this.pnlMorningFreeTrainer.TabIndex = 1;
             // 
             // tlpFreeMorningTrainer
@@ -1126,12 +1131,12 @@
             this.tlpFreeMorningTrainer.Controls.Add(this.lblMorning, 0, 0);
             this.tlpFreeMorningTrainer.Controls.Add(this.picMorning, 0, 0);
             this.tlpFreeMorningTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFreeMorningTrainer.Location = new System.Drawing.Point(10, 10);
+            this.tlpFreeMorningTrainer.Location = new System.Drawing.Point(13, 12);
             this.tlpFreeMorningTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFreeMorningTrainer.Name = "tlpFreeMorningTrainer";
             this.tlpFreeMorningTrainer.RowCount = 1;
             this.tlpFreeMorningTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFreeMorningTrainer.Size = new System.Drawing.Size(332, 46);
+            this.tlpFreeMorningTrainer.Size = new System.Drawing.Size(321, 34);
             this.tlpFreeMorningTrainer.TabIndex = 0;
             // 
             // lblMorningValue
@@ -1141,9 +1146,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMorningValue.AutoSize = true;
             this.lblMorningValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMorningValue.Location = new System.Drawing.Point(268, 0);
+            this.lblMorningValue.Location = new System.Drawing.Point(260, 0);
+            this.lblMorningValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMorningValue.Name = "lblMorningValue";
-            this.lblMorningValue.Size = new System.Drawing.Size(61, 46);
+            this.lblMorningValue.Size = new System.Drawing.Size(57, 34);
             this.lblMorningValue.TabIndex = 13;
             this.lblMorningValue.Text = "10";
             this.lblMorningValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1155,9 +1161,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMorning.AutoSize = true;
             this.lblMorning.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMorning.Location = new System.Drawing.Point(69, 0);
+            this.lblMorning.Location = new System.Drawing.Point(68, 0);
+            this.lblMorning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMorning.Name = "lblMorning";
-            this.lblMorning.Size = new System.Drawing.Size(193, 46);
+            this.lblMorning.Size = new System.Drawing.Size(184, 34);
             this.lblMorning.TabIndex = 12;
             this.lblMorning.Text = "Morning";
             this.lblMorning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1167,10 +1174,10 @@
             this.picMorning.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMorning.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picMorning.BackgroundImage")));
             this.picMorning.Image = ((System.Drawing.Image)(resources.GetObject("picMorning.Image")));
-            this.picMorning.Location = new System.Drawing.Point(18, 5);
+            this.picMorning.Location = new System.Drawing.Point(1, 0);
             this.picMorning.Margin = new System.Windows.Forms.Padding(0);
             this.picMorning.Name = "picMorning";
-            this.picMorning.Size = new System.Drawing.Size(48, 36);
+            this.picMorning.Size = new System.Drawing.Size(63, 33);
             this.picMorning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMorning.TabIndex = 11;
             this.picMorning.TabStop = false;
@@ -1182,8 +1189,8 @@
             this.pnlEarlyMorningFreeTrainers.Location = new System.Drawing.Point(0, 0);
             this.pnlEarlyMorningFreeTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEarlyMorningFreeTrainers.Name = "pnlEarlyMorningFreeTrainers";
-            this.pnlEarlyMorningFreeTrainers.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlEarlyMorningFreeTrainers.Size = new System.Drawing.Size(352, 66);
+            this.pnlEarlyMorningFreeTrainers.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlEarlyMorningFreeTrainers.Size = new System.Drawing.Size(347, 58);
             this.pnlEarlyMorningFreeTrainers.TabIndex = 0;
             // 
             // tlpEarlyMorningFreeTrainers
@@ -1197,12 +1204,12 @@
             this.tlpEarlyMorningFreeTrainers.Controls.Add(this.lblEarlyMorning, 0, 0);
             this.tlpEarlyMorningFreeTrainers.Controls.Add(this.picEarlyMorning, 0, 0);
             this.tlpEarlyMorningFreeTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEarlyMorningFreeTrainers.Location = new System.Drawing.Point(10, 10);
+            this.tlpEarlyMorningFreeTrainers.Location = new System.Drawing.Point(13, 12);
             this.tlpEarlyMorningFreeTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.tlpEarlyMorningFreeTrainers.Name = "tlpEarlyMorningFreeTrainers";
             this.tlpEarlyMorningFreeTrainers.RowCount = 1;
             this.tlpEarlyMorningFreeTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEarlyMorningFreeTrainers.Size = new System.Drawing.Size(332, 46);
+            this.tlpEarlyMorningFreeTrainers.Size = new System.Drawing.Size(321, 34);
             this.tlpEarlyMorningFreeTrainers.TabIndex = 0;
             // 
             // lblEarlyMorningValue
@@ -1212,9 +1219,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEarlyMorningValue.AutoSize = true;
             this.lblEarlyMorningValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarlyMorningValue.Location = new System.Drawing.Point(268, 0);
+            this.lblEarlyMorningValue.Location = new System.Drawing.Point(260, 0);
+            this.lblEarlyMorningValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEarlyMorningValue.Name = "lblEarlyMorningValue";
-            this.lblEarlyMorningValue.Size = new System.Drawing.Size(61, 46);
+            this.lblEarlyMorningValue.Size = new System.Drawing.Size(57, 34);
             this.lblEarlyMorningValue.TabIndex = 11;
             this.lblEarlyMorningValue.Text = "0";
             this.lblEarlyMorningValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1226,9 +1234,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEarlyMorning.AutoSize = true;
             this.lblEarlyMorning.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarlyMorning.Location = new System.Drawing.Point(69, 0);
+            this.lblEarlyMorning.Location = new System.Drawing.Point(68, 0);
+            this.lblEarlyMorning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEarlyMorning.Name = "lblEarlyMorning";
-            this.lblEarlyMorning.Size = new System.Drawing.Size(193, 46);
+            this.lblEarlyMorning.Size = new System.Drawing.Size(184, 34);
             this.lblEarlyMorning.TabIndex = 10;
             this.lblEarlyMorning.Text = "EarlyMorning";
             this.lblEarlyMorning.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1238,10 +1247,10 @@
             this.picEarlyMorning.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picEarlyMorning.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picEarlyMorning.BackgroundImage")));
             this.picEarlyMorning.Image = ((System.Drawing.Image)(resources.GetObject("picEarlyMorning.Image")));
-            this.picEarlyMorning.Location = new System.Drawing.Point(18, 3);
+            this.picEarlyMorning.Location = new System.Drawing.Point(16, 0);
             this.picEarlyMorning.Margin = new System.Windows.Forms.Padding(0);
             this.picEarlyMorning.Name = "picEarlyMorning";
-            this.picEarlyMorning.Size = new System.Drawing.Size(36, 32);
+            this.picEarlyMorning.Size = new System.Drawing.Size(48, 33);
             this.picEarlyMorning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEarlyMorning.TabIndex = 9;
             this.picEarlyMorning.TabStop = false;
@@ -1252,19 +1261,19 @@
             this.pnlFreePersonalTrainersLabel.Controls.Add(this.picFreePersonalTrainers);
             this.pnlFreePersonalTrainersLabel.Controls.Add(this.lblFreePersonalTrainers);
             this.pnlFreePersonalTrainersLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFreePersonalTrainersLabel.Location = new System.Drawing.Point(10, 10);
+            this.pnlFreePersonalTrainersLabel.Location = new System.Drawing.Point(13, 12);
             this.pnlFreePersonalTrainersLabel.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFreePersonalTrainersLabel.Name = "pnlFreePersonalTrainersLabel";
-            this.pnlFreePersonalTrainersLabel.Size = new System.Drawing.Size(352, 48);
+            this.pnlFreePersonalTrainersLabel.Size = new System.Drawing.Size(347, 59);
             this.pnlFreePersonalTrainersLabel.TabIndex = 1;
             // 
             // picFreePersonalTrainers
             // 
             this.picFreePersonalTrainers.Image = ((System.Drawing.Image)(resources.GetObject("picFreePersonalTrainers.Image")));
-            this.picFreePersonalTrainers.Location = new System.Drawing.Point(95, 16);
+            this.picFreePersonalTrainers.Location = new System.Drawing.Point(2, 18);
             this.picFreePersonalTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.picFreePersonalTrainers.Name = "picFreePersonalTrainers";
-            this.picFreePersonalTrainers.Size = new System.Drawing.Size(25, 25);
+            this.picFreePersonalTrainers.Size = new System.Drawing.Size(33, 31);
             this.picFreePersonalTrainers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFreePersonalTrainers.TabIndex = 4;
             this.picFreePersonalTrainers.TabStop = false;
@@ -1276,10 +1285,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFreePersonalTrainers.AutoSize = true;
             this.lblFreePersonalTrainers.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreePersonalTrainers.Location = new System.Drawing.Point(120, 13);
+            this.lblFreePersonalTrainers.Location = new System.Drawing.Point(41, 20);
             this.lblFreePersonalTrainers.Margin = new System.Windows.Forms.Padding(0);
             this.lblFreePersonalTrainers.Name = "lblFreePersonalTrainers";
-            this.lblFreePersonalTrainers.Size = new System.Drawing.Size(168, 21);
+            this.lblFreePersonalTrainers.Size = new System.Drawing.Size(210, 28);
             this.lblFreePersonalTrainers.TabIndex = 1;
             this.lblFreePersonalTrainers.Text = "Free Personal Trainers";
             this.lblFreePersonalTrainers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1289,20 +1298,20 @@
             this.pnlMembership.BackColor = System.Drawing.Color.Transparent;
             this.pnlMembership.Controls.Add(this.tlpMembership);
             this.pnlMembership.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMembership.Location = new System.Drawing.Point(0, 437);
+            this.pnlMembership.Location = new System.Drawing.Point(0, 539);
             this.pnlMembership.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMembership.Name = "pnlMembership";
-            this.pnlMembership.Size = new System.Drawing.Size(886, 158);
+            this.pnlMembership.Size = new System.Drawing.Size(1181, 195);
             this.pnlMembership.TabIndex = 3;
             // 
             // tlpMembership
             // 
             this.tlpMembership.ColumnCount = 5;
-            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.199253F));
-            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.28392F));
-            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.033648F));
-            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.28392F));
-            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.199252F));
+            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.00032F));
+            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.48071F));
+            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.03795F));
+            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.48071F));
+            this.tlpMembership.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.00032F));
             this.tlpMembership.Controls.Add(this.pnlSellMembershipSubscription, 1, 0);
             this.tlpMembership.Controls.Add(this.pnlKeyMonthyFinancials, 3, 0);
             this.tlpMembership.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1311,7 +1320,7 @@
             this.tlpMembership.Name = "tlpMembership";
             this.tlpMembership.RowCount = 1;
             this.tlpMembership.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembership.Size = new System.Drawing.Size(886, 158);
+            this.tlpMembership.Size = new System.Drawing.Size(1181, 195);
             this.tlpMembership.TabIndex = 1;
             // 
             // pnlSellMembershipSubscription
@@ -1319,11 +1328,11 @@
             this.pnlSellMembershipSubscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(253)))));
             this.pnlSellMembershipSubscription.Controls.Add(this.tlpSellMembershipSubscriptions);
             this.pnlSellMembershipSubscription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSellMembershipSubscription.Location = new System.Drawing.Point(25, 0);
+            this.pnlSellMembershipSubscription.Location = new System.Drawing.Point(23, 0);
             this.pnlSellMembershipSubscription.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSellMembershipSubscription.Name = "pnlSellMembershipSubscription";
-            this.pnlSellMembershipSubscription.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlSellMembershipSubscription.Size = new System.Drawing.Size(558, 204);
+            this.pnlSellMembershipSubscription.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlSellMembershipSubscription.Size = new System.Drawing.Size(560, 195);
             this.pnlSellMembershipSubscription.TabIndex = 0;
             this.pnlSellMembershipSubscription.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSellMembershipSubscription_Paint);
             // 
@@ -1336,7 +1345,7 @@
             this.tlpSellMembershipSubscriptions.Controls.Add(this.pnlFirstHighestMembershipPlans, 0, 1);
             this.tlpSellMembershipSubscriptions.Controls.Add(this.tlpTopMembershipPlansLabelPicture, 0, 0);
             this.tlpSellMembershipSubscriptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSellMembershipSubscriptions.Location = new System.Drawing.Point(10, 10);
+            this.tlpSellMembershipSubscriptions.Location = new System.Drawing.Point(13, 12);
             this.tlpSellMembershipSubscriptions.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSellMembershipSubscriptions.Name = "tlpSellMembershipSubscriptions";
             this.tlpSellMembershipSubscriptions.RowCount = 5;
@@ -1345,18 +1354,18 @@
             this.tlpSellMembershipSubscriptions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpSellMembershipSubscriptions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpSellMembershipSubscriptions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpSellMembershipSubscriptions.Size = new System.Drawing.Size(538, 184);
+            this.tlpSellMembershipSubscriptions.Size = new System.Drawing.Size(534, 171);
             this.tlpSellMembershipSubscriptions.TabIndex = 0;
             // 
             // pnlThirdHighestMembershipPlans
             // 
             this.pnlThirdHighestMembershipPlans.Controls.Add(this.tlpThirdHighestMembershipPlans);
             this.pnlThirdHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlThirdHighestMembershipPlans.Location = new System.Drawing.Point(0, 127);
+            this.pnlThirdHighestMembershipPlans.Location = new System.Drawing.Point(0, 119);
             this.pnlThirdHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.pnlThirdHighestMembershipPlans.Name = "pnlThirdHighestMembershipPlans";
-            this.pnlThirdHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlThirdHighestMembershipPlans.Size = new System.Drawing.Size(538, 36);
+            this.pnlThirdHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlThirdHighestMembershipPlans.Size = new System.Drawing.Size(534, 34);
             this.pnlThirdHighestMembershipPlans.TabIndex = 5;
             // 
             // tlpThirdHighestMembershipPlans
@@ -1370,12 +1379,12 @@
             this.tlpThirdHighestMembershipPlans.Controls.Add(this.picThirdHighestMembershipPlans, 0, 0);
             this.tlpThirdHighestMembershipPlans.Controls.Add(this.lblThirdHighestMembershipPlansValues, 1, 0);
             this.tlpThirdHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpThirdHighestMembershipPlans.Location = new System.Drawing.Point(5, 5);
+            this.tlpThirdHighestMembershipPlans.Location = new System.Drawing.Point(7, 6);
             this.tlpThirdHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.tlpThirdHighestMembershipPlans.Name = "tlpThirdHighestMembershipPlans";
             this.tlpThirdHighestMembershipPlans.RowCount = 1;
             this.tlpThirdHighestMembershipPlans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpThirdHighestMembershipPlans.Size = new System.Drawing.Size(528, 26);
+            this.tlpThirdHighestMembershipPlans.Size = new System.Drawing.Size(520, 22);
             this.tlpThirdHighestMembershipPlans.TabIndex = 7;
             // 
             // lblThirdHighestMembershipPlans
@@ -1388,7 +1397,7 @@
             this.lblThirdHighestMembershipPlans.Location = new System.Drawing.Point(52, 0);
             this.lblThirdHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.lblThirdHighestMembershipPlans.Name = "lblThirdHighestMembershipPlans";
-            this.lblThirdHighestMembershipPlans.Size = new System.Drawing.Size(422, 26);
+            this.lblThirdHighestMembershipPlans.Size = new System.Drawing.Size(416, 22);
             this.lblThirdHighestMembershipPlans.TabIndex = 3;
             this.lblThirdHighestMembershipPlans.Text = "Third Highest Membership Plans";
             this.lblThirdHighestMembershipPlans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1397,10 +1406,10 @@
             // 
             this.picThirdHighestMembershipPlans.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picThirdHighestMembershipPlans.Image = ((System.Drawing.Image)(resources.GetObject("picThirdHighestMembershipPlans.Image")));
-            this.picThirdHighestMembershipPlans.Location = new System.Drawing.Point(27, 0);
+            this.picThirdHighestMembershipPlans.Location = new System.Drawing.Point(19, 0);
             this.picThirdHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picThirdHighestMembershipPlans.Name = "picThirdHighestMembershipPlans";
-            this.picThirdHighestMembershipPlans.Size = new System.Drawing.Size(25, 25);
+            this.picThirdHighestMembershipPlans.Size = new System.Drawing.Size(33, 22);
             this.picThirdHighestMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picThirdHighestMembershipPlans.TabIndex = 2;
             this.picThirdHighestMembershipPlans.TabStop = false;
@@ -1413,10 +1422,10 @@
             this.lblThirdHighestMembershipPlansValues.AutoSize = true;
             this.lblThirdHighestMembershipPlansValues.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThirdHighestMembershipPlansValues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblThirdHighestMembershipPlansValues.Location = new System.Drawing.Point(474, 0);
+            this.lblThirdHighestMembershipPlansValues.Location = new System.Drawing.Point(468, 0);
             this.lblThirdHighestMembershipPlansValues.Margin = new System.Windows.Forms.Padding(0);
             this.lblThirdHighestMembershipPlansValues.Name = "lblThirdHighestMembershipPlansValues";
-            this.lblThirdHighestMembershipPlansValues.Size = new System.Drawing.Size(54, 26);
+            this.lblThirdHighestMembershipPlansValues.Size = new System.Drawing.Size(52, 22);
             this.lblThirdHighestMembershipPlansValues.TabIndex = 0;
             this.lblThirdHighestMembershipPlansValues.Text = "10";
             this.lblThirdHighestMembershipPlansValues.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1425,11 +1434,11 @@
             // 
             this.pnlSecondHighestMembershipPlans.Controls.Add(this.tlpSecondHighestMembershipPlans);
             this.pnlSecondHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSecondHighestMembershipPlans.Location = new System.Drawing.Point(0, 91);
+            this.pnlSecondHighestMembershipPlans.Location = new System.Drawing.Point(0, 85);
             this.pnlSecondHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSecondHighestMembershipPlans.Name = "pnlSecondHighestMembershipPlans";
-            this.pnlSecondHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSecondHighestMembershipPlans.Size = new System.Drawing.Size(538, 36);
+            this.pnlSecondHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlSecondHighestMembershipPlans.Size = new System.Drawing.Size(534, 34);
             this.pnlSecondHighestMembershipPlans.TabIndex = 4;
             // 
             // tlpSecondHighestMembershipPlans
@@ -1443,12 +1452,12 @@
             this.tlpSecondHighestMembershipPlans.Controls.Add(this.picSecondHighestMembershipPlans, 0, 0);
             this.tlpSecondHighestMembershipPlans.Controls.Add(this.lblSecondHighestMembershipPlans, 1, 0);
             this.tlpSecondHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSecondHighestMembershipPlans.Location = new System.Drawing.Point(5, 5);
+            this.tlpSecondHighestMembershipPlans.Location = new System.Drawing.Point(7, 6);
             this.tlpSecondHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSecondHighestMembershipPlans.Name = "tlpSecondHighestMembershipPlans";
             this.tlpSecondHighestMembershipPlans.RowCount = 1;
             this.tlpSecondHighestMembershipPlans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSecondHighestMembershipPlans.Size = new System.Drawing.Size(528, 26);
+            this.tlpSecondHighestMembershipPlans.Size = new System.Drawing.Size(520, 22);
             this.tlpSecondHighestMembershipPlans.TabIndex = 6;
             // 
             // lblSecondHighestMembershipPlan
@@ -1461,7 +1470,7 @@
             this.lblSecondHighestMembershipPlan.Location = new System.Drawing.Point(52, 0);
             this.lblSecondHighestMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
             this.lblSecondHighestMembershipPlan.Name = "lblSecondHighestMembershipPlan";
-            this.lblSecondHighestMembershipPlan.Size = new System.Drawing.Size(422, 26);
+            this.lblSecondHighestMembershipPlan.Size = new System.Drawing.Size(416, 22);
             this.lblSecondHighestMembershipPlan.TabIndex = 3;
             this.lblSecondHighestMembershipPlan.Text = "Second Highest MembershipPlans";
             this.lblSecondHighestMembershipPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1470,10 +1479,10 @@
             // 
             this.picSecondHighestMembershipPlans.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picSecondHighestMembershipPlans.Image = ((System.Drawing.Image)(resources.GetObject("picSecondHighestMembershipPlans.Image")));
-            this.picSecondHighestMembershipPlans.Location = new System.Drawing.Point(27, 0);
+            this.picSecondHighestMembershipPlans.Location = new System.Drawing.Point(19, 0);
             this.picSecondHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picSecondHighestMembershipPlans.Name = "picSecondHighestMembershipPlans";
-            this.picSecondHighestMembershipPlans.Size = new System.Drawing.Size(25, 25);
+            this.picSecondHighestMembershipPlans.Size = new System.Drawing.Size(33, 22);
             this.picSecondHighestMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSecondHighestMembershipPlans.TabIndex = 2;
             this.picSecondHighestMembershipPlans.TabStop = false;
@@ -1486,10 +1495,10 @@
             this.lblSecondHighestMembershipPlans.AutoSize = true;
             this.lblSecondHighestMembershipPlans.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSecondHighestMembershipPlans.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblSecondHighestMembershipPlans.Location = new System.Drawing.Point(474, 0);
+            this.lblSecondHighestMembershipPlans.Location = new System.Drawing.Point(468, 0);
             this.lblSecondHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.lblSecondHighestMembershipPlans.Name = "lblSecondHighestMembershipPlans";
-            this.lblSecondHighestMembershipPlans.Size = new System.Drawing.Size(54, 26);
+            this.lblSecondHighestMembershipPlans.Size = new System.Drawing.Size(52, 22);
             this.lblSecondHighestMembershipPlans.TabIndex = 0;
             this.lblSecondHighestMembershipPlans.Text = "15";
             this.lblSecondHighestMembershipPlans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1498,11 +1507,11 @@
             // 
             this.pnlFirstHighestMembershipPlans.Controls.Add(this.tlpFirstHighestMembershipPlans);
             this.pnlFirstHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFirstHighestMembershipPlans.Location = new System.Drawing.Point(0, 55);
+            this.pnlFirstHighestMembershipPlans.Location = new System.Drawing.Point(0, 51);
             this.pnlFirstHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFirstHighestMembershipPlans.Name = "pnlFirstHighestMembershipPlans";
-            this.pnlFirstHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlFirstHighestMembershipPlans.Size = new System.Drawing.Size(538, 36);
+            this.pnlFirstHighestMembershipPlans.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlFirstHighestMembershipPlans.Size = new System.Drawing.Size(534, 34);
             this.pnlFirstHighestMembershipPlans.TabIndex = 3;
             // 
             // tlpFirstHighestMembershipPlans
@@ -1516,12 +1525,12 @@
             this.tlpFirstHighestMembershipPlans.Controls.Add(this.lblFirstHighestMembershipPlans, 1, 0);
             this.tlpFirstHighestMembershipPlans.Controls.Add(this.picFirstMembershipPlans, 0, 0);
             this.tlpFirstHighestMembershipPlans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFirstHighestMembershipPlans.Location = new System.Drawing.Point(5, 5);
+            this.tlpFirstHighestMembershipPlans.Location = new System.Drawing.Point(7, 6);
             this.tlpFirstHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFirstHighestMembershipPlans.Name = "tlpFirstHighestMembershipPlans";
             this.tlpFirstHighestMembershipPlans.RowCount = 1;
             this.tlpFirstHighestMembershipPlans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFirstHighestMembershipPlans.Size = new System.Drawing.Size(528, 26);
+            this.tlpFirstHighestMembershipPlans.Size = new System.Drawing.Size(520, 22);
             this.tlpFirstHighestMembershipPlans.TabIndex = 5;
             // 
             // lblFirstHighestMembershipPlansValues
@@ -1532,10 +1541,10 @@
             this.lblFirstHighestMembershipPlansValues.AutoSize = true;
             this.lblFirstHighestMembershipPlansValues.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstHighestMembershipPlansValues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblFirstHighestMembershipPlansValues.Location = new System.Drawing.Point(474, 0);
+            this.lblFirstHighestMembershipPlansValues.Location = new System.Drawing.Point(468, 0);
             this.lblFirstHighestMembershipPlansValues.Margin = new System.Windows.Forms.Padding(0);
             this.lblFirstHighestMembershipPlansValues.Name = "lblFirstHighestMembershipPlansValues";
-            this.lblFirstHighestMembershipPlansValues.Size = new System.Drawing.Size(54, 26);
+            this.lblFirstHighestMembershipPlansValues.Size = new System.Drawing.Size(52, 22);
             this.lblFirstHighestMembershipPlansValues.TabIndex = 2;
             this.lblFirstHighestMembershipPlansValues.Text = "20";
             this.lblFirstHighestMembershipPlansValues.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1550,7 +1559,7 @@
             this.lblFirstHighestMembershipPlans.Location = new System.Drawing.Point(52, 0);
             this.lblFirstHighestMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.lblFirstHighestMembershipPlans.Name = "lblFirstHighestMembershipPlans";
-            this.lblFirstHighestMembershipPlans.Size = new System.Drawing.Size(422, 26);
+            this.lblFirstHighestMembershipPlans.Size = new System.Drawing.Size(416, 22);
             this.lblFirstHighestMembershipPlans.TabIndex = 0;
             this.lblFirstHighestMembershipPlans.Text = "First Highest Membership Plans";
             this.lblFirstHighestMembershipPlans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1559,10 +1568,10 @@
             // 
             this.picFirstMembershipPlans.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picFirstMembershipPlans.Image = ((System.Drawing.Image)(resources.GetObject("picFirstMembershipPlans.Image")));
-            this.picFirstMembershipPlans.Location = new System.Drawing.Point(27, 0);
+            this.picFirstMembershipPlans.Location = new System.Drawing.Point(19, 0);
             this.picFirstMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picFirstMembershipPlans.Name = "picFirstMembershipPlans";
-            this.picFirstMembershipPlans.Size = new System.Drawing.Size(25, 25);
+            this.picFirstMembershipPlans.Size = new System.Drawing.Size(33, 22);
             this.picFirstMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFirstMembershipPlans.TabIndex = 1;
             this.picFirstMembershipPlans.TabStop = false;
@@ -1580,7 +1589,7 @@
             this.tlpTopMembershipPlansLabelPicture.Name = "tlpTopMembershipPlansLabelPicture";
             this.tlpTopMembershipPlansLabelPicture.RowCount = 1;
             this.tlpTopMembershipPlansLabelPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopMembershipPlansLabelPicture.Size = new System.Drawing.Size(538, 55);
+            this.tlpTopMembershipPlansLabelPicture.Size = new System.Drawing.Size(534, 51);
             this.tlpTopMembershipPlansLabelPicture.TabIndex = 6;
             // 
             // lblTopMembershipPlans
@@ -1588,7 +1597,7 @@
             this.lblTopMembershipPlans.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTopMembershipPlans.AutoSize = true;
             this.lblTopMembershipPlans.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopMembershipPlans.Location = new System.Drawing.Point(161, 13);
+            this.lblTopMembershipPlans.Location = new System.Drawing.Point(160, 11);
             this.lblTopMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.lblTopMembershipPlans.Name = "lblTopMembershipPlans";
             this.lblTopMembershipPlans.Size = new System.Drawing.Size(220, 28);
@@ -1600,10 +1609,10 @@
             // 
             this.picTopMembershipPlans.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picTopMembershipPlans.Image = ((System.Drawing.Image)(resources.GetObject("picTopMembershipPlans.Image")));
-            this.picTopMembershipPlans.Location = new System.Drawing.Point(126, 10);
+            this.picTopMembershipPlans.Location = new System.Drawing.Point(113, 4);
             this.picTopMembershipPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picTopMembershipPlans.Name = "picTopMembershipPlans";
-            this.picTopMembershipPlans.Size = new System.Drawing.Size(35, 35);
+            this.picTopMembershipPlans.Size = new System.Drawing.Size(47, 43);
             this.picTopMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTopMembershipPlans.TabIndex = 5;
             this.picTopMembershipPlans.TabStop = false;
@@ -1616,8 +1625,8 @@
             this.pnlKeyMonthyFinancials.Location = new System.Drawing.Point(595, 0);
             this.pnlKeyMonthyFinancials.Margin = new System.Windows.Forms.Padding(0);
             this.pnlKeyMonthyFinancials.Name = "pnlKeyMonthyFinancials";
-            this.pnlKeyMonthyFinancials.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlKeyMonthyFinancials.Size = new System.Drawing.Size(558, 204);
+            this.pnlKeyMonthyFinancials.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlKeyMonthyFinancials.Size = new System.Drawing.Size(560, 195);
             this.pnlKeyMonthyFinancials.TabIndex = 1;
             this.pnlKeyMonthyFinancials.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlKeyMonthyFinancials_Paint);
             // 
@@ -1630,7 +1639,7 @@
             this.tlpKeyMonthlyFinancials.Controls.Add(this.pnlMonthlyExpenses, 0, 1);
             this.tlpKeyMonthlyFinancials.Controls.Add(this.tlpKeyMonthlyFinancialsLabelImage, 0, 0);
             this.tlpKeyMonthlyFinancials.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpKeyMonthlyFinancials.Location = new System.Drawing.Point(10, 10);
+            this.tlpKeyMonthlyFinancials.Location = new System.Drawing.Point(13, 12);
             this.tlpKeyMonthlyFinancials.Margin = new System.Windows.Forms.Padding(0);
             this.tlpKeyMonthlyFinancials.Name = "tlpKeyMonthlyFinancials";
             this.tlpKeyMonthlyFinancials.RowCount = 5;
@@ -1639,7 +1648,7 @@
             this.tlpKeyMonthlyFinancials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpKeyMonthlyFinancials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpKeyMonthlyFinancials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpKeyMonthlyFinancials.Size = new System.Drawing.Size(538, 184);
+            this.tlpKeyMonthlyFinancials.Size = new System.Drawing.Size(534, 171);
             this.tlpKeyMonthlyFinancials.TabIndex = 1;
             // 
             // pnlThisMonthSubscriptionNo
@@ -1647,11 +1656,11 @@
             this.pnlThisMonthSubscriptionNo.BackColor = System.Drawing.Color.Transparent;
             this.pnlThisMonthSubscriptionNo.Controls.Add(this.tlpThisMonthSubscriptionNo);
             this.pnlThisMonthSubscriptionNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlThisMonthSubscriptionNo.Location = new System.Drawing.Point(0, 127);
+            this.pnlThisMonthSubscriptionNo.Location = new System.Drawing.Point(0, 119);
             this.pnlThisMonthSubscriptionNo.Margin = new System.Windows.Forms.Padding(0);
             this.pnlThisMonthSubscriptionNo.Name = "pnlThisMonthSubscriptionNo";
-            this.pnlThisMonthSubscriptionNo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlThisMonthSubscriptionNo.Size = new System.Drawing.Size(538, 36);
+            this.pnlThisMonthSubscriptionNo.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlThisMonthSubscriptionNo.Size = new System.Drawing.Size(534, 34);
             this.pnlThisMonthSubscriptionNo.TabIndex = 5;
             // 
             // tlpThisMonthSubscriptionNo
@@ -1665,12 +1674,12 @@
             this.tlpThisMonthSubscriptionNo.Controls.Add(this.picThisMonthSubscriptionNo, 0, 0);
             this.tlpThisMonthSubscriptionNo.Controls.Add(this.lblThisMonthSubcriptionNoValue, 1, 0);
             this.tlpThisMonthSubscriptionNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpThisMonthSubscriptionNo.Location = new System.Drawing.Point(5, 5);
+            this.tlpThisMonthSubscriptionNo.Location = new System.Drawing.Point(7, 6);
             this.tlpThisMonthSubscriptionNo.Margin = new System.Windows.Forms.Padding(0);
             this.tlpThisMonthSubscriptionNo.Name = "tlpThisMonthSubscriptionNo";
             this.tlpThisMonthSubscriptionNo.RowCount = 1;
             this.tlpThisMonthSubscriptionNo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpThisMonthSubscriptionNo.Size = new System.Drawing.Size(528, 26);
+            this.tlpThisMonthSubscriptionNo.Size = new System.Drawing.Size(520, 22);
             this.tlpThisMonthSubscriptionNo.TabIndex = 7;
             // 
             // lblThisMonthSubscriptionNo
@@ -1683,7 +1692,7 @@
             this.lblThisMonthSubscriptionNo.Location = new System.Drawing.Point(52, 0);
             this.lblThisMonthSubscriptionNo.Margin = new System.Windows.Forms.Padding(0);
             this.lblThisMonthSubscriptionNo.Name = "lblThisMonthSubscriptionNo";
-            this.lblThisMonthSubscriptionNo.Size = new System.Drawing.Size(422, 26);
+            this.lblThisMonthSubscriptionNo.Size = new System.Drawing.Size(416, 22);
             this.lblThisMonthSubscriptionNo.TabIndex = 3;
             this.lblThisMonthSubscriptionNo.Text = "This Month Subscription No";
             this.lblThisMonthSubscriptionNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1692,10 +1701,10 @@
             // 
             this.picThisMonthSubscriptionNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picThisMonthSubscriptionNo.Image = ((System.Drawing.Image)(resources.GetObject("picThisMonthSubscriptionNo.Image")));
-            this.picThisMonthSubscriptionNo.Location = new System.Drawing.Point(27, 0);
+            this.picThisMonthSubscriptionNo.Location = new System.Drawing.Point(19, 0);
             this.picThisMonthSubscriptionNo.Margin = new System.Windows.Forms.Padding(0);
             this.picThisMonthSubscriptionNo.Name = "picThisMonthSubscriptionNo";
-            this.picThisMonthSubscriptionNo.Size = new System.Drawing.Size(25, 25);
+            this.picThisMonthSubscriptionNo.Size = new System.Drawing.Size(33, 22);
             this.picThisMonthSubscriptionNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picThisMonthSubscriptionNo.TabIndex = 2;
             this.picThisMonthSubscriptionNo.TabStop = false;
@@ -1708,10 +1717,10 @@
             this.lblThisMonthSubcriptionNoValue.AutoSize = true;
             this.lblThisMonthSubcriptionNoValue.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThisMonthSubcriptionNoValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblThisMonthSubcriptionNoValue.Location = new System.Drawing.Point(474, 0);
+            this.lblThisMonthSubcriptionNoValue.Location = new System.Drawing.Point(468, 0);
             this.lblThisMonthSubcriptionNoValue.Margin = new System.Windows.Forms.Padding(0);
             this.lblThisMonthSubcriptionNoValue.Name = "lblThisMonthSubcriptionNoValue";
-            this.lblThisMonthSubcriptionNoValue.Size = new System.Drawing.Size(54, 26);
+            this.lblThisMonthSubcriptionNoValue.Size = new System.Drawing.Size(52, 22);
             this.lblThisMonthSubcriptionNoValue.TabIndex = 0;
             this.lblThisMonthSubcriptionNoValue.Text = "10";
             this.lblThisMonthSubcriptionNoValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1721,11 +1730,11 @@
             this.pnlNewMembersInThisMonth.BackColor = System.Drawing.Color.Transparent;
             this.pnlNewMembersInThisMonth.Controls.Add(this.tlpNewMembersInThisMonth);
             this.pnlNewMembersInThisMonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNewMembersInThisMonth.Location = new System.Drawing.Point(0, 91);
+            this.pnlNewMembersInThisMonth.Location = new System.Drawing.Point(0, 85);
             this.pnlNewMembersInThisMonth.Margin = new System.Windows.Forms.Padding(0);
             this.pnlNewMembersInThisMonth.Name = "pnlNewMembersInThisMonth";
-            this.pnlNewMembersInThisMonth.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlNewMembersInThisMonth.Size = new System.Drawing.Size(538, 36);
+            this.pnlNewMembersInThisMonth.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlNewMembersInThisMonth.Size = new System.Drawing.Size(534, 34);
             this.pnlNewMembersInThisMonth.TabIndex = 4;
             // 
             // tlpNewMembersInThisMonth
@@ -1739,12 +1748,12 @@
             this.tlpNewMembersInThisMonth.Controls.Add(this.picNewMembersInthisMonth, 0, 0);
             this.tlpNewMembersInThisMonth.Controls.Add(this.lblNewMembersInthisMonthValue, 1, 0);
             this.tlpNewMembersInThisMonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewMembersInThisMonth.Location = new System.Drawing.Point(5, 5);
+            this.tlpNewMembersInThisMonth.Location = new System.Drawing.Point(7, 6);
             this.tlpNewMembersInThisMonth.Margin = new System.Windows.Forms.Padding(0);
             this.tlpNewMembersInThisMonth.Name = "tlpNewMembersInThisMonth";
             this.tlpNewMembersInThisMonth.RowCount = 1;
             this.tlpNewMembersInThisMonth.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNewMembersInThisMonth.Size = new System.Drawing.Size(528, 26);
+            this.tlpNewMembersInThisMonth.Size = new System.Drawing.Size(520, 22);
             this.tlpNewMembersInThisMonth.TabIndex = 6;
             // 
             // lblNewMembersInThisMonth
@@ -1757,7 +1766,7 @@
             this.lblNewMembersInThisMonth.Location = new System.Drawing.Point(52, 0);
             this.lblNewMembersInThisMonth.Margin = new System.Windows.Forms.Padding(0);
             this.lblNewMembersInThisMonth.Name = "lblNewMembersInThisMonth";
-            this.lblNewMembersInThisMonth.Size = new System.Drawing.Size(422, 26);
+            this.lblNewMembersInThisMonth.Size = new System.Drawing.Size(416, 22);
             this.lblNewMembersInThisMonth.TabIndex = 3;
             this.lblNewMembersInThisMonth.Text = "New Members In This Month";
             this.lblNewMembersInThisMonth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1766,10 +1775,10 @@
             // 
             this.picNewMembersInthisMonth.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picNewMembersInthisMonth.Image = ((System.Drawing.Image)(resources.GetObject("picNewMembersInthisMonth.Image")));
-            this.picNewMembersInthisMonth.Location = new System.Drawing.Point(27, 0);
+            this.picNewMembersInthisMonth.Location = new System.Drawing.Point(19, 0);
             this.picNewMembersInthisMonth.Margin = new System.Windows.Forms.Padding(0);
             this.picNewMembersInthisMonth.Name = "picNewMembersInthisMonth";
-            this.picNewMembersInthisMonth.Size = new System.Drawing.Size(25, 25);
+            this.picNewMembersInthisMonth.Size = new System.Drawing.Size(33, 22);
             this.picNewMembersInthisMonth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewMembersInthisMonth.TabIndex = 2;
             this.picNewMembersInthisMonth.TabStop = false;
@@ -1782,10 +1791,10 @@
             this.lblNewMembersInthisMonthValue.AutoSize = true;
             this.lblNewMembersInthisMonthValue.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewMembersInthisMonthValue.ForeColor = System.Drawing.Color.Blue;
-            this.lblNewMembersInthisMonthValue.Location = new System.Drawing.Point(474, 0);
+            this.lblNewMembersInthisMonthValue.Location = new System.Drawing.Point(468, 0);
             this.lblNewMembersInthisMonthValue.Margin = new System.Windows.Forms.Padding(0);
             this.lblNewMembersInthisMonthValue.Name = "lblNewMembersInthisMonthValue";
-            this.lblNewMembersInthisMonthValue.Size = new System.Drawing.Size(54, 26);
+            this.lblNewMembersInthisMonthValue.Size = new System.Drawing.Size(52, 22);
             this.lblNewMembersInthisMonthValue.TabIndex = 0;
             this.lblNewMembersInthisMonthValue.Text = "15";
             this.lblNewMembersInthisMonthValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1795,11 +1804,11 @@
             this.pnlMonthlyExpenses.BackColor = System.Drawing.Color.Transparent;
             this.pnlMonthlyExpenses.Controls.Add(this.tlpMonthlyExpences);
             this.pnlMonthlyExpenses.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMonthlyExpenses.Location = new System.Drawing.Point(0, 55);
+            this.pnlMonthlyExpenses.Location = new System.Drawing.Point(0, 51);
             this.pnlMonthlyExpenses.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMonthlyExpenses.Name = "pnlMonthlyExpenses";
-            this.pnlMonthlyExpenses.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlMonthlyExpenses.Size = new System.Drawing.Size(538, 36);
+            this.pnlMonthlyExpenses.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pnlMonthlyExpenses.Size = new System.Drawing.Size(534, 34);
             this.pnlMonthlyExpenses.TabIndex = 3;
             // 
             // tlpMonthlyExpences
@@ -1813,12 +1822,12 @@
             this.tlpMonthlyExpences.Controls.Add(this.lblMonthlyExpenses, 1, 0);
             this.tlpMonthlyExpences.Controls.Add(this.picMonthlyExpenses, 0, 0);
             this.tlpMonthlyExpences.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMonthlyExpences.Location = new System.Drawing.Point(5, 5);
+            this.tlpMonthlyExpences.Location = new System.Drawing.Point(7, 6);
             this.tlpMonthlyExpences.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMonthlyExpences.Name = "tlpMonthlyExpences";
             this.tlpMonthlyExpences.RowCount = 1;
             this.tlpMonthlyExpences.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMonthlyExpences.Size = new System.Drawing.Size(528, 26);
+            this.tlpMonthlyExpences.Size = new System.Drawing.Size(520, 22);
             this.tlpMonthlyExpences.TabIndex = 5;
             // 
             // lblMonthExpensesValue
@@ -1829,10 +1838,10 @@
             this.lblMonthExpensesValue.AutoSize = true;
             this.lblMonthExpensesValue.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonthExpensesValue.ForeColor = System.Drawing.Color.Red;
-            this.lblMonthExpensesValue.Location = new System.Drawing.Point(474, 0);
+            this.lblMonthExpensesValue.Location = new System.Drawing.Point(468, 0);
             this.lblMonthExpensesValue.Margin = new System.Windows.Forms.Padding(0);
             this.lblMonthExpensesValue.Name = "lblMonthExpensesValue";
-            this.lblMonthExpensesValue.Size = new System.Drawing.Size(54, 26);
+            this.lblMonthExpensesValue.Size = new System.Drawing.Size(52, 22);
             this.lblMonthExpensesValue.TabIndex = 2;
             this.lblMonthExpensesValue.Text = "18000";
             this.lblMonthExpensesValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1847,7 +1856,7 @@
             this.lblMonthlyExpenses.Location = new System.Drawing.Point(52, 0);
             this.lblMonthlyExpenses.Margin = new System.Windows.Forms.Padding(0);
             this.lblMonthlyExpenses.Name = "lblMonthlyExpenses";
-            this.lblMonthlyExpenses.Size = new System.Drawing.Size(422, 26);
+            this.lblMonthlyExpenses.Size = new System.Drawing.Size(416, 22);
             this.lblMonthlyExpenses.TabIndex = 0;
             this.lblMonthlyExpenses.Text = "Monthly Expenses";
             this.lblMonthlyExpenses.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1856,10 +1865,10 @@
             // 
             this.picMonthlyExpenses.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMonthlyExpenses.Image = ((System.Drawing.Image)(resources.GetObject("picMonthlyExpenses.Image")));
-            this.picMonthlyExpenses.Location = new System.Drawing.Point(27, 0);
+            this.picMonthlyExpenses.Location = new System.Drawing.Point(19, 0);
             this.picMonthlyExpenses.Margin = new System.Windows.Forms.Padding(0);
             this.picMonthlyExpenses.Name = "picMonthlyExpenses";
-            this.picMonthlyExpenses.Size = new System.Drawing.Size(25, 25);
+            this.picMonthlyExpenses.Size = new System.Drawing.Size(33, 22);
             this.picMonthlyExpenses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMonthlyExpenses.TabIndex = 1;
             this.picMonthlyExpenses.TabStop = false;
@@ -1877,7 +1886,7 @@
             this.tlpKeyMonthlyFinancialsLabelImage.Name = "tlpKeyMonthlyFinancialsLabelImage";
             this.tlpKeyMonthlyFinancialsLabelImage.RowCount = 1;
             this.tlpKeyMonthlyFinancialsLabelImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpKeyMonthlyFinancialsLabelImage.Size = new System.Drawing.Size(538, 55);
+            this.tlpKeyMonthlyFinancialsLabelImage.Size = new System.Drawing.Size(534, 51);
             this.tlpKeyMonthlyFinancialsLabelImage.TabIndex = 6;
             // 
             // lblKeyMonthlyFinancials
@@ -1885,7 +1894,7 @@
             this.lblKeyMonthlyFinancials.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblKeyMonthlyFinancials.AutoSize = true;
             this.lblKeyMonthlyFinancials.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKeyMonthlyFinancials.Location = new System.Drawing.Point(166, 13);
+            this.lblKeyMonthlyFinancials.Location = new System.Drawing.Point(164, 11);
             this.lblKeyMonthlyFinancials.Margin = new System.Windows.Forms.Padding(0);
             this.lblKeyMonthlyFinancials.Name = "lblKeyMonthlyFinancials";
             this.lblKeyMonthlyFinancials.Size = new System.Drawing.Size(220, 28);
@@ -1897,21 +1906,22 @@
             // 
             this.picKeyMonthlyFinancials.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picKeyMonthlyFinancials.Image = ((System.Drawing.Image)(resources.GetObject("picKeyMonthlyFinancials.Image")));
-            this.picKeyMonthlyFinancials.Location = new System.Drawing.Point(131, 10);
+            this.picKeyMonthlyFinancials.Location = new System.Drawing.Point(117, 4);
             this.picKeyMonthlyFinancials.Margin = new System.Windows.Forms.Padding(0);
             this.picKeyMonthlyFinancials.Name = "picKeyMonthlyFinancials";
-            this.picKeyMonthlyFinancials.Size = new System.Drawing.Size(35, 35);
+            this.picKeyMonthlyFinancials.Size = new System.Drawing.Size(47, 43);
             this.picKeyMonthlyFinancials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKeyMonthlyFinancials.TabIndex = 5;
             this.picKeyMonthlyFinancials.TabStop = false;
             // 
             // FrmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(886, 609);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1181, 750);
             this.Controls.Add(this.tlpDashboard);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmDashboard";
             this.Text = "FrmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
