@@ -65,6 +65,8 @@ namespace GymManagementSystem.FORMS.Locker
                         foreach (DataGridViewRow row in dgvDisplayLocker.Rows)
                         {
                             row.Cells["colSlNo"].Value = i++;
+                            row.Cells["colSlNo"].Style.ForeColor = Color.FromArgb(30, 60, 220);
+                            row.Cells["colSlNo"].Style.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
                         }
                     }
                 }
@@ -84,8 +86,8 @@ namespace GymManagementSystem.FORMS.Locker
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -97,7 +99,7 @@ namespace GymManagementSystem.FORMS.Locker
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
                 dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -133,5 +135,6 @@ namespace GymManagementSystem.FORMS.Locker
 
             dgvDisplayLocker.Invalidate();
         }
+
     }
 }
