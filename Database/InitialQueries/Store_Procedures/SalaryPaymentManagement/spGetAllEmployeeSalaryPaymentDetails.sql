@@ -11,7 +11,7 @@ BEGIN
                 ISNULL(e.MiddleName + ' ', '') +
                 e.LastName
             ) AS FullName,
-            e.RoleName,
+            ert.Role AS RoleName,
             e.PhoneNo,
             e.EmailId,
             s.Amount AS SalaryAmount,
@@ -22,6 +22,8 @@ BEGIN
             sp.PaymentStatus
 
         FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
         INNER JOIN tblSalary s
             ON e.EmployeeId = s.EmployeeId
         INNER JOIN tblSalaryPayment sp
@@ -32,6 +34,6 @@ BEGIN
     END TRY
     BEGIN CATCH
         SELECT
-            ERROR_MESSAGE()   AS Message
+            ERROR_MESSAGE() AS Message;
     END CATCH
 END;
