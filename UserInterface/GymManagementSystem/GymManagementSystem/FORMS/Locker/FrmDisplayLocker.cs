@@ -35,12 +35,12 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void pnlButton_MouseEnter(object sender, EventArgs e)
         {
-            this.pnlButton.BackColor = Color.FromArgb(200, 200, 200);
+            this.pnlButton.BackColor = Color.FromArgb(180, 190, 250);
         }
 
         private void pnlButton_MouseLeave(object sender, EventArgs e)
         {
-            this.pnlButton.BackColor = Color.FromArgb(184, 195, 179);
+            this.pnlButton.BackColor = Color.FromArgb(210, 215, 255);
         }
 
         private void getLockersDetails()
@@ -75,6 +75,8 @@ namespace GymManagementSystem.FORMS.Locker
                             dgvDisplayLocker.Rows[rowIndex].Cells["colLNo"].Value = dataRow["LockerNo"].ToString();
                             dgvDisplayLocker.Rows[rowIndex].Cells["colAllocatedTo"].Value =dataRow["MemberName"].ToString();
                             dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Value =dataRow["LockerStatus"].ToString();
+
+                            dgvDisplayLocker.Rows[rowIndex].Cells["colSlNo"].Style.ForeColor = Color.FromArgb(30, 60, 220);
                         }
                     }
                 }
@@ -113,7 +115,15 @@ namespace GymManagementSystem.FORMS.Locker
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-                dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
+
+                if (dgvDisplayLocker.Columns[e.ColumnIndex].Name == "colSlNo")
+                {
+                    dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(30, 60, 220);
+                }
+                else
+                {
+                    dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
+                }
             }
         }
     
@@ -127,5 +137,22 @@ namespace GymManagementSystem.FORMS.Locker
                 dgvDisplayLocker.ClearSelection();
             }
         }
+
+        private void FrmDisplayLocker_Resize(object sender, EventArgs e)
+        {
+            int newHeight = this.ClientSize.Height / 12;
+            if (newHeight < 30) newHeight = 30;         
+            if (newHeight > 100) newHeight = 100;       
+
+            dgvDisplayLocker.RowTemplate.Height = newHeight;
+
+            float newFontSize = this.ClientSize.Width / 40f; 
+            if (newFontSize < 12f) newFontSize = 12f;        
+            if (newFontSize > 28f) newFontSize = 28f;        
+            lblLockerManagement.Font = new Font(lblLockerManagement.Font.FontFamily, newFontSize, FontStyle.Bold);
+
+            dgvDisplayLocker.Invalidate();
+        }
+
     }
 }
