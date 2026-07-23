@@ -380,9 +380,6 @@
     <None Include="Resources\attendance %283%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plan.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\shift %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -407,10 +404,106 @@
     <None Include="Resources\settings %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendanceHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expenseHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitnessTestHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockerHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutHOVER %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaymentHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plansHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regFeesHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainerHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersHOVER .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workoutHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitnessTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr3.png" />
+    <None Include="Resources\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regfee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shiftHover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -49,22 +49,22 @@
             this.pnlClickAddNewMembershipPlan = new System.Windows.Forms.Panel();
             this.tlpAddNewMembarshipPlan = new System.Windows.Forms.TableLayoutPanel();
             this.lblAddNewMembershipPlan = new System.Windows.Forms.Label();
-            this.picAddButtonMembershipPlan = new System.Windows.Forms.PictureBox();
             this.tlpAllMembershipPlanTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblAllMembershipPlan = new System.Windows.Forms.Label();
             this.tlpMembershipPlanSearch = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSearchPlan = new System.Windows.Forms.TableLayoutPanel();
             this.txtMembershipPlanSearchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.picAddButtonMembershipPlan = new System.Windows.Forms.PictureBox();
             this.tlpMembershipPlanEntireForm.SuspendLayout();
             this.pnlMembershipPlanGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembershipPlan)).BeginInit();
             this.pnlClickAddNewMembershipPlan.SuspendLayout();
             this.tlpAddNewMembarshipPlan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonMembershipPlan)).BeginInit();
             this.tlpAllMembershipPlanTitle.SuspendLayout();
             this.tlpMembershipPlanSearch.SuspendLayout();
             this.tlpSearchPlan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonMembershipPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMembershipPlanEntireForm
@@ -309,19 +309,6 @@
             this.lblAddNewMembershipPlan.Text = "Add New Membership Plan";
             this.lblAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
             // 
-            // picAddButtonMembershipPlan
-            // 
-            this.picAddButtonMembershipPlan.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picAddButtonMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonMembershipPlan.Image")));
-            this.picAddButtonMembershipPlan.Location = new System.Drawing.Point(11, 14);
-            this.picAddButtonMembershipPlan.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddButtonMembershipPlan.Name = "picAddButtonMembershipPlan";
-            this.picAddButtonMembershipPlan.Size = new System.Drawing.Size(37, 30);
-            this.picAddButtonMembershipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddButtonMembershipPlan.TabIndex = 2;
-            this.picAddButtonMembershipPlan.TabStop = false;
-            this.picAddButtonMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
-            // 
             // tlpAllMembershipPlanTitle
             // 
             this.tlpAllMembershipPlanTitle.ColumnCount = 2;
@@ -412,6 +399,19 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // picAddButtonMembershipPlan
+            // 
+            this.picAddButtonMembershipPlan.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picAddButtonMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonMembershipPlan.Image")));
+            this.picAddButtonMembershipPlan.Location = new System.Drawing.Point(11, 14);
+            this.picAddButtonMembershipPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.picAddButtonMembershipPlan.Name = "picAddButtonMembershipPlan";
+            this.picAddButtonMembershipPlan.Size = new System.Drawing.Size(37, 30);
+            this.picAddButtonMembershipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddButtonMembershipPlan.TabIndex = 2;
+            this.picAddButtonMembershipPlan.TabStop = false;
+            this.picAddButtonMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
+            // 
             // FrmDisplayMembershipPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,12 +429,12 @@
             this.pnlClickAddNewMembershipPlan.ResumeLayout(false);
             this.tlpAddNewMembarshipPlan.ResumeLayout(false);
             this.tlpAddNewMembarshipPlan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonMembershipPlan)).EndInit();
             this.tlpAllMembershipPlanTitle.ResumeLayout(false);
             this.tlpAllMembershipPlanTitle.PerformLayout();
             this.tlpMembershipPlanSearch.ResumeLayout(false);
             this.tlpSearchPlan.ResumeLayout(false);
             this.tlpSearchPlan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonMembershipPlan)).EndInit();
             this.ResumeLayout(false);
 
         }
