@@ -54,6 +54,54 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.cs" />
+    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.Designer.cs">
+      <DependentUpon>FrmSADashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.Designer.cs">
+      <DependentUpon>FrmSAAddNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.Designer.cs">
+      <DependentUpon>FrmSADisplayAllEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.Designer.cs">
+      <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs" />
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.Designer.cs">
+      <DependentUpon>FrmSAExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.cs" />
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.Designer.cs">
+      <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs" />
+    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.Designer.cs">
+      <DependentUpon>FrmSAMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.cs" />
+    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.Designer.cs">
+      <DependentUpon>FrmSAProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.cs" />
+    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.Designer.cs">
+      <DependentUpon>FrmSARegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.cs" />
+    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.Designer.cs">
+      <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.cs" />
+    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.Designer.cs">
+      <DependentUpon>FrmSAPasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.cs" />
+    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.Designer.cs">
+      <DependentUpon>FrmSASettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Attendance\FrmMarkAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +268,42 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Dashboard\FrmSADashboard.resx">
+      <DependentUpon>FrmSADashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.resx">
+      <DependentUpon>FrmSAAddNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.resx">
+      <DependentUpon>FrmSADisplayAllEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.resx">
+      <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAExpense.resx">
+      <DependentUpon>FrmSAExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.resx">
+      <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.resx">
+      <DependentUpon>FrmSAMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Profile\FrmSAProfile.resx">
+      <DependentUpon>FrmSAProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Registration\FrmSARegistration.resx">
+      <DependentUpon>FrmSARegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.resx">
+      <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.resx">
+      <DependentUpon>FrmSAPasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSASettings.resx">
+      <DependentUpon>FrmSASettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Attendance\FrmMarkAttendance.resx">
       <DependentUpon>FrmMarkAttendance.cs</DependentUpon>
