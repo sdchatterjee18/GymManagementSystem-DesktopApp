@@ -252,6 +252,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlDashboard.ForeColor = Color.White;
             picDashboard.Image=Properties.Resources.dashboard;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDashboard());
         }
 
         private void pnlViewAllMembers_MouseEnter(object sender, EventArgs e)
