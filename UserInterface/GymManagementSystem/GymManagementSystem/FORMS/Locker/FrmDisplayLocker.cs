@@ -24,6 +24,7 @@ namespace GymManagementSystem.FORMS.Locker
         {
             this.getLockersDetails();
             this.dgvDisplayLocker.ClearSelection();
+            this.dgvDisplayLocker.DefaultCellStyle.BackColor = Color.White;
         }
 
         private void pnlButton_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace GymManagementSystem.FORMS.Locker
             string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             SqlConnection sqlConnection = null;
 
-            string queryStr = "select l.LockerNo as LNo,m.FirstName + CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END +' ' + m.LastName AS MemberName,l.LockerStatus as LStatus from tblLocker l join tblLockerAllocation la on l.LockerId = la.LockerId join tblMember m on m.MemberId = la.MemberId order by l.LockerId,m.MiddleName";
+            string queryStr = "select l.LockerNo,m.FirstName + CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END +' ' + m.LastName AS MemberName,l.LockerStatus from tblLocker l join tblLockerAllocation la on l.LockerId = la.LockerId join tblMember m on m.MemberId = la.MemberId order by l.LockerId,m.MiddleName";
 
             try
             {
@@ -60,13 +61,20 @@ namespace GymManagementSystem.FORMS.Locker
                         DataTable dtLockers = new DataTable();
                         adapter.Fill(dtLockers);
 
-                        this.dgvDisplayLocker.DataSource = dtLockers;
-                        int i = 1;
-                        foreach (DataGridViewRow row in dgvDisplayLocker.Rows)
+                        DataRowCollection dataRows = dtLockers.Rows;
+
+                        dgvDisplayLocker.Rows.Clear();
+
+                        int serialNo = 1;
+
+                        foreach (DataRow dataRow in dataRows)
                         {
-                            row.Cells["colSlNo"].Value = i++;
-                            row.Cells["colSlNo"].Style.ForeColor = Color.FromArgb(30, 60, 220);
-                            row.Cells["colSlNo"].Style.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+                            int rowIndex = dgvDisplayLocker.Rows.Add();
+
+                            dgvDisplayLocker.Rows[rowIndex].Cells["colSlNo"].Value = serialNo++;
+                            dgvDisplayLocker.Rows[rowIndex].Cells["colLNo"].Value = dataRow["LockerNo"].ToString();
+                            dgvDisplayLocker.Rows[rowIndex].Cells["colAllocatedTo"].Value =dataRow["MemberName"].ToString();
+                            dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Value =dataRow["LockerStatus"].ToString();
                         }
                     }
                 }
@@ -119,22 +127,5 @@ namespace GymManagementSystem.FORMS.Locker
                 dgvDisplayLocker.ClearSelection();
             }
         }
-
-        private void FrmDisplayLocker_Resize(object sender, EventArgs e)
-        {
-            int newHeight = this.ClientSize.Height / 12;
-            if (newHeight < 30) newHeight = 30;         
-            if (newHeight > 100) newHeight = 100;       
-
-            dgvDisplayLocker.RowTemplate.Height = newHeight;
-
-            float newFontSize = this.ClientSize.Width / 40f; 
-            if (newFontSize < 12f) newFontSize = 12f;        
-            if (newFontSize > 28f) newFontSize = 28f;        
-            lblLockerManagement.Font = new Font(lblLockerManagement.Font.FontFamily, newFontSize, FontStyle.Bold);
-
-            dgvDisplayLocker.Invalidate();
-        }
-
     }
 }

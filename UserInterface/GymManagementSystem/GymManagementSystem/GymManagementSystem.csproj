@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -142,6 +143,12 @@
     </Compile>
     <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmDisplayAllMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmDisplayAllMembers.Designer.cs">
+      <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\Payments\FrmDisplayPayments.cs">
       <SubType>Form</SubType>
@@ -259,6 +266,9 @@
     <EmbeddedResource Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.resx">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmDisplayAllMembers.resx">
+      <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Payments\FrmDisplayPayments.resx">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,14 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -309,6 +314,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -316,9 +326,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FORMS\Member\" />
     <Folder Include="FORMS\Settings\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr.png" />
