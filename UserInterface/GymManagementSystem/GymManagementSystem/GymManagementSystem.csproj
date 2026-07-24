@@ -54,6 +54,78 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.Designer.cs">
+      <DependentUpon>FrmSADashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.Designer.cs">
+      <DependentUpon>FrmSAAddNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.Designer.cs">
+      <DependentUpon>FrmSADisplayAllEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.Designer.cs">
+      <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.Designer.cs">
+      <DependentUpon>FrmSAExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.Designer.cs">
+      <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.Designer.cs">
+      <DependentUpon>FrmSAMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.Designer.cs">
+      <DependentUpon>FrmSAProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.Designer.cs">
+      <DependentUpon>FrmSARegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.Designer.cs">
+      <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.Designer.cs">
+      <DependentUpon>FrmSAPasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.Designer.cs">
+      <DependentUpon>FrmSASettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Attendance\FrmMarkAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +293,42 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Dashboard\FrmSADashboard.resx">
+      <DependentUpon>FrmSADashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.resx">
+      <DependentUpon>FrmSAAddNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.resx">
+      <DependentUpon>FrmSADisplayAllEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.resx">
+      <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAExpense.resx">
+      <DependentUpon>FrmSAExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.resx">
+      <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.resx">
+      <DependentUpon>FrmSAMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Profile\FrmSAProfile.resx">
+      <DependentUpon>FrmSAProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Registration\FrmSARegistration.resx">
+      <DependentUpon>FrmSARegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.resx">
+      <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.resx">
+      <DependentUpon>FrmSAPasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSASettings.resx">
+      <DependentUpon>FrmSASettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Attendance\FrmMarkAttendance.resx">
       <DependentUpon>FrmMarkAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,9 +488,6 @@
     <None Include="Resources\attendance %283%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plan.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\shift %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -407,10 +512,148 @@
     <None Include="Resources\settings %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendanceHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expenseHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitnessTestHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockerHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutHOVER %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaymentHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plansHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regFeesHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainerHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersHOVER .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workoutHOVER %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fitnessTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr3.png" />
+    <None Include="Resources\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regfee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shiftHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dotB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dotW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\record-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recor-buttonW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downArrowB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downArrowW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topArrowB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topArrowW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmployeeHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Financials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinancialsHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalaryHOVER.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CloseHover.png" />
