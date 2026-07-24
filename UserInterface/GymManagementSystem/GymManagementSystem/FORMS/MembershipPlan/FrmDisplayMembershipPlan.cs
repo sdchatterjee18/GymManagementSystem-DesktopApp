@@ -256,6 +256,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
             frm.Show();
+            frm.StartPosition = FormStartPosition.CenterParent;
         }
        
     }
