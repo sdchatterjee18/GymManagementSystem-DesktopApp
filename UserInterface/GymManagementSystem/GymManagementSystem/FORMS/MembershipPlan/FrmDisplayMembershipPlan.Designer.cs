@@ -426,7 +426,7 @@
             this.colDeactivate.Name = "colDeactivate";
             this.colDeactivate.ReadOnly = true;
             this.colDeactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDeactivate.Text = "✂️Deactivate";
+            this.colDeactivate.Text = "Deactivate";
             this.colDeactivate.UseColumnTextForButtonValue = true;
             // 
             // FrmDisplayMembershipPlan
@@ -466,6 +466,13 @@
         private System.Windows.Forms.TableLayoutPanel tlpAllMembershipPlanSearch;
         private System.Windows.Forms.PictureBox picSearchIcon;
         private System.Windows.Forms.TextBox txtSearchPlan;
+        private System.Windows.Forms.TableLayoutPanel tlpAllMembershipPlanTitle;
+        private System.Windows.Forms.Label lblViewPlans;
+        private System.Windows.Forms.Label lblAllMembershipPlan;
+        private System.Windows.Forms.Panel pnlClickAddNewMembershipPlan;
+        private System.Windows.Forms.TableLayoutPanel tlpAddNewMembershipPlan;
+        private System.Windows.Forms.Label lblAddNewPlan;
+        private System.Windows.Forms.PictureBox picAddButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlanType;
@@ -475,13 +482,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
         private System.Windows.Forms.DataGridViewButtonColumn colUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn colDeactivate;
-        private System.Windows.Forms.TableLayoutPanel tlpAllMembershipPlanTitle;
-        private System.Windows.Forms.Label lblViewPlans;
-        private System.Windows.Forms.Label lblAllMembershipPlan;
-        private System.Windows.Forms.Panel pnlClickAddNewMembershipPlan;
-        private System.Windows.Forms.TableLayoutPanel tlpAddNewMembershipPlan;
-        private System.Windows.Forms.Label lblAddNewPlan;
-        private System.Windows.Forms.PictureBox picAddButton;
 
 
 

@@ -383,11 +383,11 @@
             // 
             this.lblMessageBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMessageBox.AutoSize = true;
-            this.lblMessageBox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessageBox.ForeColor = System.Drawing.Color.Maroon;
             this.lblMessageBox.Location = new System.Drawing.Point(3, 17);
             this.lblMessageBox.Name = "lblMessageBox";
-            this.lblMessageBox.Size = new System.Drawing.Size(0, 19);
+            this.lblMessageBox.Size = new System.Drawing.Size(0, 20);
             this.lblMessageBox.TabIndex = 7;
             // 
             // lblPlanName
