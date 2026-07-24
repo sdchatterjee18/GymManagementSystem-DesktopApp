@@ -21,6 +21,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.tlpHeading = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSpaceing = new System.Windows.Forms.TableLayoutPanel();
@@ -32,11 +33,11 @@
             this.pnlSpaceing = new System.Windows.Forms.Panel();
             this.tlpDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDisplayLocker = new System.Windows.Forms.DataGridView();
+            this.pnlFooter = new System.Windows.Forms.Panel();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAllocatedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlFooter = new System.Windows.Forms.Panel();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpSpaceing.SuspendLayout();
@@ -195,32 +196,34 @@
             this.dgvDisplayLocker.AllowUserToDeleteRows = false;
             this.dgvDisplayLocker.AllowUserToResizeColumns = false;
             this.dgvDisplayLocker.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDisplayLocker.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDisplayLocker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayLocker.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvDisplayLocker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDisplayLocker.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplayLocker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplayLocker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDisplayLocker.ColumnHeadersHeight = 50;
             this.dgvDisplayLocker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSlNo,
             this.colLNo,
             this.colAllocatedTo,
             this.colLStatus});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDisplayLocker.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDisplayLocker.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDisplayLocker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDisplayLocker.EnableHeadersVisualStyles = false;
             this.dgvDisplayLocker.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -229,13 +232,13 @@
             this.dgvDisplayLocker.ReadOnly = true;
             this.dgvDisplayLocker.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDisplayLocker.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDisplayLocker.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDisplayLocker.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplayLocker.RowTemplate.Height = 50;
             this.dgvDisplayLocker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDisplayLocker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -246,6 +249,16 @@
             this.dgvDisplayLocker.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayLocker_CellMouseEnter);
             this.dgvDisplayLocker.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayLocker_CellMouseLeave);
             this.dgvDisplayLocker.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
+            // 
+            // pnlFooter
+            // 
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(0, 496);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1094, 47);
+            this.pnlFooter.TabIndex = 2;
+            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // colSlNo
             // 
@@ -258,7 +271,7 @@
             // 
             // colLNo
             // 
-            this.colLNo.DataPropertyName = "LNo";
+            this.colLNo.DataPropertyName = "LockerNo";
             this.colLNo.FillWeight = 80F;
             this.colLNo.HeaderText = "Locker No";
             this.colLNo.Name = "colLNo";
@@ -276,22 +289,12 @@
             // 
             // colLStatus
             // 
-            this.colLStatus.DataPropertyName = "LStatus";
+            this.colLStatus.DataPropertyName = "LockerStatus";
             this.colLStatus.FillWeight = 110F;
             this.colLStatus.HeaderText = "Locker Status";
             this.colLStatus.Name = "colLStatus";
             this.colLStatus.ReadOnly = true;
             this.colLStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // pnlFooter
-            // 
-            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 496);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1094, 47);
-            this.pnlFooter.TabIndex = 2;
-            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // FrmDisplayLocker
             // 
