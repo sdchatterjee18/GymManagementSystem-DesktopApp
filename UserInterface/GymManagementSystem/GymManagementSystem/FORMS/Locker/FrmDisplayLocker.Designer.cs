@@ -66,6 +66,7 @@
             this.pnlHeading.Name = "pnlHeading";
             this.pnlHeading.Size = new System.Drawing.Size(1198, 122);
             this.pnlHeading.TabIndex = 0;
+            this.pnlHeading.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // tlpHeading
             // 
@@ -159,6 +160,7 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(918, 113);
             this.pnlTitle.TabIndex = 2;
+            this.pnlTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // tlpTitle
             // 
@@ -175,6 +177,7 @@
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpTitle.Size = new System.Drawing.Size(918, 113);
             this.tlpTitle.TabIndex = 0;
+            this.tlpTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // tlplSection
             // 
@@ -184,14 +187,15 @@
             this.tlplSection.Controls.Add(this.lblTitle, 0, 1);
             this.tlplSection.Controls.Add(this.lblSubtitle, 0, 0);
             this.tlplSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlplSection.Location = new System.Drawing.Point(49, 3);
+            this.tlplSection.Location = new System.Drawing.Point(48, 3);
             this.tlplSection.Name = "tlplSection";
             this.tlplSection.RowCount = 3;
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlplSection.Size = new System.Drawing.Size(866, 107);
+            this.tlplSection.Size = new System.Drawing.Size(867, 107);
             this.tlplSection.TabIndex = 0;
+            this.tlplSection.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // lblTitle
             // 
@@ -202,9 +206,10 @@
             this.lblTitle.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblTitle.Location = new System.Drawing.Point(3, 58);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(860, 21);
+            this.lblTitle.Size = new System.Drawing.Size(861, 21);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Current status and availability of Lockers.";
+            this.lblTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // lblSubtitle
             // 
@@ -215,10 +220,11 @@
             this.lblSubtitle.ForeColor = System.Drawing.Color.Black;
             this.lblSubtitle.Location = new System.Drawing.Point(3, 26);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(860, 32);
+            this.lblSubtitle.Size = new System.Drawing.Size(861, 32);
             this.lblSubtitle.TabIndex = 0;
             this.lblSubtitle.Text = "Locker Management";
             this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubtitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // picBoxLockerIcon
             // 
@@ -230,6 +236,7 @@
             this.picBoxLockerIcon.Size = new System.Drawing.Size(38, 42);
             this.picBoxLockerIcon.TabIndex = 1;
             this.picBoxLockerIcon.TabStop = false;
+            this.picBoxLockerIcon.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // pnlSpaceing
             // 
@@ -312,6 +319,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDisplayLocker.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDisplayLocker.RowHeadersVisible = false;
+            this.dgvDisplayLocker.RowHeadersWidth = 40;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
