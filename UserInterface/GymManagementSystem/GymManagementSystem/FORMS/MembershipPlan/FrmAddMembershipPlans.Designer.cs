@@ -372,9 +372,9 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(256, 17);
+            this.btnClear.Location = new System.Drawing.Point(256, 15);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(81, 34);
+            this.btnClear.Size = new System.Drawing.Size(81, 36);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -412,7 +412,7 @@
             this.MaximumSize = new System.Drawing.Size(528, 581);
             this.MinimumSize = new System.Drawing.Size(528, 581);
             this.Name = "FrmAddMembershipPlans";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMembershipPlans";
             this.Load += new System.EventHandler(this.FrmAddMembershipPlans_Load);
             this.pnlSubNewMembarshipPlanTitle.ResumeLayout(false);
