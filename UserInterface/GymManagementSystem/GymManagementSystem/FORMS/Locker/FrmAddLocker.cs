@@ -19,19 +19,30 @@ namespace GymManagementSystem.FORMS.Locker
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+        private void pnlClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnClose_MouseEnter(object sender, EventArgs e)
+        //private void pnlClose_MouseEnter(object sender, EventArgs e)
+        //{
+        //    pnlClose.BackgroundImage = Properties.Resources;
+        //}
+
+        //private void pnlClose_MouseLeave(object sender, EventArgs e)
+        //{
+        //    pnlClose.BackgroundImage = Properties.Resources;
+        //}
+
+        private void tlpButton_MouseEnter(object sender, EventArgs e)
         {
-            this.btnClose.ForeColor = Color.White;
+
         }
 
-        private void btnClose_MouseLeave(object sender, EventArgs e)
+        private void tlpButton_MouseLeave(object sender, EventArgs e)
         {
-            this.btnClose.ForeColor = Color.Black;
+
         }
     }
 }
