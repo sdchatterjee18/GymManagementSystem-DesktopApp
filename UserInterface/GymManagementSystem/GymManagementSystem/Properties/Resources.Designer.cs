@@ -143,6 +143,26 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Employee {
+            get {
+                object obj = ResourceManager.GetObject("Employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EmployeeHOVER {
+            get {
+                object obj = ResourceManager.GetObject("EmployeeHOVER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expense {
             get {
                 object obj = ResourceManager.GetObject("expense", resourceCulture);
@@ -156,6 +176,26 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap expenseHOVER__1_ {
             get {
                 object obj = ResourceManager.GetObject("expenseHOVER__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Financials {
+            get {
+                object obj = ResourceManager.GetObject("Financials", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FinancialsHOVER {
+            get {
+                object obj = ResourceManager.GetObject("FinancialsHOVER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +376,26 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap regFeesHOVER__1_ {
             get {
                 object obj = ResourceManager.GetObject("regFeesHOVER__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salary {
+            get {
+                object obj = ResourceManager.GetObject("Salary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SalaryHOVER {
+            get {
+                object obj = ResourceManager.GetObject("SalaryHOVER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
