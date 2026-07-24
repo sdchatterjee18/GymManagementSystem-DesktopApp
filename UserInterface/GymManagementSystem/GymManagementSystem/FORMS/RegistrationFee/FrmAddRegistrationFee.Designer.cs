@@ -44,6 +44,7 @@
             this.picSubmitIcon = new System.Windows.Forms.PictureBox();
             this.picRupeesIcon = new System.Windows.Forms.PictureBox();
             this.picNewRegistrationFeesIcon = new System.Windows.Forms.PictureBox();
+            this.picExit = new System.Windows.Forms.PictureBox();
             this.pnlAddRegistrationFee.SuspendLayout();
             this.pnlSubmitButton.SuspendLayout();
             this.tlpSubmitButton.SuspendLayout();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSubmitIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRupeesIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewRegistrationFeesIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddRegistrationFee
@@ -136,6 +138,7 @@
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.88412F));
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Controls.Add(this.tlpTitleAndSubTitleOfRegistrationFees, 1, 0);
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Controls.Add(this.picNewRegistrationFeesIcon, 0, 0);
+            this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Controls.Add(this.picExit, 2, 0);
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Location = new System.Drawing.Point(0, 0);
             this.tlpTopNewRegistrationFeesInfrmRegistrationFees.Name = "tlpTopNewRegistrationFeesInfrmRegistrationFees";
@@ -235,6 +238,21 @@
             this.picNewRegistrationFeesIcon.TabIndex = 5;
             this.picNewRegistrationFeesIcon.TabStop = false;
             // 
+            // picExit
+            // 
+            this.picExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picExit.Image = global::GymManagementSystem.Properties.Resources.Close;
+            this.picExit.Location = new System.Drawing.Point(558, 10);
+            this.picExit.Margin = new System.Windows.Forms.Padding(10);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(30, 30);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExit.TabIndex = 6;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
+            this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
+            // 
             // FrmAddRegistrationFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSubmitIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRupeesIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewRegistrationFeesIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,6 +302,7 @@
         private System.Windows.Forms.PictureBox picSubmitIcon;
         private System.Windows.Forms.Label lblSubmit;
         private System.Windows.Forms.PictureBox picRupeesIcon;
+        private System.Windows.Forms.PictureBox picExit;
 
 
 

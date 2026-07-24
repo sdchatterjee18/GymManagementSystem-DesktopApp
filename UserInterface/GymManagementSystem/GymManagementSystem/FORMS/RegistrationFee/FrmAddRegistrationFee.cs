@@ -18,6 +18,22 @@ namespace GymManagementSystem.FORMS.RegistrationFee
            
         }
 
+        private void picExit_MouseEnter(object sender, EventArgs e)
+        {
+            picExit.Image = Properties.Resources.CloseHover;
+            
+        }
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void picExit_MouseLeave(object sender, EventArgs e)
+        {
+            picExit.Image = Properties.Resources.Close;
+        }
+
    
 
        
