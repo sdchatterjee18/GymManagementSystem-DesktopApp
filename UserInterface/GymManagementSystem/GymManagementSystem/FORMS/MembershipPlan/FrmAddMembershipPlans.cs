@@ -37,5 +37,10 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             txtPlanName.Focus();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
