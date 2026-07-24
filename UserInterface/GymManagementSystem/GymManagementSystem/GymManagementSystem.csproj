@@ -54,51 +54,75 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.cs" />
+    <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.Designer.cs">
       <DependentUpon>FrmSADashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.Designer.cs">
       <DependentUpon>FrmSAAddNewEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Employee\FrmSADisplayAllEmployee.Designer.cs">
       <DependentUpon>FrmSADisplayAllEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.cs" />
+    <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.Designer.cs">
       <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs" />
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.Designer.cs">
       <DependentUpon>FrmSAExpense.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.cs" />
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.Designer.cs">
       <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs" />
+    <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.Designer.cs">
       <DependentUpon>FrmSAMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.cs" />
+    <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Profile\FrmSAProfile.Designer.cs">
       <DependentUpon>FrmSAProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.cs" />
+    <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Registration\FrmSARegistration.Designer.cs">
       <DependentUpon>FrmSARegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.cs" />
+    <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.Designer.cs">
       <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.cs" />
+    <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.Designer.cs">
       <DependentUpon>FrmSAPasswordChange.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.cs" />
+    <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.Designer.cs">
       <DependentUpon>FrmSASettings.cs</DependentUpon>
     </Compile>
@@ -588,6 +612,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shiftHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-upWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrowWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
