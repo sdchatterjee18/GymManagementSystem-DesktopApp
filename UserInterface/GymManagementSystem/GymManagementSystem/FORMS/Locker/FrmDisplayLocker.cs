@@ -17,6 +17,7 @@ namespace GymManagementSystem.FORMS.Locker
     {
         public FrmDisplayLocker()
         {
+            // Add
             InitializeComponent();
         }
 
