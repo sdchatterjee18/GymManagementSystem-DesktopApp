@@ -226,4 +226,22 @@
   <data name="down-arrowWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\down-arrowWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="downArrowB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downArrowB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downArrowW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downArrowW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="record_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\record-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recor_buttonW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recor-buttonW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="topArrowB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\topArrowB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="topArrowW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\topArrowW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

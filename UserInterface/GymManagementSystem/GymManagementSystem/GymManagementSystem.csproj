@@ -618,6 +618,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down-arrowWhite.png" />
+    </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dotB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dotW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\record-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recor-buttonW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downArrowB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downArrowW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topArrowB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topArrowW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

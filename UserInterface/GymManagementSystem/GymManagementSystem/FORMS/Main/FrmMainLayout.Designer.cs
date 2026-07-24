@@ -45,6 +45,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogout = new System.Windows.Forms.Panel();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.fnlSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -94,6 +95,7 @@
             this.pnlSpecer = new System.Windows.Forms.Panel();
             this.pnlMainPanel = new System.Windows.Forms.Panel();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
+            this.picLogout = new System.Windows.Forms.PictureBox();
             this.picMenu = new System.Windows.Forms.PictureBox();
             this.picDashboard = new System.Windows.Forms.PictureBox();
             this.picMembers = new System.Windows.Forms.PictureBox();
@@ -123,8 +125,6 @@
             this.picCalander = new System.Windows.Forms.PictureBox();
             this.picClock = new System.Windows.Forms.PictureBox();
             this.picModule = new System.Windows.Forms.PictureBox();
-            this.picLogout = new System.Windows.Forms.PictureBox();
-            this.lblLogout = new System.Windows.Forms.Label();
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
@@ -161,6 +161,7 @@
             this.pnlPayment.SuspendLayout();
             this.pnlExpense.SuspendLayout();
             this.pnlSettins.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMembers)).BeginInit();
@@ -190,7 +191,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCalander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picModule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberAttendance
@@ -217,9 +217,9 @@
             lblExerciseAndWorkout.Location = new System.Drawing.Point(37, 8);
             lblExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
             lblExerciseAndWorkout.Name = "lblExerciseAndWorkout";
-            lblExerciseAndWorkout.Size = new System.Drawing.Size(171, 21);
+            lblExerciseAndWorkout.Size = new System.Drawing.Size(152, 21);
             lblExerciseAndWorkout.TabIndex = 4;
-            lblExerciseAndWorkout.Text = "Exercise And Workout";
+            lblExerciseAndWorkout.Text = "Exercise && Workout";
             lblExerciseAndWorkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             lblExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
             lblExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
@@ -391,6 +391,21 @@
             this.pnlLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
             this.pnlLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblLogout.Location = new System.Drawing.Point(29, 12);
+            this.lblLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(62, 20);
+            this.lblLogout.TabIndex = 1;
+            this.lblLogout.Text = "Log Out";
+            this.lblLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.lblLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.lblLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
+            // 
             // fnlSidebar
             // 
             this.fnlSidebar.AutoScroll = true;
@@ -539,7 +554,7 @@
             // 
             this.lblMemberTrainerAssignment.AutoSize = true;
             this.lblMemberTrainerAssignment.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberTrainerAssignment.Location = new System.Drawing.Point(44, 6);
+            this.lblMemberTrainerAssignment.Location = new System.Drawing.Point(44, 4);
             this.lblMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
             this.lblMemberTrainerAssignment.Name = "lblMemberTrainerAssignment";
             this.lblMemberTrainerAssignment.Size = new System.Drawing.Size(185, 19);
@@ -566,7 +581,7 @@
             // 
             this.lblViewAllMembers.AutoSize = true;
             this.lblViewAllMembers.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewAllMembers.Location = new System.Drawing.Point(44, 6);
+            this.lblViewAllMembers.Location = new System.Drawing.Point(44, 4);
             this.lblViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
             this.lblViewAllMembers.Name = "lblViewAllMembers";
             this.lblViewAllMembers.Size = new System.Drawing.Size(123, 19);
@@ -704,7 +719,7 @@
             // 
             this.lblViewMemberAttendance.AutoSize = true;
             this.lblViewMemberAttendance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewMemberAttendance.Location = new System.Drawing.Point(44, 6);
+            this.lblViewMemberAttendance.Location = new System.Drawing.Point(44, 4);
             this.lblViewMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.lblViewMemberAttendance.Name = "lblViewMemberAttendance";
             this.lblViewMemberAttendance.Size = new System.Drawing.Size(171, 19);
@@ -761,7 +776,7 @@
             this.lblShift.AutoSize = true;
             this.lblShift.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShift.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblShift.Location = new System.Drawing.Point(38, 8);
+            this.lblShift.Location = new System.Drawing.Point(39, 8);
             this.lblShift.Margin = new System.Windows.Forms.Padding(0);
             this.lblShift.Name = "lblShift";
             this.lblShift.Size = new System.Drawing.Size(44, 21);
@@ -1075,6 +1090,21 @@
             // 
             this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
+            // picLogout
+            // 
+            this.picLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
+            this.picLogout.Location = new System.Drawing.Point(7, 10);
+            this.picLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.picLogout.Name = "picLogout";
+            this.picLogout.Size = new System.Drawing.Size(21, 21);
+            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogout.TabIndex = 0;
+            this.picLogout.TabStop = false;
+            this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
+            // 
             // picMenu
             // 
             this.picMenu.Image = ((System.Drawing.Image)(resources.GetObject("picMenu.Image")));
@@ -1119,7 +1149,7 @@
             // 
             // picMembersArrowe
             // 
-            this.picMembersArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picMembersArrowe.Image")));
+            this.picMembersArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
             this.picMembersArrowe.Location = new System.Drawing.Point(205, 12);
             this.picMembersArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picMembersArrowe.Name = "picMembersArrowe";
@@ -1133,7 +1163,7 @@
             // 
             // picMemberTrainerAssignment
             // 
-            this.picMemberTrainerAssignment.Image = ((System.Drawing.Image)(resources.GetObject("picMemberTrainerAssignment.Image")));
+            this.picMemberTrainerAssignment.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picMemberTrainerAssignment.Location = new System.Drawing.Point(28, 6);
             this.picMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberTrainerAssignment.Name = "picMemberTrainerAssignment";
@@ -1147,7 +1177,7 @@
             // 
             // picViewAllMembers
             // 
-            this.picViewAllMembers.Image = ((System.Drawing.Image)(resources.GetObject("picViewAllMembers.Image")));
+            this.picViewAllMembers.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picViewAllMembers.Location = new System.Drawing.Point(28, 6);
             this.picViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
             this.picViewAllMembers.Name = "picViewAllMembers";
@@ -1203,7 +1233,7 @@
             // 
             // picMemberAttendanceArrowe
             // 
-            this.picMemberAttendanceArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendanceArrowe.Image")));
+            this.picMemberAttendanceArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
             this.picMemberAttendanceArrowe.Location = new System.Drawing.Point(205, 14);
             this.picMemberAttendanceArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberAttendanceArrowe.Name = "picMemberAttendanceArrowe";
@@ -1217,7 +1247,7 @@
             // 
             // picMarkMemberAtttendance
             // 
-            this.picMarkMemberAtttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMarkMemberAtttendance.Image")));
+            this.picMarkMemberAtttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picMarkMemberAtttendance.Location = new System.Drawing.Point(28, 6);
             this.picMarkMemberAtttendance.Margin = new System.Windows.Forms.Padding(0);
             this.picMarkMemberAtttendance.Name = "picMarkMemberAtttendance";
@@ -1231,7 +1261,7 @@
             // 
             // picViewMemberAttendance
             // 
-            this.picViewMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picViewMemberAttendance.Image")));
+            this.picViewMemberAttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picViewMemberAttendance.Location = new System.Drawing.Point(28, 6);
             this.picViewMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
             this.picViewMemberAttendance.Name = "picViewMemberAttendance";
@@ -1298,7 +1328,7 @@
             // 
             // picExerciseAndWorkoutArrowe
             // 
-            this.picExerciseAndWorkoutArrowe.Image = ((System.Drawing.Image)(resources.GetObject("picExerciseAndWorkoutArrowe.Image")));
+            this.picExerciseAndWorkoutArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
             this.picExerciseAndWorkoutArrowe.Location = new System.Drawing.Point(205, 14);
             this.picExerciseAndWorkoutArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picExerciseAndWorkoutArrowe.Name = "picExerciseAndWorkoutArrowe";
@@ -1312,7 +1342,7 @@
             // 
             // picExercise
             // 
-            this.picExercise.Image = ((System.Drawing.Image)(resources.GetObject("picExercise.Image")));
+            this.picExercise.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picExercise.Location = new System.Drawing.Point(28, 6);
             this.picExercise.Margin = new System.Windows.Forms.Padding(0);
             this.picExercise.Name = "picExercise";
@@ -1326,7 +1356,7 @@
             // 
             // picWorkoutPlans
             // 
-            this.picWorkoutPlans.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutPlans.Image")));
+            this.picWorkoutPlans.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picWorkoutPlans.Location = new System.Drawing.Point(28, 6);
             this.picWorkoutPlans.Margin = new System.Windows.Forms.Padding(0);
             this.picWorkoutPlans.Name = "picWorkoutPlans";
@@ -1340,7 +1370,7 @@
             // 
             // picWorkoutShedule
             // 
-            this.picWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutShedule.Image")));
+            this.picWorkoutShedule.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picWorkoutShedule.Location = new System.Drawing.Point(28, 6);
             this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(0);
             this.picWorkoutShedule.Name = "picWorkoutShedule";
@@ -1461,36 +1491,6 @@
             this.picModule.TabIndex = 0;
             this.picModule.TabStop = false;
             // 
-            // picLogout
-            // 
-            this.picLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
-            this.picLogout.Location = new System.Drawing.Point(7, 10);
-            this.picLogout.Margin = new System.Windows.Forms.Padding(0);
-            this.picLogout.Name = "picLogout";
-            this.picLogout.Size = new System.Drawing.Size(21, 21);
-            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogout.TabIndex = 0;
-            this.picLogout.TabStop = false;
-            this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
-            this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
-            this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
-            // 
-            // lblLogout
-            // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblLogout.Location = new System.Drawing.Point(27, 12);
-            this.lblLogout.Margin = new System.Windows.Forms.Padding(0);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(62, 20);
-            this.lblLogout.TabIndex = 1;
-            this.lblLogout.Text = "Log Out";
-            this.lblLogout.Click += new System.EventHandler(this.pnlLogout_Click);
-            this.lblLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
-            this.lblLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
-            // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1564,6 +1564,7 @@
             this.pnlExpense.PerformLayout();
             this.pnlSettins.ResumeLayout(false);
             this.pnlSettins.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMembers)).EndInit();
@@ -1593,7 +1594,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCalander)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picModule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
             this.ResumeLayout(false);
 
         }

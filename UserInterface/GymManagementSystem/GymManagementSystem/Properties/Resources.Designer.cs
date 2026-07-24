@@ -139,6 +139,22 @@ namespace GymManagementSystem.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        internal static System.Drawing.Bitmap downArrowB {
+            get {
+                object obj = ResourceManager.GetObject("downArrowB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downArrowW {
+            get {
+                object obj = ResourceManager.GetObject("downArrowW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -303,6 +319,26 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap recor_buttonW {
+            get {
+                object obj = ResourceManager.GetObject("recor_buttonW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap record_button {
+            get {
+                object obj = ResourceManager.GetObject("record_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap regfee {
             get {
                 object obj = ResourceManager.GetObject("regfee", resourceCulture);
@@ -356,6 +392,26 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap shiftHover {
             get {
                 object obj = ResourceManager.GetObject("shiftHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap topArrowB {
+            get {
+                object obj = ResourceManager.GetObject("topArrowB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap topArrowW {
+            get {
+                object obj = ResourceManager.GetObject("topArrowW", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
