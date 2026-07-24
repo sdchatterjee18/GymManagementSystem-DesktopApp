@@ -16,16 +16,15 @@ namespace GymManagementSystem.FORMS.DietPlan
     {
         private Color originalColor;
         private Color hoverColor = Color.SkyBlue;
-        private Color MouseLeave;
+        private Color MouseLeave = Color.FromArgb(236,240,243);
         private Color clickColor = Color.FromArgb(184, 195, 179);
 
         public FrmShowDietPlans()
         {
             InitializeComponent();
 
-          
+
             originalColor = pnlAddNewDietPlan.BackColor;
-            
         }
 
         private void FrmShowDietPlans_Load(object sender, EventArgs e)
@@ -66,11 +65,14 @@ namespace GymManagementSystem.FORMS.DietPlan
                     {
                         int rowIndex = dgvDietPlan.Rows.Add();
 
-                        dgvDietPlan.Rows[rowIndex].Cells["ColSL_No"].Value = serialNo++;
+                        dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Value = serialNo++;
+                        dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Style.ForeColor = Color.FromArgb(30, 60, 220); 
                         dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value = dataRow["CaloriesPerDay"];
                         dgvDietPlan.Rows[rowIndex].Cells["ColDocument"].Value =dataRow["DietPlanDocument"].ToString();
                         dgvDietPlan.Rows[rowIndex].Cells["ColCondition"].Value =dataRow["ConditionStatus"].ToString();
+
                     }
+             
 
 
                     //for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
@@ -122,31 +124,41 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void dgvDietPlan_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
+           
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(160, 170, 240);
+                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
 
+            
+
+
         }
 
         private void dgvDietPlan_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
                 dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-                dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
-            }
 
+                string colName = dgvDietPlan.Columns[e.ColumnIndex].Name;
+
+                if (colName == "colSl_No")
+                {
+                    dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(30, 60, 220);
+                }
+            }
         }
 
         private void dgvDietPlan_Click(object sender, EventArgs e)
@@ -195,7 +207,70 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             dgvDietPlan.ClearSelection();
         }
-  
+
+        private void dgvDietPlan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
         }
+
+        private void tlpTitleAndSubTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void tlpDietPlanTitleAndSubTitle_Paint(object sender, PaintEventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void picDietPlan_Click(object sender, EventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void tlpDietPlanHeader_Paint(object sender, PaintEventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void tlpTitleAndSubTitleBar_Click(object sender, EventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void tlpDietPlanTitleAndSubTitle_Click(object sender, EventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+       
+           private void dgvDietPlan_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+           {
+             if (e.RowIndex >= 0 && e.ColumnIndex == dgvDietPlan.Columns["ColAction"].Index)
+            {
+             e.PaintBackground(e.CellBounds, true);
+
+        ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
+            System.Windows.Forms.VisualStyles.PushButtonState.Normal);
+
+        // Explicit fixed font — won't change regardless of selection/hover state
+        Font fixedFont = new Font("Segoe UI", 10F, FontStyle.Bold);
+
+        TextRenderer.DrawText(
+            e.Graphics,
+            "✏️Update",
+            fixedFont,
+            e.CellBounds,
+            Color.Green,
+            TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+        e.Handled = true;
+    
+            }
+        }
+
+        
+  
+       }
         
 }
