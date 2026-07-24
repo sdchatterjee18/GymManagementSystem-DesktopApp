@@ -817,9 +817,5 @@ namespace GymManagementSystem.FORMS.Main
                 timerSidebar.Start();
             }
         }
-
-       
-       
-       
        }
 }

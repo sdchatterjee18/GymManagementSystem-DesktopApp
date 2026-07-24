@@ -64,7 +64,6 @@
             this.lblFinancialManagement = new System.Windows.Forms.Label();
             this.picFinancialManagement = new System.Windows.Forms.PictureBox();
             this.pnlSettings = new System.Windows.Forms.Panel();
-            this.picSettingsArrowe = new System.Windows.Forms.PictureBox();
             this.lblSettings = new System.Windows.Forms.Label();
             this.picSettings = new System.Windows.Forms.PictureBox();
             this.pnlDropDownSettings = new System.Windows.Forms.Panel();
@@ -73,6 +72,7 @@
             this.lblSuperAdminPasswordChange = new System.Windows.Forms.Label();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             this.pnlMainPanel = new System.Windows.Forms.Panel();
+            this.picSettingsArrowe = new System.Windows.Forms.PictureBox();
             this.pnlTopbar.SuspendLayout();
             this.tlpTopbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).BeginInit();
@@ -96,11 +96,11 @@
             this.pnlFinancialManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFinancialManagement)).BeginInit();
             this.pnlSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).BeginInit();
             this.pnlDropDownSettings.SuspendLayout();
             this.pnlSuperAdminPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPasswordChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopbar
@@ -285,6 +285,9 @@
             this.pnlLogout.Name = "pnlLogout";
             this.pnlLogout.Size = new System.Drawing.Size(346, 50);
             this.pnlLogout.TabIndex = 1;
+            this.pnlLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.pnlLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.pnlLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // lblLogout
             // 
@@ -297,6 +300,9 @@
             this.lblLogout.Size = new System.Drawing.Size(80, 25);
             this.lblLogout.TabIndex = 1;
             this.lblLogout.Text = "Log Out";
+            this.lblLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.lblLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.lblLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // picLogout
             // 
@@ -309,6 +315,9 @@
             this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogout.TabIndex = 0;
             this.picLogout.TabStop = false;
+            this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // fnlSidebar
             // 
@@ -377,6 +386,9 @@
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(344, 50);
             this.pnlDashboard.TabIndex = 0;
+            this.pnlDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
+            this.pnlDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
+            this.pnlDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
             // 
             // lblDashboard
             // 
@@ -390,6 +402,9 @@
             this.lblDashboard.TabIndex = 1;
             this.lblDashboard.Text = "Dashboard";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
+            this.lblDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
+            this.lblDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
             // 
             // picDashboard
             // 
@@ -401,6 +416,9 @@
             this.picDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDashboard.TabIndex = 0;
             this.picDashboard.TabStop = false;
+            this.picDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
+            this.picDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
+            this.picDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
             // 
             // pnlEmployeeManagement
             // 
@@ -411,6 +429,9 @@
             this.pnlEmployeeManagement.Name = "pnlEmployeeManagement";
             this.pnlEmployeeManagement.Size = new System.Drawing.Size(344, 50);
             this.pnlEmployeeManagement.TabIndex = 3;
+            this.pnlEmployeeManagement.Click += new System.EventHandler(this.pnlEmployeeManagement_Click);
+            this.pnlEmployeeManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeManagement_MouseEnter);
+            this.pnlEmployeeManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeManagement_MouseLeave);
             // 
             // lblEmployeeManagement
             // 
@@ -424,6 +445,9 @@
             this.lblEmployeeManagement.TabIndex = 1;
             this.lblEmployeeManagement.Text = "Employee Management";
             this.lblEmployeeManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmployeeManagement.Click += new System.EventHandler(this.pnlEmployeeManagement_Click);
+            this.lblEmployeeManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeManagement_MouseEnter);
+            this.lblEmployeeManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeManagement_MouseLeave);
             // 
             // picEmployeeManagement
             // 
@@ -435,6 +459,9 @@
             this.picEmployeeManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployeeManagement.TabIndex = 0;
             this.picEmployeeManagement.TabStop = false;
+            this.picEmployeeManagement.Click += new System.EventHandler(this.pnlEmployeeManagement_Click);
+            this.picEmployeeManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeManagement_MouseEnter);
+            this.picEmployeeManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeManagement_MouseLeave);
             // 
             // pnlEmployeeSalaryManagement
             // 
@@ -445,6 +472,9 @@
             this.pnlEmployeeSalaryManagement.Name = "pnlEmployeeSalaryManagement";
             this.pnlEmployeeSalaryManagement.Size = new System.Drawing.Size(344, 50);
             this.pnlEmployeeSalaryManagement.TabIndex = 4;
+            this.pnlEmployeeSalaryManagement.Click += new System.EventHandler(this.pnlEmployeeSalaryManagement_Click);
+            this.pnlEmployeeSalaryManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseEnter);
+            this.pnlEmployeeSalaryManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseLeave);
             // 
             // lblEmployeeSalaryManagement
             // 
@@ -458,6 +488,9 @@
             this.lblEmployeeSalaryManagement.TabIndex = 1;
             this.lblEmployeeSalaryManagement.Text = "Employee Salary Management";
             this.lblEmployeeSalaryManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmployeeSalaryManagement.Click += new System.EventHandler(this.pnlEmployeeSalaryManagement_Click);
+            this.lblEmployeeSalaryManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseEnter);
+            this.lblEmployeeSalaryManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseLeave);
             // 
             // picEmployeeSalaryManagement
             // 
@@ -469,6 +502,9 @@
             this.picEmployeeSalaryManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEmployeeSalaryManagement.TabIndex = 0;
             this.picEmployeeSalaryManagement.TabStop = false;
+            this.picEmployeeSalaryManagement.Click += new System.EventHandler(this.pnlEmployeeSalaryManagement_Click);
+            this.picEmployeeSalaryManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseEnter);
+            this.picEmployeeSalaryManagement.MouseLeave += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseLeave);
             // 
             // pnlFinancialManagement
             // 
@@ -479,6 +515,9 @@
             this.pnlFinancialManagement.Name = "pnlFinancialManagement";
             this.pnlFinancialManagement.Size = new System.Drawing.Size(344, 50);
             this.pnlFinancialManagement.TabIndex = 5;
+            this.pnlFinancialManagement.Click += new System.EventHandler(this.pnlFinancialManagement_Click);
+            this.pnlFinancialManagement.MouseEnter += new System.EventHandler(this.pnlFinancialManagement_MouseEnter);
+            this.pnlFinancialManagement.MouseLeave += new System.EventHandler(this.pnlFinancialManagement_MouseLeave);
             // 
             // lblFinancialManagement
             // 
@@ -492,6 +531,9 @@
             this.lblFinancialManagement.TabIndex = 1;
             this.lblFinancialManagement.Text = "Financial Management";
             this.lblFinancialManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblFinancialManagement.Click += new System.EventHandler(this.pnlFinancialManagement_Click);
+            this.lblFinancialManagement.MouseEnter += new System.EventHandler(this.pnlFinancialManagement_MouseEnter);
+            this.lblFinancialManagement.MouseLeave += new System.EventHandler(this.pnlFinancialManagement_MouseLeave);
             // 
             // picFinancialManagement
             // 
@@ -503,6 +545,9 @@
             this.picFinancialManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFinancialManagement.TabIndex = 0;
             this.picFinancialManagement.TabStop = false;
+            this.picFinancialManagement.Click += new System.EventHandler(this.pnlFinancialManagement_Click);
+            this.picFinancialManagement.MouseEnter += new System.EventHandler(this.pnlFinancialManagement_MouseEnter);
+            this.picFinancialManagement.MouseLeave += new System.EventHandler(this.pnlFinancialManagement_MouseLeave);
             // 
             // pnlSettings
             // 
@@ -515,17 +560,8 @@
             this.pnlSettings.Size = new System.Drawing.Size(344, 50);
             this.pnlSettings.TabIndex = 6;
             this.pnlSettings.Click += new System.EventHandler(this.pnlSettings_Click);
-            // 
-            // picSettingsArrowe
-            // 
-            this.picSettingsArrowe.Image = global::GymManagementSystem.Properties.Resources.down_arrowWhite;
-            this.picSettingsArrowe.Location = new System.Drawing.Point(319, 16);
-            this.picSettingsArrowe.Margin = new System.Windows.Forms.Padding(0);
-            this.picSettingsArrowe.Name = "picSettingsArrowe";
-            this.picSettingsArrowe.Size = new System.Drawing.Size(20, 20);
-            this.picSettingsArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSettingsArrowe.TabIndex = 3;
-            this.picSettingsArrowe.TabStop = false;
+            this.pnlSettings.MouseEnter += new System.EventHandler(this.pnlSettings_MouseEnter);
+            this.pnlSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
             // lblSettings
             // 
@@ -540,6 +576,8 @@
             this.lblSettings.Text = "Settings";
             this.lblSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblSettings.Click += new System.EventHandler(this.pnlSettings_Click);
+            this.lblSettings.MouseEnter += new System.EventHandler(this.pnlSettings_MouseEnter);
+            this.lblSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
             // picSettings
             // 
@@ -552,6 +590,8 @@
             this.picSettings.TabIndex = 0;
             this.picSettings.TabStop = false;
             this.picSettings.Click += new System.EventHandler(this.pnlSettings_Click);
+            this.picSettings.MouseEnter += new System.EventHandler(this.pnlSettings_MouseEnter);
+            this.picSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
             // pnlDropDownSettings
             // 
@@ -576,7 +616,7 @@
             // 
             // picSuperAdminPasswordChange
             // 
-            this.picSuperAdminPasswordChange.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPasswordChange.Image")));
+            this.picSuperAdminPasswordChange.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
             this.picSuperAdminPasswordChange.Location = new System.Drawing.Point(83, 7);
             this.picSuperAdminPasswordChange.Margin = new System.Windows.Forms.Padding(0);
             this.picSuperAdminPasswordChange.Name = "picSuperAdminPasswordChange";
@@ -607,6 +647,18 @@
             this.pnlMainPanel.Name = "pnlMainPanel";
             this.pnlMainPanel.Size = new System.Drawing.Size(989, 596);
             this.pnlMainPanel.TabIndex = 3;
+            // 
+            // picSettingsArrowe
+            // 
+            this.picSettingsArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
+            this.picSettingsArrowe.Location = new System.Drawing.Point(303, 21);
+            this.picSettingsArrowe.Margin = new System.Windows.Forms.Padding(0);
+            this.picSettingsArrowe.Name = "picSettingsArrowe";
+            this.picSettingsArrowe.Size = new System.Drawing.Size(17, 17);
+            this.picSettingsArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSettingsArrowe.TabIndex = 2;
+            this.picSettingsArrowe.TabStop = false;
+            this.picSettingsArrowe.Click += new System.EventHandler(this.pnlSettings_Click);
             // 
             // FrmSAMainForm
             // 
@@ -653,12 +705,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFinancialManagement)).EndInit();
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).EndInit();
             this.pnlDropDownSettings.ResumeLayout(false);
             this.pnlSuperAdminPasswordChange.ResumeLayout(false);
             this.pnlSuperAdminPasswordChange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPasswordChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -705,9 +757,9 @@
         private System.Windows.Forms.Panel pnlSuperAdminPasswordChange;
         private System.Windows.Forms.PictureBox picSuperAdminPasswordChange;
         private System.Windows.Forms.Label lblSuperAdminPasswordChange;
-        private System.Windows.Forms.PictureBox picSettingsArrowe;
         private System.Windows.Forms.Timer timerSidebar;
         private System.Windows.Forms.Panel pnlMainPanel;
+        private System.Windows.Forms.PictureBox picSettingsArrowe;
 
     }
 }
