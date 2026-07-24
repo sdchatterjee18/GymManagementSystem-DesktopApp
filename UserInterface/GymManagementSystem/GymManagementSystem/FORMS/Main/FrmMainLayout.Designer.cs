@@ -34,14 +34,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainLayout));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
-            this.lblGymLogo = new System.Windows.Forms.Label();
             this.tlpDateTime = new System.Windows.Forms.TableLayoutPanel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlCalander = new System.Windows.Forms.Panel();
             this.pnlColock = new System.Windows.Forms.Panel();
             this.pnlModule = new System.Windows.Forms.Panel();
-            this.lblModule = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogout = new System.Windows.Forms.Panel();
@@ -121,10 +119,9 @@
             this.picPayment = new System.Windows.Forms.PictureBox();
             this.picExpense = new System.Windows.Forms.PictureBox();
             this.picSettings = new System.Windows.Forms.PictureBox();
-            this.picGymLogo = new System.Windows.Forms.PictureBox();
             this.picCalander = new System.Windows.Forms.PictureBox();
             this.picClock = new System.Windows.Forms.PictureBox();
-            this.picModule = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
@@ -132,7 +129,6 @@
             this.tlpDateTime.SuspendLayout();
             this.pnlCalander.SuspendLayout();
             this.pnlColock.SuspendLayout();
-            this.pnlModule.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogout.SuspendLayout();
             this.fnlSidebar.SuspendLayout();
@@ -187,10 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPayment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCalander)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picModule)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberAttendance
@@ -233,42 +227,29 @@
             this.pnlTopbar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopbar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopbar.Name = "pnlTopbar";
-            this.pnlTopbar.Size = new System.Drawing.Size(1011, 60);
+            this.pnlTopbar.Size = new System.Drawing.Size(1027, 45);
             this.pnlTopbar.TabIndex = 0;
             // 
             // tlpTopbar
             // 
+            this.tlpTopbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(238)))), ((int)(((byte)(248)))));
             this.tlpTopbar.ColumnCount = 5;
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.54589F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.13879F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.31533F));
-            this.tlpTopbar.Controls.Add(this.picGymLogo, 0, 0);
-            this.tlpTopbar.Controls.Add(this.lblGymLogo, 1, 0);
             this.tlpTopbar.Controls.Add(this.tlpDateTime, 4, 0);
             this.tlpTopbar.Controls.Add(this.pnlModule, 3, 0);
+            this.tlpTopbar.Controls.Add(this.button1, 0, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTopbar.Location = new System.Drawing.Point(0, 0);
             this.tlpTopbar.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTopbar.Name = "tlpTopbar";
             this.tlpTopbar.RowCount = 1;
             this.tlpTopbar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopbar.Size = new System.Drawing.Size(1011, 60);
+            this.tlpTopbar.Size = new System.Drawing.Size(1027, 45);
             this.tlpTopbar.TabIndex = 0;
-            // 
-            // lblGymLogo
-            // 
-            this.lblGymLogo.AutoSize = true;
-            this.lblGymLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGymLogo.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGymLogo.Location = new System.Drawing.Point(77, 0);
-            this.lblGymLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGymLogo.Name = "lblGymLogo";
-            this.lblGymLogo.Size = new System.Drawing.Size(158, 60);
-            this.lblGymLogo.TabIndex = 1;
-            this.lblGymLogo.Text = "GYM";
-            this.lblGymLogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tlpDateTime
             // 
@@ -284,12 +265,12 @@
             this.tlpDateTime.Controls.Add(this.pnlCalander, 0, 0);
             this.tlpDateTime.Controls.Add(this.pnlColock, 3, 0);
             this.tlpDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDateTime.Location = new System.Drawing.Point(808, 2);
+            this.tlpDateTime.Location = new System.Drawing.Point(820, 2);
             this.tlpDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDateTime.Name = "tlpDateTime";
             this.tlpDateTime.RowCount = 1;
             this.tlpDateTime.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateTime.Size = new System.Drawing.Size(201, 56);
+            this.tlpDateTime.Size = new System.Drawing.Size(205, 41);
             this.tlpDateTime.TabIndex = 3;
             // 
             // lblDate
@@ -300,7 +281,7 @@
             this.lblDate.Location = new System.Drawing.Point(32, 0);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(71, 56);
+            this.lblDate.Size = new System.Drawing.Size(71, 41);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,10 +290,10 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime.Location = new System.Drawing.Point(135, 0);
+            this.lblTime.Location = new System.Drawing.Point(136, 0);
             this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(71, 56);
+            this.lblTime.Size = new System.Drawing.Size(71, 41);
             this.lblTime.TabIndex = 3;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -324,40 +305,27 @@
             this.pnlCalander.Location = new System.Drawing.Point(0, 0);
             this.pnlCalander.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCalander.Name = "pnlCalander";
-            this.pnlCalander.Size = new System.Drawing.Size(30, 56);
+            this.pnlCalander.Size = new System.Drawing.Size(30, 41);
             this.pnlCalander.TabIndex = 4;
             // 
             // pnlColock
             // 
             this.pnlColock.Controls.Add(this.picClock);
             this.pnlColock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlColock.Location = new System.Drawing.Point(103, 0);
+            this.pnlColock.Location = new System.Drawing.Point(104, 0);
             this.pnlColock.Margin = new System.Windows.Forms.Padding(0);
             this.pnlColock.Name = "pnlColock";
-            this.pnlColock.Size = new System.Drawing.Size(30, 56);
+            this.pnlColock.Size = new System.Drawing.Size(30, 41);
             this.pnlColock.TabIndex = 5;
             // 
             // pnlModule
             // 
-            this.pnlModule.Controls.Add(this.lblModule);
-            this.pnlModule.Controls.Add(this.picModule);
             this.pnlModule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlModule.Location = new System.Drawing.Point(434, 0);
+            this.pnlModule.Location = new System.Drawing.Point(438, 0);
             this.pnlModule.Margin = new System.Windows.Forms.Padding(0);
             this.pnlModule.Name = "pnlModule";
-            this.pnlModule.Size = new System.Drawing.Size(372, 60);
+            this.pnlModule.Size = new System.Drawing.Size(380, 45);
             this.pnlModule.TabIndex = 4;
-            // 
-            // lblModule
-            // 
-            this.lblModule.AutoSize = true;
-            this.lblModule.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModule.Location = new System.Drawing.Point(125, 15);
-            this.lblModule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblModule.Name = "lblModule";
-            this.lblModule.Size = new System.Drawing.Size(86, 32);
-            this.lblModule.TabIndex = 1;
-            this.lblModule.Text = "Admin";
             // 
             // timer
             // 
@@ -370,11 +338,11 @@
             this.pnlSidebar.Controls.Add(this.fnlSidebar);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.ForeColor = System.Drawing.Color.White;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 60);
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 45);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Padding = new System.Windows.Forms.Padding(4);
-            this.pnlSidebar.Size = new System.Drawing.Size(238, 534);
+            this.pnlSidebar.Size = new System.Drawing.Size(238, 549);
             this.pnlSidebar.TabIndex = 1;
             // 
             // pnlLogout
@@ -382,7 +350,7 @@
             this.pnlLogout.Controls.Add(this.lblLogout);
             this.pnlLogout.Controls.Add(this.picLogout);
             this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLogout.Location = new System.Drawing.Point(4, 489);
+            this.pnlLogout.Location = new System.Drawing.Point(4, 504);
             this.pnlLogout.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLogout.Name = "pnlLogout";
             this.pnlLogout.Size = new System.Drawing.Size(230, 41);
@@ -433,7 +401,7 @@
             this.fnlSidebar.Location = new System.Drawing.Point(4, 4);
             this.fnlSidebar.Margin = new System.Windows.Forms.Padding(0);
             this.fnlSidebar.Name = "fnlSidebar";
-            this.fnlSidebar.Size = new System.Drawing.Size(230, 526);
+            this.fnlSidebar.Size = new System.Drawing.Size(230, 541);
             this.fnlSidebar.TabIndex = 0;
             this.fnlSidebar.WrapContents = false;
             // 
@@ -1080,10 +1048,10 @@
             // pnlMainPanel
             // 
             this.pnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainPanel.Location = new System.Drawing.Point(238, 60);
+            this.pnlMainPanel.Location = new System.Drawing.Point(238, 45);
             this.pnlMainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMainPanel.Name = "pnlMainPanel";
-            this.pnlMainPanel.Size = new System.Drawing.Size(773, 534);
+            this.pnlMainPanel.Size = new System.Drawing.Size(789, 549);
             this.pnlMainPanel.TabIndex = 2;
             // 
             // timerSidebar
@@ -1446,18 +1414,6 @@
             this.picSettings.MouseEnter += new System.EventHandler(this.pnlSettins_MouseEnter);
             this.picSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
-            // picGymLogo
-            // 
-            this.picGymLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picGymLogo.Image = ((System.Drawing.Image)(resources.GetObject("picGymLogo.Image")));
-            this.picGymLogo.Location = new System.Drawing.Point(2, 2);
-            this.picGymLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.picGymLogo.Name = "picGymLogo";
-            this.picGymLogo.Size = new System.Drawing.Size(71, 56);
-            this.picGymLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picGymLogo.TabIndex = 0;
-            this.picGymLogo.TabStop = false;
-            // 
             // picCalander
             // 
             this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
@@ -1480,25 +1436,25 @@
             this.picClock.TabIndex = 1;
             this.picClock.TabStop = false;
             // 
-            // picModule
+            // button1
             // 
-            this.picModule.Image = ((System.Drawing.Image)(resources.GetObject("picModule.Image")));
-            this.picModule.Location = new System.Drawing.Point(104, 21);
-            this.picModule.Margin = new System.Windows.Forms.Padding(0);
-            this.picModule.Name = "picModule";
-            this.picModule.Size = new System.Drawing.Size(19, 20);
-            this.picModule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picModule.TabIndex = 0;
-            this.picModule.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 594);
+            this.ClientSize = new System.Drawing.Size(1027, 594);
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";
@@ -1506,13 +1462,10 @@
             this.Load += new System.EventHandler(this.FrmMainLayout_Load);
             this.pnlTopbar.ResumeLayout(false);
             this.tlpTopbar.ResumeLayout(false);
-            this.tlpTopbar.PerformLayout();
             this.tlpDateTime.ResumeLayout(false);
             this.tlpDateTime.PerformLayout();
             this.pnlCalander.ResumeLayout(false);
             this.pnlColock.ResumeLayout(false);
-            this.pnlModule.ResumeLayout(false);
-            this.pnlModule.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogout.ResumeLayout(false);
             this.pnlLogout.PerformLayout();
@@ -1590,10 +1543,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPayment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCalander)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picModule)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1602,15 +1553,11 @@
 
         private System.Windows.Forms.Panel pnlTopbar;
         private System.Windows.Forms.TableLayoutPanel tlpTopbar;
-        private System.Windows.Forms.PictureBox picGymLogo;
-        private System.Windows.Forms.Label lblGymLogo;
         private System.Windows.Forms.TableLayoutPanel tlpDateTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Panel pnlModule;
-        private System.Windows.Forms.Label lblModule;
-        private System.Windows.Forms.PictureBox picModule;
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Panel pnlLogout;
         private System.Windows.Forms.FlowLayoutPanel fnlSidebar;
@@ -1693,6 +1640,7 @@
         private System.Windows.Forms.Label lblExercise;
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.PictureBox picLogout;
+        private System.Windows.Forms.Button button1;
 
     }
 }

@@ -78,16 +78,16 @@ namespace GymManagementSystem.FORMS.Main
         private void FrmMainLayout_Load(object sender, EventArgs e)
         {
             timer.Start();
-            Color borderColor = Color.FromArgb(15, 15, 15);
+            //Color borderColor = Color.FromArgb(15, 15, 15);
             Panel topBorder = new Panel();
             topBorder.Dock = DockStyle.Bottom;
             topBorder.Height = 1;
-            topBorder.BackColor = borderColor;
+            //topBorder.BackColor = borderColor;
             pnlTopbar.Controls.Add(topBorder);
             Panel mainLeftBorder = new Panel();
             mainLeftBorder.Dock = DockStyle.Left;
             mainLeftBorder.Width = 1;
-            mainLeftBorder.BackColor = borderColor;
+            //mainLeftBorder.BackColor = borderColor;
             pnlMainPanel.Controls.Add(mainLeftBorder);
             pnlSidebar.Width = ExpandedWidth;
             OpenChildForm(new FrmDashboard());
@@ -817,5 +817,14 @@ namespace GymManagementSystem.FORMS.Main
                 timerSidebar.Start();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
+       
+    
        }
 }
