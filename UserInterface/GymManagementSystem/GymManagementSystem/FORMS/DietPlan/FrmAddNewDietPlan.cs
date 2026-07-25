@@ -14,23 +14,15 @@ namespace GymManagementSystem.FORMS.DietPlan
         public FrmAddNewDietPlan()
         {
             InitializeComponent();
-            pnlRequiredCaloriesPerDaySection.BorderStyle = BorderStyle.Fixed3D;
-            tlpCaloriesSection.Dock = DockStyle.Fill;
-            pnlPlanDocumentSection.BorderStyle = BorderStyle.Fixed3D;
-            tlpPlanDocumentSection.Dock = DockStyle.Fill;
-            pnlPlanConditionSection.BorderStyle = BorderStyle.Fixed3D;
-            tlpPlanConditionSection.Dock = DockStyle.Fill;
+            
             
         }
-
-    
-
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
             int ClickCount = 1;
             if (ClickCount == 1)
             {
-                txtRequiredCalories.Clear();
+               // txtRequiredCalories.Clear();
             }
         }
 
@@ -53,18 +45,15 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             this.Dispose();
         }
-
-        private void lblCancel_MouseEnter(object sender, EventArgs e)
+        private void lblNewDietPlanHeader_Click(object sender, EventArgs e)
         {
-            lblCancel.BackColor = Color.DarkRed;
-            lblCancel.ForeColor = Color.White;
 
         }
 
-        private void lblCancel_MouseLeave(object sender, EventArgs e)
+        private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
         {
-            lblCancel.BackColor = Color.Transparent;
-            lblCancel.ForeColor = Color.Black;
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         
