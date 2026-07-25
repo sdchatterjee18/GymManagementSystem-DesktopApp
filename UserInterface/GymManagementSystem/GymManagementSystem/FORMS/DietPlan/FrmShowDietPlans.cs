@@ -123,32 +123,16 @@ namespace GymManagementSystem.FORMS.DietPlan
         }
 
         private void dgvDietPlan_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-           
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(160, 170, 240);
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+        { 
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
-
-            
-
-
         }
 
         private void dgvDietPlan_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvDietPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
 
@@ -268,6 +252,11 @@ namespace GymManagementSystem.FORMS.DietPlan
     
             }
         }
+
+           private void tlpTitleAndSubTitleBar_Click_1(object sender, EventArgs e)
+           {
+               dgvDietPlan.ClearSelection();
+           }
 
         
   
