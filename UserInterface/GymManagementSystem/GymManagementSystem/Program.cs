@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Workout;
+using GymManagementSystem.FORMS.Payments;
+using GymManagementSystem.FORMS.RegistrationFee;
+using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FORMS.DietPlan;
 
 namespace GymManagementSystem
 {
@@ -16,6 +20,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new FrmDisplayWorkoutSchedule());
         }
     }

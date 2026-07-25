@@ -28,19 +28,395 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayPayments));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tlpPaymentsEntireForm = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpPaymentsHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.picPayment = new System.Windows.Forms.PictureBox();
+            this.tlpPaymentsTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.lblViewPayments = new System.Windows.Forms.Label();
+            this.lblPaymentManagement = new System.Windows.Forms.Label();
+            this.dgvPaymentsManagement = new System.Windows.Forms.DataGridView();
+            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMembershipPlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFeesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tblSearchArea = new System.Windows.Forms.TableLayoutPanel();
+            this.txtEnterPlanName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pnlSearchImageHolder = new System.Windows.Forms.Panel();
+            this.picSearchIcon = new System.Windows.Forms.PictureBox();
+            this.tlpPaymentsEntireForm.SuspendLayout();
+            this.tlpPaymentsHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayment)).BeginInit();
+            this.tlpPaymentsTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentsManagement)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.tblSearchArea.SuspendLayout();
+            this.pnlSearchImageHolder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tlpPaymentsEntireForm
+            // 
+            this.tlpPaymentsEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpPaymentsEntireForm.ColumnCount = 3;
+            this.tlpPaymentsEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpPaymentsEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tlpPaymentsEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpPaymentsEntireForm.Controls.Add(this.tlpPaymentsHeader, 1, 1);
+            this.tlpPaymentsEntireForm.Controls.Add(this.dgvPaymentsManagement, 1, 3);
+            this.tlpPaymentsEntireForm.Controls.Add(this.panel1, 1, 2);
+            this.tlpPaymentsEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPaymentsEntireForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpPaymentsEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpPaymentsEntireForm.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpPaymentsEntireForm.Name = "tlpPaymentsEntireForm";
+            this.tlpPaymentsEntireForm.RowCount = 5;
+            this.tlpPaymentsEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpPaymentsEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tlpPaymentsEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpPaymentsEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.66447F));
+            this.tlpPaymentsEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.33553F));
+            this.tlpPaymentsEntireForm.Size = new System.Drawing.Size(863, 609);
+            this.tlpPaymentsEntireForm.TabIndex = 2;
+            // 
+            // tlpPaymentsHeader
+            // 
+            this.tlpPaymentsHeader.ColumnCount = 4;
+            this.tlpPaymentsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tlpPaymentsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tlpPaymentsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPaymentsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 397F));
+            this.tlpPaymentsHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPaymentsHeader.Controls.Add(this.picPayment, 0, 0);
+            this.tlpPaymentsHeader.Controls.Add(this.tlpPaymentsTitle, 1, 0);
+            this.tlpPaymentsHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPaymentsHeader.Location = new System.Drawing.Point(45, 17);
+            this.tlpPaymentsHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpPaymentsHeader.Name = "tlpPaymentsHeader";
+            this.tlpPaymentsHeader.RowCount = 1;
+            this.tlpPaymentsHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPaymentsHeader.Size = new System.Drawing.Size(772, 74);
+            this.tlpPaymentsHeader.TabIndex = 8;
+            // 
+            // picPayment
+            // 
+            this.picPayment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPayment.Image = ((System.Drawing.Image)(resources.GetObject("picPayment.Image")));
+            this.picPayment.Location = new System.Drawing.Point(2, 2);
+            this.picPayment.Margin = new System.Windows.Forms.Padding(2);
+            this.picPayment.Name = "picPayment";
+            this.picPayment.Size = new System.Drawing.Size(58, 70);
+            this.picPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPayment.TabIndex = 0;
+            this.picPayment.TabStop = false;
+            // 
+            // tlpPaymentsTitle
+            // 
+            this.tlpPaymentsTitle.ColumnCount = 1;
+            this.tlpPaymentsTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPaymentsTitle.Controls.Add(this.lblViewPayments, 0, 1);
+            this.tlpPaymentsTitle.Controls.Add(this.lblPaymentManagement, 0, 0);
+            this.tlpPaymentsTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPaymentsTitle.Location = new System.Drawing.Point(64, 2);
+            this.tlpPaymentsTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpPaymentsTitle.Name = "tlpPaymentsTitle";
+            this.tlpPaymentsTitle.RowCount = 3;
+            this.tlpPaymentsTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.28571F));
+            this.tlpPaymentsTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpPaymentsTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.28572F));
+            this.tlpPaymentsTitle.Size = new System.Drawing.Size(221, 70);
+            this.tlpPaymentsTitle.TabIndex = 1;
+            // 
+            // lblViewPayments
+            // 
+            this.lblViewPayments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblViewPayments.AutoSize = true;
+            this.lblViewPayments.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewPayments.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblViewPayments.Location = new System.Drawing.Point(2, 39);
+            this.lblViewPayments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewPayments.Name = "lblViewPayments";
+            this.lblViewPayments.Size = new System.Drawing.Size(137, 13);
+            this.lblViewPayments.TabIndex = 3;
+            this.lblViewPayments.Text = "View All Payments Details";
+            // 
+            // lblPaymentManagement
+            // 
+            this.lblPaymentManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPaymentManagement.AutoSize = true;
+            this.lblPaymentManagement.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentManagement.Location = new System.Drawing.Point(2, 17);
+            this.lblPaymentManagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaymentManagement.Name = "lblPaymentManagement";
+            this.lblPaymentManagement.Size = new System.Drawing.Size(181, 21);
+            this.lblPaymentManagement.TabIndex = 2;
+            this.lblPaymentManagement.Text = "Payments Management";
+            // 
+            // dgvPaymentsManagement
+            // 
+            this.dgvPaymentsManagement.AllowUserToAddRows = false;
+            this.dgvPaymentsManagement.AllowUserToDeleteRows = false;
+            this.dgvPaymentsManagement.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvPaymentsManagement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPaymentsManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPaymentsManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvPaymentsManagement.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPaymentsManagement.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentsManagement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPaymentsManagement.ColumnHeadersHeight = 50;
+            this.dgvPaymentsManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPaymentsManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSerialNo,
+            this.colMembershipPlanName,
+            this.colPaymentDate,
+            this.colPaymentMethod,
+            this.colAmount,
+            this.colFeesType});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentsManagement.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPaymentsManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPaymentsManagement.EnableHeadersVisualStyles = false;
+            this.dgvPaymentsManagement.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvPaymentsManagement.Location = new System.Drawing.Point(45, 154);
+            this.dgvPaymentsManagement.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPaymentsManagement.MultiSelect = false;
+            this.dgvPaymentsManagement.Name = "dgvPaymentsManagement";
+            this.dgvPaymentsManagement.ReadOnly = true;
+            this.dgvPaymentsManagement.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentsManagement.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPaymentsManagement.RowHeadersVisible = false;
+            this.dgvPaymentsManagement.RowHeadersWidth = 50;
+            this.dgvPaymentsManagement.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvPaymentsManagement.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPaymentsManagement.RowTemplate.Height = 50;
+            this.dgvPaymentsManagement.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentsManagement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvPaymentsManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvPaymentsManagement.Size = new System.Drawing.Size(772, 396);
+            this.dgvPaymentsManagement.TabIndex = 9;
+            this.dgvPaymentsManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPaymentsManagement_CellFormatting);
+            this.dgvPaymentsManagement.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentsManagement_CellMouseEnter);
+            this.dgvPaymentsManagement.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentsManagement_CellMouseLeave);
+            // 
+            // colSerialNo
+            // 
+            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSerialNo.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSerialNo.FillWeight = 90F;
+            this.colSerialNo.HeaderText = "Sl No.";
+            this.colSerialNo.Name = "colSerialNo";
+            this.colSerialNo.ReadOnly = true;
+            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colMembershipPlanName
+            // 
+            this.colMembershipPlanName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMembershipPlanName.DataPropertyName = "MembershipPlanName";
+            this.colMembershipPlanName.FillWeight = 180F;
+            this.colMembershipPlanName.HeaderText = "Membership Plan Name";
+            this.colMembershipPlanName.Name = "colMembershipPlanName";
+            this.colMembershipPlanName.ReadOnly = true;
+            this.colMembershipPlanName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMembershipPlanName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPaymentDate
+            // 
+            this.colPaymentDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPaymentDate.DataPropertyName = "PaymentDate";
+            this.colPaymentDate.HeaderText = "Payment Date";
+            this.colPaymentDate.Name = "colPaymentDate";
+            this.colPaymentDate.ReadOnly = true;
+            this.colPaymentDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPaymentDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPaymentMethod
+            // 
+            this.colPaymentMethod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPaymentMethod.DataPropertyName = "PaymentMethod";
+            this.colPaymentMethod.FillWeight = 130F;
+            this.colPaymentMethod.HeaderText = "Payment Method";
+            this.colPaymentMethod.Name = "colPaymentMethod";
+            this.colPaymentMethod.ReadOnly = true;
+            this.colPaymentMethod.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPaymentMethod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colAmount
+            // 
+            this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            this.colAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colFeesType
+            // 
+            this.colFeesType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFeesType.DataPropertyName = "FeesType";
+            this.colFeesType.HeaderText = "Fees Type";
+            this.colFeesType.Name = "colFeesType";
+            this.colFeesType.ReadOnly = true;
+            this.colFeesType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colFeesType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tblSearchArea);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(46, 96);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(770, 53);
+            this.panel1.TabIndex = 10;
+            // 
+            // tblSearchArea
+            // 
+            this.tblSearchArea.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tblSearchArea.ColumnCount = 3;
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tblSearchArea.Controls.Add(this.txtEnterPlanName, 1, 0);
+            this.tblSearchArea.Controls.Add(this.btnSearch, 2, 0);
+            this.tblSearchArea.Controls.Add(this.pnlSearchImageHolder, 0, 0);
+            this.tblSearchArea.Location = new System.Drawing.Point(-13, 8);
+            this.tblSearchArea.Name = "tblSearchArea";
+            this.tblSearchArea.RowCount = 1;
+            this.tblSearchArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblSearchArea.Size = new System.Drawing.Size(385, 35);
+            this.tblSearchArea.TabIndex = 11;
+            // 
+            // txtEnterPlanName
+            // 
+            this.txtEnterPlanName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEnterPlanName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEnterPlanName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterPlanName.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEnterPlanName.Location = new System.Drawing.Point(47, 3);
+            this.txtEnterPlanName.Name = "txtEnterPlanName";
+            this.txtEnterPlanName.Size = new System.Drawing.Size(242, 27);
+            this.txtEnterPlanName.TabIndex = 3;
+            this.txtEnterPlanName.Text = "Enter Plan Name";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(307, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 29);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // pnlSearchImageHolder
+            // 
+            this.pnlSearchImageHolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlSearchImageHolder.Controls.Add(this.picSearchIcon);
+            this.pnlSearchImageHolder.Location = new System.Drawing.Point(4, 0);
+            this.pnlSearchImageHolder.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearchImageHolder.Name = "pnlSearchImageHolder";
+            this.pnlSearchImageHolder.Size = new System.Drawing.Size(40, 35);
+            this.pnlSearchImageHolder.TabIndex = 5;
+            // 
+            // picSearchIcon
+            // 
+            this.picSearchIcon.Image = ((System.Drawing.Image)(resources.GetObject("picSearchIcon.Image")));
+            this.picSearchIcon.Location = new System.Drawing.Point(9, 0);
+            this.picSearchIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.picSearchIcon.Name = "picSearchIcon";
+            this.picSearchIcon.Size = new System.Drawing.Size(28, 33);
+            this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchIcon.TabIndex = 2;
+            this.picSearchIcon.TabStop = false;
             // 
             // FrmDisplayPayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(863, 609);
+            this.Controls.Add(this.tlpPaymentsEntireForm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDisplayPayments";
             this.Text = "FrmDisplayPayments";
+            this.Load += new System.EventHandler(this.FrmDisplayPayments_Load);
+            this.tlpPaymentsEntireForm.ResumeLayout(false);
+            this.tlpPaymentsHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPayment)).EndInit();
+            this.tlpPaymentsTitle.ResumeLayout(false);
+            this.tlpPaymentsTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentsManagement)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.tblSearchArea.ResumeLayout(false);
+            this.tblSearchArea.PerformLayout();
+            this.pnlSearchImageHolder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tlpPaymentsEntireForm;
+        private System.Windows.Forms.TableLayoutPanel tlpPaymentsHeader;
+        private System.Windows.Forms.PictureBox picPayment;
+        private System.Windows.Forms.TableLayoutPanel tlpPaymentsTitle;
+        private System.Windows.Forms.Label lblViewPayments;
+        private System.Windows.Forms.Label lblPaymentManagement;
+        private System.Windows.Forms.DataGridView dgvPaymentsManagement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFeesType;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tblSearchArea;
+        private System.Windows.Forms.TextBox txtEnterPlanName;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel pnlSearchImageHolder;
+        private System.Windows.Forms.PictureBox picSearchIcon;
+
+
     }
 }
