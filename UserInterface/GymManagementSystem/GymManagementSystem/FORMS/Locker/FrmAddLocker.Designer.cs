@@ -78,7 +78,6 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMain.Controls.Add(this.lblAsterisk);
             this.pnlMain.Controls.Add(this.tlpButton);
             this.pnlMain.Controls.Add(this.lblAddNewLocker);
@@ -89,7 +88,7 @@
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(600, 350);
+            this.pnlMain.Size = new System.Drawing.Size(594, 310);
             this.pnlMain.TabIndex = 0;
             // 
             // lblAsterisk
@@ -110,7 +109,7 @@
             this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.79311F));
             this.tlpButton.Controls.Add(this.pnlButton, 1, 0);
             this.tlpButton.Controls.Add(this.picBoxSendIcon, 0, 0);
-            this.tlpButton.Location = new System.Drawing.Point(376, 268);
+            this.tlpButton.Location = new System.Drawing.Point(404, 248);
             this.tlpButton.Name = "tlpButton";
             this.tlpButton.RowCount = 1;
             this.tlpButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -175,7 +174,7 @@
             this.tlpHeading.Name = "tlpHeading";
             this.tlpHeading.RowCount = 1;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeading.Size = new System.Drawing.Size(598, 76);
+            this.tlpHeading.Size = new System.Drawing.Size(594, 76);
             this.tlpHeading.TabIndex = 6;
             // 
             // tlpTitle
@@ -185,13 +184,13 @@
             this.tlpTitle.Controls.Add(this.lblSubtitle, 0, 1);
             this.tlpTitle.Controls.Add(this.lblTitle, 0, 0);
             this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitle.Location = new System.Drawing.Point(72, 3);
+            this.tlpTitle.Location = new System.Drawing.Point(71, 3);
             this.tlpTitle.Name = "tlpTitle";
             this.tlpTitle.RowCount = 2;
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTitle.Size = new System.Drawing.Size(425, 70);
+            this.tlpTitle.Size = new System.Drawing.Size(422, 70);
             this.tlpTitle.TabIndex = 0;
             // 
             // lblSubtitle
@@ -211,7 +210,7 @@
             this.picBoxLockerIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
             this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLockerIcon.Location = new System.Drawing.Point(13, 13);
+            this.picBoxLockerIcon.Location = new System.Drawing.Point(12, 13);
             this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(43, 50);
             this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(43, 50);
             this.picBoxLockerIcon.Name = "picBoxLockerIcon";
@@ -237,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ClientSize = new System.Drawing.Size(594, 310);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
