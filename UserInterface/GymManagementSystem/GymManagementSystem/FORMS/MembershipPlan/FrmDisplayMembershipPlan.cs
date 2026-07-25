@@ -270,6 +270,21 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             txtEnterPlanName.ForeColor = Color.Black;
         }
+
+        private void picSearchIcon_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEnterPlanName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMembershipPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
        
     }
 }
