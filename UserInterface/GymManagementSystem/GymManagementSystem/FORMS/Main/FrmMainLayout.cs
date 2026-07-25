@@ -13,6 +13,7 @@ using GymManagementSystem.FORMS.Locker;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FORMS.Dashboard;
+using GymManagementSystem.FORMS.Payments;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -624,6 +625,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlPayment.ForeColor = Color.White;
             picPayment.Image = Properties.Resources.payment;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayPayments());
         }
 
         private void pnlExpense_MouseEnter(object sender, EventArgs e)

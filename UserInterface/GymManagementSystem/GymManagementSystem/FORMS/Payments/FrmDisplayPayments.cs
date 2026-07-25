@@ -22,53 +22,53 @@ namespace GymManagementSystem.FORMS.Payments
         {
 
 
-            LoadSubscriptionPayments();
+           // LoadSubscriptionPayments();
             dgvPaymentsManagement.ClearSelection();
         }
 
-        private void LoadSubscriptionPayments()
-        {
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+        //private void LoadSubscriptionPayments()
+        //{
+        //    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 
-            try
-            {
-                using (SqlConnection con = new SqlConnection(CS))
-                {
-                    con.Open();
+        //    try
+        //    {
+        //        using (SqlConnection con = new SqlConnection(CS))
+        //        {
+        //            con.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("spRetrieveSubscriptionPaymentDetails", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
+        //            using (SqlCommand cmd = new SqlCommand("spRetrieveSubscriptionPaymentDetails", con))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
 
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            dgvPaymentsManagement.Rows.Clear();
+        //                using (SqlDataReader dr = cmd.ExecuteReader())
+        //                {
+        //                    dgvPaymentsManagement.Rows.Clear();
 
-                            int serialNo = 1;
+        //                    int serialNo = 1;
 
-                            while (dr.Read())
-                            {
-                                dgvPaymentsManagement.Rows.Add(
-                                    serialNo,
-                                    dr["MemberFullName"].ToString(),
-                                    dr["MembershipPlanName"].ToString(),
-                                    Convert.ToDateTime(dr["PaymentDate"]).ToString("dd-MM-yyyy"),
-                                    dr["PaymentMethod"].ToString(),
-                                    Convert.ToDecimal(dr["Amount"]),
-                                    dr["FeesType"].ToString()
-                                );
+        //                    while (dr.Read())
+        //                    {
+        //                        dgvPaymentsManagement.Rows.Add(
+        //                            serialNo,
+        //                            dr["MemberFullName"].ToString(),
+        //                            dr["MembershipPlanName"].ToString(),
+        //                            Convert.ToDateTime(dr["PaymentDate"]).ToString("dd-MM-yyyy"),
+        //                            dr["PaymentMethod"].ToString(),
+        //                            Convert.ToDecimal(dr["Amount"]),
+        //                            dr["FeesType"].ToString()
+        //                        );
 
-                                serialNo++;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //                        serialNo++;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void dgvPaymentsManagement_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {

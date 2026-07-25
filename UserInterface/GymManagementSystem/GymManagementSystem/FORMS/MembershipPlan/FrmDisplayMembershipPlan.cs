@@ -258,6 +258,18 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             frm.Show();
             frm.StartPosition = FormStartPosition.CenterParent;
         }
+
+        private void picSearchIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEnterPlanName_Click(object sender, EventArgs e)
+        {
+            txtEnterPlanName.Clear();
+            txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            txtEnterPlanName.ForeColor = Color.Black;
+        }
        
     }
 }

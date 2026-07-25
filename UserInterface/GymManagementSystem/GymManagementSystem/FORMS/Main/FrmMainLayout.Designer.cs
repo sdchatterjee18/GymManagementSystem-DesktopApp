@@ -1454,6 +1454,7 @@
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";
