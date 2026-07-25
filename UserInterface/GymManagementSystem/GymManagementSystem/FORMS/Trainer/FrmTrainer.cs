@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace GymManagementSystem.FORMS.Trainer
 {
@@ -26,7 +27,16 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void FrmTrainer_Load(object sender, EventArgs e)
         {
-            dgvTrainerDetails.AutoGenerateColumns = false;
+            //For Reduce Redius of GeneralTrainer
+            picGeneralTrainer.Size = new Size(80, 80); 
+            picGeneralTrainer.SizeMode = PictureBoxSizeMode.StretchImage; 
+            MakeCircular(picGeneralTrainer);
+
+            //For Reduce Redius of PersonalTrainer
+            picPersonalTrainer.Size = new Size(80, 80);
+            picPersonalTrainer.SizeMode = PictureBoxSizeMode.StretchImage;
+            MakeCircular(picPersonalTrainer);
+            
             RetrieveTrainerDetails();
 
         }
@@ -45,17 +55,17 @@ namespace GymManagementSystem.FORMS.Trainer
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     dgvTrainerDetails.DataSource = dataTable;
-                    dgvTrainerDetails.Columns["EmployeeId"].DataPropertyName = "EmployeeId";
-                    dgvTrainerDetails.Columns["TrainerId"].DataPropertyName = "TrainerId";
-                    dgvTrainerDetails.Columns["TrainerName"].DataPropertyName = "TrainerName";
-                    dgvTrainerDetails.Columns["Specialization"].DataPropertyName = "Specialization";
-                    dgvTrainerDetails.Columns["TrainerType"].DataPropertyName = "TrainerType";
-                    dgvTrainerDetails.Columns["Document"].DataPropertyName = "Document";
-                    dgvTrainerDetails.Columns["PhoneNo"].DataPropertyName = "PhoneNo";
-                    dgvTrainerDetails.Columns["Gender"].DataPropertyName = "Gender";
+                    dgvTrainerDetails.Columns["colEmployeeId"].DataPropertyName = "EmployeeId";
+                    dgvTrainerDetails.Columns["colTrainerId"].DataPropertyName = "TrainerId";
+                    dgvTrainerDetails.Columns["colTrainerName"].DataPropertyName = "TrainerName";
+                    dgvTrainerDetails.Columns["colSpecialization"].DataPropertyName = "Specialization";
+                    dgvTrainerDetails.Columns["colTrainerType"].DataPropertyName = "TrainerType";
+                    dgvTrainerDetails.Columns["colDocument"].DataPropertyName = "Document";
+                    dgvTrainerDetails.Columns["colPhoneNo"].DataPropertyName = "PhoneNo";
+                    dgvTrainerDetails.Columns["colGender"].DataPropertyName = "Gender";
                     for ( int i = 0 ; i < dgvTrainerDetails.Rows.Count ; i++)
                     {
-                        dgvTrainerDetails.Rows[i].Cells["Profile"].Value = "Profile";
+                        dgvTrainerDetails.Rows[i].Cells["colProfile"].Value = "Profile";
                     }
                     
                 }
@@ -77,50 +87,46 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void pnlGeneralTrainer_MouseEnter(object sender, EventArgs e)
         {
-            pnlGeneralTrainer.BackColor = Color.DimGray;
+            pnlGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
             pnlGeneralTrainer.ForeColor = Color.Black;
         }
 
         private void pnlGeneralTrainer_MouseHover(object sender, EventArgs e)
         {
-            pnlGeneralTrainer.BackColor = Color.DimGray;
+            pnlGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
             pnlGeneralTrainer.ForeColor = Color.Black;
 
         }
 
         private void pnlGeneralTrainer_MouseLeave(object sender, EventArgs e)
         {
-            pnlGeneralTrainer.BackColor = Color.Transparent;
+            pnlGeneralTrainer.BackColor = Color.FromArgb(210,215,255);
             pnlGeneralTrainer.ForeColor = Color.Black;
         }
 
         private void pnlPersonalTrainer_MouseEnter(object sender, EventArgs e)
         {
-            pnlPersonalTrainer.BackColor = Color.DimGray;
+            pnlPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
             pnlPersonalTrainer.ForeColor = Color.Black;
 
         }
 
         private void pnlPersonalTrainer_MouseHover(object sender, EventArgs e)
         {
-            pnlPersonalTrainer.BackColor = Color.DimGray;
+            pnlPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
             pnlPersonalTrainer.ForeColor = Color.Black;
         }
 
         private void pnlPersonalTrainer_MouseLeave(object sender, EventArgs e)
         {
-            pnlPersonalTrainer.BackColor = Color.Transparent;
+            pnlPersonalTrainer.BackColor = Color.FromArgb(210, 215, 255);
             pnlPersonalTrainer.ForeColor = Color.Black;
         }
 
         private void dgvTrainerDetails_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvTrainerDetails.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvTrainerDetails.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+        
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvTrainerDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -130,12 +136,7 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void dgvTrainerDetails_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvTrainerDetails.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
-                dgvTrainerDetails.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvTrainerDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
                 dgvTrainerDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
@@ -182,6 +183,48 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             dgvTrainerDetails.ClearSelection();
         }
+        private void MakeCircular(PictureBox pb)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pb.Width, pb.Height);
+            pb.Region = new Region(path);
+        }
+
+        private void dgvTrainerDetails_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvTrainerDetails.Columns["colProfile"].Index)
+            {
+                e.PaintBackground(e.CellBounds, true);
+
+                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
+                    System.Windows.Forms.VisualStyles.PushButtonState.Normal);
+
+                
+                Font fixedFont = new Font("Segoe UI", 10F, FontStyle.Bold);
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "Profile",
+                    fixedFont,
+                    e.CellBounds,
+                    Color.RoyalBlue,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void tlpSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpTrainerTitleAndSubTitle_Click(object sender, EventArgs e)
+        {
+            dgvTrainerDetails.ClearSelection();
+        }
+            
     }
 }
     
