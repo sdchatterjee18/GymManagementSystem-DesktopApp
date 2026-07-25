@@ -162,9 +162,6 @@
             this.pnlAddNewMwmbwrshipForm.Name = "pnlAddNewMwmbwrshipForm";
             this.pnlAddNewMwmbwrshipForm.Size = new System.Drawing.Size(344, 421);
             this.pnlAddNewMwmbwrshipForm.TabIndex = 0;
-            // 
-            // tlpNewMembarshipPlanDetails
-            // 
             this.tlpNewMembarshipPlanDetails.ColumnCount = 3;
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.954825F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.04517F));
@@ -210,7 +207,7 @@
             this.lblDescription.Size = new System.Drawing.Size(88, 19);
             this.lblDescription.TabIndex = 0;
             this.lblDescription.Text = "Description :";
-            // 
+          // 
             // lblAmount
             // 
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -236,7 +233,7 @@
             this.lblDuration.Size = new System.Drawing.Size(71, 19);
             this.lblDuration.TabIndex = 0;
             this.lblDuration.Text = "Duration :";
-            // 
+          // 
             // lblPlanType
             // 
             this.lblPlanType.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -263,6 +260,7 @@
             // 
             this.cmbPlanType.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPlanType.FormattingEnabled = true;
+
             this.cmbPlanType.Location = new System.Drawing.Point(21, 79);
             this.cmbPlanType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanType.Name = "cmbPlanType";
@@ -273,6 +271,7 @@
             // 
             this.cmbDuration.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDuration.FormattingEnabled = true;
+
             this.cmbDuration.Location = new System.Drawing.Point(21, 138);
             this.cmbDuration.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDuration.Name = "cmbDuration";
@@ -391,6 +390,7 @@
             this.btnClear.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(164, 1);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
@@ -417,6 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(344, 421);
             this.Controls.Add(this.pnlAddNewMwmbwrshipForm);
             this.MaximizeBox = false;

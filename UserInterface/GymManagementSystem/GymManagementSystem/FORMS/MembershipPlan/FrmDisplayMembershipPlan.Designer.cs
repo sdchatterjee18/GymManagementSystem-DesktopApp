@@ -268,7 +268,7 @@
             this.picAddButton.TabIndex = 1;
             this.picAddButton.TabStop = false;
             this.picAddButton.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
-            // 
+          // 
             // dgvMembershipPlan
             // 
             this.dgvMembershipPlan.AllowUserToAddRows = false;
@@ -464,11 +464,12 @@
             this.tlpAddNewMembershipPlan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembershipPlan)).EndInit();
-            this.ResumeLayout(false);
+             this.ResumeLayout(false);
 
         }
 
         #endregion
+
 
         private System.Windows.Forms.TableLayoutPanel tlpAllMembershipPlanEntireForm;
         private System.Windows.Forms.DataGridView dgvMembershipPlan;
@@ -493,7 +494,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
         private System.Windows.Forms.DataGridViewButtonColumn colUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn colDeactivate;
-
 
 
     }
