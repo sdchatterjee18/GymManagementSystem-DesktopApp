@@ -42,7 +42,6 @@
             this.tlpTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.picBoxLockerIcon = new System.Windows.Forms.PictureBox();
-            this.pnlClose = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.tlpButton.SuspendLayout();
@@ -105,7 +104,7 @@
             // 
             // tlpButton
             // 
-            this.tlpButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tlpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
             this.tlpButton.ColumnCount = 2;
             this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.2069F));
             this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.79311F));
@@ -117,12 +116,11 @@
             this.tlpButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpButton.Size = new System.Drawing.Size(145, 41);
             this.tlpButton.TabIndex = 9;
-            this.tlpButton.MouseEnter += new System.EventHandler(this.tlpButton_MouseEnter);
-            this.tlpButton.MouseLeave += new System.EventHandler(this.tlpButton_MouseLeave);
+            this.tlpButton.Click += new System.EventHandler(this.tlpButton_Click);
             // 
             // pnlButton
             // 
-            this.pnlButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlButton.BackColor = System.Drawing.Color.Transparent;
             this.pnlButton.Controls.Add(this.lblSubmit);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.Location = new System.Drawing.Point(40, 3);
@@ -133,7 +131,7 @@
             // lblSubmit
             // 
             this.lblSubmit.AutoSize = true;
-            this.lblSubmit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblSubmit.BackColor = System.Drawing.Color.Transparent;
             this.lblSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubmit.ForeColor = System.Drawing.Color.White;
             this.lblSubmit.Location = new System.Drawing.Point(5, 1);
@@ -144,7 +142,7 @@
             // 
             // picBoxSendIcon
             // 
-            this.picBoxSendIcon.BackColor = System.Drawing.Color.RoyalBlue;
+            this.picBoxSendIcon.BackColor = System.Drawing.Color.Transparent;
             this.picBoxSendIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSendIcon.BackgroundImage")));
             this.picBoxSendIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxSendIcon.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -172,7 +170,6 @@
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.25663F));
             this.tlpHeading.Controls.Add(this.tlpTitle, 1, 0);
             this.tlpHeading.Controls.Add(this.picBoxLockerIcon, 0, 0);
-            this.tlpHeading.Controls.Add(this.pnlClose, 2, 0);
             this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpHeading.Location = new System.Drawing.Point(0, 0);
             this.tlpHeading.Name = "tlpHeading";
@@ -215,23 +212,12 @@
             this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
             this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxLockerIcon.Location = new System.Drawing.Point(13, 13);
+            this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(43, 50);
+            this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(43, 50);
             this.picBoxLockerIcon.Name = "picBoxLockerIcon";
             this.picBoxLockerIcon.Size = new System.Drawing.Size(43, 50);
             this.picBoxLockerIcon.TabIndex = 1;
             this.picBoxLockerIcon.TabStop = false;
-            // 
-            // pnlClose
-            // 
-            this.pnlClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlClose.BackColor = System.Drawing.Color.Transparent;
-            this.pnlClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlClose.BackgroundImage")));
-            this.pnlClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlClose.Location = new System.Drawing.Point(558, 10);
-            this.pnlClose.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlClose.Name = "pnlClose";
-            this.pnlClose.Size = new System.Drawing.Size(30, 30);
-            this.pnlClose.TabIndex = 2;
-            this.pnlClose.Click += new System.EventHandler(this.pnlClose_Click);
             // 
             // btnClose
             // 
@@ -253,13 +239,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 350);
             this.Controls.Add(this.pnlMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddLocker";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Locker";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.tlpButton.ResumeLayout(false);
@@ -289,7 +275,6 @@
         private System.Windows.Forms.Panel pnlButton;
         private System.Windows.Forms.Label lblSubmit;
         private System.Windows.Forms.PictureBox picBoxSendIcon;
-        private System.Windows.Forms.Panel pnlClose;
         private System.Windows.Forms.PictureBox picBoxLockerIcon;
     }
 }

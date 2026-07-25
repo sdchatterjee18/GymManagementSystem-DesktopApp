@@ -25,24 +25,9 @@ namespace GymManagementSystem.FORMS.Locker
             this.Close();
         }
 
-        //private void pnlClose_MouseEnter(object sender, EventArgs e)
-        //{
-        //    pnlClose.BackgroundImage = Properties.Resources;
-        //}
-
-        //private void pnlClose_MouseLeave(object sender, EventArgs e)
-        //{
-        //    pnlClose.BackgroundImage = Properties.Resources;
-        //}
-
-        private void tlpButton_MouseEnter(object sender, EventArgs e)
+        private void tlpButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tlpButton_MouseLeave(object sender, EventArgs e)
-        {
-
+            // It will Add new Locker
         }
     }
 }
