@@ -28,7 +28,7 @@ namespace GymManagementSystem.FORMS.Dashboard
             series.Points.Clear();
 
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(210, 210, 235);
+            series.Color = Color.FromArgb(125, 125, 158);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 9, FontStyle.Bold);
@@ -66,7 +66,7 @@ namespace GymManagementSystem.FORMS.Dashboard
             series.Points.Clear();
 
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(250, 228, 235);
+            series.Color = Color.FromArgb(176, 132, 147);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 9, FontStyle.Bold);
