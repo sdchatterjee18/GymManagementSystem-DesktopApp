@@ -28,38 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayWorkoutPlans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpEntireFormExerciseAndWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlAllExerciseForm = new System.Windows.Forms.Panel();
-            this.tlpAllExercisesEntireForm = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpExerciseHeader = new System.Windows.Forms.TableLayoutPanel();
-            this.picExercise = new System.Windows.Forms.PictureBox();
-            this.tlpAllExercisesTitle = new System.Windows.Forms.TableLayoutPanel();
-            this.lblViewAllTypeofExercisesDetails = new System.Windows.Forms.Label();
-            this.lblAllExercises = new System.Windows.Forms.Label();
-            this.tlpExerciseTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpSearchAndAddExercise = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpSearchExercise = new System.Windows.Forms.TableLayoutPanel();
-            this.txtExerciseNameSearch = new System.Windows.Forms.TextBox();
-            this.btnExerciseSearch = new System.Windows.Forms.Button();
-            this.picSearchExercise = new System.Windows.Forms.PictureBox();
-            this.pnlClickToAddNewExercise = new System.Windows.Forms.Panel();
-            this.tlpAddNewExercise = new System.Windows.Forms.TableLayoutPanel();
-            this.picPlusExercise = new System.Windows.Forms.PictureBox();
-            this.lblAddNewExercise = new System.Windows.Forms.Label();
-            this.dgvExerciseTable = new System.Windows.Forms.DataGridView();
             this.pnlAllWorkoutPlanForm = new System.Windows.Forms.Panel();
             this.tlpWorkoutPlanEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAllWorkoutPlansHeader = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +52,9 @@
             this.lblAllWorkoutPlans = new System.Windows.Forms.Label();
             this.tlpWorkoutPlanTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
             this.dgvWorkoutPlans = new System.Windows.Forms.DataGridView();
+            this.colSerialNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpSearchAndAddWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickToAddNewWorkoutPlan = new System.Windows.Forms.Panel();
             this.tlpAddNewWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
@@ -78,26 +64,28 @@
             this.txtWorkoutNameSearch = new System.Windows.Forms.TextBox();
             this.btnWorkoutPlanSearch = new System.Windows.Forms.Button();
             this.picSearchWorkoutPlan = new System.Windows.Forms.PictureBox();
-            this.colSerialNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExerciseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlpExerciseTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvExerciseTable = new System.Windows.Forms.DataGridView();
             this.colMuscleType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSerialNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExerciseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSerialNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlpSearchAndAddExercise = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlClickToAddNewExercise = new System.Windows.Forms.Panel();
+            this.tlpAddNewExercise = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAddNewExercise = new System.Windows.Forms.Label();
+            this.picPlusExercise = new System.Windows.Forms.PictureBox();
+            this.tlpSearchExercise = new System.Windows.Forms.TableLayoutPanel();
+            this.picSearchExercise = new System.Windows.Forms.PictureBox();
+            this.btnExerciseSearch = new System.Windows.Forms.Button();
+            this.txtExerciseNameSearch = new System.Windows.Forms.TextBox();
+            this.tlpExerciseHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAllExercisesTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAllExercises = new System.Windows.Forms.Label();
+            this.lblViewAllTypeofExercisesDetails = new System.Windows.Forms.Label();
+            this.picExercise = new System.Windows.Forms.PictureBox();
+            this.tlpAllExercisesEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpEntireFormExerciseAndWorkoutPlan.SuspendLayout();
             this.pnlAllExerciseForm.SuspendLayout();
-            this.tlpAllExercisesEntireForm.SuspendLayout();
-            this.tlpExerciseHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).BeginInit();
-            this.tlpAllExercisesTitle.SuspendLayout();
-            this.tlpExerciseTableAndSearch.SuspendLayout();
-            this.tlpSearchAndAddExercise.SuspendLayout();
-            this.tlpSearchExercise.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearchExercise)).BeginInit();
-            this.pnlClickToAddNewExercise.SuspendLayout();
-            this.tlpAddNewExercise.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlusExercise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExerciseTable)).BeginInit();
             this.pnlAllWorkoutPlanForm.SuspendLayout();
             this.tlpWorkoutPlanEntireForm.SuspendLayout();
             this.tlpAllWorkoutPlansHeader.SuspendLayout();
@@ -111,6 +99,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlusWorkoutPlan)).BeginInit();
             this.tlpSearchWorkoutPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchWorkoutPlan)).BeginInit();
+            this.tlpExerciseTableAndSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExerciseTable)).BeginInit();
+            this.tlpSearchAndAddExercise.SuspendLayout();
+            this.pnlClickToAddNewExercise.SuspendLayout();
+            this.tlpAddNewExercise.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlusExercise)).BeginInit();
+            this.tlpSearchExercise.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchExercise)).BeginInit();
+            this.tlpExerciseHeader.SuspendLayout();
+            this.tlpAllExercisesTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).BeginInit();
+            this.tlpAllExercisesEntireForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpEntireFormExerciseAndWorkoutPlan
@@ -144,307 +144,6 @@
             this.pnlAllExerciseForm.Name = "pnlAllExerciseForm";
             this.pnlAllExerciseForm.Size = new System.Drawing.Size(1011, 364);
             this.pnlAllExerciseForm.TabIndex = 4;
-            // 
-            // tlpAllExercisesEntireForm
-            // 
-            this.tlpAllExercisesEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.tlpAllExercisesEntireForm.ColumnCount = 1;
-            this.tlpAllExercisesEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAllExercisesEntireForm.Controls.Add(this.tlpExerciseHeader, 0, 0);
-            this.tlpAllExercisesEntireForm.Controls.Add(this.tlpExerciseTableAndSearch, 0, 2);
-            this.tlpAllExercisesEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllExercisesEntireForm.Location = new System.Drawing.Point(0, 0);
-            this.tlpAllExercisesEntireForm.Name = "tlpAllExercisesEntireForm";
-            this.tlpAllExercisesEntireForm.RowCount = 3;
-            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tlpAllExercisesEntireForm.Size = new System.Drawing.Size(1009, 362);
-            this.tlpAllExercisesEntireForm.TabIndex = 3;
-            // 
-            // tlpExerciseHeader
-            // 
-            this.tlpExerciseHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.tlpExerciseHeader.ColumnCount = 4;
-            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.16434F));
-            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.83566F));
-            this.tlpExerciseHeader.Controls.Add(this.picExercise, 0, 0);
-            this.tlpExerciseHeader.Controls.Add(this.tlpAllExercisesTitle, 1, 0);
-            this.tlpExerciseHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpExerciseHeader.Location = new System.Drawing.Point(3, 2);
-            this.tlpExerciseHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tlpExerciseHeader.Name = "tlpExerciseHeader";
-            this.tlpExerciseHeader.RowCount = 1;
-            this.tlpExerciseHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExerciseHeader.Size = new System.Drawing.Size(1003, 66);
-            this.tlpExerciseHeader.TabIndex = 9;
-            this.tlpExerciseHeader.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
-            // 
-            // picExercise
-            // 
-            this.picExercise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picExercise.Image = ((System.Drawing.Image)(resources.GetObject("picExercise.Image")));
-            this.picExercise.Location = new System.Drawing.Point(3, 3);
-            this.picExercise.Name = "picExercise";
-            this.picExercise.Size = new System.Drawing.Size(76, 60);
-            this.picExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExercise.TabIndex = 0;
-            this.picExercise.TabStop = false;
-            this.picExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
-            // 
-            // tlpAllExercisesTitle
-            // 
-            this.tlpAllExercisesTitle.ColumnCount = 1;
-            this.tlpAllExercisesTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAllExercisesTitle.Controls.Add(this.lblViewAllTypeofExercisesDetails, 0, 1);
-            this.tlpAllExercisesTitle.Controls.Add(this.lblAllExercises, 0, 0);
-            this.tlpAllExercisesTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllExercisesTitle.Location = new System.Drawing.Point(85, 3);
-            this.tlpAllExercisesTitle.Name = "tlpAllExercisesTitle";
-            this.tlpAllExercisesTitle.RowCount = 3;
-            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
-            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.5082F));
-            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.03279F));
-            this.tlpAllExercisesTitle.Size = new System.Drawing.Size(294, 60);
-            this.tlpAllExercisesTitle.TabIndex = 1;
-            this.tlpAllExercisesTitle.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
-            // 
-            // lblViewAllTypeofExercisesDetails
-            // 
-            this.lblViewAllTypeofExercisesDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblViewAllTypeofExercisesDetails.AutoSize = true;
-            this.lblViewAllTypeofExercisesDetails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewAllTypeofExercisesDetails.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblViewAllTypeofExercisesDetails.Location = new System.Drawing.Point(3, 30);
-            this.lblViewAllTypeofExercisesDetails.Name = "lblViewAllTypeofExercisesDetails";
-            this.lblViewAllTypeofExercisesDetails.Size = new System.Drawing.Size(207, 18);
-            this.lblViewAllTypeofExercisesDetails.TabIndex = 3;
-            this.lblViewAllTypeofExercisesDetails.Text = "View All Type of Exercises Details";
-            // 
-            // lblAllExercises
-            // 
-            this.lblAllExercises.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAllExercises.AutoSize = true;
-            this.lblAllExercises.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllExercises.Location = new System.Drawing.Point(3, 2);
-            this.lblAllExercises.Name = "lblAllExercises";
-            this.lblAllExercises.Size = new System.Drawing.Size(122, 28);
-            this.lblAllExercises.TabIndex = 2;
-            this.lblAllExercises.Text = "All Exercises";
-            // 
-            // tlpExerciseTableAndSearch
-            // 
-            this.tlpExerciseTableAndSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.tlpExerciseTableAndSearch.ColumnCount = 2;
-            this.tlpExerciseTableAndSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.8784F));
-            this.tlpExerciseTableAndSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.1216F));
-            this.tlpExerciseTableAndSearch.Controls.Add(this.tlpSearchAndAddExercise, 1, 0);
-            this.tlpExerciseTableAndSearch.Controls.Add(this.dgvExerciseTable, 0, 0);
-            this.tlpExerciseTableAndSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpExerciseTableAndSearch.Location = new System.Drawing.Point(3, 81);
-            this.tlpExerciseTableAndSearch.Name = "tlpExerciseTableAndSearch";
-            this.tlpExerciseTableAndSearch.RowCount = 1;
-            this.tlpExerciseTableAndSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExerciseTableAndSearch.Size = new System.Drawing.Size(1003, 278);
-            this.tlpExerciseTableAndSearch.TabIndex = 10;
-            // 
-            // tlpSearchAndAddExercise
-            // 
-            this.tlpSearchAndAddExercise.ColumnCount = 1;
-            this.tlpSearchAndAddExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchAndAddExercise.Controls.Add(this.tlpSearchExercise, 0, 0);
-            this.tlpSearchAndAddExercise.Controls.Add(this.pnlClickToAddNewExercise, 0, 1);
-            this.tlpSearchAndAddExercise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSearchAndAddExercise.Location = new System.Drawing.Point(673, 3);
-            this.tlpSearchAndAddExercise.Name = "tlpSearchAndAddExercise";
-            this.tlpSearchAndAddExercise.RowCount = 3;
-            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.61314F));
-            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.34307F));
-            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.40876F));
-            this.tlpSearchAndAddExercise.Size = new System.Drawing.Size(327, 272);
-            this.tlpSearchAndAddExercise.TabIndex = 14;
-            this.tlpSearchAndAddExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
-            // 
-            // tlpSearchExercise
-            // 
-            this.tlpSearchExercise.ColumnCount = 3;
-            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.03061F));
-            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.2068F));
-            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.91218F));
-            this.tlpSearchExercise.Controls.Add(this.txtExerciseNameSearch, 1, 0);
-            this.tlpSearchExercise.Controls.Add(this.btnExerciseSearch, 2, 0);
-            this.tlpSearchExercise.Controls.Add(this.picSearchExercise, 0, 0);
-            this.tlpSearchExercise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSearchExercise.Location = new System.Drawing.Point(3, 3);
-            this.tlpSearchExercise.Name = "tlpSearchExercise";
-            this.tlpSearchExercise.RowCount = 1;
-            this.tlpSearchExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchExercise.Size = new System.Drawing.Size(321, 44);
-            this.tlpSearchExercise.TabIndex = 12;
-            this.tlpSearchExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
-            // 
-            // txtExerciseNameSearch
-            // 
-            this.txtExerciseNameSearch.BackColor = System.Drawing.Color.White;
-            this.txtExerciseNameSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtExerciseNameSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtExerciseNameSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExerciseNameSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtExerciseNameSearch.Location = new System.Drawing.Point(47, 3);
-            this.txtExerciseNameSearch.Name = "txtExerciseNameSearch";
-            this.txtExerciseNameSearch.Size = new System.Drawing.Size(183, 30);
-            this.txtExerciseNameSearch.TabIndex = 0;
-            this.txtExerciseNameSearch.Text = "Enter Exercise Name .";
-            // 
-            // btnExerciseSearch
-            // 
-            this.btnExerciseSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnExerciseSearch.AutoSize = true;
-            this.btnExerciseSearch.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnExerciseSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnExerciseSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnExerciseSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExerciseSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExerciseSearch.ForeColor = System.Drawing.Color.White;
-            this.btnExerciseSearch.Location = new System.Drawing.Point(236, 3);
-            this.btnExerciseSearch.Name = "btnExerciseSearch";
-            this.btnExerciseSearch.Size = new System.Drawing.Size(81, 31);
-            this.btnExerciseSearch.TabIndex = 2;
-            this.btnExerciseSearch.Text = "Search";
-            this.btnExerciseSearch.UseVisualStyleBackColor = false;
-            // 
-            // picSearchExercise
-            // 
-            this.picSearchExercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSearchExercise.Image = ((System.Drawing.Image)(resources.GetObject("picSearchExercise.Image")));
-            this.picSearchExercise.Location = new System.Drawing.Point(3, 3);
-            this.picSearchExercise.Name = "picSearchExercise";
-            this.picSearchExercise.Size = new System.Drawing.Size(38, 31);
-            this.picSearchExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSearchExercise.TabIndex = 3;
-            this.picSearchExercise.TabStop = false;
-            // 
-            // pnlClickToAddNewExercise
-            // 
-            this.pnlClickToAddNewExercise.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlClickToAddNewExercise.BackColor = System.Drawing.Color.White;
-            this.pnlClickToAddNewExercise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlClickToAddNewExercise.Controls.Add(this.tlpAddNewExercise);
-            this.pnlClickToAddNewExercise.Location = new System.Drawing.Point(95, 58);
-            this.pnlClickToAddNewExercise.Name = "pnlClickToAddNewExercise";
-            this.pnlClickToAddNewExercise.Size = new System.Drawing.Size(137, 36);
-            this.pnlClickToAddNewExercise.TabIndex = 12;
-            this.pnlClickToAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
-            // 
-            // tlpAddNewExercise
-            // 
-            this.tlpAddNewExercise.ColumnCount = 2;
-            this.tlpAddNewExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tlpAddNewExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
-            this.tlpAddNewExercise.Controls.Add(this.picPlusExercise, 0, 0);
-            this.tlpAddNewExercise.Controls.Add(this.lblAddNewExercise, 1, 0);
-            this.tlpAddNewExercise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAddNewExercise.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewExercise.Name = "tlpAddNewExercise";
-            this.tlpAddNewExercise.RowCount = 1;
-            this.tlpAddNewExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAddNewExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAddNewExercise.Size = new System.Drawing.Size(135, 34);
-            this.tlpAddNewExercise.TabIndex = 4;
-            this.tlpAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
-            // 
-            // picPlusExercise
-            // 
-            this.picPlusExercise.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picPlusExercise.Image = ((System.Drawing.Image)(resources.GetObject("picPlusExercise.Image")));
-            this.picPlusExercise.Location = new System.Drawing.Point(23, 8);
-            this.picPlusExercise.Name = "picPlusExercise";
-            this.picPlusExercise.Size = new System.Drawing.Size(17, 17);
-            this.picPlusExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPlusExercise.TabIndex = 1;
-            this.picPlusExercise.TabStop = false;
-            this.picPlusExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
-            // 
-            // lblAddNewExercise
-            // 
-            this.lblAddNewExercise.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAddNewExercise.AutoSize = true;
-            this.lblAddNewExercise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewExercise.ForeColor = System.Drawing.Color.Blue;
-            this.lblAddNewExercise.Location = new System.Drawing.Point(46, 7);
-            this.lblAddNewExercise.Name = "lblAddNewExercise";
-            this.lblAddNewExercise.Size = new System.Drawing.Size(74, 20);
-            this.lblAddNewExercise.TabIndex = 0;
-            this.lblAddNewExercise.Text = "Add New";
-            this.lblAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
-            // 
-            // dgvExerciseTable
-            // 
-            this.dgvExerciseTable.AllowUserToAddRows = false;
-            this.dgvExerciseTable.AllowUserToDeleteRows = false;
-            this.dgvExerciseTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Black;
-            this.dgvExerciseTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
-            this.dgvExerciseTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvExerciseTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dgvExerciseTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvExerciseTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExerciseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            this.dgvExerciseTable.ColumnHeadersHeight = 50;
-            this.dgvExerciseTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvExerciseTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSerialNo1,
-            this.colExerciseName,
-            this.colMuscleType});
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExerciseTable.DefaultCellStyle = dataGridViewCellStyle46;
-            this.dgvExerciseTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvExerciseTable.EnableHeadersVisualStyles = false;
-            this.dgvExerciseTable.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvExerciseTable.Location = new System.Drawing.Point(3, 2);
-            this.dgvExerciseTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvExerciseTable.MultiSelect = false;
-            this.dgvExerciseTable.Name = "dgvExerciseTable";
-            this.dgvExerciseTable.ReadOnly = true;
-            this.dgvExerciseTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExerciseTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            this.dgvExerciseTable.RowHeadersVisible = false;
-            this.dgvExerciseTable.RowHeadersWidth = 50;
-            this.dgvExerciseTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
-            this.dgvExerciseTable.RowsDefaultCellStyle = dataGridViewCellStyle48;
-            this.dgvExerciseTable.RowTemplate.Height = 40;
-            this.dgvExerciseTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExerciseTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvExerciseTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvExerciseTable.Size = new System.Drawing.Size(664, 274);
-            this.dgvExerciseTable.TabIndex = 11;
-            this.dgvExerciseTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvExerciseTable_CellFormatting);
-            this.dgvExerciseTable.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExerciseTable_CellMouseEnter);
-            this.dgvExerciseTable.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExerciseTable_CellMouseLeave);
             // 
             // pnlAllWorkoutPlanForm
             // 
@@ -566,36 +265,36 @@
             this.dgvWorkoutPlans.AllowUserToAddRows = false;
             this.dgvWorkoutPlans.AllowUserToDeleteRows = false;
             this.dgvWorkoutPlans.AllowUserToResizeRows = false;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutPlans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutPlans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvWorkoutPlans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorkoutPlans.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvWorkoutPlans.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWorkoutPlans.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutPlans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutPlans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvWorkoutPlans.ColumnHeadersHeight = 50;
             this.dgvWorkoutPlans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutPlans.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo2,
             this.colWorkoutName,
             this.colDescription});
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWorkoutPlans.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorkoutPlans.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvWorkoutPlans.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkoutPlans.EnableHeadersVisualStyles = false;
             this.dgvWorkoutPlans.GridColor = System.Drawing.Color.Gainsboro;
@@ -605,18 +304,18 @@
             this.dgvWorkoutPlans.Name = "dgvWorkoutPlans";
             this.dgvWorkoutPlans.ReadOnly = true;
             this.dgvWorkoutPlans.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutPlans.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutPlans.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvWorkoutPlans.RowHeadersVisible = false;
             this.dgvWorkoutPlans.RowHeadersWidth = 50;
             this.dgvWorkoutPlans.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutPlans.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutPlans.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvWorkoutPlans.RowTemplate.Height = 40;
             this.dgvWorkoutPlans.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkoutPlans.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -626,6 +325,40 @@
             this.dgvWorkoutPlans.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvWorkoutPlans_CellFormatting);
             this.dgvWorkoutPlans.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutPlans_CellMouseEnter);
             this.dgvWorkoutPlans.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutPlans_CellMouseLeave);
+            // 
+            // colSerialNo2
+            // 
+            this.colSerialNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSerialNo2.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colSerialNo2.FillWeight = 90F;
+            this.colSerialNo2.HeaderText = "Sl No.";
+            this.colSerialNo2.Name = "colSerialNo2";
+            this.colSerialNo2.ReadOnly = true;
+            this.colSerialNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colWorkoutName
+            // 
+            this.colWorkoutName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colWorkoutName.DataPropertyName = "WorkoutName";
+            this.colWorkoutName.FillWeight = 180F;
+            this.colWorkoutName.HeaderText = "Workout Name ";
+            this.colWorkoutName.Name = "colWorkoutName";
+            this.colWorkoutName.ReadOnly = true;
+            this.colWorkoutName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colWorkoutName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colDescription
+            // 
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.DataPropertyName = "Description";
+            this.colDescription.HeaderText = "Description ";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            this.colDescription.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tlpSearchAndAddWorkoutPlan
             // 
@@ -759,18 +492,97 @@
             this.picSearchWorkoutPlan.TabIndex = 3;
             this.picSearchWorkoutPlan.TabStop = false;
             // 
-            // colSerialNo1
+            // tlpExerciseTableAndSearch
             // 
-            this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSerialNo1.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle45;
-            this.colSerialNo1.FillWeight = 90F;
-            this.colSerialNo1.HeaderText = "Sl No.";
-            this.colSerialNo1.Name = "colSerialNo1";
-            this.colSerialNo1.ReadOnly = true;
-            this.colSerialNo1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tlpExerciseTableAndSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpExerciseTableAndSearch.ColumnCount = 2;
+            this.tlpExerciseTableAndSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.8784F));
+            this.tlpExerciseTableAndSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.1216F));
+            this.tlpExerciseTableAndSearch.Controls.Add(this.tlpSearchAndAddExercise, 1, 0);
+            this.tlpExerciseTableAndSearch.Controls.Add(this.dgvExerciseTable, 0, 0);
+            this.tlpExerciseTableAndSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpExerciseTableAndSearch.Location = new System.Drawing.Point(3, 81);
+            this.tlpExerciseTableAndSearch.Name = "tlpExerciseTableAndSearch";
+            this.tlpExerciseTableAndSearch.RowCount = 1;
+            this.tlpExerciseTableAndSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpExerciseTableAndSearch.Size = new System.Drawing.Size(1003, 278);
+            this.tlpExerciseTableAndSearch.TabIndex = 10;
+            // 
+            // dgvExerciseTable
+            // 
+            this.dgvExerciseTable.AllowUserToAddRows = false;
+            this.dgvExerciseTable.AllowUserToDeleteRows = false;
+            this.dgvExerciseTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvExerciseTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvExerciseTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExerciseTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvExerciseTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvExerciseTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExerciseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvExerciseTable.ColumnHeadersHeight = 50;
+            this.dgvExerciseTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvExerciseTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSerialNo1,
+            this.colExerciseName,
+            this.colMuscleType});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExerciseTable.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvExerciseTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExerciseTable.EnableHeadersVisualStyles = false;
+            this.dgvExerciseTable.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvExerciseTable.Location = new System.Drawing.Point(3, 2);
+            this.dgvExerciseTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExerciseTable.MultiSelect = false;
+            this.dgvExerciseTable.Name = "dgvExerciseTable";
+            this.dgvExerciseTable.ReadOnly = true;
+            this.dgvExerciseTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExerciseTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvExerciseTable.RowHeadersVisible = false;
+            this.dgvExerciseTable.RowHeadersWidth = 50;
+            this.dgvExerciseTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvExerciseTable.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvExerciseTable.RowTemplate.Height = 40;
+            this.dgvExerciseTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExerciseTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvExerciseTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvExerciseTable.Size = new System.Drawing.Size(664, 274);
+            this.dgvExerciseTable.TabIndex = 11;
+            this.dgvExerciseTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvExerciseTable_CellFormatting);
+            this.dgvExerciseTable.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExerciseTable_CellMouseEnter);
+            this.dgvExerciseTable.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExerciseTable_CellMouseLeave);
+            // 
+            // colMuscleType
+            // 
+            this.colMuscleType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMuscleType.DataPropertyName = "MuscleType";
+            this.colMuscleType.HeaderText = "Muscle Type ";
+            this.colMuscleType.Name = "colMuscleType";
+            this.colMuscleType.ReadOnly = true;
+            this.colMuscleType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMuscleType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colExerciseName
             // 
@@ -783,49 +595,237 @@
             this.colExerciseName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colExerciseName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // colMuscleType
+            // colSerialNo1
             // 
-            this.colMuscleType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMuscleType.DataPropertyName = "MuscleType";
-            this.colMuscleType.HeaderText = "Muscle Type ";
-            this.colMuscleType.Name = "colMuscleType";
-            this.colMuscleType.ReadOnly = true;
-            this.colMuscleType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMuscleType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSerialNo1.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSerialNo1.FillWeight = 90F;
+            this.colSerialNo1.HeaderText = "Sl No.";
+            this.colSerialNo1.Name = "colSerialNo1";
+            this.colSerialNo1.ReadOnly = true;
+            this.colSerialNo1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // colSerialNo2
+            // tlpSearchAndAddExercise
             // 
-            this.colSerialNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSerialNo2.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo2.DefaultCellStyle = dataGridViewCellStyle39;
-            this.colSerialNo2.FillWeight = 90F;
-            this.colSerialNo2.HeaderText = "Sl No.";
-            this.colSerialNo2.Name = "colSerialNo2";
-            this.colSerialNo2.ReadOnly = true;
-            this.colSerialNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tlpSearchAndAddExercise.ColumnCount = 1;
+            this.tlpSearchAndAddExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSearchAndAddExercise.Controls.Add(this.tlpSearchExercise, 0, 0);
+            this.tlpSearchAndAddExercise.Controls.Add(this.pnlClickToAddNewExercise, 0, 1);
+            this.tlpSearchAndAddExercise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSearchAndAddExercise.Location = new System.Drawing.Point(673, 3);
+            this.tlpSearchAndAddExercise.Name = "tlpSearchAndAddExercise";
+            this.tlpSearchAndAddExercise.RowCount = 3;
+            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.61314F));
+            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.34307F));
+            this.tlpSearchAndAddExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.40876F));
+            this.tlpSearchAndAddExercise.Size = new System.Drawing.Size(327, 272);
+            this.tlpSearchAndAddExercise.TabIndex = 14;
+            this.tlpSearchAndAddExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
             // 
-            // colWorkoutName
+            // pnlClickToAddNewExercise
             // 
-            this.colWorkoutName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colWorkoutName.DataPropertyName = "WorkoutName";
-            this.colWorkoutName.FillWeight = 180F;
-            this.colWorkoutName.HeaderText = "Workout Name ";
-            this.colWorkoutName.Name = "colWorkoutName";
-            this.colWorkoutName.ReadOnly = true;
-            this.colWorkoutName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colWorkoutName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.pnlClickToAddNewExercise.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlClickToAddNewExercise.BackColor = System.Drawing.Color.White;
+            this.pnlClickToAddNewExercise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlClickToAddNewExercise.Controls.Add(this.tlpAddNewExercise);
+            this.pnlClickToAddNewExercise.Location = new System.Drawing.Point(95, 58);
+            this.pnlClickToAddNewExercise.Name = "pnlClickToAddNewExercise";
+            this.pnlClickToAddNewExercise.Size = new System.Drawing.Size(137, 36);
+            this.pnlClickToAddNewExercise.TabIndex = 12;
+            this.pnlClickToAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
             // 
-            // colDescription
+            // tlpAddNewExercise
             // 
-            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescription.DataPropertyName = "Description";
-            this.colDescription.HeaderText = "Description ";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            this.colDescription.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tlpAddNewExercise.ColumnCount = 2;
+            this.tlpAddNewExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
+            this.tlpAddNewExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
+            this.tlpAddNewExercise.Controls.Add(this.picPlusExercise, 0, 0);
+            this.tlpAddNewExercise.Controls.Add(this.lblAddNewExercise, 1, 0);
+            this.tlpAddNewExercise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAddNewExercise.Location = new System.Drawing.Point(0, 0);
+            this.tlpAddNewExercise.Name = "tlpAddNewExercise";
+            this.tlpAddNewExercise.RowCount = 1;
+            this.tlpAddNewExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAddNewExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAddNewExercise.Size = new System.Drawing.Size(135, 34);
+            this.tlpAddNewExercise.TabIndex = 4;
+            this.tlpAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
+            // 
+            // lblAddNewExercise
+            // 
+            this.lblAddNewExercise.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAddNewExercise.AutoSize = true;
+            this.lblAddNewExercise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewExercise.ForeColor = System.Drawing.Color.Blue;
+            this.lblAddNewExercise.Location = new System.Drawing.Point(46, 7);
+            this.lblAddNewExercise.Name = "lblAddNewExercise";
+            this.lblAddNewExercise.Size = new System.Drawing.Size(74, 20);
+            this.lblAddNewExercise.TabIndex = 0;
+            this.lblAddNewExercise.Text = "Add New";
+            this.lblAddNewExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
+            // 
+            // picPlusExercise
+            // 
+            this.picPlusExercise.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picPlusExercise.Image = ((System.Drawing.Image)(resources.GetObject("picPlusExercise.Image")));
+            this.picPlusExercise.Location = new System.Drawing.Point(23, 8);
+            this.picPlusExercise.Name = "picPlusExercise";
+            this.picPlusExercise.Size = new System.Drawing.Size(17, 17);
+            this.picPlusExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPlusExercise.TabIndex = 1;
+            this.picPlusExercise.TabStop = false;
+            this.picPlusExercise.Click += new System.EventHandler(this.pnlClickToAddNewExercise_Click);
+            // 
+            // tlpSearchExercise
+            // 
+            this.tlpSearchExercise.ColumnCount = 3;
+            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.03061F));
+            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.2068F));
+            this.tlpSearchExercise.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.91218F));
+            this.tlpSearchExercise.Controls.Add(this.txtExerciseNameSearch, 1, 0);
+            this.tlpSearchExercise.Controls.Add(this.btnExerciseSearch, 2, 0);
+            this.tlpSearchExercise.Controls.Add(this.picSearchExercise, 0, 0);
+            this.tlpSearchExercise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSearchExercise.Location = new System.Drawing.Point(3, 3);
+            this.tlpSearchExercise.Name = "tlpSearchExercise";
+            this.tlpSearchExercise.RowCount = 1;
+            this.tlpSearchExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSearchExercise.Size = new System.Drawing.Size(321, 44);
+            this.tlpSearchExercise.TabIndex = 12;
+            this.tlpSearchExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
+            // 
+            // picSearchExercise
+            // 
+            this.picSearchExercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSearchExercise.Image = ((System.Drawing.Image)(resources.GetObject("picSearchExercise.Image")));
+            this.picSearchExercise.Location = new System.Drawing.Point(3, 3);
+            this.picSearchExercise.Name = "picSearchExercise";
+            this.picSearchExercise.Size = new System.Drawing.Size(38, 31);
+            this.picSearchExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchExercise.TabIndex = 3;
+            this.picSearchExercise.TabStop = false;
+            // 
+            // btnExerciseSearch
+            // 
+            this.btnExerciseSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExerciseSearch.AutoSize = true;
+            this.btnExerciseSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnExerciseSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExerciseSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnExerciseSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExerciseSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExerciseSearch.ForeColor = System.Drawing.Color.White;
+            this.btnExerciseSearch.Location = new System.Drawing.Point(245, 3);
+            this.btnExerciseSearch.Name = "btnExerciseSearch";
+            this.btnExerciseSearch.Size = new System.Drawing.Size(63, 31);
+            this.btnExerciseSearch.TabIndex = 2;
+            this.btnExerciseSearch.Text = "Search";
+            this.btnExerciseSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtExerciseNameSearch
+            // 
+            this.txtExerciseNameSearch.BackColor = System.Drawing.Color.White;
+            this.txtExerciseNameSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExerciseNameSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtExerciseNameSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExerciseNameSearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtExerciseNameSearch.Location = new System.Drawing.Point(47, 3);
+            this.txtExerciseNameSearch.Name = "txtExerciseNameSearch";
+            this.txtExerciseNameSearch.Size = new System.Drawing.Size(183, 30);
+            this.txtExerciseNameSearch.TabIndex = 0;
+            this.txtExerciseNameSearch.Text = "Enter Exercise Name .";
+            // 
+            // tlpExerciseHeader
+            // 
+            this.tlpExerciseHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpExerciseHeader.ColumnCount = 4;
+            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.16434F));
+            this.tlpExerciseHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.83566F));
+            this.tlpExerciseHeader.Controls.Add(this.picExercise, 0, 0);
+            this.tlpExerciseHeader.Controls.Add(this.tlpAllExercisesTitle, 1, 0);
+            this.tlpExerciseHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpExerciseHeader.Location = new System.Drawing.Point(3, 2);
+            this.tlpExerciseHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpExerciseHeader.Name = "tlpExerciseHeader";
+            this.tlpExerciseHeader.RowCount = 1;
+            this.tlpExerciseHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpExerciseHeader.Size = new System.Drawing.Size(1003, 66);
+            this.tlpExerciseHeader.TabIndex = 9;
+            this.tlpExerciseHeader.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
+            // 
+            // tlpAllExercisesTitle
+            // 
+            this.tlpAllExercisesTitle.ColumnCount = 1;
+            this.tlpAllExercisesTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAllExercisesTitle.Controls.Add(this.lblViewAllTypeofExercisesDetails, 0, 1);
+            this.tlpAllExercisesTitle.Controls.Add(this.lblAllExercises, 0, 0);
+            this.tlpAllExercisesTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAllExercisesTitle.Location = new System.Drawing.Point(85, 3);
+            this.tlpAllExercisesTitle.Name = "tlpAllExercisesTitle";
+            this.tlpAllExercisesTitle.RowCount = 3;
+            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
+            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.5082F));
+            this.tlpAllExercisesTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.03279F));
+            this.tlpAllExercisesTitle.Size = new System.Drawing.Size(294, 60);
+            this.tlpAllExercisesTitle.TabIndex = 1;
+            this.tlpAllExercisesTitle.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
+            // 
+            // lblAllExercises
+            // 
+            this.lblAllExercises.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAllExercises.AutoSize = true;
+            this.lblAllExercises.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllExercises.Location = new System.Drawing.Point(3, 2);
+            this.lblAllExercises.Name = "lblAllExercises";
+            this.lblAllExercises.Size = new System.Drawing.Size(122, 28);
+            this.lblAllExercises.TabIndex = 2;
+            this.lblAllExercises.Text = "All Exercises";
+            // 
+            // lblViewAllTypeofExercisesDetails
+            // 
+            this.lblViewAllTypeofExercisesDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblViewAllTypeofExercisesDetails.AutoSize = true;
+            this.lblViewAllTypeofExercisesDetails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewAllTypeofExercisesDetails.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblViewAllTypeofExercisesDetails.Location = new System.Drawing.Point(3, 30);
+            this.lblViewAllTypeofExercisesDetails.Name = "lblViewAllTypeofExercisesDetails";
+            this.lblViewAllTypeofExercisesDetails.Size = new System.Drawing.Size(207, 18);
+            this.lblViewAllTypeofExercisesDetails.TabIndex = 3;
+            this.lblViewAllTypeofExercisesDetails.Text = "View All Type of Exercises Details";
+            // 
+            // picExercise
+            // 
+            this.picExercise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picExercise.Image = ((System.Drawing.Image)(resources.GetObject("picExercise.Image")));
+            this.picExercise.Location = new System.Drawing.Point(3, 3);
+            this.picExercise.Name = "picExercise";
+            this.picExercise.Size = new System.Drawing.Size(76, 60);
+            this.picExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExercise.TabIndex = 0;
+            this.picExercise.TabStop = false;
+            this.picExercise.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
+            // 
+            // tlpAllExercisesEntireForm
+            // 
+            this.tlpAllExercisesEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpAllExercisesEntireForm.ColumnCount = 1;
+            this.tlpAllExercisesEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAllExercisesEntireForm.Controls.Add(this.tlpExerciseHeader, 0, 0);
+            this.tlpAllExercisesEntireForm.Controls.Add(this.tlpExerciseTableAndSearch, 0, 2);
+            this.tlpAllExercisesEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAllExercisesEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpAllExercisesEntireForm.Name = "tlpAllExercisesEntireForm";
+            this.tlpAllExercisesEntireForm.RowCount = 3;
+            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlpAllExercisesEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpAllExercisesEntireForm.Size = new System.Drawing.Size(1009, 362);
+            this.tlpAllExercisesEntireForm.TabIndex = 3;
             // 
             // FrmDisplayWorkoutPlans
             // 
@@ -839,21 +839,6 @@
             this.Load += new System.EventHandler(this.FrmDisplayWorkoutPlans_Load);
             this.tlpEntireFormExerciseAndWorkoutPlan.ResumeLayout(false);
             this.pnlAllExerciseForm.ResumeLayout(false);
-            this.tlpAllExercisesEntireForm.ResumeLayout(false);
-            this.tlpExerciseHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).EndInit();
-            this.tlpAllExercisesTitle.ResumeLayout(false);
-            this.tlpAllExercisesTitle.PerformLayout();
-            this.tlpExerciseTableAndSearch.ResumeLayout(false);
-            this.tlpSearchAndAddExercise.ResumeLayout(false);
-            this.tlpSearchExercise.ResumeLayout(false);
-            this.tlpSearchExercise.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearchExercise)).EndInit();
-            this.pnlClickToAddNewExercise.ResumeLayout(false);
-            this.tlpAddNewExercise.ResumeLayout(false);
-            this.tlpAddNewExercise.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlusExercise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExerciseTable)).EndInit();
             this.pnlAllWorkoutPlanForm.ResumeLayout(false);
             this.tlpWorkoutPlanEntireForm.ResumeLayout(false);
             this.tlpAllWorkoutPlansHeader.ResumeLayout(false);
@@ -870,6 +855,21 @@
             this.tlpSearchWorkoutPlan.ResumeLayout(false);
             this.tlpSearchWorkoutPlan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchWorkoutPlan)).EndInit();
+            this.tlpExerciseTableAndSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExerciseTable)).EndInit();
+            this.tlpSearchAndAddExercise.ResumeLayout(false);
+            this.pnlClickToAddNewExercise.ResumeLayout(false);
+            this.tlpAddNewExercise.ResumeLayout(false);
+            this.tlpAddNewExercise.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlusExercise)).EndInit();
+            this.tlpSearchExercise.ResumeLayout(false);
+            this.tlpSearchExercise.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchExercise)).EndInit();
+            this.tlpExerciseHeader.ResumeLayout(false);
+            this.tlpAllExercisesTitle.ResumeLayout(false);
+            this.tlpAllExercisesTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).EndInit();
+            this.tlpAllExercisesEntireForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -878,23 +878,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpEntireFormExerciseAndWorkoutPlan;
         private System.Windows.Forms.Panel pnlAllExerciseForm;
-        private System.Windows.Forms.TableLayoutPanel tlpAllExercisesEntireForm;
-        private System.Windows.Forms.TableLayoutPanel tlpExerciseHeader;
-        private System.Windows.Forms.PictureBox picExercise;
-        private System.Windows.Forms.TableLayoutPanel tlpAllExercisesTitle;
-        private System.Windows.Forms.Label lblViewAllTypeofExercisesDetails;
-        private System.Windows.Forms.Label lblAllExercises;
-        private System.Windows.Forms.TableLayoutPanel tlpExerciseTableAndSearch;
-        private System.Windows.Forms.TableLayoutPanel tlpSearchAndAddExercise;
-        private System.Windows.Forms.Panel pnlClickToAddNewExercise;
-        private System.Windows.Forms.TableLayoutPanel tlpAddNewExercise;
-        private System.Windows.Forms.PictureBox picPlusExercise;
-        private System.Windows.Forms.Label lblAddNewExercise;
-        private System.Windows.Forms.TableLayoutPanel tlpSearchExercise;
-        private System.Windows.Forms.TextBox txtExerciseNameSearch;
-        private System.Windows.Forms.Button btnExerciseSearch;
-        private System.Windows.Forms.PictureBox picSearchExercise;
-        private System.Windows.Forms.DataGridView dgvExerciseTable;
         private System.Windows.Forms.Panel pnlAllWorkoutPlanForm;
         private System.Windows.Forms.TableLayoutPanel tlpWorkoutPlanEntireForm;
         private System.Windows.Forms.TableLayoutPanel tlpAllWorkoutPlansHeader;
@@ -913,12 +896,29 @@
         private System.Windows.Forms.TextBox txtWorkoutNameSearch;
         private System.Windows.Forms.Button btnWorkoutPlanSearch;
         private System.Windows.Forms.PictureBox picSearchWorkoutPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExerciseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMuscleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.TableLayoutPanel tlpAllExercisesEntireForm;
+        private System.Windows.Forms.TableLayoutPanel tlpExerciseHeader;
+        private System.Windows.Forms.PictureBox picExercise;
+        private System.Windows.Forms.TableLayoutPanel tlpAllExercisesTitle;
+        private System.Windows.Forms.Label lblViewAllTypeofExercisesDetails;
+        private System.Windows.Forms.Label lblAllExercises;
+        private System.Windows.Forms.TableLayoutPanel tlpExerciseTableAndSearch;
+        private System.Windows.Forms.TableLayoutPanel tlpSearchAndAddExercise;
+        private System.Windows.Forms.TableLayoutPanel tlpSearchExercise;
+        private System.Windows.Forms.TextBox txtExerciseNameSearch;
+        private System.Windows.Forms.Button btnExerciseSearch;
+        private System.Windows.Forms.PictureBox picSearchExercise;
+        private System.Windows.Forms.Panel pnlClickToAddNewExercise;
+        private System.Windows.Forms.TableLayoutPanel tlpAddNewExercise;
+        private System.Windows.Forms.PictureBox picPlusExercise;
+        private System.Windows.Forms.Label lblAddNewExercise;
+        private System.Windows.Forms.DataGridView dgvExerciseTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExerciseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMuscleType;
 
 
     }
