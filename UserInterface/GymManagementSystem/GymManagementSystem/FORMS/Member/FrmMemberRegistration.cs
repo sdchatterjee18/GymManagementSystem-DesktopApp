@@ -15,5 +15,10 @@ namespace GymManagementSystem.FORMS.Member
         {
             InitializeComponent();
         }
+
+        private void FrmMemberRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

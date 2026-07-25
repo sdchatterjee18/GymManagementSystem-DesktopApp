@@ -216,11 +216,59 @@
     <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Member\FrmAssignTrainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmAssignTrainer.Designer.cs">
+      <DependentUpon>FrmAssignTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeDietPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeDietPlan.Designer.cs">
+      <DependentUpon>FrmChangeDietPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeShift.Designer.cs">
+      <DependentUpon>FrmChangeShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeTrainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmChangeTrainer.Designer.cs">
+      <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Member\FrmDisplayAllMembers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\Member\FrmDisplayAllMembers.Designer.cs">
       <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberProfile.Designer.cs">
+      <DependentUpon>FrmMemberProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberRegistration.Designer.cs">
+      <DependentUpon>FrmMemberRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMembershipRenewal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMembershipRenewal.Designer.cs">
+      <DependentUpon>FrmMembershipRenewal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberTrainerAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmMemberTrainerAssignment.Designer.cs">
+      <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\Payments\FrmDisplayPayments.cs">
       <SubType>Form</SubType>
@@ -374,8 +422,32 @@
     <EmbeddedResource Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.resx">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmAssignTrainer.resx">
+      <DependentUpon>FrmAssignTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmChangeDietPlan.resx">
+      <DependentUpon>FrmChangeDietPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmChangeShift.resx">
+      <DependentUpon>FrmChangeShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmChangeTrainer.resx">
+      <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmDisplayAllMembers.resx">
       <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmMemberProfile.resx">
+      <DependentUpon>FrmMemberProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmMemberRegistration.resx">
+      <DependentUpon>FrmMemberRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmMembershipRenewal.resx">
+      <DependentUpon>FrmMembershipRenewal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmMemberTrainerAssignment.resx">
+      <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Payments\FrmDisplayPayments.resx">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
