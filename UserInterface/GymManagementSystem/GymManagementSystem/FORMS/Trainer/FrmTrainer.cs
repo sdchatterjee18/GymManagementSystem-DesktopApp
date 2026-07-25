@@ -27,20 +27,16 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void FrmTrainer_Load(object sender, EventArgs e)
         {
-            //For Reduce Redius of GeneralTrainer
-            picGeneralTrainer.Size = new Size(80, 80); 
-            picGeneralTrainer.SizeMode = PictureBoxSizeMode.StretchImage; 
-            MakeCircular(picGeneralTrainer);
-
-            //For Reduce Redius of PersonalTrainer
-            picPersonalTrainer.Size = new Size(80, 80);
-            picPersonalTrainer.SizeMode = PictureBoxSizeMode.StretchImage;
-            MakeCircular(picPersonalTrainer);
-            
+           
+            //For Textbox Text Deselection
+            txtSearchBar.Select(0, 0);
+            txtSearchBar.DeselectAll();
             RetrieveTrainerDetails();
 
         }
+        
 
+        
         private void RetrieveTrainerDetails()
         {
             string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -84,45 +80,6 @@ namespace GymManagementSystem.FORMS.Trainer
         {
           
         }
-
-        private void pnlGeneralTrainer_MouseEnter(object sender, EventArgs e)
-        {
-            pnlGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            pnlGeneralTrainer.ForeColor = Color.Black;
-        }
-
-        private void pnlGeneralTrainer_MouseHover(object sender, EventArgs e)
-        {
-            pnlGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            pnlGeneralTrainer.ForeColor = Color.Black;
-
-        }
-
-        private void pnlGeneralTrainer_MouseLeave(object sender, EventArgs e)
-        {
-            pnlGeneralTrainer.BackColor = Color.FromArgb(210,215,255);
-            pnlGeneralTrainer.ForeColor = Color.Black;
-        }
-
-        private void pnlPersonalTrainer_MouseEnter(object sender, EventArgs e)
-        {
-            pnlPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            pnlPersonalTrainer.ForeColor = Color.Black;
-
-        }
-
-        private void pnlPersonalTrainer_MouseHover(object sender, EventArgs e)
-        {
-            pnlPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            pnlPersonalTrainer.ForeColor = Color.Black;
-        }
-
-        private void pnlPersonalTrainer_MouseLeave(object sender, EventArgs e)
-        {
-            pnlPersonalTrainer.BackColor = Color.FromArgb(210, 215, 255);
-            pnlPersonalTrainer.ForeColor = Color.Black;
-        }
-
         private void dgvTrainerDetails_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
         
@@ -156,6 +113,7 @@ namespace GymManagementSystem.FORMS.Trainer
             if (SearchClick == 1)
             {
                 txtSearchBar.Clear();
+                txtSearchBar.ForeColor = Color.Black;
             }
         }
 
@@ -183,12 +141,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             dgvTrainerDetails.ClearSelection();
         }
-        private void MakeCircular(PictureBox pb)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(0, 0, pb.Width, pb.Height);
-            pb.Region = new Region(path);
-        }
+        
 
         private void dgvTrainerDetails_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -224,7 +177,62 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             dgvTrainerDetails.ClearSelection();
         }
-            
+
+        private void tlpPersonalTrainer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpPersonalTrainer_MouseEnter(object sender, EventArgs e)
+        {
+            tlpPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
+            tlpPersonalTrainer.ForeColor = Color.Black;
+
+        }
+
+        private void tlpPersonalTrainer_MouseHover(object sender, EventArgs e)
+        {
+            tlpPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
+            tlpPersonalTrainer.ForeColor = Color.Black;
+        }
+
+        private void tlpPersonalTrainer_MouseLeave(object sender, EventArgs e)
+        {
+            tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 255);
+            tlpPersonalTrainer.ForeColor = Color.Black;
+        }
+
+        private void tlpGeneralTrainer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpGeneralTrainer_MouseEnter(object sender, EventArgs e)
+        {
+            tlpGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
+            tlpGeneralTrainer.ForeColor = Color.Black;
+
+        }
+
+        private void tlpGeneralTrainer_MouseHover(object sender, EventArgs e)
+        {
+            tlpGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
+            tlpGeneralTrainer.ForeColor = Color.Black;
+        }
+
+        private void tlpGeneralTrainer_MouseLeave(object sender, EventArgs e)
+        {
+            tlpGeneralTrainer.BackColor = Color.FromArgb(210, 215, 255);
+            tlpGeneralTrainer.ForeColor = Color.Black;
+        }
+
+        private void tlpGeneralTrainerPicture_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private const string PLACEHOLDER_TEXT = "Enter Mobile No.";
+
+        
     }
 }
     
