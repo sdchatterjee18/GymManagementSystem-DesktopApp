@@ -21,9 +21,9 @@ namespace GymManagementSystem.FORMS.Payments
         private void FrmDisplayPayments_Load(object sender, EventArgs e)
         {
 
-            dgvPaymentsManagement.RowTemplate.Height = 50;
 
             LoadSubscriptionPayments();
+            dgvPaymentsManagement.ClearSelection();
         }
 
         private void LoadSubscriptionPayments()
@@ -70,47 +70,52 @@ namespace GymManagementSystem.FORMS.Payments
             }
         }
 
-
-        private Color originalHeaderColor = Color.LightGray;
-
         private void dgvPaymentsManagement_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvPaymentsManagement.Rows[e.RowIndex]
-                                 .Cells[e.ColumnIndex]
-                                 .Style.BackColor = Color.LightBlue;
-            }
-
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvPaymentsManagement.EnableHeadersVisualStyles = false;
-
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvPaymentsManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
         }
 
         private void dgvPaymentsManagement_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvPaymentsManagement.Rows[e.RowIndex]
-                                 .Cells[e.ColumnIndex]
-                                 .Style.BackColor = Color.WhiteSmoke;
-            }
-
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = originalHeaderColor;
+                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
                 dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvPaymentsManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
+
+                
             }
         }
 
-        private void pnlPaymentTitle_Click(object sender, EventArgs e)
+        private void dgvPaymentsManagement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dgvPaymentsManagement.ClearSelection();
+
+            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colFeesType")
+            {
+
+                e.CellStyle.ForeColor = Color.Green;
+            }
+
+            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colSerialNo")
+            {
+
+                e.CellStyle.ForeColor = Color.Navy;
+            }    
+            
         }
+
+
 
     }
 
