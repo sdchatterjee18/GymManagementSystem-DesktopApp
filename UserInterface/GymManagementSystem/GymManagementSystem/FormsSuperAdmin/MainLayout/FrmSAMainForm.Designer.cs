@@ -32,8 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSAMainForm));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlExitMinimizeRestore = new System.Windows.Forms.Panel();
+            this.pnlMinimize = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.pnlRestore = new System.Windows.Forms.Panel();
+            this.picRestore = new System.Windows.Forms.PictureBox();
+            this.pnlExit = new System.Windows.Forms.Panel();
+            this.picExit = new System.Windows.Forms.PictureBox();
             this.picGymLogo = new System.Windows.Forms.PictureBox();
             this.lblGymLogo = new System.Windows.Forms.Label();
+            this.pnlDateTime = new System.Windows.Forms.Panel();
             this.tlpDateTime = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCalander = new System.Windows.Forms.Panel();
             this.picCalander = new System.Windows.Forms.PictureBox();
@@ -41,7 +49,6 @@
             this.picClock = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.pnlModule = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogout = new System.Windows.Forms.Panel();
@@ -64,6 +71,7 @@
             this.lblFinancialManagement = new System.Windows.Forms.Label();
             this.picFinancialManagement = new System.Windows.Forms.PictureBox();
             this.pnlSettings = new System.Windows.Forms.Panel();
+            this.picSettingsArrowe = new System.Windows.Forms.PictureBox();
             this.lblSettings = new System.Windows.Forms.Label();
             this.picSettings = new System.Windows.Forms.PictureBox();
             this.pnlDropDownSettings = new System.Windows.Forms.Panel();
@@ -72,10 +80,17 @@
             this.lblSuperAdminPasswordChange = new System.Windows.Forms.Label();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             this.pnlMainPanel = new System.Windows.Forms.Panel();
-            this.picSettingsArrowe = new System.Windows.Forms.PictureBox();
             this.pnlTopbar.SuspendLayout();
             this.tlpTopbar.SuspendLayout();
+            this.pnlExitMinimizeRestore.SuspendLayout();
+            this.pnlMinimize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
+            this.pnlRestore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestore)).BeginInit();
+            this.pnlExit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).BeginInit();
+            this.pnlDateTime.SuspendLayout();
             this.tlpDateTime.SuspendLayout();
             this.pnlCalander.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCalander)).BeginInit();
@@ -96,11 +111,11 @@
             this.pnlFinancialManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFinancialManagement)).BeginInit();
             this.pnlSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).BeginInit();
             this.pnlDropDownSettings.SuspendLayout();
             this.pnlSuperAdminPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPasswordChange)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopbar
@@ -111,29 +126,126 @@
             this.pnlTopbar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopbar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopbar.Name = "pnlTopbar";
-            this.pnlTopbar.Size = new System.Drawing.Size(1345, 74);
+            this.pnlTopbar.Size = new System.Drawing.Size(1369, 45);
             this.pnlTopbar.TabIndex = 1;
             // 
             // tlpTopbar
             // 
             this.tlpTopbar.ColumnCount = 5;
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.54589F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.13879F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.31533F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.49413F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.45315F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.05272F));
+            this.tlpTopbar.Controls.Add(this.pnlExitMinimizeRestore, 4, 0);
             this.tlpTopbar.Controls.Add(this.picGymLogo, 0, 0);
             this.tlpTopbar.Controls.Add(this.lblGymLogo, 1, 0);
-            this.tlpTopbar.Controls.Add(this.tlpDateTime, 4, 0);
-            this.tlpTopbar.Controls.Add(this.pnlModule, 3, 0);
+            this.tlpTopbar.Controls.Add(this.pnlDateTime, 3, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTopbar.Location = new System.Drawing.Point(0, 0);
             this.tlpTopbar.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTopbar.Name = "tlpTopbar";
             this.tlpTopbar.RowCount = 1;
             this.tlpTopbar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopbar.Size = new System.Drawing.Size(1345, 74);
+            this.tlpTopbar.Size = new System.Drawing.Size(1369, 45);
             this.tlpTopbar.TabIndex = 0;
+            // 
+            // pnlExitMinimizeRestore
+            // 
+            this.pnlExitMinimizeRestore.Controls.Add(this.pnlMinimize);
+            this.pnlExitMinimizeRestore.Controls.Add(this.pnlRestore);
+            this.pnlExitMinimizeRestore.Controls.Add(this.pnlExit);
+            this.pnlExitMinimizeRestore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlExitMinimizeRestore.Location = new System.Drawing.Point(1153, 0);
+            this.pnlExitMinimizeRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlExitMinimizeRestore.Name = "pnlExitMinimizeRestore";
+            this.pnlExitMinimizeRestore.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pnlExitMinimizeRestore.Size = new System.Drawing.Size(216, 45);
+            this.pnlExitMinimizeRestore.TabIndex = 6;
+            // 
+            // pnlMinimize
+            // 
+            this.pnlMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMinimize.Controls.Add(this.picMinimize);
+            this.pnlMinimize.Location = new System.Drawing.Point(52, 9);
+            this.pnlMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMinimize.Name = "pnlMinimize";
+            this.pnlMinimize.Size = new System.Drawing.Size(40, 30);
+            this.pnlMinimize.TabIndex = 0;
+            this.pnlMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
+            this.pnlMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
+            this.pnlMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
+            this.picMinimize.Location = new System.Drawing.Point(7, 3);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(25, 25);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimize.TabIndex = 0;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
+            this.picMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
+            this.picMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
+            // 
+            // pnlRestore
+            // 
+            this.pnlRestore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlRestore.Controls.Add(this.picRestore);
+            this.pnlRestore.Location = new System.Drawing.Point(109, 9);
+            this.pnlRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRestore.Name = "pnlRestore";
+            this.pnlRestore.Size = new System.Drawing.Size(40, 30);
+            this.pnlRestore.TabIndex = 0;
+            this.pnlRestore.Click += new System.EventHandler(this.pnlRestore_Click);
+            this.pnlRestore.MouseEnter += new System.EventHandler(this.pnlRestore_MouseEnter);
+            this.pnlRestore.MouseLeave += new System.EventHandler(this.pnlRestore_MouseLeave);
+            // 
+            // picRestore
+            // 
+            this.picRestore.Image = ((System.Drawing.Image)(resources.GetObject("picRestore.Image")));
+            this.picRestore.Location = new System.Drawing.Point(7, 3);
+            this.picRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.picRestore.Name = "picRestore";
+            this.picRestore.Size = new System.Drawing.Size(25, 25);
+            this.picRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRestore.TabIndex = 0;
+            this.picRestore.TabStop = false;
+            this.picRestore.Click += new System.EventHandler(this.pnlMinimize_Click);
+            this.picRestore.MouseEnter += new System.EventHandler(this.pnlRestore_MouseEnter);
+            this.picRestore.MouseLeave += new System.EventHandler(this.pnlRestore_MouseLeave);
+            // 
+            // pnlExit
+            // 
+            this.pnlExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlExit.Controls.Add(this.picExit);
+            this.pnlExit.Location = new System.Drawing.Point(166, 9);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlExit.Name = "pnlExit";
+            this.pnlExit.Size = new System.Drawing.Size(40, 30);
+            this.pnlExit.TabIndex = 0;
+            this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
+            this.pnlExit.MouseEnter += new System.EventHandler(this.pnlExit_MouseEnter);
+            this.pnlExit.MouseLeave += new System.EventHandler(this.pnlExit_MouseLeave);
+            // 
+            // picExit
+            // 
+            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
+            this.picExit.Location = new System.Drawing.Point(7, 3);
+            this.picExit.Margin = new System.Windows.Forms.Padding(0);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(25, 25);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExit.TabIndex = 0;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.pnlExit_Click);
+            this.picExit.MouseEnter += new System.EventHandler(this.pnlExit_MouseEnter);
+            this.picExit.MouseLeave += new System.EventHandler(this.pnlRestore_MouseLeave);
             // 
             // picGymLogo
             // 
@@ -141,7 +253,7 @@
             this.picGymLogo.Location = new System.Drawing.Point(3, 2);
             this.picGymLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picGymLogo.Name = "picGymLogo";
-            this.picGymLogo.Size = new System.Drawing.Size(94, 70);
+            this.picGymLogo.Size = new System.Drawing.Size(94, 41);
             this.picGymLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGymLogo.TabIndex = 0;
             this.picGymLogo.TabStop = false;
@@ -153,32 +265,42 @@
             this.lblGymLogo.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGymLogo.Location = new System.Drawing.Point(103, 0);
             this.lblGymLogo.Name = "lblGymLogo";
-            this.lblGymLogo.Size = new System.Drawing.Size(210, 74);
+            this.lblGymLogo.Size = new System.Drawing.Size(244, 45);
             this.lblGymLogo.TabIndex = 1;
             this.lblGymLogo.Text = "GYM";
             this.lblGymLogo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlDateTime
+            // 
+            this.pnlDateTime.Controls.Add(this.tlpDateTime);
+            this.pnlDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDateTime.Location = new System.Drawing.Point(884, 0);
+            this.pnlDateTime.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlDateTime.Name = "pnlDateTime";
+            this.pnlDateTime.Size = new System.Drawing.Size(269, 45);
+            this.pnlDateTime.TabIndex = 5;
             // 
             // tlpDateTime
             // 
             this.tlpDateTime.ColumnCount = 6;
             this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDateTime.Controls.Add(this.pnlCalander, 0, 0);
             this.tlpDateTime.Controls.Add(this.pnlColock, 3, 0);
             this.tlpDateTime.Controls.Add(this.lblDate, 1, 0);
             this.tlpDateTime.Controls.Add(this.lblTime, 4, 0);
             this.tlpDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDateTime.Location = new System.Drawing.Point(1076, 2);
-            this.tlpDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpDateTime.Location = new System.Drawing.Point(0, 0);
+            this.tlpDateTime.Margin = new System.Windows.Forms.Padding(0);
             this.tlpDateTime.Name = "tlpDateTime";
             this.tlpDateTime.RowCount = 1;
             this.tlpDateTime.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateTime.Size = new System.Drawing.Size(266, 70);
-            this.tlpDateTime.TabIndex = 3;
+            this.tlpDateTime.Size = new System.Drawing.Size(269, 45);
+            this.tlpDateTime.TabIndex = 4;
             // 
             // pnlCalander
             // 
@@ -187,13 +309,13 @@
             this.pnlCalander.Location = new System.Drawing.Point(0, 0);
             this.pnlCalander.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCalander.Name = "pnlCalander";
-            this.pnlCalander.Size = new System.Drawing.Size(40, 70);
+            this.pnlCalander.Size = new System.Drawing.Size(40, 45);
             this.pnlCalander.TabIndex = 4;
             // 
             // picCalander
             // 
             this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
-            this.picCalander.Location = new System.Drawing.Point(15, 23);
+            this.picCalander.Location = new System.Drawing.Point(15, 9);
             this.picCalander.Margin = new System.Windows.Forms.Padding(0);
             this.picCalander.Name = "picCalander";
             this.picCalander.Size = new System.Drawing.Size(25, 25);
@@ -205,16 +327,16 @@
             // 
             this.pnlColock.Controls.Add(this.picClock);
             this.pnlColock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlColock.Location = new System.Drawing.Point(137, 0);
+            this.pnlColock.Location = new System.Drawing.Point(160, 0);
             this.pnlColock.Margin = new System.Windows.Forms.Padding(0);
             this.pnlColock.Name = "pnlColock";
-            this.pnlColock.Size = new System.Drawing.Size(40, 70);
+            this.pnlColock.Size = new System.Drawing.Size(40, 45);
             this.pnlColock.TabIndex = 5;
             // 
             // picClock
             // 
             this.picClock.Image = ((System.Drawing.Image)(resources.GetObject("picClock.Image")));
-            this.picClock.Location = new System.Drawing.Point(15, 23);
+            this.picClock.Location = new System.Drawing.Point(15, 9);
             this.picClock.Margin = new System.Windows.Forms.Padding(0);
             this.picClock.Name = "picClock";
             this.picClock.Size = new System.Drawing.Size(25, 25);
@@ -230,7 +352,7 @@
             this.lblDate.Location = new System.Drawing.Point(40, 0);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(100, 70);
+            this.lblDate.Size = new System.Drawing.Size(100, 45);
             this.lblDate.TabIndex = 6;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -240,22 +362,13 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(177, 0);
+            this.lblTime.Location = new System.Drawing.Point(200, 0);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(100, 70);
+            this.lblTime.Size = new System.Drawing.Size(100, 45);
             this.lblTime.TabIndex = 7;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlModule
-            // 
-            this.pnlModule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlModule.Location = new System.Drawing.Point(578, 0);
-            this.pnlModule.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlModule.Name = "pnlModule";
-            this.pnlModule.Size = new System.Drawing.Size(495, 74);
-            this.pnlModule.TabIndex = 4;
             // 
             // timer
             // 
@@ -268,11 +381,11 @@
             this.pnlSidebar.Controls.Add(this.fnlSidebar);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.ForeColor = System.Drawing.Color.White;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 74);
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 45);
             this.pnlSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSidebar.Size = new System.Drawing.Size(356, 596);
+            this.pnlSidebar.Size = new System.Drawing.Size(321, 682);
             this.pnlSidebar.TabIndex = 2;
             // 
             // pnlLogout
@@ -280,10 +393,10 @@
             this.pnlLogout.Controls.Add(this.lblLogout);
             this.pnlLogout.Controls.Add(this.picLogout);
             this.pnlLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlLogout.Location = new System.Drawing.Point(5, 541);
+            this.pnlLogout.Location = new System.Drawing.Point(5, 627);
             this.pnlLogout.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLogout.Name = "pnlLogout";
-            this.pnlLogout.Size = new System.Drawing.Size(346, 50);
+            this.pnlLogout.Size = new System.Drawing.Size(311, 50);
             this.pnlLogout.TabIndex = 1;
             this.pnlLogout.Click += new System.EventHandler(this.pnlLogout_Click);
             this.pnlLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
@@ -334,7 +447,7 @@
             this.fnlSidebar.Location = new System.Drawing.Point(5, 5);
             this.fnlSidebar.Margin = new System.Windows.Forms.Padding(0);
             this.fnlSidebar.Name = "fnlSidebar";
-            this.fnlSidebar.Size = new System.Drawing.Size(346, 586);
+            this.fnlSidebar.Size = new System.Drawing.Size(311, 672);
             this.fnlSidebar.TabIndex = 0;
             this.fnlSidebar.WrapContents = false;
             // 
@@ -345,7 +458,7 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(344, 50);
+            this.pnlMenu.Size = new System.Drawing.Size(310, 50);
             this.pnlMenu.TabIndex = 2;
             this.pnlMenu.Click += new System.EventHandler(this.pnlMenu_Click);
             this.pnlMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
@@ -384,7 +497,7 @@
             this.pnlDashboard.Location = new System.Drawing.Point(0, 50);
             this.pnlDashboard.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(344, 50);
+            this.pnlDashboard.Size = new System.Drawing.Size(310, 50);
             this.pnlDashboard.TabIndex = 0;
             this.pnlDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
             this.pnlDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
@@ -427,7 +540,7 @@
             this.pnlEmployeeManagement.Location = new System.Drawing.Point(0, 100);
             this.pnlEmployeeManagement.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEmployeeManagement.Name = "pnlEmployeeManagement";
-            this.pnlEmployeeManagement.Size = new System.Drawing.Size(344, 50);
+            this.pnlEmployeeManagement.Size = new System.Drawing.Size(310, 50);
             this.pnlEmployeeManagement.TabIndex = 3;
             this.pnlEmployeeManagement.Click += new System.EventHandler(this.pnlEmployeeManagement_Click);
             this.pnlEmployeeManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeManagement_MouseEnter);
@@ -451,7 +564,7 @@
             // 
             // picEmployeeManagement
             // 
-            this.picEmployeeManagement.Image = ((System.Drawing.Image)(resources.GetObject("picEmployeeManagement.Image")));
+            this.picEmployeeManagement.Image = global::GymManagementSystem.Properties.Resources.Employee;
             this.picEmployeeManagement.Location = new System.Drawing.Point(15, 10);
             this.picEmployeeManagement.Margin = new System.Windows.Forms.Padding(0);
             this.picEmployeeManagement.Name = "picEmployeeManagement";
@@ -470,7 +583,7 @@
             this.pnlEmployeeSalaryManagement.Location = new System.Drawing.Point(0, 150);
             this.pnlEmployeeSalaryManagement.Margin = new System.Windows.Forms.Padding(0);
             this.pnlEmployeeSalaryManagement.Name = "pnlEmployeeSalaryManagement";
-            this.pnlEmployeeSalaryManagement.Size = new System.Drawing.Size(344, 50);
+            this.pnlEmployeeSalaryManagement.Size = new System.Drawing.Size(310, 50);
             this.pnlEmployeeSalaryManagement.TabIndex = 4;
             this.pnlEmployeeSalaryManagement.Click += new System.EventHandler(this.pnlEmployeeSalaryManagement_Click);
             this.pnlEmployeeSalaryManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseEnter);
@@ -484,9 +597,9 @@
             this.lblEmployeeSalaryManagement.Location = new System.Drawing.Point(51, 10);
             this.lblEmployeeSalaryManagement.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeSalaryManagement.Name = "lblEmployeeSalaryManagement";
-            this.lblEmployeeSalaryManagement.Size = new System.Drawing.Size(288, 28);
+            this.lblEmployeeSalaryManagement.Size = new System.Drawing.Size(193, 28);
             this.lblEmployeeSalaryManagement.TabIndex = 1;
-            this.lblEmployeeSalaryManagement.Text = "Employee Salary Management";
+            this.lblEmployeeSalaryManagement.Text = "Salary Management";
             this.lblEmployeeSalaryManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblEmployeeSalaryManagement.Click += new System.EventHandler(this.pnlEmployeeSalaryManagement_Click);
             this.lblEmployeeSalaryManagement.MouseEnter += new System.EventHandler(this.pnlEmployeeSalaryManagement_MouseEnter);
@@ -494,7 +607,7 @@
             // 
             // picEmployeeSalaryManagement
             // 
-            this.picEmployeeSalaryManagement.Image = ((System.Drawing.Image)(resources.GetObject("picEmployeeSalaryManagement.Image")));
+            this.picEmployeeSalaryManagement.Image = global::GymManagementSystem.Properties.Resources.Salary;
             this.picEmployeeSalaryManagement.Location = new System.Drawing.Point(15, 10);
             this.picEmployeeSalaryManagement.Margin = new System.Windows.Forms.Padding(0);
             this.picEmployeeSalaryManagement.Name = "picEmployeeSalaryManagement";
@@ -513,7 +626,7 @@
             this.pnlFinancialManagement.Location = new System.Drawing.Point(0, 200);
             this.pnlFinancialManagement.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFinancialManagement.Name = "pnlFinancialManagement";
-            this.pnlFinancialManagement.Size = new System.Drawing.Size(344, 50);
+            this.pnlFinancialManagement.Size = new System.Drawing.Size(310, 50);
             this.pnlFinancialManagement.TabIndex = 5;
             this.pnlFinancialManagement.Click += new System.EventHandler(this.pnlFinancialManagement_Click);
             this.pnlFinancialManagement.MouseEnter += new System.EventHandler(this.pnlFinancialManagement_MouseEnter);
@@ -537,7 +650,7 @@
             // 
             // picFinancialManagement
             // 
-            this.picFinancialManagement.Image = ((System.Drawing.Image)(resources.GetObject("picFinancialManagement.Image")));
+            this.picFinancialManagement.Image = global::GymManagementSystem.Properties.Resources.Financials;
             this.picFinancialManagement.Location = new System.Drawing.Point(15, 10);
             this.picFinancialManagement.Margin = new System.Windows.Forms.Padding(0);
             this.picFinancialManagement.Name = "picFinancialManagement";
@@ -557,11 +670,23 @@
             this.pnlSettings.Location = new System.Drawing.Point(0, 250);
             this.pnlSettings.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSettings.Name = "pnlSettings";
-            this.pnlSettings.Size = new System.Drawing.Size(344, 50);
+            this.pnlSettings.Size = new System.Drawing.Size(310, 50);
             this.pnlSettings.TabIndex = 6;
             this.pnlSettings.Click += new System.EventHandler(this.pnlSettings_Click);
             this.pnlSettings.MouseEnter += new System.EventHandler(this.pnlSettings_MouseEnter);
             this.pnlSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
+            // 
+            // picSettingsArrowe
+            // 
+            this.picSettingsArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
+            this.picSettingsArrowe.Location = new System.Drawing.Point(280, 21);
+            this.picSettingsArrowe.Margin = new System.Windows.Forms.Padding(0);
+            this.picSettingsArrowe.Name = "picSettingsArrowe";
+            this.picSettingsArrowe.Size = new System.Drawing.Size(17, 17);
+            this.picSettingsArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSettingsArrowe.TabIndex = 2;
+            this.picSettingsArrowe.TabStop = false;
+            this.picSettingsArrowe.Click += new System.EventHandler(this.pnlSettings_Click);
             // 
             // lblSettings
             // 
@@ -599,8 +724,8 @@
             this.pnlDropDownSettings.Location = new System.Drawing.Point(0, 300);
             this.pnlDropDownSettings.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDropDownSettings.Name = "pnlDropDownSettings";
-            this.pnlDropDownSettings.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.pnlDropDownSettings.Size = new System.Drawing.Size(344, 39);
+            this.pnlDropDownSettings.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.pnlDropDownSettings.Size = new System.Drawing.Size(310, 38);
             this.pnlDropDownSettings.TabIndex = 7;
             this.pnlDropDownSettings.Visible = false;
             // 
@@ -608,33 +733,42 @@
             // 
             this.pnlSuperAdminPasswordChange.Controls.Add(this.picSuperAdminPasswordChange);
             this.pnlSuperAdminPasswordChange.Controls.Add(this.lblSuperAdminPasswordChange);
-            this.pnlSuperAdminPasswordChange.Location = new System.Drawing.Point(0, 2);
+            this.pnlSuperAdminPasswordChange.Location = new System.Drawing.Point(0, 4);
             this.pnlSuperAdminPasswordChange.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSuperAdminPasswordChange.Name = "pnlSuperAdminPasswordChange";
-            this.pnlSuperAdminPasswordChange.Size = new System.Drawing.Size(344, 34);
+            this.pnlSuperAdminPasswordChange.Size = new System.Drawing.Size(364, 34);
             this.pnlSuperAdminPasswordChange.TabIndex = 0;
+            this.pnlSuperAdminPasswordChange.Click += new System.EventHandler(this.pnlSuperAdminPasswordChange_Click);
+            this.pnlSuperAdminPasswordChange.MouseEnter += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseEnter);
+            this.pnlSuperAdminPasswordChange.MouseLeave += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseLeave);
             // 
             // picSuperAdminPasswordChange
             // 
             this.picSuperAdminPasswordChange.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picSuperAdminPasswordChange.Location = new System.Drawing.Point(83, 7);
+            this.picSuperAdminPasswordChange.Location = new System.Drawing.Point(72, 11);
             this.picSuperAdminPasswordChange.Margin = new System.Windows.Forms.Padding(0);
             this.picSuperAdminPasswordChange.Name = "picSuperAdminPasswordChange";
             this.picSuperAdminPasswordChange.Size = new System.Drawing.Size(20, 20);
             this.picSuperAdminPasswordChange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminPasswordChange.TabIndex = 1;
             this.picSuperAdminPasswordChange.TabStop = false;
+            this.picSuperAdminPasswordChange.Click += new System.EventHandler(this.pnlSuperAdminPasswordChange_Click);
+            this.picSuperAdminPasswordChange.MouseEnter += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseEnter);
+            this.picSuperAdminPasswordChange.MouseLeave += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseLeave);
             // 
             // lblSuperAdminPasswordChange
             // 
             this.lblSuperAdminPasswordChange.AutoSize = true;
             this.lblSuperAdminPasswordChange.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuperAdminPasswordChange.Location = new System.Drawing.Point(108, 7);
+            this.lblSuperAdminPasswordChange.Location = new System.Drawing.Point(98, 8);
             this.lblSuperAdminPasswordChange.Margin = new System.Windows.Forms.Padding(0);
             this.lblSuperAdminPasswordChange.Name = "lblSuperAdminPasswordChange";
             this.lblSuperAdminPasswordChange.Size = new System.Drawing.Size(146, 23);
             this.lblSuperAdminPasswordChange.TabIndex = 0;
             this.lblSuperAdminPasswordChange.Text = "Change Password";
+            this.lblSuperAdminPasswordChange.Click += new System.EventHandler(this.pnlSuperAdminPasswordChange_Click);
+            this.lblSuperAdminPasswordChange.MouseEnter += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseEnter);
+            this.lblSuperAdminPasswordChange.MouseLeave += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseLeave);
             // 
             // timerSidebar
             // 
@@ -643,32 +777,22 @@
             // pnlMainPanel
             // 
             this.pnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainPanel.Location = new System.Drawing.Point(356, 74);
+            this.pnlMainPanel.Location = new System.Drawing.Point(321, 45);
+            this.pnlMainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMainPanel.Name = "pnlMainPanel";
-            this.pnlMainPanel.Size = new System.Drawing.Size(989, 596);
+            this.pnlMainPanel.Size = new System.Drawing.Size(1048, 682);
             this.pnlMainPanel.TabIndex = 3;
-            // 
-            // picSettingsArrowe
-            // 
-            this.picSettingsArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
-            this.picSettingsArrowe.Location = new System.Drawing.Point(303, 21);
-            this.picSettingsArrowe.Margin = new System.Windows.Forms.Padding(0);
-            this.picSettingsArrowe.Name = "picSettingsArrowe";
-            this.picSettingsArrowe.Size = new System.Drawing.Size(17, 17);
-            this.picSettingsArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSettingsArrowe.TabIndex = 2;
-            this.picSettingsArrowe.TabStop = false;
-            this.picSettingsArrowe.Click += new System.EventHandler(this.pnlSettings_Click);
             // 
             // FrmSAMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1345, 670);
+            this.ClientSize = new System.Drawing.Size(1369, 727);
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
-            this.MinimumSize = new System.Drawing.Size(1363, 717);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1369, 727);
             this.Name = "FrmSAMainForm";
             this.Text = "FrmSAMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -676,7 +800,15 @@
             this.pnlTopbar.ResumeLayout(false);
             this.tlpTopbar.ResumeLayout(false);
             this.tlpTopbar.PerformLayout();
+            this.pnlExitMinimizeRestore.ResumeLayout(false);
+            this.pnlMinimize.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
+            this.pnlRestore.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRestore)).EndInit();
+            this.pnlExit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).EndInit();
+            this.pnlDateTime.ResumeLayout(false);
             this.tlpDateTime.ResumeLayout(false);
             this.tlpDateTime.PerformLayout();
             this.pnlCalander.ResumeLayout(false);
@@ -705,12 +837,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFinancialManagement)).EndInit();
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).EndInit();
             this.pnlDropDownSettings.ResumeLayout(false);
             this.pnlSuperAdminPasswordChange.ResumeLayout(false);
             this.pnlSuperAdminPasswordChange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPasswordChange)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSettingsArrowe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -720,16 +852,8 @@
         private System.Windows.Forms.Panel pnlTopbar;
         private System.Windows.Forms.TableLayoutPanel tlpTopbar;
         private System.Windows.Forms.Label lblGymLogo;
-        private System.Windows.Forms.TableLayoutPanel tlpDateTime;
-        private System.Windows.Forms.Panel pnlCalander;
-        private System.Windows.Forms.PictureBox picCalander;
-        private System.Windows.Forms.Panel pnlColock;
-        private System.Windows.Forms.PictureBox picClock;
-        private System.Windows.Forms.Panel pnlModule;
         private System.Windows.Forms.PictureBox picGymLogo;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Panel pnlLogout;
         private System.Windows.Forms.Label lblLogout;
@@ -754,12 +878,27 @@
         private System.Windows.Forms.Panel pnlSettings;
         private System.Windows.Forms.Label lblSettings;
         private System.Windows.Forms.Panel pnlDropDownSettings;
-        private System.Windows.Forms.Panel pnlSuperAdminPasswordChange;
-        private System.Windows.Forms.PictureBox picSuperAdminPasswordChange;
-        private System.Windows.Forms.Label lblSuperAdminPasswordChange;
         private System.Windows.Forms.Timer timerSidebar;
         private System.Windows.Forms.Panel pnlMainPanel;
         private System.Windows.Forms.PictureBox picSettingsArrowe;
+        private System.Windows.Forms.Panel pnlSuperAdminPasswordChange;
+        private System.Windows.Forms.PictureBox picSuperAdminPasswordChange;
+        private System.Windows.Forms.Label lblSuperAdminPasswordChange;
+        private System.Windows.Forms.TableLayoutPanel tlpDateTime;
+        private System.Windows.Forms.Panel pnlCalander;
+        private System.Windows.Forms.PictureBox picCalander;
+        private System.Windows.Forms.Panel pnlColock;
+        private System.Windows.Forms.PictureBox picClock;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Panel pnlExitMinimizeRestore;
+        private System.Windows.Forms.Panel pnlDateTime;
+        private System.Windows.Forms.Panel pnlMinimize;
+        private System.Windows.Forms.Panel pnlRestore;
+        private System.Windows.Forms.Panel pnlExit;
+        private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.PictureBox picMinimize;
+        private System.Windows.Forms.PictureBox picRestore;
 
     }
 }

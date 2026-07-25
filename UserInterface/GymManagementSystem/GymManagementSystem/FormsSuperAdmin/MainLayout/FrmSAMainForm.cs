@@ -208,7 +208,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlEmployeeManagement.BackColor = Color.FromArgb(190, 216, 230);
                 pnlEmployeeManagement.ForeColor = Color.Black;
-                //picEmployeeManagement.Image = Properties.Resources.employeeManagementHOVER; 
+                picEmployeeManagement.Image = Properties.Resources.EmployeeHOVER;
             }
         }
 
@@ -218,7 +218,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlEmployeeManagement.BackColor = Color.FromArgb(34, 52, 72);
                 pnlEmployeeManagement.ForeColor = Color.White;
-                //picEmployeeManagement.Image = Properties.Resources.employeeManagement; 
+                picEmployeeManagement.Image = Properties.Resources.Employee;
             }
         }
 
@@ -227,7 +227,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             SelectPanel(pnlEmployeeManagement);
 
             pnlEmployeeManagement.ForeColor = Color.White;
-            //picEmployeeManagement.Image = Properties.Resources.employeeManagement;
+            picEmployeeManagement.Image = Properties.Resources.Employee;
 
             ExpandIfCollapsed();
         }
@@ -238,7 +238,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlEmployeeSalaryManagement.BackColor = Color.FromArgb(190, 216, 230);
                 pnlEmployeeSalaryManagement.ForeColor = Color.Black;
-                //picEmployeeSalaryManagement.Image = Properties.Resources.employeeSalaryManagementHOVER;
+                picEmployeeSalaryManagement.Image = Properties.Resources.SalaryHOVER;
             }
         }
 
@@ -248,7 +248,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlEmployeeSalaryManagement.BackColor = Color.FromArgb(34, 52, 72);
                 pnlEmployeeSalaryManagement.ForeColor = Color.White;
-                //picEmployeeSalaryManagement.Image = Properties.Resources.employeeSalaryManagement;
+                picEmployeeSalaryManagement.Image = Properties.Resources.Salary;
             }
         }
 
@@ -257,7 +257,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             SelectPanel(pnlEmployeeSalaryManagement);
 
             pnlEmployeeSalaryManagement.ForeColor = Color.White;
-            //picEmployeeSalaryManagement.Image = Properties.Resources.employeeSalaryManagement;
+            picEmployeeSalaryManagement.Image = Properties.Resources.Salary;
 
             ExpandIfCollapsed();
         }
@@ -268,7 +268,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlFinancialManagement.BackColor = Color.FromArgb(190, 216, 230);
                 pnlFinancialManagement.ForeColor = Color.Black;
-                //picFinancialManagement.Image = Properties.Resources.financialManagementHOVER;
+                picFinancialManagement.Image = Properties.Resources.FinancialsHOVER;
             }
         }
 
@@ -278,7 +278,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlFinancialManagement.BackColor = Color.FromArgb(34, 52, 72);
                 pnlFinancialManagement.ForeColor = Color.White;
-                //picFinancialManagement.Image = Properties.Resources.financialManagement;
+                picFinancialManagement.Image = Properties.Resources.Financials;
             }
         }
 
@@ -287,7 +287,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             SelectPanel(pnlFinancialManagement);
 
             pnlFinancialManagement.ForeColor = Color.White;
-            //picFinancialManagement.Image = Properties.Resources.financialManagement;
+            picFinancialManagement.Image = Properties.Resources.Financials;
 
             ExpandIfCollapsed();
         }
@@ -297,6 +297,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 pnlSettings.BackColor = Color.FromArgb(190, 216, 230);
                 pnlSettings.ForeColor = Color.Black;
+                picSettingsArrowe.Image = Properties.Resources.downArrowB;
                 picSettings.Image = Properties.Resources.settingHOVER;
             }
 
@@ -348,6 +349,77 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+        }
+
+        private void pnlSuperAdminPasswordChange_MouseEnter(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlSuperAdminPasswordChange)
+            {
+                pnlSuperAdminPasswordChange.BackColor = Color.FromArgb(190, 216, 230);
+                pnlSuperAdminPasswordChange.ForeColor = Color.Black;
+                picSuperAdminPasswordChange.Image = Properties.Resources.record_button;           
+            }
+
+        }
+
+        private void pnlSuperAdminPasswordChange_MouseLeave(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlSuperAdminPasswordChange)
+            {
+                pnlSuperAdminPasswordChange.BackColor = Color.FromArgb(34, 52, 72);
+                pnlSuperAdminPasswordChange.ForeColor = Color.White;
+                picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
+            }
+        }
+
+        private void pnlSuperAdminPasswordChange_Click(object sender, EventArgs e)
+        {
+            ExpandIfCollapsed();
+        }
+
+        private void pnlExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlExit_MouseEnter(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.FromArgb(255, 0, 0);
+        }
+
+        private void pnlExit_MouseLeave(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.FromArgb(240, 244, 248);
+        }
+
+        private void pnlRestore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlRestore_MouseEnter(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.FromArgb(220, 220, 220);
+        }
+
+        private void pnlRestore_MouseLeave(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.FromArgb(240, 244, 248);
+        }
+
+        private void pnlMinimize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.FromArgb(220, 220, 220);
+        }
+
+        private void pnlMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.FromArgb(240, 244, 248);
         }
 
     }
