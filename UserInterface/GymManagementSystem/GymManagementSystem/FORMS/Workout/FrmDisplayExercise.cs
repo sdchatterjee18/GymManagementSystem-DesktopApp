@@ -15,5 +15,10 @@ namespace GymManagementSystem.FORMS.Workout
         {
             InitializeComponent();
         }
+
+        private void tlpExerciseEntireForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
