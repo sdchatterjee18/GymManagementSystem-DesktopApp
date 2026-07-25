@@ -72,6 +72,16 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         }
 
+        private void tlpSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
