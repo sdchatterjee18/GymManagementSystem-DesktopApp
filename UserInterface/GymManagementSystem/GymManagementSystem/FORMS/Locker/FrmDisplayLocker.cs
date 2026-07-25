@@ -35,12 +35,12 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void pnlButton_MouseEnter(object sender, EventArgs e)
         {
-            this.pnlButton.BackColor = Color.FromArgb(200, 200, 200);
+            this.tlpAddNewLocker.BackColor = Color.FromArgb(220, 225, 230);
         }
 
         private void pnlButton_MouseLeave(object sender, EventArgs e)
         {
-            this.pnlButton.BackColor = Color.FromArgb(184, 195, 179);
+            this.tlpAddNewLocker.BackColor = Color.FromArgb(236, 240, 243);
         }
 
         private void getLockersDetails()
@@ -75,6 +75,26 @@ namespace GymManagementSystem.FORMS.Locker
                             dgvDisplayLocker.Rows[rowIndex].Cells["colLNo"].Value = dataRow["LockerNo"].ToString();
                             dgvDisplayLocker.Rows[rowIndex].Cells["colAllocatedTo"].Value =dataRow["MemberName"].ToString();
                             dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Value =dataRow["LockerStatus"].ToString();
+
+
+                            string status = dataRow["LockerStatus"].ToString().Trim();
+
+                            if (status.Equals("Available", StringComparison.OrdinalIgnoreCase))
+                            {
+                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(20, 140, 60); 
+                            }
+                            else if (status.Equals("Occupied", StringComparison.OrdinalIgnoreCase))
+                            {
+                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(200, 40, 40); 
+                            }
+                            else if (status.Equals("Maintenance", StringComparison.OrdinalIgnoreCase))
+                            {
+                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(184, 134, 11); 
+                            }
+                            else
+                            {
+                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.Black;
+                            }
                         }
                     }
                 }
@@ -94,8 +114,8 @@ namespace GymManagementSystem.FORMS.Locker
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -107,13 +127,35 @@ namespace GymManagementSystem.FORMS.Locker
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
                 dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-                dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
+
+                string colName = dgvDisplayLocker.Columns[e.ColumnIndex].Name;
+
+                if (colName == "colSlNo")
+                {
+                    dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(30, 60, 220);
+                }
+                else if (colName == "colLStatus")
+                {
+                    object cellValue = dgvDisplayLocker.Rows[e.RowIndex].Cells["colLStatus"].Value;
+                    string status = (cellValue != null) ? cellValue.ToString().Trim() : null;
+
+                    if (status != null && (status.Equals("Available", StringComparison.OrdinalIgnoreCase) || status.Equals("Active", StringComparison.OrdinalIgnoreCase)))
+                        dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(20, 140, 60);
+                    else if (status != null && (status.Equals("Occupied", StringComparison.OrdinalIgnoreCase) || status.Equals("Inactive", StringComparison.OrdinalIgnoreCase)))
+                        dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(200, 40, 40);
+                    else if (status != null && status.Equals("Maintenance", StringComparison.OrdinalIgnoreCase))
+                        dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(184, 134, 11);
+                }
+                else
+                {
+                    dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
+                }
             }
         }
     
@@ -127,5 +169,6 @@ namespace GymManagementSystem.FORMS.Locker
                 dgvDisplayLocker.ClearSelection();
             }
         }
+      
     }
 }
