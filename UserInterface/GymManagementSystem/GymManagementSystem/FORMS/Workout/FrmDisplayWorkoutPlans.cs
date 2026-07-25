@@ -23,6 +23,9 @@ namespace GymManagementSystem.FORMS.Workout
         {
             LoadExercise();
             LoadWorkoutPlans();
+
+            dgvExerciseTable.ClearSelection();
+            dgvWorkoutPlans.ClearSelection();
         }
 
 
@@ -88,13 +91,13 @@ namespace GymManagementSystem.FORMS.Workout
 
                         using (SqlDataReader dr = cmd.ExecuteReader())
                         {
-                            dgvMembershipPlan.Rows.Clear();
+                            dgvWorkoutPlans.Rows.Clear();
 
                             int serialNo = 1;
 
                             while (dr.Read())
                             {
-                                dgvMembershipPlan.Rows.Add(
+                                dgvWorkoutPlans.Rows.Add(
                                     serialNo,
                                     dr["WorkoutName"].ToString(),
                                     dr["Description"].ToString()
@@ -112,7 +115,105 @@ namespace GymManagementSystem.FORMS.Workout
             }
         }
 
+        private void dgvExerciseTable_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvExerciseTable.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvExerciseTable.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvExerciseTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void dgvExerciseTable_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+              if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvExerciseTable.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvExerciseTable.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvExerciseTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
+
+                
+            }
+        }
+
+        private void dgvWorkoutPlans_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvWorkoutPlans.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvWorkoutPlans.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvWorkoutPlans.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
 
 
-    }
+            }
+        }
+
+        private void dgvWorkoutPlans_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvWorkoutPlans.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+                dgvWorkoutPlans.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvWorkoutPlans.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void dgvExerciseTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            if (dgvExerciseTable.Columns[e.ColumnIndex].Name == "colSerialNo1")
+            {
+
+                e.CellStyle.ForeColor = Color.Navy;
+            }    
+        }
+
+        private void dgvWorkoutPlans_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvWorkoutPlans.Columns[e.ColumnIndex].Name == "colSerialNo2")
+            {
+
+                e.CellStyle.ForeColor = Color.Navy;
+            }   
+        }
+
+        private void tlpExerciseHeader_Click(object sender, EventArgs e)
+        {
+            dgvExerciseTable.ClearSelection();
+            dgvWorkoutPlans.ClearSelection();
+        }
+
+        private void pnlClickToAddNewExercise_Click(object sender, EventArgs e)
+        {
+            FrmAddNewExercise frmE = new FrmAddNewExercise();
+            frmE.Show();
+        }
+
+        private void pnlClickToAddNewWorkoutPlan_Click(object sender, EventArgs e)
+        {
+            FrmAddNewWorkoutPlan frmW = new FrmAddNewWorkoutPlan();
+            frmW.Show();
+        }
+
+        
+
+        }
+
+
+
+    
 }
