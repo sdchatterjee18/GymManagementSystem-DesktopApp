@@ -48,12 +48,12 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.tlpSubmition = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickSubmit = new System.Windows.Forms.Panel();
-            this.tlpSubmitBox = new System.Windows.Forms.TableLayoutPanel();
-            this.picAddButton = new System.Windows.Forms.PictureBox();
-            this.lblAddNewPlan = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblMessageBox = new System.Windows.Forms.Label();
             this.lblPlanName = new System.Windows.Forms.Label();
+            this.tlpSubmitBox = new System.Windows.Forms.TableLayoutPanel();
+            this.picAddButton = new System.Windows.Forms.PictureBox();
+            this.lblAddNewPlan = new System.Windows.Forms.Label();
             this.pnlSubNewMembarshipPlanTitle.SuspendLayout();
             this.tlpMainNewMembarshipPlanTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,11 +79,11 @@
             // tlpMainNewMembarshipPlanTitle
             // 
             this.tlpMainNewMembarshipPlanTitle.ColumnCount = 5;
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.4898F));
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.5102F));
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.36735F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.63265F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.pictureBox1, 1, 0);
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.tlpAllMembershipPlanTitle, 2, 0);
             this.tlpMainNewMembarshipPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -99,10 +99,10 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 59);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -119,10 +119,10 @@
             this.tlpAllMembershipPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAllMembershipPlanTitle.Name = "tlpAllMembershipPlanTitle";
             this.tlpAllMembershipPlanTitle.RowCount = 3;
-            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
-            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.38889F));
-            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.05263F));
-            this.tlpAllMembershipPlanTitle.Size = new System.Drawing.Size(186, 59);
+            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.23729F));
+            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.0339F));
+            this.tlpAllMembershipPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.0339F));
+            this.tlpAllMembershipPlanTitle.Size = new System.Drawing.Size(185, 59);
             this.tlpAllMembershipPlanTitle.TabIndex = 3;
             // 
             // lblViewPlans
@@ -144,7 +144,7 @@
             this.lblAllMembershipPlan.AutoSize = true;
             this.lblAllMembershipPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllMembershipPlan.ForeColor = System.Drawing.Color.Navy;
-            this.lblAllMembershipPlan.Location = new System.Drawing.Point(2, 9);
+            this.lblAllMembershipPlan.Location = new System.Drawing.Point(2, 11);
             this.lblAllMembershipPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAllMembershipPlan.Name = "lblAllMembershipPlan";
             this.lblAllMembershipPlan.Size = new System.Drawing.Size(181, 21);
@@ -160,7 +160,7 @@
             this.pnlAddNewMwmbwrshipForm.Location = new System.Drawing.Point(0, 0);
             this.pnlAddNewMwmbwrshipForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddNewMwmbwrshipForm.Name = "pnlAddNewMwmbwrshipForm";
-            this.pnlAddNewMwmbwrshipForm.Size = new System.Drawing.Size(344, 371);
+            this.pnlAddNewMwmbwrshipForm.Size = new System.Drawing.Size(344, 421);
             this.pnlAddNewMwmbwrshipForm.TabIndex = 0;
             // 
             // tlpNewMembarshipPlanDetails
@@ -168,7 +168,7 @@
             this.tlpNewMembarshipPlanDetails.ColumnCount = 3;
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.954825F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.04517F));
-            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
+            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblDescription, 1, 8);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblAmount, 1, 6);
@@ -197,7 +197,7 @@
             this.tlpNewMembarshipPlanDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.226107F));
             this.tlpNewMembarshipPlanDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.01632F));
             this.tlpNewMembarshipPlanDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.51981F));
-            this.tlpNewMembarshipPlanDetails.Size = new System.Drawing.Size(344, 349);
+            this.tlpNewMembarshipPlanDetails.Size = new System.Drawing.Size(344, 351);
             this.tlpNewMembarshipPlanDetails.TabIndex = 1;
             // 
             // lblDescription
@@ -206,7 +206,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.Navy;
-            this.lblDescription.Location = new System.Drawing.Point(21, 218);
+            this.lblDescription.Location = new System.Drawing.Point(21, 219);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(88, 19);
@@ -219,7 +219,7 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.ForeColor = System.Drawing.Color.Navy;
-            this.lblAmount.Location = new System.Drawing.Point(21, 165);
+            this.lblAmount.Location = new System.Drawing.Point(21, 166);
             this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(66, 19);
@@ -275,7 +275,7 @@
             // 
             this.cmbDuration.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDuration.FormattingEnabled = true;
-            this.cmbDuration.Location = new System.Drawing.Point(21, 135);
+            this.cmbDuration.Location = new System.Drawing.Point(21, 136);
             this.cmbDuration.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDuration.Name = "cmbDuration";
             this.cmbDuration.Size = new System.Drawing.Size(299, 20);
@@ -284,7 +284,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(21, 242);
+            this.txtDescription.Location = new System.Drawing.Point(21, 243);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -294,7 +294,7 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(21, 189);
+            this.txtAmount.Location = new System.Drawing.Point(21, 190);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(299, 21);
@@ -302,86 +302,45 @@
             // 
             // tlpSubmition
             // 
+            this.tlpSubmition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSubmition.ColumnCount = 3;
-            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.85961F));
-            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.00648F));
-            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.91793F));
+            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.4026F));
+            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.32467F));
+            this.tlpSubmition.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.5974F));
             this.tlpSubmition.Controls.Add(this.pnlClickSubmit, 2, 0);
-            this.tlpSubmition.Controls.Add(this.btnClear, 1, 0);
             this.tlpSubmition.Controls.Add(this.lblMessageBox, 0, 0);
-            this.tlpSubmition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSubmition.Location = new System.Drawing.Point(21, 300);
+            this.tlpSubmition.Controls.Add(this.btnClear, 1, 0);
+            this.tlpSubmition.Location = new System.Drawing.Point(21, 310);
             this.tlpSubmition.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmition.Name = "tlpSubmition";
             this.tlpSubmition.RowCount = 1;
             this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSubmition.Size = new System.Drawing.Size(309, 47);
+            this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSubmition.Size = new System.Drawing.Size(308, 30);
             this.tlpSubmition.TabIndex = 6;
             // 
             // pnlClickSubmit
             // 
-            this.pnlClickSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlClickSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
             this.pnlClickSubmit.Controls.Add(this.tlpSubmitBox);
-            this.pnlClickSubmit.Location = new System.Drawing.Point(229, 17);
+            this.pnlClickSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlClickSubmit.Location = new System.Drawing.Point(224, 2);
             this.pnlClickSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickSubmit.Name = "pnlClickSubmit";
-            this.pnlClickSubmit.Size = new System.Drawing.Size(78, 28);
+            this.pnlClickSubmit.Size = new System.Drawing.Size(82, 26);
             this.pnlClickSubmit.TabIndex = 6;
-            // 
-            // tlpSubmitBox
-            // 
-            this.tlpSubmitBox.ColumnCount = 2;
-            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.77311F));
-            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.22689F));
-            this.tlpSubmitBox.Controls.Add(this.picAddButton, 0, 0);
-            this.tlpSubmitBox.Controls.Add(this.lblAddNewPlan, 1, 0);
-            this.tlpSubmitBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSubmitBox.Location = new System.Drawing.Point(0, 0);
-            this.tlpSubmitBox.Margin = new System.Windows.Forms.Padding(2);
-            this.tlpSubmitBox.Name = "tlpSubmitBox";
-            this.tlpSubmitBox.RowCount = 1;
-            this.tlpSubmitBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSubmitBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSubmitBox.Size = new System.Drawing.Size(78, 28);
-            this.tlpSubmitBox.TabIndex = 4;
-            // 
-            // picAddButton
-            // 
-            this.picAddButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picAddButton.Image = ((System.Drawing.Image)(resources.GetObject("picAddButton.Image")));
-            this.picAddButton.Location = new System.Drawing.Point(9, 2);
-            this.picAddButton.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddButton.Name = "picAddButton";
-            this.picAddButton.Size = new System.Drawing.Size(14, 23);
-            this.picAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddButton.TabIndex = 1;
-            this.picAddButton.TabStop = false;
-            // 
-            // lblAddNewPlan
-            // 
-            this.lblAddNewPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAddNewPlan.AutoSize = true;
-            this.lblAddNewPlan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewPlan.ForeColor = System.Drawing.Color.White;
-            this.lblAddNewPlan.Location = new System.Drawing.Point(27, 0);
-            this.lblAddNewPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAddNewPlan.Name = "lblAddNewPlan";
-            this.lblAddNewPlan.Size = new System.Drawing.Size(47, 28);
-            this.lblAddNewPlan.TabIndex = 0;
-            this.lblAddNewPlan.Text = "Submit";
             // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.btnClear.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(171, 16);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Location = new System.Drawing.Point(164, 1);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(54, 29);
+            this.btnClear.Size = new System.Drawing.Size(55, 29);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -392,7 +351,7 @@
             this.lblMessageBox.AutoSize = true;
             this.lblMessageBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessageBox.ForeColor = System.Drawing.Color.Maroon;
-            this.lblMessageBox.Location = new System.Drawing.Point(2, 16);
+            this.lblMessageBox.Location = new System.Drawing.Point(2, 7);
             this.lblMessageBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 15);
@@ -411,17 +370,61 @@
             this.lblPlanName.TabIndex = 0;
             this.lblPlanName.Text = "Plan Name :";
             // 
+            // tlpSubmitBox
+            // 
+            this.tlpSubmitBox.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tlpSubmitBox.ColumnCount = 2;
+            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
+            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73F));
+            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSubmitBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSubmitBox.Controls.Add(this.picAddButton, 0, 0);
+            this.tlpSubmitBox.Controls.Add(this.lblAddNewPlan, 1, 0);
+            this.tlpSubmitBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSubmitBox.Location = new System.Drawing.Point(0, 0);
+            this.tlpSubmitBox.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSubmitBox.Name = "tlpSubmitBox";
+            this.tlpSubmitBox.RowCount = 1;
+            this.tlpSubmitBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSubmitBox.Size = new System.Drawing.Size(82, 26);
+            this.tlpSubmitBox.TabIndex = 5;
+            // 
+            // picAddButton
+            // 
+            this.picAddButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picAddButton.Image = ((System.Drawing.Image)(resources.GetObject("picAddButton.Image")));
+            this.picAddButton.Location = new System.Drawing.Point(6, 3);
+            this.picAddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.picAddButton.Name = "picAddButton";
+            this.picAddButton.Size = new System.Drawing.Size(14, 20);
+            this.picAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddButton.TabIndex = 1;
+            this.picAddButton.TabStop = false;
+            // 
+            // lblAddNewPlan
+            // 
+            this.lblAddNewPlan.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblAddNewPlan.AutoSize = true;
+            this.lblAddNewPlan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewPlan.ForeColor = System.Drawing.Color.White;
+            this.lblAddNewPlan.Location = new System.Drawing.Point(28, 3);
+            this.lblAddNewPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddNewPlan.Name = "lblAddNewPlan";
+            this.lblAddNewPlan.Size = new System.Drawing.Size(52, 19);
+            this.lblAddNewPlan.TabIndex = 0;
+            this.lblAddNewPlan.Text = "Submit";
+            // 
             // FrmAddMembershipPlans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 371);
+            this.ClientSize = new System.Drawing.Size(344, 421);
             this.Controls.Add(this.pnlAddNewMwmbwrshipForm);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(350, 420);
+            this.MaximumSize = new System.Drawing.Size(360, 460);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(350, 400);
+            this.MinimumSize = new System.Drawing.Size(360, 460);
             this.Name = "FrmAddMembershipPlans";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMembershipPlans";
@@ -467,10 +470,10 @@
         private System.Windows.Forms.TableLayoutPanel tlpSubmition;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlClickSubmit;
-        private System.Windows.Forms.TableLayoutPanel tlpSubmitBox;
-        private System.Windows.Forms.Label lblAddNewPlan;
-        private System.Windows.Forms.PictureBox picAddButton;
         private System.Windows.Forms.Label lblMessageBox;
+        private System.Windows.Forms.TableLayoutPanel tlpSubmitBox;
+        private System.Windows.Forms.PictureBox picAddButton;
+        private System.Windows.Forms.Label lblAddNewPlan;
 
     }
 }

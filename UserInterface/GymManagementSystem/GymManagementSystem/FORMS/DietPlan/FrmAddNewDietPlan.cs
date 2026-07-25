@@ -17,9 +17,6 @@ namespace GymManagementSystem.FORMS.DietPlan
             
             
         }
-
-    
-
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
             int ClickCount = 1;
@@ -48,38 +45,15 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             this.Dispose();
         }
-
-        private void lblCancel_MouseEnter(object sender, EventArgs e)
-        {
-            lblCancel.BackColor = Color.DarkRed;
-            lblCancel.ForeColor = Color.White;
-
-        }
-
-        private void lblCancel_MouseLeave(object sender, EventArgs e)
-        {
-            lblCancel.BackColor = Color.Transparent;
-            lblCancel.ForeColor = Color.Black;
-        }
-
         private void lblNewDietPlanHeader_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblSubTitle_Click(object sender, EventArgs e)
+        private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void tlpSubmit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tlpClear_Click(object sender, EventArgs e)
-        {
-
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         

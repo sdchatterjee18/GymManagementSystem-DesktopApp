@@ -937,7 +937,7 @@
             this.lblMembershipPlan.TabIndex = 1;
             this.lblMembershipPlan.Text = "Membership Plan";
             this.lblMembershipPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMembershipPlan.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
+            this.lblMembershipPlan.Click += new System.EventHandler(this.pnlMembershipPlan_Click);
             this.lblMembershipPlan.MouseEnter += new System.EventHandler(this.pnlMembershipPlan_MouseEnter);
             this.lblMembershipPlan.MouseLeave += new System.EventHandler(this.pnlMembershipPlan_MouseLeave);
             // 
@@ -1454,7 +1454,6 @@
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";
