@@ -135,6 +135,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             dgvShowAllAddRegistrationFees.ClearSelection();
             FrmAddRegistrationFee frmAddRegistrationFee = new FrmAddRegistrationFee();
             frmAddRegistrationFee.ShowDialog();
+
         }
 
         private void dgvShowAllAddRegistrationFees_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

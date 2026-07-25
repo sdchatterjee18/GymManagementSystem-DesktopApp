@@ -19,19 +19,15 @@ namespace GymManagementSystem.FORMS.Locker
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+        private void pnlClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnClose_MouseEnter(object sender, EventArgs e)
+        private void tlpButton_Click(object sender, EventArgs e)
         {
-            this.btnClose.ForeColor = Color.White;
-        }
-
-        private void btnClose_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnClose.ForeColor = Color.Black;
+            // It will Add new Locker
         }
     }
 }

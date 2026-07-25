@@ -38,153 +38,153 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlCalander = new System.Windows.Forms.Panel();
+            this.picCalander = new System.Windows.Forms.PictureBox();
             this.pnlColock = new System.Windows.Forms.Panel();
+            this.picClock = new System.Windows.Forms.PictureBox();
             this.pnlModule = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogout = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
+            this.picLogout = new System.Windows.Forms.PictureBox();
             this.fnlSidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
+            this.picMenu = new System.Windows.Forms.PictureBox();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
+            this.picDashboard = new System.Windows.Forms.PictureBox();
             this.pnlMembers = new System.Windows.Forms.Panel();
             this.lblMembers = new System.Windows.Forms.Label();
+            this.picMembers = new System.Windows.Forms.PictureBox();
+            this.picMembersArrowe = new System.Windows.Forms.PictureBox();
             this.pnlDropDownMembers = new System.Windows.Forms.Panel();
             this.pnlMemberTrainerAssignment = new System.Windows.Forms.Panel();
+            this.picMemberTrainerAssignment = new System.Windows.Forms.PictureBox();
             this.lblMemberTrainerAssignment = new System.Windows.Forms.Label();
             this.pnlViewAllMembers = new System.Windows.Forms.Panel();
             this.lblViewAllMembers = new System.Windows.Forms.Label();
+            this.picViewAllMembers = new System.Windows.Forms.PictureBox();
             this.pnlTrainer = new System.Windows.Forms.Panel();
             this.lblTrainer = new System.Windows.Forms.Label();
+            this.picTrainer = new System.Windows.Forms.PictureBox();
             this.pnlFitnessTest = new System.Windows.Forms.Panel();
             this.lblFitnessTest = new System.Windows.Forms.Label();
+            this.picFitnessTest = new System.Windows.Forms.PictureBox();
             this.pnlMemberAttendance = new System.Windows.Forms.Panel();
+            this.picMemberAttendance = new System.Windows.Forms.PictureBox();
+            this.picMemberAttendanceArrowe = new System.Windows.Forms.PictureBox();
             this.pnlDropDownMemberAttendance = new System.Windows.Forms.Panel();
             this.pnlMarkMemberAttendance = new System.Windows.Forms.Panel();
+            this.picMarkMemberAtttendance = new System.Windows.Forms.PictureBox();
             this.lblMarkMemberAttendance = new System.Windows.Forms.Label();
             this.pnlViewMemberAttendance = new System.Windows.Forms.Panel();
+            this.picViewMemberAttendance = new System.Windows.Forms.PictureBox();
             this.lblViewMemberAttendance = new System.Windows.Forms.Label();
             this.pnlMembershipPlan = new System.Windows.Forms.Panel();
             this.lblMembershipPlan = new System.Windows.Forms.Label();
+            this.picMembershipPlan = new System.Windows.Forms.PictureBox();
             this.pnlShift = new System.Windows.Forms.Panel();
             this.lblShift = new System.Windows.Forms.Label();
+            this.picShift = new System.Windows.Forms.PictureBox();
             this.pnlLocker = new System.Windows.Forms.Panel();
             this.lblLocker = new System.Windows.Forms.Label();
+            this.picLocker = new System.Windows.Forms.PictureBox();
             this.pnlExerciseAndWorkout = new System.Windows.Forms.Panel();
+            this.picExerciseAndWorkout = new System.Windows.Forms.PictureBox();
+            this.picExerciseAndWorkoutArrowe = new System.Windows.Forms.PictureBox();
             this.pnlDropDownExerciseAndWorkout = new System.Windows.Forms.Panel();
             this.pnlExerCise = new System.Windows.Forms.Panel();
+            this.picExercise = new System.Windows.Forms.PictureBox();
             this.lblExercise = new System.Windows.Forms.Label();
             this.pnlWorkoutPlans = new System.Windows.Forms.Panel();
+            this.picWorkoutPlans = new System.Windows.Forms.PictureBox();
             this.lblWorkoutPlans = new System.Windows.Forms.Label();
             this.pnlWorkoutShedule = new System.Windows.Forms.Panel();
+            this.picWorkoutShedule = new System.Windows.Forms.PictureBox();
             this.lblWorkoutShedule = new System.Windows.Forms.Label();
             this.pnlRegistrationFees = new System.Windows.Forms.Panel();
             this.lblRegistrationFees = new System.Windows.Forms.Label();
+            this.picRegistrationFees = new System.Windows.Forms.PictureBox();
             this.pnlDietPlan = new System.Windows.Forms.Panel();
             this.lblDietPlan = new System.Windows.Forms.Label();
+            this.picDietPlan = new System.Windows.Forms.PictureBox();
             this.pnlPayment = new System.Windows.Forms.Panel();
             this.lblPayment = new System.Windows.Forms.Label();
+            this.picPayment = new System.Windows.Forms.PictureBox();
             this.pnlExpense = new System.Windows.Forms.Panel();
             this.lblExpense = new System.Windows.Forms.Label();
+            this.picExpense = new System.Windows.Forms.PictureBox();
             this.pnlSettins = new System.Windows.Forms.Panel();
             this.lblSettings = new System.Windows.Forms.Label();
+            this.picSettings = new System.Windows.Forms.PictureBox();
             this.pnlSpecer = new System.Windows.Forms.Panel();
             this.pnlMainPanel = new System.Windows.Forms.Panel();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
-            this.picLogout = new System.Windows.Forms.PictureBox();
-            this.picMenu = new System.Windows.Forms.PictureBox();
-            this.picDashboard = new System.Windows.Forms.PictureBox();
-            this.picMembers = new System.Windows.Forms.PictureBox();
-            this.picMembersArrowe = new System.Windows.Forms.PictureBox();
-            this.picMemberTrainerAssignment = new System.Windows.Forms.PictureBox();
-            this.picViewAllMembers = new System.Windows.Forms.PictureBox();
-            this.picTrainer = new System.Windows.Forms.PictureBox();
-            this.picFitnessTest = new System.Windows.Forms.PictureBox();
-            this.picMemberAttendance = new System.Windows.Forms.PictureBox();
-            this.picMemberAttendanceArrowe = new System.Windows.Forms.PictureBox();
-            this.picMarkMemberAtttendance = new System.Windows.Forms.PictureBox();
-            this.picViewMemberAttendance = new System.Windows.Forms.PictureBox();
-            this.picMembershipPlan = new System.Windows.Forms.PictureBox();
-            this.picShift = new System.Windows.Forms.PictureBox();
-            this.picLocker = new System.Windows.Forms.PictureBox();
-            this.picExerciseAndWorkout = new System.Windows.Forms.PictureBox();
-            this.picExerciseAndWorkoutArrowe = new System.Windows.Forms.PictureBox();
-            this.picExercise = new System.Windows.Forms.PictureBox();
-            this.picWorkoutPlans = new System.Windows.Forms.PictureBox();
-            this.picWorkoutShedule = new System.Windows.Forms.PictureBox();
-            this.picRegistrationFees = new System.Windows.Forms.PictureBox();
-            this.picDietPlan = new System.Windows.Forms.PictureBox();
-            this.picPayment = new System.Windows.Forms.PictureBox();
-            this.picExpense = new System.Windows.Forms.PictureBox();
-            this.picSettings = new System.Windows.Forms.PictureBox();
-            this.picCalander = new System.Windows.Forms.PictureBox();
-            this.picClock = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
             this.tlpTopbar.SuspendLayout();
             this.tlpDateTime.SuspendLayout();
             this.pnlCalander.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCalander)).BeginInit();
             this.pnlColock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClock)).BeginInit();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             this.fnlSidebar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
-            this.pnlDashboard.SuspendLayout();
-            this.pnlMembers.SuspendLayout();
-            this.pnlDropDownMembers.SuspendLayout();
-            this.pnlMemberTrainerAssignment.SuspendLayout();
-            this.pnlViewAllMembers.SuspendLayout();
-            this.pnlTrainer.SuspendLayout();
-            this.pnlFitnessTest.SuspendLayout();
-            this.pnlMemberAttendance.SuspendLayout();
-            this.pnlDropDownMemberAttendance.SuspendLayout();
-            this.pnlMarkMemberAttendance.SuspendLayout();
-            this.pnlViewMemberAttendance.SuspendLayout();
-            this.pnlMembershipPlan.SuspendLayout();
-            this.pnlShift.SuspendLayout();
-            this.pnlLocker.SuspendLayout();
-            this.pnlExerciseAndWorkout.SuspendLayout();
-            this.pnlDropDownExerciseAndWorkout.SuspendLayout();
-            this.pnlExerCise.SuspendLayout();
-            this.pnlWorkoutPlans.SuspendLayout();
-            this.pnlWorkoutShedule.SuspendLayout();
-            this.pnlRegistrationFees.SuspendLayout();
-            this.pnlDietPlan.SuspendLayout();
-            this.pnlPayment.SuspendLayout();
-            this.pnlExpense.SuspendLayout();
-            this.pnlSettins.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
+            this.pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).BeginInit();
+            this.pnlMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMembersArrowe)).BeginInit();
+            this.pnlDropDownMembers.SuspendLayout();
+            this.pnlMemberTrainerAssignment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberTrainerAssignment)).BeginInit();
+            this.pnlViewAllMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picViewAllMembers)).BeginInit();
+            this.pnlTrainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTrainer)).BeginInit();
+            this.pnlFitnessTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).BeginInit();
+            this.pnlMemberAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendanceArrowe)).BeginInit();
+            this.pnlDropDownMemberAttendance.SuspendLayout();
+            this.pnlMarkMemberAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMarkMemberAtttendance)).BeginInit();
+            this.pnlViewMemberAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picViewMemberAttendance)).BeginInit();
+            this.pnlMembershipPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMembershipPlan)).BeginInit();
+            this.pnlShift.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShift)).BeginInit();
+            this.pnlLocker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLocker)).BeginInit();
+            this.pnlExerciseAndWorkout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkoutArrowe)).BeginInit();
+            this.pnlDropDownExerciseAndWorkout.SuspendLayout();
+            this.pnlExerCise.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExercise)).BeginInit();
+            this.pnlWorkoutPlans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWorkoutPlans)).BeginInit();
+            this.pnlWorkoutShedule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWorkoutShedule)).BeginInit();
+            this.pnlRegistrationFees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRegistrationFees)).BeginInit();
+            this.pnlDietPlan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDietPlan)).BeginInit();
+            this.pnlPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPayment)).BeginInit();
+            this.pnlExpense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExpense)).BeginInit();
+            this.pnlSettins.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCalander)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberAttendance
@@ -308,6 +308,17 @@
             this.pnlCalander.Size = new System.Drawing.Size(30, 41);
             this.pnlCalander.TabIndex = 4;
             // 
+            // picCalander
+            // 
+            this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
+            this.picCalander.Location = new System.Drawing.Point(11, 19);
+            this.picCalander.Margin = new System.Windows.Forms.Padding(0);
+            this.picCalander.Name = "picCalander";
+            this.picCalander.Size = new System.Drawing.Size(19, 20);
+            this.picCalander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCalander.TabIndex = 0;
+            this.picCalander.TabStop = false;
+            // 
             // pnlColock
             // 
             this.pnlColock.Controls.Add(this.picClock);
@@ -318,6 +329,17 @@
             this.pnlColock.Size = new System.Drawing.Size(30, 41);
             this.pnlColock.TabIndex = 5;
             // 
+            // picClock
+            // 
+            this.picClock.Image = ((System.Drawing.Image)(resources.GetObject("picClock.Image")));
+            this.picClock.Location = new System.Drawing.Point(11, 19);
+            this.picClock.Margin = new System.Windows.Forms.Padding(0);
+            this.picClock.Name = "picClock";
+            this.picClock.Size = new System.Drawing.Size(19, 20);
+            this.picClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picClock.TabIndex = 1;
+            this.picClock.TabStop = false;
+            // 
             // pnlModule
             // 
             this.pnlModule.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -326,6 +348,16 @@
             this.pnlModule.Name = "pnlModule";
             this.pnlModule.Size = new System.Drawing.Size(380, 45);
             this.pnlModule.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer
             // 
@@ -373,6 +405,21 @@
             this.lblLogout.Click += new System.EventHandler(this.pnlLogout_Click);
             this.lblLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
             this.lblLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
+            // 
+            // picLogout
+            // 
+            this.picLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
+            this.picLogout.Location = new System.Drawing.Point(7, 10);
+            this.picLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.picLogout.Name = "picLogout";
+            this.picLogout.Size = new System.Drawing.Size(21, 21);
+            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogout.TabIndex = 0;
+            this.picLogout.TabStop = false;
+            this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
+            this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
+            this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
             // 
             // fnlSidebar
             // 
@@ -434,6 +481,20 @@
             this.lblMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
             this.lblMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
             // 
+            // picMenu
+            // 
+            this.picMenu.Image = ((System.Drawing.Image)(resources.GetObject("picMenu.Image")));
+            this.picMenu.Location = new System.Drawing.Point(11, 8);
+            this.picMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(21, 21);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMenu.TabIndex = 1;
+            this.picMenu.TabStop = false;
+            this.picMenu.Click += new System.EventHandler(this.pnlMenu_Click);
+            this.picMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
+            this.picMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
+            // 
             // pnlDashboard
             // 
             this.pnlDashboard.Controls.Add(this.lblDashboard);
@@ -462,6 +523,20 @@
             this.lblDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
             this.lblDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
             this.lblDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
+            // 
+            // picDashboard
+            // 
+            this.picDashboard.Image = ((System.Drawing.Image)(resources.GetObject("picDashboard.Image")));
+            this.picDashboard.Location = new System.Drawing.Point(11, 8);
+            this.picDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.picDashboard.Name = "picDashboard";
+            this.picDashboard.Size = new System.Drawing.Size(21, 21);
+            this.picDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDashboard.TabIndex = 0;
+            this.picDashboard.TabStop = false;
+            this.picDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
+            this.picDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
+            this.picDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
             // 
             // pnlMembers
             // 
@@ -493,6 +568,34 @@
             this.lblMembers.MouseEnter += new System.EventHandler(this.pnlMembers_MouseEnter);
             this.lblMembers.MouseLeave += new System.EventHandler(this.pnlMembers_MouseLeave);
             // 
+            // picMembers
+            // 
+            this.picMembers.Image = ((System.Drawing.Image)(resources.GetObject("picMembers.Image")));
+            this.picMembers.Location = new System.Drawing.Point(6, 8);
+            this.picMembers.Margin = new System.Windows.Forms.Padding(0);
+            this.picMembers.Name = "picMembers";
+            this.picMembers.Size = new System.Drawing.Size(28, 22);
+            this.picMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMembers.TabIndex = 3;
+            this.picMembers.TabStop = false;
+            this.picMembers.Click += new System.EventHandler(this.pnlMembers_Click);
+            this.picMembers.MouseEnter += new System.EventHandler(this.pnlMembers_MouseEnter);
+            this.picMembers.MouseLeave += new System.EventHandler(this.pnlMembers_MouseLeave);
+            // 
+            // picMembersArrowe
+            // 
+            this.picMembersArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
+            this.picMembersArrowe.Location = new System.Drawing.Point(205, 12);
+            this.picMembersArrowe.Margin = new System.Windows.Forms.Padding(0);
+            this.picMembersArrowe.Name = "picMembersArrowe";
+            this.picMembersArrowe.Size = new System.Drawing.Size(15, 16);
+            this.picMembersArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMembersArrowe.TabIndex = 2;
+            this.picMembersArrowe.TabStop = false;
+            this.picMembersArrowe.Click += new System.EventHandler(this.pnlMembers_Click);
+            this.picMembersArrowe.MouseEnter += new System.EventHandler(this.pnlMembers_MouseEnter);
+            this.picMembersArrowe.MouseLeave += new System.EventHandler(this.pnlMembers_MouseLeave);
+            // 
             // pnlDropDownMembers
             // 
             this.pnlDropDownMembers.Controls.Add(this.pnlMemberTrainerAssignment);
@@ -517,6 +620,20 @@
             this.pnlMemberTrainerAssignment.Click += new System.EventHandler(this.pnlMemberTrainerAssignment_Click);
             this.pnlMemberTrainerAssignment.MouseEnter += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseEnter);
             this.pnlMemberTrainerAssignment.MouseLeave += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseLeave);
+            // 
+            // picMemberTrainerAssignment
+            // 
+            this.picMemberTrainerAssignment.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picMemberTrainerAssignment.Location = new System.Drawing.Point(28, 6);
+            this.picMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
+            this.picMemberTrainerAssignment.Name = "picMemberTrainerAssignment";
+            this.picMemberTrainerAssignment.Size = new System.Drawing.Size(15, 16);
+            this.picMemberTrainerAssignment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberTrainerAssignment.TabIndex = 1;
+            this.picMemberTrainerAssignment.TabStop = false;
+            this.picMemberTrainerAssignment.Click += new System.EventHandler(this.pnlMemberTrainerAssignment_Click);
+            this.picMemberTrainerAssignment.MouseEnter += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseEnter);
+            this.picMemberTrainerAssignment.MouseLeave += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseLeave);
             // 
             // lblMemberTrainerAssignment
             // 
@@ -559,6 +676,20 @@
             this.lblViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
             this.lblViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
             // 
+            // picViewAllMembers
+            // 
+            this.picViewAllMembers.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picViewAllMembers.Location = new System.Drawing.Point(28, 6);
+            this.picViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
+            this.picViewAllMembers.Name = "picViewAllMembers";
+            this.picViewAllMembers.Size = new System.Drawing.Size(15, 16);
+            this.picViewAllMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picViewAllMembers.TabIndex = 1;
+            this.picViewAllMembers.TabStop = false;
+            this.picViewAllMembers.Click += new System.EventHandler(this.pnlViewAllMembers_Click);
+            this.picViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
+            this.picViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
+            // 
             // pnlTrainer
             // 
             this.pnlTrainer.Controls.Add(this.lblTrainer);
@@ -587,6 +718,20 @@
             this.lblTrainer.Click += new System.EventHandler(this.pnlTrainer_Click);
             this.lblTrainer.MouseEnter += new System.EventHandler(this.pnlTrainer_MouseEnter);
             this.lblTrainer.MouseLeave += new System.EventHandler(this.pnlTrainer_MouseLeave);
+            // 
+            // picTrainer
+            // 
+            this.picTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picTrainer.Image")));
+            this.picTrainer.Location = new System.Drawing.Point(6, 8);
+            this.picTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.picTrainer.Name = "picTrainer";
+            this.picTrainer.Size = new System.Drawing.Size(28, 22);
+            this.picTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTrainer.TabIndex = 0;
+            this.picTrainer.TabStop = false;
+            this.picTrainer.Click += new System.EventHandler(this.pnlTrainer_Click);
+            this.picTrainer.MouseEnter += new System.EventHandler(this.pnlTrainer_MouseEnter);
+            this.picTrainer.MouseLeave += new System.EventHandler(this.pnlTrainer_MouseLeave);
             // 
             // pnlFitnessTest
             // 
@@ -617,6 +762,20 @@
             this.lblFitnessTest.MouseEnter += new System.EventHandler(this.pnlFitnessTest_MouseEnter);
             this.lblFitnessTest.MouseLeave += new System.EventHandler(this.pnlFitnessTest_MouseLeave);
             // 
+            // picFitnessTest
+            // 
+            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
+            this.picFitnessTest.Location = new System.Drawing.Point(11, 8);
+            this.picFitnessTest.Margin = new System.Windows.Forms.Padding(0);
+            this.picFitnessTest.Name = "picFitnessTest";
+            this.picFitnessTest.Size = new System.Drawing.Size(21, 21);
+            this.picFitnessTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFitnessTest.TabIndex = 0;
+            this.picFitnessTest.TabStop = false;
+            this.picFitnessTest.Click += new System.EventHandler(this.pnlFitnessTest_Click);
+            this.picFitnessTest.MouseEnter += new System.EventHandler(this.pnlFitnessTest_MouseEnter);
+            this.picFitnessTest.MouseLeave += new System.EventHandler(this.pnlFitnessTest_MouseLeave);
+            // 
             // pnlMemberAttendance
             // 
             this.pnlMemberAttendance.Controls.Add(lblMemberAttendance);
@@ -630,6 +789,34 @@
             this.pnlMemberAttendance.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
             this.pnlMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
             this.pnlMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
+            // 
+            // picMemberAttendance
+            // 
+            this.picMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendance.Image")));
+            this.picMemberAttendance.Location = new System.Drawing.Point(8, 8);
+            this.picMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
+            this.picMemberAttendance.Name = "picMemberAttendance";
+            this.picMemberAttendance.Size = new System.Drawing.Size(30, 21);
+            this.picMemberAttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberAttendance.TabIndex = 3;
+            this.picMemberAttendance.TabStop = false;
+            this.picMemberAttendance.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
+            this.picMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
+            this.picMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
+            // 
+            // picMemberAttendanceArrowe
+            // 
+            this.picMemberAttendanceArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
+            this.picMemberAttendanceArrowe.Location = new System.Drawing.Point(205, 14);
+            this.picMemberAttendanceArrowe.Margin = new System.Windows.Forms.Padding(0);
+            this.picMemberAttendanceArrowe.Name = "picMemberAttendanceArrowe";
+            this.picMemberAttendanceArrowe.Size = new System.Drawing.Size(15, 16);
+            this.picMemberAttendanceArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberAttendanceArrowe.TabIndex = 2;
+            this.picMemberAttendanceArrowe.TabStop = false;
+            this.picMemberAttendanceArrowe.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
+            this.picMemberAttendanceArrowe.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
+            this.picMemberAttendanceArrowe.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
             // 
             // pnlDropDownMemberAttendance
             // 
@@ -655,6 +842,20 @@
             this.pnlMarkMemberAttendance.Click += new System.EventHandler(this.pnlMarkMemberAttendance_Click);
             this.pnlMarkMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMarkMemberAttendance_MouseEnter);
             this.pnlMarkMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMarkMemberAttendance_MouseLeave);
+            // 
+            // picMarkMemberAtttendance
+            // 
+            this.picMarkMemberAtttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picMarkMemberAtttendance.Location = new System.Drawing.Point(28, 6);
+            this.picMarkMemberAtttendance.Margin = new System.Windows.Forms.Padding(0);
+            this.picMarkMemberAtttendance.Name = "picMarkMemberAtttendance";
+            this.picMarkMemberAtttendance.Size = new System.Drawing.Size(15, 16);
+            this.picMarkMemberAtttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMarkMemberAtttendance.TabIndex = 1;
+            this.picMarkMemberAtttendance.TabStop = false;
+            this.picMarkMemberAtttendance.Click += new System.EventHandler(this.pnlMarkMemberAttendance_Click);
+            this.picMarkMemberAtttendance.MouseEnter += new System.EventHandler(this.pnlMarkMemberAttendance_MouseEnter);
+            this.picMarkMemberAtttendance.MouseLeave += new System.EventHandler(this.pnlMarkMemberAttendance_MouseLeave);
             // 
             // lblMarkMemberAttendance
             // 
@@ -682,6 +883,20 @@
             this.pnlViewMemberAttendance.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
             this.pnlViewMemberAttendance.MouseEnter += new System.EventHandler(this.pnlViewMemberAttendance_MouseEnter);
             this.pnlViewMemberAttendance.MouseLeave += new System.EventHandler(this.pnlViewMemberAttendance_MouseLeave);
+            // 
+            // picViewMemberAttendance
+            // 
+            this.picViewMemberAttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picViewMemberAttendance.Location = new System.Drawing.Point(28, 6);
+            this.picViewMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
+            this.picViewMemberAttendance.Name = "picViewMemberAttendance";
+            this.picViewMemberAttendance.Size = new System.Drawing.Size(15, 16);
+            this.picViewMemberAttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picViewMemberAttendance.TabIndex = 1;
+            this.picViewMemberAttendance.TabStop = false;
+            this.picViewMemberAttendance.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
+            this.picViewMemberAttendance.MouseEnter += new System.EventHandler(this.pnlViewMemberAttendance_MouseEnter);
+            this.picViewMemberAttendance.MouseLeave += new System.EventHandler(this.pnlViewMemberAttendance_MouseLeave);
             // 
             // lblViewMemberAttendance
             // 
@@ -722,9 +937,23 @@
             this.lblMembershipPlan.TabIndex = 1;
             this.lblMembershipPlan.Text = "Membership Plan";
             this.lblMembershipPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMembershipPlan.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
+            this.lblMembershipPlan.Click += new System.EventHandler(this.pnlMembershipPlan_Click);
             this.lblMembershipPlan.MouseEnter += new System.EventHandler(this.pnlMembershipPlan_MouseEnter);
             this.lblMembershipPlan.MouseLeave += new System.EventHandler(this.pnlMembershipPlan_MouseLeave);
+            // 
+            // picMembershipPlan
+            // 
+            this.picMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipPlan.Image")));
+            this.picMembershipPlan.Location = new System.Drawing.Point(11, 8);
+            this.picMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
+            this.picMembershipPlan.Name = "picMembershipPlan";
+            this.picMembershipPlan.Size = new System.Drawing.Size(21, 21);
+            this.picMembershipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMembershipPlan.TabIndex = 0;
+            this.picMembershipPlan.TabStop = false;
+            this.picMembershipPlan.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
+            this.picMembershipPlan.MouseEnter += new System.EventHandler(this.pnlMembershipPlan_MouseEnter);
+            this.picMembershipPlan.MouseLeave += new System.EventHandler(this.pnlMembershipPlan_MouseLeave);
             // 
             // pnlShift
             // 
@@ -755,6 +984,20 @@
             this.lblShift.MouseEnter += new System.EventHandler(this.pnlShift_MouseEnter);
             this.lblShift.MouseLeave += new System.EventHandler(this.pnlShift_MouseLeave);
             // 
+            // picShift
+            // 
+            this.picShift.Image = ((System.Drawing.Image)(resources.GetObject("picShift.Image")));
+            this.picShift.Location = new System.Drawing.Point(10, 8);
+            this.picShift.Margin = new System.Windows.Forms.Padding(0);
+            this.picShift.Name = "picShift";
+            this.picShift.Size = new System.Drawing.Size(27, 22);
+            this.picShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShift.TabIndex = 0;
+            this.picShift.TabStop = false;
+            this.picShift.Click += new System.EventHandler(this.pnlShift_MouseLeave);
+            this.picShift.MouseEnter += new System.EventHandler(this.pnlShift_MouseEnter);
+            this.picShift.MouseLeave += new System.EventHandler(this.pnlShift_MouseLeave);
+            // 
             // pnlLocker
             // 
             this.pnlLocker.Controls.Add(this.lblLocker);
@@ -784,6 +1027,17 @@
             this.lblLocker.MouseEnter += new System.EventHandler(this.pnlLocker_MouseEnter);
             this.lblLocker.MouseLeave += new System.EventHandler(this.pnlLocker_MouseLeave);
             // 
+            // picLocker
+            // 
+            this.picLocker.Image = ((System.Drawing.Image)(resources.GetObject("picLocker.Image")));
+            this.picLocker.Location = new System.Drawing.Point(11, 8);
+            this.picLocker.Margin = new System.Windows.Forms.Padding(0);
+            this.picLocker.Name = "picLocker";
+            this.picLocker.Size = new System.Drawing.Size(21, 21);
+            this.picLocker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLocker.TabIndex = 0;
+            this.picLocker.TabStop = false;
+            // 
             // pnlExerciseAndWorkout
             // 
             this.pnlExerciseAndWorkout.Controls.Add(lblExerciseAndWorkout);
@@ -797,6 +1051,34 @@
             this.pnlExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
             this.pnlExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
             this.pnlExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
+            // 
+            // picExerciseAndWorkout
+            // 
+            this.picExerciseAndWorkout.Image = ((System.Drawing.Image)(resources.GetObject("picExerciseAndWorkout.Image")));
+            this.picExerciseAndWorkout.Location = new System.Drawing.Point(11, 8);
+            this.picExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
+            this.picExerciseAndWorkout.Name = "picExerciseAndWorkout";
+            this.picExerciseAndWorkout.Size = new System.Drawing.Size(22, 22);
+            this.picExerciseAndWorkout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExerciseAndWorkout.TabIndex = 3;
+            this.picExerciseAndWorkout.TabStop = false;
+            this.picExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
+            this.picExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
+            this.picExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
+            // 
+            // picExerciseAndWorkoutArrowe
+            // 
+            this.picExerciseAndWorkoutArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
+            this.picExerciseAndWorkoutArrowe.Location = new System.Drawing.Point(205, 14);
+            this.picExerciseAndWorkoutArrowe.Margin = new System.Windows.Forms.Padding(0);
+            this.picExerciseAndWorkoutArrowe.Name = "picExerciseAndWorkoutArrowe";
+            this.picExerciseAndWorkoutArrowe.Size = new System.Drawing.Size(15, 16);
+            this.picExerciseAndWorkoutArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExerciseAndWorkoutArrowe.TabIndex = 2;
+            this.picExerciseAndWorkoutArrowe.TabStop = false;
+            this.picExerciseAndWorkoutArrowe.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
+            this.picExerciseAndWorkoutArrowe.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
+            this.picExerciseAndWorkoutArrowe.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
             // 
             // pnlDropDownExerciseAndWorkout
             // 
@@ -823,6 +1105,20 @@
             this.pnlExerCise.Click += new System.EventHandler(this.pnlExerCise_Click);
             this.pnlExerCise.MouseEnter += new System.EventHandler(this.pnlExerCise_MouseEnter);
             this.pnlExerCise.MouseLeave += new System.EventHandler(this.pnlExerCise_MouseLeave);
+            // 
+            // picExercise
+            // 
+            this.picExercise.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picExercise.Location = new System.Drawing.Point(28, 6);
+            this.picExercise.Margin = new System.Windows.Forms.Padding(0);
+            this.picExercise.Name = "picExercise";
+            this.picExercise.Size = new System.Drawing.Size(15, 16);
+            this.picExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExercise.TabIndex = 1;
+            this.picExercise.TabStop = false;
+            this.picExercise.Click += new System.EventHandler(this.pnlExerCise_Click);
+            this.picExercise.MouseEnter += new System.EventHandler(this.pnlExerCise_MouseEnter);
+            this.picExercise.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
             // 
             // lblExercise
             // 
@@ -851,6 +1147,20 @@
             this.pnlWorkoutPlans.MouseEnter += new System.EventHandler(this.pnlWorkoutPlans_MouseEnter);
             this.pnlWorkoutPlans.MouseLeave += new System.EventHandler(this.pnlWorkoutPlans_MouseLeave);
             // 
+            // picWorkoutPlans
+            // 
+            this.picWorkoutPlans.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picWorkoutPlans.Location = new System.Drawing.Point(28, 6);
+            this.picWorkoutPlans.Margin = new System.Windows.Forms.Padding(0);
+            this.picWorkoutPlans.Name = "picWorkoutPlans";
+            this.picWorkoutPlans.Size = new System.Drawing.Size(15, 16);
+            this.picWorkoutPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWorkoutPlans.TabIndex = 1;
+            this.picWorkoutPlans.TabStop = false;
+            this.picWorkoutPlans.Click += new System.EventHandler(this.pnlWorkoutPlans_Click);
+            this.picWorkoutPlans.MouseEnter += new System.EventHandler(this.pnlWorkoutPlans_MouseEnter);
+            this.picWorkoutPlans.MouseLeave += new System.EventHandler(this.pnlWorkoutPlans_MouseLeave);
+            // 
             // lblWorkoutPlans
             // 
             this.lblWorkoutPlans.AutoSize = true;
@@ -877,6 +1187,20 @@
             this.pnlWorkoutShedule.Click += new System.EventHandler(this.pnlWorkoutShedule_Click);
             this.pnlWorkoutShedule.MouseEnter += new System.EventHandler(this.pnlWorkoutShedule_MouseEnter);
             this.pnlWorkoutShedule.MouseLeave += new System.EventHandler(this.pnlWorkoutShedule_MouseLeave);
+            // 
+            // picWorkoutShedule
+            // 
+            this.picWorkoutShedule.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
+            this.picWorkoutShedule.Location = new System.Drawing.Point(28, 6);
+            this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(0);
+            this.picWorkoutShedule.Name = "picWorkoutShedule";
+            this.picWorkoutShedule.Size = new System.Drawing.Size(15, 16);
+            this.picWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWorkoutShedule.TabIndex = 1;
+            this.picWorkoutShedule.TabStop = false;
+            this.picWorkoutShedule.Click += new System.EventHandler(this.pnlWorkoutShedule_Click);
+            this.picWorkoutShedule.MouseEnter += new System.EventHandler(this.pnlWorkoutShedule_MouseEnter);
+            this.picWorkoutShedule.MouseLeave += new System.EventHandler(this.pnlWorkoutShedule_MouseLeave);
             // 
             // lblWorkoutShedule
             // 
@@ -921,6 +1245,17 @@
             this.lblRegistrationFees.MouseEnter += new System.EventHandler(this.pnlRegistrationFees_MouseEnter);
             this.lblRegistrationFees.MouseLeave += new System.EventHandler(this.pnlRegistrationFees_MouseLeave);
             // 
+            // picRegistrationFees
+            // 
+            this.picRegistrationFees.Image = ((System.Drawing.Image)(resources.GetObject("picRegistrationFees.Image")));
+            this.picRegistrationFees.Location = new System.Drawing.Point(11, 8);
+            this.picRegistrationFees.Margin = new System.Windows.Forms.Padding(0);
+            this.picRegistrationFees.Name = "picRegistrationFees";
+            this.picRegistrationFees.Size = new System.Drawing.Size(21, 21);
+            this.picRegistrationFees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRegistrationFees.TabIndex = 0;
+            this.picRegistrationFees.TabStop = false;
+            // 
             // pnlDietPlan
             // 
             this.pnlDietPlan.Controls.Add(this.lblDietPlan);
@@ -949,6 +1284,17 @@
             this.lblDietPlan.Click += new System.EventHandler(this.pnlDietPlan_Click);
             this.lblDietPlan.MouseEnter += new System.EventHandler(this.pnlDietPlan_MouseEnter);
             this.lblDietPlan.MouseLeave += new System.EventHandler(this.pnlDietPlan_MouseLeave);
+            // 
+            // picDietPlan
+            // 
+            this.picDietPlan.Image = ((System.Drawing.Image)(resources.GetObject("picDietPlan.Image")));
+            this.picDietPlan.Location = new System.Drawing.Point(11, 8);
+            this.picDietPlan.Margin = new System.Windows.Forms.Padding(0);
+            this.picDietPlan.Name = "picDietPlan";
+            this.picDietPlan.Size = new System.Drawing.Size(22, 22);
+            this.picDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDietPlan.TabIndex = 0;
+            this.picDietPlan.TabStop = false;
             // 
             // pnlPayment
             // 
@@ -979,6 +1325,20 @@
             this.lblPayment.MouseEnter += new System.EventHandler(this.pnlPayment_MouseEnter);
             this.lblPayment.MouseLeave += new System.EventHandler(this.pnlPayment_MouseLeave);
             // 
+            // picPayment
+            // 
+            this.picPayment.Image = ((System.Drawing.Image)(resources.GetObject("picPayment.Image")));
+            this.picPayment.Location = new System.Drawing.Point(6, 8);
+            this.picPayment.Margin = new System.Windows.Forms.Padding(0);
+            this.picPayment.Name = "picPayment";
+            this.picPayment.Size = new System.Drawing.Size(25, 21);
+            this.picPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPayment.TabIndex = 0;
+            this.picPayment.TabStop = false;
+            this.picPayment.Click += new System.EventHandler(this.pnlPayment_Click);
+            this.picPayment.MouseEnter += new System.EventHandler(this.pnlPayment_MouseEnter);
+            this.picPayment.MouseLeave += new System.EventHandler(this.pnlPayment_MouseLeave);
+            // 
             // pnlExpense
             // 
             this.pnlExpense.Controls.Add(this.lblExpense);
@@ -1007,6 +1367,20 @@
             this.lblExpense.Click += new System.EventHandler(this.pnlExpense_Click);
             this.lblExpense.MouseEnter += new System.EventHandler(this.pnlExpense_MouseEnter);
             this.lblExpense.MouseLeave += new System.EventHandler(this.pnlExpense_MouseLeave);
+            // 
+            // picExpense
+            // 
+            this.picExpense.Image = ((System.Drawing.Image)(resources.GetObject("picExpense.Image")));
+            this.picExpense.Location = new System.Drawing.Point(8, 8);
+            this.picExpense.Margin = new System.Windows.Forms.Padding(0);
+            this.picExpense.Name = "picExpense";
+            this.picExpense.Size = new System.Drawing.Size(26, 21);
+            this.picExpense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExpense.TabIndex = 0;
+            this.picExpense.TabStop = false;
+            this.picExpense.Click += new System.EventHandler(this.pnlExpense_Click);
+            this.picExpense.MouseEnter += new System.EventHandler(this.pnlExpense_MouseEnter);
+            this.picExpense.MouseLeave += new System.EventHandler(this.pnlExpense_MouseLeave);
             // 
             // pnlSettins
             // 
@@ -1037,6 +1411,20 @@
             this.lblSettings.MouseEnter += new System.EventHandler(this.pnlSettins_MouseEnter);
             this.lblSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
             // 
+            // picSettings
+            // 
+            this.picSettings.Image = ((System.Drawing.Image)(resources.GetObject("picSettings.Image")));
+            this.picSettings.Location = new System.Drawing.Point(11, 8);
+            this.picSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.picSettings.Name = "picSettings";
+            this.picSettings.Size = new System.Drawing.Size(21, 21);
+            this.picSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSettings.TabIndex = 0;
+            this.picSettings.TabStop = false;
+            this.picSettings.Click += new System.EventHandler(this.pnlSettins_Click);
+            this.picSettings.MouseEnter += new System.EventHandler(this.pnlSettins_MouseEnter);
+            this.picSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
+            // 
             // pnlSpecer
             // 
             this.pnlSpecer.Location = new System.Drawing.Point(0, 834);
@@ -1058,394 +1446,6 @@
             // 
             this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
-            // picLogout
-            // 
-            this.picLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picLogout.Image = ((System.Drawing.Image)(resources.GetObject("picLogout.Image")));
-            this.picLogout.Location = new System.Drawing.Point(7, 10);
-            this.picLogout.Margin = new System.Windows.Forms.Padding(0);
-            this.picLogout.Name = "picLogout";
-            this.picLogout.Size = new System.Drawing.Size(21, 21);
-            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogout.TabIndex = 0;
-            this.picLogout.TabStop = false;
-            this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
-            this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
-            this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
-            // 
-            // picMenu
-            // 
-            this.picMenu.Image = ((System.Drawing.Image)(resources.GetObject("picMenu.Image")));
-            this.picMenu.Location = new System.Drawing.Point(11, 8);
-            this.picMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(21, 21);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMenu.TabIndex = 1;
-            this.picMenu.TabStop = false;
-            this.picMenu.Click += new System.EventHandler(this.pnlMenu_Click);
-            this.picMenu.MouseEnter += new System.EventHandler(this.pnlMenu_MouseEnter);
-            this.picMenu.MouseLeave += new System.EventHandler(this.pnlMenu_MouseLeave);
-            // 
-            // picDashboard
-            // 
-            this.picDashboard.Image = ((System.Drawing.Image)(resources.GetObject("picDashboard.Image")));
-            this.picDashboard.Location = new System.Drawing.Point(11, 8);
-            this.picDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.picDashboard.Name = "picDashboard";
-            this.picDashboard.Size = new System.Drawing.Size(21, 21);
-            this.picDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDashboard.TabIndex = 0;
-            this.picDashboard.TabStop = false;
-            this.picDashboard.Click += new System.EventHandler(this.pnlDashboard_Click);
-            this.picDashboard.MouseEnter += new System.EventHandler(this.pnlDashboard_MouseEnter);
-            this.picDashboard.MouseLeave += new System.EventHandler(this.pnlDashboard_MouseLeave);
-            // 
-            // picMembers
-            // 
-            this.picMembers.Image = ((System.Drawing.Image)(resources.GetObject("picMembers.Image")));
-            this.picMembers.Location = new System.Drawing.Point(6, 8);
-            this.picMembers.Margin = new System.Windows.Forms.Padding(0);
-            this.picMembers.Name = "picMembers";
-            this.picMembers.Size = new System.Drawing.Size(28, 22);
-            this.picMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMembers.TabIndex = 3;
-            this.picMembers.TabStop = false;
-            this.picMembers.Click += new System.EventHandler(this.pnlMembers_Click);
-            this.picMembers.MouseEnter += new System.EventHandler(this.pnlMembers_MouseEnter);
-            this.picMembers.MouseLeave += new System.EventHandler(this.pnlMembers_MouseLeave);
-            // 
-            // picMembersArrowe
-            // 
-            this.picMembersArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
-            this.picMembersArrowe.Location = new System.Drawing.Point(205, 12);
-            this.picMembersArrowe.Margin = new System.Windows.Forms.Padding(0);
-            this.picMembersArrowe.Name = "picMembersArrowe";
-            this.picMembersArrowe.Size = new System.Drawing.Size(15, 16);
-            this.picMembersArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMembersArrowe.TabIndex = 2;
-            this.picMembersArrowe.TabStop = false;
-            this.picMembersArrowe.Click += new System.EventHandler(this.pnlMembers_Click);
-            this.picMembersArrowe.MouseEnter += new System.EventHandler(this.pnlMembers_MouseEnter);
-            this.picMembersArrowe.MouseLeave += new System.EventHandler(this.pnlMembers_MouseLeave);
-            // 
-            // picMemberTrainerAssignment
-            // 
-            this.picMemberTrainerAssignment.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picMemberTrainerAssignment.Location = new System.Drawing.Point(28, 6);
-            this.picMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
-            this.picMemberTrainerAssignment.Name = "picMemberTrainerAssignment";
-            this.picMemberTrainerAssignment.Size = new System.Drawing.Size(15, 16);
-            this.picMemberTrainerAssignment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberTrainerAssignment.TabIndex = 1;
-            this.picMemberTrainerAssignment.TabStop = false;
-            this.picMemberTrainerAssignment.Click += new System.EventHandler(this.pnlMemberTrainerAssignment_Click);
-            this.picMemberTrainerAssignment.MouseEnter += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseEnter);
-            this.picMemberTrainerAssignment.MouseLeave += new System.EventHandler(this.pnlMemberTrainerAssignment_MouseLeave);
-            // 
-            // picViewAllMembers
-            // 
-            this.picViewAllMembers.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picViewAllMembers.Location = new System.Drawing.Point(28, 6);
-            this.picViewAllMembers.Margin = new System.Windows.Forms.Padding(0);
-            this.picViewAllMembers.Name = "picViewAllMembers";
-            this.picViewAllMembers.Size = new System.Drawing.Size(15, 16);
-            this.picViewAllMembers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picViewAllMembers.TabIndex = 1;
-            this.picViewAllMembers.TabStop = false;
-            this.picViewAllMembers.Click += new System.EventHandler(this.pnlViewAllMembers_Click);
-            this.picViewAllMembers.MouseEnter += new System.EventHandler(this.pnlViewAllMembers_MouseEnter);
-            this.picViewAllMembers.MouseLeave += new System.EventHandler(this.pnlViewAllMembers_MouseLeave);
-            // 
-            // picTrainer
-            // 
-            this.picTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picTrainer.Image")));
-            this.picTrainer.Location = new System.Drawing.Point(6, 8);
-            this.picTrainer.Margin = new System.Windows.Forms.Padding(0);
-            this.picTrainer.Name = "picTrainer";
-            this.picTrainer.Size = new System.Drawing.Size(28, 22);
-            this.picTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTrainer.TabIndex = 0;
-            this.picTrainer.TabStop = false;
-            this.picTrainer.Click += new System.EventHandler(this.pnlTrainer_Click);
-            this.picTrainer.MouseEnter += new System.EventHandler(this.pnlTrainer_MouseEnter);
-            this.picTrainer.MouseLeave += new System.EventHandler(this.pnlTrainer_MouseLeave);
-            // 
-            // picFitnessTest
-            // 
-            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
-            this.picFitnessTest.Location = new System.Drawing.Point(11, 8);
-            this.picFitnessTest.Margin = new System.Windows.Forms.Padding(0);
-            this.picFitnessTest.Name = "picFitnessTest";
-            this.picFitnessTest.Size = new System.Drawing.Size(21, 21);
-            this.picFitnessTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFitnessTest.TabIndex = 0;
-            this.picFitnessTest.TabStop = false;
-            this.picFitnessTest.Click += new System.EventHandler(this.pnlFitnessTest_Click);
-            this.picFitnessTest.MouseEnter += new System.EventHandler(this.pnlFitnessTest_MouseEnter);
-            this.picFitnessTest.MouseLeave += new System.EventHandler(this.pnlFitnessTest_MouseLeave);
-            // 
-            // picMemberAttendance
-            // 
-            this.picMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendance.Image")));
-            this.picMemberAttendance.Location = new System.Drawing.Point(8, 8);
-            this.picMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
-            this.picMemberAttendance.Name = "picMemberAttendance";
-            this.picMemberAttendance.Size = new System.Drawing.Size(30, 21);
-            this.picMemberAttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberAttendance.TabIndex = 3;
-            this.picMemberAttendance.TabStop = false;
-            this.picMemberAttendance.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
-            this.picMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
-            this.picMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
-            // 
-            // picMemberAttendanceArrowe
-            // 
-            this.picMemberAttendanceArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
-            this.picMemberAttendanceArrowe.Location = new System.Drawing.Point(205, 14);
-            this.picMemberAttendanceArrowe.Margin = new System.Windows.Forms.Padding(0);
-            this.picMemberAttendanceArrowe.Name = "picMemberAttendanceArrowe";
-            this.picMemberAttendanceArrowe.Size = new System.Drawing.Size(15, 16);
-            this.picMemberAttendanceArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberAttendanceArrowe.TabIndex = 2;
-            this.picMemberAttendanceArrowe.TabStop = false;
-            this.picMemberAttendanceArrowe.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
-            this.picMemberAttendanceArrowe.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
-            this.picMemberAttendanceArrowe.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
-            // 
-            // picMarkMemberAtttendance
-            // 
-            this.picMarkMemberAtttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picMarkMemberAtttendance.Location = new System.Drawing.Point(28, 6);
-            this.picMarkMemberAtttendance.Margin = new System.Windows.Forms.Padding(0);
-            this.picMarkMemberAtttendance.Name = "picMarkMemberAtttendance";
-            this.picMarkMemberAtttendance.Size = new System.Drawing.Size(15, 16);
-            this.picMarkMemberAtttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMarkMemberAtttendance.TabIndex = 1;
-            this.picMarkMemberAtttendance.TabStop = false;
-            this.picMarkMemberAtttendance.Click += new System.EventHandler(this.pnlMarkMemberAttendance_Click);
-            this.picMarkMemberAtttendance.MouseEnter += new System.EventHandler(this.pnlMarkMemberAttendance_MouseEnter);
-            this.picMarkMemberAtttendance.MouseLeave += new System.EventHandler(this.pnlMarkMemberAttendance_MouseLeave);
-            // 
-            // picViewMemberAttendance
-            // 
-            this.picViewMemberAttendance.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picViewMemberAttendance.Location = new System.Drawing.Point(28, 6);
-            this.picViewMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
-            this.picViewMemberAttendance.Name = "picViewMemberAttendance";
-            this.picViewMemberAttendance.Size = new System.Drawing.Size(15, 16);
-            this.picViewMemberAttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picViewMemberAttendance.TabIndex = 1;
-            this.picViewMemberAttendance.TabStop = false;
-            this.picViewMemberAttendance.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
-            this.picViewMemberAttendance.MouseEnter += new System.EventHandler(this.pnlViewMemberAttendance_MouseEnter);
-            this.picViewMemberAttendance.MouseLeave += new System.EventHandler(this.pnlViewMemberAttendance_MouseLeave);
-            // 
-            // picMembershipPlan
-            // 
-            this.picMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipPlan.Image")));
-            this.picMembershipPlan.Location = new System.Drawing.Point(11, 8);
-            this.picMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
-            this.picMembershipPlan.Name = "picMembershipPlan";
-            this.picMembershipPlan.Size = new System.Drawing.Size(21, 21);
-            this.picMembershipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMembershipPlan.TabIndex = 0;
-            this.picMembershipPlan.TabStop = false;
-            this.picMembershipPlan.Click += new System.EventHandler(this.pnlViewMemberAttendance_Click);
-            this.picMembershipPlan.MouseEnter += new System.EventHandler(this.pnlMembershipPlan_MouseEnter);
-            this.picMembershipPlan.MouseLeave += new System.EventHandler(this.pnlMembershipPlan_MouseLeave);
-            // 
-            // picShift
-            // 
-            this.picShift.Image = ((System.Drawing.Image)(resources.GetObject("picShift.Image")));
-            this.picShift.Location = new System.Drawing.Point(10, 8);
-            this.picShift.Margin = new System.Windows.Forms.Padding(0);
-            this.picShift.Name = "picShift";
-            this.picShift.Size = new System.Drawing.Size(27, 22);
-            this.picShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picShift.TabIndex = 0;
-            this.picShift.TabStop = false;
-            this.picShift.Click += new System.EventHandler(this.pnlShift_MouseLeave);
-            this.picShift.MouseEnter += new System.EventHandler(this.pnlShift_MouseEnter);
-            this.picShift.MouseLeave += new System.EventHandler(this.pnlShift_MouseLeave);
-            // 
-            // picLocker
-            // 
-            this.picLocker.Image = ((System.Drawing.Image)(resources.GetObject("picLocker.Image")));
-            this.picLocker.Location = new System.Drawing.Point(11, 8);
-            this.picLocker.Margin = new System.Windows.Forms.Padding(0);
-            this.picLocker.Name = "picLocker";
-            this.picLocker.Size = new System.Drawing.Size(21, 21);
-            this.picLocker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLocker.TabIndex = 0;
-            this.picLocker.TabStop = false;
-            // 
-            // picExerciseAndWorkout
-            // 
-            this.picExerciseAndWorkout.Image = ((System.Drawing.Image)(resources.GetObject("picExerciseAndWorkout.Image")));
-            this.picExerciseAndWorkout.Location = new System.Drawing.Point(11, 8);
-            this.picExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
-            this.picExerciseAndWorkout.Name = "picExerciseAndWorkout";
-            this.picExerciseAndWorkout.Size = new System.Drawing.Size(22, 22);
-            this.picExerciseAndWorkout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExerciseAndWorkout.TabIndex = 3;
-            this.picExerciseAndWorkout.TabStop = false;
-            this.picExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
-            this.picExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
-            this.picExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
-            // 
-            // picExerciseAndWorkoutArrowe
-            // 
-            this.picExerciseAndWorkoutArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
-            this.picExerciseAndWorkoutArrowe.Location = new System.Drawing.Point(205, 14);
-            this.picExerciseAndWorkoutArrowe.Margin = new System.Windows.Forms.Padding(0);
-            this.picExerciseAndWorkoutArrowe.Name = "picExerciseAndWorkoutArrowe";
-            this.picExerciseAndWorkoutArrowe.Size = new System.Drawing.Size(15, 16);
-            this.picExerciseAndWorkoutArrowe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExerciseAndWorkoutArrowe.TabIndex = 2;
-            this.picExerciseAndWorkoutArrowe.TabStop = false;
-            this.picExerciseAndWorkoutArrowe.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
-            this.picExerciseAndWorkoutArrowe.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
-            this.picExerciseAndWorkoutArrowe.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
-            // 
-            // picExercise
-            // 
-            this.picExercise.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picExercise.Location = new System.Drawing.Point(28, 6);
-            this.picExercise.Margin = new System.Windows.Forms.Padding(0);
-            this.picExercise.Name = "picExercise";
-            this.picExercise.Size = new System.Drawing.Size(15, 16);
-            this.picExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExercise.TabIndex = 1;
-            this.picExercise.TabStop = false;
-            this.picExercise.Click += new System.EventHandler(this.pnlExerCise_Click);
-            this.picExercise.MouseEnter += new System.EventHandler(this.pnlExerCise_MouseEnter);
-            this.picExercise.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
-            // 
-            // picWorkoutPlans
-            // 
-            this.picWorkoutPlans.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picWorkoutPlans.Location = new System.Drawing.Point(28, 6);
-            this.picWorkoutPlans.Margin = new System.Windows.Forms.Padding(0);
-            this.picWorkoutPlans.Name = "picWorkoutPlans";
-            this.picWorkoutPlans.Size = new System.Drawing.Size(15, 16);
-            this.picWorkoutPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picWorkoutPlans.TabIndex = 1;
-            this.picWorkoutPlans.TabStop = false;
-            this.picWorkoutPlans.Click += new System.EventHandler(this.pnlWorkoutPlans_Click);
-            this.picWorkoutPlans.MouseEnter += new System.EventHandler(this.pnlWorkoutPlans_MouseEnter);
-            this.picWorkoutPlans.MouseLeave += new System.EventHandler(this.pnlWorkoutPlans_MouseLeave);
-            // 
-            // picWorkoutShedule
-            // 
-            this.picWorkoutShedule.Image = global::GymManagementSystem.Properties.Resources.recor_buttonW;
-            this.picWorkoutShedule.Location = new System.Drawing.Point(28, 6);
-            this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(0);
-            this.picWorkoutShedule.Name = "picWorkoutShedule";
-            this.picWorkoutShedule.Size = new System.Drawing.Size(15, 16);
-            this.picWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picWorkoutShedule.TabIndex = 1;
-            this.picWorkoutShedule.TabStop = false;
-            this.picWorkoutShedule.Click += new System.EventHandler(this.pnlWorkoutShedule_Click);
-            this.picWorkoutShedule.MouseEnter += new System.EventHandler(this.pnlWorkoutShedule_MouseEnter);
-            this.picWorkoutShedule.MouseLeave += new System.EventHandler(this.pnlWorkoutShedule_MouseLeave);
-            // 
-            // picRegistrationFees
-            // 
-            this.picRegistrationFees.Image = ((System.Drawing.Image)(resources.GetObject("picRegistrationFees.Image")));
-            this.picRegistrationFees.Location = new System.Drawing.Point(11, 8);
-            this.picRegistrationFees.Margin = new System.Windows.Forms.Padding(0);
-            this.picRegistrationFees.Name = "picRegistrationFees";
-            this.picRegistrationFees.Size = new System.Drawing.Size(21, 21);
-            this.picRegistrationFees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRegistrationFees.TabIndex = 0;
-            this.picRegistrationFees.TabStop = false;
-            // 
-            // picDietPlan
-            // 
-            this.picDietPlan.Image = ((System.Drawing.Image)(resources.GetObject("picDietPlan.Image")));
-            this.picDietPlan.Location = new System.Drawing.Point(11, 8);
-            this.picDietPlan.Margin = new System.Windows.Forms.Padding(0);
-            this.picDietPlan.Name = "picDietPlan";
-            this.picDietPlan.Size = new System.Drawing.Size(22, 22);
-            this.picDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDietPlan.TabIndex = 0;
-            this.picDietPlan.TabStop = false;
-            // 
-            // picPayment
-            // 
-            this.picPayment.Image = ((System.Drawing.Image)(resources.GetObject("picPayment.Image")));
-            this.picPayment.Location = new System.Drawing.Point(6, 8);
-            this.picPayment.Margin = new System.Windows.Forms.Padding(0);
-            this.picPayment.Name = "picPayment";
-            this.picPayment.Size = new System.Drawing.Size(25, 21);
-            this.picPayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPayment.TabIndex = 0;
-            this.picPayment.TabStop = false;
-            this.picPayment.Click += new System.EventHandler(this.pnlPayment_Click);
-            this.picPayment.MouseEnter += new System.EventHandler(this.pnlPayment_MouseEnter);
-            this.picPayment.MouseLeave += new System.EventHandler(this.pnlPayment_MouseLeave);
-            // 
-            // picExpense
-            // 
-            this.picExpense.Image = ((System.Drawing.Image)(resources.GetObject("picExpense.Image")));
-            this.picExpense.Location = new System.Drawing.Point(8, 8);
-            this.picExpense.Margin = new System.Windows.Forms.Padding(0);
-            this.picExpense.Name = "picExpense";
-            this.picExpense.Size = new System.Drawing.Size(26, 21);
-            this.picExpense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExpense.TabIndex = 0;
-            this.picExpense.TabStop = false;
-            this.picExpense.Click += new System.EventHandler(this.pnlExpense_Click);
-            this.picExpense.MouseEnter += new System.EventHandler(this.pnlExpense_MouseEnter);
-            this.picExpense.MouseLeave += new System.EventHandler(this.pnlExpense_MouseLeave);
-            // 
-            // picSettings
-            // 
-            this.picSettings.Image = ((System.Drawing.Image)(resources.GetObject("picSettings.Image")));
-            this.picSettings.Location = new System.Drawing.Point(11, 8);
-            this.picSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.picSettings.Name = "picSettings";
-            this.picSettings.Size = new System.Drawing.Size(21, 21);
-            this.picSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSettings.TabIndex = 0;
-            this.picSettings.TabStop = false;
-            this.picSettings.Click += new System.EventHandler(this.pnlSettins_Click);
-            this.picSettings.MouseEnter += new System.EventHandler(this.pnlSettins_MouseEnter);
-            this.picSettings.MouseLeave += new System.EventHandler(this.pnlSettins_MouseLeave);
-            // 
-            // picCalander
-            // 
-            this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
-            this.picCalander.Location = new System.Drawing.Point(11, 19);
-            this.picCalander.Margin = new System.Windows.Forms.Padding(0);
-            this.picCalander.Name = "picCalander";
-            this.picCalander.Size = new System.Drawing.Size(19, 20);
-            this.picCalander.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCalander.TabIndex = 0;
-            this.picCalander.TabStop = false;
-            // 
-            // picClock
-            // 
-            this.picClock.Image = ((System.Drawing.Image)(resources.GetObject("picClock.Image")));
-            this.picClock.Location = new System.Drawing.Point(11, 19);
-            this.picClock.Margin = new System.Windows.Forms.Padding(0);
-            this.picClock.Name = "picClock";
-            this.picClock.Size = new System.Drawing.Size(19, 20);
-            this.picClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picClock.TabIndex = 1;
-            this.picClock.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1454,7 +1454,6 @@
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";
@@ -1465,86 +1464,86 @@
             this.tlpDateTime.ResumeLayout(false);
             this.tlpDateTime.PerformLayout();
             this.pnlCalander.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCalander)).EndInit();
             this.pnlColock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picClock)).EndInit();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogout.ResumeLayout(false);
             this.pnlLogout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
             this.fnlSidebar.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
             this.pnlDashboard.ResumeLayout(false);
             this.pnlDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).EndInit();
             this.pnlMembers.ResumeLayout(false);
             this.pnlMembers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMembersArrowe)).EndInit();
             this.pnlDropDownMembers.ResumeLayout(false);
             this.pnlMemberTrainerAssignment.ResumeLayout(false);
             this.pnlMemberTrainerAssignment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberTrainerAssignment)).EndInit();
             this.pnlViewAllMembers.ResumeLayout(false);
             this.pnlViewAllMembers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picViewAllMembers)).EndInit();
             this.pnlTrainer.ResumeLayout(false);
             this.pnlTrainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainer)).EndInit();
             this.pnlFitnessTest.ResumeLayout(false);
             this.pnlFitnessTest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).EndInit();
             this.pnlMemberAttendance.ResumeLayout(false);
             this.pnlMemberAttendance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendanceArrowe)).EndInit();
             this.pnlDropDownMemberAttendance.ResumeLayout(false);
             this.pnlMarkMemberAttendance.ResumeLayout(false);
             this.pnlMarkMemberAttendance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMarkMemberAtttendance)).EndInit();
             this.pnlViewMemberAttendance.ResumeLayout(false);
             this.pnlViewMemberAttendance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picViewMemberAttendance)).EndInit();
             this.pnlMembershipPlan.ResumeLayout(false);
             this.pnlMembershipPlan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMembershipPlan)).EndInit();
             this.pnlShift.ResumeLayout(false);
             this.pnlShift.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picShift)).EndInit();
             this.pnlLocker.ResumeLayout(false);
             this.pnlLocker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLocker)).EndInit();
             this.pnlExerciseAndWorkout.ResumeLayout(false);
             this.pnlExerciseAndWorkout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkoutArrowe)).EndInit();
             this.pnlDropDownExerciseAndWorkout.ResumeLayout(false);
             this.pnlExerCise.ResumeLayout(false);
             this.pnlExerCise.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).EndInit();
             this.pnlWorkoutPlans.ResumeLayout(false);
             this.pnlWorkoutPlans.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkoutPlans)).EndInit();
             this.pnlWorkoutShedule.ResumeLayout(false);
             this.pnlWorkoutShedule.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkoutShedule)).EndInit();
             this.pnlRegistrationFees.ResumeLayout(false);
             this.pnlRegistrationFees.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRegistrationFees)).EndInit();
             this.pnlDietPlan.ResumeLayout(false);
             this.pnlDietPlan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDietPlan)).EndInit();
             this.pnlPayment.ResumeLayout(false);
             this.pnlPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPayment)).EndInit();
             this.pnlExpense.ResumeLayout(false);
             this.pnlExpense.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExpense)).EndInit();
             this.pnlSettins.ResumeLayout(false);
             this.pnlSettins.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDashboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMembersArrowe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberTrainerAssignment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picViewAllMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTrainer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberAttendanceArrowe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMarkMemberAtttendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picViewMemberAttendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMembershipPlan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picShift)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLocker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExerciseAndWorkoutArrowe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExercise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWorkoutPlans)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWorkoutShedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegistrationFees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDietPlan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPayment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCalander)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClock)).EndInit();
             this.ResumeLayout(false);
 
         }
