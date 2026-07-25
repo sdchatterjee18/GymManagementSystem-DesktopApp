@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Main;
 using GymManagementSystem.FORMS.DietPlan;
 
@@ -17,7 +18,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmShowDietPlans());
+            Application.Run(new FrmMainLayout());           
         }
     }
 }

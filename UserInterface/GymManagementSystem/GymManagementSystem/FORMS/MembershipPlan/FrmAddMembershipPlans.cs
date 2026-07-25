@@ -18,7 +18,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
         {
-
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         private void btnPageRemove_Click(object sender, EventArgs e)
@@ -36,6 +37,10 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             cmbDuration.Text = "";
 
             txtPlanName.Focus();
+        }
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
