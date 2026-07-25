@@ -19,7 +19,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTrainer());
+            Application.Run(new FrmMainLayout());
         }
     }
 }

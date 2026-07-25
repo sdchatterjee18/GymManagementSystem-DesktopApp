@@ -365,7 +365,7 @@
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(21)))), ((int)(((byte)(44)))));
             this.pnlSidebar.Controls.Add(this.pnlLogout);
             this.pnlSidebar.Controls.Add(this.fnlSidebar);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -396,7 +396,7 @@
             this.lblLogout.AutoSize = true;
             this.lblLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblLogout.Location = new System.Drawing.Point(29, 12);
+            this.lblLogout.Location = new System.Drawing.Point(31, 12);
             this.lblLogout.Margin = new System.Windows.Forms.Padding(0);
             this.lblLogout.Name = "lblLogout";
             this.lblLogout.Size = new System.Drawing.Size(62, 20);
@@ -1454,7 +1454,6 @@
             this.Controls.Add(this.pnlMainPanel);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";

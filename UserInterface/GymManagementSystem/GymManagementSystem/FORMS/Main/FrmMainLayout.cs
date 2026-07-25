@@ -14,6 +14,7 @@ using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FORMS.Dashboard;
 using GymManagementSystem.FORMS.Payments;
+using GymManagementSystem.FORMS.Trainer;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -320,6 +321,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlTrainer.ForeColor = Color.White;
             picTrainer.Image = Properties.Resources.trainer;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmTrainer());
         }
 
         private void pnlFitnessTest_MouseEnter(object sender, EventArgs e)
