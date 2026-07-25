@@ -158,6 +158,7 @@
             this.pnlAddNewMwmbwrshipForm.Controls.Add(this.pnlSubNewMembarshipPlanTitle);
             this.pnlAddNewMwmbwrshipForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddNewMwmbwrshipForm.Location = new System.Drawing.Point(0, 0);
+
             this.pnlAddNewMwmbwrshipForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddNewMwmbwrshipForm.Name = "pnlAddNewMwmbwrshipForm";
             this.pnlAddNewMwmbwrshipForm.Size = new System.Drawing.Size(344, 421);
@@ -180,9 +181,6 @@
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.txtDescription, 1, 9);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.txtAmount, 1, 7);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.tlpSubmition, 1, 10);
-            this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblPlanName, 1, 0);
-            this.tlpNewMembarshipPlanDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpNewMembarshipPlanDetails.Location = new System.Drawing.Point(0, 68);
             this.tlpNewMembarshipPlanDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewMembarshipPlanDetails.Name = "tlpNewMembarshipPlanDetails";
             this.tlpNewMembarshipPlanDetails.RowCount = 11;
@@ -355,8 +353,7 @@
             this.lblMessageBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessageBox.Name = "lblMessageBox";
             this.lblMessageBox.Size = new System.Drawing.Size(0, 15);
-            this.lblMessageBox.TabIndex = 7;
-            // 
+            this.lblMessageBox.TabIndex = 7;            // 
             // lblPlanName
             // 
             this.lblPlanName.Anchor = System.Windows.Forms.AnchorStyles.Left;
