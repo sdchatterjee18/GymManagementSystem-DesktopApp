@@ -58,10 +58,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(4, 3);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(3, 6);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(138, 32);
+            this.lblTitle.Size = new System.Drawing.Size(94, 21);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Add Locker";
             // 
@@ -70,10 +69,9 @@
             this.txtLockerNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLockerNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLockerNumber.ForeColor = System.Drawing.Color.Black;
-            this.txtLockerNumber.Location = new System.Drawing.Point(42, 153);
-            this.txtLockerNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLockerNumber.Location = new System.Drawing.Point(28, 99);
             this.txtLockerNumber.Name = "txtLockerNumber";
-            this.txtLockerNumber.Size = new System.Drawing.Size(293, 39);
+            this.txtLockerNumber.Size = new System.Drawing.Size(196, 29);
             this.txtLockerNumber.TabIndex = 2;
             // 
             // pnlMain
@@ -86,18 +84,18 @@
             this.pnlMain.Controls.Add(this.txtLockerNumber);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(594, 310);
+            this.pnlMain.Size = new System.Drawing.Size(396, 201);
             this.pnlMain.TabIndex = 0;
             // 
             // lblAsterisk
             // 
             this.lblAsterisk.AutoSize = true;
             this.lblAsterisk.ForeColor = System.Drawing.Color.Red;
-            this.lblAsterisk.Location = new System.Drawing.Point(192, 117);
+            this.lblAsterisk.Location = new System.Drawing.Point(128, 76);
+            this.lblAsterisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAsterisk.Name = "lblAsterisk";
-            this.lblAsterisk.Size = new System.Drawing.Size(15, 20);
+            this.lblAsterisk.Size = new System.Drawing.Size(11, 13);
             this.lblAsterisk.TabIndex = 10;
             this.lblAsterisk.Text = "*";
             // 
@@ -109,11 +107,12 @@
             this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.79311F));
             this.tlpButton.Controls.Add(this.pnlButton, 1, 0);
             this.tlpButton.Controls.Add(this.picBoxSendIcon, 0, 0);
-            this.tlpButton.Location = new System.Drawing.Point(404, 248);
+            this.tlpButton.Location = new System.Drawing.Point(269, 161);
+            this.tlpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpButton.Name = "tlpButton";
             this.tlpButton.RowCount = 1;
             this.tlpButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpButton.Size = new System.Drawing.Size(145, 41);
+            this.tlpButton.Size = new System.Drawing.Size(97, 27);
             this.tlpButton.TabIndex = 9;
             this.tlpButton.Click += new System.EventHandler(this.tlpButton_Click);
             // 
@@ -122,9 +121,10 @@
             this.pnlButton.BackColor = System.Drawing.Color.Transparent;
             this.pnlButton.Controls.Add(this.lblSubmit);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButton.Location = new System.Drawing.Point(40, 3);
+            this.pnlButton.Location = new System.Drawing.Point(27, 2);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(102, 35);
+            this.pnlButton.Size = new System.Drawing.Size(68, 23);
             this.pnlButton.TabIndex = 0;
             // 
             // lblSubmit
@@ -133,9 +133,10 @@
             this.lblSubmit.BackColor = System.Drawing.Color.Transparent;
             this.lblSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubmit.ForeColor = System.Drawing.Color.White;
-            this.lblSubmit.Location = new System.Drawing.Point(5, 1);
+            this.lblSubmit.Location = new System.Drawing.Point(3, 1);
+            this.lblSubmit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubmit.Name = "lblSubmit";
-            this.lblSubmit.Size = new System.Drawing.Size(92, 32);
+            this.lblSubmit.Size = new System.Drawing.Size(62, 21);
             this.lblSubmit.TabIndex = 0;
             this.lblSubmit.Text = "Submit";
             // 
@@ -145,9 +146,10 @@
             this.picBoxSendIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSendIcon.BackgroundImage")));
             this.picBoxSendIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxSendIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBoxSendIcon.Location = new System.Drawing.Point(3, 3);
+            this.picBoxSendIcon.Location = new System.Drawing.Point(2, 2);
+            this.picBoxSendIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picBoxSendIcon.Name = "picBoxSendIcon";
-            this.picBoxSendIcon.Size = new System.Drawing.Size(31, 35);
+            this.picBoxSendIcon.Size = new System.Drawing.Size(21, 23);
             this.picBoxSendIcon.TabIndex = 1;
             this.picBoxSendIcon.TabStop = false;
             // 
@@ -155,9 +157,10 @@
             // 
             this.lblAddNewLocker.AutoSize = true;
             this.lblAddNewLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewLocker.Location = new System.Drawing.Point(35, 113);
+            this.lblAddNewLocker.Location = new System.Drawing.Point(23, 73);
+            this.lblAddNewLocker.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddNewLocker.Name = "lblAddNewLocker";
-            this.lblAddNewLocker.Size = new System.Drawing.Size(159, 28);
+            this.lblAddNewLocker.Size = new System.Drawing.Size(109, 19);
             this.lblAddNewLocker.TabIndex = 7;
             this.lblAddNewLocker.Text = "Add new Locker";
             // 
@@ -171,10 +174,11 @@
             this.tlpHeading.Controls.Add(this.picBoxLockerIcon, 0, 0);
             this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpHeading.Location = new System.Drawing.Point(0, 0);
+            this.tlpHeading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpHeading.Name = "tlpHeading";
             this.tlpHeading.RowCount = 1;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeading.Size = new System.Drawing.Size(594, 76);
+            this.tlpHeading.Size = new System.Drawing.Size(396, 49);
             this.tlpHeading.TabIndex = 6;
             // 
             // tlpTitle
@@ -184,13 +188,14 @@
             this.tlpTitle.Controls.Add(this.lblSubtitle, 0, 1);
             this.tlpTitle.Controls.Add(this.lblTitle, 0, 0);
             this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitle.Location = new System.Drawing.Point(71, 3);
+            this.tlpTitle.Location = new System.Drawing.Point(47, 2);
+            this.tlpTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpTitle.Name = "tlpTitle";
             this.tlpTitle.RowCount = 2;
-            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTitle.Size = new System.Drawing.Size(422, 70);
+            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tlpTitle.Size = new System.Drawing.Size(281, 45);
             this.tlpTitle.TabIndex = 0;
             // 
             // lblSubtitle
@@ -198,23 +203,23 @@
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblSubtitle.Location = new System.Drawing.Point(4, 35);
-            this.lblSubtitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubtitle.Location = new System.Drawing.Point(3, 27);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(151, 21);
+            this.lblSubtitle.Size = new System.Drawing.Size(103, 13);
             this.lblSubtitle.TabIndex = 1;
             this.lblSubtitle.Text = "Adding new Locker";
             // 
             // picBoxLockerIcon
             // 
-            this.picBoxLockerIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picBoxLockerIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
             this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLockerIcon.Location = new System.Drawing.Point(12, 13);
-            this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(43, 50);
-            this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(43, 50);
+            this.picBoxLockerIcon.Location = new System.Drawing.Point(13, 8);
+            this.picBoxLockerIcon.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(29, 32);
+            this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(29, 32);
             this.picBoxLockerIcon.Name = "picBoxLockerIcon";
-            this.picBoxLockerIcon.Size = new System.Drawing.Size(43, 50);
+            this.picBoxLockerIcon.Size = new System.Drawing.Size(29, 32);
             this.picBoxLockerIcon.TabIndex = 1;
             this.picBoxLockerIcon.TabStop = false;
             // 
@@ -224,22 +229,22 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(732, 191);
+            this.btnClose.Location = new System.Drawing.Point(488, 124);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 35);
+            this.btnClose.Size = new System.Drawing.Size(21, 23);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // FrmAddLocker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(594, 310);
+            this.ClientSize = new System.Drawing.Size(396, 201);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddLocker";
