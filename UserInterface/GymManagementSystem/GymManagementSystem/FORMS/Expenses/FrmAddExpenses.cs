@@ -133,12 +133,12 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void pnlAddExpenseCategory_MouseEnter(object sender, EventArgs e)
         {
-            pnlAddExpenseCategory.BackColor = Color.LightBlue;
+            pnlAddExpenseCategory.BackColor = Color.FromArgb(220,225,230);
         }
 
         private void pnlAddExpenseCategory_MouseHover(object sender, EventArgs e)
         {
-            pnlAddExpenseCategory.BackColor = Color.LightBlue;
+            pnlAddExpenseCategory.BackColor = Color.FromArgb(220, 225, 230);
         }
 
         private void pnlAddExpenseCategory_MouseLeave(object sender, EventArgs e)
@@ -150,11 +150,6 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             dgvExpenses.ClearSelection();
         }
-
-        
-
-        
-
         
     }
 }
