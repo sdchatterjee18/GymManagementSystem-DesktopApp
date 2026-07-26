@@ -15,7 +15,7 @@ namespace GymManagementSystem.FORMS.DietPlan
     public partial class FrmShowDietPlans : Form
     {
         private Color originalColor;
-        private Color hoverColor = Color.SkyBlue;
+        private Color hoverColor = Color.FromArgb(220,225,230);
         private Color MouseLeave = Color.FromArgb(236,240,243);
         private Color clickColor = Color.FromArgb(184, 195, 179);
 

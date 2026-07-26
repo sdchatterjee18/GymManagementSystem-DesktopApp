@@ -270,6 +270,48 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             txtEnterPlanName.ForeColor = Color.Black;
         }
+
+        private void picSearchIcon_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEnterPlanName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMembershipPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblViewPlans_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlClickAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
+        {
+            //pnlClickAddNewMembershipPlan.ForeColor = Color.FromArgb(220,225,230);
+            //pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220,225,230);
+        }
+
+        private void tlpAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
+        {
+            //pnlClickAddNewMembershipPlan.BackColor = Color.Red;
+            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void lblAddNewPlan_MouseEnter(object sender, EventArgs e)
+        {
+            //pnlClickAddNewMembershipPlan.BackColor = Color.Red;
+        }
+
+        private void tlpAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236,240,243);
+        }
        
     }
 }

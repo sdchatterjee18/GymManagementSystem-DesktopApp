@@ -58,7 +58,8 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(3, 6);
+            this.lblTitle.Location = new System.Drawing.Point(0, 6);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(94, 21);
             this.lblTitle.TabIndex = 0;
@@ -108,7 +109,7 @@
             this.tlpButton.Controls.Add(this.pnlButton, 1, 0);
             this.tlpButton.Controls.Add(this.picBoxSendIcon, 0, 0);
             this.tlpButton.Location = new System.Drawing.Point(269, 161);
-            this.tlpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpButton.Name = "tlpButton";
             this.tlpButton.RowCount = 1;
             this.tlpButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -122,7 +123,7 @@
             this.pnlButton.Controls.Add(this.lblSubmit);
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlButton.Location = new System.Drawing.Point(27, 2);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(68, 23);
             this.pnlButton.TabIndex = 0;
@@ -147,7 +148,7 @@
             this.picBoxSendIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxSendIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBoxSendIcon.Location = new System.Drawing.Point(2, 2);
-            this.picBoxSendIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBoxSendIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxSendIcon.Name = "picBoxSendIcon";
             this.picBoxSendIcon.Size = new System.Drawing.Size(21, 23);
             this.picBoxSendIcon.TabIndex = 1;
@@ -174,7 +175,7 @@
             this.tlpHeading.Controls.Add(this.picBoxLockerIcon, 0, 0);
             this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpHeading.Location = new System.Drawing.Point(0, 0);
-            this.tlpHeading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHeading.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHeading.Name = "tlpHeading";
             this.tlpHeading.RowCount = 1;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -189,7 +190,7 @@
             this.tlpTitle.Controls.Add(this.lblTitle, 0, 0);
             this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTitle.Location = new System.Drawing.Point(47, 2);
-            this.tlpTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTitle.Name = "tlpTitle";
             this.tlpTitle.RowCount = 2;
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -205,9 +206,9 @@
             this.lblSubtitle.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblSubtitle.Location = new System.Drawing.Point(3, 27);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(103, 13);
+            this.lblSubtitle.Size = new System.Drawing.Size(87, 13);
             this.lblSubtitle.TabIndex = 1;
-            this.lblSubtitle.Text = "Adding new Locker";
+            this.lblSubtitle.Text = "Add new Locker";
             // 
             // picBoxLockerIcon
             // 
@@ -230,7 +231,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(488, 124);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(21, 23);
             this.btnClose.TabIndex = 5;

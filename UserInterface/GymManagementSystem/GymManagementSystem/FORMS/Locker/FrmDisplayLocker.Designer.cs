@@ -64,7 +64,7 @@
             this.pnlHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeading.Location = new System.Drawing.Point(0, 0);
             this.pnlHeading.Name = "pnlHeading";
-            this.pnlHeading.Size = new System.Drawing.Size(1198, 122);
+            this.pnlHeading.Size = new System.Drawing.Size(1198, 102);
             this.pnlHeading.TabIndex = 0;
             this.pnlHeading.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -82,7 +82,7 @@
             this.tlpHeading.Name = "tlpHeading";
             this.tlpHeading.RowCount = 1;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeading.Size = new System.Drawing.Size(1198, 119);
+            this.tlpHeading.Size = new System.Drawing.Size(1198, 96);
             this.tlpHeading.TabIndex = 0;
             this.tlpHeading.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -94,7 +94,7 @@
             this.pnlButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlButton.ForeColor = System.Drawing.Color.Blue;
-            this.pnlButton.Location = new System.Drawing.Point(991, 42);
+            this.pnlButton.Location = new System.Drawing.Point(991, 30);
             this.pnlButton.MinimumSize = new System.Drawing.Size(143, 35);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(143, 35);
@@ -158,7 +158,7 @@
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTitle.Location = new System.Drawing.Point(62, 3);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(918, 113);
+            this.pnlTitle.Size = new System.Drawing.Size(918, 90);
             this.pnlTitle.TabIndex = 2;
             this.pnlTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -175,7 +175,7 @@
             this.tlpTitle.RowCount = 1;
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTitle.Size = new System.Drawing.Size(918, 113);
+            this.tlpTitle.Size = new System.Drawing.Size(918, 90);
             this.tlpTitle.TabIndex = 0;
             this.tlpTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -193,7 +193,7 @@
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlplSection.Size = new System.Drawing.Size(867, 107);
+            this.tlplSection.Size = new System.Drawing.Size(867, 84);
             this.tlplSection.TabIndex = 0;
             this.tlplSection.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -204,7 +204,7 @@
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblTitle.Location = new System.Drawing.Point(3, 58);
+            this.lblTitle.Location = new System.Drawing.Point(3, 46);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(861, 13);
             this.lblTitle.TabIndex = 1;
@@ -218,7 +218,7 @@
             this.lblSubtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.Color.Black;
-            this.lblSubtitle.Location = new System.Drawing.Point(3, 37);
+            this.lblSubtitle.Location = new System.Drawing.Point(3, 25);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(861, 21);
             this.lblSubtitle.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.picBoxLockerIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
             this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLockerIcon.Location = new System.Drawing.Point(3, 35);
+            this.picBoxLockerIcon.Location = new System.Drawing.Point(3, 24);
             this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(38, 42);
             this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(38, 42);
             this.picBoxLockerIcon.Name = "picBoxLockerIcon";
@@ -244,9 +244,9 @@
             // 
             this.pnlSpaceing.Controls.Add(this.tlpDataGridView);
             this.pnlSpaceing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSpaceing.Location = new System.Drawing.Point(0, 122);
+            this.pnlSpaceing.Location = new System.Drawing.Point(0, 102);
             this.pnlSpaceing.Name = "pnlSpaceing";
-            this.pnlSpaceing.Size = new System.Drawing.Size(1198, 541);
+            this.pnlSpaceing.Size = new System.Drawing.Size(1198, 561);
             this.pnlSpaceing.TabIndex = 1;
             this.pnlSpaceing.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -262,7 +262,7 @@
             this.tlpDataGridView.Name = "tlpDataGridView";
             this.tlpDataGridView.RowCount = 1;
             this.tlpDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDataGridView.Size = new System.Drawing.Size(1198, 541);
+            this.tlpDataGridView.Size = new System.Drawing.Size(1198, 561);
             this.tlpDataGridView.TabIndex = 0;
             this.tlpDataGridView.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
@@ -299,7 +299,7 @@
             this.colLStatus});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -332,7 +332,7 @@
             this.dgvDisplayLocker.RowTemplate.Height = 40;
             this.dgvDisplayLocker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDisplayLocker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDisplayLocker.Size = new System.Drawing.Size(1072, 535);
+            this.dgvDisplayLocker.Size = new System.Drawing.Size(1072, 555);
             this.dgvDisplayLocker.StandardTab = true;
             this.dgvDisplayLocker.TabIndex = 0;
             this.dgvDisplayLocker.TabStop = false;
