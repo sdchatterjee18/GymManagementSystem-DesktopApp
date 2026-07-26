@@ -181,7 +181,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // pnlAddNewEmployee
             // 
             this.pnlAddNewEmployee.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnlAddNewEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.pnlAddNewEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.pnlAddNewEmployee.Controls.Add(this.tlpAddNewEmployee);
             this.pnlAddNewEmployee.Location = new System.Drawing.Point(959, 22);
             this.pnlAddNewEmployee.Margin = new System.Windows.Forms.Padding(0);
@@ -207,6 +207,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.tlpAddNewEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tlpAddNewEmployee.Size = new System.Drawing.Size(155, 38);
             this.tlpAddNewEmployee.TabIndex = 0;
+            this.tlpAddNewEmployee.MouseEnter += new System.EventHandler(this.pnlAddNewEmployee_MouseEnter);
+            this.tlpAddNewEmployee.MouseLeave += new System.EventHandler(this.pnlAddNewEmployee_MouseLeave);
             // 
             // picBoxPluseIcon
             // 
@@ -219,6 +221,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.picBoxPluseIcon.Size = new System.Drawing.Size(23, 23);
             this.picBoxPluseIcon.TabIndex = 1;
             this.picBoxPluseIcon.TabStop = false;
+            this.picBoxPluseIcon.MouseEnter += new System.EventHandler(this.pnlAddNewEmployee_MouseEnter);
+            this.picBoxPluseIcon.MouseLeave += new System.EventHandler(this.pnlAddNewEmployee_MouseLeave);
             // 
             // lblAddNewEmployee
             // 
@@ -229,9 +233,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblAddNewEmployee.Location = new System.Drawing.Point(40, 5);
             this.lblAddNewEmployee.Name = "lblAddNewEmployee";
             this.lblAddNewEmployee.Size = new System.Drawing.Size(96, 28);
-            this.lblAddNewEmployee.TabIndex = 0;
+            this.lblAddNewEmployee.TabIndex = 2;
             this.lblAddNewEmployee.Text = "Add New";
-            this.lblAddNewEmployee.UseWaitCursor = true;
             this.lblAddNewEmployee.MouseEnter += new System.EventHandler(this.pnlAddNewEmployee_MouseEnter);
             this.lblAddNewEmployee.MouseLeave += new System.EventHandler(this.pnlAddNewEmployee_MouseLeave);
             // 
@@ -266,7 +269,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dvgEmployeeDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -305,7 +308,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dvgEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -321,7 +324,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             // colSlNo
             // 
-            this.colSlNo.FillWeight = 76.4088F;
+            this.colSlNo.FillWeight = 60F;
             this.colSlNo.HeaderText = "Sl No.";
             this.colSlNo.Name = "colSlNo";
             this.colSlNo.ReadOnly = true;
@@ -330,7 +333,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colName
             // 
             this.colName.DataPropertyName = "FullName";
-            this.colName.FillWeight = 102.6212F;
+            this.colName.FillWeight = 130F;
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -339,7 +342,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colGender
             // 
             this.colGender.DataPropertyName = "GenderName";
-            this.colGender.FillWeight = 102.6212F;
+            this.colGender.FillWeight = 70F;
             this.colGender.HeaderText = "Gender";
             this.colGender.Name = "colGender";
             this.colGender.ReadOnly = true;
@@ -348,7 +351,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colPhoneNo
             // 
             this.colPhoneNo.DataPropertyName = "PhoneNo";
-            this.colPhoneNo.FillWeight = 102.6212F;
             this.colPhoneNo.HeaderText = "Mobile No";
             this.colPhoneNo.Name = "colPhoneNo";
             this.colPhoneNo.ReadOnly = true;
@@ -357,7 +359,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colEmail
             // 
             this.colEmail.DataPropertyName = "EmailId";
-            this.colEmail.FillWeight = 102.6212F;
+            this.colEmail.FillWeight = 160F;
             this.colEmail.HeaderText = "Email";
             this.colEmail.Name = "colEmail";
             this.colEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -365,7 +367,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colJoiningDate
             // 
             this.colJoiningDate.DataPropertyName = "JoiningDate";
-            this.colJoiningDate.FillWeight = 102.6212F;
+            this.colJoiningDate.FillWeight = 90F;
             this.colJoiningDate.HeaderText = "Joining Date";
             this.colJoiningDate.Name = "colJoiningDate";
             this.colJoiningDate.ReadOnly = true;
@@ -374,7 +376,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colRole
             // 
             this.colRole.DataPropertyName = "RoleName";
-            this.colRole.FillWeight = 102.6212F;
+            this.colRole.FillWeight = 90F;
             this.colRole.HeaderText = "Role";
             this.colRole.Name = "colRole";
             this.colRole.ReadOnly = true;
@@ -383,7 +385,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // colBankAccount
             // 
             this.colBankAccount.DataPropertyName = "BankAccountNo";
-            this.colBankAccount.FillWeight = 102.6212F;
+            this.colBankAccount.FillWeight = 110F;
             this.colBankAccount.HeaderText = "Bank A/C";
             this.colBankAccount.Name = "colBankAccount";
             this.colBankAccount.ReadOnly = true;
@@ -391,13 +393,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             // colStatus
             // 
+            this.colStatus.FillWeight = 80F;
             this.colStatus.HeaderText = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colUpdate
             // 
-            this.colUpdate.FillWeight = 90F;
+            this.colUpdate.FillWeight = 80F;
             this.colUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colUpdate.HeaderText = "Action";
             this.colUpdate.Name = "colUpdate";
@@ -406,7 +409,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             // colDeactivate
             // 
-            this.colDeactivate.FillWeight = 90F;
             this.colDeactivate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDeactivate.HeaderText = "Action";
             this.colDeactivate.Name = "colDeactivate";
@@ -450,7 +452,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSearch.Location = new System.Drawing.Point(53, 16);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(258, 37);
@@ -521,6 +523,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel pnlAddNewEmployee;
+        private System.Windows.Forms.TableLayoutPanel tlpAddNewEmployee;
+        private System.Windows.Forms.PictureBox picBoxPluseIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSlNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
@@ -532,8 +536,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.DataGridViewButtonColumn colUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn colDeactivate;
-        private System.Windows.Forms.TableLayoutPanel tlpAddNewEmployee;
         private System.Windows.Forms.Label lblAddNewEmployee;
-        private System.Windows.Forms.PictureBox picBoxPluseIcon;
     }
 }

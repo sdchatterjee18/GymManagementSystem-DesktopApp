@@ -18,7 +18,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             InitializeComponent();
         }
 
-
         private void getEmployeeDetails()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
@@ -100,6 +99,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                     sqlConnection.Close();
             }
         }
+
         private void FrmSADisplayAllEmployee_Load(object sender, EventArgs e)
         {
             getEmployeeDetails();
@@ -135,11 +135,20 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             {
                 object cellValue = dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
-                if (cellValue == null || string.IsNullOrEmpty(cellValue.ToString()))
+                e.PaintBackground(e.CellBounds, true);
+
+                if (cellValue != null && !string.IsNullOrEmpty(cellValue.ToString()))
                 {
-                    e.PaintBackground(e.CellBounds, true);
-                    e.Handled = true;
+                    TextRenderer.DrawText(
+                        e.Graphics,
+                        cellValue.ToString(),
+                        e.CellStyle.Font,
+                        e.CellBounds,
+                        e.CellStyle.ForeColor,
+                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 }
+
+                e.Handled = true; 
             }
         }
 
@@ -147,36 +156,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-                string colName = dvgEmployeeDetails.Columns[e.ColumnIndex].Name;
-
-                if (colName == "colSlNo")
-                {
-                    dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(30, 60, 220);
-                }
-                else if (colName == "colStatus")
-                {
-                    object cellValue = dvgEmployeeDetails.Rows[e.RowIndex].Cells["colStatus"].Value;
-                    string status = (cellValue != null) ? cellValue.ToString().Trim() : null;
-
-                    if (status != null && status.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                        dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(20, 140, 60);
-                    else if (status != null && status.Equals("Inactive", StringComparison.OrdinalIgnoreCase))
-                        dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(200, 40, 40);
-                }
-                else if (colName == "colUpdate")
-                {
-                    dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.RoyalBlue;
-                }
-                else if (colName == "colDeactivate")
-                {
-                    dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Red;
-                }
-                else
-                {
-                    dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Empty;
-                }
+                dvgEmployeeDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
         }
 
@@ -220,9 +200,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             }
         }
 
-
-
-
         private void pnlAddNewEmployee_MouseEnter(object sender, EventArgs e)
         {
             this.pnlAddNewEmployee.BackColor = Color.FromArgb(220,225,230);
@@ -230,7 +207,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
         private void pnlAddNewEmployee_MouseLeave(object sender, EventArgs e)
         {
-            this.pnlAddNewEmployee.BackColor = Color.FromArgb(226, 240, 243);
+            this.pnlAddNewEmployee.BackColor = Color.FromArgb(236, 240, 243);
         }
     }
 }
