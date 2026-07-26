@@ -361,11 +361,11 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSubmitClear.ColumnCount = 6;
             this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.108109F));
-            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.12162F));
-            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.702703F));
-            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.86992F));
-            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.61789F));
+            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.52846F));
+            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.29268F));
+            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.626016F));
+            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.64228F));
+            this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.504065F));
             this.tlpSubmitClear.Controls.Add(this.tlpSubmit, 4, 0);
             this.tlpSubmitClear.Controls.Add(this.tlpClear, 2, 0);
             this.tlpSubmitClear.Location = new System.Drawing.Point(3, 378);
@@ -377,14 +377,14 @@
             // 
             // tlpSubmit
             // 
-            this.tlpSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tlpSubmit.BackColor = System.Drawing.Color.RoyalBlue;
             this.tlpSubmit.ColumnCount = 2;
             this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.45614F));
             this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.54386F));
             this.tlpSubmit.Controls.Add(this.lblSubmit, 1, 0);
             this.tlpSubmit.Controls.Add(this.picSubmit, 0, 0);
-            this.tlpSubmit.Location = new System.Drawing.Point(295, 14);
+            this.tlpSubmit.Location = new System.Drawing.Point(372, 14);
             this.tlpSubmit.Name = "tlpSubmit";
             this.tlpSubmit.RowCount = 1;
             this.tlpSubmit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -419,12 +419,12 @@
             // 
             // tlpClear
             // 
-            this.tlpClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tlpClear.ColumnCount = 1;
             this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpClear.Controls.Add(this.lblClear, 0, 0);
-            this.tlpClear.Location = new System.Drawing.Point(105, 14);
+            this.tlpClear.Location = new System.Drawing.Point(246, 14);
             this.tlpClear.Name = "tlpClear";
             this.tlpClear.RowCount = 1;
             this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -434,7 +434,7 @@
             // 
             // lblClear
             // 
-            this.lblClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblClear.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClear.ForeColor = System.Drawing.Color.White;

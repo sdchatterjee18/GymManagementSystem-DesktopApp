@@ -52,7 +52,6 @@ namespace GymManagementSystem.FORMS.Expenses
                         int RowIndex = dgvExpenses.Rows.Add();
                         dgvExpenses.Rows[RowIndex].Cells["colSLNo"].Value = SerialNo++;
                         dgvExpenses.Rows[RowIndex].Cells["colSLNo"].Style.ForeColor = Color.RoyalBlue;
-                        dgvExpenses.Rows[RowIndex].Cells["colExpenseId"].Value = dataRow["ExpenseId"].ToString();
                         dgvExpenses.Rows[RowIndex].Cells["colCategoryName"].Value = dataRow["CategoryName"].ToString();
                         dgvExpenses.Rows[RowIndex].Cells["colCategory"].Value = dataRow["Category"].ToString();
                         dgvExpenses.Rows[RowIndex].Cells["colExpenseAmount"].Value = dataRow["ExpenseAmount"].ToString();
