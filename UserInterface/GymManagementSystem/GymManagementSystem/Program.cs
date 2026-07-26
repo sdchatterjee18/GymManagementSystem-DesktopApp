@@ -6,6 +6,7 @@ using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Main;
 using GymManagementSystem.FORMS.DietPlan;
+using GymManagementSystem.FORMS.Member;
 
 namespace GymManagementSystem
 {
@@ -19,7 +20,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMainLayout());
+            Application.Run(new FrmMemberTrainerAssignment());
         }
     }
 }

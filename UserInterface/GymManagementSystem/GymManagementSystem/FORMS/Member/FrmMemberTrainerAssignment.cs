@@ -20,5 +20,16 @@ namespace GymManagementSystem.FORMS.Member
         {
 
         }
+
+        private void txtSearchBar_Click(object sender, EventArgs e)
+        {
+            int SearchBarClick = 1;
+            if (SearchBarClick == 1)
+            {
+                txtSearchBar.Clear();
+                txtSearchBar.ForeColor = Color.Black;
+
+            }
+        }
     }
 }
