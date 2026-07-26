@@ -12,9 +12,15 @@ namespace GymManagementSystem.FORMS.Dashboard
         {
             InitializeComponent();
         }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
 
+        }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            timer.Start();
 
             LoadShiftWiseMembersChart();
             LoadTodayMemberAttendanceChart();

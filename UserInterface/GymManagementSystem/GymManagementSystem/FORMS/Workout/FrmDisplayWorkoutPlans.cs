@@ -201,6 +201,7 @@ namespace GymManagementSystem.FORMS.Workout
         {
             FrmAddNewExercise frmE = new FrmAddNewExercise();
             frmE.Show();
+            
         }
 
         private void pnlClickToAddNewWorkoutPlan_Click(object sender, EventArgs e)
@@ -209,11 +210,25 @@ namespace GymManagementSystem.FORMS.Workout
             frmW.Show();
         }
 
-        
-
+        private void tlpAddNewExercise_MouseEnter(object sender, EventArgs e)
+        {
+            tlpAddNewExercise.BackColor = Color.FromArgb(220, 225, 230);
         }
 
+        private void tlpAddNewExercise_MouseLeave(object sender, EventArgs e)
+        {
+            tlpAddNewExercise.BackColor = Color.FromArgb(236, 240, 243);
+        }
 
+        private void tlpAddNewWorkoutPlan_MouseEnter(object sender, EventArgs e)
+        {
+            tlpAddNewWorkoutPlan.BackColor = Color.FromArgb(220, 225, 230);
+        }
 
-    
+        private void tlpAddNewWorkoutPlan_MouseLeave(object sender, EventArgs e)
+        {
+            tlpAddNewWorkoutPlan.BackColor = Color.FromArgb(236, 240, 243);
+        } 
+
+    }
 }

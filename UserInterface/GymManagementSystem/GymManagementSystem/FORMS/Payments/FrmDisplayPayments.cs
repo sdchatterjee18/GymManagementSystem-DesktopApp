@@ -111,8 +111,15 @@ namespace GymManagementSystem.FORMS.Payments
             {
 
                 e.CellStyle.ForeColor = Color.Navy;
-            }    
-            
+            }
+
+        }
+
+        private void txtEnterPlanName_Click(object sender, EventArgs e)
+        {
+            txtEnterPlanName.Clear();
+            txtEnterPlanName.ForeColor = Color.Black;
+            txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
 
 

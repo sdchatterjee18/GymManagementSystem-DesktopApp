@@ -29,5 +29,11 @@ namespace GymManagementSystem.FORMS.Locker
         {
             // It will Add new Locker
         }
+
+        private void FrmAddLocker_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

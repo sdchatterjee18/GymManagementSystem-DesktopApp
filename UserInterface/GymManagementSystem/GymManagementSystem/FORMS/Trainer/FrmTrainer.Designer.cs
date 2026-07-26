@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrainer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpTrainer = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTrainerDetails = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTrainerHeader = new System.Windows.Forms.TableLayoutPanel();
@@ -106,7 +106,7 @@
             this.tlpTrainer.Controls.Add(this.tlpSearchSection, 0, 4);
             this.tlpTrainer.Controls.Add(this.tlpShowTrainers, 0, 6);
             this.tlpTrainer.Location = new System.Drawing.Point(1, 2);
-            this.tlpTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTrainer.Name = "tlpTrainer";
             this.tlpTrainer.RowCount = 8;
             this.tlpTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.48408F));
@@ -183,7 +183,7 @@
             this.tlpTrainerTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTrainerTitleAndSubTitle.Controls.Add(this.tlpTrainerTitleAndSubTitleSection, 0, 0);
             this.tlpTrainerTitleAndSubTitle.Location = new System.Drawing.Point(58, 2);
-            this.tlpTrainerTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTrainerTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTrainerTitleAndSubTitle.Name = "tlpTrainerTitleAndSubTitle";
             this.tlpTrainerTitleAndSubTitle.RowCount = 1;
             this.tlpTrainerTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -203,7 +203,7 @@
             this.tlpTrainerTitleAndSubTitleSection.Controls.Add(this.lblTrainerDetails, 0, 0);
             this.tlpTrainerTitleAndSubTitleSection.Controls.Add(this.lblSubTitle, 0, 1);
             this.tlpTrainerTitleAndSubTitleSection.Location = new System.Drawing.Point(2, 2);
-            this.tlpTrainerTitleAndSubTitleSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTrainerTitleAndSubTitleSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTrainerTitleAndSubTitleSection.Name = "tlpTrainerTitleAndSubTitleSection";
             this.tlpTrainerTitleAndSubTitleSection.RowCount = 2;
             this.tlpTrainerTitleAndSubTitleSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
@@ -255,7 +255,7 @@
             this.tlpSelectTrainer.Controls.Add(this.tlpGeneralTrainer, 1, 0);
             this.tlpSelectTrainer.Controls.Add(this.tlpPersonalTrainer, 3, 0);
             this.tlpSelectTrainer.Location = new System.Drawing.Point(2, 87);
-            this.tlpSelectTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSelectTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSelectTrainer.Name = "tlpSelectTrainer";
             this.tlpSelectTrainer.RowCount = 1;
             this.tlpSelectTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -274,7 +274,7 @@
             this.tlpGeneralTrainer.Controls.Add(this.tlpGeneralTrainerPicture, 0, 1);
             this.tlpGeneralTrainer.Controls.Add(this.tlpGeneralTrainerLabel, 0, 2);
             this.tlpGeneralTrainer.Location = new System.Drawing.Point(246, 2);
-            this.tlpGeneralTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGeneralTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGeneralTrainer.Name = "tlpGeneralTrainer";
             this.tlpGeneralTrainer.RowCount = 3;
             this.tlpGeneralTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -283,9 +283,9 @@
             this.tlpGeneralTrainer.Size = new System.Drawing.Size(140, 127);
             this.tlpGeneralTrainer.TabIndex = 2;
             this.tlpGeneralTrainer.Click += new System.EventHandler(this.tlpGeneralTrainer_Click);
+            this.tlpGeneralTrainer.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpGeneralTrainer_Paint);
             this.tlpGeneralTrainer.MouseEnter += new System.EventHandler(this.tlpGeneralTrainer_MouseEnter);
             this.tlpGeneralTrainer.MouseLeave += new System.EventHandler(this.tlpGeneralTrainer_MouseLeave);
-            this.tlpGeneralTrainer.MouseHover += new System.EventHandler(this.tlpGeneralTrainer_MouseHover);
             // 
             // tlpGeneralTrainerPicture
             // 
@@ -298,7 +298,7 @@
             this.tlpGeneralTrainerPicture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tlpGeneralTrainerPicture.Controls.Add(this.picGeneralTrainer, 1, 0);
             this.tlpGeneralTrainerPicture.Location = new System.Drawing.Point(2, 14);
-            this.tlpGeneralTrainerPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGeneralTrainerPicture.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGeneralTrainerPicture.Name = "tlpGeneralTrainerPicture";
             this.tlpGeneralTrainerPicture.RowCount = 1;
             this.tlpGeneralTrainerPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -308,7 +308,6 @@
             this.tlpGeneralTrainerPicture.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpGeneralTrainerPicture_Paint);
             this.tlpGeneralTrainerPicture.MouseEnter += new System.EventHandler(this.tlpGeneralTrainer_MouseEnter);
             this.tlpGeneralTrainerPicture.MouseLeave += new System.EventHandler(this.tlpGeneralTrainer_MouseLeave);
-            this.tlpGeneralTrainerPicture.MouseHover += new System.EventHandler(this.tlpGeneralTrainer_MouseHover);
             // 
             // picGeneralTrainer
             // 
@@ -318,7 +317,7 @@
             this.picGeneralTrainer.BackColor = System.Drawing.Color.White;
             this.picGeneralTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picGeneralTrainer.Image")));
             this.picGeneralTrainer.Location = new System.Drawing.Point(26, 2);
-            this.picGeneralTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGeneralTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.picGeneralTrainer.Name = "picGeneralTrainer";
             this.picGeneralTrainer.Size = new System.Drawing.Size(83, 76);
             this.picGeneralTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -327,7 +326,6 @@
             this.picGeneralTrainer.Click += new System.EventHandler(this.tlpGeneralTrainer_Click);
             this.picGeneralTrainer.MouseEnter += new System.EventHandler(this.tlpGeneralTrainer_MouseEnter);
             this.picGeneralTrainer.MouseLeave += new System.EventHandler(this.tlpGeneralTrainer_MouseLeave);
-            this.picGeneralTrainer.MouseHover += new System.EventHandler(this.tlpGeneralTrainer_MouseHover);
             // 
             // tlpGeneralTrainerLabel
             // 
@@ -339,17 +337,16 @@
             this.tlpGeneralTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpGeneralTrainerLabel.Controls.Add(this.lblGeneralTrainer, 0, 0);
             this.tlpGeneralTrainerLabel.Location = new System.Drawing.Point(2, 98);
-            this.tlpGeneralTrainerLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpGeneralTrainerLabel.Margin = new System.Windows.Forms.Padding(2);
             this.tlpGeneralTrainerLabel.Name = "tlpGeneralTrainerLabel";
             this.tlpGeneralTrainerLabel.RowCount = 1;
             this.tlpGeneralTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpGeneralTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpGeneralTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpGeneralTrainerLabel.Size = new System.Drawing.Size(136, 27);
             this.tlpGeneralTrainerLabel.TabIndex = 1;
             this.tlpGeneralTrainerLabel.Click += new System.EventHandler(this.tlpGeneralTrainer_Click);
             this.tlpGeneralTrainerLabel.MouseEnter += new System.EventHandler(this.tlpGeneralTrainer_MouseEnter);
             this.tlpGeneralTrainerLabel.MouseLeave += new System.EventHandler(this.tlpGeneralTrainer_MouseLeave);
-            this.tlpGeneralTrainerLabel.MouseHover += new System.EventHandler(this.tlpGeneralTrainer_MouseHover);
             // 
             // lblGeneralTrainer
             // 
@@ -357,7 +354,7 @@
             this.lblGeneralTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 11.8F, System.Drawing.FontStyle.Bold);
             this.lblGeneralTrainer.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblGeneralTrainer.Location = new System.Drawing.Point(3, 0);
-            this.lblGeneralTrainer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGeneralTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.lblGeneralTrainer.Name = "lblGeneralTrainer";
             this.lblGeneralTrainer.Size = new System.Drawing.Size(130, 26);
             this.lblGeneralTrainer.TabIndex = 1;
@@ -365,7 +362,6 @@
             this.lblGeneralTrainer.Click += new System.EventHandler(this.tlpGeneralTrainer_Click);
             this.lblGeneralTrainer.MouseEnter += new System.EventHandler(this.tlpGeneralTrainer_MouseEnter);
             this.lblGeneralTrainer.MouseLeave += new System.EventHandler(this.tlpGeneralTrainer_MouseLeave);
-            this.lblGeneralTrainer.MouseHover += new System.EventHandler(this.tlpGeneralTrainer_MouseHover);
             // 
             // tlpPersonalTrainer
             // 
@@ -378,7 +374,7 @@
             this.tlpPersonalTrainer.Controls.Add(this.tlpPersonalTrainerPicture, 0, 1);
             this.tlpPersonalTrainer.Controls.Add(this.tlpPersonalTrainerLabel, 0, 2);
             this.tlpPersonalTrainer.Location = new System.Drawing.Point(473, 2);
-            this.tlpPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPersonalTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPersonalTrainer.Name = "tlpPersonalTrainer";
             this.tlpPersonalTrainer.RowCount = 3;
             this.tlpPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -387,9 +383,9 @@
             this.tlpPersonalTrainer.Size = new System.Drawing.Size(141, 127);
             this.tlpPersonalTrainer.TabIndex = 2;
             this.tlpPersonalTrainer.Click += new System.EventHandler(this.tlpPersonalTrainer_Click);
+            this.tlpPersonalTrainer.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpPersonalTrainer_Paint);
             this.tlpPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpPersonalTrainer_MouseEnter);
             this.tlpPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpPersonalTrainer_MouseLeave);
-            this.tlpPersonalTrainer.MouseHover += new System.EventHandler(this.tlpPersonalTrainer_MouseHover);
             // 
             // tlpPersonalTrainerPicture
             // 
@@ -401,17 +397,16 @@
             this.tlpPersonalTrainerPicture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tlpPersonalTrainerPicture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tlpPersonalTrainerPicture.Controls.Add(this.picPersonalTrainer, 1, 0);
-            this.tlpPersonalTrainerPicture.Location = new System.Drawing.Point(2, 14);
-            this.tlpPersonalTrainerPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPersonalTrainerPicture.Location = new System.Drawing.Point(0, 12);
+            this.tlpPersonalTrainerPicture.Margin = new System.Windows.Forms.Padding(0);
             this.tlpPersonalTrainerPicture.Name = "tlpPersonalTrainerPicture";
             this.tlpPersonalTrainerPicture.RowCount = 1;
             this.tlpPersonalTrainerPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPersonalTrainerPicture.Size = new System.Drawing.Size(137, 80);
+            this.tlpPersonalTrainerPicture.Size = new System.Drawing.Size(141, 84);
             this.tlpPersonalTrainerPicture.TabIndex = 0;
             this.tlpPersonalTrainerPicture.Click += new System.EventHandler(this.tlpPersonalTrainer_Click);
             this.tlpPersonalTrainerPicture.MouseEnter += new System.EventHandler(this.tlpPersonalTrainer_MouseEnter);
             this.tlpPersonalTrainerPicture.MouseLeave += new System.EventHandler(this.tlpPersonalTrainer_MouseLeave);
-            this.tlpPersonalTrainerPicture.MouseHover += new System.EventHandler(this.tlpPersonalTrainer_MouseHover);
             // 
             // picPersonalTrainer
             // 
@@ -420,17 +415,16 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.picPersonalTrainer.BackColor = System.Drawing.Color.White;
             this.picPersonalTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picPersonalTrainer.Image")));
-            this.picPersonalTrainer.Location = new System.Drawing.Point(26, 2);
-            this.picPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPersonalTrainer.Location = new System.Drawing.Point(27, 2);
+            this.picPersonalTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.picPersonalTrainer.Name = "picPersonalTrainer";
-            this.picPersonalTrainer.Size = new System.Drawing.Size(83, 76);
+            this.picPersonalTrainer.Size = new System.Drawing.Size(86, 80);
             this.picPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPersonalTrainer.TabIndex = 0;
             this.picPersonalTrainer.TabStop = false;
             this.picPersonalTrainer.Click += new System.EventHandler(this.tlpPersonalTrainer_Click);
             this.picPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpPersonalTrainer_MouseEnter);
             this.picPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpPersonalTrainer_MouseLeave);
-            this.picPersonalTrainer.MouseHover += new System.EventHandler(this.tlpPersonalTrainer_MouseHover);
             // 
             // tlpPersonalTrainerLabel
             // 
@@ -442,17 +436,16 @@
             this.tlpPersonalTrainerLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpPersonalTrainerLabel.Controls.Add(this.lblPersonalTrainer, 0, 0);
             this.tlpPersonalTrainerLabel.Location = new System.Drawing.Point(2, 98);
-            this.tlpPersonalTrainerLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPersonalTrainerLabel.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPersonalTrainerLabel.Name = "tlpPersonalTrainerLabel";
             this.tlpPersonalTrainerLabel.RowCount = 1;
             this.tlpPersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpPersonalTrainerLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpPersonalTrainerLabel.Size = new System.Drawing.Size(137, 27);
             this.tlpPersonalTrainerLabel.TabIndex = 1;
             this.tlpPersonalTrainerLabel.Click += new System.EventHandler(this.tlpPersonalTrainer_Click);
             this.tlpPersonalTrainerLabel.MouseEnter += new System.EventHandler(this.tlpPersonalTrainer_MouseEnter);
             this.tlpPersonalTrainerLabel.MouseLeave += new System.EventHandler(this.tlpPersonalTrainer_MouseLeave);
-            this.tlpPersonalTrainerLabel.MouseHover += new System.EventHandler(this.tlpPersonalTrainer_MouseHover);
             // 
             // lblPersonalTrainer
             // 
@@ -460,7 +453,7 @@
             this.lblPersonalTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 11.8F, System.Drawing.FontStyle.Bold);
             this.lblPersonalTrainer.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblPersonalTrainer.Location = new System.Drawing.Point(2, 0);
-            this.lblPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.lblPersonalTrainer.Name = "lblPersonalTrainer";
             this.lblPersonalTrainer.Size = new System.Drawing.Size(132, 26);
             this.lblPersonalTrainer.TabIndex = 1;
@@ -468,7 +461,6 @@
             this.lblPersonalTrainer.Click += new System.EventHandler(this.tlpPersonalTrainer_Click);
             this.lblPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpPersonalTrainer_MouseEnter);
             this.lblPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpPersonalTrainer_MouseLeave);
-            this.lblPersonalTrainer.MouseHover += new System.EventHandler(this.tlpPersonalTrainer_MouseHover);
             // 
             // tlpSearchSection
             // 
@@ -499,7 +491,7 @@
             this.tlpSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55084F));
             this.tlpSearchBar.Controls.Add(this.tlpSearch, 0, 0);
             this.tlpSearchBar.Location = new System.Drawing.Point(45, 2);
-            this.tlpSearchBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSearchBar.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSearchBar.Name = "tlpSearchBar";
             this.tlpSearchBar.RowCount = 1;
             this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -545,7 +537,7 @@
             this.txtSearchBar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBar.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtSearchBar.Location = new System.Drawing.Point(39, 13);
-            this.txtSearchBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchBar.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchBar.Name = "txtSearchBar";
             this.txtSearchBar.Size = new System.Drawing.Size(231, 26);
             this.txtSearchBar.TabIndex = 1;
@@ -560,7 +552,7 @@
             this.btnSeach.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeach.ForeColor = System.Drawing.Color.White;
             this.btnSeach.Location = new System.Drawing.Point(287, 7);
-            this.btnSeach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeach.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeach.Name = "btnSeach";
             this.btnSeach.Size = new System.Drawing.Size(78, 37);
             this.btnSeach.TabIndex = 3;
@@ -579,7 +571,7 @@
             this.tlpShowTrainers.Controls.Add(this.pnlSearch, 2, 0);
             this.tlpShowTrainers.Controls.Add(this.dgvTrainerDetails, 1, 0);
             this.tlpShowTrainers.Location = new System.Drawing.Point(2, 292);
-            this.tlpShowTrainers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpShowTrainers.Margin = new System.Windows.Forms.Padding(2);
             this.tlpShowTrainers.Name = "tlpShowTrainers";
             this.tlpShowTrainers.RowCount = 1;
             this.tlpShowTrainers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -595,7 +587,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.Location = new System.Drawing.Point(817, 2);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(38, 324);
             this.pnlSearch.TabIndex = 0;
@@ -605,26 +597,27 @@
             this.dgvTrainerDetails.AllowUserToAddRows = false;
             this.dgvTrainerDetails.AllowUserToResizeColumns = false;
             this.dgvTrainerDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvTrainerDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvTrainerDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTrainerDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTrainerDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvTrainerDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrainerDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTrainerDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrainerDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTrainerDetails.ColumnHeadersHeight = 55;
             this.dgvTrainerDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTrainerDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -637,33 +630,33 @@
             this.colPhoneNo,
             this.colGender,
             this.colProfile});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTrainerDetails.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTrainerDetails.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTrainerDetails.EnableHeadersVisualStyles = false;
             this.dgvTrainerDetails.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvTrainerDetails.Location = new System.Drawing.Point(42, 2);
-            this.dgvTrainerDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTrainerDetails.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTrainerDetails.Name = "dgvTrainerDetails";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrainerDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrainerDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTrainerDetails.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dgvTrainerDetails.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dgvTrainerDetails.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTrainerDetails.RowTemplate.Height = 40;
             this.dgvTrainerDetails.Size = new System.Drawing.Size(771, 324);
             this.dgvTrainerDetails.TabIndex = 0;

@@ -19,7 +19,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             InitializeComponent();
         }
-
+        private TableLayoutPanel selectedTLP = null;
         private void lblGeneralTrainer_Click(object sender, EventArgs e)
         {
 
@@ -180,50 +180,58 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void tlpPersonalTrainer_Click(object sender, EventArgs e)
         {
+            selectedTLP = tlpPersonalTrainer;
+            //tlpPersonalTrainer.BackColor = Color.FromArgb(165, 175, 240);
+            tlpPersonalTrainer.BackColor = Color.Blue;
+            lblPersonalTrainer.ForeColor = Color.White;
+            tlpGeneralTrainer.BackColor = Color.FromArgb(210,215,245);
+            lblGeneralTrainer.ForeColor = Color.Blue;
 
         }
 
         private void tlpPersonalTrainer_MouseEnter(object sender, EventArgs e)
         {
-            tlpPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            tlpPersonalTrainer.ForeColor = Color.Black;
-
-        }
-
-        private void tlpPersonalTrainer_MouseHover(object sender, EventArgs e)
-        {
-            tlpPersonalTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            tlpPersonalTrainer.ForeColor = Color.Black;
+           if(selectedTLP!=tlpPersonalTrainer)
+           {
+               tlpPersonalTrainer.BackColor = Color.FromArgb(180,188,245);
+           }
         }
 
         private void tlpPersonalTrainer_MouseLeave(object sender, EventArgs e)
         {
-            tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 255);
-            tlpPersonalTrainer.ForeColor = Color.Black;
+            if (selectedTLP != tlpPersonalTrainer)
+            {
+                tlpPersonalTrainer.BackColor = Color.FromArgb(210,215,255);
+            }
         }
 
         private void tlpGeneralTrainer_Click(object sender, EventArgs e)
         {
-
+            selectedTLP = tlpGeneralTrainer;
+            //tlpGeneralTrainer.BackColor = Color.FromArgb(165, 175, 240);
+            tlpGeneralTrainer.BackColor = Color.Blue;
+            lblGeneralTrainer.ForeColor = Color.White;
+            tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 245);
+            lblPersonalTrainer.ForeColor = Color.Blue;
         }
 
         private void tlpGeneralTrainer_MouseEnter(object sender, EventArgs e)
         {
-            tlpGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            tlpGeneralTrainer.ForeColor = Color.Black;
-
+            if (selectedTLP != tlpGeneralTrainer)
+            {
+                tlpGeneralTrainer.BackColor = Color.FromArgb(180, 188, 245);
+            }
         }
 
-        private void tlpGeneralTrainer_MouseHover(object sender, EventArgs e)
-        {
-            tlpGeneralTrainer.BackColor = Color.FromArgb(239, 246, 255);
-            tlpGeneralTrainer.ForeColor = Color.Black;
-        }
 
         private void tlpGeneralTrainer_MouseLeave(object sender, EventArgs e)
         {
-            tlpGeneralTrainer.BackColor = Color.FromArgb(210, 215, 255);
-            tlpGeneralTrainer.ForeColor = Color.Black;
+            if (selectedTLP != tlpGeneralTrainer)
+            {
+                tlpGeneralTrainer.BackColor = Color.FromArgb(210, 215, 255);
+            }
+
+            
         }
 
         private void tlpGeneralTrainerPicture_Paint(object sender, PaintEventArgs e)
@@ -231,6 +239,34 @@ namespace GymManagementSystem.FORMS.Trainer
 
         }
         private const string PLACEHOLDER_TEXT = "Enter Mobile No.";
+
+        private void tlpGeneralTrainer_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpPersonalTrainer_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpGeneralTrainer_Paint(object sender, PaintEventArgs e)
+        {
+        //    ControlPaint.DrawBorder(
+        //e.Graphics,
+        //tlpGeneralTrainer.ClientRectangle,
+        //Color.Blue,       // Border color
+        //ButtonBorderStyle.Solid);
+        }
+
+        private void tlpPersonalTrainer_Paint(object sender, PaintEventArgs e)
+        {
+        //    ControlPaint.DrawBorder(
+        //e.Graphics,
+        //tlpGeneralTrainer.ClientRectangle,
+        //Color.Blue,       // Border color
+        //ButtonBorderStyle.Solid);
+        }
 
         
     }
