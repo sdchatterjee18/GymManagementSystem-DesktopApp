@@ -6,8 +6,11 @@ using GymManagementSystem.FORMS.Workout;
 using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.Expenses;
+using GymManagementSystem.FORMS.Member;
 
 namespace GymManagementSystem
 {

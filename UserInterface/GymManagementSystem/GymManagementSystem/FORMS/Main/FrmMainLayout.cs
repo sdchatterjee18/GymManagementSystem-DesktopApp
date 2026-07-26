@@ -16,6 +16,7 @@ using GymManagementSystem.FORMS.Dashboard;
 using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FORMS.Workout;
+using GymManagementSystem.FORMS.Member;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -290,6 +291,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlMemberTrainerAssignment_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmMemberTrainerAssignment());
         }
 
         private void pnlTrainer_MouseEnter(object sender, EventArgs e)
@@ -895,6 +897,6 @@ namespace GymManagementSystem.FORMS.Main
 
        
        
-       
+    
        }
 }
