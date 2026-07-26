@@ -517,6 +517,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlWorkoutShedule_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayWorkoutSchedule());
         }
 
         private void pnlRegistrationFees_MouseEnter(object sender, EventArgs e)

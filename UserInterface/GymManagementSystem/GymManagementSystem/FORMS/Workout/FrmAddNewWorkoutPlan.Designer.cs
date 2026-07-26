@@ -77,7 +77,7 @@
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.17391F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.picAddWorkoutPlan, 1, 0);
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.tlpNewWorkoutPlanTitle, 2, 0);
             this.tlpMainNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -107,7 +107,7 @@
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblViewWorkoutPlan, 0, 1);
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblNewWorkoutPlan, 0, 0);
             this.tlpNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(65, 2);
+            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(64, 2);
             this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanTitle.Name = "tlpNewWorkoutPlanTitle";
             this.tlpNewWorkoutPlanTitle.RowCount = 3;
