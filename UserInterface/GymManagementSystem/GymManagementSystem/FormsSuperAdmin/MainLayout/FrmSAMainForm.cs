@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.FormsSuperAdmin.Dashboard;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -15,6 +16,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private const int ExpandedWidth = 280;
         private const int CollapsedWidth = 70;
         private bool sidebarExpand = true;
+        private Form activeForm = null;
         public FrmSAMainForm()
         {
             InitializeComponent();
@@ -39,24 +41,38 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             selectedPanel.BackColor = Color.FromArgb(68, 97, 174); // Selected color
         }
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            lblDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
-            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
-
-        }
+       
 
         private void FrmSAMainForm_Load_1(object sender, EventArgs e)
         {
             //MessageBox.Show("Load Working");
            
-            timer.Start();
+         
             pnlSidebar.Width = ExpandedWidth;
             sidebarExpand = true;
             ExpandSidebar();
+            OpenChildForm(new FrmSADashboard());
         }
 
-      
+        private void OpenChildForm(Form childForm)
+        {
+            // Close the currently opened form
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            pnlMainPanel.Controls.Clear();
+            pnlMainPanel.Controls.Add(childForm);
+            pnlMainPanel.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void pnlMenu_Click(object sender, EventArgs e)
         {
@@ -200,6 +216,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             pnlDashboard.ForeColor = Color.White;
             picDashboard.Image = Properties.Resources.dashboard;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmSADashboard());
         }
 
         private void pnlEmployeeManagement_MouseEnter(object sender, EventArgs e)
@@ -303,7 +320,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         }
 
-        private void pnlSettins_MouseLeave(object sender, EventArgs e)
+        private void pnlSettings_MouseLeave(object sender, EventArgs e)
         {
             if (selectedPanel != pnlSettings)
             {
@@ -421,6 +438,8 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             pnlMinimize.BackColor = Color.FromArgb(240, 244, 248);
         }
+
+        
 
     }
 }
