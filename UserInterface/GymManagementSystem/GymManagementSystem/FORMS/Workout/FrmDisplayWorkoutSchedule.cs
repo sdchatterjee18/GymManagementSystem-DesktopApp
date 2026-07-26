@@ -115,6 +115,21 @@ namespace GymManagementSystem.FORMS.Workout
             dgvWorkoutShedule.ClearSelection();
         }
 
+        private void pnlClickToAddNewWorkoutShedule_MouseEnter(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void tlpAddNewWorkoutSchedule_MouseEnter(object sender, EventArgs e)
+        {
+            tlpAddNewWorkoutSchedule.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void tlpAddNewWorkoutSchedule_MouseLeave(object sender, EventArgs e)
+        {
+            tlpAddNewWorkoutSchedule.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
 
     }
 }
