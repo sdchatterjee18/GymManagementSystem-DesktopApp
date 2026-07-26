@@ -65,7 +65,7 @@
             this.pnlSubNewWorkoutPlanTitle.Controls.Add(this.tlpMainNewWorkoutPlanTitle);
             this.pnlSubNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubNewWorkoutPlanTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSubNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSubNewWorkoutPlanTitle.Name = "pnlSubNewWorkoutPlanTitle";
             this.pnlSubNewWorkoutPlanTitle.Size = new System.Drawing.Size(399, 68);
             this.pnlSubNewWorkoutPlanTitle.TabIndex = 0;
@@ -77,12 +77,12 @@
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.17391F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.picAddWorkoutPlan, 1, 0);
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.tlpNewWorkoutPlanTitle, 2, 0);
             this.tlpMainNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpMainNewWorkoutPlanTitle.Location = new System.Drawing.Point(0, 0);
-            this.tlpMainNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMainNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMainNewWorkoutPlanTitle.Name = "tlpMainNewWorkoutPlanTitle";
             this.tlpMainNewWorkoutPlanTitle.RowCount = 1;
             this.tlpMainNewWorkoutPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -93,7 +93,7 @@
             // 
             this.picAddWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddWorkoutPlan.Image")));
             this.picAddWorkoutPlan.Location = new System.Drawing.Point(16, 2);
-            this.picAddWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.picAddWorkoutPlan.Name = "picAddWorkoutPlan";
             this.picAddWorkoutPlan.Size = new System.Drawing.Size(44, 58);
             this.picAddWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,8 +107,8 @@
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblViewWorkoutPlan, 0, 1);
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblNewWorkoutPlan, 0, 0);
             this.tlpNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(66, 2);
-            this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(65, 2);
+            this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanTitle.Name = "tlpNewWorkoutPlanTitle";
             this.tlpNewWorkoutPlanTitle.RowCount = 3;
             this.tlpNewWorkoutPlanTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
@@ -156,7 +156,7 @@
             this.tlpNewWorkoutPlanDetails.Controls.Add(this.txtDescription, 1, 3);
             this.tlpNewWorkoutPlanDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNewWorkoutPlanDetails.Location = new System.Drawing.Point(0, 68);
-            this.tlpNewWorkoutPlanDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewWorkoutPlanDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanDetails.Name = "tlpNewWorkoutPlanDetails";
             this.tlpNewWorkoutPlanDetails.RowCount = 6;
             this.tlpNewWorkoutPlanDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.04036F));
@@ -187,7 +187,7 @@
             this.txtWorkoutPlanName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWorkoutPlanName.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtWorkoutPlanName.Location = new System.Drawing.Point(19, 34);
-            this.txtWorkoutPlanName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWorkoutPlanName.Margin = new System.Windows.Forms.Padding(2);
             this.txtWorkoutPlanName.Name = "txtWorkoutPlanName";
             this.txtWorkoutPlanName.Size = new System.Drawing.Size(299, 25);
             this.txtWorkoutPlanName.TabIndex = 2;
@@ -219,7 +219,7 @@
             this.tlpSubmitionWorkoutPlan.Controls.Add(this.lblMessageBoxWorkoutPlan, 0, 0);
             this.tlpSubmitionWorkoutPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitionWorkoutPlan.Location = new System.Drawing.Point(19, 131);
-            this.tlpSubmitionWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmitionWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitionWorkoutPlan.Name = "tlpSubmitionWorkoutPlan";
             this.tlpSubmitionWorkoutPlan.RowCount = 1;
             this.tlpSubmitionWorkoutPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -232,7 +232,7 @@
             this.pnlClickSubmitWorkoutPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
             this.pnlClickSubmitWorkoutPlan.Controls.Add(this.tlpSubmitBoxWorkoutPlan);
             this.pnlClickSubmitWorkoutPlan.Location = new System.Drawing.Point(256, 11);
-            this.pnlClickSubmitWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlClickSubmitWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickSubmitWorkoutPlan.Name = "pnlClickSubmitWorkoutPlan";
             this.pnlClickSubmitWorkoutPlan.Size = new System.Drawing.Size(83, 28);
             this.pnlClickSubmitWorkoutPlan.TabIndex = 6;
@@ -246,7 +246,7 @@
             this.tlpSubmitBoxWorkoutPlan.Controls.Add(this.lblAddNewWorkoutPlan, 1, 0);
             this.tlpSubmitBoxWorkoutPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitBoxWorkoutPlan.Location = new System.Drawing.Point(0, 0);
-            this.tlpSubmitBoxWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmitBoxWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitBoxWorkoutPlan.Name = "tlpSubmitBoxWorkoutPlan";
             this.tlpSubmitBoxWorkoutPlan.RowCount = 1;
             this.tlpSubmitBoxWorkoutPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -259,7 +259,7 @@
             this.picAddButtonWorkoutPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picAddButtonWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonWorkoutPlan.Image")));
             this.picAddButtonWorkoutPlan.Location = new System.Drawing.Point(11, 3);
-            this.picAddButtonWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddButtonWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.picAddButtonWorkoutPlan.Name = "picAddButtonWorkoutPlan";
             this.picAddButtonWorkoutPlan.Size = new System.Drawing.Size(14, 23);
             this.picAddButtonWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,7 +287,7 @@
             this.btnClearWorkoutPlan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearWorkoutPlan.ForeColor = System.Drawing.Color.White;
             this.btnClearWorkoutPlan.Location = new System.Drawing.Point(192, 10);
-            this.btnClearWorkoutPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearWorkoutPlan.Name = "btnClearWorkoutPlan";
             this.btnClearWorkoutPlan.Size = new System.Drawing.Size(57, 29);
             this.btnClearWorkoutPlan.TabIndex = 5;
@@ -311,7 +311,7 @@
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtDescription.Location = new System.Drawing.Point(19, 90);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(299, 36);
@@ -326,7 +326,7 @@
             this.pnlAddNewWorkoutPlanForm.Controls.Add(this.pnlSubNewWorkoutPlanTitle);
             this.pnlAddNewWorkoutPlanForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddNewWorkoutPlanForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddNewWorkoutPlanForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddNewWorkoutPlanForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddNewWorkoutPlanForm.Name = "pnlAddNewWorkoutPlanForm";
             this.pnlAddNewWorkoutPlanForm.Size = new System.Drawing.Size(399, 256);
             this.pnlAddNewWorkoutPlanForm.TabIndex = 3;
