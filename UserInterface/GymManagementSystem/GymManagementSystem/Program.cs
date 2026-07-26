@@ -21,7 +21,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMemberTrainerAssignment());
+            Application.Run(new FrmMainLayout());
         }
     }
 }
