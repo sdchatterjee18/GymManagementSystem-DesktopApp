@@ -9,6 +9,7 @@ using GymManagementSystem.FORMS.Main;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
+using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Member;
 
 namespace GymManagementSystem
@@ -23,7 +24,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMainLayout());
+            Application.Run(new FrmAddExpenses());
         }
     }
 }
