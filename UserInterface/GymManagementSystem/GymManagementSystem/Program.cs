@@ -20,8 +20,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Application.Run(new FrmDisplayWorkoutSchedule());
+            Application.Run(new FrmMainLayout());
         }
     }
 }
