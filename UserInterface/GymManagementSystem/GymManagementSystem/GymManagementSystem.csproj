@@ -686,6 +686,12 @@
     <None Include="Resources\shiftHover.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\arrow-upWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrowWhite.png" />
+    </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\dotB.png" />
   </ItemGroup>
   <ItemGroup>
