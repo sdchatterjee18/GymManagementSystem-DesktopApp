@@ -6,6 +6,7 @@ using GymManagementSystem.FORMS.Workout;
 using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FORMS.Member;
 using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
