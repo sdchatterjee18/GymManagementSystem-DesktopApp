@@ -18,6 +18,8 @@ using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FORMS.Workout;
 using GymManagementSystem.FORMS.Member;
 using GymManagementSystem.FORMS.Expenses;
+using GymManagementSystem.FORMS.Settings;
+
 namespace GymManagementSystem.FORMS.Main
 {
     public partial class FrmMainLayout : Form
@@ -900,6 +902,8 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlAdminPasswordChange_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            FrmChangePasswordAdmin frmChangePasswordAdmin = new FrmChangePasswordAdmin();
+            frmChangePasswordAdmin.ShowDialog();
         }
 
         

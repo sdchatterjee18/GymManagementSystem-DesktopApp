@@ -18,7 +18,8 @@ namespace GymManagementSystem.FORMS.Settings
 
         private void FrmChangePasswordAdmin_Load(object sender, EventArgs e)
         {
-
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         private void txtOldPassword_Click(object sender, EventArgs e)

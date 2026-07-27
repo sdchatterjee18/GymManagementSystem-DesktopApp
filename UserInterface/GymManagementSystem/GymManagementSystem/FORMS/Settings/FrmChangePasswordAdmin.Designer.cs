@@ -95,7 +95,7 @@
             this.tlpChangePassword.Controls.Add(this.tlpPasswordConfirm, 0, 6);
             this.tlpChangePassword.Controls.Add(this.tlpClearAndChangePassword, 0, 8);
             this.tlpChangePassword.Controls.Add(this.tlpNewPassword, 0, 4);
-            this.tlpChangePassword.Location = new System.Drawing.Point(8, 8);
+            this.tlpChangePassword.Location = new System.Drawing.Point(6, 6);
             this.tlpChangePassword.Margin = new System.Windows.Forms.Padding(0);
             this.tlpChangePassword.Name = "tlpChangePassword";
             this.tlpChangePassword.RowCount = 10;
@@ -109,7 +109,7 @@
             this.tlpChangePassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.06922F));
             this.tlpChangePassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.99196F));
             this.tlpChangePassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.169983F));
-            this.tlpChangePassword.Size = new System.Drawing.Size(619, 679);
+            this.tlpChangePassword.Size = new System.Drawing.Size(464, 552);
             this.tlpChangePassword.TabIndex = 2;
             // 
             // pnlOldPasswordSection
@@ -119,9 +119,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlOldPasswordSection.Controls.Add(this.tlpOldPasswordSection);
             this.pnlOldPasswordSection.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlOldPasswordSection.Location = new System.Drawing.Point(3, 132);
+            this.pnlOldPasswordSection.Location = new System.Drawing.Point(2, 107);
+            this.pnlOldPasswordSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlOldPasswordSection.Name = "pnlOldPasswordSection";
-            this.pnlOldPasswordSection.Size = new System.Drawing.Size(613, 49);
+            this.pnlOldPasswordSection.Size = new System.Drawing.Size(460, 41);
             this.pnlOldPasswordSection.TabIndex = 2;
             // 
             // tlpOldPasswordSection
@@ -130,17 +131,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpOldPasswordSection.ColumnCount = 3;
-            this.tlpOldPasswordSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tlpOldPasswordSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tlpOldPasswordSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tlpOldPasswordSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tlpOldPasswordSection.Controls.Add(this.lblOldPassword, 1, 0);
             this.tlpOldPasswordSection.Controls.Add(this.picOldPassword, 0, 0);
-            this.tlpOldPasswordSection.Location = new System.Drawing.Point(0, 3);
+            this.tlpOldPasswordSection.Location = new System.Drawing.Point(0, 2);
             this.tlpOldPasswordSection.Margin = new System.Windows.Forms.Padding(0);
             this.tlpOldPasswordSection.Name = "tlpOldPasswordSection";
             this.tlpOldPasswordSection.RowCount = 1;
             this.tlpOldPasswordSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOldPasswordSection.Size = new System.Drawing.Size(610, 43);
+            this.tlpOldPasswordSection.Size = new System.Drawing.Size(458, 36);
             this.tlpOldPasswordSection.TabIndex = 1;
             // 
             // lblOldPassword
@@ -151,10 +152,10 @@
             this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOldPassword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblOldPassword.Location = new System.Drawing.Point(74, 0);
+            this.lblOldPassword.Location = new System.Drawing.Point(56, 0);
             this.lblOldPassword.Margin = new System.Windows.Forms.Padding(0);
             this.lblOldPassword.Name = "lblOldPassword";
-            this.lblOldPassword.Size = new System.Drawing.Size(471, 43);
+            this.lblOldPassword.Size = new System.Drawing.Size(353, 36);
             this.lblOldPassword.TabIndex = 0;
             this.lblOldPassword.Text = "Old Password";
             this.lblOldPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -163,10 +164,10 @@
             // 
             this.picOldPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picOldPassword.Image = ((System.Drawing.Image)(resources.GetObject("picOldPassword.Image")));
-            this.picOldPassword.Location = new System.Drawing.Point(37, 13);
+            this.picOldPassword.Location = new System.Drawing.Point(28, 12);
             this.picOldPassword.Margin = new System.Windows.Forms.Padding(0);
             this.picOldPassword.Name = "picOldPassword";
-            this.picOldPassword.Size = new System.Drawing.Size(37, 30);
+            this.picOldPassword.Size = new System.Drawing.Size(28, 24);
             this.picOldPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOldPassword.TabIndex = 1;
             this.picOldPassword.TabStop = false;
@@ -178,9 +179,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlNewPasswordSection.Controls.Add(this.tlpNewPassowrdSection);
             this.pnlNewPasswordSection.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlNewPasswordSection.Location = new System.Drawing.Point(3, 252);
+            this.pnlNewPasswordSection.Location = new System.Drawing.Point(2, 205);
+            this.pnlNewPasswordSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNewPasswordSection.Name = "pnlNewPasswordSection";
-            this.pnlNewPasswordSection.Size = new System.Drawing.Size(613, 60);
+            this.pnlNewPasswordSection.Size = new System.Drawing.Size(460, 50);
             this.pnlNewPasswordSection.TabIndex = 3;
             // 
             // tlpNewPassowrdSection
@@ -189,16 +191,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpNewPassowrdSection.ColumnCount = 3;
-            this.tlpNewPassowrdSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlpNewPassowrdSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpNewPassowrdSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tlpNewPassowrdSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tlpNewPassowrdSection.Controls.Add(this.lblNewPassword, 1, 0);
             this.tlpNewPassowrdSection.Controls.Add(this.picNewPassword, 0, 0);
-            this.tlpNewPassowrdSection.Location = new System.Drawing.Point(3, 0);
+            this.tlpNewPassowrdSection.Location = new System.Drawing.Point(2, 0);
+            this.tlpNewPassowrdSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpNewPassowrdSection.Name = "tlpNewPassowrdSection";
             this.tlpNewPassowrdSection.RowCount = 1;
             this.tlpNewPassowrdSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNewPassowrdSection.Size = new System.Drawing.Size(607, 54);
+            this.tlpNewPassowrdSection.Size = new System.Drawing.Size(455, 45);
             this.tlpNewPassowrdSection.TabIndex = 0;
             // 
             // lblNewPassword
@@ -209,10 +212,10 @@
             this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPassword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblNewPassword.Location = new System.Drawing.Point(66, 0);
+            this.lblNewPassword.Location = new System.Drawing.Point(50, 0);
             this.lblNewPassword.Margin = new System.Windows.Forms.Padding(0);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(476, 54);
+            this.lblNewPassword.Size = new System.Drawing.Size(356, 45);
             this.lblNewPassword.TabIndex = 0;
             this.lblNewPassword.Text = "New Password";
             this.lblNewPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -221,10 +224,10 @@
             // 
             this.picNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picNewPassword.Image = ((System.Drawing.Image)(resources.GetObject("picNewPassword.Image")));
-            this.picNewPassword.Location = new System.Drawing.Point(24, 21);
+            this.picNewPassword.Location = new System.Drawing.Point(18, 18);
             this.picNewPassword.Margin = new System.Windows.Forms.Padding(0);
             this.picNewPassword.Name = "picNewPassword";
-            this.picNewPassword.Size = new System.Drawing.Size(42, 33);
+            this.picNewPassword.Size = new System.Drawing.Size(32, 27);
             this.picNewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewPassword.TabIndex = 1;
             this.picNewPassword.TabStop = false;
@@ -235,9 +238,10 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlConfirmPassword.Controls.Add(this.tlpConfirmPassword);
-            this.pnlConfirmPassword.Location = new System.Drawing.Point(3, 394);
+            this.pnlConfirmPassword.Location = new System.Drawing.Point(2, 321);
+            this.pnlConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlConfirmPassword.Name = "pnlConfirmPassword";
-            this.pnlConfirmPassword.Size = new System.Drawing.Size(613, 51);
+            this.pnlConfirmPassword.Size = new System.Drawing.Size(460, 42);
             this.pnlConfirmPassword.TabIndex = 4;
             // 
             // tlpConfirmPassword
@@ -246,17 +250,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpConfirmPassword.ColumnCount = 3;
-            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tlpConfirmPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tlpConfirmPassword.Controls.Add(this.lblConfirmPassword, 1, 0);
             this.tlpConfirmPassword.Controls.Add(this.picConfirmPassword, 0, 0);
-            this.tlpConfirmPassword.Location = new System.Drawing.Point(3, 3);
+            this.tlpConfirmPassword.Location = new System.Drawing.Point(2, 2);
             this.tlpConfirmPassword.Margin = new System.Windows.Forms.Padding(0);
             this.tlpConfirmPassword.Name = "tlpConfirmPassword";
             this.tlpConfirmPassword.RowCount = 1;
             this.tlpConfirmPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpConfirmPassword.Size = new System.Drawing.Size(607, 45);
+            this.tlpConfirmPassword.Size = new System.Drawing.Size(455, 38);
             this.tlpConfirmPassword.TabIndex = 0;
             // 
             // lblConfirmPassword
@@ -267,10 +271,10 @@
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(66, 0);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(50, 0);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(476, 45);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(356, 38);
             this.lblConfirmPassword.TabIndex = 0;
             this.lblConfirmPassword.Text = "Confirm Password";
             this.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -279,10 +283,10 @@
             // 
             this.picConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picConfirmPassword.Image = ((System.Drawing.Image)(resources.GetObject("picConfirmPassword.Image")));
-            this.picConfirmPassword.Location = new System.Drawing.Point(24, 16);
+            this.picConfirmPassword.Location = new System.Drawing.Point(18, 14);
             this.picConfirmPassword.Margin = new System.Windows.Forms.Padding(0);
             this.picConfirmPassword.Name = "picConfirmPassword";
-            this.picConfirmPassword.Size = new System.Drawing.Size(42, 29);
+            this.picConfirmPassword.Size = new System.Drawing.Size(32, 24);
             this.picConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picConfirmPassword.TabIndex = 1;
             this.picConfirmPassword.TabStop = false;
@@ -293,16 +297,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpOldPassword.ColumnCount = 3;
-            this.tlpOldPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpOldPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlpOldPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.53553F));
             this.tlpOldPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.46447F));
             this.tlpOldPassword.Controls.Add(this.txtOldPassword, 1, 0);
             this.tlpOldPassword.Controls.Add(this.picOldPasswordHide, 2, 0);
-            this.tlpOldPassword.Location = new System.Drawing.Point(3, 187);
+            this.tlpOldPassword.Location = new System.Drawing.Point(2, 152);
+            this.tlpOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpOldPassword.Name = "tlpOldPassword";
             this.tlpOldPassword.RowCount = 1;
             this.tlpOldPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOldPassword.Size = new System.Drawing.Size(613, 59);
+            this.tlpOldPassword.Size = new System.Drawing.Size(460, 49);
             this.tlpOldPassword.TabIndex = 6;
             // 
             // txtOldPassword
@@ -314,9 +319,10 @@
             this.txtOldPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOldPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOldPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtOldPassword.Location = new System.Drawing.Point(39, 3);
+            this.txtOldPassword.Location = new System.Drawing.Point(29, 2);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.Size = new System.Drawing.Size(476, 30);
+            this.txtOldPassword.Size = new System.Drawing.Size(357, 26);
             this.txtOldPassword.TabIndex = 0;
             this.txtOldPassword.UseSystemPasswordChar = true;
             this.txtOldPassword.Click += new System.EventHandler(this.txtOldPassword_Click);
@@ -325,10 +331,10 @@
             // 
             this.picOldPasswordHide.BackColor = System.Drawing.Color.White;
             this.picOldPasswordHide.Image = ((System.Drawing.Image)(resources.GetObject("picOldPasswordHide.Image")));
-            this.picOldPasswordHide.Location = new System.Drawing.Point(524, 3);
-            this.picOldPasswordHide.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.picOldPasswordHide.Location = new System.Drawing.Point(392, 2);
+            this.picOldPasswordHide.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picOldPasswordHide.Name = "picOldPasswordHide";
-            this.picOldPasswordHide.Size = new System.Drawing.Size(26, 30);
+            this.picOldPasswordHide.Size = new System.Drawing.Size(20, 24);
             this.picOldPasswordHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOldPasswordHide.TabIndex = 1;
             this.picOldPasswordHide.TabStop = false;
@@ -340,7 +346,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpAddDietPlanHeader.ColumnCount = 3;
-            this.tlpAddDietPlanHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpAddDietPlanHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpAddDietPlanHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpAddDietPlanHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpAddDietPlanHeader.Controls.Add(this.tlpPictureAndTitleAndSubTitle, 1, 0);
@@ -349,8 +355,8 @@
             this.tlpAddDietPlanHeader.Name = "tlpAddDietPlanHeader";
             this.tlpAddDietPlanHeader.RowCount = 1;
             this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tlpAddDietPlanHeader.Size = new System.Drawing.Size(619, 129);
+            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tlpAddDietPlanHeader.Size = new System.Drawing.Size(464, 105);
             this.tlpAddDietPlanHeader.TabIndex = 7;
             // 
             // tlpPictureAndTitleAndSubTitle
@@ -359,16 +365,16 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpPictureAndTitleAndSubTitle.ColumnCount = 2;
-            this.tlpPictureAndTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tlpPictureAndTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tlpPictureAndTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpPictureAndTitleAndSubTitle.Controls.Add(this.tlpTitleAndSubTitle, 1, 0);
             this.tlpPictureAndTitleAndSubTitle.Controls.Add(this.picChangePassword, 0, 0);
-            this.tlpPictureAndTitleAndSubTitle.Location = new System.Drawing.Point(30, 0);
+            this.tlpPictureAndTitleAndSubTitle.Location = new System.Drawing.Point(22, 0);
             this.tlpPictureAndTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpPictureAndTitleAndSubTitle.Name = "tlpPictureAndTitleAndSubTitle";
             this.tlpPictureAndTitleAndSubTitle.RowCount = 1;
             this.tlpPictureAndTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPictureAndTitleAndSubTitle.Size = new System.Drawing.Size(471, 129);
+            this.tlpPictureAndTitleAndSubTitle.Size = new System.Drawing.Size(353, 105);
             this.tlpPictureAndTitleAndSubTitle.TabIndex = 1;
             // 
             // tlpTitleAndSubTitle
@@ -378,25 +384,26 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpTitleAndSubTitle.ColumnCount = 1;
             this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpTitleAndSubTitle.Controls.Add(this.lblSubTitle, 0, 1);
             this.tlpTitleAndSubTitle.Controls.Add(this.lblChangePasswordHeader, 0, 0);
-            this.tlpTitleAndSubTitle.Location = new System.Drawing.Point(60, 0);
+            this.tlpTitleAndSubTitle.Location = new System.Drawing.Point(45, 0);
             this.tlpTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTitleAndSubTitle.Name = "tlpTitleAndSubTitle";
             this.tlpTitleAndSubTitle.RowCount = 2;
             this.tlpTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.68992F));
             this.tlpTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.31008F));
-            this.tlpTitleAndSubTitle.Size = new System.Drawing.Size(411, 129);
+            this.tlpTitleAndSubTitle.Size = new System.Drawing.Size(308, 105);
             this.tlpTitleAndSubTitle.TabIndex = 0;
             // 
             // lblSubTitle
             // 
             this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblSubTitle.Location = new System.Drawing.Point(3, 76);
+            this.lblSubTitle.Location = new System.Drawing.Point(2, 62);
+            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(362, 27);
+            this.lblSubTitle.Size = new System.Drawing.Size(272, 22);
             this.lblSubTitle.TabIndex = 0;
             this.lblSubTitle.Text = "Update your password to keep your account secure";
             // 
@@ -405,9 +412,10 @@
             this.lblChangePasswordHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblChangePasswordHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangePasswordHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblChangePasswordHeader.Location = new System.Drawing.Point(3, 50);
+            this.lblChangePasswordHeader.Location = new System.Drawing.Point(2, 41);
+            this.lblChangePasswordHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangePasswordHeader.Name = "lblChangePasswordHeader";
-            this.lblChangePasswordHeader.Size = new System.Drawing.Size(194, 26);
+            this.lblChangePasswordHeader.Size = new System.Drawing.Size(146, 21);
             this.lblChangePasswordHeader.TabIndex = 0;
             this.lblChangePasswordHeader.Text = "Change Password";
             // 
@@ -419,7 +427,7 @@
             this.picChangePassword.Location = new System.Drawing.Point(0, 0);
             this.picChangePassword.Margin = new System.Windows.Forms.Padding(0);
             this.picChangePassword.Name = "picChangePassword";
-            this.picChangePassword.Size = new System.Drawing.Size(60, 129);
+            this.picChangePassword.Size = new System.Drawing.Size(45, 105);
             this.picChangePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangePassword.TabIndex = 0;
             this.picChangePassword.TabStop = false;
@@ -430,16 +438,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpPasswordConfirm.ColumnCount = 3;
-            this.tlpPasswordConfirm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpPasswordConfirm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpPasswordConfirm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.70497F));
             this.tlpPasswordConfirm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.29502F));
             this.tlpPasswordConfirm.Controls.Add(this.txtConfirmPassword, 1, 0);
             this.tlpPasswordConfirm.Controls.Add(this.picConfirmPasswordHide, 2, 0);
-            this.tlpPasswordConfirm.Location = new System.Drawing.Point(3, 451);
+            this.tlpPasswordConfirm.Location = new System.Drawing.Point(2, 367);
+            this.tlpPasswordConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpPasswordConfirm.Name = "tlpPasswordConfirm";
             this.tlpPasswordConfirm.RowCount = 1;
             this.tlpPasswordConfirm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPasswordConfirm.Size = new System.Drawing.Size(613, 69);
+            this.tlpPasswordConfirm.Size = new System.Drawing.Size(460, 57);
             this.tlpPasswordConfirm.TabIndex = 1;
             // 
             // txtConfirmPassword
@@ -451,9 +460,10 @@
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(33, 3);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(24, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(481, 34);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(362, 29);
             this.txtConfirmPassword.TabIndex = 1;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             this.txtConfirmPassword.Click += new System.EventHandler(this.txtConfirmPassword_Click);
@@ -462,10 +472,10 @@
             // 
             this.picConfirmPasswordHide.BackColor = System.Drawing.Color.White;
             this.picConfirmPasswordHide.Image = ((System.Drawing.Image)(resources.GetObject("picConfirmPasswordHide.Image")));
-            this.picConfirmPasswordHide.Location = new System.Drawing.Point(523, 3);
-            this.picConfirmPasswordHide.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.picConfirmPasswordHide.Location = new System.Drawing.Point(392, 2);
+            this.picConfirmPasswordHide.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picConfirmPasswordHide.Name = "picConfirmPasswordHide";
-            this.picConfirmPasswordHide.Size = new System.Drawing.Size(28, 34);
+            this.picConfirmPasswordHide.Size = new System.Drawing.Size(21, 28);
             this.picConfirmPasswordHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picConfirmPasswordHide.TabIndex = 1;
             this.picConfirmPasswordHide.TabStop = false;
@@ -477,7 +487,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpClearAndChangePassword.ColumnCount = 6;
-            this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.108109F));
             this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.11492F));
             this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.459691F));
@@ -485,11 +495,12 @@
             this.tlpClearAndChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.660378F));
             this.tlpClearAndChangePassword.Controls.Add(this.btnChangePassword, 4, 0);
             this.tlpClearAndChangePassword.Controls.Add(this.btnClearPassword, 2, 0);
-            this.tlpClearAndChangePassword.Location = new System.Drawing.Point(3, 574);
+            this.tlpClearAndChangePassword.Location = new System.Drawing.Point(2, 467);
+            this.tlpClearAndChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpClearAndChangePassword.Name = "tlpClearAndChangePassword";
             this.tlpClearAndChangePassword.RowCount = 1;
             this.tlpClearAndChangePassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpClearAndChangePassword.Size = new System.Drawing.Size(613, 69);
+            this.tlpClearAndChangePassword.Size = new System.Drawing.Size(460, 57);
             this.tlpClearAndChangePassword.TabIndex = 8;
             // 
             // btnChangePassword
@@ -498,9 +509,10 @@
             this.btnChangePassword.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnChangePassword.Location = new System.Drawing.Point(401, 3);
+            this.btnChangePassword.Location = new System.Drawing.Point(301, 2);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(174, 54);
+            this.btnChangePassword.Size = new System.Drawing.Size(130, 44);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
@@ -511,9 +523,10 @@
             this.btnClearPassword.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnClearPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClearPassword.Location = new System.Drawing.Point(218, 3);
+            this.btnClearPassword.Location = new System.Drawing.Point(163, 2);
+            this.btnClearPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClearPassword.Name = "btnClearPassword";
-            this.btnClearPassword.Size = new System.Drawing.Size(152, 54);
+            this.btnClearPassword.Size = new System.Drawing.Size(114, 44);
             this.btnClearPassword.TabIndex = 0;
             this.btnClearPassword.Text = "Reset";
             this.btnClearPassword.UseVisualStyleBackColor = false;
@@ -525,17 +538,18 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpNewPassword.ColumnCount = 3;
-            this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.70497F));
             this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.29502F));
-            this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpNewPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpNewPassword.Controls.Add(this.txtNewPassword, 1, 0);
             this.tlpNewPassword.Controls.Add(this.picNewPasswordHide, 2, 0);
-            this.tlpNewPassword.Location = new System.Drawing.Point(3, 318);
+            this.tlpNewPassword.Location = new System.Drawing.Point(2, 259);
+            this.tlpNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpNewPassword.Name = "tlpNewPassword";
             this.tlpNewPassword.RowCount = 1;
             this.tlpNewPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNewPassword.Size = new System.Drawing.Size(613, 70);
+            this.tlpNewPassword.Size = new System.Drawing.Size(460, 58);
             this.tlpNewPassword.TabIndex = 1;
             // 
             // txtNewPassword
@@ -547,9 +561,10 @@
             this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtNewPassword.Location = new System.Drawing.Point(33, 3);
+            this.txtNewPassword.Location = new System.Drawing.Point(24, 2);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(481, 34);
+            this.txtNewPassword.Size = new System.Drawing.Size(362, 29);
             this.txtNewPassword.TabIndex = 1;
             this.txtNewPassword.UseSystemPasswordChar = true;
             this.txtNewPassword.Click += new System.EventHandler(this.txtNewPassword_Click);
@@ -558,10 +573,10 @@
             // 
             this.picNewPasswordHide.BackColor = System.Drawing.Color.White;
             this.picNewPasswordHide.Image = ((System.Drawing.Image)(resources.GetObject("picNewPasswordHide.Image")));
-            this.picNewPasswordHide.Location = new System.Drawing.Point(523, 3);
-            this.picNewPasswordHide.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.picNewPasswordHide.Location = new System.Drawing.Point(392, 2);
+            this.picNewPasswordHide.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picNewPasswordHide.Name = "picNewPasswordHide";
-            this.picNewPasswordHide.Size = new System.Drawing.Size(26, 34);
+            this.picNewPasswordHide.Size = new System.Drawing.Size(20, 28);
             this.picNewPasswordHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewPasswordHide.TabIndex = 1;
             this.picNewPasswordHide.TabStop = false;
@@ -569,12 +584,16 @@
             // 
             // FrmChangePasswordAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(619, 679);
+            this.ClientSize = new System.Drawing.Size(464, 552);
             this.Controls.Add(this.tlpChangePassword);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmChangePasswordAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmChangePasswordAdmin";
             this.Load += new System.EventHandler(this.FrmChangePasswordAdmin_Load);
             this.tlpChangePassword.ResumeLayout(false);
