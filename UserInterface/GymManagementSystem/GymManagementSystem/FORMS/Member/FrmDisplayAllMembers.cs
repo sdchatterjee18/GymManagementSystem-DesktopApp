@@ -139,18 +139,9 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.ClearSelection();
         }
 
-        private void txtSearchMember_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-            txtSearchMember.Clear();
-            txtSearchMember.ForeColor = Color.Black;
-        }
+      
 
-        private void picSearchMember_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-           
-        }
+      
 
        
 
@@ -238,5 +229,44 @@ namespace GymManagementSystem.FORMS.Member
             }
 
         }
+
+        private void txtSearchMember_Click(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void picSearchMember_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+         
+        }
+
+        private void btnSearchMemberByPhoneNumber_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void picSearchMember_Click_1(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void txtSearchMember_Click_1(object sender, EventArgs e)
+        {
+
+            dgvDisplayMemberInformation.ClearSelection();
+            txtSearchMember.Clear();
+            txtSearchMember.ForeColor = Color.Black;
+        
+        }
+
+        private void btnSearchMemberByPhoneNumber_Click_1(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+       
+        
+
     }
 }
