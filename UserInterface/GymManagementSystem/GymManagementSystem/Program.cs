@@ -11,6 +11,7 @@ using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Member;
+using GymManagementSystem.FORMS.Settings;
 
 namespace GymManagementSystem
 {
@@ -24,7 +25,7 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMainLayout());
+            Application.Run(new FrmChangePasswordAdmin());
         }
     }
 }
