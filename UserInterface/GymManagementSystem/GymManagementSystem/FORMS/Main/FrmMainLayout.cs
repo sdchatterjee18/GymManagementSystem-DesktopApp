@@ -352,6 +352,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlFitnessTest.ForeColor = Color.White;
             picFitnessTest.Image = Properties.Resources.fitnessTest;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmMemberRegistration());
         }
         private void pnlMarkMemberAttendance_MouseEnter(object sender, EventArgs e)
         {
