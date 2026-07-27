@@ -67,7 +67,7 @@ namespace GymManagementSystem.FORMS.DietPlan
 
                         dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Value = serialNo++;
                         dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Style.ForeColor = Color.FromArgb(30, 60, 220); 
-                        dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value = dataRow["CaloriesPerDay"];
+                        dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value = dataRow["CaloriesPerDay"] + " Kcal";
                         dgvDietPlan.Rows[rowIndex].Cells["ColDocument"].Value =dataRow["DietPlanDocument"].ToString();
                         dgvDietPlan.Rows[rowIndex].Cells["ColCondition"].Value =dataRow["ConditionStatus"].ToString();
 

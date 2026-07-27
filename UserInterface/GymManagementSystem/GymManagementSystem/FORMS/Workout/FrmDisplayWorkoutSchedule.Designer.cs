@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayWorkoutSchedule));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAllWorkoutSheduleEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpWorkoutSheduleHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picWorkoutShedule = new System.Windows.Forms.PictureBox();
@@ -44,9 +44,9 @@
             this.tlpWorkoutSheduleTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSearchAndAddWorkoutShedule = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSearchWorkoutSchedule = new System.Windows.Forms.TableLayoutPanel();
-            this.btnWorkoutSheduleSearch = new System.Windows.Forms.Button();
             this.picSearchWorkoutShedule = new System.Windows.Forms.PictureBox();
             this.cmbWorkoutDaySearch = new System.Windows.Forms.ComboBox();
+            this.btnWorkoutSheduleSearch = new System.Windows.Forms.Button();
             this.pnlClickToAddNewWorkoutShedule = new System.Windows.Forms.Panel();
             this.tlpAddNewWorkoutSchedule = new System.Windows.Forms.TableLayoutPanel();
             this.picPlusWorkoutShedule = new System.Windows.Forms.PictureBox();
@@ -81,7 +81,7 @@
             this.tlpAllWorkoutSheduleEntireForm.Controls.Add(this.tlpWorkoutSheduleTableAndSearch, 0, 2);
             this.tlpAllWorkoutSheduleEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAllWorkoutSheduleEntireForm.Location = new System.Drawing.Point(17, 10);
-            this.tlpAllWorkoutSheduleEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAllWorkoutSheduleEntireForm.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAllWorkoutSheduleEntireForm.Name = "tlpAllWorkoutSheduleEntireForm";
             this.tlpAllWorkoutSheduleEntireForm.RowCount = 3;
             this.tlpAllWorkoutSheduleEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.5942F));
@@ -102,7 +102,7 @@
             this.tlpWorkoutSheduleHeader.Controls.Add(this.tlpAllWorkoutSheduleTitle, 1, 0);
             this.tlpWorkoutSheduleHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpWorkoutSheduleHeader.Location = new System.Drawing.Point(2, 2);
-            this.tlpWorkoutSheduleHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpWorkoutSheduleHeader.Margin = new System.Windows.Forms.Padding(2);
             this.tlpWorkoutSheduleHeader.Name = "tlpWorkoutSheduleHeader";
             this.tlpWorkoutSheduleHeader.RowCount = 1;
             this.tlpWorkoutSheduleHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -115,7 +115,7 @@
             this.picWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutShedule.Image")));
             this.picWorkoutShedule.Location = new System.Drawing.Point(2, 2);
-            this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.picWorkoutShedule.Name = "picWorkoutShedule";
             this.picWorkoutShedule.Size = new System.Drawing.Size(58, 60);
             this.picWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +131,7 @@
             this.tlpAllWorkoutSheduleTitle.Controls.Add(this.lblAllWorkoutShedule, 0, 0);
             this.tlpAllWorkoutSheduleTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAllWorkoutSheduleTitle.Location = new System.Drawing.Point(64, 2);
-            this.tlpAllWorkoutSheduleTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAllWorkoutSheduleTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAllWorkoutSheduleTitle.Name = "tlpAllWorkoutSheduleTitle";
             this.tlpAllWorkoutSheduleTitle.RowCount = 3;
             this.tlpAllWorkoutSheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
@@ -176,7 +176,7 @@
             this.tlpWorkoutSheduleTableAndSearch.Controls.Add(this.dgvWorkoutShedule, 0, 0);
             this.tlpWorkoutSheduleTableAndSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpWorkoutSheduleTableAndSearch.Location = new System.Drawing.Point(2, 76);
-            this.tlpWorkoutSheduleTableAndSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpWorkoutSheduleTableAndSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tlpWorkoutSheduleTableAndSearch.Name = "tlpWorkoutSheduleTableAndSearch";
             this.tlpWorkoutSheduleTableAndSearch.RowCount = 1;
             this.tlpWorkoutSheduleTableAndSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -192,7 +192,7 @@
             this.tlpSearchAndAddWorkoutShedule.Controls.Add(this.pnlClickToAddNewWorkoutShedule, 0, 1);
             this.tlpSearchAndAddWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSearchAndAddWorkoutShedule.Location = new System.Drawing.Point(532, 2);
-            this.tlpSearchAndAddWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSearchAndAddWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSearchAndAddWorkoutShedule.Name = "tlpSearchAndAddWorkoutShedule";
             this.tlpSearchAndAddWorkoutShedule.RowCount = 3;
             this.tlpSearchAndAddWorkoutShedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.347529F));
@@ -213,13 +213,38 @@
             this.tlpSearchWorkoutSchedule.Controls.Add(this.btnWorkoutSheduleSearch, 2, 0);
             this.tlpSearchWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSearchWorkoutSchedule.Location = new System.Drawing.Point(2, 2);
-            this.tlpSearchWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSearchWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSearchWorkoutSchedule.Name = "tlpSearchWorkoutSchedule";
             this.tlpSearchWorkoutSchedule.RowCount = 1;
             this.tlpSearchWorkoutSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSearchWorkoutSchedule.Size = new System.Drawing.Size(210, 38);
             this.tlpSearchWorkoutSchedule.TabIndex = 12;
             this.tlpSearchWorkoutSchedule.Click += new System.EventHandler(this.tlpWorkoutSheduleHeader_Click);
+            // 
+            // picSearchWorkoutShedule
+            // 
+            this.picSearchWorkoutShedule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSearchWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picSearchWorkoutShedule.Image")));
+            this.picSearchWorkoutShedule.Location = new System.Drawing.Point(3, 2);
+            this.picSearchWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
+            this.picSearchWorkoutShedule.Name = "picSearchWorkoutShedule";
+            this.picSearchWorkoutShedule.Size = new System.Drawing.Size(25, 25);
+            this.picSearchWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchWorkoutShedule.TabIndex = 3;
+            this.picSearchWorkoutShedule.TabStop = false;
+            this.picSearchWorkoutShedule.Click += new System.EventHandler(this.tlpWorkoutSheduleHeader_Click);
+            // 
+            // cmbWorkoutDaySearch
+            // 
+            this.cmbWorkoutDaySearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbWorkoutDaySearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWorkoutDaySearch.FormattingEnabled = true;
+            this.cmbWorkoutDaySearch.Location = new System.Drawing.Point(32, 2);
+            this.cmbWorkoutDaySearch.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbWorkoutDaySearch.Name = "cmbWorkoutDaySearch";
+            this.cmbWorkoutDaySearch.Size = new System.Drawing.Size(112, 27);
+            this.cmbWorkoutDaySearch.TabIndex = 4;
+            this.cmbWorkoutDaySearch.Text = "----Select Day----";
             // 
             // btnWorkoutSheduleSearch
             // 
@@ -239,31 +264,6 @@
             this.btnWorkoutSheduleSearch.Text = "Search";
             this.btnWorkoutSheduleSearch.UseVisualStyleBackColor = false;
             // 
-            // picSearchWorkoutShedule
-            // 
-            this.picSearchWorkoutShedule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSearchWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picSearchWorkoutShedule.Image")));
-            this.picSearchWorkoutShedule.Location = new System.Drawing.Point(3, 2);
-            this.picSearchWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picSearchWorkoutShedule.Name = "picSearchWorkoutShedule";
-            this.picSearchWorkoutShedule.Size = new System.Drawing.Size(25, 25);
-            this.picSearchWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSearchWorkoutShedule.TabIndex = 3;
-            this.picSearchWorkoutShedule.TabStop = false;
-            this.picSearchWorkoutShedule.Click += new System.EventHandler(this.tlpWorkoutSheduleHeader_Click);
-            // 
-            // cmbWorkoutDaySearch
-            // 
-            this.cmbWorkoutDaySearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbWorkoutDaySearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbWorkoutDaySearch.FormattingEnabled = true;
-            this.cmbWorkoutDaySearch.Location = new System.Drawing.Point(32, 2);
-            this.cmbWorkoutDaySearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmbWorkoutDaySearch.Name = "cmbWorkoutDaySearch";
-            this.cmbWorkoutDaySearch.Size = new System.Drawing.Size(112, 27);
-            this.cmbWorkoutDaySearch.TabIndex = 4;
-            this.cmbWorkoutDaySearch.Text = "----Select Day----";
-            // 
             // pnlClickToAddNewWorkoutShedule
             // 
             this.pnlClickToAddNewWorkoutShedule.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -271,7 +271,7 @@
             this.pnlClickToAddNewWorkoutShedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickToAddNewWorkoutShedule.Controls.Add(this.tlpAddNewWorkoutSchedule);
             this.pnlClickToAddNewWorkoutShedule.Location = new System.Drawing.Point(109, 47);
-            this.pnlClickToAddNewWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlClickToAddNewWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickToAddNewWorkoutShedule.Name = "pnlClickToAddNewWorkoutShedule";
             this.pnlClickToAddNewWorkoutShedule.Size = new System.Drawing.Size(103, 30);
             this.pnlClickToAddNewWorkoutShedule.TabIndex = 12;
@@ -288,7 +288,7 @@
             this.tlpAddNewWorkoutSchedule.Controls.Add(this.lblAddNewWorkoutShedule, 1, 0);
             this.tlpAddNewWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddNewWorkoutSchedule.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddNewWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddNewWorkoutSchedule.Name = "tlpAddNewWorkoutSchedule";
             this.tlpAddNewWorkoutSchedule.RowCount = 1;
             this.tlpAddNewWorkoutSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -304,7 +304,7 @@
             this.picPlusWorkoutShedule.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picPlusWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picPlusWorkoutShedule.Image")));
             this.picPlusWorkoutShedule.Location = new System.Drawing.Point(17, 7);
-            this.picPlusWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPlusWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.picPlusWorkoutShedule.Name = "picPlusWorkoutShedule";
             this.picPlusWorkoutShedule.Size = new System.Drawing.Size(13, 14);
             this.picPlusWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,22 +335,22 @@
             this.dgvWorkoutShedule.AllowUserToAddRows = false;
             this.dgvWorkoutShedule.AllowUserToDeleteRows = false;
             this.dgvWorkoutShedule.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutShedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutShedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkoutShedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorkoutShedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvWorkoutShedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWorkoutShedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutShedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutShedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWorkoutShedule.ColumnHeadersHeight = 50;
             this.dgvWorkoutShedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutShedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -358,35 +358,35 @@
             this.colWorkoutName,
             this.colExerciseName,
             this.colWorkoutDay});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkoutShedule.EnableHeadersVisualStyles = false;
             this.dgvWorkoutShedule.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvWorkoutShedule.Location = new System.Drawing.Point(2, 2);
-            this.dgvWorkoutShedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.dgvWorkoutShedule.MultiSelect = false;
             this.dgvWorkoutShedule.Name = "dgvWorkoutShedule";
             this.dgvWorkoutShedule.ReadOnly = true;
             this.dgvWorkoutShedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWorkoutShedule.RowHeadersVisible = false;
             this.dgvWorkoutShedule.RowHeadersWidth = 50;
             this.dgvWorkoutShedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvWorkoutShedule.RowTemplate.Height = 40;
             this.dgvWorkoutShedule.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkoutShedule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -401,8 +401,8 @@
             // 
             this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo1.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSerialNo1.FillWeight = 90F;
             this.colSerialNo1.HeaderText = "Sl No.";
             this.colSerialNo1.Name = "colSerialNo1";
@@ -450,7 +450,7 @@
             this.tlpAllWorkoutSheduleFromBack.Controls.Add(this.tlpAllWorkoutSheduleEntireForm, 1, 1);
             this.tlpAllWorkoutSheduleFromBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAllWorkoutSheduleFromBack.Location = new System.Drawing.Point(0, 0);
-            this.tlpAllWorkoutSheduleFromBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAllWorkoutSheduleFromBack.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAllWorkoutSheduleFromBack.Name = "tlpAllWorkoutSheduleFromBack";
             this.tlpAllWorkoutSheduleFromBack.RowCount = 3;
             this.tlpAllWorkoutSheduleFromBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.397713F));

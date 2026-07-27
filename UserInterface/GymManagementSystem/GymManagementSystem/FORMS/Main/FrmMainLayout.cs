@@ -16,6 +16,9 @@ using GymManagementSystem.FORMS.Dashboard;
 using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FORMS.Workout;
+using GymManagementSystem.FORMS.Member;
+using GymManagementSystem.FORMS.Expenses;
+using GymManagementSystem.FORMS.Settings;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -290,6 +293,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlMemberTrainerAssignment_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmMemberTrainerAssignment());
         }
 
         private void pnlTrainer_MouseEnter(object sender, EventArgs e)
@@ -641,6 +645,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlExpense.ForeColor = Color.White;
             picExpense.Image= Properties.Resources.expense;
             ExpandIfCollapsed();
+            OpenChildForm(new FrmAddExpenses());
         }
 
         private void pnlSettings_MouseEnter(object sender, EventArgs e)
@@ -662,6 +667,7 @@ namespace GymManagementSystem.FORMS.Main
                 pnlSettings.BackColor = Color.Transparent;
                 pnlSettings.ForeColor = Color.White;
                 picSettings.Image = Properties.Resources.setting;
+                picSettingsArrowe.Image = Properties.Resources.downArrowW;
             }
 
         }
@@ -828,7 +834,7 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlExit_MouseLeave(object sender, EventArgs e)
         {
-            pnlExit.BackColor = Color.FromArgb(240, 244, 248);
+            pnlExit.BackColor = Color.FromArgb(230, 238, 248);
         }
 
         private void pnlExit_Click(object sender, EventArgs e)
@@ -843,12 +849,19 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlRestore_MouseLeave(object sender, EventArgs e)
         {
-            pnlRestore.BackColor = Color.FromArgb(240, 244, 248);
+            pnlRestore.BackColor = Color.FromArgb(230, 238, 248);
         }
 
         private void pnlRestore_Click(object sender, EventArgs e)
         {
-
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void pnlMinimize_MouseEnter(object sender, EventArgs e)
@@ -858,12 +871,12 @@ namespace GymManagementSystem.FORMS.Main
 
         private void pnlMinimize_MouseLeave(object sender, EventArgs e)
         {
-            pnlMinimize.BackColor = Color.FromArgb(240, 244, 248);
+            pnlMinimize.BackColor = Color.FromArgb(230, 238, 248);
         }
 
         private void pnlMinimize_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void pnlAdminChangePassword_MouseEnter(object sender, EventArgs e)
@@ -889,12 +902,14 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlAdminPasswordChange_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            FrmChangePasswordAdmin frmChangePasswordAdmin = new FrmChangePasswordAdmin();
+            frmChangePasswordAdmin.ShowDialog();
         }
 
         
 
        
        
-       
+    
        }
 }

@@ -63,6 +63,16 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_upWhite {
+            get {
+                object obj = ResourceManager.GetObject("arrow-upWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrowhead_up {
             get {
                 object obj = ResourceManager.GetObject("arrowhead-up", resourceCulture);
@@ -136,6 +146,12 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap down_arrowWhite {
+            get {
+                object obj = ResourceManager.GetObject("down-arrowWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         internal static System.Drawing.Bitmap downArrowB {
             get {
                 object obj = ResourceManager.GetObject("downArrowB", resourceCulture);
