@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tlpDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRunningShift = new System.Windows.Forms.Panel();
             this.tlpRunningShift = new System.Windows.Forms.TableLayoutPanel();
@@ -286,8 +286,8 @@
             // 
             this.tlpRunningShift.ColumnCount = 3;
             this.tlpRunningShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tlpRunningShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96F));
-            this.tlpRunningShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tlpRunningShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.5982F));
+            this.tlpRunningShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.48307F));
             this.tlpRunningShift.Controls.Add(this.tlpRunningShiftDetails, 1, 0);
             this.tlpRunningShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRunningShift.Location = new System.Drawing.Point(0, 0);
@@ -313,7 +313,7 @@
             this.tlpRunningShiftDetails.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.tlpRunningShiftDetails.RowCount = 1;
             this.tlpRunningShiftDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRunningShiftDetails.Size = new System.Drawing.Size(850, 32);
+            this.tlpRunningShiftDetails.Size = new System.Drawing.Size(846, 32);
             this.tlpRunningShiftDetails.TabIndex = 0;
             // 
             // pnlRunningShiftDetails
@@ -323,7 +323,7 @@
             this.pnlRunningShiftDetails.Location = new System.Drawing.Point(0, 0);
             this.pnlRunningShiftDetails.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRunningShiftDetails.Name = "pnlRunningShiftDetails";
-            this.pnlRunningShiftDetails.Size = new System.Drawing.Size(835, 32);
+            this.pnlRunningShiftDetails.Size = new System.Drawing.Size(831, 32);
             this.pnlRunningShiftDetails.TabIndex = 0;
             // 
             // tlpCurrentRunningShiftDetails
@@ -340,7 +340,7 @@
             this.tlpCurrentRunningShiftDetails.RowCount = 1;
             this.tlpCurrentRunningShiftDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCurrentRunningShiftDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCurrentRunningShiftDetails.Size = new System.Drawing.Size(835, 32);
+            this.tlpCurrentRunningShiftDetails.Size = new System.Drawing.Size(831, 32);
             this.tlpCurrentRunningShiftDetails.TabIndex = 0;
             // 
             // lblRunningShift
@@ -372,19 +372,19 @@
             this.tlpDateTime.Controls.Add(this.lblDate, 2, 0);
             this.tlpDateTime.Controls.Add(this.lblTime, 5, 0);
             this.tlpDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDateTime.Location = new System.Drawing.Point(417, 0);
+            this.tlpDateTime.Location = new System.Drawing.Point(415, 0);
             this.tlpDateTime.Margin = new System.Windows.Forms.Padding(0);
             this.tlpDateTime.Name = "tlpDateTime";
             this.tlpDateTime.RowCount = 1;
             this.tlpDateTime.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateTime.Size = new System.Drawing.Size(418, 32);
+            this.tlpDateTime.Size = new System.Drawing.Size(416, 32);
             this.tlpDateTime.TabIndex = 2;
             // 
             // picCalander
             // 
             this.picCalander.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
-            this.picCalander.Location = new System.Drawing.Point(134, 3);
+            this.picCalander.Location = new System.Drawing.Point(132, 3);
             this.picCalander.Margin = new System.Windows.Forms.Padding(0);
             this.picCalander.Name = "picCalander";
             this.picCalander.Size = new System.Drawing.Size(24, 25);
@@ -396,7 +396,7 @@
             // 
             this.picTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picTime.Image = ((System.Drawing.Image)(resources.GetObject("picTime.Image")));
-            this.picTime.Location = new System.Drawing.Point(288, 3);
+            this.picTime.Location = new System.Drawing.Point(286, 3);
             this.picTime.Margin = new System.Windows.Forms.Padding(0);
             this.picTime.Name = "picTime";
             this.picTime.Size = new System.Drawing.Size(25, 25);
@@ -410,7 +410,7 @@
             this.lblDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(158, 0);
+            this.lblDate.Location = new System.Drawing.Point(156, 0);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(111, 32);
@@ -424,7 +424,7 @@
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(318, 0);
+            this.lblTime.Location = new System.Drawing.Point(316, 0);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(100, 32);
@@ -866,22 +866,22 @@
             // 
             // chartShiftWiseMembers
             // 
-            chartArea3.Name = "ShiftWiseChartArea";
-            this.chartShiftWiseMembers.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ShiftWiseChartArea";
+            this.chartShiftWiseMembers.ChartAreas.Add(chartArea1);
             this.chartShiftWiseMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "ShiftWiseLegend";
-            this.chartShiftWiseMembers.Legends.Add(legend3);
+            legend1.Name = "ShiftWiseLegend";
+            this.chartShiftWiseMembers.Legends.Add(legend1);
             this.chartShiftWiseMembers.Location = new System.Drawing.Point(10, 10);
             this.chartShiftWiseMembers.Name = "chartShiftWiseMembers";
-            series3.ChartArea = "ShiftWiseChartArea";
-            series3.Legend = "ShiftWiseLegend";
-            series3.Name = "MemberCountSeries";
-            this.chartShiftWiseMembers.Series.Add(series3);
+            series1.ChartArea = "ShiftWiseChartArea";
+            series1.Legend = "ShiftWiseLegend";
+            series1.Name = "MemberCountSeries";
+            this.chartShiftWiseMembers.Series.Add(series1);
             this.chartShiftWiseMembers.Size = new System.Drawing.Size(240, 176);
             this.chartShiftWiseMembers.TabIndex = 0;
             this.chartShiftWiseMembers.Text = "MemberCountSeries";
-            title2.Name = "ShiftWiseTitle";
-            this.chartShiftWiseMembers.Titles.Add(title2);
+            title1.Name = "ShiftWiseTitle";
+            this.chartShiftWiseMembers.Titles.Add(title1);
             // 
             // pnlShiftWiseMembersLable
             // 
@@ -951,17 +951,17 @@
             // 
             // chartTodayMemberAttendance
             // 
-            chartArea4.Name = "TodayAttendanceChartArea";
-            this.chartTodayMemberAttendance.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "TodayAttendanceChartArea";
+            this.chartTodayMemberAttendance.ChartAreas.Add(chartArea2);
             this.chartTodayMemberAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "TodayAttendanceLegend";
-            this.chartTodayMemberAttendance.Legends.Add(legend4);
+            legend2.Name = "TodayAttendanceLegend";
+            this.chartTodayMemberAttendance.Legends.Add(legend2);
             this.chartTodayMemberAttendance.Location = new System.Drawing.Point(10, 10);
             this.chartTodayMemberAttendance.Name = "chartTodayMemberAttendance";
-            series4.ChartArea = "TodayAttendanceChartArea";
-            series4.Legend = "TodayAttendanceLegend";
-            series4.Name = "AttendanceCountSeries";
-            this.chartTodayMemberAttendance.Series.Add(series4);
+            series2.ChartArea = "TodayAttendanceChartArea";
+            series2.Legend = "TodayAttendanceLegend";
+            series2.Name = "AttendanceCountSeries";
+            this.chartTodayMemberAttendance.Series.Add(series2);
             this.chartTodayMemberAttendance.Size = new System.Drawing.Size(240, 176);
             this.chartTodayMemberAttendance.TabIndex = 0;
             this.chartTodayMemberAttendance.Text = "chart1";
