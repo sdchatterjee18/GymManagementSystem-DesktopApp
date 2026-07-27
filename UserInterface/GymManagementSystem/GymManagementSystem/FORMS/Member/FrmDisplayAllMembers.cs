@@ -142,11 +142,14 @@ namespace GymManagementSystem.FORMS.Member
         private void txtSearchMember_Click(object sender, EventArgs e)
         {
             dgvDisplayMemberInformation.ClearSelection();
+            txtSearchMember.Clear();
+            txtSearchMember.ForeColor = Color.Black;
         }
 
         private void picSearchMember_Click(object sender, EventArgs e)
         {
             dgvDisplayMemberInformation.ClearSelection();
+           
         }
 
        
