@@ -274,6 +274,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlViewAllMembers_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmDisplayAllMembers());
         }
 
         private void pnlMemberTrainerAssignment_MouseEnter(object sender, EventArgs e)
