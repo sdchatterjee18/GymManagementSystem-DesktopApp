@@ -288,6 +288,12 @@
     <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.Designer.cs">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.Designer.cs">
+      <DependentUpon>FrmChangePasswordAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Shift\FrmDisplayShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     <EmbeddedResource Include="FORMS\RegistrationFee\FrmRegistrationFees.resx">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Settings\FrmChangePasswordAdmin.resx">
+      <DependentUpon>FrmChangePasswordAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Shift\FrmDisplayShift.resx">
       <DependentUpon>FrmDisplayShift.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,9 +514,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FORMS\Settings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_lehr1qlehr1qlehr.png" />
   </ItemGroup>
@@ -690,7 +697,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down-arrowWhite.png" />
-    </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dotB.png" />
   </ItemGroup>
