@@ -62,7 +62,7 @@ BEGIN
             @IsActive
         );
 
-         SELECT 'New record was added successfuly.' AS Message
+         SELECT 'New Membership Plan added successfuly.' AS Message
 
     END TRY
     BEGIN CATCH

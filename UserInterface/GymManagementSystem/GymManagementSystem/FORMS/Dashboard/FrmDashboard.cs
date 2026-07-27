@@ -12,9 +12,15 @@ namespace GymManagementSystem.FORMS.Dashboard
         {
             InitializeComponent();
         }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
 
+        }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            timer.Start();
 
             LoadShiftWiseMembersChart();
             LoadTodayMemberAttendanceChart();
@@ -28,7 +34,7 @@ namespace GymManagementSystem.FORMS.Dashboard
             series.Points.Clear();
 
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(210, 210, 235);
+            series.Color = Color.FromArgb(145, 145, 170);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 9, FontStyle.Bold);
@@ -66,7 +72,7 @@ namespace GymManagementSystem.FORMS.Dashboard
             series.Points.Clear();
 
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(250, 228, 235);
+            series.Color = Color.FromArgb(190, 145, 158);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 9, FontStyle.Bold);
