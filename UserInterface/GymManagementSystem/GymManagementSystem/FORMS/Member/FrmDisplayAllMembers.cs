@@ -109,35 +109,7 @@ namespace GymManagementSystem.FORMS.Member
             }
         }
 
-        private void tlpMainDisplayMembers_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
 
-        private void tlpTopTitleAndMemberIconPanal_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
-
-        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
-
-        private void tlpTopTitleAndSubTitleAndIconInDisplayMember_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
-
-        private void lblTitleDisplayAllMember_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
-
-        private void lblSubtitleDisplayAllMember_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
 
       
 
@@ -190,7 +162,10 @@ namespace GymManagementSystem.FORMS.Member
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
                 e.Handled = true;
+
             }
+
+           
 
 
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvDisplayMemberInformation.Columns["colDeactivate"].Index)
@@ -264,6 +239,45 @@ namespace GymManagementSystem.FORMS.Member
         {
             dgvDisplayMemberInformation.ClearSelection();
         }
+
+        private void tlpTopTitleAndMemberIconPanal_Click_1(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpDisplayMemberHeaderSection_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+       
+
+        private void lblSubtitleDisplayAllMember_Click_1(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpTopTitleAndSubTitleAndIconInDisplayMember_Click_1(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void lblTitleDisplayAllMember_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpMainDisplayMembers_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+      
 
        
         
