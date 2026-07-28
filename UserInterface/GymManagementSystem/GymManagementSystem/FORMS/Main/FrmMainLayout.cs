@@ -56,7 +56,7 @@ namespace GymManagementSystem.FORMS.Main
             selectedPanel.BackColor = Color.FromArgb(68, 97, 174); // Selected color
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             // Close the currently opened form
             if (activeForm != null)
@@ -274,7 +274,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlViewAllMembers_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
-            OpenChildForm(new FrmDisplayAllMembers());
+            OpenChildForm(new FrmDisplayAllMembers(this));
             SelectPanel(pnlViewAllMembers);
         }
 

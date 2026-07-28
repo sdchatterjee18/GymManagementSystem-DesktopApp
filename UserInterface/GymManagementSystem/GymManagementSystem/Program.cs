@@ -30,7 +30,8 @@ namespace GymManagementSystem
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmSAMainForm());
-            //Application.Run(new FrmSAAddNewEmployee());
+            Application.Run(new FrmMainLayout());
+
         }
     }
 }
