@@ -83,6 +83,7 @@ namespace GymManagementSystem.FORMS.Shift
             }
             StretchRows();
             dgvShift.ScrollBars = ScrollBars.None;
+            dgvShift.ClearSelection();
         }
 
         private void dgvShift_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -93,21 +94,23 @@ namespace GymManagementSystem.FORMS.Shift
             }
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DimGray;
+                dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255); 
                 dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.White;
             }
         }
 
         private void dgvShift_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvShift.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.WhiteSmoke;
-            }
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.LightGray;
+                dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
                 dgvShift.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvShift.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
+
+
             }
         }
 
@@ -219,6 +222,24 @@ namespace GymManagementSystem.FORMS.Shift
         private void tlpGridLayout_Click(object sender, EventArgs e)
         {
             dgvShift.ClearSelection();
+        }
+
+        private void dgvShift_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvShift.Columns[e.ColumnIndex].Name == "colSerialNo")
+            {
+
+                e.CellStyle.ForeColor = Color.Navy;
+            }
+
+
+
+            if (dgvShift.Columns[e.ColumnIndex].Name == "ColAction")
+            {
+
+                e.CellStyle.ForeColor = Color.DarkBlue;
+            }  
+
         }
 
     }
