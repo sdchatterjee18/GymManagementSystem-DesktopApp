@@ -83,7 +83,7 @@
             this.tlpMainDisplayMembers.Controls.Add(this.tlpDisplayMemberHeaderSection, 1, 0);
             this.tlpMainDisplayMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMainDisplayMembers.Location = new System.Drawing.Point(0, 0);
-            this.tlpMainDisplayMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMainDisplayMembers.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMainDisplayMembers.Name = "tlpMainDisplayMembers";
             this.tlpMainDisplayMembers.RowCount = 3;
             this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.4467F));
@@ -154,6 +154,7 @@
             this.dgvDisplayMemberInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvDisplayMemberInformation.Size = new System.Drawing.Size(769, 441);
             this.dgvDisplayMemberInformation.TabIndex = 1;
+            this.dgvDisplayMemberInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayMemberInformation_CellClick);
             this.dgvDisplayMemberInformation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDisplayMemberInformation_CellFormatting);
             this.dgvDisplayMemberInformation.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayMemberInformation_CellMouseEnter);
             this.dgvDisplayMemberInformation.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayMemberInformation_CellMouseLeave);
@@ -340,7 +341,7 @@
             this.tlpMemberSearchArea.Controls.Add(this.pnlClickAddNewMember, 4, 0);
             this.tlpMemberSearchArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberSearchArea.Location = new System.Drawing.Point(2, 85);
-            this.tlpMemberSearchArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberSearchArea.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMemberSearchArea.Name = "tlpMemberSearchArea";
             this.tlpMemberSearchArea.RowCount = 1;
             this.tlpMemberSearchArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -368,7 +369,7 @@
             this.btnSearchMemberByPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMemberByPhoneNumber.ForeColor = System.Drawing.Color.White;
             this.btnSearchMemberByPhoneNumber.Location = new System.Drawing.Point(272, 5);
-            this.btnSearchMemberByPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchMemberByPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchMemberByPhoneNumber.Name = "btnSearchMemberByPhoneNumber";
             this.btnSearchMemberByPhoneNumber.Size = new System.Drawing.Size(90, 32);
             this.btnSearchMemberByPhoneNumber.TabIndex = 9;
@@ -395,7 +396,7 @@
             this.pnlClickAddNewMember.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickAddNewMember.Controls.Add(this.tlpAddNewMember);
             this.pnlClickAddNewMember.Location = new System.Drawing.Point(673, 7);
-            this.pnlClickAddNewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlClickAddNewMember.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickAddNewMember.Name = "pnlClickAddNewMember";
             this.pnlClickAddNewMember.Size = new System.Drawing.Size(96, 29);
             this.pnlClickAddNewMember.TabIndex = 12;
@@ -410,12 +411,13 @@
             this.tlpAddNewMember.Controls.Add(this.picAddIcon, 0, 0);
             this.tlpAddNewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddNewMember.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddNewMember.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddNewMember.Name = "tlpAddNewMember";
             this.tlpAddNewMember.RowCount = 1;
             this.tlpAddNewMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddNewMember.Size = new System.Drawing.Size(94, 27);
             this.tlpAddNewMember.TabIndex = 5;
+            this.tlpAddNewMember.Click += new System.EventHandler(this.tlpAddNewMember_Click);
             this.tlpAddNewMember.Enter += new System.EventHandler(this.tlpAddNewMember_Enter);
             this.tlpAddNewMember.MouseEnter += new System.EventHandler(this.tlpAddNewMember_MouseEnter_1);
             this.tlpAddNewMember.MouseLeave += new System.EventHandler(this.tlpAddNewMember_MouseLeave);
@@ -432,7 +434,7 @@
             this.lblAddNewMember.Size = new System.Drawing.Size(67, 19);
             this.lblAddNewMember.TabIndex = 1;
             this.lblAddNewMember.Text = "Add New ";
-            this.lblAddNewMember.Click += new System.EventHandler(this.lblAddNewMember_Click);
+            this.lblAddNewMember.Click += new System.EventHandler(this.tlpAddNewMember_Click);
             this.lblAddNewMember.MouseEnter += new System.EventHandler(this.tlpAddNewMember_MouseEnter);
             this.lblAddNewMember.MouseLeave += new System.EventHandler(this.tlpAddNewMember_MouseLeave);
             // 
@@ -441,13 +443,13 @@
             this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
             this.picAddIcon.Location = new System.Drawing.Point(8, 6);
-            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picAddIcon.Name = "picAddIcon";
             this.picAddIcon.Size = new System.Drawing.Size(13, 14);
             this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddIcon.TabIndex = 2;
             this.picAddIcon.TabStop = false;
-            this.picAddIcon.Click += new System.EventHandler(this.picAddIcon_Click);
+            this.picAddIcon.Click += new System.EventHandler(this.tlpAddNewMember_Click);
             this.picAddIcon.MouseEnter += new System.EventHandler(this.tlpAddNewMember_MouseEnter_1);
             this.picAddIcon.MouseLeave += new System.EventHandler(this.tlpAddNewMember_MouseLeave);
             // 

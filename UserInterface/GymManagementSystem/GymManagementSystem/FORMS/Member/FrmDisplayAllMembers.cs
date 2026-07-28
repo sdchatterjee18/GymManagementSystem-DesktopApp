@@ -8,14 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.FORMS.Member
 {
     public partial class FrmDisplayAllMembers : Form
     {
-        public FrmDisplayAllMembers()
+        private FrmMainLayout AdminMainForm;
+        public FrmDisplayAllMembers(FrmMainLayout mainform)
         {
             InitializeComponent();
+            AdminMainForm = mainform;
         }
 
         private void FrmDisplayAllMembers_Load(object sender, EventArgs e)
@@ -317,6 +320,23 @@ namespace GymManagementSystem.FORMS.Member
         private void lblAddNewMember_Click(object sender, EventArgs e)
         {
             dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpAddNewMember_Click(object sender, EventArgs e)
+        {
+            AdminMainForm.OpenChildForm(new FrmMemberRegistration());
+        }
+
+        private void dgvDisplayMemberInformation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name == "colMemberProfile")
+            {
+              
+                    AdminMainForm.OpenChildForm(new FrmMemberProfile());
+            }
         }
 
        

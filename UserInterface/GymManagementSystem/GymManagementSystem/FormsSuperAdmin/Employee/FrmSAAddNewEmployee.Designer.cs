@@ -1422,7 +1422,7 @@
             this.pnlDocument.Controls.Add(this.tlpDocument);
             this.pnlDocument.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDocument.Location = new System.Drawing.Point(552, 2);
-            this.pnlDocument.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDocument.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDocument.Name = "pnlDocument";
             this.pnlDocument.Size = new System.Drawing.Size(280, 30);
             this.pnlDocument.TabIndex = 11;
@@ -2068,7 +2068,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.tlpEmployeeRegistrationForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(879, 591);
             this.Name = "FrmSAAddNewEmployee";
             this.Text = "FrmSAAddNewEmployee";
