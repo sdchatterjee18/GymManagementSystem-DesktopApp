@@ -182,7 +182,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             selectedTLP = tlpPersonalTrainer;
             //tlpPersonalTrainer.BackColor = Color.FromArgb(165, 175, 240);
-            tlpPersonalTrainer.BackColor = Color.Blue;
+            tlpPersonalTrainer.BackColor = Color.RoyalBlue;
             lblPersonalTrainer.ForeColor = Color.White;
             tlpGeneralTrainer.BackColor = Color.FromArgb(210,215,245);
             lblGeneralTrainer.ForeColor = Color.Blue;
@@ -209,7 +209,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             selectedTLP = tlpGeneralTrainer;
             //tlpGeneralTrainer.BackColor = Color.FromArgb(165, 175, 240);
-            tlpGeneralTrainer.BackColor = Color.Blue;
+            tlpGeneralTrainer.BackColor = Color.RoyalBlue;
             lblGeneralTrainer.ForeColor = Color.White;
             tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 245);
             lblPersonalTrainer.ForeColor = Color.Blue;

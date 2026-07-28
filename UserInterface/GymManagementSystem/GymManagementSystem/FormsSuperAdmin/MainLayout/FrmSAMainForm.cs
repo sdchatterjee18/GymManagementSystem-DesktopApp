@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
+using GymManagementSystem.FormsSuperAdmin.Employee;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -247,6 +248,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             picEmployeeManagement.Image = Properties.Resources.Employee;
 
             ExpandIfCollapsed();
+            OpenChildForm(new FrmSADisplayAllEmployee());
         }
 
         private void pnlEmployeeSalaryManagement_MouseEnter(object sender, EventArgs e)

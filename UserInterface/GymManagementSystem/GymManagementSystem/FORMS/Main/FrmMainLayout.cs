@@ -275,6 +275,7 @@ namespace GymManagementSystem.FORMS.Main
         {
             ExpandIfCollapsed();
             OpenChildForm(new FrmDisplayAllMembers());
+            SelectPanel(pnlViewAllMembers);
         }
 
         private void pnlMemberTrainerAssignment_MouseEnter(object sender, EventArgs e)
@@ -352,7 +353,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlFitnessTest.ForeColor = Color.White;
             picFitnessTest.Image = Properties.Resources.fitnessTest;
             ExpandIfCollapsed();
-            OpenChildForm(new FrmMemberRegistration());
+            OpenChildForm(new FrmMemberProfile());
         }
         private void pnlMarkMemberAttendance_MouseEnter(object sender, EventArgs e)
         {

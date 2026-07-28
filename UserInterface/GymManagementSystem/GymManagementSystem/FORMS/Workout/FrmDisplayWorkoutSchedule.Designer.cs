@@ -94,8 +94,8 @@
             // 
             this.tlpWorkoutSheduleHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpWorkoutSheduleHeader.ColumnCount = 4;
-            this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
             this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.16434F));
             this.tlpWorkoutSheduleHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.83566F));
             this.tlpWorkoutSheduleHeader.Controls.Add(this.picWorkoutShedule, 0, 0);
@@ -112,12 +112,12 @@
             // 
             // picWorkoutShedule
             // 
-            this.picWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picWorkoutShedule.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picWorkoutShedule.Image")));
-            this.picWorkoutShedule.Location = new System.Drawing.Point(2, 2);
+            this.picWorkoutShedule.Location = new System.Drawing.Point(2, 8);
             this.picWorkoutShedule.Margin = new System.Windows.Forms.Padding(2);
             this.picWorkoutShedule.Name = "picWorkoutShedule";
-            this.picWorkoutShedule.Size = new System.Drawing.Size(58, 60);
+            this.picWorkoutShedule.Size = new System.Drawing.Size(44, 48);
             this.picWorkoutShedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWorkoutShedule.TabIndex = 0;
             this.picWorkoutShedule.TabStop = false;
@@ -130,14 +130,14 @@
             this.tlpAllWorkoutSheduleTitle.Controls.Add(this.lblViewAllWorkoutSheduleDetails, 0, 1);
             this.tlpAllWorkoutSheduleTitle.Controls.Add(this.lblAllWorkoutShedule, 0, 0);
             this.tlpAllWorkoutSheduleTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllWorkoutSheduleTitle.Location = new System.Drawing.Point(64, 2);
+            this.tlpAllWorkoutSheduleTitle.Location = new System.Drawing.Point(52, 2);
             this.tlpAllWorkoutSheduleTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAllWorkoutSheduleTitle.Name = "tlpAllWorkoutSheduleTitle";
             this.tlpAllWorkoutSheduleTitle.RowCount = 3;
             this.tlpAllWorkoutSheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
             this.tlpAllWorkoutSheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.5082F));
             this.tlpAllWorkoutSheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.03279F));
-            this.tlpAllWorkoutSheduleTitle.Size = new System.Drawing.Size(221, 60);
+            this.tlpAllWorkoutSheduleTitle.Size = new System.Drawing.Size(233, 60);
             this.tlpAllWorkoutSheduleTitle.TabIndex = 1;
             this.tlpAllWorkoutSheduleTitle.Click += new System.EventHandler(this.tlpWorkoutSheduleHeader_Click);
             // 
@@ -147,10 +147,10 @@
             this.lblViewAllWorkoutSheduleDetails.AutoSize = true;
             this.lblViewAllWorkoutSheduleDetails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewAllWorkoutSheduleDetails.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblViewAllWorkoutSheduleDetails.Location = new System.Drawing.Point(2, 30);
+            this.lblViewAllWorkoutSheduleDetails.Location = new System.Drawing.Point(2, 35);
             this.lblViewAllWorkoutSheduleDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblViewAllWorkoutSheduleDetails.Name = "lblViewAllWorkoutSheduleDetails";
-            this.lblViewAllWorkoutSheduleDetails.Size = new System.Drawing.Size(184, 18);
+            this.lblViewAllWorkoutSheduleDetails.Size = new System.Drawing.Size(219, 13);
             this.lblViewAllWorkoutSheduleDetails.TabIndex = 3;
             this.lblViewAllWorkoutSheduleDetails.Text = "View All Type of Workout Shedule Details";
             // 

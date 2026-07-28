@@ -47,10 +47,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Value = serialNo++;
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Style.ForeColor = Color.Blue;
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colName"].Value = dataRow["FullName"].ToString();
+                            dvgEmployeeDetails.Rows[rowIndex].Cells["colName"].Value = dataRow["EmployeeName"].ToString();
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colGender"].Value = dataRow["GenderName"].ToString();
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colPhoneNo"].Value = dataRow["PhoneNo"].ToString();
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colEmail"].Value = dataRow["EmailId"].ToString();
 
                             object joiningDateValue = dataRow["JoiningDate"];
                             if (joiningDateValue != null && joiningDateValue != DBNull.Value)

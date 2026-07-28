@@ -52,9 +52,9 @@
             this.cmbCateogory = new System.Windows.Forms.ComboBox();
             this.lblSelectCategory = new System.Windows.Forms.Label();
             this.tlpExpenseDefination = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.lblExpenseDefination = new System.Windows.Forms.Label();
             this.txtExpenseDefination = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.tlpHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picAddExpenses = new System.Windows.Forms.PictureBox();
             this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
@@ -348,7 +348,7 @@
             this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cmbCateogory.ForeColor = System.Drawing.Color.Black;
             this.cmbCateogory.FormattingEnabled = true;
-            this.cmbCateogory.Location = new System.Drawing.Point(225, 16);
+            this.cmbCateogory.Location = new System.Drawing.Point(225, 15);
             this.cmbCateogory.Margin = new System.Windows.Forms.Padding(0);
             this.cmbCateogory.Name = "cmbCateogory";
             this.cmbCateogory.Size = new System.Drawing.Size(241, 25);
@@ -388,6 +388,19 @@
             this.tlpExpenseDefination.TabIndex = 0;
             this.tlpExpenseDefination.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(486, 9);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(101, 35);
+            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            // 
             // lblExpenseDefination
             // 
             this.lblExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -415,19 +428,6 @@
             this.txtExpenseDefination.TabIndex = 1;
             this.txtExpenseDefination.Text = " e.g. maintenance for treadmills";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(486, 9);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(101, 35);
-            this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
             // 
             // tlpHeader
             // 

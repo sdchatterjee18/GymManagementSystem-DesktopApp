@@ -44,7 +44,6 @@
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblNewDietPlanHeader = new System.Windows.Forms.Label();
             this.picNewDietPlan = new System.Windows.Forms.PictureBox();
-            this.lblCancel = new System.Windows.Forms.Label();
             this.tlpInputCategory = new System.Windows.Forms.TableLayoutPanel();
             this.txtInputCategory = new System.Windows.Forms.TextBox();
             this.tlpSubmitClear = new System.Windows.Forms.TableLayoutPanel();
@@ -234,7 +233,6 @@
             this.tlpAddExpenseCategoryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.81723F));
             this.tlpAddExpenseCategoryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.18277F));
             this.tlpAddExpenseCategoryHeader.Controls.Add(this.tlpPictureAndTitleAndSubTitle, 1, 0);
-            this.tlpAddExpenseCategoryHeader.Controls.Add(this.lblCancel, 2, 0);
             this.tlpAddExpenseCategoryHeader.Location = new System.Drawing.Point(2, 2);
             this.tlpAddExpenseCategoryHeader.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddExpenseCategoryHeader.Name = "tlpAddExpenseCategoryHeader";
@@ -316,22 +314,6 @@
             this.picNewDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewDietPlan.TabIndex = 0;
             this.picNewDietPlan.TabStop = false;
-            // 
-            // lblCancel
-            // 
-            this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCancel.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.lblCancel.ForeColor = System.Drawing.Color.Black;
-            this.lblCancel.Location = new System.Drawing.Point(365, 0);
-            this.lblCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(25, 23);
-            this.lblCancel.TabIndex = 1;
-            this.lblCancel.Text = " X";
-            this.lblCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
-            this.lblCancel.MouseEnter += new System.EventHandler(this.lblCancel_MouseEnter);
-            this.lblCancel.MouseLeave += new System.EventHandler(this.lblCancel_MouseLeave);
             // 
             // tlpInputCategory
             // 
@@ -470,6 +452,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 404);
             this.Controls.Add(this.tlpAddExpenseCategory);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddExpenseCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmAddExpenseCategory";
@@ -509,7 +493,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpRequiredCategoryName;
         private System.Windows.Forms.TextBox txtRequiredCategoryName;
         private System.Windows.Forms.TableLayoutPanel tlpAddExpenseCategoryHeader;
-        private System.Windows.Forms.Label lblCancel;
         private System.Windows.Forms.TableLayoutPanel tlpPictureAndTitleAndSubTitle;
         private System.Windows.Forms.TableLayoutPanel tlpTitleAndSubTitle;
         private System.Windows.Forms.Label lblSubTitle;
