@@ -27,7 +27,9 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSADisplayAllEmployee());
+            //Application.Run(new FrmSADisplayAllEmployee());
+            Application.Run(new FrmDisplayAllMembers());
+
         }
     }
 }

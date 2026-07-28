@@ -79,7 +79,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void tlpAddNewMember_MouseEnter(object sender, EventArgs e)
         {
-            
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
         }
 
         private void dgvDisplayMemberInformation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -277,7 +277,44 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.ClearSelection();
         }
 
-      
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpAddNewMember_MouseEnter_1(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void picAddIcon_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void tlpAddNewMember_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+
+
+
+
+        //private void tlpAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
+        //{
+        //    this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(220, 225, 230);
+        //}
+
+        //private void tlpAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
+        //{
+        //    this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(236, 240, 243);
+        //}
+
+        //private void tlpAddNewRegistrationFees_MouseEnter_1(object sender, EventArgs e)
+        //{
+
+        //}
 
        
         
