@@ -19,6 +19,7 @@ using GymManagementSystem.FORMS.Workout;
 using GymManagementSystem.FORMS.Member;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
+using GymManagementSystem.FORMS.Attendance;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -276,6 +277,7 @@ namespace GymManagementSystem.FORMS.Main
             ExpandIfCollapsed();
             OpenChildForm(new FrmDisplayAllMembers(this));
             SelectPanel(pnlViewAllMembers);
+            
         }
 
         private void pnlMemberTrainerAssignment_MouseEnter(object sender, EventArgs e)
@@ -296,6 +298,7 @@ namespace GymManagementSystem.FORMS.Main
         {
             ExpandIfCollapsed();
             OpenChildForm(new FrmMemberTrainerAssignment());
+            
         }
 
         private void pnlTrainer_MouseEnter(object sender, EventArgs e)
@@ -353,7 +356,7 @@ namespace GymManagementSystem.FORMS.Main
             pnlFitnessTest.ForeColor = Color.White;
             picFitnessTest.Image = Properties.Resources.fitnessTest;
             ExpandIfCollapsed();
-            OpenChildForm(new FrmMemberProfile());
+            OpenChildForm(new FrmFitnessTest());
         }
         private void pnlMarkMemberAttendance_MouseEnter(object sender, EventArgs e)
         {
@@ -373,6 +376,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlMarkMemberAttendance_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmMarkAttendance());
         }
 
         private void pnlViewMemberAttendance_MouseEnter(object sender, EventArgs e)
@@ -392,6 +396,7 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlViewMemberAttendance_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            OpenChildForm(new FrmViewAttendance());
         }
 
         private void pnlMembershipPlan_MouseEnter(object sender, EventArgs e)
