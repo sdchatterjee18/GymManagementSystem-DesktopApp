@@ -262,10 +262,7 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.ClearSelection();
         }
 
-        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
+      
 
         private void lblTitleDisplayAllMember_Click(object sender, EventArgs e)
         {
@@ -297,24 +294,35 @@ namespace GymManagementSystem.FORMS.Member
             this.tlpAddNewMember.BackColor = Color.FromArgb(236, 240, 243);
         }
 
+        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpMemberSearchArea_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpAddNewMember_Enter(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void picAddIcon_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void lblAddNewMember_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+       
 
 
 
-
-        //private void tlpAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
-        //{
-        //    this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(220, 225, 230);
-        //}
-
-        //private void tlpAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
-        //{
-        //    this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(236, 240, 243);
-        //}
-
-        //private void tlpAddNewRegistrationFees_MouseEnter_1(object sender, EventArgs e)
-        //{
-
-        //}
 
        
         
