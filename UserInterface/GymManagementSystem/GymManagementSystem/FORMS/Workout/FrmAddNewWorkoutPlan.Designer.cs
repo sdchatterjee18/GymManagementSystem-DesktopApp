@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddNewWorkoutPlan));
             this.pnlSubNewWorkoutPlanTitle = new System.Windows.Forms.Panel();
             this.tlpMainNewWorkoutPlanTitle = new System.Windows.Forms.TableLayoutPanel();
-            this.picAddWorkoutPlan = new System.Windows.Forms.PictureBox();
             this.tlpNewWorkoutPlanTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblViewWorkoutPlan = new System.Windows.Forms.Label();
             this.lblNewWorkoutPlan = new System.Windows.Forms.Label();
@@ -42,22 +41,23 @@
             this.tlpSubmitionWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickSubmitWorkoutPlan = new System.Windows.Forms.Panel();
             this.tlpSubmitBoxWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
-            this.picAddButtonWorkoutPlan = new System.Windows.Forms.PictureBox();
             this.lblAddNewWorkoutPlan = new System.Windows.Forms.Label();
             this.btnClearWorkoutPlan = new System.Windows.Forms.Button();
             this.lblMessageBoxWorkoutPlan = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pnlAddNewWorkoutPlanForm = new System.Windows.Forms.Panel();
+            this.picAddButtonWorkoutPlan = new System.Windows.Forms.PictureBox();
+            this.picAddWorkoutPlan = new System.Windows.Forms.PictureBox();
             this.pnlSubNewWorkoutPlanTitle.SuspendLayout();
             this.tlpMainNewWorkoutPlanTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddWorkoutPlan)).BeginInit();
             this.tlpNewWorkoutPlanTitle.SuspendLayout();
             this.tlpNewWorkoutPlanDetails.SuspendLayout();
             this.tlpSubmitionWorkoutPlan.SuspendLayout();
             this.pnlClickSubmitWorkoutPlan.SuspendLayout();
             this.tlpSubmitBoxWorkoutPlan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonWorkoutPlan)).BeginInit();
             this.pnlAddNewWorkoutPlanForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonWorkoutPlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddWorkoutPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSubNewWorkoutPlanTitle
@@ -77,7 +77,7 @@
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.17391F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.picAddWorkoutPlan, 1, 0);
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.tlpNewWorkoutPlanTitle, 2, 0);
             this.tlpMainNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,17 +89,6 @@
             this.tlpMainNewWorkoutPlanTitle.Size = new System.Drawing.Size(399, 63);
             this.tlpMainNewWorkoutPlanTitle.TabIndex = 0;
             // 
-            // picAddWorkoutPlan
-            // 
-            this.picAddWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddWorkoutPlan.Image")));
-            this.picAddWorkoutPlan.Location = new System.Drawing.Point(16, 2);
-            this.picAddWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddWorkoutPlan.Name = "picAddWorkoutPlan";
-            this.picAddWorkoutPlan.Size = new System.Drawing.Size(44, 58);
-            this.picAddWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddWorkoutPlan.TabIndex = 2;
-            this.picAddWorkoutPlan.TabStop = false;
-            // 
             // tlpNewWorkoutPlanTitle
             // 
             this.tlpNewWorkoutPlanTitle.ColumnCount = 1;
@@ -107,7 +96,7 @@
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblViewWorkoutPlan, 0, 1);
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblNewWorkoutPlan, 0, 0);
             this.tlpNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(64, 2);
+            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(57, 2);
             this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanTitle.Name = "tlpNewWorkoutPlanTitle";
             this.tlpNewWorkoutPlanTitle.RowCount = 3;
@@ -254,18 +243,6 @@
             this.tlpSubmitBoxWorkoutPlan.Size = new System.Drawing.Size(83, 28);
             this.tlpSubmitBoxWorkoutPlan.TabIndex = 4;
             // 
-            // picAddButtonWorkoutPlan
-            // 
-            this.picAddButtonWorkoutPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAddButtonWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonWorkoutPlan.Image")));
-            this.picAddButtonWorkoutPlan.Location = new System.Drawing.Point(11, 3);
-            this.picAddButtonWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddButtonWorkoutPlan.Name = "picAddButtonWorkoutPlan";
-            this.picAddButtonWorkoutPlan.Size = new System.Drawing.Size(14, 23);
-            this.picAddButtonWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddButtonWorkoutPlan.TabIndex = 1;
-            this.picAddButtonWorkoutPlan.TabStop = false;
-            // 
             // lblAddNewWorkoutPlan
             // 
             this.lblAddNewWorkoutPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -331,6 +308,29 @@
             this.pnlAddNewWorkoutPlanForm.Size = new System.Drawing.Size(399, 256);
             this.pnlAddNewWorkoutPlanForm.TabIndex = 3;
             // 
+            // picAddButtonWorkoutPlan
+            // 
+            this.picAddButtonWorkoutPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAddButtonWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonWorkoutPlan.Image")));
+            this.picAddButtonWorkoutPlan.Location = new System.Drawing.Point(11, 3);
+            this.picAddButtonWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.picAddButtonWorkoutPlan.Name = "picAddButtonWorkoutPlan";
+            this.picAddButtonWorkoutPlan.Size = new System.Drawing.Size(14, 23);
+            this.picAddButtonWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddButtonWorkoutPlan.TabIndex = 1;
+            this.picAddButtonWorkoutPlan.TabStop = false;
+            // 
+            // picAddWorkoutPlan
+            // 
+            this.picAddWorkoutPlan.Image = ((System.Drawing.Image)(resources.GetObject("picAddWorkoutPlan.Image")));
+            this.picAddWorkoutPlan.Location = new System.Drawing.Point(14, 2);
+            this.picAddWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.picAddWorkoutPlan.Name = "picAddWorkoutPlan";
+            this.picAddWorkoutPlan.Size = new System.Drawing.Size(39, 58);
+            this.picAddWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddWorkoutPlan.TabIndex = 2;
+            this.picAddWorkoutPlan.TabStop = false;
+            // 
             // FrmAddNewWorkoutPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,7 +348,6 @@
             this.Shown += new System.EventHandler(this.FrmAddNewWorkoutPlan_Shown);
             this.pnlSubNewWorkoutPlanTitle.ResumeLayout(false);
             this.tlpMainNewWorkoutPlanTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAddWorkoutPlan)).EndInit();
             this.tlpNewWorkoutPlanTitle.ResumeLayout(false);
             this.tlpNewWorkoutPlanTitle.PerformLayout();
             this.tlpNewWorkoutPlanDetails.ResumeLayout(false);
@@ -358,8 +357,9 @@
             this.pnlClickSubmitWorkoutPlan.ResumeLayout(false);
             this.tlpSubmitBoxWorkoutPlan.ResumeLayout(false);
             this.tlpSubmitBoxWorkoutPlan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonWorkoutPlan)).EndInit();
             this.pnlAddNewWorkoutPlanForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAddButtonWorkoutPlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddWorkoutPlan)).EndInit();
             this.ResumeLayout(false);
 
         }

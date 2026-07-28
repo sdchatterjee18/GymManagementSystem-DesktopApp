@@ -308,6 +308,7 @@
             this.txtExerciseNameSearch.Size = new System.Drawing.Size(139, 26);
             this.txtExerciseNameSearch.TabIndex = 0;
             this.txtExerciseNameSearch.Text = "Enter Exercise Name .";
+            this.txtExerciseNameSearch.Click += new System.EventHandler(this.txtExerciseNameSearch_Click);
             // 
             // btnExerciseSearch
             // 
@@ -843,6 +844,7 @@
             this.txtWorkoutNameSearch.Size = new System.Drawing.Size(140, 26);
             this.txtWorkoutNameSearch.TabIndex = 0;
             this.txtWorkoutNameSearch.Text = "Enter Workout Name .";
+            this.txtWorkoutNameSearch.Click += new System.EventHandler(this.txtWorkoutNameSearch_Click);
             // 
             // btnWorkoutPlanSearch
             // 

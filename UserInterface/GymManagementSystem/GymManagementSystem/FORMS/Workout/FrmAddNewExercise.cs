@@ -15,5 +15,11 @@ namespace GymManagementSystem.FORMS.Workout
         {
             InitializeComponent();
         }
+
+        private void FrmAddNewExercise_Load(object sender, EventArgs e)
+        {
+            this.Text = "";
+            this.ShowIcon = false;
+        }
     }
 }

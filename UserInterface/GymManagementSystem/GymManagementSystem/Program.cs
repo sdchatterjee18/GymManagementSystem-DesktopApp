@@ -6,8 +6,15 @@ using GymManagementSystem.FORMS.Workout;
 using GymManagementSystem.FORMS.Payments;
 using GymManagementSystem.FORMS.RegistrationFee;
 using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FORMS.Member;
+using GymManagementSystem.FormsSuperAdmin.Employee;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.Attendance;
+using GymManagementSystem.FormsSuperAdmin.Employee;
+using GymManagementSystem.FORMS.Expenses;
+using GymManagementSystem.FORMS.Settings;
 
 namespace GymManagementSystem
 {
@@ -21,7 +28,11 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmViewAttendance());
+
+            //Application.Run(new FrmSADisplayAllEmployee());
+            //Application.Run(new FrmDisplayAllMembers());
+            //Application.Run(new FrmSAMainForm());
+            //Application.Run(new FrmSAAddNewEmployee());
         }
     }
 }

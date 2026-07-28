@@ -75,7 +75,7 @@ namespace GymManagementSystem.FORMS.Payments
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+                
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -87,13 +87,11 @@ namespace GymManagementSystem.FORMS.Payments
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);    
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvPaymentsManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
                 
             }
         }

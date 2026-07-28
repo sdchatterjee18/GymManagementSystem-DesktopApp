@@ -1435,17 +1435,17 @@ END
 GO
 
 -------------------------------------------
--- SP: spDisplayMembersWithPersonalTrainer
+-- SP: spDisplayMembersWithPersonalTrainer  xx
 -------------------------------------------
 
 
 ---------------------------------------------
--- SP: spDisplayMembersWithoutPersonalTrainer
+-- SP: spDisplayMembersWithoutPersonalTrainer  xx
 ---------------------------------------------
 
 
 --------------------------------------
--- SP: spGetAllTrainerEmployeeDetails
+-- SP: spGetAllTrainerEmployeeDetails  
 --------------------------------------
 CREATE PROC spGetAllTrainerEmployeeDetails
 AS
@@ -1506,7 +1506,7 @@ END
 GO
 
 -------------------------------------------
--- SP: spGetInactivePersonalTrainersByShift
+-- SP: spGetInactivePersonalTrainersByShift ***
 -------------------------------------------
 CREATE PROC spGetInactivePersonalTrainersByShift
 (
@@ -1570,7 +1570,7 @@ END
 GO
 
 -------------------------------------------
--- SP: spGetPersonalTrainerShiftStatus
+-- SP: spGetPersonalTrainerShiftStatus xx
 -------------------------------------------
 CREATE PROC spGetPersonalTrainerShiftStatus 
 (
@@ -1706,5 +1706,1363 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message
 
     END CATCH
+END;
+GO
+
+-------------------------------------------------------------------
+                   -- ShiftManagement SPs --
+-------------------------------------------------------------------
+
+--------------------------
+--SP: spUpdateShiftTime---
+--------------------------
+CREATE PROC spUpdateShiftTime 
+(
+    @ShiftId INT,
+    @StartTime TIME,
+    @EndTime TIME
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblShift
+            WHERE ShiftId = @ShiftId
+        )
+        BEGIN
+            SELECT 'Shift does not exist.' AS Message;
+            RETURN;
+        END;
+
+        IF @StartTime >= @EndTime
+        BEGIN
+            SELECT 'End Time must be greater than Start Time.' AS Message;
+            RETURN;
+        END;
+
+        UPDATE tblShift
+        SET
+            StartTime = @StartTime,
+            EndTime = @EndTime
+        WHERE ShiftId = @ShiftId;
+
+        SELECT 'Shift time updated successfully.' AS Message;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+--------------------------------
+--SP: spRetrieveShiftTimeTable--
+--------------------------------
+CREATE PROC spRetrieveShiftTimeTable
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            ShiftId,
+            ShiftName,
+            FORMAT(CAST(StartTime AS datetime), 'hh:mm tt') AS StartTime,  
+            FORMAT(CAST(EndTime AS datetime), 'hh:mm tt') AS EndTime
+        FROM tblShift
+        ORDER BY tblShift.StartTime ASC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
+END;
+GO
+
+-------------------------
+--SP: spGetCurrentShift--
+-------------------------
+CREATE PROC spGetCurrentShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);
+
+        SELECT
+            ShiftId,
+            ShiftName,
+            FORMAT(CAST(StartTime AS DATETIME), 'hh:mm tt') AS StartTime,
+            FORMAT(CAST(EndTime AS DATETIME), 'hh:mm tt') AS EndTime
+        FROM tblShift
+        WHERE @CurrentTime BETWEEN StartTime AND EndTime;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------------------------------------------
+                   -- MembershipPlanManagement SPs --
+-------------------------------------------------------------------
+
+--------------------------------------
+--SP: spInsertDataIntoMembershipPlan--
+--------------------------------------
+CREATE PROC spInsertDataIntoMembershipPlan
+(
+    @MembershipPlanName VARCHAR(100),
+    @PlanTypeId         INT,
+    @DurationInDays     INT,
+    @Price              DECIMAL(10,2),
+    @Description        VARCHAR(MAX) = NULL,
+    @IsActive           BIT = 1
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+       
+        IF @MembershipPlanName IS NULL OR LTRIM(RTRIM(@MembershipPlanName)) = ''
+        BEGIN
+            SELECT 'MembershipPlanName cannot be empty.' AS Message
+            RETURN;
+        END
+
+        IF @DurationInDays IS NULL OR @DurationInDays <= 0
+        BEGIN
+            SELECT 'DurationInDays must be greater than zero.' AS Message
+            RETURN;
+        END
+
+        IF @Price IS NULL OR @Price < 0
+        BEGIN
+            SELECT 'Price cannot be negative.' AS Message
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblMembershipPlanType WHERE PlanTypeId = @PlanTypeId)
+        BEGIN
+            SELECT 'Invalid PlanTypeId. No matching record found in tblMembershipPlanType.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanName = @MembershipPlanName)
+        BEGIN
+            SELECT 'A membership plan with this name already exists.' AS Message            
+            RETURN;
+        END
+
+        INSERT INTO tblMembershipPlans
+        (
+            MembershipPlanName,
+            PlanTypeId,
+            DurationInDays,
+            Price,
+            Description,
+            IsActive
+        )
+        VALUES
+        (
+            @MembershipPlanName,
+            @PlanTypeId,
+            @DurationInDays,
+            @Price,
+            @Description,
+            @IsActive
+        );
+
+         SELECT 'New Membership Plan added successfuly.' AS Message
+
+    END TRY
+    BEGIN CATCH
+       SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+--------------------------------------------------------------------
+--SP: spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId--
+--------------------------------------------------------------------
+CREATE PROC spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId 
+(
+    @MembershipPlanId INT,
+    @Description      VARCHAR(MAX)  = NULL,
+    @NewPrice         DECIMAL(10,2) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF NOT EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId)
+        BEGIN
+            SELECT 'MembershipPlanId not found.' AS Message
+            RETURN;
+        END
+
+        IF @Description IS NULL AND @NewPrice IS NULL
+        BEGIN
+            SELECT 'No values supplied. Provide a Description and/or a NewPrice to update.' AS MESSAGE
+            RETURN;
+        END
+
+
+        IF @NewPrice IS NOT NULL AND @NewPrice <= 0
+        BEGIN
+            SELECT 'Price cannot be negative or zero.' AS Message
+            RETURN;
+        END
+
+        DECLARE @CurrentDescription VARCHAR(MAX);
+        DECLARE @CurrentPrice       DECIMAL(10,2);
+
+        SELECT
+            @CurrentDescription = Description,
+            @CurrentPrice       = Price
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId;
+
+        DECLARE @DescriptionChanged BIT = CASE
+            WHEN @Description IS NOT NULL AND @Description <> @CurrentDescription THEN 1
+            ELSE 0
+        END;
+
+        DECLARE @PriceChanged BIT = CASE
+            WHEN @NewPrice IS NOT NULL AND @NewPrice <> @CurrentPrice THEN 1
+            ELSE 0
+        END;
+
+        IF @DescriptionChanged = 0 AND @PriceChanged = 0
+        BEGIN
+            SELECT 'The supplied value(s) match the current record. No update performed.' AS Message
+            RETURN;
+        END
+
+        UPDATE tblMembershipPlans
+        SET
+            Description = CASE WHEN @DescriptionChanged = 1 THEN @Description ELSE Description END,
+            Price       = CASE WHEN @PriceChanged = 1 THEN @NewPrice ELSE Price END
+        WHERE MembershipPlanId = @MembershipPlanId;
+
+        SELECT
+            CASE
+                WHEN @DescriptionChanged = 1 AND @PriceChanged = 1 THEN 'Membership Plan Description and Price Updated Successfully.'
+                WHEN @DescriptionChanged = 1 THEN 'Membership Plan Description Updated Successfully.'
+                WHEN @PriceChanged = 1 THEN 'Membership Plan Price Updated Successfully.'
+            END AS Message;
+
+    END TRY
+    BEGIN CATCH 
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+----------------------------------
+--SP: spRetrieveMembershipPlans--
+----------------------------------
+CREATE PROCEDURE spRetrieveMembershipPlans
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        mp.MembershipPlanId,
+        mp.MembershipPlanName,
+        mpt.PlanType,
+        mp.DurationInDays,
+        mp.Price,
+        mp.Description,
+        CASE
+            WHEN mp.IsActive = 1 THEN 'Active'
+            ELSE 'Inactive'
+        END IsActive
+    FROM tblMembershipPlans mp
+    INNER JOIN tblMembershipPlanType mpt
+        ON mp.PlanTypeId = mpt.PlanTypeId;
+END;
+GO
+
+---------------------------------------------
+--SP: spRetrieveMembershipPlanDetailsByName--
+---------------------------------------------
+CREATE PROC spRetrieveMembershipPlanDetailsByName 
+(
+    @MembershipPlanName VARCHAR(100)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SET @MembershipPlanName = LTRIM(RTRIM(@MembershipPlanName));
+
+        IF @MembershipPlanName = ''
+        BEGIN
+            SELECT 'Membership Plan Name is required.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipPlans
+            WHERE MembershipPlanName = @MembershipPlanName
+        )
+        BEGIN
+            SELECT 'Membership Plan not found.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            MP.MembershipPlanId,
+            MP.MembershipPlanName,
+            MPT.PlanType,
+            MP.DurationInDays,
+            MP.Price,
+            MP.Description,
+            MP.IsActive
+        FROM tblMembershipPlans AS MP
+        INNER JOIN tblMembershipPlanType AS MPT
+            ON MP.PlanTypeId = MPT.PlanTypeId
+        WHERE MP.MembershipPlanName = @MembershipPlanName;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+----------------------------------------------------
+--SP: spDeactivateMembershipPlanByMembershipPlanId--
+----------------------------------------------------
+CREATE PROC spDeactivateMembershipPlanByMembershipPlanId 
+(
+    @MembershipPlanId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        
+        IF NOT EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId)
+        BEGIN
+            SELECT 'MembershipPlanId not found.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (SELECT 1 FROM tblMembershipPlans WHERE MembershipPlanId = @MembershipPlanId AND IsActive = 0)
+        BEGIN
+            SELECT 'This membership plan is already inactive.' AS Message
+            RETURN;
+        END
+
+        UPDATE tblMembershipPlans
+        SET IsActive = 0
+        WHERE MembershipPlanId = @MembershipPlanId;
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+
+-------------------------------------------------------------------
+                   -- ExpenseManagement SPs --
+-------------------------------------------------------------------
+------------------------
+--SP: spGetAllExpenses--
+------------------------
+CREATE PROC spRetrieveAllExpenseStatement
+AS
+BEGIN
+BEGIN TRY
+
+    SELECT
+        E.ExpenseId,
+        C.CategoryName,
+        C.Category,
+        E.ExpenseAmount,
+        E.ExpenseDate,
+        E.Notes
+    FROM tblExpense E
+    INNER JOIN tblExpensesCategories C
+        ON E.ExpenseCategoryId = C.ExpenseCategoryID
+    ORDER BY E.ExpenseDate DESC;
+
+END TRY
+BEGIN CATCH
+    SELECT ERROR_MESSAGE() AS Message;
+END CATCH
+END;
+GO
+
+-----------------------
+--SP: spInsertExpense--
+-----------------------
+CREATE PROC spInsertExpense 
+(
+    @ExpenseCategoryId INT,
+    @ExpenseAmount DECIMAL(10,2),
+    @ExpenseDate DATE,
+    @Notes VARCHAR(MAX) 
+)
+AS
+BEGIN
+BEGIN TRY
+
+    SET NOCOUNT ON;
+
+    SET @Notes = LTRIM(RTRIM(@Notes));
+
+    IF @ExpenseCategoryId IS NULL
+    BEGIN
+        SELECT 'Expense Category is Required.' AS Message;
+        RETURN;
+    END
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblExpensesCategories
+        WHERE ExpenseCategoryID = @ExpenseCategoryId
+    )
+    BEGIN
+        SELECT 'Invalid Expense Category.' AS Message;
+        RETURN;
+    END
+
+    IF @ExpenseAmount IS NULL OR @ExpenseAmount < 0
+    BEGIN
+        SELECT 'Expense Amount Must Be >= 0.' AS Message;
+        RETURN;
+    END
+
+    IF @ExpenseDate IS NULL
+    BEGIN
+        SELECT 'Expense Date is Required.' AS Message;
+        RETURN;
+    END
+
+    INSERT INTO tblExpense
+    (
+        ExpenseCategoryId,
+        ExpenseAmount,
+        ExpenseDate,
+        Notes
+    )
+    VALUES
+    (
+        @ExpenseCategoryId,
+        @ExpenseAmount,
+        @ExpenseDate,
+        @Notes
+    );
+
+    SELECT 'Expense Inserted Successfully.' AS Message;
+
+END TRY
+BEGIN CATCH
+    SELECT ERROR_MESSAGE() AS Message;
+END CATCH
+END;
+GO
+
+---------------------------------------------
+--SP: spRetrieveExpenseStatementByDateRange--
+---------------------------------------------
+CREATE PROC spRetrieveExpenseStatementByDateRange 
+(
+    @FromDate DATE,
+    @ToDate DATE
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @FromDate IS NULL
+        BEGIN
+            SELECT 'From Date is required.' AS Message;
+            RETURN;
+        END;
+        IF @ToDate IS NULL
+        BEGIN
+            SELECT 'To Date is required.' AS Message;
+            RETURN;
+        END;
+        IF @FromDate > CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'From Date cannot be greater than today.' AS Message;
+            RETURN;
+        END;
+
+        IF @ToDate > CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'To Date cannot be greater than today.' AS Message;
+            RETURN;
+        END;
+        IF @FromDate > @ToDate
+        BEGIN
+            SELECT 'From Date cannot be greater than To Date.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            E.ExpenseId,
+            EC.CategoryName,
+            EC.Category,
+            E.ExpenseAmount,
+            E.ExpenseDate,
+            E.Notes
+        FROM tblExpense E
+        INNER JOIN tblExpensesCategories EC
+            ON E.ExpenseCategoryId = EC.ExpenseCategoryId
+        WHERE E.ExpenseDate BETWEEN @FromDate AND @ToDate
+        ORDER BY
+            E.ExpenseDate DESC
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-----------------------------------------
+--SP: spRetrieveTotalExpenseByDateRange--
+-----------------------------------------
+CREATE PROC spRetrieveTotalExpenseByDateRange 
+(
+    @FromDate DATE,
+    @ToDate DATE
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @FromDate IS NULL
+        BEGIN
+            SELECT 'From Date is required.' AS Message;
+            RETURN;
+        END;
+        IF @ToDate IS NULL
+        BEGIN
+            SELECT 'To Date is required.' AS Message;
+            RETURN;
+        END;
+        IF @FromDate > CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'From Date cannot be greater than today.' AS Message;
+            RETURN;
+        END;
+
+        IF @ToDate > CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'To Date cannot be greater than today.' AS Message;
+            RETURN;
+        END;
+        IF @FromDate > @ToDate
+        BEGIN
+            SELECT 'From Date cannot be greater than To Date.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            ISNULL(SUM(ExpenseAmount), 0) AS TotalExpense
+        FROM tblExpense
+        WHERE ExpenseDate BETWEEN @FromDate AND @ToDate;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-----------------------------------------
+--SP: spRetrieveExpenseStatementByMonth--
+-----------------------------------------
+CREATE PROC spRetrieveExpenseStatementByMonth
+(
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @Month IS NULL
+           OR @Month NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 'Invalid Month.' AS Message;
+            RETURN;
+        END;
+        IF @Year IS NULL
+           OR @Year < 2000
+           OR @Year > YEAR(GETDATE())
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            E.ExpenseId,
+            EC.CategoryName,
+            EC.Category,
+            E.ExpenseAmount,
+            E.ExpenseDate,
+            E.Notes
+        FROM tblExpense E
+        INNER JOIN tblExpensesCategories EC
+            ON E.ExpenseCategoryId = EC.ExpenseCategoryId
+        WHERE E.ExpenseDate >= DATEFROMPARTS(@Year, @Month, 1)
+          AND E.ExpenseDate < DATEADD(MONTH, 1, DATEFROMPARTS(@Year, @Month, 1))
+        ORDER BY
+            E.ExpenseDate DESC
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------------
+--SP: spRetrieveTotalExpenseByMonth--
+-------------------------------------
+CREATE PROC spRetrieveTotalExpenseByMonth 
+(
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @Month IS NULL
+           OR @Month NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 'Invalid Month.' AS Message;
+            RETURN;
+        END;
+        IF @Year IS NULL
+           OR @Year < 2000
+           OR @Year > YEAR(GETDATE())
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            ISNULL(SUM(ExpenseAmount), 0) AS TotalExpense
+        FROM tblExpense
+        WHERE ExpenseDate >= DATEFROMPARTS(@Year, @Month, 1)
+          AND ExpenseDate < DATEADD(MONTH, 1, DATEFROMPARTS(@Year, @Month, 1));
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------------------
+--SP: spRetrieveExpenseStatementByYear--
+----------------------------------------
+CREATE PROC spRetrieveExpenseStatementByYear 
+(
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @Year IS NULL
+           OR @Year < 2000
+           OR @Year > YEAR(GETDATE())
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            E.ExpenseId,
+            EC.CategoryName,
+            EC.Category,
+            E.ExpenseAmount,
+            E.ExpenseDate,
+            E.Notes
+        FROM tblExpense E
+        INNER JOIN tblExpensesCategories EC
+            ON E.ExpenseCategoryId = EC.ExpenseCategoryId
+        WHERE YEAR(E.ExpenseDate) = @Year
+        ORDER BY
+            E.ExpenseDate DESC,
+            E.ExpenseId DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------------------
+--SP: spRetrieveExpenseStatementByYear--
+----------------------------------------
+CREATE PROC spRetrieveTotalExpenseByYear
+(
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @Year IS NULL
+           OR @Year < 2000
+           OR @Year > YEAR(GETDATE())
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            ISNULL(SUM(ExpenseAmount), 0) AS TotalExpense
+        FROM tblExpense
+        WHERE YEAR(ExpenseDate) = @Year;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------
+--SP: spAddExpenseCategory--
+----------------------------
+CREATE PROCEDURE spAddExpenseCategory 
+(
+    @CategoryName VARCHAR(100),
+    @Category VARCHAR(100)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @CategoryName = LTRIM(RTRIM(@CategoryName));
+        SET @Category = LTRIM(RTRIM(@Category));
+
+        IF @CategoryName = ''
+        BEGIN
+            SELECT 'Category name is required.' AS Message;
+            RETURN;
+        END
+
+        IF @Category = ''
+        BEGIN
+            SELECT 'Category is required.' AS Message;
+            RETURN;
+        END
+
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblExpensesCategories
+            WHERE CategoryName = @CategoryName
+        )
+        BEGIN
+            SELECT 'Category name already exists.' AS Message;
+            RETURN;
+        END
+
+        INSERT INTO tblExpensesCategories
+        (
+            CategoryName,
+            Category
+        )
+        VALUES
+        (
+            @CategoryName,
+            @Category
+        );
+
+        SELECT 'Expense category added successfully.' AS Message;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------------
+--SP: spGetAllExpensesCategories--
+----------------------------------
+CREATE PROC spGetAllExpensesCategories
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        ExpenseCategoryID,
+        CategoryName,
+        Category
+    FROM tblExpensesCategories
+    ORDER BY CategoryName;
+END
+GO
+-------------------------------------------------------------------
+                   -- RegistrationFeesManagement SPs --
+-------------------------------------------------------------------
+
+--------------------------------
+--SP: spGetAllRegistrationFees--
+--------------------------------
+CREATE PROCEDURE spGetAllRegistrationFees
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        RegistrationFeesId,
+        FeeAmount,
+        CASE
+            WHEN IsActive = 1 THEN 'Active'
+            ELSE 'Inactive'
+        END IsActive,
+        CreatedAt
+    FROM tblRegistrationFees
+    ORDER BY RegistrationFeesId ASC;
+END
+GO
+
+---------------------------------------------
+--SP: spInsertDataIntoRegistrationFeesTable--
+---------------------------------------------
+CREATE PROC spInsertDataIntoRegistrationFeesTable
+(
+    @FeeAmount DECIMAL(10,2)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @FeeAmount IS NULL
+        BEGIN
+            SELECT 'Fee Amount is Required.' AS Message;
+            RETURN;
+        END;
+
+        IF @FeeAmount < 0
+        BEGIN
+            SELECT 'Fee Amount Cannot Be Negative.' AS Message;
+            RETURN;
+        END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblRegistrationFees
+            WHERE FeeAmount = @FeeAmount
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Registration Fee Already Exists.' AS Message;
+            RETURN;
+        END;
+
+        BEGIN TRANSACTION;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblRegistrationFees
+            WHERE IsActive = 1
+        )
+        BEGIN
+            UPDATE tblRegistrationFees
+            SET IsActive = 0
+            WHERE IsActive = 1;
+        END
+        INSERT INTO tblRegistrationFees
+        (
+            FeeAmount,
+            IsActive
+        )
+        VALUES
+        (
+            @FeeAmount,
+            1
+        );
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Registration Fee Updated Successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
+END;
+GO
+
+-------------------------------------------------------------------
+                   -- LockerManagement SPs --
+-------------------------------------------------------------------
+
+-----------------------------------
+--SP: spInsertDataIntoLockerTable--
+-----------------------------------
+CREATE PROC spInsertDataIntoLockerTable 
+(
+    @LockerNo VARCHAR(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @LockerNo = LTRIM(RTRIM(@LockerNo));
+        IF @LockerNo IS NULL OR @LockerNo = ''
+        BEGIN
+            SELECT 'Locker Number is Required.' AS Message;
+            RETURN;
+        END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblLocker
+            WHERE LockerNo = @LockerNo
+        )
+        BEGIN
+            SELECT 'Locker Number Already Exists.' AS Message;
+            RETURN;
+        END;
+        INSERT INTO tblLocker
+        (
+            LockerNo,
+            LockerStatus
+        )
+        VALUES
+        (
+            @LockerNo,
+            'Available'
+        );
+
+        SELECT 'Locker Inserted Successfully.' AS Message;
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+--------------------------
+--SP: spGetLockerDetails--
+--------------------------
+CREATE PROC spGetLockerDetails
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        L.LockerId,
+        L.LockerNo,
+        ISNULL(
+            M.FirstName +
+            CASE 
+                WHEN M.MiddleName IS NULL OR LTRIM(RTRIM(M.MiddleName)) = ''
+                    THEN ' '
+                ELSE ' ' + M.MiddleName + ' '
+            END +
+            M.LastName,
+            ''
+        ) AS MemberName,
+        L.LockerStatus
+    FROM tblLocker AS L
+    LEFT JOIN tblLockerAllocation AS LA
+        ON L.LockerId = LA.LockerId
+    LEFT JOIN tblMember AS M
+        ON LA.MemberId = M.MemberId
+    ORDER BY L.LockerNo;
+END;
+GO
+
+
+-------------------------------------------------------------------------------
+                   -- MembershipSubscriptionManagement SPs --
+-------------------------------------------------------------------------------
+
+-----------------------------------------------
+--SP: spGetTopThreeHighestSellingSubscription--
+-----------------------------------------------
+CREATE PROC spGetTopThreeHighestSellingSubscription
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT TOP (3)
+        mp.MembershipPlanName,
+        COUNT(ms.MemberSubscriptionId) AS TotalSubscriptions
+    FROM tblMembershipSubscription ms
+    INNER JOIN tblMembershipPlans mp
+        ON ms.MembershipPlanId = mp.MembershipPlanId
+    GROUP BY mp.MembershipPlanName
+    ORDER BY COUNT(ms.MemberSubscriptionId) DESC;
+END;
+GO
+
+----------------------------------------
+--SP: spGetTotalSubscriptionsThisMonth--
+----------------------------------------
+CREATE PROC spGetTotalSubscriptionsThisMonth
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        COUNT(MemberSubscriptionId) AS TotalSubscriptionsSold
+    FROM tblMembershipSubscription
+    WHERE StartDate >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)
+      AND StartDate <= EOMONTH(GETDATE());
+END;
+GO
+
+----------------------------------------------------------------
+--SP: spInsertDataIntoMembershipSubscriptionTableWhileReneweal--
+----------------------------------------------------------------
+CREATE PROC spInsertDataIntoMembershipSubscriptionTableWhileReneweal @MemberId=3,@MembershipPlanId=4,@PaymentMethod='card'
+(
+    @MemberId INT,
+    @MembershipPlanId INT,
+    @PaymentMethod VARCHAR(50)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+    BEGIN TRANSACTION;
+        DECLARE @DurationInDays INT;
+        DECLARE @StartDate DATE;
+        DECLARE @ExpiryDate DATE;
+        DECLARE @LastExpiryDate DATE;
+        DECLARE @Amount DECIMAL(10,2);
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            ROLLBACK TRANSACTION;
+            SELECT 'Member does not exist or is inactive.' AS Message
+            RETURN;
+        END
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipPlans
+            WHERE MembershipPlanId = @MembershipPlanId
+              AND IsActive = 1
+        )
+        BEGIN
+            ROLLBACK TRANSACTION;
+            SELECT 'Membership plan does not exist or is inactive.' AS Message
+            RETURN;
+        END
+        SELECT
+            @DurationInDays = DurationInDays,
+            @Amount = Price
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId;
+
+        SELECT @LastExpiryDate = MAX(ExpiryDate)
+        FROM tblMembershipSubscription
+        WHERE MemberId = @MemberId;
+
+        IF @LastExpiryDate IS NOT NULL
+           AND @LastExpiryDate >= CAST(GETDATE() AS DATE)
+        BEGIN
+            SET @StartDate = DATEADD(DAY, 1, @LastExpiryDate);
+        END
+        ELSE
+        BEGIN
+            SET @StartDate = CAST(GETDATE() AS DATE);
+        END
+
+        SET @ExpiryDate = DATEADD(DAY, @DurationInDays - 1, @StartDate);
+
+        INSERT INTO tblMembershipSubscription
+        (
+            MemberId,
+            MembershipPlanId,
+            StartDate,
+            ExpiryDate,
+            IsActive
+        )
+        VALUES
+        (
+            @MemberId,
+            @MembershipPlanId,
+            @StartDate,
+            @ExpiryDate,
+            1
+        );
+
+        INSERT INTO tblSubscriptionPayment
+        (
+            MemberId,
+            MembershipPlanId,
+            PaymentMethod,
+            Amount,
+            FeesType
+        )
+        VALUES
+        (
+            @MemberId,
+            @MembershipPlanId,
+            @PaymentMethod,
+            @Amount,
+            'Renewal'
+        );
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Membership renewed successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+------------------------------------------------------
+--SP: spGetMembershipSubscriptionsByMembershipPlanId--
+------------------------------------------------------
+CREATE PROC spGetMembershipSubscriptionsByMembershipPlanId   
+(
+    @MembershipPlanId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId
+    )
+    BEGIN
+        SELECT 'Membership plan does not exist.' AS Message;
+        RETURN;
+    END
+
+    SELECT
+        MS.MemberSubscriptionId,
+        M.MemberId,
+        M.FirstName,
+        M.LastName,
+        MP.MembershipPlanName,
+        MS.StartDate,
+        MS.ExpiryDate,
+        MS.IsActive
+    FROM tblMembershipSubscription AS MS
+    INNER JOIN tblMember AS M
+        ON MS.MemberId = M.MemberId
+    INNER JOIN tblMembershipPlans AS MP
+        ON MS.MembershipPlanId = MP.MembershipPlanId
+    WHERE MS.MembershipPlanId = @MembershipPlanId
+    ORDER BY MS.StartDate DESC;
+END;
+GO
+
+-----------------------------------------------
+--SP: spGetActiveMembershipDetailsByMemberId--
+-----------------------------------------------
+CREATE PROC spGetActiveMembershipDetailsByMemberId
+(
+    @MemberId INT
+)
+AS
+BEGIN
+    SELECT
+        MS.MemberSubscriptionId,
+        MP.MembershipPlanName,
+        MP.DurationInDays,
+        MP.Price,
+        MP.Description,
+        MS.StartDate,
+        MS.ExpiryDate
+    FROM tblMembershipSubscription MS
+    INNER JOIN tblMembershipPlans MP
+        ON MS.MembershipPlanId = MP.MembershipPlanId
+    WHERE
+        MS.MemberId = @MemberId
+        AND MS.IsActive = 1
+        AND MP.IsActive = 1
+        AND CAST(GETDATE() AS DATE) BETWEEN MS.StartDate AND MS.ExpiryDate;
+END
+GO
+
+-----------------------------------------------------------------------
+--SP: spGetMembershipSubscriptionsByMembershipPlanIdForASpecificMonth--
+-----------------------------------------------------------------------
+CREATE PROC spGetMembershipSubscriptionsByMembershipPlanIdForASpecificMonth 
+(
+    @MembershipPlanId INT,
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId
+    )
+    BEGIN
+        SELECT 'Membership plan does not exist.' AS Message;
+        RETURN;
+    END
+
+    SELECT
+        MS.MemberSubscriptionId,
+        M.MemberId,
+        M.FirstName,
+        M.LastName,
+        MP.MembershipPlanName,
+        MS.StartDate,
+        MS.ExpiryDate,
+        MS.IsActive
+    FROM tblMembershipSubscription AS MS
+    INNER JOIN tblMember AS M
+        ON MS.MemberId = M.MemberId
+    INNER JOIN tblMembershipPlans AS MP
+        ON MS.MembershipPlanId = MP.MembershipPlanId
+    WHERE MS.MembershipPlanId = @MembershipPlanId
+      AND MONTH(MS.StartDate) = @Month
+      AND YEAR(MS.StartDate) = @Year
+    ORDER BY MS.StartDate DESC;
+END;
+GO
+
+----------------------------------------------------------------------------
+--SP: spGetCountMembershipSubscriptionsByMembershipPlanIdForASpecificMonth--
+----------------------------------------------------------------------------
+CREATE PROC spGetCountMembershipSubscriptionsByMembershipPlanIdForASpecificMonth
+(
+    @MembershipPlanId INT,
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT COUNT(*) AS TotalAssignments
+    FROM tblMembershipSubscription
+    WHERE MembershipPlanId = @MembershipPlanId
+      AND MONTH(StartDate) = @Month
+      AND YEAR(StartDate) = @Year;
+END;
+GO
+
+----------------------------------------------------
+--SP: spGetMembershipSubscriptionHistoryByMemberId--
+----------------------------------------------------
+CREATE PROC spGetMembershipSubscriptionHistoryByMemberId 
+(
+    @MemberId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE MemberId = @MemberId
+    )
+    BEGIN
+        SELECT 'Member does not exist.' AS Message;
+        RETURN;
+    END
+
+    SELECT
+        MS.MemberSubscriptionId,
+        MP.MembershipPlanName,
+        MS.StartDate,
+        MS.ExpiryDate,
+        MS.IsActive
+    FROM tblMembershipSubscription AS MS
+    INNER JOIN tblMembershipPlans AS MP
+        ON MS.MembershipPlanId = MP.MembershipPlanId
+    WHERE MS.MemberId = @MemberId
+    ORDER BY MS.StartDate DESC;
 END;
 GO
