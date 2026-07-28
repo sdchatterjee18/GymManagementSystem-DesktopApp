@@ -8,14 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.FormsSuperAdmin.Employee;
 
 namespace GymManagementSystem.FormsSuperAdmin.Employee
 {
     public partial class FrmSADisplayAllEmployee : Form
     {
-        public FrmSADisplayAllEmployee()
+        private FrmSAMainForm SuperAdmnMainForm;
+        public FrmSADisplayAllEmployee(FrmSAMainForm mainform)
         {
             InitializeComponent();
+            SuperAdmnMainForm = mainform;
         }
 
         private void getEmployeeDetails()
@@ -207,6 +211,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private void pnlAddNewEmployee_MouseLeave(object sender, EventArgs e)
         {
             this.pnlAddNewEmployee.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void tlpAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            SuperAdmnMainForm.OpenChildForm(new FrmSAAddNewEmployee());
+        }
+
+        private void pnlAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            SuperAdmnMainForm.OpenChildForm(new FrmSAAddNewEmployee());
         }
     }
 }
