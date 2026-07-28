@@ -8,14 +8,18 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.FormsSuperAdmin.Employee;
 
 namespace GymManagementSystem.FormsSuperAdmin.Employee
 {
     public partial class FrmSADisplayAllEmployee : Form
     {
-        public FrmSADisplayAllEmployee()
+        private FrmSAMainForm SuperAdmnMainForm;
+        public FrmSADisplayAllEmployee(FrmSAMainForm mainform)
         {
             InitializeComponent();
+            SuperAdmnMainForm = mainform;
         }
 
         private void getEmployeeDetails()
@@ -47,10 +51,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Value = serialNo++;
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Style.ForeColor = Color.Blue;
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colName"].Value = dataRow["FullName"].ToString();
+                            dvgEmployeeDetails.Rows[rowIndex].Cells["colName"].Value = dataRow["EmployeeName"].ToString();
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colGender"].Value = dataRow["GenderName"].ToString();
                             dvgEmployeeDetails.Rows[rowIndex].Cells["colPhoneNo"].Value = dataRow["PhoneNo"].ToString();
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colEmail"].Value = dataRow["EmailId"].ToString();
 
                             object joiningDateValue = dataRow["JoiningDate"];
                             if (joiningDateValue != null && joiningDateValue != DBNull.Value)
@@ -208,6 +211,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private void pnlAddNewEmployee_MouseLeave(object sender, EventArgs e)
         {
             this.pnlAddNewEmployee.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void tlpAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            SuperAdmnMainForm.OpenChildForm(new FrmSAAddNewEmployee());
+        }
+
+        private void pnlAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            SuperAdmnMainForm.OpenChildForm(new FrmSAAddNewEmployee());
         }
     }
 }

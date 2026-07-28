@@ -83,12 +83,6 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close {
-            get {
-                object obj = ResourceManager.GetObject("Close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
         internal static System.Drawing.Bitmap attendance {
             get {
                 object obj = ResourceManager.GetObject("attendance", resourceCulture);
@@ -99,16 +93,29 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CloseHover {
-            get {
-                object obj = ResourceManager.GetObject("CloseHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-                
         internal static System.Drawing.Bitmap attendanceHOVER__1_ {
             get {
                 object obj = ResourceManager.GetObject("attendanceHOVER__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close {
+            get {
+                object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CloseHover {
+            get {
+                object obj = ResourceManager.GetObject("CloseHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -152,6 +159,10 @@ namespace GymManagementSystem.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap downArrowB {
             get {
                 object obj = ResourceManager.GetObject("downArrowB", resourceCulture);
@@ -245,6 +256,16 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap fitnessTestHover {
             get {
                 object obj = ResourceManager.GetObject("fitnessTestHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hide__1_ {
+            get {
+                object obj = ResourceManager.GetObject("hide__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -465,6 +486,16 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap shiftHover {
             get {
                 object obj = ResourceManager.GetObject("shiftHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show {
+            get {
+                object obj = ResourceManager.GetObject("show", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

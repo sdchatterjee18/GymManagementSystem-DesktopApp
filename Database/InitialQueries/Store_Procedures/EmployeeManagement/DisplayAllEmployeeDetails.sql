@@ -4,7 +4,7 @@ BEGIN
 
     SELECT
         E.EmployeeId,
-        E.FirstName + ' ' +ISNULL(E.MiddleName + ' ', '') +E.LastName AS EmployeeName
+        E.FirstName + ' ' +ISNULL(E.MiddleName + ' ', '') +E.LastName AS EmployeeName,
         G.GenderName,
         E.PhoneNo,
         E.EmailId,

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -18,7 +19,11 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmMemberProfile_Load(object sender, EventArgs e)
         {
-
+           
         }
+
+
     }
+
+
 }

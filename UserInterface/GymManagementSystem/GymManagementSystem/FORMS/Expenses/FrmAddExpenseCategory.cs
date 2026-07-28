@@ -54,18 +54,8 @@ namespace GymManagementSystem.FORMS.Expenses
 
             txtRequiredCategoryName.Select(0, 0);
             txtRequiredCategoryName.DeselectAll();
-        }
-
-        private void lblCancel_MouseEnter(object sender, EventArgs e)
-        {
-            lblCancel.BackColor = Color.FromArgb(196, 43, 28);
-            lblCancel.ForeColor = Color.White;
-        }
-
-        private void lblCancel_MouseLeave(object sender, EventArgs e)
-        {
-            lblCancel.BackColor = Color.FromArgb(250,250,250);
-            lblCancel.ForeColor = Color.Black;
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         private void lblCancel_Click(object sender, EventArgs e)

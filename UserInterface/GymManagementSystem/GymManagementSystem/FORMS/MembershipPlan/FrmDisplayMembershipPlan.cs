@@ -129,7 +129,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+              
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -144,7 +144,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+                
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
