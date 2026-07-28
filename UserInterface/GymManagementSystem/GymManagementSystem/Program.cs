@@ -16,6 +16,7 @@ using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
 
+
 namespace GymManagementSystem
 {
     static class Program
@@ -28,11 +29,11 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmSAMainForm());
             Application.Run(new FrmMainLayout());
+
 
         }
     }
