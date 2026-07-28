@@ -81,7 +81,7 @@ namespace GymManagementSystem.FORMS.Shift
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            StretchRows();
+          
             dgvShift.ScrollBars = ScrollBars.None;
             dgvShift.ClearSelection();
         }
@@ -171,27 +171,11 @@ namespace GymManagementSystem.FORMS.Shift
             dtpTime.Visible = false;
         }
 
-        private void StretchRows()
-        {
-            if (dgvShift.Rows.Count == 0)
-                return;
-
-            // Height available for rows (excluding column header)
-            int availableHeight = dgvShift.ClientSize.Height - dgvShift.ColumnHeadersHeight;
-
-            // Calculate row height
-            int rowHeight = availableHeight / dgvShift.Rows.Count;
-
-            // Set row height
-            foreach (DataGridViewRow row in dgvShift.Rows)
-            {
-                row.Height = rowHeight;
-            }
-        }
+       
 
         private void FrmDisplayShift_Resize(object sender, EventArgs e)
         {
-            StretchRows();
+          
         }
 
         private void tlpMainLayout_Click(object sender, EventArgs e)
@@ -226,21 +210,9 @@ namespace GymManagementSystem.FORMS.Shift
 
         private void dgvShift_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgvShift.Columns[e.ColumnIndex].Name == "colSerialNo")
-            {
-
-                e.CellStyle.ForeColor = Color.Navy;
-            }
-
-
-
-            if (dgvShift.Columns[e.ColumnIndex].Name == "ColAction")
-            {
-
-                e.CellStyle.ForeColor = Color.DarkBlue;
-            }  
-
+                
         }
 
+       
     }
 }

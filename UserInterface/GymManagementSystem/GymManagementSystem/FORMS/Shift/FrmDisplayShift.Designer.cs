@@ -265,7 +265,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1093, 779);
             this.Controls.Add(this.tlpAllMembershipPlanEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisplayShift";
             this.Load += new System.EventHandler(this.FrmDisplayShift_Load);
             this.Click += new System.EventHandler(this.FrmDisplayShift_Click);
