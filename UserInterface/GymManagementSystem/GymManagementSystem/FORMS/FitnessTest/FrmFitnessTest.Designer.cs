@@ -76,13 +76,13 @@
             this.tlpFitnessTestCalculateButton = new System.Windows.Forms.TableLayoutPanel();
             this.btnCalculateFitnessTest = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.picFitnessTestHumanMuscle = new System.Windows.Forms.PictureBox();
             this.tlpFitnessTestHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.picFitnessTest = new System.Windows.Forms.PictureBox();
             this.tlpFitnessTestTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblViewAllWorkoutSheduleDetails = new System.Windows.Forms.Label();
             this.lblMemberFitnessTest = new System.Windows.Forms.Label();
             this.tlpFitnessTestEntireForm = new System.Windows.Forms.TableLayoutPanel();
-            this.picFitnessTestHumanMuscle = new System.Windows.Forms.PictureBox();
-            this.picFitnessTest = new System.Windows.Forms.PictureBox();
             this.TLPFitnessTestInputOutput.SuspendLayout();
             this.tlpSubMemberInputAndOutputFitnessTest.SuspendLayout();
             this.pnlFitnessTestInputOutputBox.SuspendLayout();
@@ -109,11 +109,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTDEE)).BeginInit();
             this.tlpFitnessTestCalculateButton.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).BeginInit();
             this.tlpFitnessTestHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).BeginInit();
             this.tlpFitnessTestTitle.SuspendLayout();
             this.tlpFitnessTestEntireForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).BeginInit();
             this.SuspendLayout();
             // 
             // TLPFitnessTestInputOutput
@@ -288,61 +288,82 @@
             // 
             this.txtHightInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHightInput.ForeColor = System.Drawing.Color.Gray;
             this.txtHightInput.Location = new System.Drawing.Point(195, 21);
             this.txtHightInput.Name = "txtHightInput";
             this.txtHightInput.Size = new System.Drawing.Size(156, 30);
             this.txtHightInput.TabIndex = 1;
+            this.txtHightInput.Text = "Enter Hight";
+            this.txtHightInput.Enter += new System.EventHandler(this.txtHightInput_Enter);
+            this.txtHightInput.Leave += new System.EventHandler(this.txtHightInput_Leave);
             // 
             // txtWeightInput
             // 
             this.txtWeightInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWeightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeightInput.ForeColor = System.Drawing.Color.Gray;
             this.txtWeightInput.Location = new System.Drawing.Point(195, 63);
             this.txtWeightInput.Name = "txtWeightInput";
             this.txtWeightInput.Size = new System.Drawing.Size(156, 30);
             this.txtWeightInput.TabIndex = 1;
+            this.txtWeightInput.Text = "Enter Weight";
+            this.txtWeightInput.Enter += new System.EventHandler(this.txtWeightInput_Enter);
+            this.txtWeightInput.Leave += new System.EventHandler(this.txtWeightInput_Leave);
             // 
             // cmbGenderInput
             // 
             this.cmbGenderInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbGenderInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenderInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbGenderInput.FormattingEnabled = true;
             this.cmbGenderInput.Location = new System.Drawing.Point(195, 102);
             this.cmbGenderInput.Name = "cmbGenderInput";
             this.cmbGenderInput.Size = new System.Drawing.Size(156, 31);
             this.cmbGenderInput.TabIndex = 2;
             this.cmbGenderInput.Text = "---select---";
+            this.cmbGenderInput.Enter += new System.EventHandler(this.cmbGenderInput_Enter);
+            this.cmbGenderInput.Leave += new System.EventHandler(this.cmbGenderInput_Leave);
             // 
             // txtAgeInput
             // 
             this.txtAgeInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAgeInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgeInput.ForeColor = System.Drawing.Color.Gray;
             this.txtAgeInput.Location = new System.Drawing.Point(195, 141);
             this.txtAgeInput.Name = "txtAgeInput";
             this.txtAgeInput.Size = new System.Drawing.Size(156, 30);
             this.txtAgeInput.TabIndex = 1;
+            this.txtAgeInput.Text = "Enter Age";
+            this.txtAgeInput.Enter += new System.EventHandler(this.txtAgeInput_Enter);
+            this.txtAgeInput.Leave += new System.EventHandler(this.txtAgeInput_Leave);
             // 
             // cmbActivityInput
             // 
             this.cmbActivityInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbActivityInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbActivityInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbActivityInput.FormattingEnabled = true;
             this.cmbActivityInput.Location = new System.Drawing.Point(195, 181);
             this.cmbActivityInput.Name = "cmbActivityInput";
             this.cmbActivityInput.Size = new System.Drawing.Size(156, 31);
             this.cmbActivityInput.TabIndex = 2;
             this.cmbActivityInput.Text = "---select---";
+            this.cmbActivityInput.Enter += new System.EventHandler(this.cmbActivityInput_Enter);
+            this.cmbActivityInput.Leave += new System.EventHandler(this.cmbActivityInput_Leave);
             // 
             // cmbGoalInput
             // 
             this.cmbGoalInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbGoalInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGoalInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbGoalInput.FormattingEnabled = true;
             this.cmbGoalInput.Location = new System.Drawing.Point(195, 222);
             this.cmbGoalInput.Name = "cmbGoalInput";
             this.cmbGoalInput.Size = new System.Drawing.Size(156, 31);
             this.cmbGoalInput.TabIndex = 2;
             this.cmbGoalInput.Text = "---select---";
+            this.cmbGoalInput.Enter += new System.EventHandler(this.cmbGoalInput_Enter);
+            this.cmbGoalInput.Leave += new System.EventHandler(this.cmbGoalInput_Leave);
             // 
             // lblHightInput
             // 
@@ -492,9 +513,9 @@
             this.lblResultBMI.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultBMI.Location = new System.Drawing.Point(65, 54);
             this.lblResultBMI.Name = "lblResultBMI";
-            this.lblResultBMI.Size = new System.Drawing.Size(65, 32);
+            this.lblResultBMI.Size = new System.Drawing.Size(45, 32);
             this.lblResultBMI.TabIndex = 4;
-            this.lblResultBMI.Text = "22.5";
+            this.lblResultBMI.Text = "---";
             // 
             // pnlIBW
             // 
@@ -555,9 +576,9 @@
             this.lblResultIBW.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultIBW.Location = new System.Drawing.Point(68, 68);
             this.lblResultIBW.Name = "lblResultIBW";
-            this.lblResultIBW.Size = new System.Drawing.Size(79, 32);
+            this.lblResultIBW.Size = new System.Drawing.Size(45, 32);
             this.lblResultIBW.TabIndex = 4;
-            this.lblResultIBW.Text = "72 kg";
+            this.lblResultIBW.Text = "---";
             // 
             // pnlBMR
             // 
@@ -618,9 +639,9 @@
             this.lblResultBMR.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultBMR.Location = new System.Drawing.Point(63, 54);
             this.lblResultBMR.Name = "lblResultBMR";
-            this.lblResultBMR.Size = new System.Drawing.Size(122, 32);
+            this.lblResultBMR.Size = new System.Drawing.Size(45, 32);
             this.lblResultBMR.TabIndex = 4;
-            this.lblResultBMR.Text = "1750 kcal";
+            this.lblResultBMR.Text = "---";
             // 
             // pnlTDEE
             // 
@@ -679,11 +700,11 @@
             this.lblResultTDEE.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblResultTDEE.AutoSize = true;
             this.lblResultTDEE.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultTDEE.Location = new System.Drawing.Point(66, 56);
+            this.lblResultTDEE.Location = new System.Drawing.Point(66, 68);
             this.lblResultTDEE.Name = "lblResultTDEE";
-            this.lblResultTDEE.Size = new System.Drawing.Size(79, 57);
+            this.lblResultTDEE.Size = new System.Drawing.Size(45, 32);
             this.lblResultTDEE.TabIndex = 4;
-            this.lblResultTDEE.Text = "2450 kcal";
+            this.lblResultTDEE.Text = "---";
             // 
             // tlpFitnessTestCalculateButton
             // 
@@ -704,7 +725,8 @@
             // 
             this.btnCalculateFitnessTest.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCalculateFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCalculateFitnessTest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalculateFitnessTest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.btnCalculateFitnessTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculateFitnessTest.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculateFitnessTest.ForeColor = System.Drawing.Color.White;
             this.btnCalculateFitnessTest.Location = new System.Drawing.Point(25, 3);
@@ -729,6 +751,17 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(413, 630);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
+            // picFitnessTestHumanMuscle
+            // 
+            this.picFitnessTestHumanMuscle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFitnessTestHumanMuscle.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTestHumanMuscle.Image")));
+            this.picFitnessTestHumanMuscle.Location = new System.Drawing.Point(3, 14);
+            this.picFitnessTestHumanMuscle.Name = "picFitnessTestHumanMuscle";
+            this.picFitnessTestHumanMuscle.Size = new System.Drawing.Size(407, 613);
+            this.picFitnessTestHumanMuscle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFitnessTestHumanMuscle.TabIndex = 1;
+            this.picFitnessTestHumanMuscle.TabStop = false;
+            // 
             // tlpFitnessTestHeader
             // 
             this.tlpFitnessTestHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
@@ -747,6 +780,17 @@
             this.tlpFitnessTestHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpFitnessTestHeader.Size = new System.Drawing.Size(1028, 97);
             this.tlpFitnessTestHeader.TabIndex = 10;
+            // 
+            // picFitnessTest
+            // 
+            this.picFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
+            this.picFitnessTest.Location = new System.Drawing.Point(3, 3);
+            this.picFitnessTest.Name = "picFitnessTest";
+            this.picFitnessTest.Size = new System.Drawing.Size(85, 91);
+            this.picFitnessTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFitnessTest.TabIndex = 0;
+            this.picFitnessTest.TabStop = false;
             // 
             // tlpFitnessTestTitle
             // 
@@ -808,28 +852,6 @@
             this.tlpFitnessTestEntireForm.TabIndex = 0;
             this.tlpFitnessTestEntireForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // picFitnessTestHumanMuscle
-            // 
-            this.picFitnessTestHumanMuscle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFitnessTestHumanMuscle.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTestHumanMuscle.Image")));
-            this.picFitnessTestHumanMuscle.Location = new System.Drawing.Point(3, 14);
-            this.picFitnessTestHumanMuscle.Name = "picFitnessTestHumanMuscle";
-            this.picFitnessTestHumanMuscle.Size = new System.Drawing.Size(407, 613);
-            this.picFitnessTestHumanMuscle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFitnessTestHumanMuscle.TabIndex = 1;
-            this.picFitnessTestHumanMuscle.TabStop = false;
-            // 
-            // picFitnessTest
-            // 
-            this.picFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
-            this.picFitnessTest.Location = new System.Drawing.Point(3, 3);
-            this.picFitnessTest.Name = "picFitnessTest";
-            this.picFitnessTest.Size = new System.Drawing.Size(85, 91);
-            this.picFitnessTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFitnessTest.TabIndex = 0;
-            this.picFitnessTest.TabStop = false;
-            // 
             // FrmFitnessTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -840,6 +862,8 @@
             this.MinimumSize = new System.Drawing.Size(1167, 835);
             this.Name = "FrmFitnessTest";
             this.Text = "FrmFitnessTest";
+            this.Load += new System.EventHandler(this.FrmFitnessTest_Load);
+            this.Shown += new System.EventHandler(this.FrmFitnessTest_Shown);
             this.TLPFitnessTestInputOutput.ResumeLayout(false);
             this.tlpSubMemberInputAndOutputFitnessTest.ResumeLayout(false);
             this.pnlFitnessTestInputOutputBox.ResumeLayout(false);
@@ -871,12 +895,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTDEE)).EndInit();
             this.tlpFitnessTestCalculateButton.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).EndInit();
             this.tlpFitnessTestHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).EndInit();
             this.tlpFitnessTestTitle.ResumeLayout(false);
             this.tlpFitnessTestTitle.PerformLayout();
             this.tlpFitnessTestEntireForm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).EndInit();
             this.ResumeLayout(false);
 
         }
