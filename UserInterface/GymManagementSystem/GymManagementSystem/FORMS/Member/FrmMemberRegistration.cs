@@ -25,16 +25,19 @@ namespace GymManagementSystem.FORMS.Member
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
         {
             txtEnterMemberFirstName.Clear();
+            txtEnterMemberFirstName.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberMiddleName_Click(object sender, EventArgs e)
         {
             txtEnterMemberMiddleName.Clear();
+            txtEnterMemberMiddleName.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberLastName_Click(object sender, EventArgs e)
         {
             txtEnterMemberLastName.Clear();
+            txtEnterMemberLastName.ForeColor = Color.Black;
         }
 
        
@@ -42,61 +45,72 @@ namespace GymManagementSystem.FORMS.Member
         private void txtEnterMemberPhoneNumber_Click(object sender, EventArgs e)
         {
             txtEnterMemberPhoneNumber.Clear();
+            txtEnterMemberPhoneNumber.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberEmailId_Click(object sender, EventArgs e)
         {
             txtEnterMemberEmailId.Clear();
+            txtEnterMemberEmailId.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberCity_Click(object sender, EventArgs e)
         {
             txtEnterMemberCity.Clear();
+            txtEnterMemberCity.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberDistrict_Click(object sender, EventArgs e)
         {
             txtEnterMemberDistrict.Clear();
+            txtEnterMemberDistrict.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberState_Click(object sender, EventArgs e)
         {
             txtEnterMemberState.Clear();
+            txtEnterMemberState.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberEmergencyContact_Click(object sender, EventArgs e)
         {
             txtEnterMemberEmergencyContact.Clear();
+            txtEnterMemberEmergencyContact.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberMemberMembershipPlan_Click(object sender, EventArgs e)
         {
             cmbSelectMemberMemberMembershipPlan.Items.Clear();
             cmbSelectMemberMemberMembershipPlan.Text = null;
+            //cmbSelectMemberMemberMembershipPlan.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberShiftTime_Click(object sender, EventArgs e)
         {
             cmbSelectMemberShiftTime.Items.Clear();
             cmbSelectMemberShiftTime.Text = null;
+            cmbSelectMemberShiftTime.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberDietPlan_Click(object sender, EventArgs e)
         {
             cmbSelectMemberDietPlan.Items.Clear();
             cmbSelectMemberDietPlan.Text = null;
+            cmbSelectMemberDietPlan.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberPaymentMethod_Click(object sender, EventArgs e)
         {
             cmbSelectMemberPaymentMethod.Items.Clear();
             cmbSelectMemberPaymentMethod.Text = null;
+            cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberPaymentFeesType_Click(object sender, EventArgs e)
         {
             cmbSelectMemberPaymentFeesType.Items.Clear();
             cmbSelectMemberPaymentFeesType.Text = null;
+            cmbSelectMemberPaymentFeesType.ForeColor = Color.Black;
         
         }
 
@@ -161,6 +175,68 @@ namespace GymManagementSystem.FORMS.Member
         {
             cmbSelectMemberGender.Items.Clear();
             cmbSelectMemberGender.Text = null;
+            cmbSelectMemberGender.ForeColor = Color.Black;
         }
+
+        private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpRegisterButton.BackColor = Color.OliveDrab;
+        }
+
+        private void tlpRegisterButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpRegisterButton.BackColor = Color.ForestGreen;
+        }
+
+        private void tlpResetButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpResetButton.BackColor = Color.SkyBlue;
+        }
+
+        private void tlpResetButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpResetButton.BackColor = Color.Navy;
+        }
+
+        private void tlpCancleButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpCancleButton.BackColor = Color.OrangeRed;
+        }
+
+        private void tlpCancleButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpCancleButton.BackColor = Color.Red;
+        }
+
+        private void tlpMemberBrowsePhoto_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpMemberBrowsePhoto.BackColor = Color.DarkViolet;
+        }
+
+        private void tlpMemberBrowsePhoto_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpMemberBrowsePhoto.BackColor = Color.Purple;
+        }
+
+        private void pnlResetButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.pnlResetButton.BackColor = Color.SkyBlue;
+        }
+
+        private void pnlResetButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.pnlResetButton.BackColor = Color.Navy;
+        }
+
+       
+        //private void tlpResetButton_MouseEnter(object sender, EventArgs e)
+        //{
+        //    this.tlpResetButton.BackColor = Color.SkyBlue;
+        //}
+
+        //private void tlpResetButton_MouseLeave(object sender, EventArgs e)
+        //{
+        //    this.tlpResetButton.BackColor = Color.Navy;
+        //}
     }
 }
