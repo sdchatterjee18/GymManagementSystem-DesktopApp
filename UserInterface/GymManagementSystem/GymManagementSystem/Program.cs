@@ -30,10 +30,8 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmSADisplayAllEmployee());
-            //Application.Run(new FrmDisplayAllMembers());
-            Application.Run(new FrmSAMainForm());
-            //Application.Run(new FrmMainLayout());
+            //Application.Run(new FrmSAMainForm());
+            Application.Run(new FrmMainLayout());
 
         }
     }
