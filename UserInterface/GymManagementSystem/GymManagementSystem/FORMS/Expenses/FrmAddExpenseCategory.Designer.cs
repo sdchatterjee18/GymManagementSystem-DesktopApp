@@ -44,7 +44,6 @@
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblNewDietPlanHeader = new System.Windows.Forms.Label();
             this.picNewDietPlan = new System.Windows.Forms.PictureBox();
-            this.lblCancel = new System.Windows.Forms.Label();
             this.tlpInputCategory = new System.Windows.Forms.TableLayoutPanel();
             this.txtInputCategory = new System.Windows.Forms.TextBox();
             this.tlpSubmitClear = new System.Windows.Forms.TableLayoutPanel();
@@ -85,7 +84,7 @@
             this.tlpAddExpenseCategory.Controls.Add(this.tlpInputCategory, 0, 4);
             this.tlpAddExpenseCategory.Controls.Add(this.tlpSubmitClear, 0, 6);
             this.tlpAddExpenseCategory.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddExpenseCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddExpenseCategory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddExpenseCategory.Name = "tlpAddExpenseCategory";
             this.tlpAddExpenseCategory.RowCount = 8;
             this.tlpAddExpenseCategory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.63493F));
@@ -109,7 +108,7 @@
             this.pnlRequiredCaloriesPerDaySection.Controls.Add(this.tlpCategoryNameSection);
             this.pnlRequiredCaloriesPerDaySection.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlRequiredCaloriesPerDaySection.Location = new System.Drawing.Point(2, 93);
-            this.pnlRequiredCaloriesPerDaySection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRequiredCaloriesPerDaySection.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRequiredCaloriesPerDaySection.Name = "pnlRequiredCaloriesPerDaySection";
             this.pnlRequiredCaloriesPerDaySection.Size = new System.Drawing.Size(392, 46);
             this.pnlRequiredCaloriesPerDaySection.TabIndex = 2;
@@ -125,7 +124,7 @@
             this.tlpCategoryNameSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.02045F));
             this.tlpCategoryNameSection.Controls.Add(this.lbCategoryName, 1, 0);
             this.tlpCategoryNameSection.Location = new System.Drawing.Point(0, 2);
-            this.tlpCategoryNameSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCategoryNameSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCategoryNameSection.Name = "tlpCategoryNameSection";
             this.tlpCategoryNameSection.RowCount = 1;
             this.tlpCategoryNameSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -154,7 +153,7 @@
             this.pnlPlanDocumentSection.Controls.Add(this.tlpCategorySection);
             this.pnlPlanDocumentSection.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlPlanDocumentSection.Location = new System.Drawing.Point(2, 188);
-            this.pnlPlanDocumentSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPlanDocumentSection.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPlanDocumentSection.Name = "pnlPlanDocumentSection";
             this.pnlPlanDocumentSection.Size = new System.Drawing.Size(392, 45);
             this.pnlPlanDocumentSection.TabIndex = 3;
@@ -170,7 +169,7 @@
             this.tlpCategorySection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.26694F));
             this.tlpCategorySection.Controls.Add(this.lblCategory, 1, 0);
             this.tlpCategorySection.Location = new System.Drawing.Point(2, 0);
-            this.tlpCategorySection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCategorySection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCategorySection.Name = "tlpCategorySection";
             this.tlpCategorySection.RowCount = 1;
             this.tlpCategorySection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -202,7 +201,7 @@
             this.tlpRequiredCategoryName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.56911F));
             this.tlpRequiredCategoryName.Controls.Add(this.txtRequiredCategoryName, 1, 0);
             this.tlpRequiredCategoryName.Location = new System.Drawing.Point(2, 143);
-            this.tlpRequiredCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpRequiredCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.tlpRequiredCategoryName.Name = "tlpRequiredCategoryName";
             this.tlpRequiredCategoryName.RowCount = 1;
             this.tlpRequiredCategoryName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -234,13 +233,12 @@
             this.tlpAddExpenseCategoryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.81723F));
             this.tlpAddExpenseCategoryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.18277F));
             this.tlpAddExpenseCategoryHeader.Controls.Add(this.tlpPictureAndTitleAndSubTitle, 1, 0);
-            this.tlpAddExpenseCategoryHeader.Controls.Add(this.lblCancel, 2, 0);
             this.tlpAddExpenseCategoryHeader.Location = new System.Drawing.Point(2, 2);
-            this.tlpAddExpenseCategoryHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAddExpenseCategoryHeader.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAddExpenseCategoryHeader.Name = "tlpAddExpenseCategoryHeader";
             this.tlpAddExpenseCategoryHeader.RowCount = 1;
             this.tlpAddExpenseCategoryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddExpenseCategoryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
+            this.tlpAddExpenseCategoryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tlpAddExpenseCategoryHeader.Size = new System.Drawing.Size(392, 87);
             this.tlpAddExpenseCategoryHeader.TabIndex = 7;
             // 
@@ -317,22 +315,6 @@
             this.picNewDietPlan.TabIndex = 0;
             this.picNewDietPlan.TabStop = false;
             // 
-            // lblCancel
-            // 
-            this.lblCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCancel.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.lblCancel.ForeColor = System.Drawing.Color.Black;
-            this.lblCancel.Location = new System.Drawing.Point(365, 0);
-            this.lblCancel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(25, 23);
-            this.lblCancel.TabIndex = 1;
-            this.lblCancel.Text = " X";
-            this.lblCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCancel.Click += new System.EventHandler(this.lblCancel_Click);
-            this.lblCancel.MouseEnter += new System.EventHandler(this.lblCancel_MouseEnter);
-            this.lblCancel.MouseLeave += new System.EventHandler(this.lblCancel_MouseLeave);
-            // 
             // tlpInputCategory
             // 
             this.tlpInputCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -344,7 +326,7 @@
             this.tlpInputCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.97561F));
             this.tlpInputCategory.Controls.Add(this.txtInputCategory, 1, 0);
             this.tlpInputCategory.Location = new System.Drawing.Point(2, 237);
-            this.tlpInputCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpInputCategory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpInputCategory.Name = "tlpInputCategory";
             this.tlpInputCategory.RowCount = 1;
             this.tlpInputCategory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -359,7 +341,7 @@
             this.txtInputCategory.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtInputCategory.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtInputCategory.Location = new System.Drawing.Point(24, 2);
-            this.txtInputCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInputCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtInputCategory.Name = "txtInputCategory";
             this.txtInputCategory.Size = new System.Drawing.Size(325, 26);
             this.txtInputCategory.TabIndex = 1;
@@ -381,7 +363,7 @@
             this.tlpSubmitClear.Controls.Add(this.tlpSubmit, 4, 0);
             this.tlpSubmitClear.Controls.Add(this.tlpClear, 2, 0);
             this.tlpSubmitClear.Location = new System.Drawing.Point(2, 306);
-            this.tlpSubmitClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmitClear.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitClear.Name = "tlpSubmitClear";
             this.tlpSubmitClear.RowCount = 1;
             this.tlpSubmitClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -398,7 +380,7 @@
             this.tlpSubmit.Controls.Add(this.lblSubmit, 1, 0);
             this.tlpSubmit.Controls.Add(this.picSubmit, 0, 0);
             this.tlpSubmit.Location = new System.Drawing.Point(279, 11);
-            this.tlpSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmit.Name = "tlpSubmit";
             this.tlpSubmit.RowCount = 1;
             this.tlpSubmit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -425,7 +407,7 @@
             this.picSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picSubmit.Image = ((System.Drawing.Image)(resources.GetObject("picSubmit.Image")));
             this.picSubmit.Location = new System.Drawing.Point(7, 2);
-            this.picSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.picSubmit.Name = "picSubmit";
             this.picSubmit.Size = new System.Drawing.Size(18, 19);
             this.picSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -441,7 +423,7 @@
             this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpClear.Controls.Add(this.lblClear, 0, 0);
             this.tlpClear.Location = new System.Drawing.Point(185, 11);
-            this.tlpClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpClear.Margin = new System.Windows.Forms.Padding(2);
             this.tlpClear.Name = "tlpClear";
             this.tlpClear.RowCount = 1;
             this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -470,6 +452,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 404);
             this.Controls.Add(this.tlpAddExpenseCategory);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddExpenseCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmAddExpenseCategory";
@@ -509,7 +493,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpRequiredCategoryName;
         private System.Windows.Forms.TextBox txtRequiredCategoryName;
         private System.Windows.Forms.TableLayoutPanel tlpAddExpenseCategoryHeader;
-        private System.Windows.Forms.Label lblCancel;
         private System.Windows.Forms.TableLayoutPanel tlpPictureAndTitleAndSubTitle;
         private System.Windows.Forms.TableLayoutPanel tlpTitleAndSubTitle;
         private System.Windows.Forms.Label lblSubTitle;

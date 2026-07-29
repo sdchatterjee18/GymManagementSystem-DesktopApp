@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddExpenses));
             this.tlpAddExpenses = new System.Windows.Forms.TableLayoutPanel();
             this.tlpExpenses = new System.Windows.Forms.TableLayoutPanel();
@@ -52,11 +52,9 @@
             this.cmbCateogory = new System.Windows.Forms.ComboBox();
             this.lblSelectCategory = new System.Windows.Forms.Label();
             this.tlpExpenseDefination = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.lblExpenseDefination = new System.Windows.Forms.Label();
             this.txtExpenseDefination = new System.Windows.Forms.TextBox();
-            this.tlpSubmit = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.tlpHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picAddExpenses = new System.Windows.Forms.PictureBox();
             this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
@@ -74,8 +72,6 @@
             this.tlpAmount.SuspendLayout();
             this.tlpSelectCategory.SuspendLayout();
             this.tlpExpenseDefination.SuspendLayout();
-            this.tlpSubmit.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tlpHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddExpenses)).BeginInit();
             this.tlpAddButton.SuspendLayout();
@@ -151,26 +147,27 @@
             this.dgvExpenses.AllowUserToAddRows = false;
             this.dgvExpenses.AllowUserToResizeColumns = false;
             this.dgvExpenses.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExpenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvExpenses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvExpenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvExpenses.ColumnHeadersHeight = 55;
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -180,33 +177,33 @@
             this.colExpenseAmount,
             this.colExpenseDate,
             this.colNotes});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpenses.EnableHeadersVisualStyles = false;
             this.dgvExpenses.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvExpenses.Location = new System.Drawing.Point(2, 2);
             this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExpenses.Name = "dgvExpenses";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExpenses.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.dgvExpenses.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dgvExpenses.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpenses.RowTemplate.Height = 40;
             this.dgvExpenses.Size = new System.Drawing.Size(770, 312);
             this.dgvExpenses.TabIndex = 0;
@@ -270,15 +267,14 @@
             this.tlpSearchBar.Controls.Add(this.tlpAmount, 0, 0);
             this.tlpSearchBar.Controls.Add(this.tlpSelectCategory, 0, 1);
             this.tlpSearchBar.Controls.Add(this.tlpExpenseDefination, 0, 2);
-            this.tlpSearchBar.Controls.Add(this.tlpSubmit, 0, 3);
             this.tlpSearchBar.Location = new System.Drawing.Point(0, 96);
             this.tlpSearchBar.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSearchBar.Name = "tlpSearchBar";
-            this.tlpSearchBar.RowCount = 4;
-            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
-            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
-            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
-            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.72727F));
+            this.tlpSearchBar.RowCount = 3;
+            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.41176F));
+            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.41176F));
+            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.17647F));
+            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSearchBar.Size = new System.Drawing.Size(774, 196);
             this.tlpSearchBar.TabIndex = 1;
             // 
@@ -297,7 +293,7 @@
             this.tlpAmount.Name = "tlpAmount";
             this.tlpAmount.RowCount = 1;
             this.tlpAmount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAmount.Size = new System.Drawing.Size(774, 44);
+            this.tlpAmount.Size = new System.Drawing.Size(774, 57);
             this.tlpAmount.TabIndex = 0;
             this.tlpAmount.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -306,7 +302,7 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAmount.Location = new System.Drawing.Point(0, 11);
+            this.lblAmount.Location = new System.Drawing.Point(0, 18);
             this.lblAmount.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(77, 21);
@@ -320,7 +316,7 @@
             this.txtAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtAmount.Location = new System.Drawing.Point(225, 9);
+            this.txtAmount.Location = new System.Drawing.Point(225, 16);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(0);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(241, 25);
@@ -338,12 +334,12 @@
             this.tlpSelectCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSelectCategory.Controls.Add(this.cmbCateogory, 1, 0);
             this.tlpSelectCategory.Controls.Add(this.lblSelectCategory, 0, 0);
-            this.tlpSelectCategory.Location = new System.Drawing.Point(0, 44);
+            this.tlpSelectCategory.Location = new System.Drawing.Point(0, 57);
             this.tlpSelectCategory.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSelectCategory.Name = "tlpSelectCategory";
             this.tlpSelectCategory.RowCount = 1;
             this.tlpSelectCategory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSelectCategory.Size = new System.Drawing.Size(774, 44);
+            this.tlpSelectCategory.Size = new System.Drawing.Size(774, 57);
             this.tlpSelectCategory.TabIndex = 0;
             this.tlpSelectCategory.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -353,7 +349,7 @@
             this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cmbCateogory.ForeColor = System.Drawing.Color.Black;
             this.cmbCateogory.FormattingEnabled = true;
-            this.cmbCateogory.Location = new System.Drawing.Point(225, 8);
+            this.cmbCateogory.Location = new System.Drawing.Point(225, 16);
             this.cmbCateogory.Margin = new System.Windows.Forms.Padding(0);
             this.cmbCateogory.Name = "cmbCateogory";
             this.cmbCateogory.Size = new System.Drawing.Size(241, 25);
@@ -366,7 +362,7 @@
             this.lblSelectCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSelectCategory.AutoSize = true;
             this.lblSelectCategory.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblSelectCategory.Location = new System.Drawing.Point(0, 11);
+            this.lblSelectCategory.Location = new System.Drawing.Point(0, 18);
             this.lblSelectCategory.Margin = new System.Windows.Forms.Padding(0);
             this.lblSelectCategory.Name = "lblSelectCategory";
             this.lblSelectCategory.Size = new System.Drawing.Size(150, 21);
@@ -377,30 +373,41 @@
             // 
             // tlpExpenseDefination
             // 
-            this.tlpExpenseDefination.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpExpenseDefination.ColumnCount = 3;
             this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
             this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tlpExpenseDefination.Controls.Add(this.btnSubmit, 2, 0);
             this.tlpExpenseDefination.Controls.Add(this.lblExpenseDefination, 0, 0);
             this.tlpExpenseDefination.Controls.Add(this.txtExpenseDefination, 1, 0);
-            this.tlpExpenseDefination.Location = new System.Drawing.Point(0, 88);
+            this.tlpExpenseDefination.Location = new System.Drawing.Point(0, 114);
             this.tlpExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.tlpExpenseDefination.Name = "tlpExpenseDefination";
             this.tlpExpenseDefination.RowCount = 1;
             this.tlpExpenseDefination.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExpenseDefination.Size = new System.Drawing.Size(774, 62);
+            this.tlpExpenseDefination.Size = new System.Drawing.Size(774, 53);
             this.tlpExpenseDefination.TabIndex = 0;
             this.tlpExpenseDefination.Click += new System.EventHandler(this.tlpAddExpenses_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(486, 9);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(101, 35);
+            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
             // 
             // lblExpenseDefination
             // 
             this.lblExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblExpenseDefination.AutoSize = true;
             this.lblExpenseDefination.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 20);
+            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 16);
             this.lblExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.lblExpenseDefination.Name = "lblExpenseDefination";
             this.lblExpenseDefination.Size = new System.Drawing.Size(154, 21);
@@ -414,7 +421,7 @@
             this.txtExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtExpenseDefination.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtExpenseDefination.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtExpenseDefination.Location = new System.Drawing.Point(225, 7);
+            this.txtExpenseDefination.Location = new System.Drawing.Point(225, 3);
             this.txtExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.txtExpenseDefination.Multiline = true;
             this.txtExpenseDefination.Name = "txtExpenseDefination";
@@ -422,54 +429,6 @@
             this.txtExpenseDefination.TabIndex = 1;
             this.txtExpenseDefination.Text = " e.g. maintenance for treadmills";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);
-            // 
-            // tlpSubmit
-            // 
-            this.tlpSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpSubmit.ColumnCount = 2;
-            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
-            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSubmit.Controls.Add(this.tableLayoutPanel1, 1, 0);
-            this.tlpSubmit.Location = new System.Drawing.Point(0, 150);
-            this.tlpSubmit.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpSubmit.Name = "tlpSubmit";
-            this.tlpSubmit.RowCount = 1;
-            this.tlpSubmit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSubmit.Size = new System.Drawing.Size(774, 46);
-            this.tlpSubmit.TabIndex = 1;
-            this.tlpSubmit.Click += new System.EventHandler(this.tlpAddExpenses_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 307F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSubmit, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(382, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(392, 46);
-            this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Click += new System.EventHandler(this.tlpAddExpenses_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(2, 2);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(80, 35);
-            this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
             // 
             // tlpHeader
             // 
@@ -650,8 +609,6 @@
             this.tlpSelectCategory.PerformLayout();
             this.tlpExpenseDefination.ResumeLayout(false);
             this.tlpExpenseDefination.PerformLayout();
-            this.tlpSubmit.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tlpHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAddExpenses)).EndInit();
             this.tlpAddButton.ResumeLayout(false);
@@ -687,9 +644,7 @@
         private System.Windows.Forms.ComboBox cmbCateogory;
         private System.Windows.Forms.TableLayoutPanel tlpExpenseDefination;
         private System.Windows.Forms.Label lblExpenseDefination;
-        private System.Windows.Forms.TableLayoutPanel tlpSubmit;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSLNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;

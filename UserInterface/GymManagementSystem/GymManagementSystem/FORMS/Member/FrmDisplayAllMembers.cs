@@ -8,14 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.FORMS.Member
 {
     public partial class FrmDisplayAllMembers : Form
     {
-        public FrmDisplayAllMembers()
+        private FrmMainLayout AdminMainForm;
+        public FrmDisplayAllMembers(FrmMainLayout mainform)
         {
             InitializeComponent();
+            AdminMainForm = mainform;
         }
 
         private void FrmDisplayAllMembers_Load(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void tlpAddNewMember_MouseEnter(object sender, EventArgs e)
         {
-            
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
         }
 
         private void dgvDisplayMemberInformation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -262,10 +265,7 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.ClearSelection();
         }
 
-        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
-        {
-            dgvDisplayMemberInformation.ClearSelection();
-        }
+      
 
         private void lblTitleDisplayAllMember_Click(object sender, EventArgs e)
         {
@@ -277,7 +277,72 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.ClearSelection();
         }
 
-      
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpAddNewMember_MouseEnter_1(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void picAddIcon_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void tlpAddNewMember_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddNewMember.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void picDisplayMemberIcon_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpMemberSearchArea_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpAddNewMember_Enter(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void picAddIcon_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void lblAddNewMember_Click(object sender, EventArgs e)
+        {
+            dgvDisplayMemberInformation.ClearSelection();
+        }
+
+        private void tlpAddNewMember_Click(object sender, EventArgs e)
+        {
+            AdminMainForm.OpenChildForm(new FrmMemberRegistration());
+        }
+
+        private void dgvDisplayMemberInformation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name == "colMemberProfile")
+            {
+              
+                    AdminMainForm.OpenChildForm(new FrmMemberProfile());
+            }
+        }
+
+       
+
+
+
 
        
         

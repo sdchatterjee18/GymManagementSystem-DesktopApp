@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 
-namespace GymManagementSystem.FORMS.Shift
+namespace GymManagementSystem.FORMS .Shift
 {
     public partial class FrmDisplayShift : Form
     {

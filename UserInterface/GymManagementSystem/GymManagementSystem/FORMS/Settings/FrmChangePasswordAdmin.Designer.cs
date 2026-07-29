@@ -120,7 +120,7 @@
             this.pnlOldPasswordSection.Controls.Add(this.tlpOldPasswordSection);
             this.pnlOldPasswordSection.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlOldPasswordSection.Location = new System.Drawing.Point(2, 107);
-            this.pnlOldPasswordSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlOldPasswordSection.Margin = new System.Windows.Forms.Padding(2);
             this.pnlOldPasswordSection.Name = "pnlOldPasswordSection";
             this.pnlOldPasswordSection.Size = new System.Drawing.Size(460, 41);
             this.pnlOldPasswordSection.TabIndex = 2;
@@ -180,7 +180,7 @@
             this.pnlNewPasswordSection.Controls.Add(this.tlpNewPassowrdSection);
             this.pnlNewPasswordSection.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNewPasswordSection.Location = new System.Drawing.Point(2, 205);
-            this.pnlNewPasswordSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNewPasswordSection.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNewPasswordSection.Name = "pnlNewPasswordSection";
             this.pnlNewPasswordSection.Size = new System.Drawing.Size(460, 50);
             this.pnlNewPasswordSection.TabIndex = 3;
@@ -197,7 +197,7 @@
             this.tlpNewPassowrdSection.Controls.Add(this.lblNewPassword, 1, 0);
             this.tlpNewPassowrdSection.Controls.Add(this.picNewPassword, 0, 0);
             this.tlpNewPassowrdSection.Location = new System.Drawing.Point(2, 0);
-            this.tlpNewPassowrdSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewPassowrdSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewPassowrdSection.Name = "tlpNewPassowrdSection";
             this.tlpNewPassowrdSection.RowCount = 1;
             this.tlpNewPassowrdSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -239,7 +239,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlConfirmPassword.Controls.Add(this.tlpConfirmPassword);
             this.pnlConfirmPassword.Location = new System.Drawing.Point(2, 321);
-            this.pnlConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.pnlConfirmPassword.Name = "pnlConfirmPassword";
             this.pnlConfirmPassword.Size = new System.Drawing.Size(460, 42);
             this.pnlConfirmPassword.TabIndex = 4;
@@ -303,7 +303,7 @@
             this.tlpOldPassword.Controls.Add(this.txtOldPassword, 1, 0);
             this.tlpOldPassword.Controls.Add(this.picOldPasswordHide, 2, 0);
             this.tlpOldPassword.Location = new System.Drawing.Point(2, 152);
-            this.tlpOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tlpOldPassword.Name = "tlpOldPassword";
             this.tlpOldPassword.RowCount = 1;
             this.tlpOldPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -320,7 +320,7 @@
             this.txtOldPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOldPassword.ForeColor = System.Drawing.Color.Black;
             this.txtOldPassword.Location = new System.Drawing.Point(29, 2);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.Size = new System.Drawing.Size(357, 26);
             this.txtOldPassword.TabIndex = 0;
@@ -444,7 +444,7 @@
             this.tlpPasswordConfirm.Controls.Add(this.txtConfirmPassword, 1, 0);
             this.tlpPasswordConfirm.Controls.Add(this.picConfirmPasswordHide, 2, 0);
             this.tlpPasswordConfirm.Location = new System.Drawing.Point(2, 367);
-            this.tlpPasswordConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPasswordConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPasswordConfirm.Name = "tlpPasswordConfirm";
             this.tlpPasswordConfirm.RowCount = 1;
             this.tlpPasswordConfirm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -461,7 +461,7 @@
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
             this.txtConfirmPassword.Location = new System.Drawing.Point(24, 2);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(362, 29);
             this.txtConfirmPassword.TabIndex = 1;
@@ -496,7 +496,7 @@
             this.tlpClearAndChangePassword.Controls.Add(this.btnChangePassword, 4, 0);
             this.tlpClearAndChangePassword.Controls.Add(this.btnClearPassword, 2, 0);
             this.tlpClearAndChangePassword.Location = new System.Drawing.Point(2, 467);
-            this.tlpClearAndChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpClearAndChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.tlpClearAndChangePassword.Name = "tlpClearAndChangePassword";
             this.tlpClearAndChangePassword.RowCount = 1;
             this.tlpClearAndChangePassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -510,7 +510,7 @@
             this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnChangePassword.Location = new System.Drawing.Point(301, 2);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(130, 44);
             this.btnChangePassword.TabIndex = 0;
@@ -524,7 +524,7 @@
             this.btnClearPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnClearPassword.Location = new System.Drawing.Point(163, 2);
-            this.btnClearPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearPassword.Name = "btnClearPassword";
             this.btnClearPassword.Size = new System.Drawing.Size(114, 44);
             this.btnClearPassword.TabIndex = 0;
@@ -545,7 +545,7 @@
             this.tlpNewPassword.Controls.Add(this.txtNewPassword, 1, 0);
             this.tlpNewPassword.Controls.Add(this.picNewPasswordHide, 2, 0);
             this.tlpNewPassword.Location = new System.Drawing.Point(2, 259);
-            this.tlpNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewPassword.Name = "tlpNewPassword";
             this.tlpNewPassword.RowCount = 1;
             this.tlpNewPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -562,7 +562,7 @@
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPassword.ForeColor = System.Drawing.Color.Black;
             this.txtNewPassword.Location = new System.Drawing.Point(24, 2);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(362, 29);
             this.txtNewPassword.TabIndex = 1;
@@ -589,7 +589,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(464, 552);
             this.Controls.Add(this.tlpChangePassword);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmChangePasswordAdmin";

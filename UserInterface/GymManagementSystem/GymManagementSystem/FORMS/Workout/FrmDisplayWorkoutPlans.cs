@@ -228,6 +228,19 @@ namespace GymManagementSystem.FORMS.Workout
         private void tlpAddNewWorkoutPlan_MouseLeave(object sender, EventArgs e)
         {
             tlpAddNewWorkoutPlan.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void txtExerciseNameSearch_Click(object sender, EventArgs e)
+        {
+            txtExerciseNameSearch.Clear();
+            txtExerciseNameSearch.ForeColor = Color.Black;
+        }
+
+        private void txtWorkoutNameSearch_Click(object sender, EventArgs e)
+        {
+            
+            txtWorkoutNameSearch.Clear();
+            txtWorkoutNameSearch.ForeColor = Color.Black;
         } 
 
     }

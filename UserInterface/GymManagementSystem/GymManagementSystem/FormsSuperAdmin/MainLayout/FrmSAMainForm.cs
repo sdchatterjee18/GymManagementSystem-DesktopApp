@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
+using GymManagementSystem.FormsSuperAdmin.Employee;
+using GymManagementSystem.FormsSuperAdmin.Salary;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -54,7 +56,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             OpenChildForm(new FrmSADashboard());
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             // Close the currently opened form
             if (activeForm != null)
@@ -247,6 +249,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             picEmployeeManagement.Image = Properties.Resources.Employee;
 
             ExpandIfCollapsed();
+            OpenChildForm(new FrmSADisplayAllEmployee(this));
         }
 
         private void pnlEmployeeSalaryManagement_MouseEnter(object sender, EventArgs e)
@@ -277,6 +280,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             picEmployeeSalaryManagement.Image = Properties.Resources.Salary;
 
             ExpandIfCollapsed();
+            OpenChildForm(new FrmSASalaryPayment());
         }
 
         private void pnlFinancialManagement_MouseEnter(object sender, EventArgs e)
