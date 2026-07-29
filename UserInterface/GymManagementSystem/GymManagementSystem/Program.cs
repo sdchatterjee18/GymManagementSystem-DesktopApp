@@ -14,6 +14,7 @@ using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
+using GymManagementSystem.FormsSuperAdmin.Financials;
 
 namespace GymManagementSystem
 {
@@ -25,12 +26,13 @@ namespace GymManagementSystem
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmSAAddNewEmployee());
+            Application.Run(new FrmSAProfitLoss());
         }
     }
 }
