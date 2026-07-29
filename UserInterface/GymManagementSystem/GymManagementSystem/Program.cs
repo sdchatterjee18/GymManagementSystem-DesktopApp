@@ -26,11 +26,12 @@ namespace GymManagementSystem
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSADisplayAllEmployee());
-            //Application.Run(new FrmDisplayAllMembers());
+            Application.Run(new FrmMemberProfile());
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmSAAddNewEmployee());
+
         }
     }
 }
