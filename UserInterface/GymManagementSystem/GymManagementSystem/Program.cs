@@ -29,9 +29,9 @@ namespace GymManagementSystem
         static void Main()
         {
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDisplayShift());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FrmDisplayShift());
 
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());

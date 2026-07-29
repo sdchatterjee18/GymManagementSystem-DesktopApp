@@ -219,6 +219,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
             this.ActiveControl = null;
         }
 
+        private void chartRevenue_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

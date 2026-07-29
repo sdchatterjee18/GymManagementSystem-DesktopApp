@@ -235,7 +235,7 @@
             // 
             this.picGymLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picGymLogo.Location = new System.Drawing.Point(2, 2);
-            this.picGymLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGymLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picGymLogo.Name = "picGymLogo";
             this.picGymLogo.Size = new System.Drawing.Size(71, 33);
             this.picGymLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,9 +259,9 @@
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.ForeColor = System.Drawing.Color.White;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 37);
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(4);
             this.pnlSidebar.Size = new System.Drawing.Size(241, 520);
             this.pnlSidebar.TabIndex = 2;
             // 
@@ -428,7 +428,7 @@
             this.lblEmployeeManagement.AutoSize = true;
             this.lblEmployeeManagement.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblEmployeeManagement.Location = new System.Drawing.Point(38, 8);
+            this.lblEmployeeManagement.Location = new System.Drawing.Point(38, 7);
             this.lblEmployeeManagement.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmployeeManagement.Name = "lblEmployeeManagement";
             this.lblEmployeeManagement.Size = new System.Drawing.Size(183, 21);
@@ -556,7 +556,7 @@
             // picSettingsArrowe
             // 
             this.picSettingsArrowe.Image = global::GymManagementSystem.Properties.Resources.downArrowW;
-            this.picSettingsArrowe.Location = new System.Drawing.Point(210, 17);
+            this.picSettingsArrowe.Location = new System.Drawing.Point(210, 13);
             this.picSettingsArrowe.Margin = new System.Windows.Forms.Padding(0);
             this.picSettingsArrowe.Name = "picSettingsArrowe";
             this.picSettingsArrowe.Size = new System.Drawing.Size(13, 14);
@@ -564,13 +564,15 @@
             this.picSettingsArrowe.TabIndex = 2;
             this.picSettingsArrowe.TabStop = false;
             this.picSettingsArrowe.Click += new System.EventHandler(this.pnlSettings_Click);
+            this.picSettingsArrowe.MouseEnter += new System.EventHandler(this.picSettingsArrowe_MouseEnter);
+            this.picSettingsArrowe.MouseLeave += new System.EventHandler(this.pnlSettings_MouseLeave);
             // 
             // lblSettings
             // 
             this.lblSettings.AutoSize = true;
             this.lblSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSettings.Location = new System.Drawing.Point(38, 8);
+            this.lblSettings.Location = new System.Drawing.Point(41, 8);
             this.lblSettings.Margin = new System.Windows.Forms.Padding(0);
             this.lblSettings.Name = "lblSettings";
             this.lblSettings.Size = new System.Drawing.Size(70, 21);
@@ -606,12 +608,13 @@
             // 
             // pnlSuperAdminPasswordChange
             // 
+            this.pnlSuperAdminPasswordChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSuperAdminPasswordChange.Controls.Add(this.picSuperAdminPasswordChange);
             this.pnlSuperAdminPasswordChange.Controls.Add(this.lblSuperAdminPasswordChange);
-            this.pnlSuperAdminPasswordChange.Location = new System.Drawing.Point(0, 3);
+            this.pnlSuperAdminPasswordChange.Location = new System.Drawing.Point(-4, 1);
             this.pnlSuperAdminPasswordChange.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSuperAdminPasswordChange.Name = "pnlSuperAdminPasswordChange";
-            this.pnlSuperAdminPasswordChange.Size = new System.Drawing.Size(273, 28);
+            this.pnlSuperAdminPasswordChange.Size = new System.Drawing.Size(236, 28);
             this.pnlSuperAdminPasswordChange.TabIndex = 0;
             this.pnlSuperAdminPasswordChange.Click += new System.EventHandler(this.pnlSuperAdminPasswordChange_Click);
             this.pnlSuperAdminPasswordChange.MouseEnter += new System.EventHandler(this.pnlSuperAdminPasswordChange_MouseEnter);
@@ -667,7 +670,7 @@
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(770, 480);
             this.Name = "FrmSAMainForm";
             this.Text = "FrmSAMainForm";

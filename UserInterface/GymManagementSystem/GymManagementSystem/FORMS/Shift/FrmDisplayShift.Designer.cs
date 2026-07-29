@@ -103,16 +103,17 @@
             // 
             // tlpShiftEntireForm
             // 
-            this.tlpShiftEntireForm.BackColor = System.Drawing.Color.Azure;
+            this.tlpShiftEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpShiftEntireForm.ColumnCount = 3;
-            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.659407F));
-            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.87048F));
-            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.470109F));
+            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.634146F));
+            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.34146F));
+            this.tlpShiftEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.902439F));
             this.tlpShiftEntireForm.Controls.Add(this.tlpShiftHeader, 1, 1);
             this.tlpShiftEntireForm.Controls.Add(this.panel1, 1, 3);
             this.tlpShiftEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpShiftEntireForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpShiftEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpShiftEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftEntireForm.Name = "tlpShiftEntireForm";
             this.tlpShiftEntireForm.RowCount = 5;
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.310655F));
@@ -120,35 +121,36 @@
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.824133F));
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.13329F));
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.984502F));
-            this.tlpShiftEntireForm.Size = new System.Drawing.Size(1093, 779);
+            this.tlpShiftEntireForm.Size = new System.Drawing.Size(820, 609);
             this.tlpShiftEntireForm.TabIndex = 4;
             // 
             // tlpShiftHeader
             // 
             this.tlpShiftHeader.ColumnCount = 5;
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 287F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
             this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 398F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
-            this.tlpShiftHeader.Controls.Add(this.picShift, 0, 0);
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tlpShiftHeader.Controls.Add(this.tlpShiftTitle, 1, 0);
+            this.tlpShiftHeader.Controls.Add(this.picShift, 0, 0);
             this.tlpShiftHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpShiftHeader.Location = new System.Drawing.Point(32, 20);
-            this.tlpShiftHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpShiftHeader.Location = new System.Drawing.Point(40, 16);
+            this.tlpShiftHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftHeader.Name = "tlpShiftHeader";
             this.tlpShiftHeader.RowCount = 1;
             this.tlpShiftHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShiftHeader.Size = new System.Drawing.Size(1030, 101);
+            this.tlpShiftHeader.Size = new System.Drawing.Size(745, 78);
             this.tlpShiftHeader.TabIndex = 8;
             // 
             // picShift
             // 
-            this.picShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picShift.Image = ((System.Drawing.Image)(resources.GetObject("picShift.Image")));
-            this.picShift.Location = new System.Drawing.Point(3, 3);
+            this.picShift.Location = new System.Drawing.Point(0, 11);
+            this.picShift.Margin = new System.Windows.Forms.Padding(0);
             this.picShift.Name = "picShift";
-            this.picShift.Size = new System.Drawing.Size(89, 95);
+            this.picShift.Size = new System.Drawing.Size(61, 55);
             this.picShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShift.TabIndex = 0;
             this.picShift.TabStop = false;
@@ -157,27 +159,28 @@
             // 
             this.tlpShiftTitle.ColumnCount = 1;
             this.tlpShiftTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShiftTitle.Controls.Add(this.lblShiftDeatails, 0, 1);
             this.tlpShiftTitle.Controls.Add(this.lblShiftManagement, 0, 0);
+            this.tlpShiftTitle.Controls.Add(this.lblShiftDeatails, 0, 1);
             this.tlpShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpShiftTitle.Location = new System.Drawing.Point(98, 3);
+            this.tlpShiftTitle.Location = new System.Drawing.Point(63, 2);
+            this.tlpShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftTitle.Name = "tlpShiftTitle";
             this.tlpShiftTitle.RowCount = 3;
-            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.88889F));
-            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.22222F));
-            this.tlpShiftTitle.Size = new System.Drawing.Size(281, 95);
+            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.05405F));
+            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.72973F));
+            this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.21622F));
+            this.tlpShiftTitle.Size = new System.Drawing.Size(221, 74);
             this.tlpShiftTitle.TabIndex = 1;
             // 
             // lblShiftDeatails
             // 
-            this.lblShiftDeatails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblShiftDeatails.AutoSize = true;
             this.lblShiftDeatails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShiftDeatails.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblShiftDeatails.Location = new System.Drawing.Point(3, 45);
+            this.lblShiftDeatails.Location = new System.Drawing.Point(3, 40);
+            this.lblShiftDeatails.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblShiftDeatails.Name = "lblShiftDeatails";
-            this.lblShiftDeatails.Size = new System.Drawing.Size(207, 18);
+            this.lblShiftDeatails.Size = new System.Drawing.Size(174, 13);
             this.lblShiftDeatails.TabIndex = 3;
             this.lblShiftDeatails.Text = "View All Shift Details And Timing";
             // 
@@ -186,9 +189,10 @@
             this.lblShiftManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblShiftManagement.AutoSize = true;
             this.lblShiftManagement.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftManagement.Location = new System.Drawing.Point(3, 17);
+            this.lblShiftManagement.Location = new System.Drawing.Point(2, 19);
+            this.lblShiftManagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblShiftManagement.Name = "lblShiftManagement";
-            this.lblShiftManagement.Size = new System.Drawing.Size(181, 28);
+            this.lblShiftManagement.Size = new System.Drawing.Size(145, 21);
             this.lblShiftManagement.TabIndex = 2;
             this.lblShiftManagement.Text = "Shift Management";
             // 
@@ -197,9 +201,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tlpShiftViewSection);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(32, 148);
+            this.panel1.Location = new System.Drawing.Point(40, 115);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1030, 588);
+            this.panel1.Size = new System.Drawing.Size(745, 460);
             this.panel1.TabIndex = 9;
             // 
             // tlpShiftViewSection
@@ -229,6 +234,7 @@
             this.tlpShiftViewSection.Controls.Add(this.pnlEveningShiftTime, 7, 3);
             this.tlpShiftViewSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpShiftViewSection.Location = new System.Drawing.Point(0, 0);
+            this.tlpShiftViewSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftViewSection.Name = "tlpShiftViewSection";
             this.tlpShiftViewSection.RowCount = 5;
             this.tlpShiftViewSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.300938F));
@@ -236,7 +242,7 @@
             this.tlpShiftViewSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.50469F));
             this.tlpShiftViewSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39905F));
             this.tlpShiftViewSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.298637F));
-            this.tlpShiftViewSection.Size = new System.Drawing.Size(1028, 586);
+            this.tlpShiftViewSection.Size = new System.Drawing.Size(743, 458);
             this.tlpShiftViewSection.TabIndex = 12;
             // 
             // pnlMorningShiftpic
@@ -244,9 +250,10 @@
             this.pnlMorningShiftpic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMorningShiftpic.Controls.Add(this.picMorningShift);
             this.pnlMorningShiftpic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMorningShiftpic.Location = new System.Drawing.Point(14, 16);
+            this.pnlMorningShiftpic.Location = new System.Drawing.Point(10, 12);
+            this.pnlMorningShiftpic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMorningShiftpic.Name = "pnlMorningShiftpic";
-            this.pnlMorningShiftpic.Size = new System.Drawing.Size(247, 278);
+            this.pnlMorningShiftpic.Size = new System.Drawing.Size(179, 218);
             this.pnlMorningShiftpic.TabIndex = 0;
             // 
             // picMorningShift
@@ -255,8 +262,9 @@
             this.picMorningShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picMorningShift.Image = ((System.Drawing.Image)(resources.GetObject("picMorningShift.Image")));
             this.picMorningShift.Location = new System.Drawing.Point(0, 0);
+            this.picMorningShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picMorningShift.Name = "picMorningShift";
-            this.picMorningShift.Size = new System.Drawing.Size(245, 276);
+            this.picMorningShift.Size = new System.Drawing.Size(177, 216);
             this.picMorningShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMorningShift.TabIndex = 2;
             this.picMorningShift.TabStop = false;
@@ -266,9 +274,10 @@
             this.pnlNoonShiftpic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlNoonShiftpic.Controls.Add(this.picNoonShift);
             this.pnlNoonShiftpic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoonShiftpic.Location = new System.Drawing.Point(275, 16);
+            this.pnlNoonShiftpic.Location = new System.Drawing.Point(198, 12);
+            this.pnlNoonShiftpic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNoonShiftpic.Name = "pnlNoonShiftpic";
-            this.pnlNoonShiftpic.Size = new System.Drawing.Size(240, 278);
+            this.pnlNoonShiftpic.Size = new System.Drawing.Size(173, 218);
             this.pnlNoonShiftpic.TabIndex = 1;
             // 
             // picNoonShift
@@ -277,8 +286,9 @@
             this.picNoonShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picNoonShift.Image = ((System.Drawing.Image)(resources.GetObject("picNoonShift.Image")));
             this.picNoonShift.Location = new System.Drawing.Point(0, 0);
+            this.picNoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picNoonShift.Name = "picNoonShift";
-            this.picNoonShift.Size = new System.Drawing.Size(238, 276);
+            this.picNoonShift.Size = new System.Drawing.Size(171, 216);
             this.picNoonShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNoonShift.TabIndex = 0;
             this.picNoonShift.TabStop = false;
@@ -288,9 +298,10 @@
             this.pnlAfternoonShiftpic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAfternoonShiftpic.Controls.Add(this.picAfternoonShift);
             this.pnlAfternoonShiftpic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAfternoonShiftpic.Location = new System.Drawing.Point(528, 16);
+            this.pnlAfternoonShiftpic.Location = new System.Drawing.Point(380, 12);
+            this.pnlAfternoonShiftpic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlAfternoonShiftpic.Name = "pnlAfternoonShiftpic";
-            this.pnlAfternoonShiftpic.Size = new System.Drawing.Size(233, 278);
+            this.pnlAfternoonShiftpic.Size = new System.Drawing.Size(169, 218);
             this.pnlAfternoonShiftpic.TabIndex = 2;
             // 
             // picAfternoonShift
@@ -299,8 +310,9 @@
             this.picAfternoonShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAfternoonShift.Image = ((System.Drawing.Image)(resources.GetObject("picAfternoonShift.Image")));
             this.picAfternoonShift.Location = new System.Drawing.Point(0, 0);
+            this.picAfternoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picAfternoonShift.Name = "picAfternoonShift";
-            this.picAfternoonShift.Size = new System.Drawing.Size(231, 276);
+            this.picAfternoonShift.Size = new System.Drawing.Size(167, 216);
             this.picAfternoonShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAfternoonShift.TabIndex = 0;
             this.picAfternoonShift.TabStop = false;
@@ -311,9 +323,10 @@
             this.pnlEveningShiftTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEveningShiftTitle.Controls.Add(this.lblEveningShift);
             this.pnlEveningShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEveningShiftTitle.Location = new System.Drawing.Point(774, 300);
+            this.pnlEveningShiftTitle.Location = new System.Drawing.Point(558, 234);
+            this.pnlEveningShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEveningShiftTitle.Name = "pnlEveningShiftTitle";
-            this.pnlEveningShiftTitle.Size = new System.Drawing.Size(239, 61);
+            this.pnlEveningShiftTitle.Size = new System.Drawing.Size(173, 48);
             this.pnlEveningShiftTitle.TabIndex = 2;
             this.pnlEveningShiftTitle.MouseEnter += new System.EventHandler(this.pnlEveningShiftTitle_MouseEnter);
             this.pnlEveningShiftTitle.MouseLeave += new System.EventHandler(this.pnlEveningShiftTitle_MouseLeave);
@@ -324,9 +337,10 @@
             this.lblEveningShift.AutoSize = true;
             this.lblEveningShift.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEveningShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblEveningShift.Location = new System.Drawing.Point(18, 10);
+            this.lblEveningShift.Location = new System.Drawing.Point(10, 7);
+            this.lblEveningShift.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEveningShift.Name = "lblEveningShift";
-            this.lblEveningShift.Size = new System.Drawing.Size(201, 38);
+            this.lblEveningShift.Size = new System.Drawing.Size(155, 30);
             this.lblEveningShift.TabIndex = 5;
             this.lblEveningShift.Text = " Evening Shift";
             this.lblEveningShift.MouseEnter += new System.EventHandler(this.pnlEveningShiftTitle_MouseEnter);
@@ -337,9 +351,10 @@
             this.pnlEveningShiftpic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEveningShiftpic.Controls.Add(this.picEveningShiftpic);
             this.pnlEveningShiftpic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEveningShiftpic.Location = new System.Drawing.Point(774, 16);
+            this.pnlEveningShiftpic.Location = new System.Drawing.Point(558, 12);
+            this.pnlEveningShiftpic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEveningShiftpic.Name = "pnlEveningShiftpic";
-            this.pnlEveningShiftpic.Size = new System.Drawing.Size(239, 278);
+            this.pnlEveningShiftpic.Size = new System.Drawing.Size(173, 218);
             this.pnlEveningShiftpic.TabIndex = 3;
             // 
             // picEveningShiftpic
@@ -348,8 +363,9 @@
             this.picEveningShiftpic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picEveningShiftpic.Image = ((System.Drawing.Image)(resources.GetObject("picEveningShiftpic.Image")));
             this.picEveningShiftpic.Location = new System.Drawing.Point(0, 0);
+            this.picEveningShiftpic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picEveningShiftpic.Name = "picEveningShiftpic";
-            this.picEveningShiftpic.Size = new System.Drawing.Size(237, 276);
+            this.picEveningShiftpic.Size = new System.Drawing.Size(171, 216);
             this.picEveningShiftpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEveningShiftpic.TabIndex = 1;
             this.picEveningShiftpic.TabStop = false;
@@ -360,9 +376,10 @@
             this.pnlMorningShiftTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMorningShiftTitle.Controls.Add(this.lblMorningShift);
             this.pnlMorningShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMorningShiftTitle.Location = new System.Drawing.Point(14, 300);
+            this.pnlMorningShiftTitle.Location = new System.Drawing.Point(10, 234);
+            this.pnlMorningShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMorningShiftTitle.Name = "pnlMorningShiftTitle";
-            this.pnlMorningShiftTitle.Size = new System.Drawing.Size(247, 61);
+            this.pnlMorningShiftTitle.Size = new System.Drawing.Size(179, 48);
             this.pnlMorningShiftTitle.TabIndex = 9;
             this.pnlMorningShiftTitle.MouseEnter += new System.EventHandler(this.pnlMorningShiftTitle_MouseEnter);
             this.pnlMorningShiftTitle.MouseLeave += new System.EventHandler(this.pnlMorningShiftTitle_MouseLeave);
@@ -373,9 +390,10 @@
             this.lblMorningShift.AutoSize = true;
             this.lblMorningShift.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMorningShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblMorningShift.Location = new System.Drawing.Point(20, 9);
+            this.lblMorningShift.Location = new System.Drawing.Point(11, 6);
+            this.lblMorningShift.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMorningShift.Name = "lblMorningShift";
-            this.lblMorningShift.Size = new System.Drawing.Size(203, 38);
+            this.lblMorningShift.Size = new System.Drawing.Size(156, 30);
             this.lblMorningShift.TabIndex = 5;
             this.lblMorningShift.Text = "Morning Shift";
             this.lblMorningShift.MouseEnter += new System.EventHandler(this.pnlMorningShiftTitle_MouseEnter);
@@ -387,9 +405,10 @@
             this.pnlNoonShiftTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlNoonShiftTitle.Controls.Add(this.lblNoonShift);
             this.pnlNoonShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoonShiftTitle.Location = new System.Drawing.Point(275, 300);
+            this.pnlNoonShiftTitle.Location = new System.Drawing.Point(198, 234);
+            this.pnlNoonShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNoonShiftTitle.Name = "pnlNoonShiftTitle";
-            this.pnlNoonShiftTitle.Size = new System.Drawing.Size(240, 61);
+            this.pnlNoonShiftTitle.Size = new System.Drawing.Size(173, 48);
             this.pnlNoonShiftTitle.TabIndex = 10;
             this.pnlNoonShiftTitle.MouseEnter += new System.EventHandler(this.pnlNoonShiftTitle_MouseEnter);
             this.pnlNoonShiftTitle.MouseLeave += new System.EventHandler(this.pnlNoonShiftTitle_MouseLeave);
@@ -400,9 +419,10 @@
             this.lblNoonShift.AutoSize = true;
             this.lblNoonShift.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoonShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblNoonShift.Location = new System.Drawing.Point(38, 10);
+            this.lblNoonShift.Location = new System.Drawing.Point(24, 7);
+            this.lblNoonShift.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoonShift.Name = "lblNoonShift";
-            this.lblNoonShift.Size = new System.Drawing.Size(162, 38);
+            this.lblNoonShift.Size = new System.Drawing.Size(123, 30);
             this.lblNoonShift.TabIndex = 5;
             this.lblNoonShift.Text = "Noon Shift";
             this.lblNoonShift.MouseEnter += new System.EventHandler(this.pnlNoonShiftTitle_MouseEnter);
@@ -414,9 +434,10 @@
             this.pnlAfternoonShiftTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAfternoonShiftTitle.Controls.Add(this.lblAfternoonShift);
             this.pnlAfternoonShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAfternoonShiftTitle.Location = new System.Drawing.Point(528, 300);
+            this.pnlAfternoonShiftTitle.Location = new System.Drawing.Point(380, 234);
+            this.pnlAfternoonShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlAfternoonShiftTitle.Name = "pnlAfternoonShiftTitle";
-            this.pnlAfternoonShiftTitle.Size = new System.Drawing.Size(233, 61);
+            this.pnlAfternoonShiftTitle.Size = new System.Drawing.Size(169, 48);
             this.pnlAfternoonShiftTitle.TabIndex = 11;
             this.pnlAfternoonShiftTitle.MouseEnter += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseEnter);
             this.pnlAfternoonShiftTitle.MouseLeave += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseLeave);
@@ -427,9 +448,10 @@
             this.lblAfternoonShift.AutoSize = true;
             this.lblAfternoonShift.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAfternoonShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblAfternoonShift.Location = new System.Drawing.Point(2, 10);
+            this.lblAfternoonShift.Location = new System.Drawing.Point(-1, 7);
+            this.lblAfternoonShift.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAfternoonShift.Name = "lblAfternoonShift";
-            this.lblAfternoonShift.Size = new System.Drawing.Size(226, 38);
+            this.lblAfternoonShift.Size = new System.Drawing.Size(172, 30);
             this.lblAfternoonShift.TabIndex = 5;
             this.lblAfternoonShift.Text = "Afternoon Shift";
             this.lblAfternoonShift.MouseEnter += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseEnter);
@@ -440,9 +462,10 @@
             this.pnlMorningShiftTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMorningShiftTime.Controls.Add(this.tlpMorningShift);
             this.pnlMorningShiftTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMorningShiftTime.Location = new System.Drawing.Point(14, 367);
+            this.pnlMorningShiftTime.Location = new System.Drawing.Point(10, 286);
+            this.pnlMorningShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMorningShiftTime.Name = "pnlMorningShiftTime";
-            this.pnlMorningShiftTime.Size = new System.Drawing.Size(247, 201);
+            this.pnlMorningShiftTime.Size = new System.Drawing.Size(179, 158);
             this.pnlMorningShiftTime.TabIndex = 12;
             // 
             // tlpMorningShift
@@ -456,6 +479,7 @@
             this.tlpMorningShift.Controls.Add(this.btnMorningShift, 0, 4);
             this.tlpMorningShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMorningShift.Location = new System.Drawing.Point(0, 0);
+            this.tlpMorningShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpMorningShift.Name = "tlpMorningShift";
             this.tlpMorningShift.RowCount = 5;
             this.tlpMorningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.08714F));
@@ -463,7 +487,7 @@
             this.tlpMorningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33195F));
             this.tlpMorningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.59799F));
             this.tlpMorningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.61809F));
-            this.tlpMorningShift.Size = new System.Drawing.Size(245, 199);
+            this.tlpMorningShift.Size = new System.Drawing.Size(177, 156);
             this.tlpMorningShift.TabIndex = 8;
             // 
             // lblMorningShiftStartingTime
@@ -471,9 +495,10 @@
             this.lblMorningShiftStartingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMorningShiftStartingTime.AutoSize = true;
             this.lblMorningShiftStartingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMorningShiftStartingTime.Location = new System.Drawing.Point(3, 4);
+            this.lblMorningShiftStartingTime.Location = new System.Drawing.Point(2, 4);
+            this.lblMorningShiftStartingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMorningShiftStartingTime.Name = "lblMorningShiftStartingTime";
-            this.lblMorningShiftStartingTime.Size = new System.Drawing.Size(145, 28);
+            this.lblMorningShiftStartingTime.Size = new System.Drawing.Size(116, 21);
             this.lblMorningShiftStartingTime.TabIndex = 0;
             this.lblMorningShiftStartingTime.Text = "Starting Time :";
             // 
@@ -482,9 +507,10 @@
             this.lblMorningShiftEndingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMorningShiftEndingTime.AutoSize = true;
             this.lblMorningShiftEndingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMorningShiftEndingTime.Location = new System.Drawing.Point(3, 79);
+            this.lblMorningShiftEndingTime.Location = new System.Drawing.Point(2, 63);
+            this.lblMorningShiftEndingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMorningShiftEndingTime.Name = "lblMorningShiftEndingTime";
-            this.lblMorningShiftEndingTime.Size = new System.Drawing.Size(137, 28);
+            this.lblMorningShiftEndingTime.Size = new System.Drawing.Size(108, 21);
             this.lblMorningShiftEndingTime.TabIndex = 0;
             this.lblMorningShiftEndingTime.Text = "Ending Time :";
             // 
@@ -495,9 +521,10 @@
             this.btnMorningShift.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.btnMorningShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMorningShift.ForeColor = System.Drawing.Color.White;
-            this.btnMorningShift.Location = new System.Drawing.Point(128, 154);
+            this.btnMorningShift.Location = new System.Drawing.Point(90, 121);
+            this.btnMorningShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMorningShift.Name = "btnMorningShift";
-            this.btnMorningShift.Size = new System.Drawing.Size(89, 42);
+            this.btnMorningShift.Size = new System.Drawing.Size(67, 33);
             this.btnMorningShift.TabIndex = 1;
             this.btnMorningShift.Text = "Edit";
             this.btnMorningShift.UseVisualStyleBackColor = false;
@@ -507,9 +534,10 @@
             this.pnlNoonShiftTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlNoonShiftTime.Controls.Add(this.tlpNoonShift);
             this.pnlNoonShiftTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoonShiftTime.Location = new System.Drawing.Point(275, 367);
+            this.pnlNoonShiftTime.Location = new System.Drawing.Point(198, 286);
+            this.pnlNoonShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNoonShiftTime.Name = "pnlNoonShiftTime";
-            this.pnlNoonShiftTime.Size = new System.Drawing.Size(240, 201);
+            this.pnlNoonShiftTime.Size = new System.Drawing.Size(173, 158);
             this.pnlNoonShiftTime.TabIndex = 13;
             // 
             // tlpNoonShift
@@ -523,6 +551,7 @@
             this.tlpNoonShift.Controls.Add(this.btnNoonShift, 0, 4);
             this.tlpNoonShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNoonShift.Location = new System.Drawing.Point(0, 0);
+            this.tlpNoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpNoonShift.Name = "tlpNoonShift";
             this.tlpNoonShift.RowCount = 5;
             this.tlpNoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.08714F));
@@ -530,7 +559,7 @@
             this.tlpNoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33195F));
             this.tlpNoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.59799F));
             this.tlpNoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.61809F));
-            this.tlpNoonShift.Size = new System.Drawing.Size(238, 199);
+            this.tlpNoonShift.Size = new System.Drawing.Size(171, 156);
             this.tlpNoonShift.TabIndex = 7;
             // 
             // lblNoonShiftStartingTime
@@ -538,9 +567,10 @@
             this.lblNoonShiftStartingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNoonShiftStartingTime.AutoSize = true;
             this.lblNoonShiftStartingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoonShiftStartingTime.Location = new System.Drawing.Point(3, 4);
+            this.lblNoonShiftStartingTime.Location = new System.Drawing.Point(2, 4);
+            this.lblNoonShiftStartingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoonShiftStartingTime.Name = "lblNoonShiftStartingTime";
-            this.lblNoonShiftStartingTime.Size = new System.Drawing.Size(145, 28);
+            this.lblNoonShiftStartingTime.Size = new System.Drawing.Size(116, 21);
             this.lblNoonShiftStartingTime.TabIndex = 0;
             this.lblNoonShiftStartingTime.Text = "Starting Time :";
             // 
@@ -549,9 +579,10 @@
             this.lblNoonShiftEndingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNoonShiftEndingTime.AutoSize = true;
             this.lblNoonShiftEndingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoonShiftEndingTime.Location = new System.Drawing.Point(3, 79);
+            this.lblNoonShiftEndingTime.Location = new System.Drawing.Point(2, 63);
+            this.lblNoonShiftEndingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoonShiftEndingTime.Name = "lblNoonShiftEndingTime";
-            this.lblNoonShiftEndingTime.Size = new System.Drawing.Size(137, 28);
+            this.lblNoonShiftEndingTime.Size = new System.Drawing.Size(108, 21);
             this.lblNoonShiftEndingTime.TabIndex = 0;
             this.lblNoonShiftEndingTime.Text = "Ending Time :";
             // 
@@ -562,9 +593,10 @@
             this.btnNoonShift.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.btnNoonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNoonShift.ForeColor = System.Drawing.Color.White;
-            this.btnNoonShift.Location = new System.Drawing.Point(122, 154);
+            this.btnNoonShift.Location = new System.Drawing.Point(85, 121);
+            this.btnNoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNoonShift.Name = "btnNoonShift";
-            this.btnNoonShift.Size = new System.Drawing.Size(89, 42);
+            this.btnNoonShift.Size = new System.Drawing.Size(67, 33);
             this.btnNoonShift.TabIndex = 1;
             this.btnNoonShift.Text = "Edit";
             this.btnNoonShift.UseVisualStyleBackColor = false;
@@ -574,9 +606,10 @@
             this.pnlAfternoonShiftTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAfternoonShiftTime.Controls.Add(this.tlpAfternoonShift);
             this.pnlAfternoonShiftTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAfternoonShiftTime.Location = new System.Drawing.Point(528, 367);
+            this.pnlAfternoonShiftTime.Location = new System.Drawing.Point(380, 286);
+            this.pnlAfternoonShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlAfternoonShiftTime.Name = "pnlAfternoonShiftTime";
-            this.pnlAfternoonShiftTime.Size = new System.Drawing.Size(233, 201);
+            this.pnlAfternoonShiftTime.Size = new System.Drawing.Size(169, 158);
             this.pnlAfternoonShiftTime.TabIndex = 14;
             // 
             // tlpAfternoonShift
@@ -590,6 +623,7 @@
             this.tlpAfternoonShift.Controls.Add(this.btnAfternoonShift, 0, 4);
             this.tlpAfternoonShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAfternoonShift.Location = new System.Drawing.Point(0, 0);
+            this.tlpAfternoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpAfternoonShift.Name = "tlpAfternoonShift";
             this.tlpAfternoonShift.RowCount = 5;
             this.tlpAfternoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.08714F));
@@ -597,7 +631,7 @@
             this.tlpAfternoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33195F));
             this.tlpAfternoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.59799F));
             this.tlpAfternoonShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.61809F));
-            this.tlpAfternoonShift.Size = new System.Drawing.Size(231, 199);
+            this.tlpAfternoonShift.Size = new System.Drawing.Size(167, 156);
             this.tlpAfternoonShift.TabIndex = 8;
             // 
             // lblAfternoonShiftStartingTime
@@ -605,9 +639,10 @@
             this.lblAfternoonShiftStartingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAfternoonShiftStartingTime.AutoSize = true;
             this.lblAfternoonShiftStartingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAfternoonShiftStartingTime.Location = new System.Drawing.Point(3, 4);
+            this.lblAfternoonShiftStartingTime.Location = new System.Drawing.Point(2, 4);
+            this.lblAfternoonShiftStartingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAfternoonShiftStartingTime.Name = "lblAfternoonShiftStartingTime";
-            this.lblAfternoonShiftStartingTime.Size = new System.Drawing.Size(145, 28);
+            this.lblAfternoonShiftStartingTime.Size = new System.Drawing.Size(116, 21);
             this.lblAfternoonShiftStartingTime.TabIndex = 0;
             this.lblAfternoonShiftStartingTime.Text = "Starting Time :";
             // 
@@ -616,9 +651,10 @@
             this.lblAfternoonShiftEndingTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAfternoonShiftEndingTime.AutoSize = true;
             this.lblAfternoonShiftEndingTime.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAfternoonShiftEndingTime.Location = new System.Drawing.Point(3, 79);
+            this.lblAfternoonShiftEndingTime.Location = new System.Drawing.Point(2, 63);
+            this.lblAfternoonShiftEndingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAfternoonShiftEndingTime.Name = "lblAfternoonShiftEndingTime";
-            this.lblAfternoonShiftEndingTime.Size = new System.Drawing.Size(137, 28);
+            this.lblAfternoonShiftEndingTime.Size = new System.Drawing.Size(108, 21);
             this.lblAfternoonShiftEndingTime.TabIndex = 0;
             this.lblAfternoonShiftEndingTime.Text = "Ending Time :";
             // 
@@ -629,9 +665,10 @@
             this.btnAfternoonShift.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.btnAfternoonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAfternoonShift.ForeColor = System.Drawing.Color.White;
-            this.btnAfternoonShift.Location = new System.Drawing.Point(116, 154);
+            this.btnAfternoonShift.Location = new System.Drawing.Point(81, 121);
+            this.btnAfternoonShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAfternoonShift.Name = "btnAfternoonShift";
-            this.btnAfternoonShift.Size = new System.Drawing.Size(89, 42);
+            this.btnAfternoonShift.Size = new System.Drawing.Size(67, 33);
             this.btnAfternoonShift.TabIndex = 1;
             this.btnAfternoonShift.Text = "Edit";
             this.btnAfternoonShift.UseVisualStyleBackColor = false;
@@ -641,9 +678,10 @@
             this.pnlEveningShiftTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEveningShiftTime.Controls.Add(this.tlpEveningShift);
             this.pnlEveningShiftTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEveningShiftTime.Location = new System.Drawing.Point(774, 367);
+            this.pnlEveningShiftTime.Location = new System.Drawing.Point(558, 286);
+            this.pnlEveningShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEveningShiftTime.Name = "pnlEveningShiftTime";
-            this.pnlEveningShiftTime.Size = new System.Drawing.Size(239, 201);
+            this.pnlEveningShiftTime.Size = new System.Drawing.Size(173, 158);
             this.pnlEveningShiftTime.TabIndex = 15;
             // 
             // tlpEveningShift
@@ -657,6 +695,7 @@
             this.tlpEveningShift.Controls.Add(this.btnEveningShift, 0, 4);
             this.tlpEveningShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpEveningShift.Location = new System.Drawing.Point(0, 0);
+            this.tlpEveningShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpEveningShift.Name = "tlpEveningShift";
             this.tlpEveningShift.RowCount = 5;
             this.tlpEveningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.08714F));
@@ -664,7 +703,7 @@
             this.tlpEveningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33195F));
             this.tlpEveningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.09548F));
             this.tlpEveningShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.1206F));
-            this.tlpEveningShift.Size = new System.Drawing.Size(237, 199);
+            this.tlpEveningShift.Size = new System.Drawing.Size(171, 156);
             this.tlpEveningShift.TabIndex = 9;
             // 
             // label11
@@ -672,9 +711,10 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 4);
+            this.label11.Location = new System.Drawing.Point(2, 4);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 28);
+            this.label11.Size = new System.Drawing.Size(116, 21);
             this.label11.TabIndex = 0;
             this.label11.Text = "Starting Time :";
             // 
@@ -683,9 +723,10 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 79);
+            this.label12.Location = new System.Drawing.Point(2, 63);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 28);
+            this.label12.Size = new System.Drawing.Size(108, 21);
             this.label12.TabIndex = 0;
             this.label12.Text = "Ending Time :";
             // 
@@ -696,21 +737,21 @@
             this.btnEveningShift.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.btnEveningShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEveningShift.ForeColor = System.Drawing.Color.White;
-            this.btnEveningShift.Location = new System.Drawing.Point(121, 153);
+            this.btnEveningShift.Location = new System.Drawing.Point(85, 120);
+            this.btnEveningShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEveningShift.Name = "btnEveningShift";
-            this.btnEveningShift.Size = new System.Drawing.Size(89, 43);
+            this.btnEveningShift.Size = new System.Drawing.Size(67, 34);
             this.btnEveningShift.TabIndex = 1;
             this.btnEveningShift.Text = "Edit";
             this.btnEveningShift.UseVisualStyleBackColor = false;
             // 
             // FrmDisplayShift
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1093, 779);
+            this.ClientSize = new System.Drawing.Size(820, 609);
             this.Controls.Add(this.tlpShiftEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisplayShift";
             this.Load += new System.EventHandler(this.FrmDisplayShift_Load);
             this.tlpShiftEntireForm.ResumeLayout(false);
