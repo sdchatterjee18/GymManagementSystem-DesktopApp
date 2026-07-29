@@ -75,6 +75,8 @@
             this.tlpEnterMemberEmergencyContact = new System.Windows.Forms.TableLayoutPanel();
             this.txtEnterMemberEmergencyContact = new System.Windows.Forms.TextBox();
             this.lblMemberEmergencyContact = new System.Windows.Forms.Label();
+            this.tlpEnterMemberGender = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbSelectMemberGender = new System.Windows.Forms.ComboBox();
             this.tlpMemberProfilePhotoUploadPortion = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMemberProfilePhoto = new System.Windows.Forms.TableLayoutPanel();
             this.picMemberProfilePhoto = new System.Windows.Forms.PictureBox();
@@ -140,8 +142,6 @@
             this.tlpResetButton = new System.Windows.Forms.TableLayoutPanel();
             this.picReset = new System.Windows.Forms.PictureBox();
             this.lblReset = new System.Windows.Forms.Label();
-            this.tlpEnterMemberGender = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSelectMemberGender = new System.Windows.Forms.ComboBox();
             this.tlpMemberRegistrationFeesWholeFrom.SuspendLayout();
             this.tlpMemberRegistrationDetails.SuspendLayout();
             this.tlpMemberPersonalDetails.SuspendLayout();
@@ -167,6 +167,7 @@
             this.tlpEnterMemberDistrict.SuspendLayout();
             this.tlpEnterMemberState.SuspendLayout();
             this.tlpEnterMemberEmergencyContact.SuspendLayout();
+            this.tlpEnterMemberGender.SuspendLayout();
             this.tlpMemberProfilePhotoUploadPortion.SuspendLayout();
             this.tlpMemberProfilePhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberProfilePhoto)).BeginInit();
@@ -211,7 +212,6 @@
             this.pnlResetButton.SuspendLayout();
             this.tlpResetButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
-            this.tlpEnterMemberGender.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbSelectMemberMemberMembershipPlan
@@ -829,6 +829,33 @@
             this.lblMemberEmergencyContact.Size = new System.Drawing.Size(160, 23);
             this.lblMemberEmergencyContact.TabIndex = 43;
             this.lblMemberEmergencyContact.Text = "Emergency Contact";
+            // 
+            // tlpEnterMemberGender
+            // 
+            this.tlpEnterMemberGender.ColumnCount = 1;
+            this.tlpEnterMemberGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEnterMemberGender.Controls.Add(this.cmbSelectMemberGender, 0, 1);
+            this.tlpEnterMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpEnterMemberGender.Location = new System.Drawing.Point(246, 144);
+            this.tlpEnterMemberGender.Name = "tlpEnterMemberGender";
+            this.tlpEnterMemberGender.RowCount = 3;
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpEnterMemberGender.Size = new System.Drawing.Size(245, 41);
+            this.tlpEnterMemberGender.TabIndex = 44;
+            // 
+            // cmbSelectMemberGender
+            // 
+            this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectMemberGender.FormattingEnabled = true;
+            this.cmbSelectMemberGender.Location = new System.Drawing.Point(3, 5);
+            this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
+            this.cmbSelectMemberGender.Size = new System.Drawing.Size(239, 31);
+            this.cmbSelectMemberGender.TabIndex = 9;
+            this.cmbSelectMemberGender.Text = "     ----- Select Gender---";
+            this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
             // 
             // tlpMemberProfilePhotoUploadPortion
             // 
@@ -1712,33 +1739,6 @@
             this.lblReset.TabIndex = 1;
             this.lblReset.Text = "RESET";
             // 
-            // tlpEnterMemberGender
-            // 
-            this.tlpEnterMemberGender.ColumnCount = 1;
-            this.tlpEnterMemberGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEnterMemberGender.Controls.Add(this.cmbSelectMemberGender, 0, 1);
-            this.tlpEnterMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberGender.Location = new System.Drawing.Point(246, 144);
-            this.tlpEnterMemberGender.Name = "tlpEnterMemberGender";
-            this.tlpEnterMemberGender.RowCount = 3;
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEnterMemberGender.Size = new System.Drawing.Size(245, 41);
-            this.tlpEnterMemberGender.TabIndex = 44;
-            // 
-            // cmbSelectMemberGender
-            // 
-            this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Gray;
-            this.cmbSelectMemberGender.FormattingEnabled = true;
-            this.cmbSelectMemberGender.Location = new System.Drawing.Point(3, 5);
-            this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
-            this.cmbSelectMemberGender.Size = new System.Drawing.Size(239, 31);
-            this.cmbSelectMemberGender.TabIndex = 9;
-            this.cmbSelectMemberGender.Text = "     ----- Select Gender---";
-            this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
-            // 
             // FrmMemberRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1746,7 +1746,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 788);
             this.Controls.Add(this.tlpMemberRegistrationFeesWholeFrom);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMemberRegistration";
             this.Text = "FrmMemberRegistration";
             this.Load += new System.EventHandler(this.FrmMemberRegistration_Load);
@@ -1787,6 +1787,7 @@
             this.tlpEnterMemberState.PerformLayout();
             this.tlpEnterMemberEmergencyContact.ResumeLayout(false);
             this.tlpEnterMemberEmergencyContact.PerformLayout();
+            this.tlpEnterMemberGender.ResumeLayout(false);
             this.tlpMemberProfilePhotoUploadPortion.ResumeLayout(false);
             this.tlpMemberProfilePhotoUploadPortion.PerformLayout();
             this.tlpMemberProfilePhoto.ResumeLayout(false);
@@ -1841,7 +1842,6 @@
             this.tlpResetButton.ResumeLayout(false);
             this.tlpResetButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
-            this.tlpEnterMemberGender.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
