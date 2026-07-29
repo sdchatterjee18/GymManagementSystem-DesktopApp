@@ -38,9 +38,6 @@
             this.picMemberPersonalDetails = new System.Windows.Forms.PictureBox();
             this.lblPersonalDetails = new System.Windows.Forms.Label();
             this.tlpMemberIconAndName = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpMiddlePartMemberNameAndIcon = new System.Windows.Forms.TableLayoutPanel();
-            this.picMemberNameIcon = new System.Windows.Forms.PictureBox();
-            this.lblMemberName = new System.Windows.Forms.Label();
             this.tlpMemberPersonalDetails = new System.Windows.Forms.TableLayoutPanel();
             this.picMemberStatus = new System.Windows.Forms.PictureBox();
             this.picUpdateAt = new System.Windows.Forms.PictureBox();
@@ -136,9 +133,9 @@
             this.pnlPaymentDetailsPortion = new System.Windows.Forms.Panel();
             this.tlpPaymentDetailsBottomPortion = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPaymentDetailsShow = new System.Windows.Forms.TableLayoutPanel();
+            this.lblRetrievePaymentMethod = new System.Windows.Forms.Label();
             this.lblRetrievePaymentFeesType = new System.Windows.Forms.Label();
             this.lblRetrievePaymentAmount = new System.Windows.Forms.Label();
-            this.lblRetrievePaymentMethod = new System.Windows.Forms.Label();
             this.lblPaymentDate = new System.Windows.Forms.Label();
             this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.lblPaymentAmount = new System.Windows.Forms.Label();
@@ -202,9 +199,13 @@
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBlueColorLineBorder = new System.Windows.Forms.Panel();
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection = new System.Windows.Forms.TableLayoutPanel();
+            this.picMembershipAndSubscriptionDetails = new System.Windows.Forms.PictureBox();
+            this.lblMemberAndSubscriptionDetails = new System.Windows.Forms.Label();
+            this.pnlMemberNameDisplay = new System.Windows.Forms.Panel();
+            this.tlpMiddlePartMemberNameAndIcon = new System.Windows.Forms.TableLayoutPanel();
+            this.picMemberNameIcon = new System.Windows.Forms.PictureBox();
+            this.lblMemberName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picPaymentDetails)).BeginInit();
             this.tlpHoleMemberProfile.SuspendLayout();
             this.tlpAsidePersonalDetails.SuspendLayout();
@@ -213,8 +214,6 @@
             this.tlpMemberPersonalDetailsIconAndTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPersonalDetails)).BeginInit();
             this.tlpMemberIconAndName.SuspendLayout();
-            this.tlpMiddlePartMemberNameAndIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberNameIcon)).BeginInit();
             this.tlpMemberPersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdateAt)).BeginInit();
@@ -292,8 +291,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAssignTrainerImage)).BeginInit();
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.SuspendLayout();
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMembershipAndSubscriptionDetails)).BeginInit();
+            this.pnlMemberNameDisplay.SuspendLayout();
+            this.tlpMiddlePartMemberNameAndIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberNameIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // picPaymentDetails
@@ -416,7 +418,7 @@
             this.tlpMemberIconAndName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpMemberIconAndName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tlpMemberIconAndName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpMemberIconAndName.Controls.Add(this.tlpMiddlePartMemberNameAndIcon, 1, 0);
+            this.tlpMemberIconAndName.Controls.Add(this.pnlMemberNameDisplay, 1, 0);
             this.tlpMemberIconAndName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberIconAndName.Location = new System.Drawing.Point(3, 206);
             this.tlpMemberIconAndName.Name = "tlpMemberIconAndName";
@@ -424,47 +426,6 @@
             this.tlpMemberIconAndName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberIconAndName.Size = new System.Drawing.Size(453, 45);
             this.tlpMemberIconAndName.TabIndex = 4;
-            // 
-            // tlpMiddlePartMemberNameAndIcon
-            // 
-            this.tlpMiddlePartMemberNameAndIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.tlpMiddlePartMemberNameAndIcon.ColumnCount = 2;
-            this.tlpMiddlePartMemberNameAndIcon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.04682F));
-            this.tlpMiddlePartMemberNameAndIcon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.95318F));
-            this.tlpMiddlePartMemberNameAndIcon.Controls.Add(this.picMemberNameIcon, 0, 0);
-            this.tlpMiddlePartMemberNameAndIcon.Controls.Add(this.lblMemberName, 1, 0);
-            this.tlpMiddlePartMemberNameAndIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMiddlePartMemberNameAndIcon.Location = new System.Drawing.Point(93, 3);
-            this.tlpMiddlePartMemberNameAndIcon.Name = "tlpMiddlePartMemberNameAndIcon";
-            this.tlpMiddlePartMemberNameAndIcon.RowCount = 1;
-            this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMiddlePartMemberNameAndIcon.Size = new System.Drawing.Size(265, 39);
-            this.tlpMiddlePartMemberNameAndIcon.TabIndex = 2;
-            // 
-            // picMemberNameIcon
-            // 
-            this.picMemberNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picMemberNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picMemberNameIcon.Image")));
-            this.picMemberNameIcon.Location = new System.Drawing.Point(4, 3);
-            this.picMemberNameIcon.Name = "picMemberNameIcon";
-            this.picMemberNameIcon.Size = new System.Drawing.Size(30, 32);
-            this.picMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberNameIcon.TabIndex = 0;
-            this.picMemberNameIcon.TabStop = false;
-            // 
-            // lblMemberName
-            // 
-            this.lblMemberName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMemberName.AutoSize = true;
-            this.lblMemberName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberName.ForeColor = System.Drawing.Color.White;
-            this.lblMemberName.Location = new System.Drawing.Point(40, 8);
-            this.lblMemberName.Name = "lblMemberName";
-            this.lblMemberName.Size = new System.Drawing.Size(222, 23);
-            this.lblMemberName.TabIndex = 1;
-            this.lblMemberName.Text = "SK Kamraj";
-            this.lblMemberName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // tlpMemberPersonalDetails
             // 
@@ -1035,6 +996,8 @@
             this.tlpChangeShiftButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeShiftButton.Size = new System.Drawing.Size(236, 32);
             this.tlpChangeShiftButton.TabIndex = 1;
+            this.tlpChangeShiftButton.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
+            this.tlpChangeShiftButton.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
             // picChangeShift
             // 
@@ -1047,6 +1010,8 @@
             this.picChangeShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeShift.TabIndex = 0;
             this.picChangeShift.TabStop = false;
+            this.picChangeShift.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
+            this.picChangeShift.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
             // lblChangeShift
             // 
@@ -1059,6 +1024,8 @@
             this.lblChangeShift.Size = new System.Drawing.Size(75, 15);
             this.lblChangeShift.TabIndex = 1;
             this.lblChangeShift.Text = "Change Shift";
+            this.lblChangeShift.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
+            this.lblChangeShift.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
             // tlpMembershipShiftMiddleWholePortion
             // 
@@ -1445,6 +1412,8 @@
             this.tlpChangeDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeDietPlan.Size = new System.Drawing.Size(236, 32);
             this.tlpChangeDietPlan.TabIndex = 1;
+            this.tlpChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
+            this.tlpChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 
             // picChangeDietPlan
             // 
@@ -1457,6 +1426,8 @@
             this.picChangeDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeDietPlan.TabIndex = 0;
             this.picChangeDietPlan.TabStop = false;
+            this.picChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
+            this.picChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 
             // lblChangeDietPlan
             // 
@@ -1469,6 +1440,8 @@
             this.lblChangeDietPlan.Size = new System.Drawing.Size(98, 15);
             this.lblChangeDietPlan.TabIndex = 1;
             this.lblChangeDietPlan.Text = "Change Diet Plan";
+            this.lblChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
+            this.lblChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 
             // tlpWeightGainPlanMiddleWholePortion
             // 
@@ -1744,6 +1717,16 @@
             this.tlpPaymentDetailsShow.Size = new System.Drawing.Size(296, 125);
             this.tlpPaymentDetailsShow.TabIndex = 0;
             // 
+            // lblRetrievePaymentMethod
+            // 
+            this.lblRetrievePaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblRetrievePaymentMethod.AutoSize = true;
+            this.lblRetrievePaymentMethod.Location = new System.Drawing.Point(149, 38);
+            this.lblRetrievePaymentMethod.Name = "lblRetrievePaymentMethod";
+            this.lblRetrievePaymentMethod.Size = new System.Drawing.Size(30, 17);
+            this.lblRetrievePaymentMethod.TabIndex = 9;
+            this.lblRetrievePaymentMethod.Text = "UPI";
+            // 
             // lblRetrievePaymentFeesType
             // 
             this.lblRetrievePaymentFeesType.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -1764,16 +1747,6 @@
             this.lblRetrievePaymentAmount.Size = new System.Drawing.Size(87, 17);
             this.lblRetrievePaymentAmount.TabIndex = 10;
             this.lblRetrievePaymentAmount.Text = "RS. 7499.00";
-            // 
-            // lblRetrievePaymentMethod
-            // 
-            this.lblRetrievePaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRetrievePaymentMethod.AutoSize = true;
-            this.lblRetrievePaymentMethod.Location = new System.Drawing.Point(149, 38);
-            this.lblRetrievePaymentMethod.Name = "lblRetrievePaymentMethod";
-            this.lblRetrievePaymentMethod.Size = new System.Drawing.Size(30, 17);
-            this.lblRetrievePaymentMethod.TabIndex = 9;
-            this.lblRetrievePaymentMethod.Text = "UPI";
             // 
             // lblPaymentDate
             // 
@@ -1975,6 +1948,8 @@
             this.tlpRenewMembershipPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRenewMembershipPlan.Size = new System.Drawing.Size(236, 32);
             this.tlpRenewMembershipPlan.TabIndex = 1;
+            this.tlpRenewMembershipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
+            this.tlpRenewMembershipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
             // picRenewMemberShipPlan
             // 
@@ -1987,6 +1962,8 @@
             this.picRenewMemberShipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRenewMemberShipPlan.TabIndex = 0;
             this.picRenewMemberShipPlan.TabStop = false;
+            this.picRenewMemberShipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
+            this.picRenewMemberShipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
             // lblRenewMembershipPlan
             // 
@@ -1999,6 +1976,8 @@
             this.lblRenewMembershipPlan.Size = new System.Drawing.Size(138, 15);
             this.lblRenewMembershipPlan.TabIndex = 1;
             this.lblRenewMembershipPlan.Text = "Renew Membership Plan";
+            this.lblRenewMembershipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
+            this.lblRenewMembershipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
             // tlpMiddleMembershipPlanMiddlePortion
             // 
@@ -2263,6 +2242,8 @@
             this.tlpAssignTrainerButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignTrainerButton.Size = new System.Drawing.Size(142, 42);
             this.tlpAssignTrainerButton.TabIndex = 4;
+            this.tlpAssignTrainerButton.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
+            this.tlpAssignTrainerButton.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
             // picAssignTrainer
             // 
@@ -2275,6 +2256,8 @@
             this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignTrainer.TabIndex = 0;
             this.picAssignTrainer.TabStop = false;
+            this.picAssignTrainer.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
+            this.picAssignTrainer.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
             // lblAssignTrainer
             // 
@@ -2287,6 +2270,8 @@
             this.lblAssignTrainer.Size = new System.Drawing.Size(81, 15);
             this.lblAssignTrainer.TabIndex = 1;
             this.lblAssignTrainer.Text = "Assign Trainer";
+            this.lblAssignTrainer.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
+            this.lblAssignTrainer.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
             // pnlChangeTrainerButton
             // 
@@ -2314,6 +2299,8 @@
             this.tlpChangeTrainerButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeTrainerButton.Size = new System.Drawing.Size(142, 42);
             this.tlpChangeTrainerButton.TabIndex = 3;
+            this.tlpChangeTrainerButton.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
+            this.tlpChangeTrainerButton.MouseLeave += new System.EventHandler(this.tlpChangeTrainerButton_MouseLeave);
             // 
             // picChangeTrainer
             // 
@@ -2326,6 +2313,8 @@
             this.picChangeTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeTrainer.TabIndex = 0;
             this.picChangeTrainer.TabStop = false;
+            this.picChangeTrainer.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
+            this.picChangeTrainer.MouseLeave += new System.EventHandler(this.picChangeTrainer_MouseLeave);
             // 
             // lblChangeTrainer
             // 
@@ -2338,6 +2327,8 @@
             this.lblChangeTrainer.Size = new System.Drawing.Size(86, 15);
             this.lblChangeTrainer.TabIndex = 1;
             this.lblChangeTrainer.Text = "Change Trainer";
+            this.lblChangeTrainer.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
+            this.lblChangeTrainer.MouseLeave += new System.EventHandler(this.lblChangeTrainer_MouseLeave);
             // 
             // tlpAssignTrainerMiddleWholePortion
             // 
@@ -2584,51 +2575,108 @@
             // 
             // pnlMembershipAndSubscriptionDetailsUnderlineBorder
             // 
-            this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Controls.Add(this.tableLayoutPanel1);
+            this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Controls.Add(this.tlpMembershpAndSubscriptionDetailsTopHederSection);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Location = new System.Drawing.Point(0, 0);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Name = "pnlMembershipAndSubscriptionDetailsUnderlineBorder";
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Size = new System.Drawing.Size(684, 60);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // tlpMembershpAndSubscriptionDetailsTopHederSection
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.53918F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.46082F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 60);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.ColumnCount = 3;
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.53918F));
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.46082F));
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Controls.Add(this.picMembershipAndSubscriptionDetails, 0, 0);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Controls.Add(this.lblMemberAndSubscriptionDetails, 1, 0);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Location = new System.Drawing.Point(0, 0);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Name = "tlpMembershpAndSubscriptionDetailsTopHederSection";
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.RowCount = 1;
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Size = new System.Drawing.Size(684, 60);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.TabIndex = 2;
             // 
-            // pictureBox1
+            // picMembershipAndSubscriptionDetails
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 54);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picMembershipAndSubscriptionDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picMembershipAndSubscriptionDetails.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipAndSubscriptionDetails.Image")));
+            this.picMembershipAndSubscriptionDetails.Location = new System.Drawing.Point(3, 3);
+            this.picMembershipAndSubscriptionDetails.Name = "picMembershipAndSubscriptionDetails";
+            this.picMembershipAndSubscriptionDetails.Size = new System.Drawing.Size(44, 54);
+            this.picMembershipAndSubscriptionDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMembershipAndSubscriptionDetails.TabIndex = 0;
+            this.picMembershipAndSubscriptionDetails.TabStop = false;
             // 
-            // label1
+            // lblMemberAndSubscriptionDetails
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(53, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(362, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Membership And  Subscription Details";
+            this.lblMemberAndSubscriptionDetails.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberAndSubscriptionDetails.AutoSize = true;
+            this.lblMemberAndSubscriptionDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberAndSubscriptionDetails.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblMemberAndSubscriptionDetails.Location = new System.Drawing.Point(53, 16);
+            this.lblMemberAndSubscriptionDetails.Name = "lblMemberAndSubscriptionDetails";
+            this.lblMemberAndSubscriptionDetails.Size = new System.Drawing.Size(362, 28);
+            this.lblMemberAndSubscriptionDetails.TabIndex = 1;
+            this.lblMemberAndSubscriptionDetails.Text = "Membership And  Subscription Details";
+            // 
+            // pnlMemberNameDisplay
+            // 
+            this.pnlMemberNameDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMemberNameDisplay.Controls.Add(this.tlpMiddlePartMemberNameAndIcon);
+            this.pnlMemberNameDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMemberNameDisplay.Location = new System.Drawing.Point(93, 3);
+            this.pnlMemberNameDisplay.Name = "pnlMemberNameDisplay";
+            this.pnlMemberNameDisplay.Size = new System.Drawing.Size(265, 39);
+            this.pnlMemberNameDisplay.TabIndex = 0;
+            // 
+            // tlpMiddlePartMemberNameAndIcon
+            // 
+            this.tlpMiddlePartMemberNameAndIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.tlpMiddlePartMemberNameAndIcon.ColumnCount = 2;
+            this.tlpMiddlePartMemberNameAndIcon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.04682F));
+            this.tlpMiddlePartMemberNameAndIcon.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.95318F));
+            this.tlpMiddlePartMemberNameAndIcon.Controls.Add(this.picMemberNameIcon, 0, 0);
+            this.tlpMiddlePartMemberNameAndIcon.Controls.Add(this.lblMemberName, 1, 0);
+            this.tlpMiddlePartMemberNameAndIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMiddlePartMemberNameAndIcon.Location = new System.Drawing.Point(0, 0);
+            this.tlpMiddlePartMemberNameAndIcon.Name = "tlpMiddlePartMemberNameAndIcon";
+            this.tlpMiddlePartMemberNameAndIcon.RowCount = 1;
+            this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMiddlePartMemberNameAndIcon.Size = new System.Drawing.Size(263, 37);
+            this.tlpMiddlePartMemberNameAndIcon.TabIndex = 3;
+            this.tlpMiddlePartMemberNameAndIcon.MouseEnter += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseEnter);
+            this.tlpMiddlePartMemberNameAndIcon.MouseLeave += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseLeave);
+            // 
+            // picMemberNameIcon
+            // 
+            this.picMemberNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picMemberNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picMemberNameIcon.Image")));
+            this.picMemberNameIcon.Location = new System.Drawing.Point(3, 3);
+            this.picMemberNameIcon.Name = "picMemberNameIcon";
+            this.picMemberNameIcon.Size = new System.Drawing.Size(30, 31);
+            this.picMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberNameIcon.TabIndex = 0;
+            this.picMemberNameIcon.TabStop = false;
+            this.picMemberNameIcon.MouseEnter += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseEnter);
+            this.picMemberNameIcon.MouseLeave += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseLeave);
+            // 
+            // lblMemberName
+            // 
+            this.lblMemberName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMemberName.AutoSize = true;
+            this.lblMemberName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberName.ForeColor = System.Drawing.Color.White;
+            this.lblMemberName.Location = new System.Drawing.Point(39, 7);
+            this.lblMemberName.Name = "lblMemberName";
+            this.lblMemberName.Size = new System.Drawing.Size(221, 23);
+            this.lblMemberName.TabIndex = 1;
+            this.lblMemberName.Text = "SK Kamraj";
+            this.lblMemberName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblMemberName.MouseEnter += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseEnter);
+            this.lblMemberName.MouseLeave += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseLeave);
             // 
             // FrmMemberProfile
             // 
@@ -2637,7 +2685,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 788);
             this.Controls.Add(this.tlpHoleMemberProfile);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMemberProfile";
             this.Text = "FrmMemberProfile";
             this.Load += new System.EventHandler(this.FrmMemberProfile_Load);
@@ -2650,9 +2698,6 @@
             this.tlpMemberPersonalDetailsIconAndTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPersonalDetails)).EndInit();
             this.tlpMemberIconAndName.ResumeLayout(false);
-            this.tlpMiddlePartMemberNameAndIcon.ResumeLayout(false);
-            this.tlpMiddlePartMemberNameAndIcon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberNameIcon)).EndInit();
             this.tlpMemberPersonalDetails.ResumeLayout(false);
             this.tlpMemberPersonalDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberStatus)).EndInit();
@@ -2752,9 +2797,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAssignTrainerImage)).EndInit();
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.ResumeLayout(false);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.ResumeLayout(false);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMembershipAndSubscriptionDetails)).EndInit();
+            this.pnlMemberNameDisplay.ResumeLayout(false);
+            this.tlpMiddlePartMemberNameAndIcon.ResumeLayout(false);
+            this.tlpMiddlePartMemberNameAndIcon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberNameIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2770,9 +2819,6 @@
         private System.Windows.Forms.PictureBox picMemberPersonalDetails;
         private System.Windows.Forms.Label lblPersonalDetails;
         private System.Windows.Forms.TableLayoutPanel tlpMemberIconAndName;
-        private System.Windows.Forms.TableLayoutPanel tlpMiddlePartMemberNameAndIcon;
-        private System.Windows.Forms.PictureBox picMemberNameIcon;
-        private System.Windows.Forms.Label lblMemberName;
         private System.Windows.Forms.TableLayoutPanel tlpMemberPersonalDetails;
         private System.Windows.Forms.PictureBox picMemberStatus;
         private System.Windows.Forms.PictureBox picUpdateAt;
@@ -2934,8 +2980,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpMembershipAndSubscriptionDetailsUnderlineBorder;
         private System.Windows.Forms.Panel pnlBlueColorLineBorder;
         private System.Windows.Forms.Panel pnlMembershipAndSubscriptionDetailsUnderlineBorder;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tlpMembershpAndSubscriptionDetailsTopHederSection;
+        private System.Windows.Forms.PictureBox picMembershipAndSubscriptionDetails;
+        private System.Windows.Forms.Label lblMemberAndSubscriptionDetails;
+        private System.Windows.Forms.Panel pnlMemberNameDisplay;
+        private System.Windows.Forms.TableLayoutPanel tlpMiddlePartMemberNameAndIcon;
+        private System.Windows.Forms.PictureBox picMemberNameIcon;
+        private System.Windows.Forms.Label lblMemberName;
     }
 }

@@ -75,6 +75,8 @@
             this.tlpEnterMemberEmergencyContact = new System.Windows.Forms.TableLayoutPanel();
             this.txtEnterMemberEmergencyContact = new System.Windows.Forms.TextBox();
             this.lblMemberEmergencyContact = new System.Windows.Forms.Label();
+            this.tlpEnterMemberGender = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbSelectMemberGender = new System.Windows.Forms.ComboBox();
             this.tlpMemberProfilePhotoUploadPortion = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMemberProfilePhoto = new System.Windows.Forms.TableLayoutPanel();
             this.picMemberProfilePhoto = new System.Windows.Forms.PictureBox();
@@ -137,11 +139,9 @@
             this.lblRegister = new System.Windows.Forms.Label();
             this.tlpResetButtonSection = new System.Windows.Forms.TableLayoutPanel();
             this.pnlResetButton = new System.Windows.Forms.Panel();
-            this.tlpResetButton = new System.Windows.Forms.TableLayoutPanel();
-            this.picReset = new System.Windows.Forms.PictureBox();
             this.lblReset = new System.Windows.Forms.Label();
-            this.tlpEnterMemberGender = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSelectMemberGender = new System.Windows.Forms.ComboBox();
+            this.picReset = new System.Windows.Forms.PictureBox();
+            this.tlpResetButton = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMemberRegistrationFeesWholeFrom.SuspendLayout();
             this.tlpMemberRegistrationDetails.SuspendLayout();
             this.tlpMemberPersonalDetails.SuspendLayout();
@@ -167,6 +167,7 @@
             this.tlpEnterMemberDistrict.SuspendLayout();
             this.tlpEnterMemberState.SuspendLayout();
             this.tlpEnterMemberEmergencyContact.SuspendLayout();
+            this.tlpEnterMemberGender.SuspendLayout();
             this.tlpMemberProfilePhotoUploadPortion.SuspendLayout();
             this.tlpMemberProfilePhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberProfilePhoto)).BeginInit();
@@ -209,9 +210,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRegister)).BeginInit();
             this.tlpResetButtonSection.SuspendLayout();
             this.pnlResetButton.SuspendLayout();
-            this.tlpResetButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
-            this.tlpEnterMemberGender.SuspendLayout();
+            this.tlpResetButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbSelectMemberMemberMembershipPlan
@@ -830,6 +830,33 @@
             this.lblMemberEmergencyContact.TabIndex = 43;
             this.lblMemberEmergencyContact.Text = "Emergency Contact";
             // 
+            // tlpEnterMemberGender
+            // 
+            this.tlpEnterMemberGender.ColumnCount = 1;
+            this.tlpEnterMemberGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEnterMemberGender.Controls.Add(this.cmbSelectMemberGender, 0, 1);
+            this.tlpEnterMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpEnterMemberGender.Location = new System.Drawing.Point(246, 144);
+            this.tlpEnterMemberGender.Name = "tlpEnterMemberGender";
+            this.tlpEnterMemberGender.RowCount = 3;
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpEnterMemberGender.Size = new System.Drawing.Size(245, 41);
+            this.tlpEnterMemberGender.TabIndex = 44;
+            // 
+            // cmbSelectMemberGender
+            // 
+            this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectMemberGender.FormattingEnabled = true;
+            this.cmbSelectMemberGender.Location = new System.Drawing.Point(3, 5);
+            this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
+            this.cmbSelectMemberGender.Size = new System.Drawing.Size(239, 31);
+            this.cmbSelectMemberGender.TabIndex = 9;
+            this.cmbSelectMemberGender.Text = "     ----- Select Gender---";
+            this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
+            // 
             // tlpMemberProfilePhotoUploadPortion
             // 
             this.tlpMemberProfilePhotoUploadPortion.ColumnCount = 6;
@@ -958,6 +985,8 @@
             this.tlpMemberBrowsePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMemberBrowsePhoto.Size = new System.Drawing.Size(170, 31);
             this.tlpMemberBrowsePhoto.TabIndex = 0;
+            this.tlpMemberBrowsePhoto.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
+            this.tlpMemberBrowsePhoto.MouseLeave += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
             // lblMemberBrowsePhoto
             // 
@@ -970,6 +999,8 @@
             this.lblMemberBrowsePhoto.Size = new System.Drawing.Size(95, 19);
             this.lblMemberBrowsePhoto.TabIndex = 11;
             this.lblMemberBrowsePhoto.Text = "Browse Photo";
+            this.lblMemberBrowsePhoto.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
+            this.lblMemberBrowsePhoto.MouseLeave += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
             // picMemberBrowseIcon
             // 
@@ -981,6 +1012,8 @@
             this.picMemberBrowseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberBrowseIcon.TabIndex = 0;
             this.picMemberBrowseIcon.TabStop = false;
+            this.picMemberBrowseIcon.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
+            this.picMemberBrowseIcon.MouseHover += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
             // tlpMembershipInfromationAndPayment
             // 
@@ -1559,6 +1592,8 @@
             this.tlpCancleButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleButton.Size = new System.Drawing.Size(170, 51);
             this.tlpCancleButton.TabIndex = 3;
+            this.tlpCancleButton.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
+            this.tlpCancleButton.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // picCancle
             // 
@@ -1570,6 +1605,8 @@
             this.picCancle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancle.TabIndex = 0;
             this.picCancle.TabStop = false;
+            this.picCancle.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
+            this.picCancle.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // lblCancle
             // 
@@ -1582,6 +1619,8 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
+            this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
+            this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // tlpRegisterButtonSection
             // 
@@ -1623,6 +1662,8 @@
             this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRegisterButton.Size = new System.Drawing.Size(170, 51);
             this.tlpRegisterButton.TabIndex = 2;
+            this.tlpRegisterButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
+            this.tlpRegisterButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // picRegister
             // 
@@ -1634,6 +1675,8 @@
             this.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRegister.TabIndex = 0;
             this.picRegister.TabStop = false;
+            this.picRegister.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
+            this.picRegister.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // lblRegister
             // 
@@ -1646,6 +1689,8 @@
             this.lblRegister.Size = new System.Drawing.Size(85, 23);
             this.lblRegister.TabIndex = 1;
             this.lblRegister.Text = "REGISTER";
+            this.lblRegister.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
+            this.lblRegister.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // tlpResetButtonSection
             // 
@@ -1671,34 +1716,8 @@
             this.pnlResetButton.Name = "pnlResetButton";
             this.pnlResetButton.Size = new System.Drawing.Size(181, 51);
             this.pnlResetButton.TabIndex = 0;
-            // 
-            // tlpResetButton
-            // 
-            this.tlpResetButton.BackColor = System.Drawing.Color.Navy;
-            this.tlpResetButton.ColumnCount = 2;
-            this.tlpResetButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tlpResetButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tlpResetButton.Controls.Add(this.picReset, 0, 0);
-            this.tlpResetButton.Controls.Add(this.lblReset, 1, 0);
-            this.tlpResetButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpResetButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpResetButton.Name = "tlpResetButton";
-            this.tlpResetButton.RowCount = 1;
-            this.tlpResetButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpResetButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpResetButton.Size = new System.Drawing.Size(181, 51);
-            this.tlpResetButton.TabIndex = 2;
-            // 
-            // picReset
-            // 
-            this.picReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picReset.Image = ((System.Drawing.Image)(resources.GetObject("picReset.Image")));
-            this.picReset.Location = new System.Drawing.Point(3, 3);
-            this.picReset.Name = "picReset";
-            this.picReset.Size = new System.Drawing.Size(53, 45);
-            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReset.TabIndex = 0;
-            this.picReset.TabStop = false;
+            this.pnlResetButton.MouseEnter += new System.EventHandler(this.pnlResetButton_MouseEnter);
+            this.pnlResetButton.MouseLeave += new System.EventHandler(this.pnlResetButton_MouseLeave);
             // 
             // lblReset
             // 
@@ -1711,33 +1730,40 @@
             this.lblReset.Size = new System.Drawing.Size(57, 23);
             this.lblReset.TabIndex = 1;
             this.lblReset.Text = "RESET";
+            this.lblReset.MouseEnter += new System.EventHandler(this.pnlResetButton_MouseEnter);
+            this.lblReset.MouseLeave += new System.EventHandler(this.pnlResetButton_MouseLeave);
             // 
-            // tlpEnterMemberGender
+            // picReset
             // 
-            this.tlpEnterMemberGender.ColumnCount = 1;
-            this.tlpEnterMemberGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEnterMemberGender.Controls.Add(this.cmbSelectMemberGender, 0, 1);
-            this.tlpEnterMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberGender.Location = new System.Drawing.Point(246, 144);
-            this.tlpEnterMemberGender.Name = "tlpEnterMemberGender";
-            this.tlpEnterMemberGender.RowCount = 3;
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEnterMemberGender.Size = new System.Drawing.Size(245, 41);
-            this.tlpEnterMemberGender.TabIndex = 44;
+            this.picReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picReset.Image = ((System.Drawing.Image)(resources.GetObject("picReset.Image")));
+            this.picReset.Location = new System.Drawing.Point(3, 3);
+            this.picReset.Name = "picReset";
+            this.picReset.Size = new System.Drawing.Size(53, 45);
+            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReset.TabIndex = 0;
+            this.picReset.TabStop = false;
+            this.picReset.MouseEnter += new System.EventHandler(this.tlpResetButton_MouseEnter);
+            this.picReset.MouseLeave += new System.EventHandler(this.tlpResetButton_MouseLeave);
             // 
-            // cmbSelectMemberGender
+            // tlpResetButton
             // 
-            this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Gray;
-            this.cmbSelectMemberGender.FormattingEnabled = true;
-            this.cmbSelectMemberGender.Location = new System.Drawing.Point(3, 5);
-            this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
-            this.cmbSelectMemberGender.Size = new System.Drawing.Size(239, 31);
-            this.cmbSelectMemberGender.TabIndex = 9;
-            this.cmbSelectMemberGender.Text = "     ----- Select Gender---";
-            this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
+            this.tlpResetButton.BackColor = System.Drawing.Color.Navy;
+            this.tlpResetButton.ColumnCount = 2;
+            this.tlpResetButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpResetButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpResetButton.Controls.Add(this.picReset, 0, 0);
+            this.tlpResetButton.Controls.Add(this.lblReset, 1, 0);
+            this.tlpResetButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpResetButton.ForeColor = System.Drawing.Color.White;
+            this.tlpResetButton.Location = new System.Drawing.Point(0, 0);
+            this.tlpResetButton.Name = "tlpResetButton";
+            this.tlpResetButton.RowCount = 1;
+            this.tlpResetButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpResetButton.Size = new System.Drawing.Size(181, 51);
+            this.tlpResetButton.TabIndex = 2;
+            this.tlpResetButton.MouseEnter += new System.EventHandler(this.tlpResetButton_MouseEnter);
+            this.tlpResetButton.MouseLeave += new System.EventHandler(this.tlpResetButton_MouseLeave);
             // 
             // FrmMemberRegistration
             // 
@@ -1746,7 +1772,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 788);
             this.Controls.Add(this.tlpMemberRegistrationFeesWholeFrom);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMemberRegistration";
             this.Text = "FrmMemberRegistration";
             this.Load += new System.EventHandler(this.FrmMemberRegistration_Load);
@@ -1787,6 +1813,7 @@
             this.tlpEnterMemberState.PerformLayout();
             this.tlpEnterMemberEmergencyContact.ResumeLayout(false);
             this.tlpEnterMemberEmergencyContact.PerformLayout();
+            this.tlpEnterMemberGender.ResumeLayout(false);
             this.tlpMemberProfilePhotoUploadPortion.ResumeLayout(false);
             this.tlpMemberProfilePhotoUploadPortion.PerformLayout();
             this.tlpMemberProfilePhoto.ResumeLayout(false);
@@ -1838,10 +1865,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRegister)).EndInit();
             this.tlpResetButtonSection.ResumeLayout(false);
             this.pnlResetButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             this.tlpResetButton.ResumeLayout(false);
             this.tlpResetButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
-            this.tlpEnterMemberGender.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1956,10 +1982,10 @@
         private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.TableLayoutPanel tlpResetButtonSection;
         private System.Windows.Forms.Panel pnlResetButton;
+        private System.Windows.Forms.TableLayoutPanel tlpEnterMemberGender;
+        private System.Windows.Forms.ComboBox cmbSelectMemberGender;
         private System.Windows.Forms.TableLayoutPanel tlpResetButton;
         private System.Windows.Forms.PictureBox picReset;
         private System.Windows.Forms.Label lblReset;
-        private System.Windows.Forms.TableLayoutPanel tlpEnterMemberGender;
-        private System.Windows.Forms.ComboBox cmbSelectMemberGender;
     }
 }

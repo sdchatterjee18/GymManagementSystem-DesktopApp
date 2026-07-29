@@ -362,15 +362,15 @@
             // 
             this.tlpDateTime.ColumnCount = 6;
             this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 14F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpDateTime.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpDateTime.Controls.Add(this.picCalander, 1, 0);
-            this.tlpDateTime.Controls.Add(this.picTime, 4, 0);
             this.tlpDateTime.Controls.Add(this.lblDate, 2, 0);
             this.tlpDateTime.Controls.Add(this.lblTime, 5, 0);
+            this.tlpDateTime.Controls.Add(this.picTime, 4, 0);
             this.tlpDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDateTime.Location = new System.Drawing.Point(415, 0);
             this.tlpDateTime.Margin = new System.Windows.Forms.Padding(0);
@@ -384,7 +384,7 @@
             // 
             this.picCalander.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picCalander.Image = ((System.Drawing.Image)(resources.GetObject("picCalander.Image")));
-            this.picCalander.Location = new System.Drawing.Point(132, 3);
+            this.picCalander.Location = new System.Drawing.Point(182, 3);
             this.picCalander.Margin = new System.Windows.Forms.Padding(0);
             this.picCalander.Name = "picCalander";
             this.picCalander.Size = new System.Drawing.Size(24, 25);
@@ -396,7 +396,7 @@
             // 
             this.picTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picTime.Image = ((System.Drawing.Image)(resources.GetObject("picTime.Image")));
-            this.picTime.Location = new System.Drawing.Point(286, 3);
+            this.picTime.Location = new System.Drawing.Point(315, 3);
             this.picTime.Margin = new System.Windows.Forms.Padding(0);
             this.picTime.Name = "picTime";
             this.picTime.Size = new System.Drawing.Size(25, 25);
@@ -410,10 +410,10 @@
             this.lblDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(156, 0);
+            this.lblDate.Location = new System.Drawing.Point(215, 0);
             this.lblDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(111, 32);
+            this.lblDate.Size = new System.Drawing.Size(79, 32);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -424,10 +424,10 @@
             this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(316, 0);
+            this.lblTime.Location = new System.Drawing.Point(350, 0);
             this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(100, 32);
+            this.lblTime.Size = new System.Drawing.Size(66, 32);
             this.lblTime.TabIndex = 2;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -15,5 +15,46 @@ namespace GymManagementSystem.FORMS.Attendance
         {
             InitializeComponent();
         }
+
+        private void FrmMarkAttendance_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void cmbMarkAttendanceShiftSearch_Enter(object sender, EventArgs e)
+        {
+            if (cmbMarkAttendanceShiftSearch.Text.Trim() == "---Select Shift---")
+            {
+                cmbMarkAttendanceShiftSearch.Text = "";
+                cmbMarkAttendanceShiftSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        private void cmbMarkAttendanceShiftSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbMarkAttendanceShiftSearch.Text))
+            {
+                cmbMarkAttendanceShiftSearch.Text = "---Select Shift---";
+                cmbMarkAttendanceShiftSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtMarkMemberMobileNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtMarkMemberMobileNumber.Text.Trim() == "Enter Mobile No.")
+            {
+                txtMarkMemberMobileNumber.Text = "";
+                txtMarkMemberMobileNumber.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtMarkMemberMobileNumber_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMarkMemberMobileNumber.Text))
+            {
+                txtMarkMemberMobileNumber.Text = "Enter Mobile No.";
+                txtMarkMemberMobileNumber.ForeColor = Color.Gray;
+            }
+        }
     }
 }
