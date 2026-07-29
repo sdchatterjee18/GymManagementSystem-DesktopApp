@@ -29,439 +29,988 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFitnessTest));
-            this.tlpFitnessTestEntireForm = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpFitnessTestInputOutput = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpFitnessTestOutput = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpAllOutputFitnessTest = new System.Windows.Forms.TableLayoutPanel();
+            this.TLPFitnessTestInputOutput = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpSubMemberInputAndOutputFitnessTest = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlFitnessTestInputOutputBox = new System.Windows.Forms.Panel();
+            this.tlpMainMemberInputAndOutputFitnessTest = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpInputFitnessTest = new System.Windows.Forms.TableLayoutPanel();
+            this.picHight = new System.Windows.Forms.PictureBox();
+            this.picWeight = new System.Windows.Forms.PictureBox();
+            this.picGender = new System.Windows.Forms.PictureBox();
+            this.picAgeInput = new System.Windows.Forms.PictureBox();
+            this.picActivity = new System.Windows.Forms.PictureBox();
+            this.picGoal = new System.Windows.Forms.PictureBox();
+            this.txtHightInput = new System.Windows.Forms.TextBox();
+            this.txtWeightInput = new System.Windows.Forms.TextBox();
+            this.cmbGenderInput = new System.Windows.Forms.ComboBox();
+            this.txtAgeInput = new System.Windows.Forms.TextBox();
+            this.cmbActivityInput = new System.Windows.Forms.ComboBox();
+            this.cmbGoalInput = new System.Windows.Forms.ComboBox();
+            this.lblHightInput = new System.Windows.Forms.Label();
+            this.lblWeightInput = new System.Windows.Forms.Label();
+            this.lblGenderInput = new System.Windows.Forms.Label();
+            this.lblAgeInput = new System.Windows.Forms.Label();
+            this.lblActivityInput = new System.Windows.Forms.Label();
+            this.lblGoalInput = new System.Windows.Forms.Label();
+            this.tlpOutputFitnessTest = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlBMI = new System.Windows.Forms.Panel();
+            this.tlpBMI = new System.Windows.Forms.TableLayoutPanel();
             this.lblBMI = new System.Windows.Forms.Label();
-            this.lblBMR = new System.Windows.Forms.Label();
+            this.picBMI = new System.Windows.Forms.PictureBox();
+            this.lblResultBMI = new System.Windows.Forms.Label();
+            this.pnlIBW = new System.Windows.Forms.Panel();
+            this.tlpIBW = new System.Windows.Forms.TableLayoutPanel();
             this.lblIBW = new System.Windows.Forms.Label();
+            this.picIBW = new System.Windows.Forms.PictureBox();
+            this.lblResultIBW = new System.Windows.Forms.Label();
+            this.pnlBMR = new System.Windows.Forms.Panel();
+            this.tlpBMR = new System.Windows.Forms.TableLayoutPanel();
+            this.lblBMR = new System.Windows.Forms.Label();
+            this.picBMR = new System.Windows.Forms.PictureBox();
+            this.lblResultBMR = new System.Windows.Forms.Label();
+            this.pnlTDEE = new System.Windows.Forms.Panel();
+            this.tlpTDEE = new System.Windows.Forms.TableLayoutPanel();
             this.lblTDEE = new System.Windows.Forms.Label();
-            this.lblBMIvalue = new System.Windows.Forms.Label();
-            this.lblBMRvalue = new System.Windows.Forms.Label();
-            this.lblIBWvalue = new System.Windows.Forms.Label();
-            this.lblTDEEvalue = new System.Windows.Forms.Label();
-            this.picDietPlanOnFitessTest = new System.Windows.Forms.PictureBox();
-            this.tlpFitnessTestInputs = new System.Windows.Forms.TableLayoutPanel();
-            this.txtHight = new System.Windows.Forms.TextBox();
-            this.lblGoal = new System.Windows.Forms.Label();
-            this.lblActivity = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.lblWeight = new System.Windows.Forms.Label();
-            this.lblHight = new System.Windows.Forms.Label();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.txtAge = new System.Windows.Forms.TextBox();
-            this.cmbActivity = new System.Windows.Forms.ComboBox();
-            this.cmbGoal = new System.Windows.Forms.ComboBox();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.tlpTitleandPicture = new System.Windows.Forms.TableLayoutPanel();
-            this.picHumanMuscle = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.picTDEE = new System.Windows.Forms.PictureBox();
+            this.lblResultTDEE = new System.Windows.Forms.Label();
+            this.tlpFitnessTestCalculateButton = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCalculateFitnessTest = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.picFitnessTestHumanMuscle = new System.Windows.Forms.PictureBox();
+            this.tlpFitnessTestHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.picFitnessTest = new System.Windows.Forms.PictureBox();
+            this.tlpFitnessTestTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.lblViewAllWorkoutSheduleDetails = new System.Windows.Forms.Label();
+            this.lblMemberFitnessTest = new System.Windows.Forms.Label();
+            this.tlpFitnessTestEntireForm = new System.Windows.Forms.TableLayoutPanel();
+            this.TLPFitnessTestInputOutput.SuspendLayout();
+            this.tlpSubMemberInputAndOutputFitnessTest.SuspendLayout();
+            this.pnlFitnessTestInputOutputBox.SuspendLayout();
+            this.tlpMainMemberInputAndOutputFitnessTest.SuspendLayout();
+            this.tlpInputFitnessTest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGender)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgeInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picActivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoal)).BeginInit();
+            this.tlpOutputFitnessTest.SuspendLayout();
+            this.pnlBMI.SuspendLayout();
+            this.tlpBMI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMI)).BeginInit();
+            this.pnlIBW.SuspendLayout();
+            this.tlpIBW.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIBW)).BeginInit();
+            this.pnlBMR.SuspendLayout();
+            this.tlpBMR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMR)).BeginInit();
+            this.pnlTDEE.SuspendLayout();
+            this.tlpTDEE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTDEE)).BeginInit();
+            this.tlpFitnessTestCalculateButton.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).BeginInit();
+            this.tlpFitnessTestHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).BeginInit();
+            this.tlpFitnessTestTitle.SuspendLayout();
             this.tlpFitnessTestEntireForm.SuspendLayout();
-            this.tlpFitnessTestInputOutput.SuspendLayout();
-            this.tlpFitnessTestOutput.SuspendLayout();
-            this.tlpAllOutputFitnessTest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDietPlanOnFitessTest)).BeginInit();
-            this.tlpFitnessTestInputs.SuspendLayout();
-            this.tlpTitleandPicture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHumanMuscle)).BeginInit();
             this.SuspendLayout();
             // 
-            // tlpFitnessTestEntireForm
+            // TLPFitnessTestInputOutput
             // 
-            this.tlpFitnessTestEntireForm.ColumnCount = 2;
-            this.tlpFitnessTestEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.85114F));
-            this.tlpFitnessTestEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.14886F));
-            this.tlpFitnessTestEntireForm.Controls.Add(this.tlpFitnessTestInputOutput, 0, 0);
-            this.tlpFitnessTestEntireForm.Controls.Add(this.tlpTitleandPicture, 0, 0);
-            this.tlpFitnessTestEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFitnessTestEntireForm.Location = new System.Drawing.Point(0, 0);
-            this.tlpFitnessTestEntireForm.Name = "tlpFitnessTestEntireForm";
-            this.tlpFitnessTestEntireForm.RowCount = 1;
-            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpFitnessTestEntireForm.Size = new System.Drawing.Size(1131, 721);
-            this.tlpFitnessTestEntireForm.TabIndex = 2;
+            this.TLPFitnessTestInputOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.TLPFitnessTestInputOutput.ColumnCount = 5;
+            this.TLPFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.945525F));
+            this.TLPFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.95331F));
+            this.TLPFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.085603F));
+            this.TLPFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.47082F));
+            this.TLPFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.933852F));
+            this.TLPFitnessTestInputOutput.Controls.Add(this.tlpSubMemberInputAndOutputFitnessTest, 3, 0);
+            this.TLPFitnessTestInputOutput.Controls.Add(this.tableLayoutPanel7, 1, 0);
+            this.TLPFitnessTestInputOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLPFitnessTestInputOutput.Location = new System.Drawing.Point(45, 72);
+            this.TLPFitnessTestInputOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TLPFitnessTestInputOutput.Name = "TLPFitnessTestInputOutput";
+            this.TLPFitnessTestInputOutput.RowCount = 1;
+            this.TLPFitnessTestInputOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TLPFitnessTestInputOutput.Size = new System.Drawing.Size(772, 511);
+            this.TLPFitnessTestInputOutput.TabIndex = 11;
             // 
-            // tlpFitnessTestInputOutput
+            // tlpSubMemberInputAndOutputFitnessTest
             // 
-            this.tlpFitnessTestInputOutput.ColumnCount = 1;
-            this.tlpFitnessTestInputOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFitnessTestInputOutput.Controls.Add(this.tlpFitnessTestOutput, 0, 1);
-            this.tlpFitnessTestInputOutput.Controls.Add(this.tlpFitnessTestInputs, 0, 0);
-            this.tlpFitnessTestInputOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFitnessTestInputOutput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpFitnessTestInputOutput.Location = new System.Drawing.Point(397, 3);
-            this.tlpFitnessTestInputOutput.Name = "tlpFitnessTestInputOutput";
-            this.tlpFitnessTestInputOutput.RowCount = 2;
-            this.tlpFitnessTestInputOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.23464F));
-            this.tlpFitnessTestInputOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.76536F));
-            this.tlpFitnessTestInputOutput.Size = new System.Drawing.Size(731, 715);
-            this.tlpFitnessTestInputOutput.TabIndex = 3;
+            this.tlpSubMemberInputAndOutputFitnessTest.ColumnCount = 3;
+            this.tlpSubMemberInputAndOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tlpSubMemberInputAndOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.6875F));
+            this.tlpSubMemberInputAndOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.65625F));
+            this.tlpSubMemberInputAndOutputFitnessTest.Controls.Add(this.pnlFitnessTestInputOutputBox, 1, 1);
+            this.tlpSubMemberInputAndOutputFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSubMemberInputAndOutputFitnessTest.Location = new System.Drawing.Point(361, 2);
+            this.tlpSubMemberInputAndOutputFitnessTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubMemberInputAndOutputFitnessTest.Name = "tlpSubMemberInputAndOutputFitnessTest";
+            this.tlpSubMemberInputAndOutputFitnessTest.RowCount = 3;
+            this.tlpSubMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.10559F));
+            this.tlpSubMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.09938F));
+            this.tlpSubMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.639751F));
+            this.tlpSubMemberInputAndOutputFitnessTest.Size = new System.Drawing.Size(361, 507);
+            this.tlpSubMemberInputAndOutputFitnessTest.TabIndex = 1;
             // 
-            // tlpFitnessTestOutput
+            // pnlFitnessTestInputOutputBox
             // 
-            this.tlpFitnessTestOutput.ColumnCount = 2;
-            this.tlpFitnessTestOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.20219F));
-            this.tlpFitnessTestOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.79781F));
-            this.tlpFitnessTestOutput.Controls.Add(this.tlpAllOutputFitnessTest, 0, 1);
-            this.tlpFitnessTestOutput.Controls.Add(this.picDietPlanOnFitessTest, 1, 1);
-            this.tlpFitnessTestOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFitnessTestOutput.Location = new System.Drawing.Point(3, 376);
-            this.tlpFitnessTestOutput.Name = "tlpFitnessTestOutput";
-            this.tlpFitnessTestOutput.RowCount = 3;
-            this.tlpFitnessTestOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.72638F));
-            this.tlpFitnessTestOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.27361F));
-            this.tlpFitnessTestOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpFitnessTestOutput.Size = new System.Drawing.Size(725, 336);
-            this.tlpFitnessTestOutput.TabIndex = 3;
+            this.pnlFitnessTestInputOutputBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlFitnessTestInputOutputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFitnessTestInputOutputBox.Controls.Add(this.tlpMainMemberInputAndOutputFitnessTest);
+            this.pnlFitnessTestInputOutputBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFitnessTestInputOutputBox.Location = new System.Drawing.Point(11, 17);
+            this.pnlFitnessTestInputOutputBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFitnessTestInputOutputBox.Name = "pnlFitnessTestInputOutputBox";
+            this.pnlFitnessTestInputOutputBox.Size = new System.Drawing.Size(338, 473);
+            this.pnlFitnessTestInputOutputBox.TabIndex = 0;
             // 
-            // tlpAllOutputFitnessTest
+            // tlpMainMemberInputAndOutputFitnessTest
             // 
-            this.tlpAllOutputFitnessTest.ColumnCount = 2;
-            this.tlpAllOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.65611F));
-            this.tlpAllOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.34389F));
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblBMI, 0, 0);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblBMR, 0, 1);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblIBW, 0, 2);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblTDEE, 0, 3);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblBMIvalue, 1, 0);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblBMRvalue, 1, 1);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblIBWvalue, 1, 2);
-            this.tlpAllOutputFitnessTest.Controls.Add(this.lblTDEEvalue, 1, 3);
-            this.tlpAllOutputFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllOutputFitnessTest.Location = new System.Drawing.Point(3, 37);
-            this.tlpAllOutputFitnessTest.Name = "tlpAllOutputFitnessTest";
-            this.tlpAllOutputFitnessTest.RowCount = 4;
-            this.tlpAllOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.4F));
-            this.tlpAllOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.6F));
-            this.tlpAllOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tlpAllOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tlpAllOutputFitnessTest.Size = new System.Drawing.Size(437, 251);
-            this.tlpAllOutputFitnessTest.TabIndex = 0;
+            this.tlpMainMemberInputAndOutputFitnessTest.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tlpMainMemberInputAndOutputFitnessTest.ColumnCount = 1;
+            this.tlpMainMemberInputAndOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMainMemberInputAndOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMainMemberInputAndOutputFitnessTest.Controls.Add(this.tlpInputFitnessTest, 0, 0);
+            this.tlpMainMemberInputAndOutputFitnessTest.Controls.Add(this.tlpOutputFitnessTest, 0, 2);
+            this.tlpMainMemberInputAndOutputFitnessTest.Controls.Add(this.tlpFitnessTestCalculateButton, 0, 1);
+            this.tlpMainMemberInputAndOutputFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMainMemberInputAndOutputFitnessTest.Location = new System.Drawing.Point(0, 0);
+            this.tlpMainMemberInputAndOutputFitnessTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMainMemberInputAndOutputFitnessTest.Name = "tlpMainMemberInputAndOutputFitnessTest";
+            this.tlpMainMemberInputAndOutputFitnessTest.RowCount = 3;
+            this.tlpMainMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.07643F));
+            this.tlpMainMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.92357F));
+            this.tlpMainMemberInputAndOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 219F));
+            this.tlpMainMemberInputAndOutputFitnessTest.Size = new System.Drawing.Size(336, 471);
+            this.tlpMainMemberInputAndOutputFitnessTest.TabIndex = 0;
+            // 
+            // tlpInputFitnessTest
+            // 
+            this.tlpInputFitnessTest.ColumnCount = 4;
+            this.tlpInputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.46154F));
+            this.tlpInputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tlpInputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.69231F));
+            this.tlpInputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.84615F));
+            this.tlpInputFitnessTest.Controls.Add(this.picHight, 3, 1);
+            this.tlpInputFitnessTest.Controls.Add(this.picWeight, 3, 2);
+            this.tlpInputFitnessTest.Controls.Add(this.picGender, 3, 3);
+            this.tlpInputFitnessTest.Controls.Add(this.picAgeInput, 3, 4);
+            this.tlpInputFitnessTest.Controls.Add(this.picActivity, 3, 5);
+            this.tlpInputFitnessTest.Controls.Add(this.picGoal, 3, 6);
+            this.tlpInputFitnessTest.Controls.Add(this.txtHightInput, 2, 1);
+            this.tlpInputFitnessTest.Controls.Add(this.txtWeightInput, 2, 2);
+            this.tlpInputFitnessTest.Controls.Add(this.cmbGenderInput, 2, 3);
+            this.tlpInputFitnessTest.Controls.Add(this.txtAgeInput, 2, 4);
+            this.tlpInputFitnessTest.Controls.Add(this.cmbActivityInput, 2, 5);
+            this.tlpInputFitnessTest.Controls.Add(this.cmbGoalInput, 2, 6);
+            this.tlpInputFitnessTest.Controls.Add(this.lblHightInput, 1, 1);
+            this.tlpInputFitnessTest.Controls.Add(this.lblWeightInput, 1, 2);
+            this.tlpInputFitnessTest.Controls.Add(this.lblGenderInput, 1, 3);
+            this.tlpInputFitnessTest.Controls.Add(this.lblAgeInput, 1, 4);
+            this.tlpInputFitnessTest.Controls.Add(this.lblActivityInput, 1, 5);
+            this.tlpInputFitnessTest.Controls.Add(this.lblGoalInput, 1, 6);
+            this.tlpInputFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpInputFitnessTest.Location = new System.Drawing.Point(2, 2);
+            this.tlpInputFitnessTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpInputFitnessTest.Name = "tlpInputFitnessTest";
+            this.tlpInputFitnessTest.RowCount = 7;
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.272113F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.33689F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.16996F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.16996F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.55894F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.94791F));
+            this.tlpInputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.54422F));
+            this.tlpInputFitnessTest.Size = new System.Drawing.Size(332, 207);
+            this.tlpInputFitnessTest.TabIndex = 0;
+            // 
+            // picHight
+            // 
+            this.picHight.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picHight.Image = ((System.Drawing.Image)(resources.GetObject("picHight.Image")));
+            this.picHight.Location = new System.Drawing.Point(267, 17);
+            this.picHight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picHight.Name = "picHight";
+            this.picHight.Size = new System.Drawing.Size(39, 29);
+            this.picHight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHight.TabIndex = 3;
+            this.picHight.TabStop = false;
+            // 
+            // picWeight
+            // 
+            this.picWeight.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picWeight.Image = ((System.Drawing.Image)(resources.GetObject("picWeight.Image")));
+            this.picWeight.Location = new System.Drawing.Point(267, 50);
+            this.picWeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picWeight.Name = "picWeight";
+            this.picWeight.Size = new System.Drawing.Size(39, 27);
+            this.picWeight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWeight.TabIndex = 4;
+            this.picWeight.TabStop = false;
+            // 
+            // picGender
+            // 
+            this.picGender.Image = ((System.Drawing.Image)(resources.GetObject("picGender.Image")));
+            this.picGender.Location = new System.Drawing.Point(267, 81);
+            this.picGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGender.Name = "picGender";
+            this.picGender.Size = new System.Drawing.Size(39, 27);
+            this.picGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGender.TabIndex = 5;
+            this.picGender.TabStop = false;
+            // 
+            // picAgeInput
+            // 
+            this.picAgeInput.Image = ((System.Drawing.Image)(resources.GetObject("picAgeInput.Image")));
+            this.picAgeInput.Location = new System.Drawing.Point(267, 112);
+            this.picAgeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAgeInput.Name = "picAgeInput";
+            this.picAgeInput.Size = new System.Drawing.Size(39, 28);
+            this.picAgeInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAgeInput.TabIndex = 6;
+            this.picAgeInput.TabStop = false;
+            // 
+            // picActivity
+            // 
+            this.picActivity.Image = ((System.Drawing.Image)(resources.GetObject("picActivity.Image")));
+            this.picActivity.Location = new System.Drawing.Point(267, 144);
+            this.picActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picActivity.Name = "picActivity";
+            this.picActivity.Size = new System.Drawing.Size(39, 28);
+            this.picActivity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picActivity.TabIndex = 7;
+            this.picActivity.TabStop = false;
+            // 
+            // picGoal
+            // 
+            this.picGoal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picGoal.Image = ((System.Drawing.Image)(resources.GetObject("picGoal.Image")));
+            this.picGoal.Location = new System.Drawing.Point(267, 177);
+            this.picGoal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGoal.Name = "picGoal";
+            this.picGoal.Size = new System.Drawing.Size(39, 27);
+            this.picGoal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGoal.TabIndex = 8;
+            this.picGoal.TabStop = false;
+            // 
+            // txtHightInput
+            // 
+            this.txtHightInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHightInput.ForeColor = System.Drawing.Color.Gray;
+            this.txtHightInput.Location = new System.Drawing.Point(145, 17);
+            this.txtHightInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHightInput.Name = "txtHightInput";
+            this.txtHightInput.Size = new System.Drawing.Size(118, 26);
+            this.txtHightInput.TabIndex = 1;
+            this.txtHightInput.Text = "Enter Hight";
+            this.txtHightInput.Enter += new System.EventHandler(this.txtHightInput_Enter);
+            this.txtHightInput.Leave += new System.EventHandler(this.txtHightInput_Leave);
+            // 
+            // txtWeightInput
+            // 
+            this.txtWeightInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtWeightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeightInput.ForeColor = System.Drawing.Color.Gray;
+            this.txtWeightInput.Location = new System.Drawing.Point(145, 50);
+            this.txtWeightInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWeightInput.Name = "txtWeightInput";
+            this.txtWeightInput.Size = new System.Drawing.Size(118, 26);
+            this.txtWeightInput.TabIndex = 1;
+            this.txtWeightInput.Text = "Enter Weight";
+            this.txtWeightInput.Enter += new System.EventHandler(this.txtWeightInput_Enter);
+            this.txtWeightInput.Leave += new System.EventHandler(this.txtWeightInput_Leave);
+            // 
+            // cmbGenderInput
+            // 
+            this.cmbGenderInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbGenderInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenderInput.ForeColor = System.Drawing.Color.Gray;
+            this.cmbGenderInput.FormattingEnabled = true;
+            this.cmbGenderInput.Location = new System.Drawing.Point(145, 81);
+            this.cmbGenderInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGenderInput.Name = "cmbGenderInput";
+            this.cmbGenderInput.Size = new System.Drawing.Size(118, 27);
+            this.cmbGenderInput.TabIndex = 2;
+            this.cmbGenderInput.Text = "---select---";
+            this.cmbGenderInput.Enter += new System.EventHandler(this.cmbGenderInput_Enter);
+            this.cmbGenderInput.Leave += new System.EventHandler(this.cmbGenderInput_Leave);
+            // 
+            // txtAgeInput
+            // 
+            this.txtAgeInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAgeInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgeInput.ForeColor = System.Drawing.Color.Gray;
+            this.txtAgeInput.Location = new System.Drawing.Point(145, 112);
+            this.txtAgeInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAgeInput.Name = "txtAgeInput";
+            this.txtAgeInput.Size = new System.Drawing.Size(118, 26);
+            this.txtAgeInput.TabIndex = 1;
+            this.txtAgeInput.Text = "Enter Age";
+            this.txtAgeInput.Enter += new System.EventHandler(this.txtAgeInput_Enter);
+            this.txtAgeInput.Leave += new System.EventHandler(this.txtAgeInput_Leave);
+            // 
+            // cmbActivityInput
+            // 
+            this.cmbActivityInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbActivityInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbActivityInput.ForeColor = System.Drawing.Color.Gray;
+            this.cmbActivityInput.FormattingEnabled = true;
+            this.cmbActivityInput.Location = new System.Drawing.Point(145, 144);
+            this.cmbActivityInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbActivityInput.Name = "cmbActivityInput";
+            this.cmbActivityInput.Size = new System.Drawing.Size(118, 27);
+            this.cmbActivityInput.TabIndex = 2;
+            this.cmbActivityInput.Text = "---select---";
+            this.cmbActivityInput.Enter += new System.EventHandler(this.cmbActivityInput_Enter);
+            this.cmbActivityInput.Leave += new System.EventHandler(this.cmbActivityInput_Leave);
+            // 
+            // cmbGoalInput
+            // 
+            this.cmbGoalInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbGoalInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGoalInput.ForeColor = System.Drawing.Color.Gray;
+            this.cmbGoalInput.FormattingEnabled = true;
+            this.cmbGoalInput.Location = new System.Drawing.Point(145, 177);
+            this.cmbGoalInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGoalInput.Name = "cmbGoalInput";
+            this.cmbGoalInput.Size = new System.Drawing.Size(118, 27);
+            this.cmbGoalInput.TabIndex = 2;
+            this.cmbGoalInput.Text = "---select---";
+            this.cmbGoalInput.Enter += new System.EventHandler(this.cmbGoalInput_Enter);
+            this.cmbGoalInput.Leave += new System.EventHandler(this.cmbGoalInput_Leave);
+            // 
+            // lblHightInput
+            // 
+            this.lblHightInput.AutoSize = true;
+            this.lblHightInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHightInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblHightInput.Location = new System.Drawing.Point(33, 15);
+            this.lblHightInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHightInput.Name = "lblHightInput";
+            this.lblHightInput.Size = new System.Drawing.Size(96, 21);
+            this.lblHightInput.TabIndex = 0;
+            this.lblHightInput.Text = "Hight(cm) :";
+            // 
+            // lblWeightInput
+            // 
+            this.lblWeightInput.AutoSize = true;
+            this.lblWeightInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeightInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblWeightInput.Location = new System.Drawing.Point(33, 48);
+            this.lblWeightInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWeightInput.Name = "lblWeightInput";
+            this.lblWeightInput.Size = new System.Drawing.Size(105, 21);
+            this.lblWeightInput.TabIndex = 0;
+            this.lblWeightInput.Text = "Weight(kg) :";
+            // 
+            // lblGenderInput
+            // 
+            this.lblGenderInput.AutoSize = true;
+            this.lblGenderInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenderInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblGenderInput.Location = new System.Drawing.Point(33, 79);
+            this.lblGenderInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGenderInput.Name = "lblGenderInput";
+            this.lblGenderInput.Size = new System.Drawing.Size(73, 21);
+            this.lblGenderInput.TabIndex = 0;
+            this.lblGenderInput.Text = "Gender :";
+            // 
+            // lblAgeInput
+            // 
+            this.lblAgeInput.AutoSize = true;
+            this.lblAgeInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblAgeInput.Location = new System.Drawing.Point(33, 110);
+            this.lblAgeInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAgeInput.Name = "lblAgeInput";
+            this.lblAgeInput.Size = new System.Drawing.Size(48, 21);
+            this.lblAgeInput.TabIndex = 0;
+            this.lblAgeInput.Text = "Age :";
+            // 
+            // lblActivityInput
+            // 
+            this.lblActivityInput.AutoSize = true;
+            this.lblActivityInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivityInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblActivityInput.Location = new System.Drawing.Point(33, 142);
+            this.lblActivityInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblActivityInput.Name = "lblActivityInput";
+            this.lblActivityInput.Size = new System.Drawing.Size(77, 21);
+            this.lblActivityInput.TabIndex = 0;
+            this.lblActivityInput.Text = "Activity :";
+            // 
+            // lblGoalInput
+            // 
+            this.lblGoalInput.AutoSize = true;
+            this.lblGoalInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoalInput.ForeColor = System.Drawing.Color.Navy;
+            this.lblGoalInput.Location = new System.Drawing.Point(33, 175);
+            this.lblGoalInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGoalInput.Name = "lblGoalInput";
+            this.lblGoalInput.Size = new System.Drawing.Size(53, 21);
+            this.lblGoalInput.TabIndex = 0;
+            this.lblGoalInput.Text = "Goal :";
+            // 
+            // tlpOutputFitnessTest
+            // 
+            this.tlpOutputFitnessTest.ColumnCount = 5;
+            this.tlpOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.582549F));
+            this.tlpOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.55481F));
+            this.tlpOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.529511F));
+            this.tlpOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.51939F));
+            this.tlpOutputFitnessTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.579906F));
+            this.tlpOutputFitnessTest.Controls.Add(this.pnlBMI, 1, 1);
+            this.tlpOutputFitnessTest.Controls.Add(this.pnlIBW, 1, 3);
+            this.tlpOutputFitnessTest.Controls.Add(this.pnlBMR, 3, 1);
+            this.tlpOutputFitnessTest.Controls.Add(this.pnlTDEE, 3, 3);
+            this.tlpOutputFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpOutputFitnessTest.Location = new System.Drawing.Point(2, 253);
+            this.tlpOutputFitnessTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpOutputFitnessTest.Name = "tlpOutputFitnessTest";
+            this.tlpOutputFitnessTest.RowCount = 5;
+            this.tlpOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.148674F));
+            this.tlpOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.78762F));
+            this.tlpOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.148674F));
+            this.tlpOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.76635F));
+            this.tlpOutputFitnessTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.148675F));
+            this.tlpOutputFitnessTest.Size = new System.Drawing.Size(332, 216);
+            this.tlpOutputFitnessTest.TabIndex = 1;
+            // 
+            // pnlBMI
+            // 
+            this.pnlBMI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlBMI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBMI.Controls.Add(this.tlpBMI);
+            this.pnlBMI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBMI.Location = new System.Drawing.Point(10, 13);
+            this.pnlBMI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBMI.Name = "pnlBMI";
+            this.pnlBMI.Size = new System.Drawing.Size(154, 79);
+            this.pnlBMI.TabIndex = 0;
+            // 
+            // tlpBMI
+            // 
+            this.tlpBMI.ColumnCount = 2;
+            this.tlpBMI.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.13208F));
+            this.tlpBMI.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.86793F));
+            this.tlpBMI.Controls.Add(this.lblBMI, 1, 0);
+            this.tlpBMI.Controls.Add(this.picBMI, 0, 0);
+            this.tlpBMI.Controls.Add(this.lblResultBMI, 1, 1);
+            this.tlpBMI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpBMI.Location = new System.Drawing.Point(0, 0);
+            this.tlpBMI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpBMI.Name = "tlpBMI";
+            this.tlpBMI.RowCount = 2;
+            this.tlpBMI.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBMI.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBMI.Size = new System.Drawing.Size(152, 77);
+            this.tlpBMI.TabIndex = 0;
             // 
             // lblBMI
             // 
-            this.lblBMI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBMI.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblBMI.AutoSize = true;
-            this.lblBMI.Location = new System.Drawing.Point(92, 17);
+            this.lblBMI.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBMI.ForeColor = System.Drawing.Color.Navy;
+            this.lblBMI.Location = new System.Drawing.Point(49, 6);
+            this.lblBMI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBMI.Name = "lblBMI";
-            this.lblBMI.Size = new System.Drawing.Size(59, 28);
-            this.lblBMI.TabIndex = 0;
-            this.lblBMI.Text = "BMI :";
+            this.lblBMI.Size = new System.Drawing.Size(48, 25);
+            this.lblBMI.TabIndex = 2;
+            this.lblBMI.Text = "BMI";
             // 
-            // lblBMR
+            // picBMI
             // 
-            this.lblBMR.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBMR.AutoSize = true;
-            this.lblBMR.Location = new System.Drawing.Point(89, 79);
-            this.lblBMR.Name = "lblBMR";
-            this.lblBMR.Size = new System.Drawing.Size(65, 28);
-            this.lblBMR.TabIndex = 1;
-            this.lblBMR.Text = "BMR :";
+            this.picBMI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBMI.Image = ((System.Drawing.Image)(resources.GetObject("picBMI.Image")));
+            this.picBMI.Location = new System.Drawing.Point(2, 2);
+            this.picBMI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBMI.Name = "picBMI";
+            this.picBMI.Size = new System.Drawing.Size(43, 34);
+            this.picBMI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBMI.TabIndex = 3;
+            this.picBMI.TabStop = false;
+            // 
+            // lblResultBMI
+            // 
+            this.lblResultBMI.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblResultBMI.AutoSize = true;
+            this.lblResultBMI.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultBMI.Location = new System.Drawing.Point(49, 45);
+            this.lblResultBMI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblResultBMI.Name = "lblResultBMI";
+            this.lblResultBMI.Size = new System.Drawing.Size(36, 25);
+            this.lblResultBMI.TabIndex = 4;
+            this.lblResultBMI.Text = "---";
+            // 
+            // pnlIBW
+            // 
+            this.pnlIBW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlIBW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlIBW.Controls.Add(this.tlpIBW);
+            this.pnlIBW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlIBW.Location = new System.Drawing.Point(10, 107);
+            this.pnlIBW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlIBW.Name = "pnlIBW";
+            this.pnlIBW.Size = new System.Drawing.Size(154, 94);
+            this.pnlIBW.TabIndex = 1;
+            // 
+            // tlpIBW
+            // 
+            this.tlpIBW.ColumnCount = 2;
+            this.tlpIBW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.54717F));
+            this.tlpIBW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.45283F));
+            this.tlpIBW.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpIBW.Controls.Add(this.lblIBW, 1, 0);
+            this.tlpIBW.Controls.Add(this.picIBW, 0, 0);
+            this.tlpIBW.Controls.Add(this.lblResultIBW, 1, 1);
+            this.tlpIBW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpIBW.Location = new System.Drawing.Point(0, 0);
+            this.tlpIBW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpIBW.Name = "tlpIBW";
+            this.tlpIBW.RowCount = 2;
+            this.tlpIBW.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpIBW.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpIBW.Size = new System.Drawing.Size(152, 92);
+            this.tlpIBW.TabIndex = 0;
             // 
             // lblIBW
             // 
-            this.lblIBW.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIBW.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIBW.AutoSize = true;
-            this.lblIBW.Location = new System.Drawing.Point(73, 141);
+            this.lblIBW.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIBW.ForeColor = System.Drawing.Color.Navy;
+            this.lblIBW.Location = new System.Drawing.Point(51, 12);
+            this.lblIBW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIBW.Name = "lblIBW";
-            this.lblIBW.Size = new System.Drawing.Size(97, 28);
-            this.lblIBW.TabIndex = 2;
-            this.lblIBW.Text = "IBW(kg) :";
+            this.lblIBW.Size = new System.Drawing.Size(72, 21);
+            this.lblIBW.TabIndex = 1;
+            this.lblIBW.Text = "IBW(kg)";
+            // 
+            // picIBW
+            // 
+            this.picIBW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picIBW.Image = ((System.Drawing.Image)(resources.GetObject("picIBW.Image")));
+            this.picIBW.Location = new System.Drawing.Point(2, 2);
+            this.picIBW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picIBW.Name = "picIBW";
+            this.picIBW.Size = new System.Drawing.Size(45, 42);
+            this.picIBW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIBW.TabIndex = 2;
+            this.picIBW.TabStop = false;
+            // 
+            // lblResultIBW
+            // 
+            this.lblResultIBW.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblResultIBW.AutoSize = true;
+            this.lblResultIBW.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultIBW.Location = new System.Drawing.Point(51, 56);
+            this.lblResultIBW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblResultIBW.Name = "lblResultIBW";
+            this.lblResultIBW.Size = new System.Drawing.Size(36, 25);
+            this.lblResultIBW.TabIndex = 4;
+            this.lblResultIBW.Text = "---";
+            // 
+            // pnlBMR
+            // 
+            this.pnlBMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlBMR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBMR.Controls.Add(this.tlpBMR);
+            this.pnlBMR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBMR.Location = new System.Drawing.Point(176, 13);
+            this.pnlBMR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBMR.Name = "pnlBMR";
+            this.pnlBMR.Size = new System.Drawing.Size(144, 79);
+            this.pnlBMR.TabIndex = 2;
+            // 
+            // tlpBMR
+            // 
+            this.tlpBMR.ColumnCount = 2;
+            this.tlpBMR.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.32323F));
+            this.tlpBMR.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.67677F));
+            this.tlpBMR.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpBMR.Controls.Add(this.lblBMR, 1, 0);
+            this.tlpBMR.Controls.Add(this.picBMR, 0, 0);
+            this.tlpBMR.Controls.Add(this.lblResultBMR, 1, 1);
+            this.tlpBMR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpBMR.Location = new System.Drawing.Point(0, 0);
+            this.tlpBMR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpBMR.Name = "tlpBMR";
+            this.tlpBMR.RowCount = 2;
+            this.tlpBMR.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBMR.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpBMR.Size = new System.Drawing.Size(142, 77);
+            this.tlpBMR.TabIndex = 0;
+            // 
+            // lblBMR
+            // 
+            this.lblBMR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblBMR.AutoSize = true;
+            this.lblBMR.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBMR.ForeColor = System.Drawing.Color.Navy;
+            this.lblBMR.Location = new System.Drawing.Point(47, 6);
+            this.lblBMR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBMR.Name = "lblBMR";
+            this.lblBMR.Size = new System.Drawing.Size(54, 25);
+            this.lblBMR.TabIndex = 1;
+            this.lblBMR.Text = "BMR";
+            // 
+            // picBMR
+            // 
+            this.picBMR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBMR.Image = ((System.Drawing.Image)(resources.GetObject("picBMR.Image")));
+            this.picBMR.Location = new System.Drawing.Point(2, 2);
+            this.picBMR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBMR.Name = "picBMR";
+            this.picBMR.Size = new System.Drawing.Size(41, 34);
+            this.picBMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBMR.TabIndex = 2;
+            this.picBMR.TabStop = false;
+            // 
+            // lblResultBMR
+            // 
+            this.lblResultBMR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblResultBMR.AutoSize = true;
+            this.lblResultBMR.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultBMR.Location = new System.Drawing.Point(47, 45);
+            this.lblResultBMR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblResultBMR.Name = "lblResultBMR";
+            this.lblResultBMR.Size = new System.Drawing.Size(36, 25);
+            this.lblResultBMR.TabIndex = 4;
+            this.lblResultBMR.Text = "---";
+            // 
+            // pnlTDEE
+            // 
+            this.pnlTDEE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlTDEE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTDEE.Controls.Add(this.tlpTDEE);
+            this.pnlTDEE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTDEE.Location = new System.Drawing.Point(176, 107);
+            this.pnlTDEE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTDEE.Name = "pnlTDEE";
+            this.pnlTDEE.Size = new System.Drawing.Size(144, 94);
+            this.pnlTDEE.TabIndex = 3;
+            // 
+            // tlpTDEE
+            // 
+            this.tlpTDEE.ColumnCount = 2;
+            this.tlpTDEE.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.83838F));
+            this.tlpTDEE.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.16161F));
+            this.tlpTDEE.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpTDEE.Controls.Add(this.lblTDEE, 1, 0);
+            this.tlpTDEE.Controls.Add(this.picTDEE, 0, 0);
+            this.tlpTDEE.Controls.Add(this.lblResultTDEE, 1, 1);
+            this.tlpTDEE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTDEE.Location = new System.Drawing.Point(0, 0);
+            this.tlpTDEE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTDEE.Name = "tlpTDEE";
+            this.tlpTDEE.RowCount = 2;
+            this.tlpTDEE.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTDEE.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTDEE.Size = new System.Drawing.Size(142, 92);
+            this.tlpTDEE.TabIndex = 0;
             // 
             // lblTDEE
             // 
-            this.lblTDEE.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTDEE.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTDEE.AutoSize = true;
-            this.lblTDEE.Location = new System.Drawing.Point(63, 204);
+            this.lblTDEE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTDEE.ForeColor = System.Drawing.Color.Navy;
+            this.lblTDEE.Location = new System.Drawing.Point(50, 2);
+            this.lblTDEE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTDEE.Name = "lblTDEE";
-            this.lblTDEE.Size = new System.Drawing.Size(117, 28);
-            this.lblTDEE.TabIndex = 3;
-            this.lblTDEE.Text = "TDEE(kcal) :";
+            this.lblTDEE.Size = new System.Drawing.Size(86, 42);
+            this.lblTDEE.TabIndex = 1;
+            this.lblTDEE.Text = "TDEE(kcal)";
             // 
-            // lblBMIvalue
+            // picTDEE
             // 
-            this.lblBMIvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBMIvalue.AutoSize = true;
-            this.lblBMIvalue.Location = new System.Drawing.Point(340, 17);
-            this.lblBMIvalue.Name = "lblBMIvalue";
-            this.lblBMIvalue.Size = new System.Drawing.Size(0, 28);
-            this.lblBMIvalue.TabIndex = 4;
+            this.picTDEE.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picTDEE.Image = ((System.Drawing.Image)(resources.GetObject("picTDEE.Image")));
+            this.picTDEE.Location = new System.Drawing.Point(2, 2);
+            this.picTDEE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTDEE.Name = "picTDEE";
+            this.picTDEE.Size = new System.Drawing.Size(44, 42);
+            this.picTDEE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTDEE.TabIndex = 2;
+            this.picTDEE.TabStop = false;
             // 
-            // lblBMRvalue
+            // lblResultTDEE
             // 
-            this.lblBMRvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblBMRvalue.AutoSize = true;
-            this.lblBMRvalue.Location = new System.Drawing.Point(340, 79);
-            this.lblBMRvalue.Name = "lblBMRvalue";
-            this.lblBMRvalue.Size = new System.Drawing.Size(0, 28);
-            this.lblBMRvalue.TabIndex = 5;
+            this.lblResultTDEE.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblResultTDEE.AutoSize = true;
+            this.lblResultTDEE.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultTDEE.Location = new System.Drawing.Point(50, 56);
+            this.lblResultTDEE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblResultTDEE.Name = "lblResultTDEE";
+            this.lblResultTDEE.Size = new System.Drawing.Size(36, 25);
+            this.lblResultTDEE.TabIndex = 4;
+            this.lblResultTDEE.Text = "---";
             // 
-            // lblIBWvalue
+            // tlpFitnessTestCalculateButton
             // 
-            this.lblIBWvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblIBWvalue.AutoSize = true;
-            this.lblIBWvalue.Location = new System.Drawing.Point(340, 141);
-            this.lblIBWvalue.Name = "lblIBWvalue";
-            this.lblIBWvalue.Size = new System.Drawing.Size(0, 28);
-            this.lblIBWvalue.TabIndex = 6;
+            this.tlpFitnessTestCalculateButton.ColumnCount = 3;
+            this.tlpFitnessTestCalculateButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpFitnessTestCalculateButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tlpFitnessTestCalculateButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpFitnessTestCalculateButton.Controls.Add(this.btnCalculateFitnessTest, 1, 0);
+            this.tlpFitnessTestCalculateButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpFitnessTestCalculateButton.Location = new System.Drawing.Point(2, 213);
+            this.tlpFitnessTestCalculateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpFitnessTestCalculateButton.Name = "tlpFitnessTestCalculateButton";
+            this.tlpFitnessTestCalculateButton.RowCount = 1;
+            this.tlpFitnessTestCalculateButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFitnessTestCalculateButton.Size = new System.Drawing.Size(332, 36);
+            this.tlpFitnessTestCalculateButton.TabIndex = 2;
             // 
-            // lblTDEEvalue
+            // btnCalculateFitnessTest
             // 
-            this.lblTDEEvalue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTDEEvalue.AutoSize = true;
-            this.lblTDEEvalue.Location = new System.Drawing.Point(340, 204);
-            this.lblTDEEvalue.Name = "lblTDEEvalue";
-            this.lblTDEEvalue.Size = new System.Drawing.Size(0, 28);
-            this.lblTDEEvalue.TabIndex = 7;
+            this.btnCalculateFitnessTest.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCalculateFitnessTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCalculateFitnessTest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
+            this.btnCalculateFitnessTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculateFitnessTest.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculateFitnessTest.ForeColor = System.Drawing.Color.White;
+            this.btnCalculateFitnessTest.Location = new System.Drawing.Point(18, 2);
+            this.btnCalculateFitnessTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalculateFitnessTest.Name = "btnCalculateFitnessTest";
+            this.btnCalculateFitnessTest.Size = new System.Drawing.Size(294, 32);
+            this.btnCalculateFitnessTest.TabIndex = 3;
+            this.btnCalculateFitnessTest.Text = "📱Calculate";
+            this.btnCalculateFitnessTest.UseVisualStyleBackColor = false;
             // 
-            // picDietPlanOnFitessTest
+            // tableLayoutPanel7
             // 
-            this.picDietPlanOnFitessTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picDietPlanOnFitessTest.Location = new System.Drawing.Point(446, 37);
-            this.picDietPlanOnFitessTest.Name = "picDietPlanOnFitessTest";
-            this.picDietPlanOnFitessTest.Size = new System.Drawing.Size(276, 251);
-            this.picDietPlanOnFitessTest.TabIndex = 1;
-            this.picDietPlanOnFitessTest.TabStop = false;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.picFitnessTestHumanMuscle, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(16, 2);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.875F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.125F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(310, 507);
+            this.tableLayoutPanel7.TabIndex = 2;
             // 
-            // tlpFitnessTestInputs
+            // picFitnessTestHumanMuscle
             // 
-            this.tlpFitnessTestInputs.ColumnCount = 3;
-            this.tlpFitnessTestInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.69714F));
-            this.tlpFitnessTestInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.60436F));
-            this.tlpFitnessTestInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.6985F));
-            this.tlpFitnessTestInputs.Controls.Add(this.txtHight, 1, 1);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblGoal, 0, 5);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblActivity, 0, 4);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblAge, 0, 3);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblWeight, 0, 2);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblHight, 0, 1);
-            this.tlpFitnessTestInputs.Controls.Add(this.txtWeight, 1, 2);
-            this.tlpFitnessTestInputs.Controls.Add(this.txtAge, 1, 3);
-            this.tlpFitnessTestInputs.Controls.Add(this.cmbActivity, 1, 4);
-            this.tlpFitnessTestInputs.Controls.Add(this.cmbGoal, 1, 5);
-            this.tlpFitnessTestInputs.Controls.Add(this.cmbGender, 1, 6);
-            this.tlpFitnessTestInputs.Controls.Add(this.lblGender, 0, 6);
-            this.tlpFitnessTestInputs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFitnessTestInputs.Location = new System.Drawing.Point(3, 3);
-            this.tlpFitnessTestInputs.Name = "tlpFitnessTestInputs";
-            this.tlpFitnessTestInputs.RowCount = 7;
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpFitnessTestInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tlpFitnessTestInputs.Size = new System.Drawing.Size(725, 367);
-            this.tlpFitnessTestInputs.TabIndex = 2;
+            this.picFitnessTestHumanMuscle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFitnessTestHumanMuscle.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTestHumanMuscle.Image")));
+            this.picFitnessTestHumanMuscle.Location = new System.Drawing.Point(2, 11);
+            this.picFitnessTestHumanMuscle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFitnessTestHumanMuscle.Name = "picFitnessTestHumanMuscle";
+            this.picFitnessTestHumanMuscle.Size = new System.Drawing.Size(306, 494);
+            this.picFitnessTestHumanMuscle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFitnessTestHumanMuscle.TabIndex = 1;
+            this.picFitnessTestHumanMuscle.TabStop = false;
             // 
-            // txtHight
+            // tlpFitnessTestHeader
             // 
-            this.txtHight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHight.Location = new System.Drawing.Point(247, 65);
-            this.txtHight.Name = "txtHight";
-            this.txtHight.Size = new System.Drawing.Size(208, 34);
-            this.txtHight.TabIndex = 1;
+            this.tlpFitnessTestHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpFitnessTestHeader.ColumnCount = 4;
+            this.tlpFitnessTestHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpFitnessTestHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
+            this.tlpFitnessTestHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.16434F));
+            this.tlpFitnessTestHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.83566F));
+            this.tlpFitnessTestHeader.Controls.Add(this.picFitnessTest, 0, 0);
+            this.tlpFitnessTestHeader.Controls.Add(this.tlpFitnessTestTitle, 1, 0);
+            this.tlpFitnessTestHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpFitnessTestHeader.Location = new System.Drawing.Point(45, 13);
+            this.tlpFitnessTestHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpFitnessTestHeader.Name = "tlpFitnessTestHeader";
+            this.tlpFitnessTestHeader.RowCount = 1;
+            this.tlpFitnessTestHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFitnessTestHeader.Size = new System.Drawing.Size(772, 55);
+            this.tlpFitnessTestHeader.TabIndex = 10;
             // 
-            // lblGoal
+            // picFitnessTest
             // 
-            this.lblGoal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGoal.AutoSize = true;
-            this.lblGoal.Location = new System.Drawing.Point(90, 281);
-            this.lblGoal.Name = "lblGoal";
-            this.lblGoal.Size = new System.Drawing.Size(64, 28);
-            this.lblGoal.TabIndex = 1;
-            this.lblGoal.Text = "Goal :";
+            this.picFitnessTest.Image = ((System.Drawing.Image)(resources.GetObject("picFitnessTest.Image")));
+            this.picFitnessTest.Location = new System.Drawing.Point(0, 0);
+            this.picFitnessTest.Margin = new System.Windows.Forms.Padding(0);
+            this.picFitnessTest.Name = "picFitnessTest";
+            this.picFitnessTest.Size = new System.Drawing.Size(64, 55);
+            this.picFitnessTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFitnessTest.TabIndex = 0;
+            this.picFitnessTest.TabStop = false;
             // 
-            // lblActivity
+            // tlpFitnessTestTitle
             // 
-            this.lblActivity.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblActivity.AutoSize = true;
-            this.lblActivity.Location = new System.Drawing.Point(77, 232);
-            this.lblActivity.Name = "lblActivity";
-            this.lblActivity.Size = new System.Drawing.Size(89, 28);
-            this.lblActivity.TabIndex = 1;
-            this.lblActivity.Text = "Activity :";
+            this.tlpFitnessTestTitle.ColumnCount = 1;
+            this.tlpFitnessTestTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFitnessTestTitle.Controls.Add(this.lblViewAllWorkoutSheduleDetails, 0, 1);
+            this.tlpFitnessTestTitle.Controls.Add(this.lblMemberFitnessTest, 0, 0);
+            this.tlpFitnessTestTitle.Location = new System.Drawing.Point(68, 0);
+            this.tlpFitnessTestTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpFitnessTestTitle.Name = "tlpFitnessTestTitle";
+            this.tlpFitnessTestTitle.RowCount = 3;
+            this.tlpFitnessTestTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.62069F));
+            this.tlpFitnessTestTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.86207F));
+            this.tlpFitnessTestTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.7931F));
+            this.tlpFitnessTestTitle.Size = new System.Drawing.Size(301, 55);
+            this.tlpFitnessTestTitle.TabIndex = 1;
             // 
-            // lblAge
+            // lblViewAllWorkoutSheduleDetails
             // 
-            this.lblAge.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(92, 182);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(59, 28);
-            this.lblAge.TabIndex = 1;
-            this.lblAge.Text = "Age :";
+            this.lblViewAllWorkoutSheduleDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblViewAllWorkoutSheduleDetails.AutoSize = true;
+            this.lblViewAllWorkoutSheduleDetails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewAllWorkoutSheduleDetails.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblViewAllWorkoutSheduleDetails.Location = new System.Drawing.Point(2, 33);
+            this.lblViewAllWorkoutSheduleDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewAllWorkoutSheduleDetails.Name = "lblViewAllWorkoutSheduleDetails";
+            this.lblViewAllWorkoutSheduleDetails.Size = new System.Drawing.Size(292, 13);
+            this.lblViewAllWorkoutSheduleDetails.TabIndex = 3;
+            this.lblViewAllWorkoutSheduleDetails.Text = " Input Member\'s Essential Details And Calculate Output";
             // 
-            // lblWeight
+            // lblMemberFitnessTest
             // 
-            this.lblWeight.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(59, 128);
-            this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(126, 28);
-            this.lblWeight.TabIndex = 2;
-            this.lblWeight.Text = "Weight(Kg) :";
+            this.lblMemberFitnessTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblMemberFitnessTest.AutoSize = true;
+            this.lblMemberFitnessTest.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberFitnessTest.Location = new System.Drawing.Point(2, 7);
+            this.lblMemberFitnessTest.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMemberFitnessTest.Name = "lblMemberFitnessTest";
+            this.lblMemberFitnessTest.Size = new System.Drawing.Size(199, 25);
+            this.lblMemberFitnessTest.TabIndex = 2;
+            this.lblMemberFitnessTest.Text = "Member\'s Fitness Test";
             // 
-            // lblHight
+            // tlpFitnessTestEntireForm
             // 
-            this.lblHight.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHight.AutoSize = true;
-            this.lblHight.Location = new System.Drawing.Point(64, 74);
-            this.lblHight.Name = "lblHight";
-            this.lblHight.Size = new System.Drawing.Size(115, 28);
-            this.lblHight.TabIndex = 2;
-            this.lblHight.Text = "Hight(cm) :";
-            // 
-            // txtWeight
-            // 
-            this.txtWeight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtWeight.Location = new System.Drawing.Point(247, 117);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(208, 34);
-            this.txtWeight.TabIndex = 1;
-            // 
-            // txtAge
-            // 
-            this.txtAge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAge.Location = new System.Drawing.Point(247, 173);
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(208, 34);
-            this.txtAge.TabIndex = 1;
-            // 
-            // cmbActivity
-            // 
-            this.cmbActivity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbActivity.FormattingEnabled = true;
-            this.cmbActivity.Location = new System.Drawing.Point(247, 226);
-            this.cmbActivity.Name = "cmbActivity";
-            this.cmbActivity.Size = new System.Drawing.Size(208, 36);
-            this.cmbActivity.TabIndex = 3;
-            // 
-            // cmbGoal
-            // 
-            this.cmbGoal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbGoal.FormattingEnabled = true;
-            this.cmbGoal.Location = new System.Drawing.Point(247, 273);
-            this.cmbGoal.Name = "cmbGoal";
-            this.cmbGoal.Size = new System.Drawing.Size(208, 36);
-            this.cmbGoal.TabIndex = 3;
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(247, 323);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(208, 36);
-            this.cmbGender.TabIndex = 4;
-            // 
-            // lblGender
-            // 
-            this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(77, 329);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(90, 28);
-            this.lblGender.TabIndex = 1;
-            this.lblGender.Text = "Gender :";
-            // 
-            // tlpTitleandPicture
-            // 
-            this.tlpTitleandPicture.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlpTitleandPicture.ColumnCount = 1;
-            this.tlpTitleandPicture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitleandPicture.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTitleandPicture.Controls.Add(this.picHumanMuscle, 0, 1);
-            this.tlpTitleandPicture.Controls.Add(this.label1, 0, 0);
-            this.tlpTitleandPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitleandPicture.Location = new System.Drawing.Point(3, 3);
-            this.tlpTitleandPicture.Name = "tlpTitleandPicture";
-            this.tlpTitleandPicture.RowCount = 2;
-            this.tlpTitleandPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.938547F));
-            this.tlpTitleandPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.06145F));
-            this.tlpTitleandPicture.Size = new System.Drawing.Size(388, 715);
-            this.tlpTitleandPicture.TabIndex = 2;
-            // 
-            // picHumanMuscle
-            // 
-            this.picHumanMuscle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picHumanMuscle.Image = ((System.Drawing.Image)(resources.GetObject("picHumanMuscle.Image")));
-            this.picHumanMuscle.Location = new System.Drawing.Point(3, 66);
-            this.picHumanMuscle.Name = "picHumanMuscle";
-            this.picHumanMuscle.Size = new System.Drawing.Size(382, 646);
-            this.picHumanMuscle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHumanMuscle.TabIndex = 1;
-            this.picHumanMuscle.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 45);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Fitness Test";
+            this.tlpFitnessTestEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpFitnessTestEntireForm.ColumnCount = 3;
+            this.tlpFitnessTestEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpFitnessTestEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tlpFitnessTestEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpFitnessTestEntireForm.Controls.Add(this.tlpFitnessTestHeader, 1, 1);
+            this.tlpFitnessTestEntireForm.Controls.Add(this.TLPFitnessTestInputOutput, 1, 2);
+            this.tlpFitnessTestEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpFitnessTestEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpFitnessTestEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpFitnessTestEntireForm.Name = "tlpFitnessTestEntireForm";
+            this.tlpFitnessTestEntireForm.RowCount = 4;
+            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.903553F));
+            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.688013F));
+            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.56486F));
+            this.tlpFitnessTestEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.680203F));
+            this.tlpFitnessTestEntireForm.Size = new System.Drawing.Size(863, 609);
+            this.tlpFitnessTestEntireForm.TabIndex = 0;
+            this.tlpFitnessTestEntireForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // FrmFitnessTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 721);
+            this.ClientSize = new System.Drawing.Size(863, 609);
             this.Controls.Add(this.tlpFitnessTestEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(879, 591);
             this.Name = "FrmFitnessTest";
             this.Text = "FrmFitnessTest";
+            this.Load += new System.EventHandler(this.FrmFitnessTest_Load);
+            this.Shown += new System.EventHandler(this.FrmFitnessTest_Shown);
+            this.TLPFitnessTestInputOutput.ResumeLayout(false);
+            this.tlpSubMemberInputAndOutputFitnessTest.ResumeLayout(false);
+            this.pnlFitnessTestInputOutputBox.ResumeLayout(false);
+            this.tlpMainMemberInputAndOutputFitnessTest.ResumeLayout(false);
+            this.tlpInputFitnessTest.ResumeLayout(false);
+            this.tlpInputFitnessTest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGender)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAgeInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picActivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoal)).EndInit();
+            this.tlpOutputFitnessTest.ResumeLayout(false);
+            this.pnlBMI.ResumeLayout(false);
+            this.tlpBMI.ResumeLayout(false);
+            this.tlpBMI.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMI)).EndInit();
+            this.pnlIBW.ResumeLayout(false);
+            this.tlpIBW.ResumeLayout(false);
+            this.tlpIBW.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIBW)).EndInit();
+            this.pnlBMR.ResumeLayout(false);
+            this.tlpBMR.ResumeLayout(false);
+            this.tlpBMR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBMR)).EndInit();
+            this.pnlTDEE.ResumeLayout(false);
+            this.tlpTDEE.ResumeLayout(false);
+            this.tlpTDEE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTDEE)).EndInit();
+            this.tlpFitnessTestCalculateButton.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTestHumanMuscle)).EndInit();
+            this.tlpFitnessTestHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFitnessTest)).EndInit();
+            this.tlpFitnessTestTitle.ResumeLayout(false);
+            this.tlpFitnessTestTitle.PerformLayout();
             this.tlpFitnessTestEntireForm.ResumeLayout(false);
-            this.tlpFitnessTestInputOutput.ResumeLayout(false);
-            this.tlpFitnessTestOutput.ResumeLayout(false);
-            this.tlpAllOutputFitnessTest.ResumeLayout(false);
-            this.tlpAllOutputFitnessTest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDietPlanOnFitessTest)).EndInit();
-            this.tlpFitnessTestInputs.ResumeLayout(false);
-            this.tlpFitnessTestInputs.PerformLayout();
-            this.tlpTitleandPicture.ResumeLayout(false);
-            this.tlpTitleandPicture.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHumanMuscle)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestEntireForm;
-        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestInputOutput;
-        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestOutput;
-        private System.Windows.Forms.TableLayoutPanel tlpAllOutputFitnessTest;
-        private System.Windows.Forms.Label lblBMI;
-        private System.Windows.Forms.Label lblBMR;
+
+        private System.Windows.Forms.TableLayoutPanel TLPFitnessTestInputOutput;
+        private System.Windows.Forms.TableLayoutPanel tlpSubMemberInputAndOutputFitnessTest;
+        private System.Windows.Forms.Panel pnlFitnessTestInputOutputBox;
+        private System.Windows.Forms.TableLayoutPanel tlpMainMemberInputAndOutputFitnessTest;
+        private System.Windows.Forms.TableLayoutPanel tlpInputFitnessTest;
+        private System.Windows.Forms.Label lblGoalInput;
+        private System.Windows.Forms.ComboBox cmbGoalInput;
+        private System.Windows.Forms.Label lblActivityInput;
+        private System.Windows.Forms.ComboBox cmbActivityInput;
+        private System.Windows.Forms.Label lblAgeInput;
+        private System.Windows.Forms.TextBox txtAgeInput;
+        private System.Windows.Forms.Label lblGenderInput;
+        private System.Windows.Forms.ComboBox cmbGenderInput;
+        private System.Windows.Forms.Label lblWeightInput;
+        private System.Windows.Forms.TextBox txtWeightInput;
+        private System.Windows.Forms.Label lblHightInput;
+        private System.Windows.Forms.TextBox txtHightInput;
+        private System.Windows.Forms.TableLayoutPanel tlpOutputFitnessTest;
+        private System.Windows.Forms.Panel pnlBMI;
+        private System.Windows.Forms.Panel pnlIBW;
+        private System.Windows.Forms.TableLayoutPanel tlpIBW;
         private System.Windows.Forms.Label lblIBW;
+        private System.Windows.Forms.Panel pnlBMR;
+        private System.Windows.Forms.TableLayoutPanel tlpBMR;
+        private System.Windows.Forms.Label lblBMR;
+        private System.Windows.Forms.Panel pnlTDEE;
+        private System.Windows.Forms.TableLayoutPanel tlpTDEE;
         private System.Windows.Forms.Label lblTDEE;
-        private System.Windows.Forms.Label lblBMIvalue;
-        private System.Windows.Forms.Label lblBMRvalue;
-        private System.Windows.Forms.Label lblIBWvalue;
-        private System.Windows.Forms.Label lblTDEEvalue;
-        private System.Windows.Forms.PictureBox picDietPlanOnFitessTest;
-        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestInputs;
-        private System.Windows.Forms.TextBox txtHight;
-        private System.Windows.Forms.Label lblGoal;
-        private System.Windows.Forms.Label lblActivity;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblWeight;
-        private System.Windows.Forms.Label lblHight;
-        private System.Windows.Forms.TextBox txtWeight;
-        private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.ComboBox cmbActivity;
-        private System.Windows.Forms.ComboBox cmbGoal;
-        private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TableLayoutPanel tlpTitleandPicture;
-        private System.Windows.Forms.PictureBox picHumanMuscle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestCalculateButton;
+        private System.Windows.Forms.Button btnCalculateFitnessTest;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestHeader;
+        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestTitle;
+        private System.Windows.Forms.Label lblViewAllWorkoutSheduleDetails;
+        private System.Windows.Forms.Label lblMemberFitnessTest;
+        private System.Windows.Forms.TableLayoutPanel tlpFitnessTestEntireForm;
+        private System.Windows.Forms.PictureBox picIBW;
+        private System.Windows.Forms.PictureBox picBMR;
+        private System.Windows.Forms.PictureBox picTDEE;
+        private System.Windows.Forms.TableLayoutPanel tlpBMI;
+        private System.Windows.Forms.Label lblBMI;
+        private System.Windows.Forms.PictureBox picBMI;
+        private System.Windows.Forms.Label lblResultBMI;
+        private System.Windows.Forms.Label lblResultIBW;
+        private System.Windows.Forms.Label lblResultBMR;
+        private System.Windows.Forms.Label lblResultTDEE;
+        private System.Windows.Forms.PictureBox picHight;
+        private System.Windows.Forms.PictureBox picWeight;
+        private System.Windows.Forms.PictureBox picGender;
+        private System.Windows.Forms.PictureBox picAgeInput;
+        private System.Windows.Forms.PictureBox picActivity;
+        private System.Windows.Forms.PictureBox picGoal;
+        private System.Windows.Forms.PictureBox picFitnessTestHumanMuscle;
+        private System.Windows.Forms.PictureBox picFitnessTest;
     }
 }

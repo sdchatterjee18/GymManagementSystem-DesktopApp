@@ -11,8 +11,12 @@ using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
+using GymManagementSystem.FORMS.Attendance;
+using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
+using GymManagementSystem.FormsSuperAdmin.Salary;
+
 
 namespace GymManagementSystem
 {
@@ -26,9 +30,8 @@ namespace GymManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmMainLayout());
-            Application.Run(new FrmMemberProfile());
-           
+            //Application.Run(new FrmSAMainForm());
+            Application.Run(new FrmMainLayout());
         }
     }
 }

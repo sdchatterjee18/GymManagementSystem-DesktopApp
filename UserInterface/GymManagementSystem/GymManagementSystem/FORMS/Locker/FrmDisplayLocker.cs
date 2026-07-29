@@ -115,8 +115,7 @@ namespace GymManagementSystem.FORMS.Locker
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
+             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
@@ -128,7 +127,6 @@ namespace GymManagementSystem.FORMS.Locker
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
