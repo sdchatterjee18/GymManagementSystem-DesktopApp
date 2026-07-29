@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 
 namespace GymManagementSystem.FORMS.Shift
 {
@@ -21,12 +22,15 @@ namespace GymManagementSystem.FORMS.Shift
         public FrmDisplayShift()
         {
             InitializeComponent();
+          
         }
 
         private void FrmDisplayShift_Load(object sender, EventArgs e)
         {
 
         }
+
+       
        
     }
 }
