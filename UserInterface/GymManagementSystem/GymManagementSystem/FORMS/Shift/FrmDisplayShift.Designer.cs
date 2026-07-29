@@ -315,6 +315,8 @@
             this.pnlEveningShiftTitle.Name = "pnlEveningShiftTitle";
             this.pnlEveningShiftTitle.Size = new System.Drawing.Size(239, 61);
             this.pnlEveningShiftTitle.TabIndex = 2;
+            this.pnlEveningShiftTitle.MouseEnter += new System.EventHandler(this.pnlEveningShiftTitle_MouseEnter);
+            this.pnlEveningShiftTitle.MouseLeave += new System.EventHandler(this.pnlEveningShiftTitle_MouseLeave);
             // 
             // lblEveningShift
             // 
@@ -327,6 +329,8 @@
             this.lblEveningShift.Size = new System.Drawing.Size(201, 38);
             this.lblEveningShift.TabIndex = 5;
             this.lblEveningShift.Text = " Evening Shift";
+            this.lblEveningShift.MouseEnter += new System.EventHandler(this.pnlEveningShiftTitle_MouseEnter);
+            this.lblEveningShift.MouseLeave += new System.EventHandler(this.pnlEveningShiftTitle_MouseLeave);
             // 
             // pnlEveningShiftpic
             // 
@@ -360,6 +364,8 @@
             this.pnlMorningShiftTitle.Name = "pnlMorningShiftTitle";
             this.pnlMorningShiftTitle.Size = new System.Drawing.Size(247, 61);
             this.pnlMorningShiftTitle.TabIndex = 9;
+            this.pnlMorningShiftTitle.MouseEnter += new System.EventHandler(this.pnlMorningShiftTitle_MouseEnter);
+            this.pnlMorningShiftTitle.MouseLeave += new System.EventHandler(this.pnlMorningShiftTitle_MouseLeave);
             // 
             // lblMorningShift
             // 
@@ -372,6 +378,8 @@
             this.lblMorningShift.Size = new System.Drawing.Size(203, 38);
             this.lblMorningShift.TabIndex = 5;
             this.lblMorningShift.Text = "Morning Shift";
+            this.lblMorningShift.MouseEnter += new System.EventHandler(this.pnlMorningShiftTitle_MouseEnter);
+            this.lblMorningShift.MouseLeave += new System.EventHandler(this.pnlMorningShiftTitle_MouseLeave);
             // 
             // pnlNoonShiftTitle
             // 
@@ -383,6 +391,8 @@
             this.pnlNoonShiftTitle.Name = "pnlNoonShiftTitle";
             this.pnlNoonShiftTitle.Size = new System.Drawing.Size(240, 61);
             this.pnlNoonShiftTitle.TabIndex = 10;
+            this.pnlNoonShiftTitle.MouseEnter += new System.EventHandler(this.pnlNoonShiftTitle_MouseEnter);
+            this.pnlNoonShiftTitle.MouseLeave += new System.EventHandler(this.pnlNoonShiftTitle_MouseLeave);
             // 
             // lblNoonShift
             // 
@@ -395,6 +405,8 @@
             this.lblNoonShift.Size = new System.Drawing.Size(162, 38);
             this.lblNoonShift.TabIndex = 5;
             this.lblNoonShift.Text = "Noon Shift";
+            this.lblNoonShift.MouseEnter += new System.EventHandler(this.pnlNoonShiftTitle_MouseEnter);
+            this.lblNoonShift.MouseLeave += new System.EventHandler(this.pnlNoonShiftTitle_MouseLeave);
             // 
             // pnlAfternoonShiftTitle
             // 
@@ -406,6 +418,8 @@
             this.pnlAfternoonShiftTitle.Name = "pnlAfternoonShiftTitle";
             this.pnlAfternoonShiftTitle.Size = new System.Drawing.Size(233, 61);
             this.pnlAfternoonShiftTitle.TabIndex = 11;
+            this.pnlAfternoonShiftTitle.MouseEnter += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseEnter);
+            this.pnlAfternoonShiftTitle.MouseLeave += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseLeave);
             // 
             // lblAfternoonShift
             // 
@@ -418,6 +432,8 @@
             this.lblAfternoonShift.Size = new System.Drawing.Size(226, 38);
             this.lblAfternoonShift.TabIndex = 5;
             this.lblAfternoonShift.Text = "Afternoon Shift";
+            this.lblAfternoonShift.MouseEnter += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseEnter);
+            this.lblAfternoonShift.MouseLeave += new System.EventHandler(this.pnlAfternoonShiftTitle_MouseLeave);
             // 
             // pnlMorningShiftTime
             // 
@@ -481,7 +497,7 @@
             this.btnMorningShift.ForeColor = System.Drawing.Color.White;
             this.btnMorningShift.Location = new System.Drawing.Point(128, 154);
             this.btnMorningShift.Name = "btnMorningShift";
-            this.btnMorningShift.Size = new System.Drawing.Size(89, 41);
+            this.btnMorningShift.Size = new System.Drawing.Size(89, 42);
             this.btnMorningShift.TabIndex = 1;
             this.btnMorningShift.Text = "Edit";
             this.btnMorningShift.UseVisualStyleBackColor = false;
@@ -548,7 +564,7 @@
             this.btnNoonShift.ForeColor = System.Drawing.Color.White;
             this.btnNoonShift.Location = new System.Drawing.Point(122, 154);
             this.btnNoonShift.Name = "btnNoonShift";
-            this.btnNoonShift.Size = new System.Drawing.Size(89, 41);
+            this.btnNoonShift.Size = new System.Drawing.Size(89, 42);
             this.btnNoonShift.TabIndex = 1;
             this.btnNoonShift.Text = "Edit";
             this.btnNoonShift.UseVisualStyleBackColor = false;
@@ -615,7 +631,7 @@
             this.btnAfternoonShift.ForeColor = System.Drawing.Color.White;
             this.btnAfternoonShift.Location = new System.Drawing.Point(116, 154);
             this.btnAfternoonShift.Name = "btnAfternoonShift";
-            this.btnAfternoonShift.Size = new System.Drawing.Size(89, 41);
+            this.btnAfternoonShift.Size = new System.Drawing.Size(89, 42);
             this.btnAfternoonShift.TabIndex = 1;
             this.btnAfternoonShift.Text = "Edit";
             this.btnAfternoonShift.UseVisualStyleBackColor = false;
@@ -680,9 +696,9 @@
             this.btnEveningShift.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Indigo;
             this.btnEveningShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEveningShift.ForeColor = System.Drawing.Color.White;
-            this.btnEveningShift.Location = new System.Drawing.Point(121, 154);
+            this.btnEveningShift.Location = new System.Drawing.Point(121, 153);
             this.btnEveningShift.Name = "btnEveningShift";
-            this.btnEveningShift.Size = new System.Drawing.Size(89, 41);
+            this.btnEveningShift.Size = new System.Drawing.Size(89, 43);
             this.btnEveningShift.TabIndex = 1;
             this.btnEveningShift.Text = "Edit";
             this.btnEveningShift.UseVisualStyleBackColor = false;
