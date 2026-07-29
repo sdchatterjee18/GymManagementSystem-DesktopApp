@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
 
 namespace GymManagementSystem.Authentication
 {
@@ -18,19 +20,29 @@ namespace GymManagementSystem.Authentication
 
         private void FrmUserRoleSelection_Load(object sender, EventArgs e)
         {
-
+            this.Text = "";
+            this.ShowIcon = false;
         }
 
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
-            FrmSuperAdminLogin frm = new FrmSuperAdminLogin();
-            frm.Show();
+            FrmSAMainForm frmSAMainForm = new FrmSAMainForm();
+            this.Hide();
+            frmSAMainForm.ShowDialog();
+            this.Close();
+            //FrmSuperAdminLogin frm = new FrmSuperAdminLogin();
+            //frm.Show();
+            
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            FrmAdminLogin frm = new FrmAdminLogin();
-            frm.Show();
+            //FrmAdminLogin frm = new FrmAdminLogin();
+            //frm.Show();
+            FrmMainLayout frmMainLayout = new FrmMainLayout();
+            this.Hide();
+            frmMainLayout.ShowDialog();
+            this.Close();
         }
 
         private void pnlclickAddNewSuperadmin_MouseEnter(object sender, EventArgs e)

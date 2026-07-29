@@ -30,8 +30,8 @@ namespace GymManagementSystem
         static void Main()
         {
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmDisplayShift());
 
             //Application.Run(new FrmSADisplayAllEmployee());
@@ -39,10 +39,8 @@ namespace GymManagementSystem
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmSAAddNewEmployee());
             //Application.Run(new FrmSAProfitLoss());
-           // Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSAMainForm());
-            Application.Run(new FrmMainLayout());
+            Application.Run(new FrmUserRoleSelection());
         }
     }
 }

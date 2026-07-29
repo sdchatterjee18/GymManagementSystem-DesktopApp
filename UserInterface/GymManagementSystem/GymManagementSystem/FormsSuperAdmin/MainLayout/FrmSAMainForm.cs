@@ -10,6 +10,7 @@ using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.FormsSuperAdmin.Financials;
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -373,6 +374,10 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
+            this.Hide();
+            frmUserRoleSelection.ShowDialog();
+            this.Close();
         }
 
         private void pnlSuperAdminPasswordChange_MouseEnter(object sender, EventArgs e)

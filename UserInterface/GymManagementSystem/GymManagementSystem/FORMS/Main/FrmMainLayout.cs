@@ -20,7 +20,7 @@ using GymManagementSystem.FORMS.Member;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
 using GymManagementSystem.FORMS.Attendance;
-//using GymManagementSystem.
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem.FORMS.Main
 {
@@ -776,6 +776,10 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
+            this.Hide();
+            frmUserRoleSelection.ShowDialog();
+            this.Close();
         }
 
         private void pnlMenu_MouseEnter(object sender, EventArgs e)
