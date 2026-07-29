@@ -48,6 +48,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\FrmAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmAdminLogin.Designer.cs">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminLogin.Designer.cs">
+      <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\FrmUserRoleSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmUserRoleSelection.Designer.cs">
+      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,224 +144,221 @@
     <Compile Include="FormsSuperAdmin\Settings\FrmSASettings.Designer.cs">
       <DependentUpon>FrmSASettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Attendance\FrmMarkAttendance.cs">
+    <Compile Include="FormsAdmin\Attendance\FrmMarkAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Attendance\FrmMarkAttendance.Designer.cs">
+    <Compile Include="FormsAdmin\Attendance\FrmMarkAttendance.Designer.cs">
       <DependentUpon>FrmMarkAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Attendance\FrmViewAttendance.cs">
+    <Compile Include="FormsAdmin\Attendance\FrmViewAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Attendance\FrmViewAttendance.Designer.cs">
+    <Compile Include="FormsAdmin\Attendance\FrmViewAttendance.Designer.cs">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Authentication\FrmLoginPage.cs">
+    <Compile Include="FormsAdmin\Dashboard\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Authentication\FrmLoginPage.Designer.cs">
-      <DependentUpon>FrmLoginPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.Designer.cs">
-      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\Dashboard\FrmDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Dashboard\FrmDashboard.Designer.cs">
+    <Compile Include="FormsAdmin\Dashboard\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\DietPlan\FrmAddNewDietPlan.cs">
+    <Compile Include="FormsAdmin\DietPlan\FrmAddNewDietPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\DietPlan\FrmAddNewDietPlan.Designer.cs">
+    <Compile Include="FormsAdmin\DietPlan\FrmAddNewDietPlan.Designer.cs">
       <DependentUpon>FrmAddNewDietPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\DietPlan\FrmShowDietPlans.cs">
+    <Compile Include="FormsAdmin\DietPlan\FrmShowDietPlans.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\DietPlan\FrmShowDietPlans.Designer.cs">
+    <Compile Include="FormsAdmin\DietPlan\FrmShowDietPlans.Designer.cs">
       <DependentUpon>FrmShowDietPlans.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Expenses\FrmAddExpenseCategory.cs">
+    <Compile Include="FormsAdmin\Expenses\FrmAddExpenseCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Expenses\FrmAddExpenseCategory.Designer.cs">
+    <Compile Include="FormsAdmin\Expenses\FrmAddExpenseCategory.Designer.cs">
       <DependentUpon>FrmAddExpenseCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Expenses\FrmAddExpenses.cs">
+    <Compile Include="FormsAdmin\Expenses\FrmAddExpenses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Expenses\FrmAddExpenses.Designer.cs">
+    <Compile Include="FormsAdmin\Expenses\FrmAddExpenses.Designer.cs">
       <DependentUpon>FrmAddExpenses.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\FitnessTest\FrmFitnessTest.cs">
+    <Compile Include="FormsAdmin\FitnessTest\FrmFitnessTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\FitnessTest\FrmFitnessTest.Designer.cs">
+    <Compile Include="FormsAdmin\FitnessTest\FrmFitnessTest.Designer.cs">
       <DependentUpon>FrmFitnessTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Locker\FrmAddLocker.cs">
+    <Compile Include="FormsAdmin\Locker\FrmAddLocker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Locker\FrmAddLocker.Designer.cs">
+    <Compile Include="FormsAdmin\Locker\FrmAddLocker.Designer.cs">
       <DependentUpon>FrmAddLocker.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Locker\FrmDisplayLocker.cs">
+    <Compile Include="FormsAdmin\Locker\FrmDisplayLocker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Locker\FrmDisplayLocker.Designer.cs">
+    <Compile Include="FormsAdmin\Locker\FrmDisplayLocker.Designer.cs">
       <DependentUpon>FrmDisplayLocker.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Main\FrmMainLayout.cs">
+    <Compile Include="FormsAdmin\Main\FrmMainLayout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Main\FrmMainLayout.Designer.cs">
+    <Compile Include="FormsAdmin\Main\FrmMainLayout.Designer.cs">
       <DependentUpon>FrmMainLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\MembershipPlan\FrmAddMembershipPlans.cs">
+    <Compile Include="FormsAdmin\MembershipPlan\FrmAddMembershipPlans.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\MembershipPlan\FrmAddMembershipPlans.Designer.cs">
+    <Compile Include="FormsAdmin\MembershipPlan\FrmAddMembershipPlans.Designer.cs">
       <DependentUpon>FrmAddMembershipPlans.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.cs">
+    <Compile Include="FormsAdmin\MembershipPlan\FrmDisplayMembershipPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
+    <Compile Include="FormsAdmin\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmAssignTrainer.cs">
+    <Compile Include="FormsAdmin\Member\FrmAssignTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmAssignTrainer.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmAssignTrainer.Designer.cs">
       <DependentUpon>FrmAssignTrainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeDietPlan.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeDietPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeDietPlan.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeDietPlan.Designer.cs">
       <DependentUpon>FrmChangeDietPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeShift.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeShift.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeShift.Designer.cs">
       <DependentUpon>FrmChangeShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeTrainer.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmChangeTrainer.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmChangeTrainer.Designer.cs">
       <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmDisplayAllMembers.cs">
+    <Compile Include="FormsAdmin\Member\FrmDisplayAllMembers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmDisplayAllMembers.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmDisplayAllMembers.Designer.cs">
       <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberProfile.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberProfile.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberProfile.Designer.cs">
       <DependentUpon>FrmMemberProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberRegistration.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberRegistration.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberRegistration.Designer.cs">
       <DependentUpon>FrmMemberRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMembershipRenewal.cs">
+    <Compile Include="FormsAdmin\Member\FrmMembershipRenewal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMembershipRenewal.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmMembershipRenewal.Designer.cs">
       <DependentUpon>FrmMembershipRenewal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberTrainerAssignment.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberTrainerAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Member\FrmMemberTrainerAssignment.Designer.cs">
+    <Compile Include="FormsAdmin\Member\FrmMemberTrainerAssignment.Designer.cs">
       <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Payments\FrmDisplayPayments.cs">
+    <Compile Include="FormsAdmin\Payments\FrmDisplayPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Payments\FrmDisplayPayments.Designer.cs">
+    <Compile Include="FormsAdmin\Payments\FrmDisplayPayments.Designer.cs">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\RegistrationFee\FrmAddRegistrationFee.cs">
+    <Compile Include="FormsAdmin\RegistrationFee\FrmAddRegistrationFee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\RegistrationFee\FrmAddRegistrationFee.Designer.cs">
+    <Compile Include="FormsAdmin\RegistrationFee\FrmAddRegistrationFee.Designer.cs">
       <DependentUpon>FrmAddRegistrationFee.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.cs">
+    <Compile Include="FormsAdmin\RegistrationFee\FrmRegistrationFees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.Designer.cs">
+    <Compile Include="FormsAdmin\RegistrationFee\FrmRegistrationFees.Designer.cs">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.cs">
+    <Compile Include="FormsAdmin\Settings\FrmChangePasswordAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.Designer.cs">
+    <Compile Include="FormsAdmin\Settings\FrmChangePasswordAdmin.Designer.cs">
       <DependentUpon>FrmChangePasswordAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Shift\FrmDisplayShift.cs">
+    <Compile Include="FormsAdmin\Shift\FrmDisplayShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Shift\FrmDisplayShift.Designer.cs">
+    <Compile Include="FormsAdmin\Shift\FrmDisplayShift.Designer.cs">
       <DependentUpon>FrmDisplayShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Trainer\FrmTrainer.cs">
+    <Compile Include="FormsAdmin\Trainer\FrmTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Trainer\FrmTrainer.Designer.cs">
+    <Compile Include="FormsAdmin\Trainer\FrmTrainer.Designer.cs">
       <DependentUpon>FrmTrainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewExercise.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewExercise.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewExercise.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewExercise.Designer.cs">
       <DependentUpon>FrmAddNewExercise.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewWorkoutPlan.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewWorkoutPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewWorkoutPlan.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewWorkoutPlan.Designer.cs">
       <DependentUpon>FrmAddNewWorkoutPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewWorkoutSchedule.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewWorkoutSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmAddNewWorkoutSchedule.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmAddNewWorkoutSchedule.Designer.cs">
       <DependentUpon>FrmAddNewWorkoutSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayExercise.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayExercise.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayExercise.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayExercise.Designer.cs">
       <DependentUpon>FrmDisplayExercise.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayWorkoutPlans.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayWorkoutPlans.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayWorkoutPlans.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayWorkoutPlans.Designer.cs">
       <DependentUpon>FrmDisplayWorkoutPlans.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayWorkoutSchedule.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayWorkoutSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayWorkoutSchedule.Designer.cs">
+    <Compile Include="FormsAdmin\Workout\FrmDisplayWorkoutSchedule.Designer.cs">
       <DependentUpon>FrmDisplayWorkoutSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Authentication\FrmAdminLogin.resx">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmSuperAdminLogin.resx">
+      <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmUserRoleSelection.resx">
+      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,112 +398,106 @@
     <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSASettings.resx">
       <DependentUpon>FrmSASettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Attendance\FrmMarkAttendance.resx">
+    <EmbeddedResource Include="FormsAdmin\Attendance\FrmMarkAttendance.resx">
       <DependentUpon>FrmMarkAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Attendance\FrmViewAttendance.resx">
+    <EmbeddedResource Include="FormsAdmin\Attendance\FrmViewAttendance.resx">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Authentication\FrmLoginPage.resx">
-      <DependentUpon>FrmLoginPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Authentication\FrmUserRoleSelection.resx">
-      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Dashboard\FrmDashboard.resx">
+    <EmbeddedResource Include="FormsAdmin\Dashboard\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\DietPlan\FrmAddNewDietPlan.resx">
+    <EmbeddedResource Include="FormsAdmin\DietPlan\FrmAddNewDietPlan.resx">
       <DependentUpon>FrmAddNewDietPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\DietPlan\FrmShowDietPlans.resx">
+    <EmbeddedResource Include="FormsAdmin\DietPlan\FrmShowDietPlans.resx">
       <DependentUpon>FrmShowDietPlans.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Expenses\FrmAddExpenseCategory.resx">
+    <EmbeddedResource Include="FormsAdmin\Expenses\FrmAddExpenseCategory.resx">
       <DependentUpon>FrmAddExpenseCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Expenses\FrmAddExpenses.resx">
+    <EmbeddedResource Include="FormsAdmin\Expenses\FrmAddExpenses.resx">
       <DependentUpon>FrmAddExpenses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\FitnessTest\FrmFitnessTest.resx">
+    <EmbeddedResource Include="FormsAdmin\FitnessTest\FrmFitnessTest.resx">
       <DependentUpon>FrmFitnessTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Locker\FrmAddLocker.resx">
+    <EmbeddedResource Include="FormsAdmin\Locker\FrmAddLocker.resx">
       <DependentUpon>FrmAddLocker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Locker\FrmDisplayLocker.resx">
+    <EmbeddedResource Include="FormsAdmin\Locker\FrmDisplayLocker.resx">
       <DependentUpon>FrmDisplayLocker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Main\FrmMainLayout.resx">
+    <EmbeddedResource Include="FormsAdmin\Main\FrmMainLayout.resx">
       <DependentUpon>FrmMainLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\MembershipPlan\FrmAddMembershipPlans.resx">
+    <EmbeddedResource Include="FormsAdmin\MembershipPlan\FrmAddMembershipPlans.resx">
       <DependentUpon>FrmAddMembershipPlans.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.resx">
+    <EmbeddedResource Include="FormsAdmin\MembershipPlan\FrmDisplayMembershipPlan.resx">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmAssignTrainer.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmAssignTrainer.resx">
       <DependentUpon>FrmAssignTrainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmChangeDietPlan.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmChangeDietPlan.resx">
       <DependentUpon>FrmChangeDietPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmChangeShift.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmChangeShift.resx">
       <DependentUpon>FrmChangeShift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmChangeTrainer.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmChangeTrainer.resx">
       <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmDisplayAllMembers.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmDisplayAllMembers.resx">
       <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmMemberProfile.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmMemberProfile.resx">
       <DependentUpon>FrmMemberProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmMemberRegistration.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmMemberRegistration.resx">
       <DependentUpon>FrmMemberRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmMembershipRenewal.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmMembershipRenewal.resx">
       <DependentUpon>FrmMembershipRenewal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Member\FrmMemberTrainerAssignment.resx">
+    <EmbeddedResource Include="FormsAdmin\Member\FrmMemberTrainerAssignment.resx">
       <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Payments\FrmDisplayPayments.resx">
+    <EmbeddedResource Include="FormsAdmin\Payments\FrmDisplayPayments.resx">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\RegistrationFee\FrmAddRegistrationFee.resx">
+    <EmbeddedResource Include="FormsAdmin\RegistrationFee\FrmAddRegistrationFee.resx">
       <DependentUpon>FrmAddRegistrationFee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\RegistrationFee\FrmRegistrationFees.resx">
+    <EmbeddedResource Include="FormsAdmin\RegistrationFee\FrmRegistrationFees.resx">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Settings\FrmChangePasswordAdmin.resx">
+    <EmbeddedResource Include="FormsAdmin\Settings\FrmChangePasswordAdmin.resx">
       <DependentUpon>FrmChangePasswordAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Shift\FrmDisplayShift.resx">
+    <EmbeddedResource Include="FormsAdmin\Shift\FrmDisplayShift.resx">
       <DependentUpon>FrmDisplayShift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Trainer\FrmTrainer.resx">
+    <EmbeddedResource Include="FormsAdmin\Trainer\FrmTrainer.resx">
       <DependentUpon>FrmTrainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmAddNewExercise.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmAddNewExercise.resx">
       <DependentUpon>FrmAddNewExercise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmAddNewWorkoutPlan.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmAddNewWorkoutPlan.resx">
       <DependentUpon>FrmAddNewWorkoutPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmAddNewWorkoutSchedule.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmAddNewWorkoutSchedule.resx">
       <DependentUpon>FrmAddNewWorkoutSchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmDisplayExercise.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmDisplayExercise.resx">
       <DependentUpon>FrmDisplayExercise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmDisplayWorkoutPlans.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmDisplayWorkoutPlans.resx">
       <DependentUpon>FrmDisplayWorkoutPlans.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmDisplayWorkoutSchedule.resx">
+    <EmbeddedResource Include="FormsAdmin\Workout\FrmDisplayWorkoutSchedule.resx">
       <DependentUpon>FrmDisplayWorkoutSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

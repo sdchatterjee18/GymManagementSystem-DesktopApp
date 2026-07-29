@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmSuperAdminLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FrmSuperAdminLogin";
             this.Text = "FrmSuperAdminLogin";
+            this.Load += new System.EventHandler(this.FrmSuperAdminLogin_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -15,5 +15,10 @@ namespace GymManagementSystem.Authentication
         {
             InitializeComponent();
         }
+
+        private void FrmUserRoleSelection_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
