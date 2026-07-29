@@ -18,6 +18,7 @@ using GymManagementSystem.FORMS.Settings;
 using GymManagementSystem.FORMS.Shift;
 using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.FormsSuperAdmin.Salary;
+using GymManagementSystem.Authentication;
 namespace GymManagementSystem
 {
     static class Program
@@ -42,7 +43,6 @@ namespace GymManagementSystem
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSAMainForm());
             Application.Run(new FrmMainLayout());
-
         }
     }
 }
