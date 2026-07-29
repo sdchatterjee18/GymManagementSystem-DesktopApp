@@ -31,7 +31,8 @@ namespace GymManagementSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSAMainForm());
-            Application.Run(new FrmMainLayout());
+            //Application.Run(new FrmMainLayout());
+            Application.Run(new FrmChangeTrainer());
         }
     }
 }

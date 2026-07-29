@@ -199,11 +199,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpTrainerIdRe = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.tlpCancleButtonSection = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlCancleButtonCreateInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.tlpCancleImageAndLevel = new System.Windows.Forms.TableLayoutPanel();
+            this.picCancleInAssignPersonalTrainer = new System.Windows.Forms.PictureBox();
+            this.lblcancleInPersonalTrainerAssign = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -255,12 +255,12 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpRegisterButtonSection = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlRegisterButton = new System.Windows.Forms.Panel();
-            this.tlpRegisterButton = new System.Windows.Forms.TableLayoutPanel();
-            this.picRegister = new System.Windows.Forms.PictureBox();
-            this.lblRegister = new System.Windows.Forms.Label();
+            this.tlpAssignAndCancleSectionInButtom = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAssignButtonSectionInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.tlpCancleButtonCreateInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.picCancleButtonCreateInAssignPersonalTrainer = new System.Windows.Forms.PictureBox();
+            this.lblAssignTrainerButton = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel39 = new System.Windows.Forms.Panel();
             this.panel40 = new System.Windows.Forms.Panel();
@@ -281,23 +281,22 @@
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel49 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.panel50 = new System.Windows.Forms.Panel();
-            this.panel51 = new System.Windows.Forms.Panel();
-            this.panel52 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel53 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel41 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel42 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel54 = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel44 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMemberNameInMemberInformation = new System.Windows.Forms.Label();
+            this.lblMemberIDMemberInformation = new System.Windows.Forms.Label();
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.tlpMiddleSectionInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMemberAndTrainerAssignAndInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMemberInformationInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMemberInformationImageAndTitleSectionAndLine = new System.Windows.Forms.TableLayoutPanel();
+            this.picMemberInformation = new System.Windows.Forms.PictureBox();
+            this.tlpMemberInformationLineBar = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMemberInformationLineBar = new System.Windows.Forms.Panel();
+            this.lblMemberInformationTitle = new System.Windows.Forms.Label();
+            this.tlpMemberIdAndMemberNameInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel46 = new System.Windows.Forms.TableLayoutPanel();
             this.label30 = new System.Windows.Forms.Label();
@@ -324,9 +323,28 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSelectTrainer = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAssignPersonalTrainerWholeDetails = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel50 = new System.Windows.Forms.Panel();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMemberNameInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.panel53 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel54 = new System.Windows.Forms.Panel();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.panel64 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
             this.tlpAssignPersonalTrainerWholeSection.SuspendLayout();
             this.tlpMemberInfromationSubmitResetCanclePortion.SuspendLayout();
             this.tlpCancleFromSection.SuspendLayout();
@@ -399,10 +417,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTopPersonalTrainer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tlpTrainerIdRe.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tlpCancleButtonSection.SuspendLayout();
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.SuspendLayout();
+            this.tlpCancleImageAndLevel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancleInAssignPersonalTrainer)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -426,11 +444,11 @@
             this.tableLayoutPanel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            this.tlpRegisterButtonSection.SuspendLayout();
-            this.pnlRegisterButton.SuspendLayout();
-            this.tlpRegisterButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegister)).BeginInit();
+            this.tlpAssignAndCancleSectionInButtom.SuspendLayout();
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.SuspendLayout();
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.SuspendLayout();
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancleButtonCreateInAssignPersonalTrainer)).BeginInit();
             this.panel39.SuspendLayout();
             this.panel40.SuspendLayout();
             this.panel41.SuspendLayout();
@@ -440,15 +458,15 @@
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.tableLayoutPanel22.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
-            this.tableLayoutPanel24.SuspendLayout();
-            this.tableLayoutPanel25.SuspendLayout();
-            this.tableLayoutPanel41.SuspendLayout();
-            this.tableLayoutPanel42.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            this.tableLayoutPanel43.SuspendLayout();
-            this.tableLayoutPanel44.SuspendLayout();
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.SuspendLayout();
+            this.tlpMiddleSectionInAssignPersonalTrainer.SuspendLayout();
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.SuspendLayout();
+            this.tlpMemberAndTrainerAssignAndInformation.SuspendLayout();
+            this.tlpMemberInformationInAssignPersonalTrainer.SuspendLayout();
+            this.tlpMemberInformationImageAndTitleSectionAndLine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberInformation)).BeginInit();
+            this.tlpMemberInformationLineBar.SuspendLayout();
+            this.tlpMemberIdAndMemberNameInMemberInformation.SuspendLayout();
             this.tableLayoutPanel45.SuspendLayout();
             this.tableLayoutPanel46.SuspendLayout();
             this.tableLayoutPanel47.SuspendLayout();
@@ -463,7 +481,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.tableLayoutPanel54.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.tlp.SuspendLayout();
+            this.tlpAssignPersonalTrainerWholeDetails.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tlpRetrieveMemberNameInMemberInformation.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpAssignPersonalTrainerWholeSection
@@ -2743,69 +2768,69 @@
             this.tlpTrainerIdRe.Size = new System.Drawing.Size(491, 45);
             this.tlpTrainerIdRe.TabIndex = 3;
             // 
-            // tableLayoutPanel1
+            // tlpCancleButtonSection
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(579, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 86);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tlpCancleButtonSection.ColumnCount = 1;
+            this.tlpCancleButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCancleButtonSection.Controls.Add(this.pnlCancleButtonCreateInAssignPersonalTrainer, 0, 1);
+            this.tlpCancleButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCancleButtonSection.Location = new System.Drawing.Point(579, 3);
+            this.tlpCancleButtonSection.Name = "tlpCancleButtonSection";
+            this.tlpCancleButtonSection.RowCount = 3;
+            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpCancleButtonSection.Size = new System.Drawing.Size(215, 86);
+            this.tlpCancleButtonSection.TabIndex = 1;
             // 
-            // panel5
+            // pnlCancleButtonCreateInAssignPersonalTrainer
             // 
-            this.panel5.Controls.Add(this.tableLayoutPanel3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(209, 45);
-            this.panel5.TabIndex = 16;
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Controls.Add(this.tlpCancleImageAndLevel);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 20);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Name = "pnlCancleButtonCreateInAssignPersonalTrainer";
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.TabIndex = 16;
             // 
-            // tableLayoutPanel3
+            // tlpCancleImageAndLevel
             // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Red;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(209, 45);
-            this.tableLayoutPanel3.TabIndex = 3;
+            this.tlpCancleImageAndLevel.BackColor = System.Drawing.Color.Red;
+            this.tlpCancleImageAndLevel.ColumnCount = 2;
+            this.tlpCancleImageAndLevel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpCancleImageAndLevel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpCancleImageAndLevel.Controls.Add(this.picCancleInAssignPersonalTrainer, 0, 0);
+            this.tlpCancleImageAndLevel.Controls.Add(this.lblcancleInPersonalTrainerAssign, 1, 0);
+            this.tlpCancleImageAndLevel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCancleImageAndLevel.Location = new System.Drawing.Point(0, 0);
+            this.tlpCancleImageAndLevel.Name = "tlpCancleImageAndLevel";
+            this.tlpCancleImageAndLevel.RowCount = 1;
+            this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCancleImageAndLevel.Size = new System.Drawing.Size(209, 45);
+            this.tlpCancleImageAndLevel.TabIndex = 3;
             // 
-            // pictureBox3
+            // picCancleInAssignPersonalTrainer
             // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.picCancleInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picCancleInAssignPersonalTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picCancleInAssignPersonalTrainer.Image")));
+            this.picCancleInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 3);
+            this.picCancleInAssignPersonalTrainer.Name = "picCancleInAssignPersonalTrainer";
+            this.picCancleInAssignPersonalTrainer.Size = new System.Drawing.Size(62, 39);
+            this.picCancleInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCancleInAssignPersonalTrainer.TabIndex = 0;
+            this.picCancleInAssignPersonalTrainer.TabStop = false;
             // 
-            // label6
+            // lblcancleInPersonalTrainerAssign
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(71, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 23);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "CANCEL";
+            this.lblcancleInPersonalTrainerAssign.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblcancleInPersonalTrainerAssign.AutoSize = true;
+            this.lblcancleInPersonalTrainerAssign.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcancleInPersonalTrainerAssign.ForeColor = System.Drawing.Color.White;
+            this.lblcancleInPersonalTrainerAssign.Location = new System.Drawing.Point(71, 11);
+            this.lblcancleInPersonalTrainerAssign.Name = "lblcancleInPersonalTrainerAssign";
+            this.lblcancleInPersonalTrainerAssign.Size = new System.Drawing.Size(73, 23);
+            this.lblcancleInPersonalTrainerAssign.TabIndex = 1;
+            this.lblcancleInPersonalTrainerAssign.Text = "CANCEL";
             // 
             // panel6
             // 
@@ -3499,89 +3524,89 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Assign a personal trainer to a member";
             // 
-            // tableLayoutPanel17
+            // tlpAssignAndCancleSectionInButtom
             // 
-            this.tableLayoutPanel17.ColumnCount = 5;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel1, 3, 0);
-            this.tableLayoutPanel17.Controls.Add(this.tlpRegisterButtonSection, 1, 0);
-            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 693);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 1;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(1143, 92);
-            this.tableLayoutPanel17.TabIndex = 2;
+            this.tlpAssignAndCancleSectionInButtom.ColumnCount = 5;
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAssignAndCancleSectionInButtom.Controls.Add(this.tlpCancleButtonSection, 3, 0);
+            this.tlpAssignAndCancleSectionInButtom.Controls.Add(this.tlpAssignButtonSectionInAssignPersonalTrainer, 1, 0);
+            this.tlpAssignAndCancleSectionInButtom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAssignAndCancleSectionInButtom.Location = new System.Drawing.Point(3, 693);
+            this.tlpAssignAndCancleSectionInButtom.Name = "tlpAssignAndCancleSectionInButtom";
+            this.tlpAssignAndCancleSectionInButtom.RowCount = 1;
+            this.tlpAssignAndCancleSectionInButtom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAssignAndCancleSectionInButtom.Size = new System.Drawing.Size(1143, 92);
+            this.tlpAssignAndCancleSectionInButtom.TabIndex = 2;
             // 
-            // tlpRegisterButtonSection
+            // tlpAssignButtonSectionInAssignPersonalTrainer
             // 
-            this.tlpRegisterButtonSection.ColumnCount = 1;
-            this.tlpRegisterButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegisterButtonSection.Controls.Add(this.pnlRegisterButton, 0, 1);
-            this.tlpRegisterButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegisterButtonSection.Location = new System.Drawing.Point(348, 3);
-            this.tlpRegisterButtonSection.Name = "tlpRegisterButtonSection";
-            this.tlpRegisterButtonSection.RowCount = 3;
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.Size = new System.Drawing.Size(215, 86);
-            this.tlpRegisterButtonSection.TabIndex = 0;
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.ColumnCount = 1;
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Controls.Add(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer, 0, 1);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(348, 3);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Name = "tlpAssignButtonSectionInAssignPersonalTrainer";
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowCount = 3;
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(215, 86);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.TabIndex = 0;
             // 
-            // pnlRegisterButton
+            // pnlAssignButtontoAssignTrainerInAssignPersonalTrainer
             // 
-            this.pnlRegisterButton.Controls.Add(this.tlpRegisterButton);
-            this.pnlRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRegisterButton.Location = new System.Drawing.Point(3, 20);
-            this.pnlRegisterButton.Name = "pnlRegisterButton";
-            this.pnlRegisterButton.Size = new System.Drawing.Size(209, 45);
-            this.pnlRegisterButton.TabIndex = 0;
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Controls.Add(this.tlpCancleButtonCreateInAssignPersonalTrainer);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 20);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Name = "pnlAssignButtontoAssignTrainerInAssignPersonalTrainer";
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.TabIndex = 0;
             // 
-            // tlpRegisterButton
+            // tlpCancleButtonCreateInAssignPersonalTrainer
             // 
-            this.tlpRegisterButton.BackColor = System.Drawing.Color.ForestGreen;
-            this.tlpRegisterButton.ColumnCount = 2;
-            this.tlpRegisterButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tlpRegisterButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tlpRegisterButton.Controls.Add(this.picRegister, 0, 0);
-            this.tlpRegisterButton.Controls.Add(this.lblRegister, 1, 0);
-            this.tlpRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegisterButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpRegisterButton.Name = "tlpRegisterButton";
-            this.tlpRegisterButton.RowCount = 1;
-            this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegisterButton.Size = new System.Drawing.Size(209, 45);
-            this.tlpRegisterButton.TabIndex = 2;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.ColumnCount = 2;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Controls.Add(this.picCancleButtonCreateInAssignPersonalTrainer, 0, 0);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Controls.Add(this.lblAssignTrainerButton, 1, 0);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Name = "tlpCancleButtonCreateInAssignPersonalTrainer";
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.RowCount = 1;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.TabIndex = 2;
             // 
-            // picRegister
+            // picCancleButtonCreateInAssignPersonalTrainer
             // 
-            this.picRegister.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRegister.Image = ((System.Drawing.Image)(resources.GetObject("picRegister.Image")));
-            this.picRegister.Location = new System.Drawing.Point(3, 3);
-            this.picRegister.Name = "picRegister";
-            this.picRegister.Size = new System.Drawing.Size(62, 39);
-            this.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRegister.TabIndex = 0;
-            this.picRegister.TabStop = false;
+            this.picCancleButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picCancleButtonCreateInAssignPersonalTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picCancleButtonCreateInAssignPersonalTrainer.Image")));
+            this.picCancleButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 3);
+            this.picCancleButtonCreateInAssignPersonalTrainer.Name = "picCancleButtonCreateInAssignPersonalTrainer";
+            this.picCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(62, 39);
+            this.picCancleButtonCreateInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCancleButtonCreateInAssignPersonalTrainer.TabIndex = 0;
+            this.picCancleButtonCreateInAssignPersonalTrainer.TabStop = false;
             // 
-            // lblRegister
+            // lblAssignTrainerButton
             // 
-            this.lblRegister.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.ForeColor = System.Drawing.Color.White;
-            this.lblRegister.Location = new System.Drawing.Point(71, 11);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(116, 23);
-            this.lblRegister.TabIndex = 1;
-            this.lblRegister.Text = "Assign Trainer";
+            this.lblAssignTrainerButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAssignTrainerButton.AutoSize = true;
+            this.lblAssignTrainerButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignTrainerButton.ForeColor = System.Drawing.Color.White;
+            this.lblAssignTrainerButton.Location = new System.Drawing.Point(71, 11);
+            this.lblAssignTrainerButton.Name = "lblAssignTrainerButton";
+            this.lblAssignTrainerButton.Size = new System.Drawing.Size(116, 23);
+            this.lblAssignTrainerButton.TabIndex = 1;
+            this.lblAssignTrainerButton.Text = "Assign Trainer";
             // 
             // label24
             // 
@@ -3828,254 +3853,244 @@
             this.panel49.Size = new System.Drawing.Size(2, 45);
             this.panel49.TabIndex = 2;
             // 
-            // tableLayoutPanel22
+            // tlpRetrieveMemberIDAndMemberNameInMemberInformation
             // 
-            this.tableLayoutPanel22.ColumnCount = 2;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel19, 1, 0);
-            this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel21, 0, 0);
-            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(21, 107);
-            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 1;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel22.TabIndex = 5;
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnCount = 2;
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tlpRetrieveMemberNameInMemberInformation, 0, 0);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Location = new System.Drawing.Point(21, 107);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Name = "tlpRetrieveMemberIDAndMemberNameInMemberInformation";
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowCount = 1;
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Size = new System.Drawing.Size(983, 45);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.TabIndex = 5;
             // 
-            // label27
+            // lblMemberNameInMemberInformation
             // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(491, 11);
-            this.label27.Margin = new System.Windows.Forms.Padding(0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(126, 23);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Member Name";
+            this.lblMemberNameInMemberInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberNameInMemberInformation.AutoSize = true;
+            this.lblMemberNameInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberNameInMemberInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblMemberNameInMemberInformation.Location = new System.Drawing.Point(491, 11);
+            this.lblMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMemberNameInMemberInformation.Name = "lblMemberNameInMemberInformation";
+            this.lblMemberNameInMemberInformation.Size = new System.Drawing.Size(126, 23);
+            this.lblMemberNameInMemberInformation.TabIndex = 4;
+            this.lblMemberNameInMemberInformation.Text = "Member Name";
             // 
-            // label28
+            // lblMemberIDMemberInformation
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(0, 11);
-            this.label28.Margin = new System.Windows.Forms.Padding(0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(97, 23);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Member ID";
+            this.lblMemberIDMemberInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberIDMemberInformation.AutoSize = true;
+            this.lblMemberIDMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberIDMemberInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblMemberIDMemberInformation.Location = new System.Drawing.Point(0, 11);
+            this.lblMemberIDMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMemberIDMemberInformation.Name = "lblMemberIDMemberInformation";
+            this.lblMemberIDMemberInformation.Size = new System.Drawing.Size(97, 23);
+            this.lblMemberIDMemberInformation.TabIndex = 3;
+            this.lblMemberIDMemberInformation.Text = "Member ID";
             // 
-            // panel50
+            // pnlMiddleSectionTopBarInAssignPersonalTrainer
             // 
-            this.panel50.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel50.Location = new System.Drawing.Point(0, 0);
-            this.panel50.Margin = new System.Windows.Forms.Padding(0);
-            this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(1033, 2);
-            this.panel50.TabIndex = 0;
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Name = "pnlMiddleSectionTopBarInAssignPersonalTrainer";
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Size = new System.Drawing.Size(1033, 2);
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.TabIndex = 0;
             // 
-            // panel51
+            // pnlMiddleSectionButtomBarInAssignPersonalTrainer
             // 
-            this.panel51.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel51.Location = new System.Drawing.Point(57, 0);
-            this.panel51.Margin = new System.Windows.Forms.Padding(0);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(2, 612);
-            this.panel51.TabIndex = 0;
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 610);
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Name = "pnlMiddleSectionButtomBarInAssignPersonalTrainer";
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Size = new System.Drawing.Size(1033, 2);
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.TabIndex = 1;
             // 
-            // panel52
+            // tlpMiddleSectionInAssignPersonalTrainer
             // 
-            this.panel52.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel52.Location = new System.Drawing.Point(0, 610);
-            this.panel52.Margin = new System.Windows.Forms.Padding(0);
-            this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(1033, 2);
-            this.panel52.TabIndex = 1;
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnCount = 5;
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.30568F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.716157F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.pnlMiddleSectionLeftBarInAssignPersonalTrainer, 1, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.pnlMiddleSectionRightBarInAssignPersonalTrainer, 3, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate, 2, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMiddleSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 78);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Name = "tlpMiddleSectionInAssignPersonalTrainer";
+            this.tlpMiddleSectionInAssignPersonalTrainer.RowCount = 1;
+            this.tlpMiddleSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(1149, 612);
+            this.tlpMiddleSectionInAssignPersonalTrainer.TabIndex = 0;
             // 
-            // tableLayoutPanel23
+            // pnlMiddleSectionRightBarInAssignPersonalTrainer
             // 
-            this.tableLayoutPanel23.ColumnCount = 5;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.30568F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.716157F));
-            this.tableLayoutPanel23.Controls.Add(this.panel51, 1, 0);
-            this.tableLayoutPanel23.Controls.Add(this.panel53, 3, 0);
-            this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 2, 0);
-            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(0, 78);
-            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 1;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(1149, 612);
-            this.tableLayoutPanel23.TabIndex = 0;
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Location = new System.Drawing.Point(1092, 0);
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Name = "pnlMiddleSectionRightBarInAssignPersonalTrainer";
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 612);
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.TabIndex = 1;
             // 
-            // panel53
+            // tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate
             // 
-            this.panel53.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel53.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel53.Location = new System.Drawing.Point(1092, 0);
-            this.panel53.Margin = new System.Windows.Forms.Padding(0);
-            this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(2, 612);
-            this.panel53.TabIndex = 1;
-            // 
-            // tableLayoutPanel24
-            // 
-            this.tableLayoutPanel24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
-            this.tableLayoutPanel24.ColumnCount = 1;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Controls.Add(this.panel50, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.panel52, 0, 2);
-            this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel25, 0, 1);
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(59, 0);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 3;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(1033, 612);
-            this.tableLayoutPanel24.TabIndex = 2;
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(255)))), ((int)(((byte)(245)))));
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.ColumnCount = 1;
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.pnlMiddleSectionTopBarInAssignPersonalTrainer, 0, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.pnlMiddleSectionButtomBarInAssignPersonalTrainer, 0, 2);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.tlpMemberAndTrainerAssignAndInformation, 0, 1);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Location = new System.Drawing.Point(59, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Name = "tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate";
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowCount = 3;
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Size = new System.Drawing.Size(1033, 612);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.TabIndex = 2;
             // 
-            // tableLayoutPanel25
+            // tlpMemberAndTrainerAssignAndInformation
             // 
-            this.tableLayoutPanel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.tableLayoutPanel25.ColumnCount = 1;
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel25.Controls.Add(this.tableLayoutPanel41, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.tableLayoutPanel54, 0, 1);
-            this.tableLayoutPanel25.Controls.Add(this.panel40, 0, 2);
-            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 5);
-            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
-            this.tableLayoutPanel25.RowCount = 3;
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(1027, 602);
-            this.tableLayoutPanel25.TabIndex = 2;
+            this.tlpMemberAndTrainerAssignAndInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
+            this.tlpMemberAndTrainerAssignAndInformation.ColumnCount = 1;
+            this.tlpMemberAndTrainerAssignAndInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tlpMemberInformationInAssignPersonalTrainer, 0, 0);
+            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tableLayoutPanel54, 0, 1);
+            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.panel40, 0, 2);
+            this.tlpMemberAndTrainerAssignAndInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMemberAndTrainerAssignAndInformation.Location = new System.Drawing.Point(3, 5);
+            this.tlpMemberAndTrainerAssignAndInformation.Name = "tlpMemberAndTrainerAssignAndInformation";
+            this.tlpMemberAndTrainerAssignAndInformation.RowCount = 3;
+            this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tlpMemberAndTrainerAssignAndInformation.Size = new System.Drawing.Size(1027, 602);
+            this.tlpMemberAndTrainerAssignAndInformation.TabIndex = 2;
             // 
-            // tableLayoutPanel41
+            // tlpMemberInformationInAssignPersonalTrainer
             // 
-            this.tableLayoutPanel41.ColumnCount = 3;
-            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
-            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.74467F));
-            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.127659F));
-            this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel42, 1, 1);
-            this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel44, 1, 2);
-            this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel22, 1, 3);
-            this.tableLayoutPanel41.Controls.Add(this.tableLayoutPanel45, 1, 4);
-            this.tableLayoutPanel41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel41.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel41.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel41.Name = "tableLayoutPanel41";
-            this.tableLayoutPanel41.RowCount = 6;
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel41.Size = new System.Drawing.Size(1027, 270);
-            this.tableLayoutPanel41.TabIndex = 0;
+            this.tlpMemberInformationInAssignPersonalTrainer.ColumnCount = 3;
+            this.tlpMemberInformationInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
+            this.tlpMemberInformationInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.74467F));
+            this.tlpMemberInformationInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.127659F));
+            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpMemberInformationImageAndTitleSectionAndLine, 1, 1);
+            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpMemberIdAndMemberNameInMemberInformation, 1, 2);
+            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberIDAndMemberNameInMemberInformation, 1, 3);
+            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tableLayoutPanel45, 1, 4);
+            this.tlpMemberInformationInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMemberInformationInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
+            this.tlpMemberInformationInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMemberInformationInAssignPersonalTrainer.Name = "tlpMemberInformationInAssignPersonalTrainer";
+            this.tlpMemberInformationInAssignPersonalTrainer.RowCount = 6;
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberInformationInAssignPersonalTrainer.Size = new System.Drawing.Size(1027, 270);
+            this.tlpMemberInformationInAssignPersonalTrainer.TabIndex = 0;
             // 
-            // tableLayoutPanel42
+            // tlpMemberInformationImageAndTitleSectionAndLine
             // 
-            this.tableLayoutPanel42.ColumnCount = 3;
-            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
-            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel42.Controls.Add(this.pictureBox16, 0, 0);
-            this.tableLayoutPanel42.Controls.Add(this.tableLayoutPanel43, 2, 0);
-            this.tableLayoutPanel42.Controls.Add(this.label29, 1, 0);
-            this.tableLayoutPanel42.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel42.Location = new System.Drawing.Point(21, 17);
-            this.tableLayoutPanel42.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel42.Name = "tableLayoutPanel42";
-            this.tableLayoutPanel42.RowCount = 1;
-            this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel42.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel42.TabIndex = 2;
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnCount = 3;
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.picMemberInformation, 0, 0);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.tlpMemberInformationLineBar, 2, 0);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.lblMemberInformationTitle, 1, 0);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Location = new System.Drawing.Point(21, 17);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Name = "tlpMemberInformationImageAndTitleSectionAndLine";
+            this.tlpMemberInformationImageAndTitleSectionAndLine.RowCount = 1;
+            this.tlpMemberInformationImageAndTitleSectionAndLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Size = new System.Drawing.Size(983, 45);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.TabIndex = 2;
             // 
-            // pictureBox16
+            // picMemberInformation
             // 
-            this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(50, 45);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 0;
-            this.pictureBox16.TabStop = false;
+            this.picMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picMemberInformation.Image = ((System.Drawing.Image)(resources.GetObject("picMemberInformation.Image")));
+            this.picMemberInformation.Location = new System.Drawing.Point(0, 0);
+            this.picMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.picMemberInformation.Name = "picMemberInformation";
+            this.picMemberInformation.Size = new System.Drawing.Size(50, 45);
+            this.picMemberInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberInformation.TabIndex = 0;
+            this.picMemberInformation.TabStop = false;
             // 
-            // tableLayoutPanel43
+            // tlpMemberInformationLineBar
             // 
-            this.tableLayoutPanel43.ColumnCount = 1;
-            this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel43.Controls.Add(this.panel54, 0, 1);
-            this.tableLayoutPanel43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel43.Location = new System.Drawing.Point(299, 3);
-            this.tableLayoutPanel43.Name = "tableLayoutPanel43";
-            this.tableLayoutPanel43.RowCount = 3;
-            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
-            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel43.Size = new System.Drawing.Size(681, 39);
-            this.tableLayoutPanel43.TabIndex = 2;
+            this.tlpMemberInformationLineBar.ColumnCount = 1;
+            this.tlpMemberInformationLineBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMemberInformationLineBar.Controls.Add(this.pnlMemberInformationLineBar, 0, 1);
+            this.tlpMemberInformationLineBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMemberInformationLineBar.Location = new System.Drawing.Point(299, 3);
+            this.tlpMemberInformationLineBar.Name = "tlpMemberInformationLineBar";
+            this.tlpMemberInformationLineBar.RowCount = 3;
+            this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+            this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberInformationLineBar.Size = new System.Drawing.Size(681, 39);
+            this.tlpMemberInformationLineBar.TabIndex = 2;
             // 
-            // panel54
+            // pnlMemberInformationLineBar
             // 
-            this.panel54.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel54.Location = new System.Drawing.Point(3, 20);
-            this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(675, 1);
-            this.panel54.TabIndex = 0;
+            this.pnlMemberInformationLineBar.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMemberInformationLineBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMemberInformationLineBar.Location = new System.Drawing.Point(3, 20);
+            this.pnlMemberInformationLineBar.Name = "pnlMemberInformationLineBar";
+            this.pnlMemberInformationLineBar.Size = new System.Drawing.Size(675, 1);
+            this.pnlMemberInformationLineBar.TabIndex = 0;
             // 
-            // label29
+            // lblMemberInformationTitle
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label29.Location = new System.Drawing.Point(53, 10);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(228, 25);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "MEMBER INFORMATION";
+            this.lblMemberInformationTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberInformationTitle.AutoSize = true;
+            this.lblMemberInformationTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberInformationTitle.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblMemberInformationTitle.Location = new System.Drawing.Point(53, 10);
+            this.lblMemberInformationTitle.Name = "lblMemberInformationTitle";
+            this.lblMemberInformationTitle.Size = new System.Drawing.Size(228, 25);
+            this.lblMemberInformationTitle.TabIndex = 1;
+            this.lblMemberInformationTitle.Text = "MEMBER INFORMATION";
             // 
-            // tableLayoutPanel44
+            // tlpMemberIdAndMemberNameInMemberInformation
             // 
-            this.tableLayoutPanel44.ColumnCount = 2;
-            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel44.Controls.Add(this.label27, 1, 0);
-            this.tableLayoutPanel44.Controls.Add(this.label28, 0, 0);
-            this.tableLayoutPanel44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel44.Location = new System.Drawing.Point(21, 62);
-            this.tableLayoutPanel44.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel44.Name = "tableLayoutPanel44";
-            this.tableLayoutPanel44.RowCount = 1;
-            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel44.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel44.TabIndex = 4;
+            this.tlpMemberIdAndMemberNameInMemberInformation.ColumnCount = 2;
+            this.tlpMemberIdAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberIdAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberIdAndMemberNameInMemberInformation.Controls.Add(this.lblMemberNameInMemberInformation, 1, 0);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Controls.Add(this.lblMemberIDMemberInformation, 0, 0);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMemberIdAndMemberNameInMemberInformation.Location = new System.Drawing.Point(21, 62);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Name = "tlpMemberIdAndMemberNameInMemberInformation";
+            this.tlpMemberIdAndMemberNameInMemberInformation.RowCount = 1;
+            this.tlpMemberIdAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberIdAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberIdAndMemberNameInMemberInformation.Size = new System.Drawing.Size(983, 45);
+            this.tlpMemberIdAndMemberNameInMemberInformation.TabIndex = 4;
             // 
             // tableLayoutPanel45
             // 
@@ -4408,7 +4423,7 @@
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 533F));
             this.tableLayoutPanel54.Controls.Add(this.pictureBox20, 1, 0);
-            this.tableLayoutPanel54.Controls.Add(this.comboBox1, 3, 0);
+            this.tableLayoutPanel54.Controls.Add(this.cmbSelectTrainer, 3, 0);
             this.tableLayoutPanel54.Controls.Add(this.label34, 2, 0);
             this.tableLayoutPanel54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel54.Location = new System.Drawing.Point(0, 270);
@@ -4430,22 +4445,22 @@
             this.pictureBox20.TabIndex = 0;
             this.pictureBox20.TabStop = false;
             // 
-            // comboBox1
+            // cmbSelectTrainer
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Gray;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbSelectTrainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectTrainer.FormattingEnabled = true;
+            this.cmbSelectTrainer.Items.AddRange(new object[] {
             "Priya",
             "Deep",
             "Souma",
             "Aridam"});
-            this.comboBox1.Location = new System.Drawing.Point(236, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 36);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "   ---Select Trainer ---";
+            this.cmbSelectTrainer.Location = new System.Drawing.Point(236, 12);
+            this.cmbSelectTrainer.Name = "cmbSelectTrainer";
+            this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
+            this.cmbSelectTrainer.TabIndex = 2;
+            this.cmbSelectTrainer.Text = "   ---Select Trainer ---";
             // 
             // label34
             // 
@@ -4459,24 +4474,270 @@
             this.label34.TabIndex = 3;
             this.label34.Text = "Trainer Name";
             // 
-            // tlp
+            // tlpAssignPersonalTrainerWholeDetails
             // 
-            this.tlp.BackColor = System.Drawing.Color.White;
-            this.tlp.ColumnCount = 1;
-            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp.Controls.Add(this.tableLayoutPanel17, 0, 2);
-            this.tlp.Controls.Add(this.tableLayoutPanel23, 0, 1);
-            this.tlp.Controls.Add(this.tableLayoutPanel15, 0, 0);
-            this.tlp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp.Location = new System.Drawing.Point(0, 0);
-            this.tlp.Margin = new System.Windows.Forms.Padding(0);
-            this.tlp.Name = "tlp";
-            this.tlp.RowCount = 3;
-            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.79188F));
-            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.30964F));
-            this.tlp.Size = new System.Drawing.Size(1149, 788);
-            this.tlp.TabIndex = 2;
+            this.tlpAssignPersonalTrainerWholeDetails.BackColor = System.Drawing.Color.White;
+            this.tlpAssignPersonalTrainerWholeDetails.ColumnCount = 1;
+            this.tlpAssignPersonalTrainerWholeDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAssignPersonalTrainerWholeDetails.Controls.Add(this.tlpAssignAndCancleSectionInButtom, 0, 2);
+            this.tlpAssignPersonalTrainerWholeDetails.Controls.Add(this.tlpMiddleSectionInAssignPersonalTrainer, 0, 1);
+            this.tlpAssignPersonalTrainerWholeDetails.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.tlpAssignPersonalTrainerWholeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAssignPersonalTrainerWholeDetails.Location = new System.Drawing.Point(0, 0);
+            this.tlpAssignPersonalTrainerWholeDetails.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpAssignPersonalTrainerWholeDetails.Name = "tlpAssignPersonalTrainerWholeDetails";
+            this.tlpAssignPersonalTrainerWholeDetails.RowCount = 3;
+            this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.79188F));
+            this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.30964F));
+            this.tlpAssignPersonalTrainerWholeDetails.Size = new System.Drawing.Size(1149, 788);
+            this.tlpAssignPersonalTrainerWholeDetails.TabIndex = 2;
+            // 
+            // pnlMiddleSectionLeftBarInAssignPersonalTrainer
+            // 
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Location = new System.Drawing.Point(57, 0);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Name = "pnlMiddleSectionLeftBarInAssignPersonalTrainer";
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 612);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.TabIndex = 0;
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.ColumnCount = 2;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel19, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel21, 0, 0);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(21, 107);
+            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 1;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(983, 45);
+            this.tableLayoutPanel22.TabIndex = 5;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel52, 3, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(491, 45);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(68, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(2, 45);
+            this.panel5.TabIndex = 1;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel3.Controls.Add(this.panel50, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel51, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(70, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(312, 45);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // panel50
+            // 
+            this.panel50.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel50.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel50.Location = new System.Drawing.Point(0, 0);
+            this.panel50.Margin = new System.Windows.Forms.Padding(0);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(312, 2);
+            this.panel50.TabIndex = 0;
+            // 
+            // panel51
+            // 
+            this.panel51.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel51.Location = new System.Drawing.Point(0, 42);
+            this.panel51.Margin = new System.Windows.Forms.Padding(0);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(312, 3);
+            this.panel51.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(134, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 23);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "1026";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel52
+            // 
+            this.panel52.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel52.Location = new System.Drawing.Point(382, 0);
+            this.panel52.Margin = new System.Windows.Forms.Padding(0);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(2, 45);
+            this.panel52.TabIndex = 2;
+            // 
+            // tlpRetrieveMemberNameInMemberInformation
+            // 
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnCount = 5;
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMemberNameInMemberInformation.Controls.Add(this.panel53, 1, 0);
+            this.tlpRetrieveMemberNameInMemberInformation.Controls.Add(this.tableLayoutPanel23, 2, 0);
+            this.tlpRetrieveMemberNameInMemberInformation.Controls.Add(this.pictureBox16, 0, 0);
+            this.tlpRetrieveMemberNameInMemberInformation.Controls.Add(this.panel64, 3, 0);
+            this.tlpRetrieveMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberNameInMemberInformation.Location = new System.Drawing.Point(491, 0);
+            this.tlpRetrieveMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberNameInMemberInformation.Name = "tlpRetrieveMemberNameInMemberInformation";
+            this.tlpRetrieveMemberNameInMemberInformation.RowCount = 1;
+            this.tlpRetrieveMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveMemberNameInMemberInformation.Size = new System.Drawing.Size(492, 45);
+            this.tlpRetrieveMemberNameInMemberInformation.TabIndex = 2;
+            // 
+            // panel53
+            // 
+            this.panel53.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel53.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel53.Location = new System.Drawing.Point(68, 0);
+            this.panel53.Margin = new System.Windows.Forms.Padding(0);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(2, 45);
+            this.panel53.TabIndex = 1;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 1;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tableLayoutPanel23.Controls.Add(this.panel54, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.panel63, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.label27, 0, 1);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(70, 0);
+            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 3;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(335, 45);
+            this.tableLayoutPanel23.TabIndex = 3;
+            // 
+            // panel54
+            // 
+            this.panel54.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel54.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel54.Location = new System.Drawing.Point(0, 0);
+            this.panel54.Margin = new System.Windows.Forms.Padding(0);
+            this.panel54.Name = "panel54";
+            this.panel54.Size = new System.Drawing.Size(335, 2);
+            this.panel54.TabIndex = 0;
+            // 
+            // panel63
+            // 
+            this.panel63.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel63.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel63.Location = new System.Drawing.Point(0, 42);
+            this.panel63.Margin = new System.Windows.Forms.Padding(0);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(335, 3);
+            this.panel63.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(119, 10);
+            this.label27.Margin = new System.Windows.Forms.Padding(0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(96, 23);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "John Smith";
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 0;
+            this.pictureBox16.TabStop = false;
+            // 
+            // panel64
+            // 
+            this.panel64.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel64.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel64.Location = new System.Drawing.Point(405, 0);
+            this.panel64.Margin = new System.Windows.Forms.Padding(0);
+            this.panel64.Name = "panel64";
+            this.panel64.Size = new System.Drawing.Size(2, 45);
+            this.panel64.TabIndex = 2;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(0, 11);
+            this.label28.Margin = new System.Windows.Forms.Padding(0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 23);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Member ID";
             // 
             // FrmAssignTrainer
             // 
@@ -4484,7 +4745,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 788);
-            this.Controls.Add(this.tlp);
+            this.Controls.Add(this.tlpAssignPersonalTrainerWholeDetails);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAssignTrainer";
             this.Text = "FrmAssignTrainer";
@@ -4583,11 +4844,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTopPersonalTrainer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tlpTrainerIdRe.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tlpCancleButtonSection.ResumeLayout(false);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpCancleImageAndLevel.ResumeLayout(false);
+            this.tlpCancleImageAndLevel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancleInAssignPersonalTrainer)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -4619,12 +4880,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.tlpRegisterButtonSection.ResumeLayout(false);
-            this.pnlRegisterButton.ResumeLayout(false);
-            this.tlpRegisterButton.ResumeLayout(false);
-            this.tlpRegisterButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegister)).EndInit();
+            this.tlpAssignAndCancleSectionInButtom.ResumeLayout(false);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.ResumeLayout(false);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancleButtonCreateInAssignPersonalTrainer)).EndInit();
             this.panel39.ResumeLayout(false);
             this.panel39.PerformLayout();
             this.panel40.ResumeLayout(false);
@@ -4637,17 +4898,17 @@
             this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.tableLayoutPanel22.ResumeLayout(false);
-            this.tableLayoutPanel23.ResumeLayout(false);
-            this.tableLayoutPanel24.ResumeLayout(false);
-            this.tableLayoutPanel25.ResumeLayout(false);
-            this.tableLayoutPanel41.ResumeLayout(false);
-            this.tableLayoutPanel42.ResumeLayout(false);
-            this.tableLayoutPanel42.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            this.tableLayoutPanel43.ResumeLayout(false);
-            this.tableLayoutPanel44.ResumeLayout(false);
-            this.tableLayoutPanel44.PerformLayout();
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ResumeLayout(false);
+            this.tlpMiddleSectionInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.ResumeLayout(false);
+            this.tlpMemberAndTrainerAssignAndInformation.ResumeLayout(false);
+            this.tlpMemberInformationInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ResumeLayout(false);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberInformation)).EndInit();
+            this.tlpMemberInformationLineBar.ResumeLayout(false);
+            this.tlpMemberIdAndMemberNameInMemberInformation.ResumeLayout(false);
+            this.tlpMemberIdAndMemberNameInMemberInformation.PerformLayout();
             this.tableLayoutPanel45.ResumeLayout(false);
             this.tableLayoutPanel46.ResumeLayout(false);
             this.tableLayoutPanel46.PerformLayout();
@@ -4666,7 +4927,16 @@
             this.tableLayoutPanel54.ResumeLayout(false);
             this.tableLayoutPanel54.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            this.tlp.ResumeLayout(false);
+            this.tlpAssignPersonalTrainerWholeDetails.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tlpRetrieveMemberNameInMemberInformation.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4843,11 +5113,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tlpTrainerIdRe;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tlpCancleButtonSection;
+        private System.Windows.Forms.Panel pnlCancleButtonCreateInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tlpCancleImageAndLevel;
+        private System.Windows.Forms.PictureBox picCancleInAssignPersonalTrainer;
+        private System.Windows.Forms.Label lblcancleInPersonalTrainerAssign;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel7;
@@ -4899,12 +5169,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.TableLayoutPanel tlpRegisterButtonSection;
-        private System.Windows.Forms.Panel pnlRegisterButton;
-        private System.Windows.Forms.TableLayoutPanel tlpRegisterButton;
-        private System.Windows.Forms.PictureBox picRegister;
-        private System.Windows.Forms.Label lblRegister;
+        private System.Windows.Forms.TableLayoutPanel tlpAssignAndCancleSectionInButtom;
+        private System.Windows.Forms.TableLayoutPanel tlpAssignButtonSectionInAssignPersonalTrainer;
+        private System.Windows.Forms.Panel pnlAssignButtontoAssignTrainerInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tlpCancleButtonCreateInAssignPersonalTrainer;
+        private System.Windows.Forms.PictureBox picCancleButtonCreateInAssignPersonalTrainer;
+        private System.Windows.Forms.Label lblAssignTrainerButton;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel40;
@@ -4925,23 +5195,22 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Panel panel49;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel50;
-        private System.Windows.Forms.Panel panel51;
-        private System.Windows.Forms.Panel panel52;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        private System.Windows.Forms.Panel panel53;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel41;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel42;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel43;
-        private System.Windows.Forms.Panel panel54;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel44;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberIDAndMemberNameInMemberInformation;
+        private System.Windows.Forms.Label lblMemberNameInMemberInformation;
+        private System.Windows.Forms.Label lblMemberIDMemberInformation;
+        private System.Windows.Forms.Panel pnlMiddleSectionTopBarInAssignPersonalTrainer;
+        private System.Windows.Forms.Panel pnlMiddleSectionButtomBarInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tlpMiddleSectionInAssignPersonalTrainer;
+        private System.Windows.Forms.Panel pnlMiddleSectionRightBarInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate;
+        private System.Windows.Forms.TableLayoutPanel tlpMemberAndTrainerAssignAndInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpMemberInformationInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tlpMemberInformationImageAndTitleSectionAndLine;
+        private System.Windows.Forms.PictureBox picMemberInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpMemberInformationLineBar;
+        private System.Windows.Forms.Panel pnlMemberInformationLineBar;
+        private System.Windows.Forms.Label lblMemberInformationTitle;
+        private System.Windows.Forms.TableLayoutPanel tlpMemberIdAndMemberNameInMemberInformation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel45;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel46;
         private System.Windows.Forms.Label label30;
@@ -4968,8 +5237,27 @@
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSelectTrainer;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TableLayoutPanel tlp;
+        private System.Windows.Forms.TableLayoutPanel tlpAssignPersonalTrainerWholeDetails;
+        private System.Windows.Forms.Panel pnlMiddleSectionLeftBarInAssignPersonalTrainer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberNameInMemberInformation;
+        private System.Windows.Forms.Panel panel53;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        private System.Windows.Forms.Panel panel54;
+        private System.Windows.Forms.Panel panel63;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Panel panel64;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.Panel panel51;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel52;
+        private System.Windows.Forms.Label label28;
     }
 }
