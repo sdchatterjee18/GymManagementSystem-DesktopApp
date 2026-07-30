@@ -3066,3 +3066,1501 @@ BEGIN
     ORDER BY MS.StartDate DESC;
 END;
 GO
+
+
+-------------------------------------------------------------------------------
+                   -- MemberManagement SPs --
+-------------------------------------------------------------------------------
+
+---------------------------
+--SP: spRegisterNewMember--
+---------------------------
+CREATE PROC spRegisterNewMember
+(
+    -- Member
+    @FirstName VARCHAR(50),
+    @MiddleName VARCHAR(50) = NULL,
+    @LastName VARCHAR(50),
+    @GenderId INT,
+    @PhoneNo VARCHAR(20),
+    @EmailId VARCHAR(150) = NULL,
+    @City VARCHAR(100),
+    @District VARCHAR(100),
+    @State VARCHAR(100),
+    @EmergencyContact VARCHAR(20) = NULL,
+    @ProfilePhoto VARBINARY(MAX) = NULL,
+
+    -- Subscription
+    @MembershipPlanId INT,
+
+	-- Payment
+    @PaymentMethod VARCHAR(50),
+    @FeesType VARCHAR(50),
+
+    -- Shift
+    @ShiftId INT,
+
+    -- Diet
+    @DietPlanId INT,
+
+    -- Locker
+    @NeedLocker BIT = 0
+)
+AS
+BEGIN
+SET NOCOUNT ON;
+
+    DECLARE @MemberId INT;
+	DECLARE @LockerId INT = NULL;
+	DECLARE @Message VARCHAR(300);
+	DECLARE @StartDate DATE;
+	DECLARE @ExpiryDate DATE;
+	DECLARE @DurationInDays INT;
+	DECLARE @Price DECIMAL(10,2);
+	DECLARE @RegistrationFee DECIMAL(10,2);
+	DECLARE @TotalAmount DECIMAL(10,2);
+
+BEGIN TRY
+
+    IF LTRIM(RTRIM(@FirstName)) = ''
+    BEGIN
+        SELECT 'First Name Is Required.' AS Message;
+        RETURN;
+    END
+
+    IF LTRIM(RTRIM(@LastName)) = ''
+    BEGIN
+        SELECT 'Last Name Is Required.' AS Message;
+        RETURN;
+    END
+
+	IF LTRIM(RTRIM(@PaymentMethod))=''
+	BEGIN
+		SELECT 'Payment Method Required.' AS Message;
+		RETURN;
+	END
+	IF LTRIM(RTRIM(@FeesType)) = ''
+	BEGIN
+		SELECT 'Fees Type Required.' AS Message;
+		RETURN;
+	END
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblGender
+        WHERE GenderId = @GenderId
+    )
+    BEGIN
+        SELECT 'Invalid Gender Id.' AS Message;
+        RETURN;
+    END
+	IF LTRIM(RTRIM(@PhoneNo)) = ''
+	BEGIN
+		SELECT 'Phone Number Required.' AS Message;
+		RETURN;
+	END
+	IF LEN(@PhoneNo) <> 10
+	BEGIN
+		SELECT 'Phone Number Must Be 10 Digits.' AS Message;
+		RETURN;
+	END
+	IF @PhoneNo LIKE '%[^0-9]%'
+	BEGIN
+		SELECT 'Phone Number Must Contain Only Digits.' AS Message;
+		RETURN;
+	END
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE PhoneNo = @PhoneNo
+    )
+    BEGIN
+        SELECT 'Phone Number Already Exists.' AS Message;
+        RETURN;
+    END
+	SET @EmailId = NULLIF(LTRIM(RTRIM(@EmailId)), '');
+	IF @EmailId IS NOT NULL
+	AND @EmailId NOT LIKE '%@%.%'
+	BEGIN
+		SELECT 'Invalid Email Format.' AS Message;
+		RETURN;
+	END
+    IF @EmailId IS NOT NULL
+    AND EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE LOWER(EmailId)=LOWER(@EmailId)
+    )
+    BEGIN
+        SELECT 'Email Already Exists.' AS Message;
+        RETURN;
+    END
+	SET @EmergencyContact = NULLIF(LTRIM(RTRIM(@EmergencyContact)), '');
+	IF @EmergencyContact IS NOT NULL
+	BEGIN
+		IF LEN(@EmergencyContact) <> 10
+		BEGIN
+			SELECT 'Emergency Contact Must Be 10 Digits.' AS Message;
+			RETURN;
+		END;
+
+		IF @EmergencyContact LIKE '%[^0-9]%'
+		BEGIN
+			SELECT 'Emergency Contact Must Contain Only Digits.' AS Message;
+			RETURN;
+		END;
+	END;
+	SET @City = LTRIM(RTRIM(@City));
+	SET @District = LTRIM(RTRIM(@District));
+    SET @State = LTRIM(RTRIM(@State));
+	IF @City=''
+	BEGIN
+		SELECT 'City Required.' AS Message;
+		RETURN;
+	END
+
+	IF @District=''
+	BEGIN
+		SELECT 'District Required.' AS Message;
+		RETURN;
+	END
+
+	IF @State=''
+	BEGIN
+		SELECT 'State Required.' AS Message;
+		RETURN;
+	END
+
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblMembershipPlans
+		WHERE MembershipPlanId = @MembershipPlanId
+		  AND IsActive = 1
+	)
+	BEGIN
+		SELECT 'Invalid Membership Plan.' AS Message;
+		RETURN;
+	END
+
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblShift
+		WHERE ShiftId=@ShiftId
+	)
+	BEGIN
+		SELECT 'Invalid Shift.' AS Message;
+		RETURN;
+	END
+
+
+		IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblDietPlans
+		WHERE DietPlanId=@DietPlanId
+	)
+	BEGIN
+		SELECT 'Invalid Diet Plan.' AS Message;
+		RETURN;
+	END
+
+	IF NOT EXISTS
+	(
+		SELECT 1
+		FROM tblRegistrationFees
+		WHERE IsActive = 1
+	)
+	BEGIN
+		SELECT 'Registration Fee Is Not Active.' AS Message;
+		RETURN;
+	END
+
+	SELECT
+		@Price = Price,
+		@DurationInDays = DurationInDays
+	FROM tblMembershipPlans
+	WHERE MembershipPlanId = @MembershipPlanId;
+
+	SELECT TOP 1
+    @RegistrationFee = FeeAmount
+	FROM tblRegistrationFees
+	WHERE IsActive = 1
+	ORDER BY RegistrationFeesId DESC;
+
+	SET @TotalAmount = @Price + @RegistrationFee;
+	SET @StartDate = CAST(GETDATE() AS DATE);
+	SET @ExpiryDate = DATEADD(DAY, @DurationInDays, @StartDate);
+
+    BEGIN TRANSACTION;
+
+    INSERT INTO tblMember
+    (
+        FirstName,
+        MiddleName,
+        LastName,
+        GenderId,
+        PhoneNo,
+        EmailId,
+        City,
+        District,
+        State,
+        EmergencyContact,
+        ProfilePhoto,
+        UpdatedAt
+    )
+    VALUES
+    (
+        @FirstName,
+        @MiddleName,
+        @LastName,
+        @GenderId,
+        @PhoneNo,
+        @EmailId,
+        @City,
+        @District,
+        @State,
+        @EmergencyContact,
+        @ProfilePhoto,
+        GETDATE()
+    );
+    SET @MemberId = SCOPE_IDENTITY();
+		INSERT INTO tblMembershipSubscription
+      (
+		MemberId,
+		MembershipPlanId,
+		StartDate,
+		ExpiryDate
+      )
+		VALUES
+		(
+			@MemberId,
+			@MembershipPlanId,
+			@StartDate,
+			@ExpiryDate
+		);
+    INSERT INTO tblMemberShift
+    (
+        MemberId,
+        ShiftId
+    )
+    VALUES
+    (
+        @MemberId,
+        @ShiftId
+    );
+	INSERT INTO tblSubscriptionPayment
+	(
+		MemberId,
+		MembershipPlanId,
+		PaymentMethod,
+		Amount,
+		FeesType
+	)
+	VALUES
+	(
+		@MemberId,
+		@MembershipPlanId,
+		@PaymentMethod,
+		@TotalAmount,
+		@FeesType
+	);
+    INSERT INTO tblMemberDietAssignment
+    (
+        MemberId,
+        DietPlanId
+    )
+    VALUES
+    (
+        @MemberId,
+        @DietPlanId
+    );
+    IF @NeedLocker = 1
+    BEGIN
+
+        SELECT TOP 1
+            @LockerId = LockerId
+        FROM tblLocker
+        WHERE LockerStatus = 'Available'
+        ORDER BY LockerId;
+
+        IF @LockerId IS NOT NULL
+        BEGIN
+
+            INSERT INTO tblLockerAllocation
+            (
+                LockerId,
+                MemberId
+            )
+            VALUES
+            (
+                @LockerId,
+                @MemberId
+            );
+
+            UPDATE tblLocker
+            SET LockerStatus = 'Occupied'
+            WHERE LockerId = @LockerId;
+
+            SET @Message =
+            'Member Registered Successfully. Locker Allocated.';
+        END
+        ELSE
+        BEGIN
+            SET @Message =
+            'Member Registered Successfully. No Locker Available. Added To Waiting List.';
+
+        END
+    END
+    ELSE
+    BEGIN
+
+        SET @Message =
+        'Member Registered Successfully. No Locker Requested.';
+
+    END
+    COMMIT TRANSACTION;
+
+    SELECT
+        @Message AS Message,
+        @MemberId AS MemberId,
+        @LockerId AS AllocatedLockerId;
+
+END TRY
+
+BEGIN CATCH
+
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION;
+
+    SELECT
+        ERROR_MESSAGE() AS Message;
+
+END CATCH
+
+END
+GO
+
+---------------------------------------
+--SP: spAssignPersonalTrainerToMember--
+---------------------------------------
+CREATE PROC spAssignPersonalTrainerToMember  
+(
+    @MemberId INT,
+    @TrainerId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @ShiftId INT;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member does not exist or is inactive.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipSubscription
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+              AND ExpiryDate >= CAST(GETDATE() AS DATE)
+        )
+        BEGIN
+            SELECT 'Member has no active membership.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer T
+            INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+            WHERE T.TrainerId = @TrainerId
+              AND E.IsActive = 1
+        )
+        BEGIN
+            SELECT 'Trainer does not exist or is inactive.' AS Message;
+            RETURN;
+        END;
+        SELECT @ShiftId = ShiftId
+        FROM tblMemberShift
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+
+        IF @ShiftId IS NULL
+        BEGIN
+            SELECT 'Member has no active shift.' AS Message;
+            RETURN;
+        END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblTrainerShift
+            WHERE TrainerId = @TrainerId
+              AND ShiftId = @ShiftId
+              AND IsActive = 0
+        )
+        BEGIN
+            SELECT 'Trainer is not available in this shift.' AS Message;
+            RETURN;
+        END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblMemberTrainerAssignment
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Personal trainer is already assigned to this member.' AS Message;
+            RETURN;
+        END;
+        BEGIN TRANSACTION;
+
+        INSERT INTO tblMemberTrainerAssignment
+        (
+            MemberId,
+            TrainerId,
+            ShiftId,
+            AssignedDate,
+            IsActive
+        )
+        VALUES
+        (
+            @MemberId,
+            @TrainerId,
+            @ShiftId,
+            CAST(GETDATE() AS DATE),
+            1
+        );
+        UPDATE tblTrainerShift
+        SET IsActive = 0
+        WHERE TrainerId = @TrainerId
+          AND ShiftId = @ShiftId
+          AND IsActive = 1;
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Personal trainer assigned successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------
+--SP: spChangePersonalTrainer--
+-------------------------------
+CREATE PROC spChangePersonalTrainer  
+(
+    @MemberId INT,
+    @NewTrainerId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE
+        @ShiftId INT,
+        @OldTrainerId INT;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member does not exist or is inactive.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipSubscription
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+              AND ExpiryDate >= CAST(GETDATE() AS DATE)
+        )
+        BEGIN
+            SELECT 'Member has no active membership.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer T
+            INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+            WHERE T.TrainerId = @NewTrainerId
+              AND E.IsActive = 1
+        )
+        BEGIN
+            SELECT 'New trainer does not exist or is inactive.' AS Message;
+            RETURN;
+        END;
+        SELECT @ShiftId = ShiftId
+        FROM tblMemberShift
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+        SELECT @OldTrainerId = TrainerId
+        FROM tblMemberTrainerAssignment
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+        IF @OldTrainerId = @NewTrainerId
+        BEGIN
+            SELECT 'This trainer is already assigned to the member.' AS Message;
+            RETURN;
+        END;
+        BEGIN TRANSACTION;
+        UPDATE tblMemberTrainerAssignment
+        SET IsActive = 0
+        WHERE MemberId = @MemberId
+          AND TrainerId = @OldTrainerId
+          AND IsActive = 1;
+        UPDATE tblTrainerShift
+        SET IsActive = 1
+        WHERE TrainerId = @OldTrainerId
+          AND ShiftId = @ShiftId;
+        INSERT INTO tblMemberTrainerAssignment
+        (
+            MemberId,
+            TrainerId,
+            ShiftId,
+            AssignedDate,
+            IsActive
+        )
+        VALUES
+        (
+            @MemberId,
+            @NewTrainerId,
+            @ShiftId,
+            CAST(GETDATE() AS DATE),
+            1
+        );
+        UPDATE tblTrainerShift
+        SET IsActive = 0
+        WHERE TrainerId = @NewTrainerId
+          AND ShiftId = @ShiftId;
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Personal trainer changed successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------
+  --SP: spChangeMemberShift--
+-------------------------------
+CREATE PROC spChangeMemberShift
+(
+    @MemberId INT,
+    @NewShiftId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    DECLARE
+        @CurrentShiftId INT,
+        @TrainerId INT,
+        @MaxCapacity INT,
+        @CurrentMemberCount INT;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member does not exist or is inactive.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMembershipSubscription
+            WHERE MemberId = @MemberId
+              AND ExpiryDate >= CAST(GETDATE() AS DATE)
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member has no active membership.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblShift
+            WHERE ShiftId = @NewShiftId
+        )
+        BEGIN
+            SELECT 'Invalid Shift.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            @CurrentShiftId = ShiftId
+        FROM tblMemberShift
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+
+        IF @CurrentShiftId IS NULL
+        BEGIN
+            SELECT 'Current active shift not found.' AS Message;
+            RETURN;
+        END;
+        IF @CurrentShiftId = @NewShiftId
+        BEGIN
+            SELECT 'Member is already assigned to this shift.' AS Message;
+            RETURN;
+        END;
+        SELECT TOP (1)
+            @MaxCapacity = MaxCapacity
+        FROM tblShiftCapacity;
+
+        IF @MaxCapacity IS NULL
+        BEGIN
+            SELECT 'Shift capacity is not configured.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            @CurrentMemberCount = COUNT(*)
+        FROM tblMemberShift
+        WHERE ShiftId = @NewShiftId
+          AND IsActive = 1;
+
+        IF @CurrentMemberCount >= @MaxCapacity
+        BEGIN
+            SELECT 'Selected shift is already full.' AS Message;
+            RETURN;
+        END;
+        SELECT TOP (1)
+            @TrainerId = TrainerId
+        FROM tblMemberTrainerAssignment
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+        BEGIN TRANSACTION;
+        -- Deactivate Current Shift
+        UPDATE tblMemberShift
+        SET IsActive = 0
+        WHERE MemberId = @MemberId
+          AND IsActive = 1;
+        -- Assign New Shift
+        INSERT INTO tblMemberShift
+        (
+            MemberId,
+            ShiftId,
+            IsActive
+        )
+        VALUES
+        (
+            @MemberId,
+            @NewShiftId,
+            1
+        );
+        -- Deactivate Personal Trainer Assignment
+        IF @TrainerId IS NOT NULL
+        BEGIN
+            UPDATE tblMemberTrainerAssignment
+            SET IsActive = 0
+            WHERE MemberId = @MemberId
+              AND TrainerId = @TrainerId
+              AND IsActive = 1;
+				UPDATE tblTrainerShift
+				SET IsActive = 1
+				WHERE TrainerId = @TrainerId
+				  AND ShiftId = @CurrentShiftId
+				  AND IsActive = 0;
+        END;
+        COMMIT TRANSACTION;
+        SELECT 'Member shift changed successfully.' AS Message;
+    END TRY
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------
+  --SP: spDeactivateMembers--
+-------------------------------
+CREATE PROC spDeactivateMembers
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        BEGIN TRANSACTION;
+
+        ---------------------------------------------------------
+        -- Deactivate Members
+        ---------------------------------------------------------
+        UPDATE M
+        SET M.IsActive = 0
+        FROM tblMember M
+        INNER JOIN tblMembershipSubscription MS
+            ON M.MemberId = MS.MemberId
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = M.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE)
+        AND M.IsActive = 1;
+
+        ---------------------------------------------------------
+        -- Deactivate Member Shifts
+        ---------------------------------------------------------
+        UPDATE MSH
+        SET MSH.IsActive = 0
+        FROM tblMemberShift MSH
+        INNER JOIN tblMembershipSubscription MS
+            ON MSH.MemberId = MS.MemberId
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = MSH.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE)
+        AND MSH.IsActive = 1;
+
+        ---------------------------------------------------------
+        -- Release Lockers
+        ---------------------------------------------------------
+        UPDATE L
+        SET LockerStatus = 'Available'
+        FROM tblLocker L
+        INNER JOIN tblLockerAllocation LA
+            ON L.LockerId = LA.LockerId
+        INNER JOIN tblMembershipSubscription MS
+            ON LA.MemberId = MS.MemberId
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = LA.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+
+        ---------------------------------------------------------
+        -- Remove Locker Allocation
+        ---------------------------------------------------------
+        DELETE LA
+        FROM tblLockerAllocation LA
+        INNER JOIN tblMembershipSubscription MS
+            ON LA.MemberId = MS.MemberId
+        WHERE MS.MemberSubscriptionId =
+        (
+            SELECT MAX(MemberSubscriptionId)
+            FROM tblMembershipSubscription
+            WHERE MemberId = LA.MemberId
+        )
+        AND MS.IsActive = 0
+        AND DATEADD(MONTH,3,MS.ExpiryDate) < CAST(GETDATE() AS DATE);
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Inactive members processed successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-------------------------------
+  --SP: spExpireMembership--
+-------------------------------
+CREATE PROC spExpireMembership
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Expire memberships
+        UPDATE MS
+        SET MS.IsActive = 0
+        FROM tblMembershipSubscription MS
+        WHERE MS.IsActive = 1
+          AND MS.ExpiryDate < CAST(GETDATE() AS DATE);
+
+        -- Deactivate trainer assignment
+        UPDATE MTA
+        SET MTA.IsActive = 0
+        FROM tblMemberTrainerAssignment MTA
+        INNER JOIN tblMembershipSubscription MS
+            ON MS.MemberId = MTA.MemberId
+        WHERE MTA.IsActive = 1
+          AND MS.IsActive = 0;
+
+        -- Free only that trainer's shift
+        UPDATE TS
+        SET TS.IsActive = 1
+        FROM tblTrainerShift TS
+        INNER JOIN tblMemberTrainerAssignment MTA
+            ON TS.TrainerId = MTA.TrainerId
+           AND TS.ShiftId = MTA.ShiftId
+        WHERE TS.IsActive = 0
+          AND MTA.IsActive = 0;
+
+        COMMIT TRANSACTION;
+
+        SELECT 'Expired memberships processed successfully.' AS Message;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        THROW;
+    END CATCH
+END;
+GO
+
+---------------------------------
+  --SP: spRetrieveActiveMembers--
+---------------------------------
+CREATE PROC spRetrieveActiveMembers
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            MemberId,
+            FirstName,
+            MiddleName,
+            LastName,
+            PhoneNo,
+            EmailId,
+            City,
+            District,
+            State,
+            EmergencyContact,
+            ProfilePhoto,
+            JoiningDate,
+            UpdatedAt
+        FROM tblMember
+        WHERE IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+----------------------------------------
+  --SP: spRetrieveActiveMembersByShift--
+----------------------------------------
+CREATE PROC spRetrieveActiveMembersByShift 
+(
+    @ShiftId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        ------------------------------------------------
+        -- Shift Validation
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblShift
+            WHERE ShiftId = @ShiftId
+        )
+        BEGIN
+            SELECT 'Invalid Shift.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Retrieve Active Members
+        ------------------------------------------------
+        SELECT
+            M.MemberId,
+            CONCAT(M.FirstName, ' ', M.LastName) AS MemberName,
+            M.PhoneNo,
+            M.EmailId
+        FROM tblMemberShift MS
+        INNER JOIN tblMember M
+            ON MS.MemberId = M.MemberId
+        WHERE MS.ShiftId = @ShiftId
+          AND MS.IsActive = 1
+          AND M.IsActive = 1
+        ORDER BY M.FirstName, M.LastName;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+------------------------------------------------------
+  --SP: spRetrieveAllMemberTrainerAssignmentsDetails--
+------------------------------------------------------
+CREATE PROC spRetrieveAllMemberTrainerAssignmentsDetails
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        CONCAT(
+            m.FirstName+' ', 
+            ISNULL(m.MiddleName + ' ', ''), 
+            m.LastName
+        ) AS MemberName,
+        m.PhoneNo,
+        CONCAT(
+            e.FirstName+' ', 
+            ISNULL(e.MiddleName + ' ', ''), 
+            e.LastName
+        ) AS TrainerName
+    FROM tblMemberTrainerAssignment mta
+    JOIN tblMember m 
+        ON mta.MemberId = m.MemberId
+        AND mta.IsActive = 1
+    JOIN tblTrainer t 
+        ON mta.TrainerId = t.TrainerId 
+    JOIN tblEmployee e 
+        ON t.EmployeeId = e.EmployeeId
+        AND e.IsActive = 1 
+    ORDER BY mta.MemberTrainerAssignmentId;
+END
+GO
+
+-----------------------------------------------
+  --SP: spRetrieveCurrentMonthNewMemberCount--
+-----------------------------------------------
+CREATE PROC spRetrieveCurrentMonthNewMemberCount
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            COUNT(MemberId) AS TotalNewMembers
+        FROM tblMember
+        WHERE
+            MONTH(JoiningDate) = MONTH(GETDATE())
+            AND YEAR(JoiningDate) = YEAR(GETDATE())
+            AND IsActive = 1;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS ErrorMessage;
+
+    END CATCH
+END;
+GO
+
+--------------------------------------
+  --SP: spRetrieveMemberCurrentShift--
+--------------------------------------
+CREATE PROC spRetrieveMemberCurrentShift 
+(
+    @MemberId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        ------------------------------------------------
+        -- Member Validation
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Active Shift Validation
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMemberShift
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'No Active Shift Assigned To This Member.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Retrieve Current Active Shift
+        ------------------------------------------------
+        SELECT
+            M.MemberId,
+            CONCAT
+            (
+                M.FirstName, ' ',
+                ISNULL(M.MiddleName + ' ', ''),
+                M.LastName
+            ) AS MemberName,
+            S.ShiftId,
+            S.ShiftName,
+            S.StartTime,
+            S.EndTime
+        FROM tblMember M
+        INNER JOIN tblMemberShift MS
+            ON M.MemberId = MS.MemberId
+        INNER JOIN tblShift S
+            ON MS.ShiftId = S.ShiftId
+        WHERE M.MemberId = @MemberId
+          AND MS.IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+-----------------------------------------
+  --SP: spRetrieveMemberIdByPhoneNumber--
+-----------------------------------------
+CREATE PROC spRetrieveMemberIdByPhoneNumber
+(
+    @PhoneNo VARCHAR(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        ------------------------------------------------
+        -- Trim Phone Number
+        ------------------------------------------------
+        SET @PhoneNo = LTRIM(RTRIM(@PhoneNo));
+
+        ------------------------------------------------
+        -- Phone Number Required
+        ------------------------------------------------
+        IF @PhoneNo = ''
+        BEGIN
+            SELECT 'Phone Number is required.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Phone Number Validation
+        ------------------------------------------------
+        IF LEN(@PhoneNo) <> 10
+        BEGIN
+            SELECT 'Phone Number must be 10 digits.' AS Message;
+            RETURN;
+        END;
+
+        IF @PhoneNo LIKE '%[^0-9]%'
+        BEGIN
+            SELECT 'Phone Number must contain only digits.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Member Exists
+        ------------------------------------------------
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE PhoneNo = @PhoneNo
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member not found.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Return Member Id
+        ------------------------------------------------
+        SELECT
+            MemberId
+        FROM tblMember
+        WHERE PhoneNo = @PhoneNo
+          AND IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+------------------------------------------------------------
+  --SP: spRetrieveMemberTrainerAssignmentsDetailsByPhoneNo--
+------------------------------------------------------------
+CREATE PROC spRetrieveMemberTrainerAssignmentsDetailsByPhoneNo
+@PhoneNo VARCHAR(10)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        CONCAT(
+            m.FirstName+' ',
+            ISNULL(m.MiddleName + ' ', ''), 
+            m.LastName
+        ) AS MemberName,
+        m.PhoneNo,
+        CONCAT(
+            e.FirstName+' ', 
+            ISNULL(e.MiddleName + ' ', ''), 
+            e.LastName
+        ) AS TrainerName
+    FROM tblMemberTrainerAssignment mta
+    JOIN tblMember m 
+        ON mta.MemberId = m.MemberId
+        AND m.IsActive = 1 
+    JOIN tblTrainer t 
+        ON mta.TrainerId = t.TrainerId
+        AND mta.IsActive = 1
+    JOIN tblEmployee e 
+        ON t.EmployeeId = e.EmployeeId
+        AND e.IsActive = 1
+    WHERE m.PhoneNo LIKE '%'+@PhoneNo+'%'
+    ORDER BY mta.MemberTrainerAssignmentId;
+END
+GO
+
+-----------------------------------------
+  --SP: spRetrieveRegisterMemberDetails--
+-----------------------------------------
+CREATE PROC spRetrieveRegisterMemberDetails
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            M.MemberId,
+
+            M.FirstName + ' ' +
+            ISNULL(M.MiddleName + ' ', '') +
+            M.LastName AS MemberName,
+
+            G.GenderName AS Gender,
+
+            M.PhoneNo,
+            M.EmailId,
+
+            M.City + ', ' +
+            M.District + ', ' +
+            M.State AS Address,
+
+            M.EmergencyContact,
+            M.ProfilePhoto,
+            M.JoiningDate,
+            M.UpdatedAt,
+            M.IsActive AS MemberIsActive,
+
+            MP.MembershipPlanName,
+            MS.StartDate,
+            MS.ExpiryDate,
+
+            S.ShiftName,
+
+            DP.ConditionStatus,
+            DP.DietPlanDocument,
+
+            L.LockerNo,
+
+            SP.PaymentDate,
+            SP.PaymentMethod,
+            SP.Amount,
+            SP.FeesType
+
+        FROM tblMember M
+
+        LEFT JOIN tblGender G
+            ON M.GenderId = G.GenderId
+
+        -- Only active membership
+        LEFT JOIN tblMembershipSubscription MS
+            ON M.MemberId = MS.MemberId
+           AND MS.IsActive = 1
+
+        LEFT JOIN tblMembershipPlans MP
+            ON MS.MembershipPlanId = MP.MembershipPlanId
+
+        -- Only active shift
+        LEFT JOIN tblMemberShift MSH
+            ON M.MemberId = MSH.MemberId
+           AND MSH.IsActive = 1
+
+        LEFT JOIN tblShift S
+            ON MSH.ShiftId = S.ShiftId
+
+        -- Only active diet assignment
+        LEFT JOIN tblMemberDietAssignment MDA
+            ON M.MemberId = MDA.MemberId
+           AND MDA.IsActive = 1
+
+        LEFT JOIN tblDietPlans DP
+            ON MDA.DietPlanId = DP.DietPlanId
+
+        -- Only active locker allocation
+        LEFT JOIN tblLockerAllocation LA
+            ON M.MemberId = LA.MemberId
+
+        LEFT JOIN tblLocker L
+            ON LA.LockerId = L.LockerId
+
+        -- Only active/current payment
+        OUTER APPLY
+(
+    SELECT TOP (1)
+        PaymentDate,
+        PaymentMethod,
+        Amount,
+        FeesType
+    FROM tblSubscriptionPayment SP
+    WHERE SP.MemberId = M.MemberId
+    ORDER BY PaymentDate DESC, PaymentId DESC
+) SP
+
+        ORDER BY M.MemberId;
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+-----------------------------------------
+  --SP: spUpdateMemberContactInfo--
+-----------------------------------------
+CREATE PROC spUpdateMemberContactInfo
+(
+    @MemberId INT,
+    @PhoneNo VARCHAR(20),
+    @EmailId VARCHAR(150) = NULL,
+    @EmergencyContact VARCHAR(20) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        -- 1. Check member exists
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Member not found' AS Message;
+            RETURN;
+        END;
+
+        -- 2. Phone validation
+        IF @PhoneNo IS NULL
+           OR LEN(@PhoneNo) < 10
+        BEGIN
+            SELECT 'Invalid phone number' AS Message;
+            RETURN;
+        END;
+
+        -- 3. Duplicate phone check
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE PhoneNo = @PhoneNo
+              AND MemberId <> @MemberId
+        )
+        BEGIN
+            SELECT 'Phone number already exists' AS Message;
+            RETURN;
+        END;
+
+        -- 4. Email format check
+        IF @EmailId IS NOT NULL
+           AND @EmailId NOT LIKE '%_@_%._%'
+        BEGIN
+            SELECT 'Invalid email format' AS Message;
+            RETURN;
+        END;
+
+        -- 5. Duplicate email check
+        IF @EmailId IS NOT NULL
+           AND EXISTS
+           (
+               SELECT 1
+               FROM tblMember
+               WHERE EmailId = @EmailId
+                 AND MemberId <> @MemberId
+           )
+        BEGIN
+            SELECT 'Email already exists' AS Message;
+            RETURN;
+        END;
+
+        -- 6. Emergency contact validation
+        IF @EmergencyContact IS NOT NULL
+           AND LEN(@EmergencyContact) < 10
+        BEGIN
+            SELECT 'Invalid emergency contact' AS Message;
+            RETURN;
+        END;
+
+        -- 7. Update
+        UPDATE tblMember
+        SET
+            PhoneNo = @PhoneNo,
+            EmailId = @EmailId,
+            EmergencyContact = @EmergencyContact,
+            UpdatedAt = GETDATE()
+        WHERE MemberId = @MemberId;
+
+        -- Success response
+        SELECT 'Member updated successfully' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
+END;
+GO
+
+-------------------------------------------------
+  --SP: spRetrieveMembersWithoutActiveMembership--
+--------------------------------------------------
+CREATE PROC spRetrieveMembersWithoutActiveMembership
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            M.MemberId,
+            M.FirstName,
+            M.MiddleName,
+            M.LastName,
+            M.PhoneNo,
+            M.EmailId,
+            M.City,
+            M.District,
+            M.State,
+            M.EmergencyContact,
+            M.ProfilePhoto,
+            M.JoiningDate,
+            M.UpdatedAt
+        FROM tblMember M
+        WHERE M.IsActive = 1
+          AND NOT EXISTS
+          (
+              SELECT 1
+              FROM tblMembershipSubscription MS
+              WHERE MS.MemberId = M.MemberId
+                AND MS.IsActive = 1
+          );
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
