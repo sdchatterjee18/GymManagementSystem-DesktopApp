@@ -60,6 +60,12 @@
     <Compile Include="Authentication\FrmSuperAdminLogin.Designer.cs">
       <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\FrmSuperAdminRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminRegistration.Designer.cs">
+      <DependentUpon>FrmSuperAdminRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentication\FrmUserRoleSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\FrmSuperAdminLogin.resx">
       <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmSuperAdminRegistration.resx">
+      <DependentUpon>FrmSuperAdminRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\FrmUserRoleSelection.resx">
       <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
