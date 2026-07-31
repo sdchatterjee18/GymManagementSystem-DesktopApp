@@ -47,12 +47,13 @@ namespace GymManagementSystem.Authentication
 
         private void pnlclickAddNewSuperadmin_MouseEnter(object sender, EventArgs e)
         {
-            pnlclickAddNewSuperadmin.BackColor = Color.Cornsilk;
+            pnlclickAddNewSuperAdmin.BackColor = Color.Cornsilk;
+           
         }
 
         private void pnlclickAddNewSuperadmin_MouseLeave(object sender, EventArgs e)
         {
-            pnlclickAddNewSuperadmin.BackColor = Color.FloralWhite;
+            pnlclickAddNewSuperAdmin.BackColor = Color.FloralWhite;
         }
 
         private void pnlAdminLogin_MouseEnter(object sender, EventArgs e)
@@ -74,5 +75,13 @@ namespace GymManagementSystem.Authentication
         {
             pnlSuperAdminLogin.BackColor = Color.FloralWhite;
         }
+
+        private void pnlclickAddNewSuperAdmin_Click(object sender, EventArgs e)
+        {
+            FrmSuperAdminRegistration from = new FrmSuperAdminRegistration();
+            from.Show();
+        }
+
+        
     }
 }
