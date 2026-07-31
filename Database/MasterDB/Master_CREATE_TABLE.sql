@@ -322,25 +322,30 @@ CREATE TABLE tblMembershipSubscription (
 GO
 
 CREATE TABLE tblSubscriptionPayment(
-	PaymentId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
-	MemberId INT NOT NULL,
-	MembershipPlanId INT NOT NULL,
-	PaymentDate Date NOT NULL DEFAULT(GETDATE()),
-	PaymentMethod VARCHAR(50) NOT NULL,
-	Amount DECIMAL(10,2) CHECK(Amount >= 0) NOT NULL,
-	FeesType VARCHAR(50) NOT NULL,
+    PaymentId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+    MemberSubscriptionId INT NOT NULL,
+    MemberId INT NOT NULL,
+    MembershipPlanId INT NOT NULL,
+    PaymentDate DATE NOT NULL DEFAULT(GETDATE()),
+    PaymentMethod VARCHAR(50) NOT NULL,
+    Amount DECIMAL(10,2) CHECK(Amount >= 0) NOT NULL,
+    FeesType VARCHAR(50) NOT NULL,
 
-	CONSTRAINT FK_tblSubscriptionPayment_MemberIdtblMember
-		FOREIGN KEY (MemberId) 
-		REFERENCES tblMember(MemberId),
-	CONSTRAINT FK_tblSubscriptionPayment_MembershipPlanIdtblMembershipPlans
-		FOREIGN KEY (MembershipPlanId) 
-		REFERENCES tblMembershipPlans(MembershipPlanId)
+    CONSTRAINT FK_tblSubscriptionPayment_tblMembershipSubscription
+        FOREIGN KEY (MemberSubscriptionId)
+        REFERENCES tblMembershipSubscription(MemberSubscriptionId),
 
+    CONSTRAINT FK_tblSubscriptionPayment_tblMember
+        FOREIGN KEY (MemberId)
+        REFERENCES tblMember(MemberId),
+
+    CONSTRAINT FK_tblSubscriptionPayment_tblMembershipPlans
+        FOREIGN KEY (MembershipPlanId)
+        REFERENCES tblMembershipPlans(MembershipPlanId)
 );
 GO
 
-Create Table tblMemberTrainerAssignment(
+CREATE TABLE tblMemberTrainerAssignment(
 	MemberTrainerAssignmentId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	MemberId INT NOT NULL,
 	TrainerId INT NOT NULL,
