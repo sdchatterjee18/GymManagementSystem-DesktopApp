@@ -95,7 +95,7 @@ namespace GymManagementSystem.Authentication
 
         private void txtRegistrationSuperAdminConfermPassword_Enter(object sender, EventArgs e)
         {
-            if (txtRegistrationSuperAdminConfermPassword.Text.Trim() == "Conferm Password")
+            if (txtRegistrationSuperAdminConfermPassword.Text.Trim() == "Confirm Password")
             {
                 txtRegistrationSuperAdminConfermPassword.Text = "";
                 txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Gray;
@@ -106,7 +106,7 @@ namespace GymManagementSystem.Authentication
         {
             if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminConfermPassword.Text))
             {
-                txtRegistrationSuperAdminConfermPassword.Text = "Conferm Password";
+                txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
                 txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Gray;
             }
         }
@@ -165,5 +165,39 @@ namespace GymManagementSystem.Authentication
         {
             pnlUsernameSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (chkShowPassword.Checked)
+            {
+                txtRegistrationSuperAdminPassword.PasswordChar = '\0';
+                chkShowPassword.BackColor = Color.PapayaWhip;
+            }
+            else
+            {
+                txtRegistrationSuperAdminPassword.PasswordChar = '*';
+            }
+        }
+
+        private void chkShowConfermPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowConfermPassword.Checked)
+            {
+                txtRegistrationSuperAdminPassword.PasswordChar = '\0';
+                chkShowConfermPassword.BackColor = Color.PapayaWhip;
+            }
+            else
+            {
+                txtRegistrationSuperAdminPassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtRegistrationSuperAdminConfermPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -41,7 +41,6 @@
             this.picSuperAdminUsernameRegistration = new System.Windows.Forms.PictureBox();
             this.tlpSuperAdminRegistration = new System.Windows.Forms.TableLayoutPanel();
             this.btnSuperAdminRegistration = new System.Windows.Forms.Button();
-            this.btnShowPasswordSuperAdminRegistration = new System.Windows.Forms.Button();
             this.pnlPasswordSuperAdminRegistration = new System.Windows.Forms.Panel();
             this.tlpRegistrationSuperAdminPasswordInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblRegistrationSuperAdminPassword = new System.Windows.Forms.Label();
@@ -57,12 +56,13 @@
             this.lblMobileNo = new System.Windows.Forms.Label();
             this.txtRegistrationSuperAdminMobileNo = new System.Windows.Forms.TextBox();
             this.picSuperAdminMobileNo = new System.Windows.Forms.PictureBox();
-            this.btnShowConfermPasswordSuperAdminRegistration = new System.Windows.Forms.Button();
             this.pnlConfermPasswordSuperAdminRegistration = new System.Windows.Forms.Panel();
             this.tlpRegistrationSuperAdminConfermPasswordInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblConferm = new System.Windows.Forms.Label();
             this.txtRegistrationSuperAdminConfermPassword = new System.Windows.Forms.TextBox();
             this.picSuperAdminConferm = new System.Windows.Forms.PictureBox();
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
+            this.chkShowConfermPassword = new System.Windows.Forms.CheckBox();
             this.tlpRegistrationSuperAdminLoginEntireForm.SuspendLayout();
             this.tlpRegistrationSuperAdminImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminImageRegistration)).BeginInit();
@@ -97,12 +97,12 @@
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.picRegistrationSuperAdminThreeDot, 1, 2);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.pnlUsernameSuperAdminRegistration, 1, 4);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.tlpSuperAdminRegistration, 1, 11);
-            this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.btnShowPasswordSuperAdminRegistration, 1, 8);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.pnlPasswordSuperAdminRegistration, 1, 7);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.pnlEmailIdSuperAdminRegistration, 1, 6);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.pnlMobileNoSuperAdminRegistration, 1, 5);
-            this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.btnShowConfermPasswordSuperAdminRegistration, 1, 10);
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.pnlConfermPasswordSuperAdminRegistration, 1, 9);
+            this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.chkShowPassword, 1, 8);
+            this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.chkShowConfermPassword, 1, 10);
             this.tlpRegistrationSuperAdminLoginEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminLoginEntireForm.Location = new System.Drawing.Point(0, 0);
             this.tlpRegistrationSuperAdminLoginEntireForm.Name = "tlpRegistrationSuperAdminLoginEntireForm";
@@ -208,21 +208,22 @@
             // 
             this.lblRegistrationSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRegistrationSuperAdminUsername.AutoSize = true;
-            this.lblRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblRegistrationSuperAdminUsername.Location = new System.Drawing.Point(39, 7);
+            this.lblRegistrationSuperAdminUsername.Location = new System.Drawing.Point(39, 9);
             this.lblRegistrationSuperAdminUsername.Name = "lblRegistrationSuperAdminUsername";
-            this.lblRegistrationSuperAdminUsername.Size = new System.Drawing.Size(123, 30);
+            this.lblRegistrationSuperAdminUsername.Size = new System.Drawing.Size(108, 25);
             this.lblRegistrationSuperAdminUsername.TabIndex = 0;
             this.lblRegistrationSuperAdminUsername.Text = "Username :";
             // 
             // txtRegistrationSuperAdminUsername
             // 
             this.txtRegistrationSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(206, 5);
+            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(206, 7);
             this.txtRegistrationSuperAdminUsername.Name = "txtRegistrationSuperAdminUsername";
-            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(301, 34);
+            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(301, 30);
             this.txtRegistrationSuperAdminUsername.TabIndex = 1;
             this.txtRegistrationSuperAdminUsername.Text = "Enter Username";
             this.txtRegistrationSuperAdminUsername.Enter += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Enter);
@@ -244,7 +245,7 @@
             this.tlpSuperAdminRegistration.ColumnCount = 3;
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.42285F));
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.57716F));
-            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tlpSuperAdminRegistration.Controls.Add(this.btnSuperAdminRegistration, 1, 0);
             this.tlpSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminRegistration.Location = new System.Drawing.Point(26, 559);
@@ -265,23 +266,10 @@
             this.btnSuperAdminRegistration.ForeColor = System.Drawing.Color.White;
             this.btnSuperAdminRegistration.Location = new System.Drawing.Point(59, 3);
             this.btnSuperAdminRegistration.Name = "btnSuperAdminRegistration";
-            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(435, 43);
+            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(434, 43);
             this.btnSuperAdminRegistration.TabIndex = 0;
             this.btnSuperAdminRegistration.Text = "Register";
             this.btnSuperAdminRegistration.UseVisualStyleBackColor = false;
-            // 
-            // btnShowPasswordSuperAdminRegistration
-            // 
-            this.btnShowPasswordSuperAdminRegistration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowPasswordSuperAdminRegistration.BackColor = System.Drawing.Color.Ivory;
-            this.btnShowPasswordSuperAdminRegistration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnShowPasswordSuperAdminRegistration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPasswordSuperAdminRegistration.Location = new System.Drawing.Point(502, 434);
-            this.btnShowPasswordSuperAdminRegistration.Name = "btnShowPasswordSuperAdminRegistration";
-            this.btnShowPasswordSuperAdminRegistration.Size = new System.Drawing.Size(81, 36);
-            this.btnShowPasswordSuperAdminRegistration.TabIndex = 9;
-            this.btnShowPasswordSuperAdminRegistration.Text = "Show";
-            this.btnShowPasswordSuperAdminRegistration.UseVisualStyleBackColor = false;
             // 
             // pnlPasswordSuperAdminRegistration
             // 
@@ -317,21 +305,23 @@
             // 
             this.lblRegistrationSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRegistrationSuperAdminPassword.AutoSize = true;
-            this.lblRegistrationSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrationSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrationSuperAdminPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblRegistrationSuperAdminPassword.Location = new System.Drawing.Point(40, 6);
+            this.lblRegistrationSuperAdminPassword.Location = new System.Drawing.Point(40, 9);
             this.lblRegistrationSuperAdminPassword.Name = "lblRegistrationSuperAdminPassword";
-            this.lblRegistrationSuperAdminPassword.Size = new System.Drawing.Size(116, 30);
+            this.lblRegistrationSuperAdminPassword.Size = new System.Drawing.Size(101, 25);
             this.lblRegistrationSuperAdminPassword.TabIndex = 0;
             this.lblRegistrationSuperAdminPassword.Text = "Password :";
             // 
             // txtRegistrationSuperAdminPassword
             // 
             this.txtRegistrationSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminPassword.Location = new System.Drawing.Point(206, 4);
+            this.txtRegistrationSuperAdminPassword.Location = new System.Drawing.Point(206, 6);
             this.txtRegistrationSuperAdminPassword.Name = "txtRegistrationSuperAdminPassword";
-            this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(301, 34);
+            this.txtRegistrationSuperAdminPassword.PasswordChar = '*';
+            this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(301, 30);
             this.txtRegistrationSuperAdminPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminPassword.Text = "Enter Password";
             this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
@@ -382,21 +372,22 @@
             // 
             this.lblEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmailId.AutoSize = true;
-            this.lblEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblEmailId.Location = new System.Drawing.Point(41, 7);
+            this.lblEmailId.Location = new System.Drawing.Point(41, 9);
             this.lblEmailId.Name = "lblEmailId";
-            this.lblEmailId.Size = new System.Drawing.Size(102, 30);
+            this.lblEmailId.Size = new System.Drawing.Size(91, 25);
             this.lblEmailId.TabIndex = 0;
             this.lblEmailId.Text = "Email Id :";
             // 
             // txtRegistrationSuperAdminEmailId
             // 
             this.txtRegistrationSuperAdminEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminEmailId.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminEmailId.Location = new System.Drawing.Point(206, 5);
+            this.txtRegistrationSuperAdminEmailId.Location = new System.Drawing.Point(206, 7);
             this.txtRegistrationSuperAdminEmailId.Name = "txtRegistrationSuperAdminEmailId";
-            this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(301, 34);
+            this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(301, 30);
             this.txtRegistrationSuperAdminEmailId.TabIndex = 1;
             this.txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
             this.txtRegistrationSuperAdminEmailId.Enter += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Enter);
@@ -447,21 +438,22 @@
             // 
             this.lblMobileNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMobileNo.AutoSize = true;
-            this.lblMobileNo.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobileNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobileNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblMobileNo.Location = new System.Drawing.Point(40, 7);
+            this.lblMobileNo.Location = new System.Drawing.Point(40, 9);
             this.lblMobileNo.Name = "lblMobileNo";
-            this.lblMobileNo.Size = new System.Drawing.Size(126, 30);
+            this.lblMobileNo.Size = new System.Drawing.Size(109, 25);
             this.lblMobileNo.TabIndex = 0;
             this.lblMobileNo.Text = "Mobile no :";
             // 
             // txtRegistrationSuperAdminMobileNo
             // 
             this.txtRegistrationSuperAdminMobileNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminMobileNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminMobileNo.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminMobileNo.Location = new System.Drawing.Point(206, 5);
+            this.txtRegistrationSuperAdminMobileNo.Location = new System.Drawing.Point(206, 7);
             this.txtRegistrationSuperAdminMobileNo.Name = "txtRegistrationSuperAdminMobileNo";
-            this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(301, 34);
+            this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(301, 30);
             this.txtRegistrationSuperAdminMobileNo.TabIndex = 1;
             this.txtRegistrationSuperAdminMobileNo.Text = "Enter Mobile No";
             this.txtRegistrationSuperAdminMobileNo.Enter += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Enter);
@@ -477,19 +469,6 @@
             this.picSuperAdminMobileNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminMobileNo.TabIndex = 2;
             this.picSuperAdminMobileNo.TabStop = false;
-            // 
-            // btnShowConfermPasswordSuperAdminRegistration
-            // 
-            this.btnShowConfermPasswordSuperAdminRegistration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowConfermPasswordSuperAdminRegistration.BackColor = System.Drawing.Color.Ivory;
-            this.btnShowConfermPasswordSuperAdminRegistration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnShowConfermPasswordSuperAdminRegistration.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowConfermPasswordSuperAdminRegistration.Location = new System.Drawing.Point(502, 520);
-            this.btnShowConfermPasswordSuperAdminRegistration.Name = "btnShowConfermPasswordSuperAdminRegistration";
-            this.btnShowConfermPasswordSuperAdminRegistration.Size = new System.Drawing.Size(81, 33);
-            this.btnShowConfermPasswordSuperAdminRegistration.TabIndex = 9;
-            this.btnShowConfermPasswordSuperAdminRegistration.Text = "Show";
-            this.btnShowConfermPasswordSuperAdminRegistration.UseVisualStyleBackColor = false;
             // 
             // pnlConfermPasswordSuperAdminRegistration
             // 
@@ -525,23 +504,26 @@
             // 
             this.lblConferm.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblConferm.AutoSize = true;
-            this.lblConferm.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConferm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConferm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblConferm.Location = new System.Drawing.Point(40, 4);
+            this.lblConferm.Location = new System.Drawing.Point(40, 6);
             this.lblConferm.Name = "lblConferm";
-            this.lblConferm.Size = new System.Drawing.Size(111, 30);
+            this.lblConferm.Size = new System.Drawing.Size(92, 25);
             this.lblConferm.TabIndex = 0;
-            this.lblConferm.Text = "Conferm :";
+            this.lblConferm.Text = "Confirm :";
             // 
             // txtRegistrationSuperAdminConfermPassword
             // 
             this.txtRegistrationSuperAdminConfermPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminConfermPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminConfermPassword.Location = new System.Drawing.Point(206, 3);
+            this.txtRegistrationSuperAdminConfermPassword.Location = new System.Drawing.Point(206, 4);
             this.txtRegistrationSuperAdminConfermPassword.Name = "txtRegistrationSuperAdminConfermPassword";
-            this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(301, 34);
+            this.txtRegistrationSuperAdminConfermPassword.PasswordChar = '*';
+            this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(301, 30);
             this.txtRegistrationSuperAdminConfermPassword.TabIndex = 1;
-            this.txtRegistrationSuperAdminConfermPassword.Text = "Conferm Password";
+            this.txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
+            this.txtRegistrationSuperAdminConfermPassword.TextChanged += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_TextChanged);
             this.txtRegistrationSuperAdminConfermPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Enter);
             this.txtRegistrationSuperAdminConfermPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Leave);
             // 
@@ -555,6 +537,34 @@
             this.picSuperAdminConferm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminConferm.TabIndex = 2;
             this.picSuperAdminConferm.TabStop = false;
+            // 
+            // chkShowPassword
+            // 
+            this.chkShowPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.chkShowPassword.Location = new System.Drawing.Point(515, 440);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(68, 24);
+            this.chkShowPassword.TabIndex = 13;
+            this.chkShowPassword.Text = "Show";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
+            // 
+            // chkShowConfermPassword
+            // 
+            this.chkShowConfermPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chkShowConfermPassword.AutoSize = true;
+            this.chkShowConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowConfermPassword.ForeColor = System.Drawing.Color.Black;
+            this.chkShowConfermPassword.Location = new System.Drawing.Point(515, 524);
+            this.chkShowConfermPassword.Name = "chkShowConfermPassword";
+            this.chkShowConfermPassword.Size = new System.Drawing.Size(68, 24);
+            this.chkShowConfermPassword.TabIndex = 13;
+            this.chkShowConfermPassword.Text = "Show";
+            this.chkShowConfermPassword.UseVisualStyleBackColor = true;
+            this.chkShowConfermPassword.CheckedChanged += new System.EventHandler(this.chkShowConfermPassword_CheckedChanged);
             // 
             // FrmSuperAdminRegistration
             // 
@@ -610,14 +620,12 @@
         private System.Windows.Forms.Panel pnlUsernameSuperAdminRegistration;
         private System.Windows.Forms.TableLayoutPanel tlpSuperAdminRegistration;
         private System.Windows.Forms.Button btnSuperAdminRegistration;
-        private System.Windows.Forms.Button btnShowPasswordSuperAdminRegistration;
         private System.Windows.Forms.Panel pnlPasswordSuperAdminRegistration;
         private System.Windows.Forms.Panel pnlEmailIdSuperAdminRegistration;
         private System.Windows.Forms.TableLayoutPanel tlpRegistrationSuperAdminEmailIdInput;
         private System.Windows.Forms.Label lblEmailId;
         private System.Windows.Forms.TextBox txtRegistrationSuperAdminEmailId;
         private System.Windows.Forms.PictureBox picSuperAdminEmailId;
-        private System.Windows.Forms.Button btnShowConfermPasswordSuperAdminRegistration;
         private System.Windows.Forms.TableLayoutPanel tlpRegistrationSuperAdminPasswordInput;
         private System.Windows.Forms.Label lblRegistrationSuperAdminPassword;
         private System.Windows.Forms.TextBox txtRegistrationSuperAdminPassword;
@@ -636,5 +644,7 @@
         private System.Windows.Forms.Label lblRegistrationSuperAdminUsername;
         private System.Windows.Forms.TextBox txtRegistrationSuperAdminUsername;
         private System.Windows.Forms.PictureBox picSuperAdminUsernameRegistration;
+        private System.Windows.Forms.CheckBox chkShowPassword;
+        private System.Windows.Forms.CheckBox chkShowConfermPassword;
     }
 }
