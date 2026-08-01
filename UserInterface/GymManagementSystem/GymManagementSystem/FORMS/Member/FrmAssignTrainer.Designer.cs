@@ -204,36 +204,36 @@
             this.tlpCancleImageAndLevel = new System.Windows.Forms.TableLayoutPanel();
             this.picCancleInAssignPersonalTrainer = new System.Windows.Forms.PictureBox();
             this.lblcancleInPersonalTrainerAssign = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlLeftBarInRetrieveTrainerID = new System.Windows.Forms.Panel();
+            this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInTrainerIDPortion = new System.Windows.Forms.Panel();
+            this.pnlButtomBarInTrainerIDPortion = new System.Windows.Forms.Panel();
+            this.lblTrainerIDRetrieve = new System.Windows.Forms.Label();
+            this.tlpRetrieveTrainerIDInTrainerInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.picTrainerIDIcon = new System.Windows.Forms.PictureBox();
+            this.pnlRightBarInTrainerIDPortion = new System.Windows.Forms.Panel();
+            this.picTrainerNameIcon = new System.Windows.Forms.PictureBox();
+            this.pnlRightBarInTrainerName = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel31 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpTrainerSpecializationAndExperienceSection = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInTrainerName = new System.Windows.Forms.Panel();
+            this.pnlButtomBarInTrainerName = new System.Windows.Forms.Panel();
+            this.picTrainerInformationIcon = new System.Windows.Forms.PictureBox();
+            this.tlpTrainerInformationLine = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLineInTrainerInformationSection = new System.Windows.Forms.Panel();
+            this.tlpTrainerInformationTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTrainerInformationTitle = new System.Windows.Forms.Label();
+            this.tlpRetrieveTrainerInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpTrainerIDAndTrainerNamePortion = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTrainerNameInTrainerInformation = new System.Windows.Forms.Label();
+            this.lblTrainerIDInTrainerInformation = new System.Windows.Forms.Label();
+            this.tlpRetrieveTrainerIDAndTrainerName = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRetrieveTrainerNameInTrainerInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLeftBarInTrainerNamePortion = new System.Windows.Forms.Panel();
+            this.tlpTrainerNameRetrieveInTrainerInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTrainerNameRetrieve = new System.Windows.Forms.Label();
+            this.tlpRetrieveSpecializationAndExperienceSection = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -261,10 +261,10 @@
             this.tlpCancleButtonCreateInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
             this.picCancleButtonCreateInAssignPersonalTrainer = new System.Windows.Forms.PictureBox();
             this.lblAssignTrainerButton = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel39 = new System.Windows.Forms.Panel();
-            this.panel40 = new System.Windows.Forms.Panel();
-            this.panel41 = new System.Windows.Forms.Panel();
+            this.lblSelectTrainerInDefaultTrainerSection = new System.Windows.Forms.Label();
+            this.pnlDefaultTrainerSectionShow = new System.Windows.Forms.Panel();
+            this.pnlTrainerInformationWholePortion = new System.Windows.Forms.Panel();
+            this.pnlTrainerInformationSectionRetrieve = new System.Windows.Forms.Panel();
             this.panel42 = new System.Windows.Forms.Panel();
             this.panel43 = new System.Windows.Forms.Panel();
             this.panel44 = new System.Windows.Forms.Panel();
@@ -282,11 +282,28 @@
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel49 = new System.Windows.Forms.Panel();
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLeftBarInRetrieveMemberName = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMemberNameInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInMemberNameRetrieve = new System.Windows.Forms.Panel();
+            this.pnButtomBarInMemberNameRetrieve = new System.Windows.Forms.Panel();
+            this.lblRetrieveMemberNameInMemberInformation = new System.Windows.Forms.Label();
+            this.picRetrieveMemberNameIcon = new System.Windows.Forms.PictureBox();
+            this.pnlRightBarInMemberNameRetrieve = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLeftBarInMemberIDRetrieve = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMemberIDInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInMemberIDRetrieve = new System.Windows.Forms.Panel();
+            this.pnlButtomBarInMemberIDRetrieve1 = new System.Windows.Forms.Panel();
+            this.lblRetrieveMemberIDInMemberInformation = new System.Windows.Forms.Label();
+            this.picRetrieveMemberId = new System.Windows.Forms.PictureBox();
+            this.pnlButtomBarInRetrieveMemberId = new System.Windows.Forms.Panel();
             this.lblMemberNameInMemberInformation = new System.Windows.Forms.Label();
             this.lblMemberIDMemberInformation = new System.Windows.Forms.Label();
             this.pnlMiddleSectionTopBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
             this.tlpMiddleSectionInAssignPersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMemberAndTrainerAssignAndInformation = new System.Windows.Forms.TableLayoutPanel();
@@ -297,18 +314,20 @@
             this.pnlMemberInformationLineBar = new System.Windows.Forms.Panel();
             this.lblMemberInformationTitle = new System.Windows.Forms.Label();
             this.tlpMemberIdAndMemberNameInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel46 = new System.Windows.Forms.TableLayoutPanel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel47 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel55 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel48 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel56 = new System.Windows.Forms.Panel();
-            this.panel57 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.panel58 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpCurrentShiftPortion = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpCurrentShiftTitleAndDisplayPortion = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCurrentShiftInMemberInformation = new System.Windows.Forms.Label();
+            this.tlpRetrieveCurrentShiftInMemberInfromation = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLeftBarInRetrieveCurrentShift = new System.Windows.Forms.Panel();
+            this.tlpRetrieveCurrentShift = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInRetrieveCurrentShift = new System.Windows.Forms.Panel();
+            this.pnlButtomBarInRetrieveCurrentShift = new System.Windows.Forms.Panel();
+            this.lblRetrieveMemberCurrentShiftTime = new System.Windows.Forms.Label();
+            this.pnlRightBarInCurrentShift = new System.Windows.Forms.Panel();
+            this.tlpSelectTrainerNamePortion = new System.Windows.Forms.TableLayoutPanel();
+            this.picSelectTrainerName = new System.Windows.Forms.PictureBox();
+            this.cmbSelectTrainer = new System.Windows.Forms.ComboBox();
+            this.lblTrainerNameSelect = new System.Windows.Forms.Label();
             this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
             this.panel59 = new System.Windows.Forms.Panel();
             this.panel60 = new System.Windows.Forms.Panel();
@@ -321,22 +340,9 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.cmbSelectTrainer = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.tlpAssignPersonalTrainerWholeDetails = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer = new System.Windows.Forms.Panel();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel50 = new System.Windows.Forms.Panel();
-            this.panel51 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel52 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.panel53 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
@@ -345,14 +351,51 @@
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.panel64 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel65 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel66 = new System.Windows.Forms.Panel();
-            this.panel67 = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.panel68 = new System.Windows.Forms.Panel();
+            this.panel58 = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.picCurrentShift = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
+            this.picCurrentShiftIcon = new System.Windows.Forms.PictureBox();
+            this.tlpMembershipStatusInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRetrieveMembershipStatusInMemberInformation = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlTopBarInMembershipStatusInMemberInformation = new System.Windows.Forms.Panel();
+            this.pnlButtomBarInMembershipStatusInMemberInformation = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMembershipStatus = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlLeftBarInMembershipStatusInMemberInformation = new System.Windows.Forms.Panel();
+            this.pnlRightBarInMembershipStatusInMemberInformation = new System.Windows.Forms.Panel();
+            this.tlpRetrieveMembershipStatusPortion = new System.Windows.Forms.TableLayoutPanel();
+            this.picDoneMembershipStatusActivation = new System.Windows.Forms.PictureBox();
+            this.tlpRetrieveMembershipStatusSection = new System.Windows.Forms.TableLayoutPanel();
+            this.lblRetrieveMemberActiveTime = new System.Windows.Forms.Label();
+            this.lblMemebrMembershipStatusTitle = new System.Windows.Forms.Label();
+            this.picRetrieveMembershipStatus = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSpecification = new System.Windows.Forms.Label();
+            this.lblExperienceTitleInTrainerInformation = new System.Windows.Forms.Label();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel40 = new System.Windows.Forms.Panel();
             this.tlpAssignPersonalTrainerWholeSection.SuspendLayout();
             this.tlpMemberInfromationSubmitResetCanclePortion.SuspendLayout();
             this.tlpCancleFromSection.SuspendLayout();
@@ -429,20 +472,19 @@
             this.pnlCancleButtonCreateInAssignPersonalTrainer.SuspendLayout();
             this.tlpCancleImageAndLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancleInAssignPersonalTrainer)).BeginInit();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.tableLayoutPanel28.SuspendLayout();
-            this.tableLayoutPanel27.SuspendLayout();
-            this.tableLayoutPanel26.SuspendLayout();
-            this.tableLayoutPanel29.SuspendLayout();
-            this.tableLayoutPanel30.SuspendLayout();
-            this.tableLayoutPanel31.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
+            this.tlpRetrieveTrainerIDInTrainerInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerIDIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerNameIcon)).BeginInit();
+            this.tlpTrainerSpecializationAndExperienceSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerInformationIcon)).BeginInit();
+            this.tlpTrainerInformationLine.SuspendLayout();
+            this.tlpTrainerInformationTitle.SuspendLayout();
+            this.tlpRetrieveTrainerInformation.SuspendLayout();
+            this.tlpTrainerIDAndTrainerNamePortion.SuspendLayout();
+            this.tlpRetrieveTrainerIDAndTrainerName.SuspendLayout();
+            this.tlpRetrieveTrainerNameInTrainerInformation.SuspendLayout();
+            this.tlpTrainerNameRetrieveInTrainerInformation.SuspendLayout();
+            this.tlpRetrieveSpecializationAndExperienceSection.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -457,9 +499,9 @@
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.SuspendLayout();
             this.tlpCancleButtonCreateInAssignPersonalTrainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancleButtonCreateInAssignPersonalTrainer)).BeginInit();
-            this.panel39.SuspendLayout();
-            this.panel40.SuspendLayout();
-            this.panel41.SuspendLayout();
+            this.pnlDefaultTrainerSectionShow.SuspendLayout();
+            this.pnlTrainerInformationWholePortion.SuspendLayout();
+            this.pnlTrainerInformationSectionRetrieve.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -467,6 +509,12 @@
             this.tableLayoutPanel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.SuspendLayout();
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.SuspendLayout();
+            this.tlpRetrieveMemberNameInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMemberNameIcon)).BeginInit();
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.SuspendLayout();
+            this.tlpRetrieveMemberIDInMemberInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMemberId)).BeginInit();
             this.tlpMiddleSectionInAssignPersonalTrainer.SuspendLayout();
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.SuspendLayout();
             this.tlpMemberAndTrainerAssignAndInformation.SuspendLayout();
@@ -475,30 +523,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMemberInformation)).BeginInit();
             this.tlpMemberInformationLineBar.SuspendLayout();
             this.tlpMemberIdAndMemberNameInMemberInformation.SuspendLayout();
-            this.tableLayoutPanel45.SuspendLayout();
-            this.tableLayoutPanel46.SuspendLayout();
-            this.tableLayoutPanel47.SuspendLayout();
-            this.tableLayoutPanel48.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            this.tableLayoutPanel49.SuspendLayout();
+            this.tlpCurrentShiftPortion.SuspendLayout();
+            this.tlpCurrentShiftTitleAndDisplayPortion.SuspendLayout();
+            this.tlpRetrieveCurrentShiftInMemberInfromation.SuspendLayout();
+            this.tlpRetrieveCurrentShift.SuspendLayout();
+            this.tlpSelectTrainerNamePortion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelectTrainerName)).BeginInit();
             this.tableLayoutPanel50.SuspendLayout();
             this.tableLayoutPanel51.SuspendLayout();
             this.tableLayoutPanel52.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.tableLayoutPanel53.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.tableLayoutPanel54.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.tlpAssignPersonalTrainerWholeDetails.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCurrentShift)).BeginInit();
+            this.tableLayoutPanel49.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCurrentShiftIcon)).BeginInit();
+            this.tlpMembershipStatusInMemberInformation.SuspendLayout();
+            this.tlpRetrieveMembershipStatusInMemberInformation.SuspendLayout();
+            this.tlpRetrieveMembershipStatus.SuspendLayout();
+            this.tlpRetrieveMembershipStatusPortion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDoneMembershipStatusActivation)).BeginInit();
+            this.tlpRetrieveMembershipStatusSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMembershipStatus)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tableLayoutPanel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            this.tableLayoutPanel24.SuspendLayout();
-            this.tableLayoutPanel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpAssignPersonalTrainerWholeSection
@@ -1422,7 +1483,6 @@
             this.cmbSelectTrainerName.Size = new System.Drawing.Size(255, 36);
             this.cmbSelectTrainerName.TabIndex = 2;
             this.cmbSelectTrainerName.Text = "   ---Select Trainer ---";
-            this.cmbSelectTrainerName.SelectedIndexChanged += new System.EventHandler(this.cmbSelectTrainerName_SelectedIndexChanged);
             // 
             // lblTrainerName
             // 
@@ -2842,129 +2902,126 @@
             this.lblcancleInPersonalTrainerAssign.TabIndex = 1;
             this.lblcancleInPersonalTrainerAssign.Text = "CANCEL";
             // 
-            // panel6
+            // pnlLeftBarInRetrieveTrainerID
             // 
-            this.panel6.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(68, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(2, 45);
-            this.panel6.TabIndex = 1;
+            this.pnlLeftBarInRetrieveTrainerID.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInRetrieveTrainerID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInRetrieveTrainerID.Location = new System.Drawing.Point(68, 0);
+            this.pnlLeftBarInRetrieveTrainerID.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInRetrieveTrainerID.Name = "pnlLeftBarInRetrieveTrainerID";
+            this.pnlLeftBarInRetrieveTrainerID.Size = new System.Drawing.Size(2, 45);
+            this.pnlLeftBarInRetrieveTrainerID.TabIndex = 1;
             // 
-            // tableLayoutPanel6
+            // tlp
             // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel6.Controls.Add(this.panel7, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.panel8, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label7, 0, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(70, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(312, 45);
-            this.tableLayoutPanel6.TabIndex = 3;
+            this.tlp.ColumnCount = 1;
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp.Location = new System.Drawing.Point(70, 0);
+            this.tlp.Margin = new System.Windows.Forms.Padding(0);
+            this.tlp.Name = "tlp";
+            this.tlp.RowCount = 3;
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlp.Size = new System.Drawing.Size(312, 45);
+            this.tlp.TabIndex = 3;
             // 
-            // panel7
+            // pnlTopBarInTrainerIDPortion
             // 
-            this.panel7.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(312, 2);
-            this.panel7.TabIndex = 0;
+            this.pnlTopBarInTrainerIDPortion.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInTrainerIDPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInTrainerIDPortion.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInTrainerIDPortion.Name = "pnlTopBarInTrainerIDPortion";
+            this.pnlTopBarInTrainerIDPortion.Size = new System.Drawing.Size(312, 2);
+            this.pnlTopBarInTrainerIDPortion.TabIndex = 0;
             // 
-            // panel8
+            // pnlButtomBarInTrainerIDPortion
             // 
-            this.panel8.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 42);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(312, 3);
-            this.panel8.TabIndex = 1;
+            this.pnlButtomBarInTrainerIDPortion.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInTrainerIDPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInTrainerIDPortion.Location = new System.Drawing.Point(0, 42);
+            this.pnlButtomBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInTrainerIDPortion.Name = "pnlButtomBarInTrainerIDPortion";
+            this.pnlButtomBarInTrainerIDPortion.Size = new System.Drawing.Size(312, 3);
+            this.pnlButtomBarInTrainerIDPortion.TabIndex = 1;
             // 
-            // label7
+            // lblTrainerIDRetrieve
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(134, 10);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 23);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "1026";
+            this.lblTrainerIDRetrieve.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTrainerIDRetrieve.AutoSize = true;
+            this.lblTrainerIDRetrieve.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerIDRetrieve.ForeColor = System.Drawing.Color.Black;
+            this.lblTrainerIDRetrieve.Location = new System.Drawing.Point(134, 10);
+            this.lblTrainerIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainerIDRetrieve.Name = "lblTrainerIDRetrieve";
+            this.lblTrainerIDRetrieve.Size = new System.Drawing.Size(44, 23);
+            this.lblTrainerIDRetrieve.TabIndex = 2;
+            this.lblTrainerIDRetrieve.Text = "1026";
             // 
-            // tableLayoutPanel7
+            // tlpRetrieveTrainerIDInTrainerInformation
             // 
-            this.tableLayoutPanel7.ColumnCount = 5;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel6, 2, 0);
-            this.tableLayoutPanel7.Controls.Add(this.pictureBox4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.panel9, 3, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(491, 45);
-            this.tableLayoutPanel7.TabIndex = 0;
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnCount = 5;
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.pnlLeftBarInRetrieveTrainerID, 1, 0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.tableLayoutPanel6, 2, 0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.picTrainerIDIcon, 0, 0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.pnlRightBarInTrainerIDPortion, 3, 0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveTrainerIDInTrainerInformation.Location = new System.Drawing.Point(0, 0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveTrainerIDInTrainerInformation.Name = "tlpRetrieveTrainerIDInTrainerInformation";
+            this.tlpRetrieveTrainerIDInTrainerInformation.RowCount = 1;
+            this.tlpRetrieveTrainerIDInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.Size = new System.Drawing.Size(491, 45);
+            this.tlpRetrieveTrainerIDInTrainerInformation.TabIndex = 0;
             // 
-            // pictureBox4
+            // picTrainerIDIcon
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 39);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.picTrainerIDIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picTrainerIDIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerIDIcon.Image")));
+            this.picTrainerIDIcon.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerIDIcon.Name = "picTrainerIDIcon";
+            this.picTrainerIDIcon.Size = new System.Drawing.Size(44, 39);
+            this.picTrainerIDIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTrainerIDIcon.TabIndex = 0;
+            this.picTrainerIDIcon.TabStop = false;
             // 
-            // panel9
+            // pnlRightBarInTrainerIDPortion
             // 
-            this.panel9.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(382, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(2, 45);
-            this.panel9.TabIndex = 2;
+            this.pnlRightBarInTrainerIDPortion.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlRightBarInTrainerIDPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRightBarInTrainerIDPortion.Location = new System.Drawing.Point(382, 0);
+            this.pnlRightBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRightBarInTrainerIDPortion.Name = "pnlRightBarInTrainerIDPortion";
+            this.pnlRightBarInTrainerIDPortion.Size = new System.Drawing.Size(2, 45);
+            this.pnlRightBarInTrainerIDPortion.TabIndex = 2;
             // 
-            // pictureBox5
+            // picTrainerNameIcon
             // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(44, 39);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.picTrainerNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picTrainerNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerNameIcon.Image")));
+            this.picTrainerNameIcon.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerNameIcon.Name = "picTrainerNameIcon";
+            this.picTrainerNameIcon.Size = new System.Drawing.Size(44, 39);
+            this.picTrainerNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTrainerNameIcon.TabIndex = 0;
+            this.picTrainerNameIcon.TabStop = false;
             // 
-            // panel10
+            // pnlRightBarInTrainerName
             // 
-            this.panel10.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(405, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(2, 45);
-            this.panel10.TabIndex = 2;
+            this.pnlRightBarInTrainerName.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlRightBarInTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRightBarInTrainerName.Location = new System.Drawing.Point(405, 0);
+            this.pnlRightBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRightBarInTrainerName.Name = "pnlRightBarInTrainerName";
+            this.pnlRightBarInTrainerName.Size = new System.Drawing.Size(2, 45);
+            this.pnlRightBarInTrainerName.TabIndex = 2;
             // 
             // label8
             // 
@@ -2992,273 +3049,273 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Specialization";
             // 
-            // tableLayoutPanel8
+            // tlpTrainerSpecializationAndExperienceSection
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.label8, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(21, 158);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel8.TabIndex = 6;
+            this.tlpTrainerSpecializationAndExperienceSection.ColumnCount = 2;
+            this.tlpTrainerSpecializationAndExperienceSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.74568F));
+            this.tlpTrainerSpecializationAndExperienceSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.25432F));
+            this.tlpTrainerSpecializationAndExperienceSection.Controls.Add(this.lblExperienceTitleInTrainerInformation, 0, 0);
+            this.tlpTrainerSpecializationAndExperienceSection.Controls.Add(this.lblSpecification, 0, 0);
+            this.tlpTrainerSpecializationAndExperienceSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerSpecializationAndExperienceSection.Location = new System.Drawing.Point(21, 158);
+            this.tlpTrainerSpecializationAndExperienceSection.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTrainerSpecializationAndExperienceSection.Name = "tlpTrainerSpecializationAndExperienceSection";
+            this.tlpTrainerSpecializationAndExperienceSection.RowCount = 1;
+            this.tlpTrainerSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerSpecializationAndExperienceSection.Size = new System.Drawing.Size(983, 45);
+            this.tlpTrainerSpecializationAndExperienceSection.TabIndex = 6;
             // 
-            // panel11
+            // pnlTopBarInTrainerName
             // 
-            this.panel11.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(335, 2);
-            this.panel11.TabIndex = 0;
+            this.pnlTopBarInTrainerName.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInTrainerName.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInTrainerName.Name = "pnlTopBarInTrainerName";
+            this.pnlTopBarInTrainerName.Size = new System.Drawing.Size(335, 2);
+            this.pnlTopBarInTrainerName.TabIndex = 0;
             // 
-            // panel12
+            // pnlButtomBarInTrainerName
             // 
-            this.panel12.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 42);
-            this.panel12.Margin = new System.Windows.Forms.Padding(0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(335, 3);
-            this.panel12.TabIndex = 1;
+            this.pnlButtomBarInTrainerName.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInTrainerName.Location = new System.Drawing.Point(0, 42);
+            this.pnlButtomBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInTrainerName.Name = "pnlButtomBarInTrainerName";
+            this.pnlButtomBarInTrainerName.Size = new System.Drawing.Size(335, 3);
+            this.pnlButtomBarInTrainerName.TabIndex = 1;
             // 
-            // pictureBox8
+            // picTrainerInformationIcon
             // 
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 45);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
+            this.picTrainerInformationIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picTrainerInformationIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerInformationIcon.Image")));
+            this.picTrainerInformationIcon.Location = new System.Drawing.Point(0, 0);
+            this.picTrainerInformationIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.picTrainerInformationIcon.Name = "picTrainerInformationIcon";
+            this.picTrainerInformationIcon.Size = new System.Drawing.Size(50, 45);
+            this.picTrainerInformationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTrainerInformationIcon.TabIndex = 0;
+            this.picTrainerInformationIcon.TabStop = false;
             // 
-            // tableLayoutPanel28
+            // tlpTrainerInformationLine
             // 
-            this.tableLayoutPanel28.ColumnCount = 1;
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel28.Controls.Add(this.panel14, 0, 1);
-            this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Location = new System.Drawing.Point(299, 3);
-            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
-            this.tableLayoutPanel28.RowCount = 3;
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(681, 39);
-            this.tableLayoutPanel28.TabIndex = 2;
+            this.tlpTrainerInformationLine.ColumnCount = 1;
+            this.tlpTrainerInformationLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrainerInformationLine.Controls.Add(this.pnlLineInTrainerInformationSection, 0, 1);
+            this.tlpTrainerInformationLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerInformationLine.Location = new System.Drawing.Point(299, 3);
+            this.tlpTrainerInformationLine.Name = "tlpTrainerInformationLine";
+            this.tlpTrainerInformationLine.RowCount = 3;
+            this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+            this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerInformationLine.Size = new System.Drawing.Size(681, 39);
+            this.tlpTrainerInformationLine.TabIndex = 2;
             // 
-            // panel14
+            // pnlLineInTrainerInformationSection
             // 
-            this.panel14.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(3, 20);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(675, 1);
-            this.panel14.TabIndex = 0;
+            this.pnlLineInTrainerInformationSection.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLineInTrainerInformationSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLineInTrainerInformationSection.Location = new System.Drawing.Point(3, 20);
+            this.pnlLineInTrainerInformationSection.Name = "pnlLineInTrainerInformationSection";
+            this.pnlLineInTrainerInformationSection.Size = new System.Drawing.Size(675, 1);
+            this.pnlLineInTrainerInformationSection.TabIndex = 0;
             // 
-            // tableLayoutPanel27
+            // tlpTrainerInformationTitle
             // 
-            this.tableLayoutPanel27.ColumnCount = 3;
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
-            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel27.Controls.Add(this.pictureBox8, 0, 0);
-            this.tableLayoutPanel27.Controls.Add(this.tableLayoutPanel28, 2, 0);
-            this.tableLayoutPanel27.Controls.Add(this.label12, 1, 0);
-            this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Location = new System.Drawing.Point(21, 23);
-            this.tableLayoutPanel27.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
-            this.tableLayoutPanel27.RowCount = 1;
-            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel27.TabIndex = 2;
+            this.tlpTrainerInformationTitle.ColumnCount = 3;
+            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
+            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrainerInformationTitle.Controls.Add(this.picTrainerInformationIcon, 0, 0);
+            this.tlpTrainerInformationTitle.Controls.Add(this.tlpTrainerInformationLine, 2, 0);
+            this.tlpTrainerInformationTitle.Controls.Add(this.lblTrainerInformationTitle, 1, 0);
+            this.tlpTrainerInformationTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerInformationTitle.Location = new System.Drawing.Point(21, 23);
+            this.tlpTrainerInformationTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTrainerInformationTitle.Name = "tlpTrainerInformationTitle";
+            this.tlpTrainerInformationTitle.RowCount = 1;
+            this.tlpTrainerInformationTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTrainerInformationTitle.Size = new System.Drawing.Size(983, 45);
+            this.tlpTrainerInformationTitle.TabIndex = 2;
             // 
-            // label12
+            // lblTrainerInformationTitle
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label12.Location = new System.Drawing.Point(53, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(227, 25);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "TRAINER INFORMATION";
+            this.lblTrainerInformationTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTrainerInformationTitle.AutoSize = true;
+            this.lblTrainerInformationTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerInformationTitle.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblTrainerInformationTitle.Location = new System.Drawing.Point(53, 10);
+            this.lblTrainerInformationTitle.Name = "lblTrainerInformationTitle";
+            this.lblTrainerInformationTitle.Size = new System.Drawing.Size(227, 25);
+            this.lblTrainerInformationTitle.TabIndex = 1;
+            this.lblTrainerInformationTitle.Text = "TRAINER INFORMATION";
             // 
-            // tableLayoutPanel26
+            // tlpRetrieveTrainerInformation
             // 
-            this.tableLayoutPanel26.ColumnCount = 3;
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.74467F));
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.127659F));
-            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel27, 1, 1);
-            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel29, 1, 2);
-            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel30, 1, 3);
-            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel8, 1, 4);
-            this.tableLayoutPanel26.Controls.Add(this.tableLayoutPanel10, 1, 5);
-            this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel26.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
-            this.tableLayoutPanel26.RowCount = 7;
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(1027, 272);
-            this.tableLayoutPanel26.TabIndex = 2;
+            this.tlpRetrieveTrainerInformation.ColumnCount = 3;
+            this.tlpRetrieveTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.12766F));
+            this.tlpRetrieveTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.74467F));
+            this.tlpRetrieveTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.127659F));
+            this.tlpRetrieveTrainerInformation.Controls.Add(this.tlpTrainerInformationTitle, 1, 1);
+            this.tlpRetrieveTrainerInformation.Controls.Add(this.tlpTrainerIDAndTrainerNamePortion, 1, 2);
+            this.tlpRetrieveTrainerInformation.Controls.Add(this.tlpRetrieveTrainerIDAndTrainerName, 1, 3);
+            this.tlpRetrieveTrainerInformation.Controls.Add(this.tlpTrainerSpecializationAndExperienceSection, 1, 4);
+            this.tlpRetrieveTrainerInformation.Controls.Add(this.tlpRetrieveSpecializationAndExperienceSection, 1, 5);
+            this.tlpRetrieveTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveTrainerInformation.Location = new System.Drawing.Point(0, 0);
+            this.tlpRetrieveTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveTrainerInformation.Name = "tlpRetrieveTrainerInformation";
+            this.tlpRetrieveTrainerInformation.RowCount = 7;
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerInformation.Size = new System.Drawing.Size(1027, 272);
+            this.tlpRetrieveTrainerInformation.TabIndex = 2;
             // 
-            // tableLayoutPanel29
+            // tlpTrainerIDAndTrainerNamePortion
             // 
-            this.tableLayoutPanel29.ColumnCount = 2;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.Controls.Add(this.label13, 1, 0);
-            this.tableLayoutPanel29.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(21, 68);
-            this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
-            this.tableLayoutPanel29.RowCount = 1;
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel29.TabIndex = 4;
+            this.tlpTrainerIDAndTrainerNamePortion.ColumnCount = 2;
+            this.tlpTrainerIDAndTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerIDAndTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerIDAndTrainerNamePortion.Controls.Add(this.lblTrainerNameInTrainerInformation, 1, 0);
+            this.tlpTrainerIDAndTrainerNamePortion.Controls.Add(this.lblTrainerIDInTrainerInformation, 0, 0);
+            this.tlpTrainerIDAndTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerIDAndTrainerNamePortion.Location = new System.Drawing.Point(21, 68);
+            this.tlpTrainerIDAndTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTrainerIDAndTrainerNamePortion.Name = "tlpTrainerIDAndTrainerNamePortion";
+            this.tlpTrainerIDAndTrainerNamePortion.RowCount = 1;
+            this.tlpTrainerIDAndTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerIDAndTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTrainerIDAndTrainerNamePortion.Size = new System.Drawing.Size(983, 45);
+            this.tlpTrainerIDAndTrainerNamePortion.TabIndex = 4;
             // 
-            // label13
+            // lblTrainerNameInTrainerInformation
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(491, 11);
-            this.label13.Margin = new System.Windows.Forms.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 23);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Trainer Name";
+            this.lblTrainerNameInTrainerInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTrainerNameInTrainerInformation.AutoSize = true;
+            this.lblTrainerNameInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerNameInTrainerInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblTrainerNameInTrainerInformation.Location = new System.Drawing.Point(491, 11);
+            this.lblTrainerNameInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainerNameInTrainerInformation.Name = "lblTrainerNameInTrainerInformation";
+            this.lblTrainerNameInTrainerInformation.Size = new System.Drawing.Size(113, 23);
+            this.lblTrainerNameInTrainerInformation.TabIndex = 4;
+            this.lblTrainerNameInTrainerInformation.Text = "Trainer Name";
             // 
-            // label14
+            // lblTrainerIDInTrainerInformation
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(0, 11);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 23);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Trainer ID";
+            this.lblTrainerIDInTrainerInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTrainerIDInTrainerInformation.AutoSize = true;
+            this.lblTrainerIDInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerIDInTrainerInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblTrainerIDInTrainerInformation.Location = new System.Drawing.Point(0, 11);
+            this.lblTrainerIDInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainerIDInTrainerInformation.Name = "lblTrainerIDInTrainerInformation";
+            this.lblTrainerIDInTrainerInformation.Size = new System.Drawing.Size(84, 23);
+            this.lblTrainerIDInTrainerInformation.TabIndex = 3;
+            this.lblTrainerIDInTrainerInformation.Text = "Trainer ID";
             // 
-            // tableLayoutPanel30
+            // tlpRetrieveTrainerIDAndTrainerName
             // 
-            this.tableLayoutPanel30.ColumnCount = 2;
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel31, 1, 0);
-            this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel30.Location = new System.Drawing.Point(21, 113);
-            this.tableLayoutPanel30.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
-            this.tableLayoutPanel30.RowCount = 1;
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel30.TabIndex = 5;
+            this.tlpRetrieveTrainerIDAndTrainerName.ColumnCount = 2;
+            this.tlpRetrieveTrainerIDAndTrainerName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerIDAndTrainerName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerIDAndTrainerName.Controls.Add(this.tlpRetrieveTrainerNameInTrainerInformation, 1, 0);
+            this.tlpRetrieveTrainerIDAndTrainerName.Controls.Add(this.tlpRetrieveTrainerIDInTrainerInformation, 0, 0);
+            this.tlpRetrieveTrainerIDAndTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveTrainerIDAndTrainerName.Location = new System.Drawing.Point(21, 113);
+            this.tlpRetrieveTrainerIDAndTrainerName.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveTrainerIDAndTrainerName.Name = "tlpRetrieveTrainerIDAndTrainerName";
+            this.tlpRetrieveTrainerIDAndTrainerName.RowCount = 1;
+            this.tlpRetrieveTrainerIDAndTrainerName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerIDAndTrainerName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveTrainerIDAndTrainerName.Size = new System.Drawing.Size(983, 45);
+            this.tlpRetrieveTrainerIDAndTrainerName.TabIndex = 5;
             // 
-            // tableLayoutPanel31
+            // tlpRetrieveTrainerNameInTrainerInformation
             // 
-            this.tableLayoutPanel31.ColumnCount = 5;
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel31.Controls.Add(this.panel13, 1, 0);
-            this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel9, 2, 0);
-            this.tableLayoutPanel31.Controls.Add(this.pictureBox5, 0, 0);
-            this.tableLayoutPanel31.Controls.Add(this.panel10, 3, 0);
-            this.tableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel31.Location = new System.Drawing.Point(491, 0);
-            this.tableLayoutPanel31.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel31.Name = "tableLayoutPanel31";
-            this.tableLayoutPanel31.RowCount = 1;
-            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel31.Size = new System.Drawing.Size(492, 45);
-            this.tableLayoutPanel31.TabIndex = 1;
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnCount = 5;
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.pnlLeftBarInTrainerNamePortion, 1, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.tlpTrainerNameRetrieveInTrainerInformation, 2, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.picTrainerNameIcon, 0, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.pnlRightBarInTrainerName, 3, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveTrainerNameInTrainerInformation.Location = new System.Drawing.Point(491, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Name = "tlpRetrieveTrainerNameInTrainerInformation";
+            this.tlpRetrieveTrainerNameInTrainerInformation.RowCount = 1;
+            this.tlpRetrieveTrainerNameInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.Size = new System.Drawing.Size(492, 45);
+            this.tlpRetrieveTrainerNameInTrainerInformation.TabIndex = 1;
             // 
-            // panel13
+            // pnlLeftBarInTrainerNamePortion
             // 
-            this.panel13.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(68, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(2, 45);
-            this.panel13.TabIndex = 1;
+            this.pnlLeftBarInTrainerNamePortion.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInTrainerNamePortion.Location = new System.Drawing.Point(68, 0);
+            this.pnlLeftBarInTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInTrainerNamePortion.Name = "pnlLeftBarInTrainerNamePortion";
+            this.pnlLeftBarInTrainerNamePortion.Size = new System.Drawing.Size(2, 45);
+            this.pnlLeftBarInTrainerNamePortion.TabIndex = 1;
             // 
-            // tableLayoutPanel9
+            // tlpTrainerNameRetrieveInTrainerInformation
             // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
-            this.tableLayoutPanel9.Controls.Add(this.panel11, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.panel12, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.label10, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(70, 0);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 3;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(335, 45);
-            this.tableLayoutPanel9.TabIndex = 3;
+            this.tlpTrainerNameRetrieveInTrainerInformation.ColumnCount = 1;
+            this.tlpTrainerNameRetrieveInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.pnlTopBarInTrainerName, 0, 0);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.pnlButtomBarInTrainerName, 0, 2);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.lblTrainerNameRetrieve, 0, 1);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTrainerNameRetrieveInTrainerInformation.Location = new System.Drawing.Point(70, 0);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Name = "tlpTrainerNameRetrieveInTrainerInformation";
+            this.tlpTrainerNameRetrieveInTrainerInformation.RowCount = 3;
+            this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.Size = new System.Drawing.Size(335, 45);
+            this.tlpTrainerNameRetrieveInTrainerInformation.TabIndex = 3;
             // 
-            // label10
+            // lblTrainerNameRetrieve
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(119, 10);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 23);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "John Smith";
+            this.lblTrainerNameRetrieve.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTrainerNameRetrieve.AutoSize = true;
+            this.lblTrainerNameRetrieve.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerNameRetrieve.ForeColor = System.Drawing.Color.Black;
+            this.lblTrainerNameRetrieve.Location = new System.Drawing.Point(119, 10);
+            this.lblTrainerNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTrainerNameRetrieve.Name = "lblTrainerNameRetrieve";
+            this.lblTrainerNameRetrieve.Size = new System.Drawing.Size(96, 23);
+            this.lblTrainerNameRetrieve.TabIndex = 2;
+            this.lblTrainerNameRetrieve.Text = "John Smith";
             // 
-            // tableLayoutPanel10
+            // tlpRetrieveSpecializationAndExperienceSection
             // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel13, 0, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(21, 203);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(983, 45);
-            this.tableLayoutPanel10.TabIndex = 7;
+            this.tlpRetrieveSpecializationAndExperienceSection.ColumnCount = 2;
+            this.tlpRetrieveSpecializationAndExperienceSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveSpecializationAndExperienceSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveSpecializationAndExperienceSection.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tlpRetrieveSpecializationAndExperienceSection.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tlpRetrieveSpecializationAndExperienceSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveSpecializationAndExperienceSection.Location = new System.Drawing.Point(21, 203);
+            this.tlpRetrieveSpecializationAndExperienceSection.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveSpecializationAndExperienceSection.Name = "tlpRetrieveSpecializationAndExperienceSection";
+            this.tlpRetrieveSpecializationAndExperienceSection.RowCount = 1;
+            this.tlpRetrieveSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveSpecializationAndExperienceSection.Size = new System.Drawing.Size(983, 45);
+            this.tlpRetrieveSpecializationAndExperienceSection.TabIndex = 7;
             // 
             // tableLayoutPanel11
             // 
@@ -3618,46 +3675,46 @@
             this.lblAssignTrainerButton.TabIndex = 1;
             this.lblAssignTrainerButton.Text = "Assign Trainer";
             // 
-            // label24
+            // lblSelectTrainerInDefaultTrainerSection
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(62, 112);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(133, 28);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Select Trainer";
+            this.lblSelectTrainerInDefaultTrainerSection.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSelectTrainerInDefaultTrainerSection.AutoSize = true;
+            this.lblSelectTrainerInDefaultTrainerSection.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectTrainerInDefaultTrainerSection.ForeColor = System.Drawing.Color.Navy;
+            this.lblSelectTrainerInDefaultTrainerSection.Location = new System.Drawing.Point(-18, 112);
+            this.lblSelectTrainerInDefaultTrainerSection.Name = "lblSelectTrainerInDefaultTrainerSection";
+            this.lblSelectTrainerInDefaultTrainerSection.Size = new System.Drawing.Size(133, 28);
+            this.lblSelectTrainerInDefaultTrainerSection.TabIndex = 0;
+            this.lblSelectTrainerInDefaultTrainerSection.Text = "Select Trainer";
             // 
-            // panel39
+            // pnlDefaultTrainerSectionShow
             // 
-            this.panel39.Controls.Add(this.label24);
-            this.panel39.Location = new System.Drawing.Point(676, 0);
-            this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(351, 272);
-            this.panel39.TabIndex = 4;
+            this.pnlDefaultTrainerSectionShow.Controls.Add(this.lblSelectTrainerInDefaultTrainerSection);
+            this.pnlDefaultTrainerSectionShow.Location = new System.Drawing.Point(836, 0);
+            this.pnlDefaultTrainerSectionShow.Name = "pnlDefaultTrainerSectionShow";
+            this.pnlDefaultTrainerSectionShow.Size = new System.Drawing.Size(191, 272);
+            this.pnlDefaultTrainerSectionShow.TabIndex = 4;
             // 
-            // panel40
+            // pnlTrainerInformationWholePortion
             // 
-            this.panel40.Controls.Add(this.panel39);
-            this.panel40.Controls.Add(this.panel41);
-            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel40.Location = new System.Drawing.Point(0, 330);
-            this.panel40.Margin = new System.Windows.Forms.Padding(0);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(1027, 272);
-            this.panel40.TabIndex = 2;
+            this.pnlTrainerInformationWholePortion.Controls.Add(this.pnlDefaultTrainerSectionShow);
+            this.pnlTrainerInformationWholePortion.Controls.Add(this.pnlTrainerInformationSectionRetrieve);
+            this.pnlTrainerInformationWholePortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTrainerInformationWholePortion.Location = new System.Drawing.Point(0, 330);
+            this.pnlTrainerInformationWholePortion.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTrainerInformationWholePortion.Name = "pnlTrainerInformationWholePortion";
+            this.pnlTrainerInformationWholePortion.Size = new System.Drawing.Size(1027, 272);
+            this.pnlTrainerInformationWholePortion.TabIndex = 2;
             // 
-            // panel41
+            // pnlTrainerInformationSectionRetrieve
             // 
-            this.panel41.Controls.Add(this.tableLayoutPanel26);
-            this.panel41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel41.Location = new System.Drawing.Point(0, 0);
-            this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(1027, 272);
-            this.panel41.TabIndex = 3;
-            this.panel41.Visible = false;
+            this.pnlTrainerInformationSectionRetrieve.Controls.Add(this.tlpRetrieveTrainerInformation);
+            this.pnlTrainerInformationSectionRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTrainerInformationSectionRetrieve.Location = new System.Drawing.Point(0, 0);
+            this.pnlTrainerInformationSectionRetrieve.Name = "pnlTrainerInformationSectionRetrieve";
+            this.pnlTrainerInformationSectionRetrieve.Size = new System.Drawing.Size(1027, 272);
+            this.pnlTrainerInformationSectionRetrieve.TabIndex = 3;
+            this.pnlTrainerInformationSectionRetrieve.Visible = false;
             // 
             // panel42
             // 
@@ -3868,8 +3925,8 @@
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnCount = 2;
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tableLayoutPanel24, 0, 0);
-            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tlpRetrieveMemberNameInAssignPersonalTrainer, 0, 0);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tlpRetrieveMemberIDInAssignPersonalTrainer, 0, 0);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Location = new System.Drawing.Point(21, 107);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
@@ -3879,6 +3936,212 @@
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Size = new System.Drawing.Size(983, 45);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.TabIndex = 5;
+            // 
+            // tlpRetrieveMemberNameInAssignPersonalTrainer
+            // 
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnCount = 5;
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.pnlLeftBarInRetrieveMemberName, 1, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberNameInformation, 2, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.picRetrieveMemberNameIcon, 0, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.pnlRightBarInMemberNameRetrieve, 3, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Location = new System.Drawing.Point(491, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Name = "tlpRetrieveMemberNameInAssignPersonalTrainer";
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.RowCount = 1;
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Size = new System.Drawing.Size(492, 45);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.TabIndex = 2;
+            // 
+            // pnlLeftBarInRetrieveMemberName
+            // 
+            this.pnlLeftBarInRetrieveMemberName.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInRetrieveMemberName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInRetrieveMemberName.Location = new System.Drawing.Point(68, 0);
+            this.pnlLeftBarInRetrieveMemberName.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInRetrieveMemberName.Name = "pnlLeftBarInRetrieveMemberName";
+            this.pnlLeftBarInRetrieveMemberName.Size = new System.Drawing.Size(2, 45);
+            this.pnlLeftBarInRetrieveMemberName.TabIndex = 1;
+            // 
+            // tlpRetrieveMemberNameInformation
+            // 
+            this.tlpRetrieveMemberNameInformation.ColumnCount = 1;
+            this.tlpRetrieveMemberNameInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveMemberNameInformation.Controls.Add(this.pnlTopBarInMemberNameRetrieve, 0, 0);
+            this.tlpRetrieveMemberNameInformation.Controls.Add(this.pnButtomBarInMemberNameRetrieve, 0, 2);
+            this.tlpRetrieveMemberNameInformation.Controls.Add(this.lblRetrieveMemberNameInMemberInformation, 0, 1);
+            this.tlpRetrieveMemberNameInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberNameInformation.Location = new System.Drawing.Point(70, 0);
+            this.tlpRetrieveMemberNameInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberNameInformation.Name = "tlpRetrieveMemberNameInformation";
+            this.tlpRetrieveMemberNameInformation.RowCount = 3;
+            this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInformation.Size = new System.Drawing.Size(335, 45);
+            this.tlpRetrieveMemberNameInformation.TabIndex = 3;
+            // 
+            // pnlTopBarInMemberNameRetrieve
+            // 
+            this.pnlTopBarInMemberNameRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInMemberNameRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInMemberNameRetrieve.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInMemberNameRetrieve.Name = "pnlTopBarInMemberNameRetrieve";
+            this.pnlTopBarInMemberNameRetrieve.Size = new System.Drawing.Size(335, 2);
+            this.pnlTopBarInMemberNameRetrieve.TabIndex = 0;
+            // 
+            // pnButtomBarInMemberNameRetrieve
+            // 
+            this.pnButtomBarInMemberNameRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnButtomBarInMemberNameRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnButtomBarInMemberNameRetrieve.Location = new System.Drawing.Point(0, 42);
+            this.pnButtomBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.pnButtomBarInMemberNameRetrieve.Name = "pnButtomBarInMemberNameRetrieve";
+            this.pnButtomBarInMemberNameRetrieve.Size = new System.Drawing.Size(335, 3);
+            this.pnButtomBarInMemberNameRetrieve.TabIndex = 1;
+            // 
+            // lblRetrieveMemberNameInMemberInformation
+            // 
+            this.lblRetrieveMemberNameInMemberInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRetrieveMemberNameInMemberInformation.AutoSize = true;
+            this.lblRetrieveMemberNameInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetrieveMemberNameInMemberInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblRetrieveMemberNameInMemberInformation.Location = new System.Drawing.Point(119, 10);
+            this.lblRetrieveMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRetrieveMemberNameInMemberInformation.Name = "lblRetrieveMemberNameInMemberInformation";
+            this.lblRetrieveMemberNameInMemberInformation.Size = new System.Drawing.Size(96, 23);
+            this.lblRetrieveMemberNameInMemberInformation.TabIndex = 2;
+            this.lblRetrieveMemberNameInMemberInformation.Text = "John Smith";
+            // 
+            // picRetrieveMemberNameIcon
+            // 
+            this.picRetrieveMemberNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picRetrieveMemberNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberNameIcon.Image")));
+            this.picRetrieveMemberNameIcon.Location = new System.Drawing.Point(3, 3);
+            this.picRetrieveMemberNameIcon.Name = "picRetrieveMemberNameIcon";
+            this.picRetrieveMemberNameIcon.Size = new System.Drawing.Size(44, 39);
+            this.picRetrieveMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRetrieveMemberNameIcon.TabIndex = 0;
+            this.picRetrieveMemberNameIcon.TabStop = false;
+            // 
+            // pnlRightBarInMemberNameRetrieve
+            // 
+            this.pnlRightBarInMemberNameRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlRightBarInMemberNameRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRightBarInMemberNameRetrieve.Location = new System.Drawing.Point(405, 0);
+            this.pnlRightBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRightBarInMemberNameRetrieve.Name = "pnlRightBarInMemberNameRetrieve";
+            this.pnlRightBarInMemberNameRetrieve.Size = new System.Drawing.Size(2, 45);
+            this.pnlRightBarInMemberNameRetrieve.TabIndex = 2;
+            // 
+            // tlpRetrieveMemberIDInAssignPersonalTrainer
+            // 
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnCount = 5;
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.pnlLeftBarInMemberIDRetrieve, 1, 0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberIDInMemberInformation, 2, 0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.picRetrieveMemberId, 0, 0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.pnlButtomBarInRetrieveMemberId, 3, 0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Name = "tlpRetrieveMemberIDInAssignPersonalTrainer";
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.RowCount = 1;
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Size = new System.Drawing.Size(491, 45);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.TabIndex = 1;
+            // 
+            // pnlLeftBarInMemberIDRetrieve
+            // 
+            this.pnlLeftBarInMemberIDRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInMemberIDRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInMemberIDRetrieve.Location = new System.Drawing.Point(68, 0);
+            this.pnlLeftBarInMemberIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInMemberIDRetrieve.Name = "pnlLeftBarInMemberIDRetrieve";
+            this.pnlLeftBarInMemberIDRetrieve.Size = new System.Drawing.Size(2, 45);
+            this.pnlLeftBarInMemberIDRetrieve.TabIndex = 1;
+            // 
+            // tlpRetrieveMemberIDInMemberInformation
+            // 
+            this.tlpRetrieveMemberIDInMemberInformation.ColumnCount = 1;
+            this.tlpRetrieveMemberIDInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.pnlTopBarInMemberIDRetrieve, 0, 0);
+            this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.pnlButtomBarInMemberIDRetrieve1, 0, 2);
+            this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.lblRetrieveMemberIDInMemberInformation, 0, 1);
+            this.tlpRetrieveMemberIDInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(70, 0);
+            this.tlpRetrieveMemberIDInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMemberIDInMemberInformation.Name = "tlpRetrieveMemberIDInMemberInformation";
+            this.tlpRetrieveMemberIDInMemberInformation.RowCount = 3;
+            this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(312, 45);
+            this.tlpRetrieveMemberIDInMemberInformation.TabIndex = 3;
+            // 
+            // pnlTopBarInMemberIDRetrieve
+            // 
+            this.pnlTopBarInMemberIDRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInMemberIDRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInMemberIDRetrieve.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBarInMemberIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInMemberIDRetrieve.Name = "pnlTopBarInMemberIDRetrieve";
+            this.pnlTopBarInMemberIDRetrieve.Size = new System.Drawing.Size(312, 2);
+            this.pnlTopBarInMemberIDRetrieve.TabIndex = 0;
+            // 
+            // pnlButtomBarInMemberIDRetrieve1
+            // 
+            this.pnlButtomBarInMemberIDRetrieve1.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInMemberIDRetrieve1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInMemberIDRetrieve1.Location = new System.Drawing.Point(0, 42);
+            this.pnlButtomBarInMemberIDRetrieve1.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInMemberIDRetrieve1.Name = "pnlButtomBarInMemberIDRetrieve1";
+            this.pnlButtomBarInMemberIDRetrieve1.Size = new System.Drawing.Size(312, 3);
+            this.pnlButtomBarInMemberIDRetrieve1.TabIndex = 1;
+            // 
+            // lblRetrieveMemberIDInMemberInformation
+            // 
+            this.lblRetrieveMemberIDInMemberInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRetrieveMemberIDInMemberInformation.AutoSize = true;
+            this.lblRetrieveMemberIDInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetrieveMemberIDInMemberInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(134, 10);
+            this.lblRetrieveMemberIDInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRetrieveMemberIDInMemberInformation.Name = "lblRetrieveMemberIDInMemberInformation";
+            this.lblRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(44, 23);
+            this.lblRetrieveMemberIDInMemberInformation.TabIndex = 2;
+            this.lblRetrieveMemberIDInMemberInformation.Text = "1026";
+            // 
+            // picRetrieveMemberId
+            // 
+            this.picRetrieveMemberId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picRetrieveMemberId.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberId.Image")));
+            this.picRetrieveMemberId.Location = new System.Drawing.Point(3, 3);
+            this.picRetrieveMemberId.Name = "picRetrieveMemberId";
+            this.picRetrieveMemberId.Size = new System.Drawing.Size(44, 39);
+            this.picRetrieveMemberId.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRetrieveMemberId.TabIndex = 0;
+            this.picRetrieveMemberId.TabStop = false;
+            // 
+            // pnlButtomBarInRetrieveMemberId
+            // 
+            this.pnlButtomBarInRetrieveMemberId.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInRetrieveMemberId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInRetrieveMemberId.Location = new System.Drawing.Point(382, 0);
+            this.pnlButtomBarInRetrieveMemberId.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInRetrieveMemberId.Name = "pnlButtomBarInRetrieveMemberId";
+            this.pnlButtomBarInRetrieveMemberId.Size = new System.Drawing.Size(2, 45);
+            this.pnlButtomBarInRetrieveMemberId.TabIndex = 2;
             // 
             // lblMemberNameInMemberInformation
             // 
@@ -3946,6 +4209,16 @@
             this.tlpMiddleSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(1149, 612);
             this.tlpMiddleSectionInAssignPersonalTrainer.TabIndex = 0;
             // 
+            // pnlMiddleSectionLeftBarInAssignPersonalTrainer
+            // 
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Location = new System.Drawing.Point(57, 0);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Name = "pnlMiddleSectionLeftBarInAssignPersonalTrainer";
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 612);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.TabIndex = 0;
+            // 
             // pnlMiddleSectionRightBarInAssignPersonalTrainer
             // 
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
@@ -3983,8 +4256,8 @@
             this.tlpMemberAndTrainerAssignAndInformation.ColumnCount = 1;
             this.tlpMemberAndTrainerAssignAndInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tlpMemberInformationInAssignPersonalTrainer, 0, 0);
-            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tableLayoutPanel54, 0, 1);
-            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.panel40, 0, 2);
+            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tlpSelectTrainerNamePortion, 0, 1);
+            this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.pnlTrainerInformationWholePortion, 0, 2);
             this.tlpMemberAndTrainerAssignAndInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberAndTrainerAssignAndInformation.Location = new System.Drawing.Point(3, 5);
             this.tlpMemberAndTrainerAssignAndInformation.Name = "tlpMemberAndTrainerAssignAndInformation";
@@ -4004,7 +4277,7 @@
             this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpMemberInformationImageAndTitleSectionAndLine, 1, 1);
             this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpMemberIdAndMemberNameInMemberInformation, 1, 2);
             this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberIDAndMemberNameInMemberInformation, 1, 3);
-            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tableLayoutPanel45, 1, 4);
+            this.tlpMemberInformationInAssignPersonalTrainer.Controls.Add(this.tlpCurrentShiftPortion, 1, 4);
             this.tlpMemberInformationInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberInformationInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
             this.tlpMemberInformationInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
@@ -4102,168 +4375,204 @@
             this.tlpMemberIdAndMemberNameInMemberInformation.Size = new System.Drawing.Size(983, 45);
             this.tlpMemberIdAndMemberNameInMemberInformation.TabIndex = 4;
             // 
-            // tableLayoutPanel45
+            // tlpCurrentShiftPortion
             // 
-            this.tableLayoutPanel45.ColumnCount = 2;
-            this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel45.Controls.Add(this.tableLayoutPanel46, 0, 0);
-            this.tableLayoutPanel45.Controls.Add(this.tableLayoutPanel49, 1, 0);
-            this.tableLayoutPanel45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel45.Location = new System.Drawing.Point(21, 152);
-            this.tableLayoutPanel45.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel45.Name = "tableLayoutPanel45";
-            this.tableLayoutPanel45.RowCount = 1;
-            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel45.Size = new System.Drawing.Size(983, 100);
-            this.tableLayoutPanel45.TabIndex = 6;
+            this.tlpCurrentShiftPortion.ColumnCount = 2;
+            this.tlpCurrentShiftPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCurrentShiftPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCurrentShiftPortion.Controls.Add(this.tlpMembershipStatusInMemberInformation, 0, 0);
+            this.tlpCurrentShiftPortion.Controls.Add(this.tlpCurrentShiftTitleAndDisplayPortion, 0, 0);
+            this.tlpCurrentShiftPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCurrentShiftPortion.Location = new System.Drawing.Point(21, 152);
+            this.tlpCurrentShiftPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpCurrentShiftPortion.Name = "tlpCurrentShiftPortion";
+            this.tlpCurrentShiftPortion.RowCount = 1;
+            this.tlpCurrentShiftPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCurrentShiftPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpCurrentShiftPortion.Size = new System.Drawing.Size(983, 100);
+            this.tlpCurrentShiftPortion.TabIndex = 6;
             // 
-            // tableLayoutPanel46
+            // tlpCurrentShiftTitleAndDisplayPortion
             // 
-            this.tableLayoutPanel46.ColumnCount = 1;
-            this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel46.Controls.Add(this.label30, 0, 0);
-            this.tableLayoutPanel46.Controls.Add(this.tableLayoutPanel47, 0, 1);
-            this.tableLayoutPanel46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel46.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel46.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel46.Name = "tableLayoutPanel46";
-            this.tableLayoutPanel46.RowCount = 2;
-            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel46.Size = new System.Drawing.Size(491, 100);
-            this.tableLayoutPanel46.TabIndex = 0;
+            this.tlpCurrentShiftTitleAndDisplayPortion.ColumnCount = 1;
+            this.tlpCurrentShiftTitleAndDisplayPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCurrentShiftTitleAndDisplayPortion.Controls.Add(this.lblCurrentShiftInMemberInformation, 0, 0);
+            this.tlpCurrentShiftTitleAndDisplayPortion.Controls.Add(this.tlpRetrieveCurrentShiftInMemberInfromation, 0, 1);
+            this.tlpCurrentShiftTitleAndDisplayPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpCurrentShiftTitleAndDisplayPortion.Location = new System.Drawing.Point(0, 0);
+            this.tlpCurrentShiftTitleAndDisplayPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpCurrentShiftTitleAndDisplayPortion.Name = "tlpCurrentShiftTitleAndDisplayPortion";
+            this.tlpCurrentShiftTitleAndDisplayPortion.RowCount = 2;
+            this.tlpCurrentShiftTitleAndDisplayPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCurrentShiftTitleAndDisplayPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpCurrentShiftTitleAndDisplayPortion.Size = new System.Drawing.Size(491, 100);
+            this.tlpCurrentShiftTitleAndDisplayPortion.TabIndex = 0;
             // 
-            // label30
+            // lblCurrentShiftInMemberInformation
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(0, 16);
-            this.label30.Margin = new System.Windows.Forms.Padding(0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(108, 23);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "Current Shift";
+            this.lblCurrentShiftInMemberInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCurrentShiftInMemberInformation.AutoSize = true;
+            this.lblCurrentShiftInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentShiftInMemberInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblCurrentShiftInMemberInformation.Location = new System.Drawing.Point(0, 16);
+            this.lblCurrentShiftInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCurrentShiftInMemberInformation.Name = "lblCurrentShiftInMemberInformation";
+            this.lblCurrentShiftInMemberInformation.Size = new System.Drawing.Size(108, 23);
+            this.lblCurrentShiftInMemberInformation.TabIndex = 3;
+            this.lblCurrentShiftInMemberInformation.Text = "Current Shift";
             // 
-            // tableLayoutPanel47
+            // tlpRetrieveCurrentShiftInMemberInfromation
             // 
-            this.tableLayoutPanel47.ColumnCount = 5;
-            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel47.Controls.Add(this.panel55, 1, 0);
-            this.tableLayoutPanel47.Controls.Add(this.tableLayoutPanel48, 2, 0);
-            this.tableLayoutPanel47.Controls.Add(this.pictureBox17, 0, 0);
-            this.tableLayoutPanel47.Controls.Add(this.panel58, 3, 0);
-            this.tableLayoutPanel47.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel47.Location = new System.Drawing.Point(0, 55);
-            this.tableLayoutPanel47.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel47.Name = "tableLayoutPanel47";
-            this.tableLayoutPanel47.RowCount = 1;
-            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel47.Size = new System.Drawing.Size(491, 45);
-            this.tableLayoutPanel47.TabIndex = 4;
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnCount = 5;
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.pnlLeftBarInRetrieveCurrentShift, 1, 0);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.tlpRetrieveCurrentShift, 2, 0);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.picCurrentShiftIcon, 0, 0);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.pnlRightBarInCurrentShift, 3, 0);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Location = new System.Drawing.Point(0, 55);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Name = "tlpRetrieveCurrentShiftInMemberInfromation";
+            this.tlpRetrieveCurrentShiftInMemberInfromation.RowCount = 1;
+            this.tlpRetrieveCurrentShiftInMemberInfromation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Size = new System.Drawing.Size(491, 45);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.TabIndex = 4;
             // 
-            // panel55
+            // pnlLeftBarInRetrieveCurrentShift
             // 
-            this.panel55.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel55.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel55.Location = new System.Drawing.Point(68, 0);
-            this.panel55.Margin = new System.Windows.Forms.Padding(0);
-            this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(2, 45);
-            this.panel55.TabIndex = 1;
+            this.pnlLeftBarInRetrieveCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInRetrieveCurrentShift.Location = new System.Drawing.Point(68, 0);
+            this.pnlLeftBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInRetrieveCurrentShift.Name = "pnlLeftBarInRetrieveCurrentShift";
+            this.pnlLeftBarInRetrieveCurrentShift.Size = new System.Drawing.Size(2, 45);
+            this.pnlLeftBarInRetrieveCurrentShift.TabIndex = 1;
             // 
-            // tableLayoutPanel48
+            // tlpRetrieveCurrentShift
             // 
-            this.tableLayoutPanel48.ColumnCount = 1;
-            this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel48.Controls.Add(this.panel56, 0, 0);
-            this.tableLayoutPanel48.Controls.Add(this.panel57, 0, 2);
-            this.tableLayoutPanel48.Controls.Add(this.label31, 0, 1);
-            this.tableLayoutPanel48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel48.Location = new System.Drawing.Point(70, 0);
-            this.tableLayoutPanel48.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel48.Name = "tableLayoutPanel48";
-            this.tableLayoutPanel48.RowCount = 3;
-            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel48.Size = new System.Drawing.Size(312, 45);
-            this.tableLayoutPanel48.TabIndex = 3;
+            this.tlpRetrieveCurrentShift.ColumnCount = 1;
+            this.tlpRetrieveCurrentShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveCurrentShift.Controls.Add(this.pnlTopBarInRetrieveCurrentShift, 0, 0);
+            this.tlpRetrieveCurrentShift.Controls.Add(this.pnlButtomBarInRetrieveCurrentShift, 0, 2);
+            this.tlpRetrieveCurrentShift.Controls.Add(this.lblRetrieveMemberCurrentShiftTime, 0, 1);
+            this.tlpRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveCurrentShift.Location = new System.Drawing.Point(70, 0);
+            this.tlpRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveCurrentShift.Name = "tlpRetrieveCurrentShift";
+            this.tlpRetrieveCurrentShift.RowCount = 3;
+            this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveCurrentShift.Size = new System.Drawing.Size(312, 45);
+            this.tlpRetrieveCurrentShift.TabIndex = 3;
             // 
-            // panel56
+            // pnlTopBarInRetrieveCurrentShift
             // 
-            this.panel56.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel56.Location = new System.Drawing.Point(0, 0);
-            this.panel56.Margin = new System.Windows.Forms.Padding(0);
-            this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(312, 2);
-            this.panel56.TabIndex = 0;
+            this.pnlTopBarInRetrieveCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInRetrieveCurrentShift.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInRetrieveCurrentShift.Name = "pnlTopBarInRetrieveCurrentShift";
+            this.pnlTopBarInRetrieveCurrentShift.Size = new System.Drawing.Size(312, 2);
+            this.pnlTopBarInRetrieveCurrentShift.TabIndex = 0;
             // 
-            // panel57
+            // pnlButtomBarInRetrieveCurrentShift
             // 
-            this.panel57.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel57.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel57.Location = new System.Drawing.Point(0, 42);
-            this.panel57.Margin = new System.Windows.Forms.Padding(0);
-            this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(312, 3);
-            this.panel57.TabIndex = 1;
+            this.pnlButtomBarInRetrieveCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInRetrieveCurrentShift.Location = new System.Drawing.Point(0, 42);
+            this.pnlButtomBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInRetrieveCurrentShift.Name = "pnlButtomBarInRetrieveCurrentShift";
+            this.pnlButtomBarInRetrieveCurrentShift.Size = new System.Drawing.Size(312, 3);
+            this.pnlButtomBarInRetrieveCurrentShift.TabIndex = 1;
             // 
-            // label31
+            // lblRetrieveMemberCurrentShiftTime
             // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(18, 10);
-            this.label31.Margin = new System.Windows.Forms.Padding(0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(275, 23);
-            this.label31.TabIndex = 2;
-            this.label31.Text = "Morning Shift (6:00 AM - 2:00 PM)";
+            this.lblRetrieveMemberCurrentShiftTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRetrieveMemberCurrentShiftTime.AutoSize = true;
+            this.lblRetrieveMemberCurrentShiftTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetrieveMemberCurrentShiftTime.ForeColor = System.Drawing.Color.Black;
+            this.lblRetrieveMemberCurrentShiftTime.Location = new System.Drawing.Point(18, 10);
+            this.lblRetrieveMemberCurrentShiftTime.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRetrieveMemberCurrentShiftTime.Name = "lblRetrieveMemberCurrentShiftTime";
+            this.lblRetrieveMemberCurrentShiftTime.Size = new System.Drawing.Size(275, 23);
+            this.lblRetrieveMemberCurrentShiftTime.TabIndex = 2;
+            this.lblRetrieveMemberCurrentShiftTime.Text = "Morning Shift (6:00 AM - 2:00 PM)";
             // 
-            // pictureBox17
+            // pnlRightBarInCurrentShift
             // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(44, 39);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 0;
-            this.pictureBox17.TabStop = false;
+            this.pnlRightBarInCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlRightBarInCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRightBarInCurrentShift.Location = new System.Drawing.Point(382, 0);
+            this.pnlRightBarInCurrentShift.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRightBarInCurrentShift.Name = "pnlRightBarInCurrentShift";
+            this.pnlRightBarInCurrentShift.Size = new System.Drawing.Size(2, 45);
+            this.pnlRightBarInCurrentShift.TabIndex = 2;
             // 
-            // panel58
+            // tlpSelectTrainerNamePortion
             // 
-            this.panel58.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel58.Location = new System.Drawing.Point(382, 0);
-            this.panel58.Margin = new System.Windows.Forms.Padding(0);
-            this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(2, 45);
-            this.panel58.TabIndex = 2;
+            this.tlpSelectTrainerNamePortion.ColumnCount = 5;
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 533F));
+            this.tlpSelectTrainerNamePortion.Controls.Add(this.picSelectTrainerName, 1, 0);
+            this.tlpSelectTrainerNamePortion.Controls.Add(this.cmbSelectTrainer, 3, 0);
+            this.tlpSelectTrainerNamePortion.Controls.Add(this.lblTrainerNameSelect, 2, 0);
+            this.tlpSelectTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSelectTrainerNamePortion.Location = new System.Drawing.Point(0, 270);
+            this.tlpSelectTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpSelectTrainerNamePortion.Name = "tlpSelectTrainerNamePortion";
+            this.tlpSelectTrainerNamePortion.RowCount = 1;
+            this.tlpSelectTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSelectTrainerNamePortion.Size = new System.Drawing.Size(1027, 60);
+            this.tlpSelectTrainerNamePortion.TabIndex = 1;
             // 
-            // tableLayoutPanel49
+            // picSelectTrainerName
             // 
-            this.tableLayoutPanel49.ColumnCount = 2;
-            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
-            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel49.Controls.Add(this.tableLayoutPanel50, 0, 0);
-            this.tableLayoutPanel49.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel49.Location = new System.Drawing.Point(491, 0);
-            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel49.Name = "tableLayoutPanel49";
-            this.tableLayoutPanel49.RowCount = 1;
-            this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel49.Size = new System.Drawing.Size(492, 100);
-            this.tableLayoutPanel49.TabIndex = 1;
+            this.picSelectTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picSelectTrainerName.Image = ((System.Drawing.Image)(resources.GetObject("picSelectTrainerName.Image")));
+            this.picSelectTrainerName.Location = new System.Drawing.Point(23, 3);
+            this.picSelectTrainerName.Name = "picSelectTrainerName";
+            this.picSelectTrainerName.Size = new System.Drawing.Size(44, 54);
+            this.picSelectTrainerName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSelectTrainerName.TabIndex = 0;
+            this.picSelectTrainerName.TabStop = false;
+            // 
+            // cmbSelectTrainer
+            // 
+            this.cmbSelectTrainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectTrainer.FormattingEnabled = true;
+            this.cmbSelectTrainer.Items.AddRange(new object[] {
+            "Priya",
+            "Deep",
+            "Souma",
+            "Aridam"});
+            this.cmbSelectTrainer.Location = new System.Drawing.Point(236, 12);
+            this.cmbSelectTrainer.Name = "cmbSelectTrainer";
+            this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
+            this.cmbSelectTrainer.TabIndex = 2;
+            this.cmbSelectTrainer.Text = "   ---Select Trainer ---";
+            this.cmbSelectTrainer.SelectedIndexChanged += new System.EventHandler(this.cmbSelectTrainer_SelectedIndexChanged);
+            // 
+            // lblTrainerNameSelect
+            // 
+            this.lblTrainerNameSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTrainerNameSelect.AutoSize = true;
+            this.lblTrainerNameSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrainerNameSelect.ForeColor = System.Drawing.Color.Green;
+            this.lblTrainerNameSelect.Location = new System.Drawing.Point(73, 16);
+            this.lblTrainerNameSelect.Name = "lblTrainerNameSelect";
+            this.lblTrainerNameSelect.Size = new System.Drawing.Size(133, 28);
+            this.lblTrainerNameSelect.TabIndex = 3;
+            this.lblTrainerNameSelect.Text = "Trainer Name";
             // 
             // tableLayoutPanel50
             // 
@@ -4424,66 +4733,6 @@
             this.pictureBox19.TabIndex = 1;
             this.pictureBox19.TabStop = false;
             // 
-            // tableLayoutPanel54
-            // 
-            this.tableLayoutPanel54.ColumnCount = 5;
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 533F));
-            this.tableLayoutPanel54.Controls.Add(this.pictureBox20, 1, 0);
-            this.tableLayoutPanel54.Controls.Add(this.cmbSelectTrainer, 3, 0);
-            this.tableLayoutPanel54.Controls.Add(this.label34, 2, 0);
-            this.tableLayoutPanel54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel54.Location = new System.Drawing.Point(0, 270);
-            this.tableLayoutPanel54.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
-            this.tableLayoutPanel54.RowCount = 1;
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel54.Size = new System.Drawing.Size(1027, 60);
-            this.tableLayoutPanel54.TabIndex = 1;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(23, 3);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(44, 54);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 0;
-            this.pictureBox20.TabStop = false;
-            // 
-            // cmbSelectTrainer
-            // 
-            this.cmbSelectTrainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
-            this.cmbSelectTrainer.FormattingEnabled = true;
-            this.cmbSelectTrainer.Items.AddRange(new object[] {
-            "Priya",
-            "Deep",
-            "Souma",
-            "Aridam"});
-            this.cmbSelectTrainer.Location = new System.Drawing.Point(236, 12);
-            this.cmbSelectTrainer.Name = "cmbSelectTrainer";
-            this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
-            this.cmbSelectTrainer.TabIndex = 2;
-            this.cmbSelectTrainer.Text = "   ---Select Trainer ---";
-            // 
-            // label34
-            // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Green;
-            this.label34.Location = new System.Drawing.Point(73, 16);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(133, 28);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "Trainer Name";
-            // 
             // tlpAssignPersonalTrainerWholeDetails
             // 
             this.tlpAssignPersonalTrainerWholeDetails.BackColor = System.Drawing.Color.White;
@@ -4502,16 +4751,6 @@
             this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.30964F));
             this.tlpAssignPersonalTrainerWholeDetails.Size = new System.Drawing.Size(1149, 788);
             this.tlpAssignPersonalTrainerWholeDetails.TabIndex = 2;
-            // 
-            // pnlMiddleSectionLeftBarInAssignPersonalTrainer
-            // 
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Location = new System.Drawing.Point(57, 0);
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Name = "pnlMiddleSectionLeftBarInAssignPersonalTrainer";
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 612);
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.TabIndex = 0;
             // 
             // tableLayoutPanel22
             // 
@@ -4542,109 +4781,6 @@
             this.label28.Size = new System.Drawing.Size(97, 23);
             this.label28.TabIndex = 3;
             this.label28.Text = "Member ID";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel52, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(491, 45);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(68, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 45);
-            this.panel5.TabIndex = 1;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tableLayoutPanel3.Controls.Add(this.panel50, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.panel51, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(70, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(312, 45);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // panel50
-            // 
-            this.panel50.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel50.Location = new System.Drawing.Point(0, 0);
-            this.panel50.Margin = new System.Windows.Forms.Padding(0);
-            this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(312, 2);
-            this.panel50.TabIndex = 0;
-            // 
-            // panel51
-            // 
-            this.panel51.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel51.Location = new System.Drawing.Point(0, 42);
-            this.panel51.Margin = new System.Windows.Forms.Padding(0);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(312, 3);
-            this.panel51.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(134, 10);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 23);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "1026";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel52
-            // 
-            this.panel52.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel52.Location = new System.Drawing.Point(382, 0);
-            this.panel52.Margin = new System.Windows.Forms.Padding(0);
-            this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(2, 45);
-            this.panel52.TabIndex = 2;
             // 
             // tableLayoutPanel17
             // 
@@ -4717,7 +4853,6 @@
             // pictureBox16
             // 
             this.pictureBox16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
             this.pictureBox16.Location = new System.Drawing.Point(3, 3);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(44, 39);
@@ -4735,108 +4870,580 @@
             this.panel64.Size = new System.Drawing.Size(2, 45);
             this.panel64.TabIndex = 2;
             // 
-            // tableLayoutPanel24
+            // panel58
             // 
-            this.tableLayoutPanel24.ColumnCount = 5;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Controls.Add(this.panel65, 1, 0);
-            this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel25, 2, 0);
-            this.tableLayoutPanel24.Controls.Add(this.pictureBox21, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.panel68, 3, 0);
-            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(491, 0);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 1;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(492, 45);
-            this.tableLayoutPanel24.TabIndex = 2;
+            this.panel58.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel58.Location = new System.Drawing.Point(382, 0);
+            this.panel58.Margin = new System.Windows.Forms.Padding(0);
+            this.panel58.Name = "panel58";
+            this.panel58.Size = new System.Drawing.Size(2, 45);
+            this.panel58.TabIndex = 2;
             // 
-            // panel65
+            // pictureBox17
             // 
-            this.panel65.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel65.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel65.Location = new System.Drawing.Point(68, 0);
-            this.panel65.Margin = new System.Windows.Forms.Padding(0);
-            this.panel65.Name = "panel65";
-            this.panel65.Size = new System.Drawing.Size(2, 45);
-            this.panel65.TabIndex = 1;
+            this.pictureBox17.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 0;
+            this.pictureBox17.TabStop = false;
             // 
-            // tableLayoutPanel25
+            // picCurrentShift
             // 
-            this.tableLayoutPanel25.ColumnCount = 1;
-            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
-            this.tableLayoutPanel25.Controls.Add(this.panel66, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.panel67, 0, 2);
-            this.tableLayoutPanel25.Controls.Add(this.label29, 0, 1);
-            this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(70, 0);
-            this.tableLayoutPanel25.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
-            this.tableLayoutPanel25.RowCount = 3;
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(335, 45);
-            this.tableLayoutPanel25.TabIndex = 3;
+            this.picCurrentShift.Location = new System.Drawing.Point(3, 3);
+            this.picCurrentShift.Name = "picCurrentShift";
+            this.picCurrentShift.Size = new System.Drawing.Size(44, 39);
+            this.picCurrentShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCurrentShift.TabIndex = 0;
+            this.picCurrentShift.TabStop = false;
             // 
-            // panel66
+            // tableLayoutPanel49
             // 
-            this.panel66.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel66.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel66.Location = new System.Drawing.Point(0, 0);
-            this.panel66.Margin = new System.Windows.Forms.Padding(0);
-            this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(335, 2);
-            this.panel66.TabIndex = 0;
+            this.tableLayoutPanel49.ColumnCount = 2;
+            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
+            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel49.Controls.Add(this.tableLayoutPanel50, 0, 0);
+            this.tableLayoutPanel49.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel49.Location = new System.Drawing.Point(491, 0);
+            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel49.Name = "tableLayoutPanel49";
+            this.tableLayoutPanel49.RowCount = 1;
+            this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel49.Size = new System.Drawing.Size(492, 100);
+            this.tableLayoutPanel49.TabIndex = 1;
             // 
-            // panel67
+            // picCurrentShiftIcon
             // 
-            this.panel67.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel67.Location = new System.Drawing.Point(0, 42);
-            this.panel67.Margin = new System.Windows.Forms.Padding(0);
-            this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(335, 3);
-            this.panel67.TabIndex = 1;
+            this.picCurrentShiftIcon.Image = ((System.Drawing.Image)(resources.GetObject("picCurrentShiftIcon.Image")));
+            this.picCurrentShiftIcon.Location = new System.Drawing.Point(3, 3);
+            this.picCurrentShiftIcon.Name = "picCurrentShiftIcon";
+            this.picCurrentShiftIcon.Size = new System.Drawing.Size(44, 39);
+            this.picCurrentShiftIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCurrentShiftIcon.TabIndex = 0;
+            this.picCurrentShiftIcon.TabStop = false;
             // 
-            // label29
+            // tlpMembershipStatusInMemberInformation
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(119, 10);
-            this.label29.Margin = new System.Windows.Forms.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(96, 23);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "John Smith";
+            this.tlpMembershipStatusInMemberInformation.ColumnCount = 2;
+            this.tlpMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 406F));
+            this.tlpMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMembershipStatusInMemberInformation.Controls.Add(this.tlpRetrieveMembershipStatusInMemberInformation, 0, 0);
+            this.tlpMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMembershipStatusInMemberInformation.Location = new System.Drawing.Point(491, 0);
+            this.tlpMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMembershipStatusInMemberInformation.Name = "tlpMembershipStatusInMemberInformation";
+            this.tlpMembershipStatusInMemberInformation.RowCount = 1;
+            this.tlpMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMembershipStatusInMemberInformation.Size = new System.Drawing.Size(492, 100);
+            this.tlpMembershipStatusInMemberInformation.TabIndex = 3;
             // 
-            // pictureBox21
+            // tlpRetrieveMembershipStatusInMemberInformation
             // 
-            this.pictureBox21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(44, 39);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 0;
-            this.pictureBox21.TabStop = false;
+            this.tlpRetrieveMembershipStatusInMemberInformation.ColumnCount = 1;
+            this.tlpRetrieveMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMembershipStatusInMemberInformation.Controls.Add(this.pnlTopBarInMembershipStatusInMemberInformation, 0, 1);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Controls.Add(this.pnlButtomBarInMembershipStatusInMemberInformation, 0, 3);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Controls.Add(this.tlpRetrieveMembershipStatus, 0, 2);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 0);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Name = "tlpRetrieveMembershipStatusInMemberInformation";
+            this.tlpRetrieveMembershipStatusInMemberInformation.RowCount = 4;
+            this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tlpRetrieveMembershipStatusInMemberInformation.Size = new System.Drawing.Size(406, 100);
+            this.tlpRetrieveMembershipStatusInMemberInformation.TabIndex = 3;
             // 
-            // panel68
+            // pnlTopBarInMembershipStatusInMemberInformation
             // 
-            this.panel68.BackColor = System.Drawing.Color.ForestGreen;
-            this.panel68.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel68.Location = new System.Drawing.Point(405, 0);
-            this.panel68.Margin = new System.Windows.Forms.Padding(0);
-            this.panel68.Name = "panel68";
-            this.panel68.Size = new System.Drawing.Size(2, 45);
-            this.panel68.TabIndex = 2;
+            this.pnlTopBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTopBarInMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTopBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 32);
+            this.pnlTopBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTopBarInMembershipStatusInMemberInformation.Name = "pnlTopBarInMembershipStatusInMemberInformation";
+            this.pnlTopBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(406, 2);
+            this.pnlTopBarInMembershipStatusInMemberInformation.TabIndex = 0;
+            // 
+            // pnlButtomBarInMembershipStatusInMemberInformation
+            // 
+            this.pnlButtomBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 98);
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Name = "pnlButtomBarInMembershipStatusInMemberInformation";
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(406, 2);
+            this.pnlButtomBarInMembershipStatusInMemberInformation.TabIndex = 1;
+            // 
+            // tlpRetrieveMembershipStatus
+            // 
+            this.tlpRetrieveMembershipStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(255)))), ((int)(((byte)(232)))));
+            this.tlpRetrieveMembershipStatus.ColumnCount = 3;
+            this.tlpRetrieveMembershipStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tlpRetrieveMembershipStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMembershipStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tlpRetrieveMembershipStatus.Controls.Add(this.pnlLeftBarInMembershipStatusInMemberInformation, 0, 0);
+            this.tlpRetrieveMembershipStatus.Controls.Add(this.pnlRightBarInMembershipStatusInMemberInformation, 2, 0);
+            this.tlpRetrieveMembershipStatus.Controls.Add(this.tlpRetrieveMembershipStatusPortion, 1, 0);
+            this.tlpRetrieveMembershipStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMembershipStatus.Location = new System.Drawing.Point(0, 34);
+            this.tlpRetrieveMembershipStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMembershipStatus.Name = "tlpRetrieveMembershipStatus";
+            this.tlpRetrieveMembershipStatus.RowCount = 1;
+            this.tlpRetrieveMembershipStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMembershipStatus.Size = new System.Drawing.Size(406, 64);
+            this.tlpRetrieveMembershipStatus.TabIndex = 2;
+            // 
+            // pnlLeftBarInMembershipStatusInMemberInformation
+            // 
+            this.pnlLeftBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Name = "pnlLeftBarInMembershipStatusInMemberInformation";
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 64);
+            this.pnlLeftBarInMembershipStatusInMemberInformation.TabIndex = 0;
+            // 
+            // pnlRightBarInMembershipStatusInMemberInformation
+            // 
+            this.pnlRightBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlRightBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(405, 0);
+            this.pnlRightBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRightBarInMembershipStatusInMemberInformation.Name = "pnlRightBarInMembershipStatusInMemberInformation";
+            this.pnlRightBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 64);
+            this.pnlRightBarInMembershipStatusInMemberInformation.TabIndex = 1;
+            // 
+            // tlpRetrieveMembershipStatusPortion
+            // 
+            this.tlpRetrieveMembershipStatusPortion.ColumnCount = 3;
+            this.tlpRetrieveMembershipStatusPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.32673F));
+            this.tlpRetrieveMembershipStatusPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.85149F));
+            this.tlpRetrieveMembershipStatusPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.57426F));
+            this.tlpRetrieveMembershipStatusPortion.Controls.Add(this.picDoneMembershipStatusActivation, 2, 0);
+            this.tlpRetrieveMembershipStatusPortion.Controls.Add(this.tlpRetrieveMembershipStatusSection, 1, 0);
+            this.tlpRetrieveMembershipStatusPortion.Controls.Add(this.picRetrieveMembershipStatus, 0, 0);
+            this.tlpRetrieveMembershipStatusPortion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMembershipStatusPortion.Location = new System.Drawing.Point(1, 0);
+            this.tlpRetrieveMembershipStatusPortion.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpRetrieveMembershipStatusPortion.Name = "tlpRetrieveMembershipStatusPortion";
+            this.tlpRetrieveMembershipStatusPortion.RowCount = 1;
+            this.tlpRetrieveMembershipStatusPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpRetrieveMembershipStatusPortion.Size = new System.Drawing.Size(404, 64);
+            this.tlpRetrieveMembershipStatusPortion.TabIndex = 2;
+            // 
+            // picDoneMembershipStatusActivation
+            // 
+            this.picDoneMembershipStatusActivation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picDoneMembershipStatusActivation.Image = ((System.Drawing.Image)(resources.GetObject("picDoneMembershipStatusActivation.Image")));
+            this.picDoneMembershipStatusActivation.Location = new System.Drawing.Point(335, 3);
+            this.picDoneMembershipStatusActivation.Name = "picDoneMembershipStatusActivation";
+            this.picDoneMembershipStatusActivation.Size = new System.Drawing.Size(66, 58);
+            this.picDoneMembershipStatusActivation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDoneMembershipStatusActivation.TabIndex = 2;
+            this.picDoneMembershipStatusActivation.TabStop = false;
+            // 
+            // tlpRetrieveMembershipStatusSection
+            // 
+            this.tlpRetrieveMembershipStatusSection.ColumnCount = 1;
+            this.tlpRetrieveMembershipStatusSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMembershipStatusSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMembershipStatusSection.Controls.Add(this.lblRetrieveMemberActiveTime, 0, 1);
+            this.tlpRetrieveMembershipStatusSection.Controls.Add(this.lblMemebrMembershipStatusTitle, 0, 0);
+            this.tlpRetrieveMembershipStatusSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpRetrieveMembershipStatusSection.Location = new System.Drawing.Point(73, 3);
+            this.tlpRetrieveMembershipStatusSection.Name = "tlpRetrieveMembershipStatusSection";
+            this.tlpRetrieveMembershipStatusSection.RowCount = 2;
+            this.tlpRetrieveMembershipStatusSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMembershipStatusSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRetrieveMembershipStatusSection.Size = new System.Drawing.Size(256, 58);
+            this.tlpRetrieveMembershipStatusSection.TabIndex = 0;
+            // 
+            // lblRetrieveMemberActiveTime
+            // 
+            this.lblRetrieveMemberActiveTime.AutoSize = true;
+            this.lblRetrieveMemberActiveTime.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetrieveMemberActiveTime.ForeColor = System.Drawing.Color.Black;
+            this.lblRetrieveMemberActiveTime.Location = new System.Drawing.Point(0, 29);
+            this.lblRetrieveMemberActiveTime.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRetrieveMemberActiveTime.Name = "lblRetrieveMemberActiveTime";
+            this.lblRetrieveMemberActiveTime.Size = new System.Drawing.Size(152, 19);
+            this.lblRetrieveMemberActiveTime.TabIndex = 1;
+            this.lblRetrieveMemberActiveTime.Text = "Valid Till: 15 May 2025";
+            // 
+            // lblMemebrMembershipStatusTitle
+            // 
+            this.lblMemebrMembershipStatusTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblMemebrMembershipStatusTitle.AutoSize = true;
+            this.lblMemebrMembershipStatusTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemebrMembershipStatusTitle.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblMemebrMembershipStatusTitle.Location = new System.Drawing.Point(0, 10);
+            this.lblMemebrMembershipStatusTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMemebrMembershipStatusTitle.Name = "lblMemebrMembershipStatusTitle";
+            this.lblMemebrMembershipStatusTitle.Size = new System.Drawing.Size(227, 19);
+            this.lblMemebrMembershipStatusTitle.TabIndex = 0;
+            this.lblMemebrMembershipStatusTitle.Text = "Member has an active membership";
+            // 
+            // picRetrieveMembershipStatus
+            // 
+            this.picRetrieveMembershipStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRetrieveMembershipStatus.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMembershipStatus.Image")));
+            this.picRetrieveMembershipStatus.Location = new System.Drawing.Point(0, 0);
+            this.picRetrieveMembershipStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.picRetrieveMembershipStatus.Name = "picRetrieveMembershipStatus";
+            this.picRetrieveMembershipStatus.Size = new System.Drawing.Size(70, 64);
+            this.picRetrieveMembershipStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRetrieveMembershipStatus.TabIndex = 1;
+            this.picRetrieveMembershipStatus.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(68, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(2, 45);
+            this.panel6.TabIndex = 1;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel6.Controls.Add(this.pnlTopBarInTrainerIDPortion, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.pnlButtomBarInTrainerIDPortion, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.lblTrainerIDRetrieve, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(70, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(312, 45);
+            this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(312, 2);
+            this.panel7.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 42);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(312, 3);
+            this.panel8.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(134, 10);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 23);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "1026";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(382, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(2, 45);
+            this.panel9.TabIndex = 2;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(21, 158);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(983, 45);
+            this.tableLayoutPanel8.TabIndex = 6;
+            // 
+            // lblSpecification
+            // 
+            this.lblSpecification.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSpecification.AutoSize = true;
+            this.lblSpecification.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpecification.ForeColor = System.Drawing.Color.Black;
+            this.lblSpecification.Location = new System.Drawing.Point(0, 11);
+            this.lblSpecification.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSpecification.Name = "lblSpecification";
+            this.lblSpecification.Size = new System.Drawing.Size(114, 23);
+            this.lblSpecification.TabIndex = 4;
+            this.lblSpecification.Text = "Specialization";
+            // 
+            // lblExperienceTitleInTrainerInformation
+            // 
+            this.lblExperienceTitleInTrainerInformation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblExperienceTitleInTrainerInformation.AutoSize = true;
+            this.lblExperienceTitleInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExperienceTitleInTrainerInformation.ForeColor = System.Drawing.Color.Black;
+            this.lblExperienceTitleInTrainerInformation.Location = new System.Drawing.Point(489, 11);
+            this.lblExperienceTitleInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblExperienceTitleInTrainerInformation.Name = "lblExperienceTitleInTrainerInformation";
+            this.lblExperienceTitleInTrainerInformation.Size = new System.Drawing.Size(93, 23);
+            this.lblExperienceTitleInTrainerInformation.TabIndex = 5;
+            this.lblExperienceTitleInTrainerInformation.Text = "Experience";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel13, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(21, 203);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(983, 45);
+            this.tableLayoutPanel10.TabIndex = 7;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel12, 3, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(491, 45);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(68, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(2, 45);
+            this.panel5.TabIndex = 1;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel3.Controls.Add(this.panel10, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel11, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(70, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(312, 45);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(312, 2);
+            this.panel10.TabIndex = 0;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 42);
+            this.panel11.Margin = new System.Windows.Forms.Padding(0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(312, 3);
+            this.panel11.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(134, 10);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 23);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "1026";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(382, 0);
+            this.panel12.Margin = new System.Windows.Forms.Padding(0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(2, 45);
+            this.panel12.TabIndex = 2;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 5;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.panel13, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.pictureBox5, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.panel40, 3, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(491, 0);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(492, 45);
+            this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(68, 0);
+            this.panel13.Margin = new System.Windows.Forms.Padding(0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(2, 45);
+            this.panel13.TabIndex = 1;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel9.Controls.Add(this.panel14, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.panel39, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(70, 0);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 3;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(312, 45);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Margin = new System.Windows.Forms.Padding(0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(312, 2);
+            this.panel14.TabIndex = 0;
+            // 
+            // panel39
+            // 
+            this.panel39.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel39.Location = new System.Drawing.Point(0, 42);
+            this.panel39.Margin = new System.Windows.Forms.Padding(0);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(312, 3);
+            this.panel39.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(134, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 23);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "1026";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(44, 39);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel40
+            // 
+            this.panel40.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel40.Location = new System.Drawing.Point(382, 0);
+            this.panel40.Margin = new System.Windows.Forms.Padding(0);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(2, 45);
+            this.panel40.TabIndex = 2;
             // 
             // FrmAssignTrainer
             // 
@@ -4948,25 +5555,23 @@
             this.tlpCancleImageAndLevel.ResumeLayout(false);
             this.tlpCancleImageAndLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancleInAssignPersonalTrainer)).EndInit();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.tableLayoutPanel28.ResumeLayout(false);
-            this.tableLayoutPanel27.ResumeLayout(false);
-            this.tableLayoutPanel27.PerformLayout();
-            this.tableLayoutPanel26.ResumeLayout(false);
-            this.tableLayoutPanel29.ResumeLayout(false);
-            this.tableLayoutPanel29.PerformLayout();
-            this.tableLayoutPanel30.ResumeLayout(false);
-            this.tableLayoutPanel31.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tlpRetrieveTrainerIDInTrainerInformation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerIDIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerNameIcon)).EndInit();
+            this.tlpTrainerSpecializationAndExperienceSection.ResumeLayout(false);
+            this.tlpTrainerSpecializationAndExperienceSection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrainerInformationIcon)).EndInit();
+            this.tlpTrainerInformationLine.ResumeLayout(false);
+            this.tlpTrainerInformationTitle.ResumeLayout(false);
+            this.tlpTrainerInformationTitle.PerformLayout();
+            this.tlpRetrieveTrainerInformation.ResumeLayout(false);
+            this.tlpTrainerIDAndTrainerNamePortion.ResumeLayout(false);
+            this.tlpTrainerIDAndTrainerNamePortion.PerformLayout();
+            this.tlpRetrieveTrainerIDAndTrainerName.ResumeLayout(false);
+            this.tlpRetrieveTrainerNameInTrainerInformation.ResumeLayout(false);
+            this.tlpTrainerNameRetrieveInTrainerInformation.ResumeLayout(false);
+            this.tlpTrainerNameRetrieveInTrainerInformation.PerformLayout();
+            this.tlpRetrieveSpecializationAndExperienceSection.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
@@ -4985,10 +5590,10 @@
             this.tlpCancleButtonCreateInAssignPersonalTrainer.ResumeLayout(false);
             this.tlpCancleButtonCreateInAssignPersonalTrainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancleButtonCreateInAssignPersonalTrainer)).EndInit();
-            this.panel39.ResumeLayout(false);
-            this.panel39.PerformLayout();
-            this.panel40.ResumeLayout(false);
-            this.panel41.ResumeLayout(false);
+            this.pnlDefaultTrainerSectionShow.ResumeLayout(false);
+            this.pnlDefaultTrainerSectionShow.PerformLayout();
+            this.pnlTrainerInformationWholePortion.ResumeLayout(false);
+            this.pnlTrainerInformationSectionRetrieve.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel18.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
@@ -4998,6 +5603,14 @@
             this.tableLayoutPanel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.ResumeLayout(false);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpRetrieveMemberNameInformation.ResumeLayout(false);
+            this.tlpRetrieveMemberNameInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMemberNameIcon)).EndInit();
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ResumeLayout(false);
+            this.tlpRetrieveMemberIDInMemberInformation.ResumeLayout(false);
+            this.tlpRetrieveMemberIDInMemberInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMemberId)).EndInit();
             this.tlpMiddleSectionInAssignPersonalTrainer.ResumeLayout(false);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.ResumeLayout(false);
             this.tlpMemberAndTrainerAssignAndInformation.ResumeLayout(false);
@@ -5008,14 +5621,15 @@
             this.tlpMemberInformationLineBar.ResumeLayout(false);
             this.tlpMemberIdAndMemberNameInMemberInformation.ResumeLayout(false);
             this.tlpMemberIdAndMemberNameInMemberInformation.PerformLayout();
-            this.tableLayoutPanel45.ResumeLayout(false);
-            this.tableLayoutPanel46.ResumeLayout(false);
-            this.tableLayoutPanel46.PerformLayout();
-            this.tableLayoutPanel47.ResumeLayout(false);
-            this.tableLayoutPanel48.ResumeLayout(false);
-            this.tableLayoutPanel48.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            this.tableLayoutPanel49.ResumeLayout(false);
+            this.tlpCurrentShiftPortion.ResumeLayout(false);
+            this.tlpCurrentShiftTitleAndDisplayPortion.ResumeLayout(false);
+            this.tlpCurrentShiftTitleAndDisplayPortion.PerformLayout();
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ResumeLayout(false);
+            this.tlpRetrieveCurrentShift.ResumeLayout(false);
+            this.tlpRetrieveCurrentShift.PerformLayout();
+            this.tlpSelectTrainerNamePortion.ResumeLayout(false);
+            this.tlpSelectTrainerNamePortion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelectTrainerName)).EndInit();
             this.tableLayoutPanel50.ResumeLayout(false);
             this.tableLayoutPanel51.ResumeLayout(false);
             this.tableLayoutPanel52.ResumeLayout(false);
@@ -5023,22 +5637,37 @@
             this.tableLayoutPanel53.ResumeLayout(false);
             this.tableLayoutPanel53.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            this.tableLayoutPanel54.ResumeLayout(false);
-            this.tableLayoutPanel54.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.tlpAssignPersonalTrainerWholeDetails.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCurrentShift)).EndInit();
+            this.tableLayoutPanel49.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCurrentShiftIcon)).EndInit();
+            this.tlpMembershipStatusInMemberInformation.ResumeLayout(false);
+            this.tlpRetrieveMembershipStatusInMemberInformation.ResumeLayout(false);
+            this.tlpRetrieveMembershipStatus.ResumeLayout(false);
+            this.tlpRetrieveMembershipStatusPortion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDoneMembershipStatusActivation)).EndInit();
+            this.tlpRetrieveMembershipStatusSection.ResumeLayout(false);
+            this.tlpRetrieveMembershipStatusSection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRetrieveMembershipStatus)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tableLayoutPanel23.ResumeLayout(false);
-            this.tableLayoutPanel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            this.tableLayoutPanel24.ResumeLayout(false);
-            this.tableLayoutPanel25.ResumeLayout(false);
-            this.tableLayoutPanel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5220,36 +5849,36 @@
         private System.Windows.Forms.TableLayoutPanel tlpCancleImageAndLevel;
         private System.Windows.Forms.PictureBox picCancleInAssignPersonalTrainer;
         private System.Windows.Forms.Label lblcancleInPersonalTrainerAssign;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlLeftBarInRetrieveTrainerID;
+        private System.Windows.Forms.TableLayoutPanel tlp;
+        private System.Windows.Forms.Panel pnlTopBarInTrainerIDPortion;
+        private System.Windows.Forms.Panel pnlButtomBarInTrainerIDPortion;
+        private System.Windows.Forms.Label lblTrainerIDRetrieve;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveTrainerIDInTrainerInformation;
+        private System.Windows.Forms.PictureBox picTrainerIDIcon;
+        private System.Windows.Forms.Panel pnlRightBarInTrainerIDPortion;
+        private System.Windows.Forms.PictureBox picTrainerNameIcon;
+        private System.Windows.Forms.Panel pnlRightBarInTrainerName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel31;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TableLayoutPanel tlpTrainerSpecializationAndExperienceSection;
+        private System.Windows.Forms.Panel pnlTopBarInTrainerName;
+        private System.Windows.Forms.Panel pnlButtomBarInTrainerName;
+        private System.Windows.Forms.PictureBox picTrainerInformationIcon;
+        private System.Windows.Forms.TableLayoutPanel tlpTrainerInformationLine;
+        private System.Windows.Forms.Panel pnlLineInTrainerInformationSection;
+        private System.Windows.Forms.TableLayoutPanel tlpTrainerInformationTitle;
+        private System.Windows.Forms.Label lblTrainerInformationTitle;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveTrainerInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpTrainerIDAndTrainerNamePortion;
+        private System.Windows.Forms.Label lblTrainerNameInTrainerInformation;
+        private System.Windows.Forms.Label lblTrainerIDInTrainerInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveTrainerIDAndTrainerName;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveTrainerNameInTrainerInformation;
+        private System.Windows.Forms.Panel pnlLeftBarInTrainerNamePortion;
+        private System.Windows.Forms.TableLayoutPanel tlpTrainerNameRetrieveInTrainerInformation;
+        private System.Windows.Forms.Label lblTrainerNameRetrieve;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveSpecializationAndExperienceSection;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
@@ -5277,10 +5906,10 @@
         private System.Windows.Forms.TableLayoutPanel tlpCancleButtonCreateInAssignPersonalTrainer;
         private System.Windows.Forms.PictureBox picCancleButtonCreateInAssignPersonalTrainer;
         private System.Windows.Forms.Label lblAssignTrainerButton;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel39;
-        private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Label lblSelectTrainerInDefaultTrainerSection;
+        private System.Windows.Forms.Panel pnlDefaultTrainerSectionShow;
+        private System.Windows.Forms.Panel pnlTrainerInformationWholePortion;
+        private System.Windows.Forms.Panel pnlTrainerInformationSectionRetrieve;
         private System.Windows.Forms.Panel panel42;
         private System.Windows.Forms.Panel panel43;
         private System.Windows.Forms.Panel panel44;
@@ -5313,18 +5942,14 @@
         private System.Windows.Forms.Panel pnlMemberInformationLineBar;
         private System.Windows.Forms.Label lblMemberInformationTitle;
         private System.Windows.Forms.TableLayoutPanel tlpMemberIdAndMemberNameInMemberInformation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel45;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel46;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel47;
-        private System.Windows.Forms.Panel panel55;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel48;
-        private System.Windows.Forms.Panel panel56;
-        private System.Windows.Forms.Panel panel57;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.Panel panel58;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel49;
+        private System.Windows.Forms.TableLayoutPanel tlpCurrentShiftPortion;
+        private System.Windows.Forms.TableLayoutPanel tlpCurrentShiftTitleAndDisplayPortion;
+        private System.Windows.Forms.Label lblCurrentShiftInMemberInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveCurrentShiftInMemberInfromation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveCurrentShift;
+        private System.Windows.Forms.Panel pnlTopBarInRetrieveCurrentShift;
+        private System.Windows.Forms.Panel pnlButtomBarInRetrieveCurrentShift;
+        private System.Windows.Forms.Label lblRetrieveMemberCurrentShiftTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel50;
         private System.Windows.Forms.Panel panel59;
         private System.Windows.Forms.Panel panel60;
@@ -5337,30 +5962,29 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
-        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.TableLayoutPanel tlpSelectTrainerNamePortion;
+        private System.Windows.Forms.PictureBox picSelectTrainerName;
         private System.Windows.Forms.ComboBox cmbSelectTrainer;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblTrainerNameSelect;
         private System.Windows.Forms.TableLayoutPanel tlpAssignPersonalTrainerWholeDetails;
         private System.Windows.Forms.Panel pnlMiddleSectionLeftBarInAssignPersonalTrainer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.Panel panel65;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
-        private System.Windows.Forms.Panel panel66;
-        private System.Windows.Forms.Panel panel67;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.PictureBox pictureBox21;
-        private System.Windows.Forms.Panel panel68;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Panel panel50;
-        private System.Windows.Forms.Panel panel51;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel52;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberNameInAssignPersonalTrainer;
+        private System.Windows.Forms.Panel pnlLeftBarInRetrieveMemberName;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberNameInformation;
+        private System.Windows.Forms.Panel pnlTopBarInMemberNameRetrieve;
+        private System.Windows.Forms.Panel pnButtomBarInMemberNameRetrieve;
+        private System.Windows.Forms.Label lblRetrieveMemberNameInMemberInformation;
+        private System.Windows.Forms.PictureBox picRetrieveMemberNameIcon;
+        private System.Windows.Forms.Panel pnlRightBarInMemberNameRetrieve;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberIDInAssignPersonalTrainer;
+        private System.Windows.Forms.Panel pnlLeftBarInMemberIDRetrieve;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMemberIDInMemberInformation;
+        private System.Windows.Forms.Panel pnlTopBarInMemberIDRetrieve;
+        private System.Windows.Forms.Panel pnlButtomBarInMemberIDRetrieve1;
+        private System.Windows.Forms.Label lblRetrieveMemberIDInMemberInformation;
+        private System.Windows.Forms.Panel pnlButtomBarInRetrieveMemberId;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.Panel panel53;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
@@ -5369,5 +5993,53 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Panel panel64;
+        private System.Windows.Forms.PictureBox picRetrieveMemberId;
+        private System.Windows.Forms.Panel pnlLeftBarInRetrieveCurrentShift;
+        private System.Windows.Forms.Panel pnlRightBarInCurrentShift;
+        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox picCurrentShift;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel49;
+        private System.Windows.Forms.PictureBox picCurrentShiftIcon;
+        private System.Windows.Forms.TableLayoutPanel tlpMembershipStatusInMemberInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMembershipStatusInMemberInformation;
+        private System.Windows.Forms.Panel pnlTopBarInMembershipStatusInMemberInformation;
+        private System.Windows.Forms.Panel pnlButtomBarInMembershipStatusInMemberInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMembershipStatus;
+        private System.Windows.Forms.Panel pnlLeftBarInMembershipStatusInMemberInformation;
+        private System.Windows.Forms.Panel pnlRightBarInMembershipStatusInMemberInformation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMembershipStatusPortion;
+        private System.Windows.Forms.PictureBox picDoneMembershipStatusActivation;
+        private System.Windows.Forms.TableLayoutPanel tlpRetrieveMembershipStatusSection;
+        private System.Windows.Forms.Label lblRetrieveMemberActiveTime;
+        private System.Windows.Forms.Label lblMemebrMembershipStatusTitle;
+        private System.Windows.Forms.PictureBox picRetrieveMembershipStatus;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Label lblExperienceTitleInTrainerInformation;
+        private System.Windows.Forms.Label lblSpecification;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel12;
     }
 }

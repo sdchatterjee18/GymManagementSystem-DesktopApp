@@ -21,7 +21,7 @@ namespace GymManagementSystem.FORMS.Member
             pnlDefaultTrainerSection.Visible = true;
             pnlTrainerInformationSection.Visible = false;
 
-            cmbSelectTrainerName.SelectedIndex = -1; 
+            cmbSelectTrainerName.SelectedIndex = -1;   
             
         }
 
@@ -30,23 +30,23 @@ namespace GymManagementSystem.FORMS.Member
 
         }
 
-        private void cmbSelectTrainerName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbSelectTrainerName.SelectedIndex == -1)
-            {
-                pnlDefaultTrainerSection.Visible = true;
-                pnlTrainerInformationSection.Visible = false;
-            }
-            else
-            {
-                pnlDefaultTrainerSection.Visible = false;
-                pnlTrainerInformationSection.Visible = true;
-                pnlTrainerInformationSection.BringToFront();
-            }
+        //private void cmbSelectTrainerName_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cmbSelectTrainerName.SelectedIndex == -1)
+        //    {
+        //        pnlDefaultTrainerSection.Visible = true;
+        //        pnlTrainerInformationSection.Visible = false;
+        //    }
+        //    else
+        //    {
+        //        pnlDefaultTrainerSection.Visible = false;
+        //        pnlTrainerInformationSection.Visible = true;
+        //        pnlTrainerInformationSection.BringToFront();
+        //    }
 
 
 
-        }
+        //}
 
         private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
         {
@@ -66,6 +66,23 @@ namespace GymManagementSystem.FORMS.Member
         private void tlpCancleButton_MouseLeave(object sender, EventArgs e)
         {
             this.tlpCancleButton.BackColor = Color.Red;
+        }
+
+        private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelectTrainerName.SelectedIndex == -1)
+            {
+                pnlDefaultTrainerSection.Visible = true;
+                pnlTrainerInformationSection.Visible = false;
+            }
+            else
+            {
+                pnlDefaultTrainerSection.Visible = false;
+                pnlTrainerInformationSection.Visible = true;
+                pnlTrainerInformationSection.BringToFront();
+            }
+
+
         }
     }
 }
