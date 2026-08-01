@@ -349,6 +349,7 @@ CREATE TABLE tblMemberTrainerAssignment(
 	MemberTrainerAssignmentId INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	MemberId INT NOT NULL,
 	TrainerId INT NOT NULL,
+    ShiftId INT NOT NULL,
 	AssignedDate DATE NOT NULL DEFAULT(GETDATE()),
 	IsActive BIT NOT NULL DEFAULT(1),
 
@@ -357,7 +358,10 @@ CREATE TABLE tblMemberTrainerAssignment(
 		REFERENCES tblMember(MemberId),
 	CONSTRAINT FK_tblMemberTrainerAssignment_TrainerIdtblTrainer
 		FOREIGN KEY (TrainerId) 
-		REFERENCES tblTrainer(TrainerId) 
+		REFERENCES tblTrainer(TrainerId) ,
+    CONSTRAINT FK_tblMemberTrainerAssignment_ShiftIdtblShift
+        FOREIGN KEY (ShiftId)
+        REFERENCES tblShift(ShiftId)
 );
 GO
 
