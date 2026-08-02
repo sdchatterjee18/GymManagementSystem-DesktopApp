@@ -270,6 +270,10 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel38 = new System.Windows.Forms.Panel();
             this.tlpAssignPersonalTrainerHeaderPortion = new System.Windows.Forms.TableLayoutPanel();
+            this.picPersonalTrainerAssignTitleIcon = new System.Windows.Forms.PictureBox();
+            this.tlpTitlePortionOfPersonalTrainerAssign = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSubTitleOfPersonalTrainerAssign = new System.Windows.Forms.Label();
+            this.lblTitleOfPersonalTrainerAssign = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label22 = new System.Windows.Forms.Label();
@@ -406,10 +410,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.picPersonalTrainerAssignTitleIcon = new System.Windows.Forms.PictureBox();
-            this.tlpTitlePortionOfPersonalTrainerAssign = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitleOfPersonalTrainerAssign = new System.Windows.Forms.Label();
-            this.lblSubTitleOfPersonalTrainerAssign = new System.Windows.Forms.Label();
             this.tlpAssignPersonalTrainerWholeSection.SuspendLayout();
             this.tlpMemberInfromationSubmitResetCanclePortion.SuspendLayout();
             this.tlpCancleFromSection.SuspendLayout();
@@ -513,6 +513,8 @@
             this.tableLayoutPanel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tlpAssignPersonalTrainerHeaderPortion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPersonalTrainerAssignTitleIcon)).BeginInit();
+            this.tlpTitlePortionOfPersonalTrainerAssign.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.tableLayoutPanel16.SuspendLayout();
             this.tlpAssignAndCancleSectionInButtom.SuspendLayout();
@@ -578,8 +580,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPersonalTrainerAssignTitleIcon)).BeginInit();
-            this.tlpTitlePortionOfPersonalTrainerAssign.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpAssignPersonalTrainerWholeSection
@@ -3810,6 +3810,57 @@
             this.tlpAssignPersonalTrainerHeaderPortion.Size = new System.Drawing.Size(1149, 78);
             this.tlpAssignPersonalTrainerHeaderPortion.TabIndex = 1;
             // 
+            // picPersonalTrainerAssignTitleIcon
+            // 
+            this.picPersonalTrainerAssignTitleIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPersonalTrainerAssignTitleIcon.Image = ((System.Drawing.Image)(resources.GetObject("picPersonalTrainerAssignTitleIcon.Image")));
+            this.picPersonalTrainerAssignTitleIcon.Location = new System.Drawing.Point(56, 3);
+            this.picPersonalTrainerAssignTitleIcon.Name = "picPersonalTrainerAssignTitleIcon";
+            this.picPersonalTrainerAssignTitleIcon.Size = new System.Drawing.Size(74, 72);
+            this.picPersonalTrainerAssignTitleIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPersonalTrainerAssignTitleIcon.TabIndex = 1;
+            this.picPersonalTrainerAssignTitleIcon.TabStop = false;
+            // 
+            // tlpTitlePortionOfPersonalTrainerAssign
+            // 
+            this.tlpTitlePortionOfPersonalTrainerAssign.ColumnCount = 1;
+            this.tlpTitlePortionOfPersonalTrainerAssign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblSubTitleOfPersonalTrainerAssign, 0, 1);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblTitleOfPersonalTrainerAssign, 0, 0);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTitlePortionOfPersonalTrainerAssign.Location = new System.Drawing.Point(133, 0);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Name = "tlpTitlePortionOfPersonalTrainerAssign";
+            this.tlpTitlePortionOfPersonalTrainerAssign.RowCount = 2;
+            this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.44444F));
+            this.tlpTitlePortionOfPersonalTrainerAssign.Size = new System.Drawing.Size(962, 78);
+            this.tlpTitlePortionOfPersonalTrainerAssign.TabIndex = 2;
+            // 
+            // lblSubTitleOfPersonalTrainerAssign
+            // 
+            this.lblSubTitleOfPersonalTrainerAssign.AutoSize = true;
+            this.lblSubTitleOfPersonalTrainerAssign.ForeColor = System.Drawing.Color.Gray;
+            this.lblSubTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 43);
+            this.lblSubTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSubTitleOfPersonalTrainerAssign.Name = "lblSubTitleOfPersonalTrainerAssign";
+            this.lblSubTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(249, 17);
+            this.lblSubTitleOfPersonalTrainerAssign.TabIndex = 1;
+            this.lblSubTitleOfPersonalTrainerAssign.Text = "Assign a personal trainer to a member";
+            // 
+            // lblTitleOfPersonalTrainerAssign
+            // 
+            this.lblTitleOfPersonalTrainerAssign.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTitleOfPersonalTrainerAssign.AutoSize = true;
+            this.lblTitleOfPersonalTrainerAssign.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleOfPersonalTrainerAssign.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 5);
+            this.lblTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitleOfPersonalTrainerAssign.Name = "lblTitleOfPersonalTrainerAssign";
+            this.lblTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(381, 38);
+            this.lblTitleOfPersonalTrainerAssign.TabIndex = 0;
+            this.lblTitleOfPersonalTrainerAssign.Text = "ASSIGN PERSONAL TRAINER";
+            // 
             // pictureBox13
             // 
             this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -5598,57 +5649,6 @@
             this.tableLayoutPanel15.Size = new System.Drawing.Size(1149, 78);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
-            // picPersonalTrainerAssignTitleIcon
-            // 
-            this.picPersonalTrainerAssignTitleIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPersonalTrainerAssignTitleIcon.Image = ((System.Drawing.Image)(resources.GetObject("picPersonalTrainerAssignTitleIcon.Image")));
-            this.picPersonalTrainerAssignTitleIcon.Location = new System.Drawing.Point(56, 3);
-            this.picPersonalTrainerAssignTitleIcon.Name = "picPersonalTrainerAssignTitleIcon";
-            this.picPersonalTrainerAssignTitleIcon.Size = new System.Drawing.Size(74, 72);
-            this.picPersonalTrainerAssignTitleIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPersonalTrainerAssignTitleIcon.TabIndex = 1;
-            this.picPersonalTrainerAssignTitleIcon.TabStop = false;
-            // 
-            // tlpTitlePortionOfPersonalTrainerAssign
-            // 
-            this.tlpTitlePortionOfPersonalTrainerAssign.ColumnCount = 1;
-            this.tlpTitlePortionOfPersonalTrainerAssign.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblSubTitleOfPersonalTrainerAssign, 0, 1);
-            this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblTitleOfPersonalTrainerAssign, 0, 0);
-            this.tlpTitlePortionOfPersonalTrainerAssign.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitlePortionOfPersonalTrainerAssign.Location = new System.Drawing.Point(133, 0);
-            this.tlpTitlePortionOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTitlePortionOfPersonalTrainerAssign.Name = "tlpTitlePortionOfPersonalTrainerAssign";
-            this.tlpTitlePortionOfPersonalTrainerAssign.RowCount = 2;
-            this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.44444F));
-            this.tlpTitlePortionOfPersonalTrainerAssign.Size = new System.Drawing.Size(962, 78);
-            this.tlpTitlePortionOfPersonalTrainerAssign.TabIndex = 2;
-            // 
-            // lblTitleOfPersonalTrainerAssign
-            // 
-            this.lblTitleOfPersonalTrainerAssign.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTitleOfPersonalTrainerAssign.AutoSize = true;
-            this.lblTitleOfPersonalTrainerAssign.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleOfPersonalTrainerAssign.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 5);
-            this.lblTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTitleOfPersonalTrainerAssign.Name = "lblTitleOfPersonalTrainerAssign";
-            this.lblTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(396, 38);
-            this.lblTitleOfPersonalTrainerAssign.TabIndex = 0;
-            this.lblTitleOfPersonalTrainerAssign.Text = "CHANGE PERSONAL TRAINER";
-            // 
-            // lblSubTitleOfPersonalTrainerAssign
-            // 
-            this.lblSubTitleOfPersonalTrainerAssign.AutoSize = true;
-            this.lblSubTitleOfPersonalTrainerAssign.ForeColor = System.Drawing.Color.Gray;
-            this.lblSubTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 43);
-            this.lblSubTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSubTitleOfPersonalTrainerAssign.Name = "lblSubTitleOfPersonalTrainerAssign";
-            this.lblSubTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(249, 17);
-            this.lblSubTitleOfPersonalTrainerAssign.TabIndex = 1;
-            this.lblSubTitleOfPersonalTrainerAssign.Text = "Assign a personal trainer to a member";
-            // 
             // FrmAssignTrainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -5795,6 +5795,9 @@
             this.tableLayoutPanel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tlpAssignPersonalTrainerHeaderPortion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPersonalTrainerAssignTitleIcon)).EndInit();
+            this.tlpTitlePortionOfPersonalTrainerAssign.ResumeLayout(false);
+            this.tlpTitlePortionOfPersonalTrainerAssign.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
@@ -5877,9 +5880,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picPersonalTrainerAssignTitleIcon)).EndInit();
-            this.tlpTitlePortionOfPersonalTrainerAssign.ResumeLayout(false);
-            this.tlpTitlePortionOfPersonalTrainerAssign.PerformLayout();
             this.ResumeLayout(false);
 
         }
