@@ -1609,8 +1609,6 @@
             this.tlpCancleButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleButton.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleButton.TabIndex = 3;
-            this.tlpCancleButton.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
-            this.tlpCancleButton.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // picCancle
             // 
@@ -1622,8 +1620,6 @@
             this.picCancle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancle.TabIndex = 0;
             this.picCancle.TabStop = false;
-            this.picCancle.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
-            this.picCancle.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // lblCancle
             // 
@@ -1636,8 +1632,6 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
-            this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
-            this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
             // 
             // tlpAssignButton
             // 
@@ -1655,8 +1649,6 @@
             this.tlpAssignButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignButton.Size = new System.Drawing.Size(209, 45);
             this.tlpAssignButton.TabIndex = 2;
-            this.tlpAssignButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
-            this.tlpAssignButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // picAssignTrainer
             // 
@@ -1668,8 +1660,6 @@
             this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignTrainer.TabIndex = 0;
             this.picAssignTrainer.TabStop = false;
-            this.picAssignTrainer.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
-            this.picAssignTrainer.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // lblAssignTrainer
             // 
@@ -1682,8 +1672,6 @@
             this.lblAssignTrainer.Size = new System.Drawing.Size(116, 23);
             this.lblAssignTrainer.TabIndex = 1;
             this.lblAssignTrainer.Text = "Assign Trainer";
-            this.lblAssignTrainer.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
-            this.lblAssignTrainer.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // pnlDefaultTrainerSection
             // 
@@ -2898,6 +2886,8 @@
             this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleImageAndLevel.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleImageAndLevel.TabIndex = 3;
+            this.tlpCancleImageAndLevel.MouseEnter += new System.EventHandler(this.tlpCancleImageAndLevel_MouseEnter);
+            this.tlpCancleImageAndLevel.MouseLeave += new System.EventHandler(this.tlpCancleImageAndLevel_MouseLeave);
             // 
             // picCancleInAssignPersonalTrainer
             // 
@@ -3241,6 +3231,7 @@
             this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveTrainerInformation.Size = new System.Drawing.Size(1027, 272);
             this.tlpRetrieveTrainerInformation.TabIndex = 2;
+            this.tlpRetrieveTrainerInformation.Visible = false;
             // 
             // tlpTrainerIDAndTrainerNamePortion
             // 
@@ -3972,6 +3963,8 @@
             this.tlpCancleButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleButtonCreateInAssignPersonalTrainer.TabIndex = 2;
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpCancleButtonCreateInAssignPersonalTrainer_MouseEnter);
+            this.tlpCancleButtonCreateInAssignPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpCancleButtonCreateInAssignPersonalTrainer_MouseLeave);
             // 
             // picCancleButtonCreateInAssignPersonalTrainer
             // 
@@ -4002,7 +3995,7 @@
             this.lblSelectTrainerInDefaultTrainerSection.AutoSize = true;
             this.lblSelectTrainerInDefaultTrainerSection.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectTrainerInDefaultTrainerSection.ForeColor = System.Drawing.Color.Navy;
-            this.lblSelectTrainerInDefaultTrainerSection.Location = new System.Drawing.Point(-18, 112);
+            this.lblSelectTrainerInDefaultTrainerSection.Location = new System.Drawing.Point(400, 112);
             this.lblSelectTrainerInDefaultTrainerSection.Name = "lblSelectTrainerInDefaultTrainerSection";
             this.lblSelectTrainerInDefaultTrainerSection.Size = new System.Drawing.Size(133, 28);
             this.lblSelectTrainerInDefaultTrainerSection.TabIndex = 0;
@@ -4011,9 +4004,10 @@
             // pnlDefaultTrainerSectionShow
             // 
             this.pnlDefaultTrainerSectionShow.Controls.Add(this.lblSelectTrainerInDefaultTrainerSection);
-            this.pnlDefaultTrainerSectionShow.Location = new System.Drawing.Point(836, 0);
+            this.pnlDefaultTrainerSectionShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDefaultTrainerSectionShow.Location = new System.Drawing.Point(0, 0);
             this.pnlDefaultTrainerSectionShow.Name = "pnlDefaultTrainerSectionShow";
-            this.pnlDefaultTrainerSectionShow.Size = new System.Drawing.Size(191, 272);
+            this.pnlDefaultTrainerSectionShow.Size = new System.Drawing.Size(1027, 272);
             this.pnlDefaultTrainerSectionShow.TabIndex = 4;
             // 
             // pnlTrainerInformationWholePortion
@@ -5021,11 +5015,11 @@
             // tlpSelectTrainerNamePortion
             // 
             this.tlpSelectTrainerNamePortion.ColumnCount = 5;
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
             this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 533F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSelectTrainerNamePortion.Controls.Add(this.picSelectTrainerName, 1, 0);
             this.tlpSelectTrainerNamePortion.Controls.Add(this.cmbSelectTrainer, 3, 0);
             this.tlpSelectTrainerNamePortion.Controls.Add(this.lblTrainerNameSelect, 2, 0);
@@ -5044,7 +5038,7 @@
             this.picSelectTrainerName.Image = ((System.Drawing.Image)(resources.GetObject("picSelectTrainerName.Image")));
             this.picSelectTrainerName.Location = new System.Drawing.Point(23, 3);
             this.picSelectTrainerName.Name = "picSelectTrainerName";
-            this.picSelectTrainerName.Size = new System.Drawing.Size(44, 54);
+            this.picSelectTrainerName.Size = new System.Drawing.Size(53, 54);
             this.picSelectTrainerName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSelectTrainerName.TabIndex = 0;
             this.picSelectTrainerName.TabStop = false;
@@ -5060,7 +5054,7 @@
             "Deep",
             "Souma",
             "Aridam"});
-            this.cmbSelectTrainer.Location = new System.Drawing.Point(236, 12);
+            this.cmbSelectTrainer.Location = new System.Drawing.Point(245, 12);
             this.cmbSelectTrainer.Name = "cmbSelectTrainer";
             this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
             this.cmbSelectTrainer.TabIndex = 2;
@@ -5073,7 +5067,7 @@
             this.lblTrainerNameSelect.AutoSize = true;
             this.lblTrainerNameSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerNameSelect.ForeColor = System.Drawing.Color.Green;
-            this.lblTrainerNameSelect.Location = new System.Drawing.Point(73, 16);
+            this.lblTrainerNameSelect.Location = new System.Drawing.Point(82, 16);
             this.lblTrainerNameSelect.Name = "lblTrainerNameSelect";
             this.lblTrainerNameSelect.Size = new System.Drawing.Size(133, 28);
             this.lblTrainerNameSelect.TabIndex = 3;

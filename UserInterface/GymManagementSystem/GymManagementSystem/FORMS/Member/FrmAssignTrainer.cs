@@ -18,70 +18,48 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmAssignTrainer_Load(object sender, EventArgs e)
         {
-            pnlDefaultTrainerSection.Visible = true;
-            pnlTrainerInformationSection.Visible = false;
+            pnlDefaultTrainerSectionShow.Visible = true;
+            pnlTrainerInformationSectionRetrieve.Visible = false;
 
-            cmbSelectTrainerName.SelectedIndex = -1;   
+            cmbSelectTrainer.SelectedIndex = -1;  
             
         }
 
-        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        //private void cmbSelectTrainerName_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (cmbSelectTrainerName.SelectedIndex == -1)
-        //    {
-        //        pnlDefaultTrainerSection.Visible = true;
-        //        pnlTrainerInformationSection.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        pnlDefaultTrainerSection.Visible = false;
-        //        pnlTrainerInformationSection.Visible = true;
-        //        pnlTrainerInformationSection.BringToFront();
-        //    }
-
-
-
-        //}
-
-        private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
+       
+        private void tlpCancleButtonCreateInAssignPersonalTrainer_MouseEnter(object sender, EventArgs e)
         {
             this.tlpAssignButton.BackColor = Color.DarkGreen;
         }
 
-        private void tlpRegisterButton_MouseLeave(object sender, EventArgs e)
+        private void tlpCancleButtonCreateInAssignPersonalTrainer_MouseLeave(object sender, EventArgs e)
         {
             this.tlpAssignButton.BackColor = Color.ForestGreen;
         }
 
-        private void tlpCancleButton_MouseEnter(object sender, EventArgs e)
+        private void tlpCancleImageAndLevel_MouseEnter(object sender, EventArgs e)
         {
             this.tlpCancleButton.BackColor = Color.OrangeRed;
         }
 
-        private void tlpCancleButton_MouseLeave(object sender, EventArgs e)
+        private void tlpCancleImageAndLevel_MouseLeave(object sender, EventArgs e)
         {
             this.tlpCancleButton.BackColor = Color.Red;
         }
 
         private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbSelectTrainerName.SelectedIndex == -1)
-            {
-                pnlDefaultTrainerSection.Visible = true;
-                pnlTrainerInformationSection.Visible = false;
-            }
-            else
-            {
-                pnlDefaultTrainerSection.Visible = false;
-                pnlTrainerInformationSection.Visible = true;
-                pnlTrainerInformationSection.BringToFront();
-            }
+             if (cmbSelectTrainer.SelectedIndex != -1)
+             {
+                 pnlDefaultTrainerSectionShow.Visible = false;
+                 pnlTrainerInformationSectionRetrieve.Visible = true;
 
+                 pnlTrainerInformationSectionRetrieve.BringToFront();
+             }
+             else
+             {
+                 pnlDefaultTrainerSectionShow.Visible = true;
+                 pnlTrainerInformationSectionRetrieve.Visible = false;
+             }
 
         }
     }
