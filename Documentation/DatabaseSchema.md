@@ -251,6 +251,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | MemberTrainerAssignmentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the member-trainer assignment. |
 | MemberId | INT | FOREIGN KEY | ❌ No | References the member assigned to the trainer. |
 | TrainerId | INT | FOREIGN KEY | ❌ No | References the assigned trainer. |
+| ShiftId | INT | FOREIGN KEY | ❌ No | References the assigned Shift. |
 | AssignedDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the trainer was assigned to the member. |
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the assignment is currently active. |
 
