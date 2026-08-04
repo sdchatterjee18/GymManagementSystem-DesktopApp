@@ -7,5 +7,6 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
 {
     class MembershipPlanDAL
     {
+
     }
 }

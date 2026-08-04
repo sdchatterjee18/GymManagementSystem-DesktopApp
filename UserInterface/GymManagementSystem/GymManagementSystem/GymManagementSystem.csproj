@@ -229,6 +229,7 @@
     <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\MembershipPlan\UI\MembershipPlanUI.cs" />
     <Compile Include="FORMS\Member\FrmAssignTrainer.cs">
       <SubType>Form</SubType>
     </Compile>

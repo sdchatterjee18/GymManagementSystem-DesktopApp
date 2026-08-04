@@ -7,5 +7,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
 {
     class MembershipPlanUI
     {
+
     }
 }
