@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.Shift.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -15,11 +17,19 @@ namespace GymManagementSystem.FORMS.Member
         {
             InitializeComponent();
         }
-
+        private void LoadShiftComboBox()
+        {
+            List<ShiftUI> shifts = LookupUI.GetShifts();
+            cmbSelectMemberShiftTime.DataSource =shifts;
+            cmbSelectMemberShiftTime.DisplayMember = "ShiftName";
+            cmbSelectMemberShiftTime.ValueMember = "ShiftId";
+            cmbSelectMemberShiftTime.SelectedIndex = -1;
+        }
         private void FrmMemberRegistration_Load(object sender, EventArgs e)
         {
             SetPlaceholder(this);
             this.ActiveControl = null;
+            LoadShiftComboBox();
         }
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
@@ -87,9 +97,9 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberShiftTime_Click(object sender, EventArgs e)
         {
-            cmbSelectMemberShiftTime.Items.Clear();
-            cmbSelectMemberShiftTime.Text = null;
-            cmbSelectMemberShiftTime.ForeColor = Color.Black;
+            //cmbSelectMemberShiftTime.Items.Clear();
+            //cmbSelectMemberShiftTime.Text = null;
+            //cmbSelectMemberShiftTime.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberDietPlan_Click(object sender, EventArgs e)
@@ -226,6 +236,20 @@ namespace GymManagementSystem.FORMS.Member
         private void pnlResetButton_MouseLeave(object sender, EventArgs e)
         {
             this.pnlResetButton.BackColor = Color.Navy;
+        }
+
+        private void pnlRegisterButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            if (cmbSelectMemberShiftTime.SelectedIndex <= 0)
+                cmbSelectMemberShiftTime.ForeColor = Color.Gray;
+            else
+                cmbSelectMemberShiftTime.ForeColor = Color.Black;
         }
 
        
