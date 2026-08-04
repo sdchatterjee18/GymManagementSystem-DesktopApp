@@ -5249,7 +5249,6 @@ GO
 -------------------------------------------------------------------------------
                    -- EmployeeSalaryManagement SPs --
 -------------------------------------------------------------------------------
-select * from tblSalaryPayment
 -------------------------------------------
   --SP: spGetDetailsOfEmployeesNotPaidYet--
 -------------------------------------------
@@ -5569,7 +5568,7 @@ GO
 ------------------------------------------
   --SP: spGetTotalPaidSalaryAmountByYear--
 ------------------------------------------
-CREATE PROC spGetTotalSalaryPaidByYear 
+CREATE PROC spGetTotalSalaryPaidAmountByYear 
     @PaymentYear INT
 AS
 BEGIN
@@ -5696,9 +5695,9 @@ END
 GO
 
 -------------------------------------------------
-  --SP: spGetEmployeeSalaryPaymentDetailsByYear--
+  --SP: spGetEmployeeSalaryPaymentDetailsByMonth--
 -------------------------------------------------
-CREATE PROC spGetEmployeeSalaryPaymentDetailsByYear
+CREATE PROC spGetEmployeeSalaryPaymentDetailsByMonth
     @PaymentMonth INT ,
     @PaymentYear  INT
 AS
@@ -5780,9 +5779,9 @@ BEGIN
 END;
 GO
 ------------------------------------------
-  --SP: spGetTotalPaidSalaryAmountByYear--
+  --SP: spGetTotalPaidSalaryAmountByMonth--
 ------------------------------------------
-CREATE PROC spGetTotalPaidSalaryAmountByYear
+CREATE PROC spGetTotalPaidSalaryAmountByMonth
     @PaymentMonth INT ,
     @PaymentYear  INT 
 AS
