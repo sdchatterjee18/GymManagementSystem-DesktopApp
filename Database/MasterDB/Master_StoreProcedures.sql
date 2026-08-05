@@ -2017,35 +2017,36 @@ BEGIN
 END;
 GO
 
----------------------------------------------
---SP: spRetrieveMembershipPlanDetailsByName--
----------------------------------------------
-CREATE PROC spRetrieveMembershipPlanDetailsByName 
+-------------------------------------------
+--SP: spRetrieveMembershipPlanDetailsById--
+-------------------------------------------
+CREATE PROC spRetrieveMembershipPlanDetailsById
 (
-    @MembershipPlanName VARCHAR(100)
+    @MembershipPlanId INT
 )
 AS
 BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-        SET @MembershipPlanName = LTRIM(RTRIM(@MembershipPlanName));
 
-        IF @MembershipPlanName = ''
+        IF @MembershipPlanId <= 0
         BEGIN
-            SELECT 'Membership Plan Name is required.' AS Message;
+            SELECT 'Valid Membership Plan Id is required.' AS Message;
             RETURN;
         END;
+
         IF NOT EXISTS
         (
             SELECT 1
             FROM tblMembershipPlans
-            WHERE MembershipPlanName = @MembershipPlanName
+            WHERE MembershipPlanId = @MembershipPlanId
         )
         BEGIN
             SELECT 'Membership Plan not found.' AS Message;
             RETURN;
         END;
+
         SELECT
             MP.MembershipPlanId,
             MP.MembershipPlanName,
@@ -2057,14 +2058,14 @@ BEGIN
         FROM tblMembershipPlans AS MP
         INNER JOIN tblMembershipPlanType AS MPT
             ON MP.PlanTypeId = MPT.PlanTypeId
-        WHERE MP.MembershipPlanName = @MembershipPlanName;
+        WHERE MP.MembershipPlanId = @MembershipPlanId;
+
     END TRY
     BEGIN CATCH
         SELECT ERROR_MESSAGE() AS Message;
     END CATCH
 END;
 GO
-
 ----------------------------------------------------
 --SP: spDeactivateMembershipPlanByMembershipPlanId--
 ----------------------------------------------------
