@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.MembershipPlan.UI;
 
 
 namespace GymManagementSystem.FORMS.MembershipPlan
@@ -20,74 +21,28 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             InitializeComponent();
         }
 
-       
-      
+
+
         private void FrmDisplayMembershipPlan_Load(object sender, EventArgs e)
         {
-
-
-
-
-          
-            LoadMembershipPlans();
-
             dgvMembershipPlan.ClearSelection();
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+            List<MembershipPlanUI> membershipPlans =
+                membershipPlanUI.RetrieveMembershipPlansDetails();
 
-          
-
-        
-        }
-
-        private void LoadMembershipPlans()
-        {
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-
-            try
+            foreach (MembershipPlanUI plan in membershipPlans)
             {
-                using (SqlConnection con = new SqlConnection(CS))
-                {
-                    con.Open();
-
-                    using (SqlCommand cmd = new SqlCommand("spRetrieveMembershipPlans", con))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            dgvMembershipPlan.Rows.Clear();
-
-                            int serialNo = 1;
-
-                            while (dr.Read())
-                            {
-                                dgvMembershipPlan.Rows.Add(
-                                    serialNo,
-                                    dr["MembershipPlanName"].ToString(),
-                                    dr["PlanType"].ToString(),
-                                   Convert.ToInt32(dr["DurationInDays"]),
-                                    Convert.ToDecimal(dr["Price"]),
-                                    dr["Description"].ToString(),
-                                    dr["IsActive"].ToString()
-                                );
-
-                                serialNo++;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error");
+                dgvMembershipPlan.Rows.Add(
+                    plan.MembershipPlanId,
+                    plan.MembershipPlanName,
+                    plan.PlanType,
+                    plan.DurationInDays,
+                    plan.Price,
+                    plan.Description,
+                    plan.IsActive
+                );
             }
         }
-
-
-
-       
-
-       
-
         private void pnlMembershipPlanGridview_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
