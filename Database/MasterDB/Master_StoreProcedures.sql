@@ -2,21 +2,21 @@
 --  MASTER STORED PROCEDURES  --
 --------------------------------
 
---Super Admin Management — Line 12
---Employee Management — Line 455
---Admin Management — Line 1158
---Trainer Management — Line 1255
---Shift Management — Line 1712
---Membership Plan Management — Line 1822
---Expense Management — Line 2091
---Registration Management — Line 2556
---Locker Management — Line 2661
---Membership Subscription Management — Line 2742
---Subscription Payment Management — Line 4533
---Attendance Management — Line 4875
---Employee Salary Management — Line 5236
---Workout Schedule Management — Line 5835
---Diet Plan Management — Line 6165
+--Super Admin Management â€” Line 12
+--Employee Management â€” Line 455
+--Admin Management â€” Line 1158
+--Trainer Management â€” Line 1255
+--Shift Management â€” Line 1712
+--Membership Plan Management â€” Line 1822
+--Expense Management â€” Line 2091
+--Registration Management â€” Line 2556
+--Locker Management â€” Line 2661
+--Membership Subscription Management â€” Line 2742
+--Subscription Payment Management â€” Line 4533
+--Attendance Management â€” Line 4875
+--Employee Salary Management â€” Line 5236
+--Workout Schedule Management â€” Line 5835
+--Diet Plan Management â€” Line 6165
 
 
 -------------------------------------------------------------------
@@ -6186,6 +6186,7 @@ AS
 BEGIN
 	BEGIN TRY
 		SELECT 
+		tblDietPlans.DietPlanId,
 		tblDietPlans.CaloriesPerDay,
 		tblDietPlans.DietPlanDocument,
 		tblDietPlans.ConditionStatus
