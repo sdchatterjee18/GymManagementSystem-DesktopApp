@@ -6480,3 +6480,26 @@ BEGIN CATCH
 END CATCH
 END;
 GO
+-----------------------------------------------------
+	--Retrieve Gender  Details
+-----------------------------------------------------
+CREATE PROCEDURE spRetrieveGenderDetails
+AS
+BEGIN
+    BEGIN TRY
+
+        SELECT
+            GenderId,
+            GenderName
+        FROM tblGender
+        ORDER BY GenderName;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
