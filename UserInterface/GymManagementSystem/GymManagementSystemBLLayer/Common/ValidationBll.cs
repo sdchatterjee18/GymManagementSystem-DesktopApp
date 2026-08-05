@@ -11,6 +11,9 @@ namespace GymManagementSystemBLLayer.Common
         {
             Valid,
 
+            TextRequired,
+            TextMustContainOnlyLetters,
+
             PriceRequired,
             PriceMustBeNumeric,
             PriceMustBeGreaterThanZero,
@@ -93,6 +96,37 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+        // Required Text Validation
+        public static CommonValidationMessage ValidateRequiredText(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return CommonValidationMessage.TextRequired;
+
+            foreach (char c in text)
+            {
+                if (!char.IsLetter(c) && c != ' ')
+                    return CommonValidationMessage.TextMustContainOnlyLetters;
+            }
+
+            return CommonValidationMessage.Valid;
+        }
+
+
+        // Optional Text Validation (Middle Name)
+        public static CommonValidationMessage ValidateOptionalText(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return CommonValidationMessage.Valid;
+
+            foreach (char c in text)
+            {
+                if (!char.IsLetter(c) && c != ' ')
+                    return CommonValidationMessage.TextMustContainOnlyLetters;
+            }
+
+            return CommonValidationMessage.Valid;
+        }
+
         // Validation Message
         public static string GetValidationMessage(CommonValidationMessage validationMessage)
         {
@@ -110,8 +144,6 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.DescriptionRequired:
                     return "Description cannot be empty.";
 
-                case CommonValidationMessage.Valid:
-                    return string.Empty;
                 case CommonValidationMessage.EmailRequired:
                     return "Email is required.";
 
@@ -129,6 +161,15 @@ namespace GymManagementSystemBLLayer.Common
 
                 case CommonValidationMessage.InvalidPhoneNumberLength:
                     return "Phone number must be exactly 10 digits.";
+
+                case CommonValidationMessage.TextRequired:
+                    return "This field is required.";
+
+                case CommonValidationMessage.TextMustContainOnlyLetters:
+                    return "This field must contain only letters.";
+
+                case CommonValidationMessage.Valid:
+                    return string.Empty;
 
                 default:
                     return "Invalid data.";
