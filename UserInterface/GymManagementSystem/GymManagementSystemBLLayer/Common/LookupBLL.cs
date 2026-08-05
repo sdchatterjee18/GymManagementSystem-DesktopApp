@@ -6,6 +6,8 @@ using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.Shift;
 using GymManagementSystemDALayer.Common;
 using GymManagementSystemDALayer.ModulesDALayer.Shift;
+using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
+using GymManagementSystemDALayer.ModulesDALayer.MembershipPlan;
 
 namespace GymManagementSystemBLLayer.Common
 {
@@ -23,6 +25,19 @@ namespace GymManagementSystemBLLayer.Common
                 ShiftsBLL.Add(shift);
             }
             return ShiftsBLL;
+        }
+        public static List<MembershipPlanBLL> GetMembershipPlans()
+        {
+            List<MembershipPlanDAL> membershipPlansDAL = LookupDAL.GetMembershipPlans();
+            List<MembershipPlanBLL> membershipPlansBLL = new List<MembershipPlanBLL>();
+            foreach (MembershipPlanDAL item in membershipPlansDAL)
+            {
+                MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+                //membershipPlanBLL.MembershipPlanId = item.MembershipPlanId;
+                //membershipPlanBLL.MembershipPlanName = item.MembershipPlanName;
+                membershipPlansBLL.Add(membershipPlanBLL);
+            }
+            return membershipPlansBLL;
         }
     }
 }

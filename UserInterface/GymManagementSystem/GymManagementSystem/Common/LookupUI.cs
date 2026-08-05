@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GymManagementSystem.FORMS.Shift.UI;
+using GymManagementSystem.FORMS.MembershipPlan.UI;
 using GymManagementSystemBLLayer.ModulesBLLayer.Shift;
+using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
 using GymManagementSystemBLLayer.Common;
 namespace GymManagementSystem.Common
 {
@@ -21,6 +23,19 @@ namespace GymManagementSystem.Common
                 ShiftsUI.Add(shift);
             }
             return ShiftsUI;
+        }
+        public static List<MembershipPlanUI> GetMembershipPlans()
+        {
+            List<MembershipPlanBLL> MembershipPlansBLL = LookupBLL.GetMembershipPlans();
+            List<MembershipPlanUI> MembershipPlansUI = new List<MembershipPlanUI>();
+            foreach (MembershipPlanBLL item in MembershipPlansBLL)
+            {
+                MembershipPlanUI MembershipPlanUI = new MembershipPlanUI();
+                MembershipPlanUI.MembershipPlanId = item.MembershipPlanId;
+                MembershipPlanUI.MembershipPlanName = item.MembershipPlanName;
+                MembershipPlansUI.Add(MembershipPlanUI);
+            }
+            return MembershipPlansUI;
         }
     }
 }
