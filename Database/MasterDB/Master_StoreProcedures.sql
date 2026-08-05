@@ -2093,6 +2093,7 @@ BEGIN
         UPDATE tblMembershipPlans
         SET IsActive = 0
         WHERE MembershipPlanId = @MembershipPlanId;
+        SELECT 'Deactivate Membership Plan Successfully.' AS Message;
 
     END TRY
     BEGIN CATCH
