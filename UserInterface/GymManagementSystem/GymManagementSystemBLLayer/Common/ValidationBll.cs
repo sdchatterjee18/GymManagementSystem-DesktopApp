@@ -15,11 +15,19 @@ namespace GymManagementSystemBLLayer.Common
             PriceMustBeNumeric,
             PriceMustBeGreaterThanZero,
 
-            DescriptionRequired
+            DescriptionRequired,
+
+            EmailRequired,
+            InvalidEmail,
+
+            PhoneNumberRequired,
+            PhoneNumberMustBeNumeric,
+            PhoneNumberMustBePositive,
+            InvalidPhoneNumberLength
         }
 
         // Price Validation
-        public CommonValidationMessage ValidatePrice(string price)
+        public static CommonValidationMessage ValidatePrice(string price)
         {
             if (string.IsNullOrWhiteSpace(price))
                 return CommonValidationMessage.PriceRequired;
@@ -36,7 +44,7 @@ namespace GymManagementSystemBLLayer.Common
         }
 
         // Description Validation
-        public CommonValidationMessage ValidateDescription(string description)
+        public static CommonValidationMessage ValidateDescription(string description)
         {
             if (string.IsNullOrWhiteSpace(description))
                 return CommonValidationMessage.DescriptionRequired;
@@ -44,8 +52,49 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+        // Email Validation
+        public static CommonValidationMessage ValidateEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return CommonValidationMessage.EmailRequired;
+
+            if (!email.Contains("@") || !email.Contains("."))
+                return CommonValidationMessage.InvalidEmail;
+
+            return CommonValidationMessage.Valid;
+        }
+
+        // Phone Number Validation
+        public static CommonValidationMessage ValidatePhoneNumber(string phoneNumber)
+        {
+            // Check empty
+            if (string.IsNullOrWhiteSpace(phoneNumber))
+                return CommonValidationMessage.PhoneNumberRequired;
+
+
+            // Check negative number
+            if (phoneNumber.StartsWith("-"))
+                return CommonValidationMessage.PhoneNumberMustBePositive;
+
+
+            // Check only digits
+            foreach (char c in phoneNumber)
+            {
+                if (c < '0' || c > '9')
+                    return CommonValidationMessage.PhoneNumberMustBeNumeric;
+            }
+
+
+            // Check length (Indian mobile number = 10 digits)
+            if (phoneNumber.Length != 10)
+                return CommonValidationMessage.InvalidPhoneNumberLength;
+
+
+            return CommonValidationMessage.Valid;
+        }
+
         // Validation Message
-        public string GetValidationMessage(CommonValidationMessage validationMessage)
+        public static string GetValidationMessage(CommonValidationMessage validationMessage)
         {
             switch (validationMessage)
             {
@@ -63,6 +112,23 @@ namespace GymManagementSystemBLLayer.Common
 
                 case CommonValidationMessage.Valid:
                     return string.Empty;
+                case CommonValidationMessage.EmailRequired:
+                    return "Email is required.";
+
+                case CommonValidationMessage.InvalidEmail:
+                    return "Please enter a valid email address.";
+
+                case CommonValidationMessage.PhoneNumberRequired:
+                    return "Phone number is required.";
+
+                case CommonValidationMessage.PhoneNumberMustBeNumeric:
+                    return "Phone number must contain only numbers.";
+
+                case CommonValidationMessage.PhoneNumberMustBePositive:
+                    return "Phone number cannot be negative.";
+
+                case CommonValidationMessage.InvalidPhoneNumberLength:
+                    return "Phone number must be exactly 10 digits.";
 
                 default:
                     return "Invalid data.";

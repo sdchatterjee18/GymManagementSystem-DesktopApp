@@ -53,23 +53,23 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         }
         public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL()
         {
-            ValidationBll validationBll = new ValidationBll();
-
             ValidationBll.CommonValidationMessage result;
 
-            result = validationBll.ValidatePrice(this.Price);
+            result = ValidationBll.ValidatePrice(this.Price.ToString());
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return "Price must be greater than zero.";
+                return ValidationBll.GetValidationMessage(result);
             }
 
-            result = validationBll.ValidateDescription(this.Description);
+
+            result = ValidationBll.ValidateDescription(this.Description);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return "Description is required.";
+                return ValidationBll.GetValidationMessage(result);
             }
+
 
             MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
 
