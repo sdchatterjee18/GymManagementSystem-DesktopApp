@@ -64,5 +64,46 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
                 }
             }
         }
+        public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdDAL(int membershipPlanId,decimal price,string description)
+        {
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand("spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId", sqlConnection))
+                    {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                        sqlCommand.Parameters.AddWithValue("@MembershipPlanId", membershipPlanId);
+                        sqlCommand.Parameters.AddWithValue("@Description", description);
+                        sqlCommand.Parameters.AddWithValue("@NewPrice", price);
+
+                        sqlConnection.Open();
+
+                        SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                        if (sqlDataReader.Read())
+                        {
+                            return sqlDataReader["Message"].ToString();
+                        }
+
+                        return string.Empty;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
     }
 }

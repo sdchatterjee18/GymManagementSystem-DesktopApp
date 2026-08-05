@@ -18,7 +18,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
         public bool IsActive { get; set; }
 
 
-        public List<MembershipPlanUI> RetrieveMembershipPlansDetails()
+        public List<MembershipPlanUI> RetrieveMembershipPlansDetailsUI()
         {
             List<MembershipPlanUI> membershipPlansUi = null;
             try
@@ -26,7 +26,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 membershipPlansUi = new List<MembershipPlanUI>();
                 List<MembershipPlanBLL> membershipPlansBll = new List<MembershipPlanBLL>();
                 MembershipPlanBLL membershipPlanBll = new MembershipPlanBLL();
-                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetails();
+                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetailsBLL();
                 foreach (MembershipPlanBLL membershipPlan in membershipPlansBll)
                 {
                     MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
@@ -51,6 +51,16 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 return membershipPlansUi;
             }
            
+        }
+        public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdUI()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            membershipPlanBLL.MembershipPlanId = this.MembershipPlanId;
+            membershipPlanBLL.Price = this.Price;
+            membershipPlanBLL.Description = this.Description;
+
+            return membershipPlanBLL.UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL();
         }
     
     }

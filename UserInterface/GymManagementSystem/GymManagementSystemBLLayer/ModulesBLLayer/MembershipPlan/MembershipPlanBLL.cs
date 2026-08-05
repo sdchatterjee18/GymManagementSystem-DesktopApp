@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemDALayer.ModulesDALayer.MembershipPlan;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
 {
@@ -19,7 +20,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         public bool IsActive { get; set; }
 
 
-        public List<MembershipPlanBLL> RetrieveMembershipPlansDetails()
+        public List<MembershipPlanBLL> RetrieveMembershipPlansDetailsBLL()
         {
             List<MembershipPlanBLL> membershipPlansBll = null;
             try
@@ -49,6 +50,33 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 return membershipPlansBll;
             }
            
+        }
+        public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL()
+        {
+            ValidationBll validationBll = new ValidationBll();
+
+            ValidationBll.CommonValidationMessage result;
+
+            result = validationBll.ValidatePrice(this.Price);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return "Price must be greater than zero.";
+            }
+
+            result = validationBll.ValidateDescription(this.Description);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return "Description is required.";
+            }
+
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            return membershipPlanDAL.UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdDAL(
+                this.MembershipPlanId,
+                this.Price,
+                this.Description);
         }
     }
 }

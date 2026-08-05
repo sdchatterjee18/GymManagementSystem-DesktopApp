@@ -59,9 +59,9 @@
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMembershipPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDeactivate = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colMembershipPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAllMembershipPlanEntireForm.SuspendLayout();
             this.tlpAllMembershipPlanHeader.SuspendLayout();
             this.tlpAllMembershipPlanTitle.SuspendLayout();
@@ -268,9 +268,9 @@
             this.colPrice,
             this.colDescription,
             this.colIsActive,
+            this.colMembershipPlanId,
             this.colUpdate,
-            this.colDeactivate,
-            this.colMembershipPlanId});
+            this.colDeactivate});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,8 +393,9 @@
             this.colSerialNo.HeaderText = "Sl No.";
             this.colSerialNo.Name = "colSerialNo";
             this.colSerialNo.ReadOnly = true;
-            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSerialNo.Visible = false;
             // 
             // colMembershipPlanName
             // 
@@ -462,6 +463,13 @@
             this.colIsActive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colIsActive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // colMembershipPlanId
+            // 
+            this.colMembershipPlanId.DataPropertyName = "MembershipPlanId";
+            this.colMembershipPlanId.HeaderText = "MembershipPlanId";
+            this.colMembershipPlanId.Name = "colMembershipPlanId";
+            this.colMembershipPlanId.ReadOnly = true;
+            // 
             // colUpdate
             // 
             this.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -481,14 +489,6 @@
             this.colDeactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colDeactivate.Text = "Deactivate";
             this.colDeactivate.UseColumnTextForButtonValue = true;
-            // 
-            // colMembershipPlanId
-            // 
-            this.colMembershipPlanId.DataPropertyName = "MembershipPlanId";
-            this.colMembershipPlanId.HeaderText = "MembershipPlanId";
-            this.colMembershipPlanId.Name = "colMembershipPlanId";
-            this.colMembershipPlanId.ReadOnly = true;
-            this.colMembershipPlanId.Visible = false;
             // 
             // FrmDisplayMembershipPlan
             // 
@@ -545,9 +545,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIsActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanId;
         private System.Windows.Forms.DataGridViewButtonColumn colUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn colDeactivate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanId;
 
 
     }
