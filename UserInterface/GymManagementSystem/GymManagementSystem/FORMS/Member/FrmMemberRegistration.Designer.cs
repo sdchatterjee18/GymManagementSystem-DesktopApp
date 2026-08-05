@@ -1361,7 +1361,7 @@
             this.cmbSelectMemberShiftTime.Name = "cmbSelectMemberShiftTime";
             this.cmbSelectMemberShiftTime.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberShiftTime.TabIndex = 9;
-            this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberShiftTime_SelectedIndexChanged);
+            this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.pnlResetButton_MouseEnter);
             this.cmbSelectMemberShiftTime.Click += new System.EventHandler(this.cmbSelectMemberShiftTime_Click);
             // 
             // tlpselectMemberDietPlan

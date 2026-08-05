@@ -56,6 +56,7 @@ namespace GymManagementSystemDALayer.Common
             SqlConnection sqlConnection = null;
             try
             {
+                MembershipPlans = new List<MembershipPlanDAL>();
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
                     SqlCommand cmd = new SqlCommand("spRetrieveMembershipPlans", sqlConnection);
@@ -66,7 +67,7 @@ namespace GymManagementSystemDALayer.Common
                     {
                         MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
                         membershipPlanDAL.MembershipPlanId = Convert.ToInt32(reader["MembershipPlanId"]);
-                        membershipPlanDAL.MembershipPlanName = Convert.ToInt32(reader["MembershipPlanName"]);
+                        membershipPlanDAL.MembershipPlanName =reader["MembershipPlanName"].ToString();
                         MembershipPlans.Add(membershipPlanDAL);
                     }
                     return MembershipPlans;
