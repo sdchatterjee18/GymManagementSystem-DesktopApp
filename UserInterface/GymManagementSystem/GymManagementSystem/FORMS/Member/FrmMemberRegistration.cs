@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Shift.UI;
+using GymManagementSystem.FORMS.MembershipPlan.UI;
 using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Member
@@ -25,11 +26,22 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberShiftTime.ValueMember = "ShiftId";
             cmbSelectMemberShiftTime.SelectedIndex = -1;
         }
+
+        private void LoadMembershipPlanComboBox()
+        {
+            List<MembershipPlanUI> membershipPlansUI = LookupUI.GetMembershipPlans();
+            cmbSelectMemberMemberMembershipPlan.DataSource = membershipPlansUI;
+            cmbSelectMemberMemberMembershipPlan.DisplayMember = "MembershipPlanName";
+            cmbSelectMemberMemberMembershipPlan.ValueMember = "MembershipPlanId";
+            cmbSelectMemberMemberMembershipPlan.SelectedIndex = -1;
+        }
+
         private void FrmMemberRegistration_Load(object sender, EventArgs e)
         {
             SetPlaceholder(this);
             this.ActiveControl = null;
             LoadShiftComboBox();
+            LoadMembershipPlanComboBox();
         }
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
