@@ -68,8 +68,7 @@ namespace GymManagementSystemDALayer.Common
                     {
                         MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
                         membershipPlanDAL.MembershipPlanId = Convert.ToInt32(reader["MembershipPlanId"]);
-                        membershipPlanDAL.MembershipPlanName =reader["MembershipPlanName"].ToString();
-                        MembershipPlans.Add(membershipPlanDAL);
+                        membershipPlanDAL.MembershipPlanName = reader["MembershipPlanName"].ToString();
                     }
                     return MembershipPlans;
                 }
@@ -86,34 +85,95 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-        public static List<DietPlanDAL> GetDietPlans()
+      public static List<DietPlanDAL> GetDietPlans()
+      {
+         List<DietPlanDAL> dietPlans = null;
+        SqlConnection sqlConnection = null;
+        try
         {
-            List<DietPlanDAL> dietPlans = null;
+          dietPlans = new List<DietPlanDAL>();
+          using (sqlConnection = DBconnection.GetSqlConnection())
+          {
+              SqlCommand cmd = new SqlCommand("spRetrieveDietPlanDetails", sqlConnection);
+              cmd.CommandType = CommandType.StoredProcedure;
+              sqlConnection.Open();
+              SqlDataReader reader = cmd.ExecuteReader();
+              while (reader.Read())
+              {
+                  DietPlanDAL dietPlan = new DietPlanDAL();
+                  dietPlan.DietPlanId = Convert.ToInt32(reader["DietPlanId"]);
+                  dietPlan.CaloriesPerDay = Convert.ToInt32(reader["CaloriesPerDay"]);
+                  dietPlans.Add(dietPlan);
+              }
+              return dietPlans;
+            }
+           }
+           catch (Exception ex)
+           {
+             return dietPlans;
+           }
+           finally
+           {
+              if (sqlConnection != null)
+              {
+                  sqlConnection.Close();
+              }
+           }
+        }
+     public static DataTable GetGenderDetails()
+     {
+        DataTable dtGender = null;
+        SqlConnection sqlConnection = null;
+        try
+        {
+          dtGender = new DataTable();
+          using (sqlConnection = DBconnection.GetSqlConnection())
+          {
+             SqlCommand cmd = new SqlCommand("spRetrieveGenderDetails", sqlConnection);
+             cmd.CommandType = CommandType.StoredProcedure;
+             sqlConnection.Open();
+             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+             adapter.Fill(dtGender);
+            return dtGender;
+         }
+        }
+        catch (Exception ex)
+        {
+          return dtGender;
+        }
+        finally
+        {
+           if (sqlConnection != null)
+           {
+              sqlConnection.Close();
+           }
+        }
+       }
+        public static DataTable RetrieveSpecificItem(string spName)
+        {
+            DataTable dataTable = null;
             SqlConnection sqlConnection = null;
 
             try
             {
-                dietPlans = new List<DietPlanDAL>();
-
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
-                    SqlCommand cmd = new SqlCommand("spRetrieveDietPlanDetails", sqlConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    sqlConnection.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
                     {
-                        DietPlanDAL dietPlan = new DietPlanDAL();
-                        dietPlan.DietPlanId = Convert.ToInt32(reader["DietPlanId"]);
-                        dietPlan.CaloriesPerDay = Convert.ToInt32(reader["CaloriesPerDay"]);
-                        dietPlans.Add(dietPlan);
+                        sqlDataAdapter.SelectCommand.CommandType =
+                            CommandType.StoredProcedure;
+
+                        dataTable = new DataTable();
+
+                        sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
                     }
-                    return dietPlans;
                 }
             }
-            catch (Exception)
+            catch
             {
-                return dietPlans;
+                return dataTable;
             }
             finally
             {
@@ -123,31 +183,34 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-        public static DataTable GetGenderDetails()
+        public static DataTable UpdateSpecificItemById(string spName,int id,string parameterId,decimal price,string description)
         {
-            DataTable dtGender = null;
+            DataTable dataTable = null;
             SqlConnection sqlConnection = null;
 
             try
             {
-                dtGender = new DataTable();
-
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
-                    SqlCommand cmd = new SqlCommand("spRetrieveGenderDetails", sqlConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                    sqlConnection.Open();
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterId, id);
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Description", description);
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@NewPrice", price);
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    adapter.Fill(dtGender);
+                        dataTable = new DataTable();
 
-                    return dtGender;
+                        sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
                 }
             }
-            catch (Exception)
+            catch
             {
-                return dtGender;
+                return dataTable;
             }
             finally
             {
@@ -156,6 +219,67 @@ namespace GymManagementSystemDALayer.Common
                     sqlConnection.Close();
                 }
             }
+        }
+        public static DataTable DeactivateSpecificItemById(string spName, int id, string parameterName)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                dataTable=new Datatable();
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterName, id);
+                        sqlDataAdapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable RetrieveSpecificDetailsById(string spName,int id,string parameterId)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter=new SqlDataAdapter(spName,sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterId, id);
+                        dataTable = new DataTable();
+                        sqlDataAdapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                    sqlConnection.Close();
+            } 
         }
     }
 }

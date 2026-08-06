@@ -10,12 +10,17 @@ using System.Drawing.Drawing2D;
 using System.Configuration;
 using System.Data.SqlClient;
 using GymManagementSystem.FORMS.MembershipPlan.UI;
+using GymManagementSystem.FORMS.MembershipPlan;
+using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
+using GymManagementSystem.Common;
+
 
 
 namespace GymManagementSystem.FORMS.MembershipPlan
 {
     public partial class FrmDisplayMembershipPlan : Form
-    { 
+    {
+      
         public FrmDisplayMembershipPlan()
         {
             InitializeComponent();
@@ -25,23 +30,12 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void FrmDisplayMembershipPlan_Load(object sender, EventArgs e)
         {
+            dgvMembershipPlan.AutoGenerateColumns = false;
             dgvMembershipPlan.ClearSelection();
-            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
-            List<MembershipPlanUI> membershipPlans =
-                membershipPlanUI.RetrieveMembershipPlansDetails();
-
-            foreach (MembershipPlanUI plan in membershipPlans)
-            {
-                dgvMembershipPlan.Rows.Add(
-                    plan.MembershipPlanId,
-                    plan.MembershipPlanName,
-                    plan.PlanType,
-                    plan.DurationInDays,
-                    plan.Price,
-                    plan.Description,
-                    plan.IsActive
-                );
-            }
+           
+            LoadMembershipPlans();
+            LoadMembershipPlanComboBox();
+            
         }
         private void pnlMembershipPlanGridview_Click(object sender, EventArgs e)
         {
@@ -219,12 +213,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         }
 
-        private void txtEnterPlanName_Click(object sender, EventArgs e)
-        {
-            txtEnterPlanName.Clear();
-            txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-            txtEnterPlanName.ForeColor = Color.Black;
-        }
+       
 
         private void picSearchIcon_Click_1(object sender, EventArgs e)
         {
@@ -236,10 +225,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         }
 
-        private void dgvMembershipPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void lblViewPlans_Click(object sender, EventArgs e)
         {
@@ -267,6 +253,211 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236,240,243);
         }
+        private void LoadMembershipPlans()
+        {
+            dgvMembershipPlan.Rows.Clear();
+            dgvMembershipPlan.ReadOnly = false;
+
+            foreach (DataGridViewColumn col in dgvMembershipPlan.Columns)
+            {
+                col.ReadOnly = true;
+            }
+
+            dgvMembershipPlan.Columns["colPrice"].ReadOnly = false;
+            dgvMembershipPlan.Columns["colDescription"].ReadOnly = false;
+
+            dgvMembershipPlan.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+            List<MembershipPlanUI> membershipPlans =
+                membershipPlanUI.RetrieveMembershipPlansDetailsUI();
+            int SlNo = 1;
+            foreach (MembershipPlanUI plan in membershipPlans)
+            {
+                dgvMembershipPlan.Rows.Add(
+                    SlNo++,
+                    plan.MembershipPlanName,
+                    plan.PlanType,
+                    plan.DurationInDays,
+                    plan.Price,
+                    plan.Description,
+                    plan.IsActive,
+                    plan.MembershipPlanId
+                );
+            }
+
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void dgvMembershipPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Update
+            if (dgvMembershipPlan.Columns[e.ColumnIndex].Name == "colUpdate")
+            {
+                dgvMembershipPlan.EndEdit();
+
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to update this membership plan?",
+                    "Confirm Update",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+                        membershipPlanUI.MembershipPlanId = Convert.ToInt32(
+                            dgvMembershipPlan.Rows[e.RowIndex].Cells["colMembershipPlanId"].Value);
+
+                        membershipPlanUI.Description =
+                            dgvMembershipPlan.Rows[e.RowIndex].Cells["colDescription"].Value.ToString();
+
+                        membershipPlanUI.Price = Convert.ToDecimal(
+                            dgvMembershipPlan.Rows[e.RowIndex].Cells["colPrice"].Value);
+
+                        string message = membershipPlanUI
+                            .UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdUI();
+
+                        MessageBox.Show(
+                            message,
+                            "Success",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        LoadMembershipPlans();
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                            "Incorrect Input Format.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
+                        LoadMembershipPlans();
+                    }
+                }
+                else
+                {
+                    LoadMembershipPlans();
+                }
+            }
+
+            // Deactivate
+            else if (dgvMembershipPlan.Columns[e.ColumnIndex].Name == "colDeactivate")
+            {
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to deactivate this membership plan?",
+                    "Confirm Deactivate",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+                        membershipPlanUI.MembershipPlanId = Convert.ToInt32(
+                            dgvMembershipPlan.Rows[e.RowIndex].Cells["colMembershipPlanId"].Value);
+
+                        string message = membershipPlanUI
+                            .DeactivateMembershipPlanByMembershipPlanIdUI();
+
+                        MessageBox.Show(
+                            message,
+                            "Information",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+
+                        LoadMembershipPlans();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(
+                            ex.Message,
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
+                        LoadMembershipPlans();
+                    }
+                }
+                else
+                {
+                    LoadMembershipPlans();
+                }
+            }
+        }
+        private void LoadMembershipPlanComboBox()
+        {
+            List<MembershipPlanUI> membershipPlansUI = LookupUI.GetMembershipPlans();
+            cmbMembershipPlan.DataSource = membershipPlansUI;
+            cmbMembershipPlan.DisplayMember = "MembershipPlanName";
+            cmbMembershipPlan.ValueMember = "MembershipPlanId";
+            cmbMembershipPlan.SelectedIndex = -1;
+        }
+
+        private void cmbMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMembershipPlan.SelectedIndex == -1)
+            {
+                LoadMembershipPlans();
+                return;
+            }
+
+            MembershipPlanUI selectedPlan =
+                (MembershipPlanUI)cmbMembershipPlan.SelectedItem;
+
+            int membershipPlanId = selectedPlan.MembershipPlanId;
+
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            DataTable dt =
+                membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(membershipPlanId);
+
+            dgvMembershipPlan.Rows.Clear();
+
+            if (dt == null || dt.Rows.Count == 0)
+                return;
+
+            int slNo = 1;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dgvMembershipPlan.Rows.Add(
+                    slNo++,
+                    row["MembershipPlanName"],
+                    row["PlanType"],
+                    row["DurationInDays"],
+                    row["Price"],
+                    row["Description"],
+                    row["IsActive"],
+                    row["MembershipPlanId"]
+                );
+            }
+
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            LoadMembershipPlans();
+            LoadMembershipPlanComboBox();
+
+            cmbMembershipPlan.SelectedIndex = -1;
+            cmbMembershipPlan.Text = "";
+
+            dgvMembershipPlan.ClearSelection();
+        }
+
+
        
     }
 }

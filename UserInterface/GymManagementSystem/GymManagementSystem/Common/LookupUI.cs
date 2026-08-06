@@ -68,6 +68,5 @@ namespace GymManagementSystem.Common
         {
             return LookupBLL.GetPaymentMethods();
         }
-        
     }
 }
