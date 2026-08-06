@@ -45,6 +45,7 @@ namespace GymManagementSystem.Common
         }
         public static int ClearTextBox(TextBox textBox,int count)
         {
+            textBox.BackColor = Color.White;
             if (count == 0)
             {
                 textBox.Clear();
@@ -52,6 +53,50 @@ namespace GymManagementSystem.Common
                 return count;
             }
             return 1;
+        }
+        public static bool ValidateRadioButtonSelection(params RadioButton[] radioButtons)
+        {
+            foreach (RadioButton radioButton in radioButtons)
+            {
+                if (radioButton.Checked)
+                {
+                    return true;
+                }
+            }
+
+            MessageBox.Show("Please Choose Locker Needed or not!",
+                            "Validation",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+
+            return false;
+        }
+        public static bool ValidateRequiredComboBoxes(params ComboBox[] comboBoxes)
+        {
+            bool isValid = true;
+
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                if (comboBox.SelectedIndex == -1)
+                {
+                    comboBox.BackColor = Color.FromArgb(255, 240, 240);
+                    isValid = false;
+                }
+                else
+                {
+                    comboBox.BackColor = Color.White;
+                }
+            }
+
+            if (!isValid)
+            {
+                MessageBox.Show("Please select all required options.",
+                                "Validation",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+
+            return isValid;
         }
     }
 }
