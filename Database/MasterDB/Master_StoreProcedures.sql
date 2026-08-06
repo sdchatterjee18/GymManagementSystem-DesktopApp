@@ -2054,12 +2054,10 @@ BEGIN
             MP.DurationInDays,
             MP.Price,
             MP.Description,
-            MP.IsActive
-			 Mp.IsActive ,  
-        CASE  
-            WHEN Mp.IsActive = 1 THEN 'Active'  
-            ELSE 'Inactive'  
-        END IsActive  
+            CASE
+                WHEN MP.IsActive = 1 THEN 'Active'
+                ELSE 'Inactive'
+            END AS IsActive
         FROM tblMembershipPlans AS MP
         INNER JOIN tblMembershipPlanType AS MPT
             ON MP.PlanTypeId = MPT.PlanTypeId
