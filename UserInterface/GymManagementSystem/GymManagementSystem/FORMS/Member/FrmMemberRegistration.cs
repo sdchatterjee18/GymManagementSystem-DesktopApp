@@ -5,19 +5,32 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Shift.UI;
 using GymManagementSystem.FORMS.MembershipPlan.UI;
+using GymManagementSystem.FORMS.DietPlan.UI;
+using GymManagementSystem.FORMS.Member.UI;
 using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Member
 {
     public partial class FrmMemberRegistration : Form
     {
+        private string selectedImagePath = string.Empty;
         public FrmMemberRegistration()
         {
             InitializeComponent();
         }
+        int ClickCountTxtFirstName = 0;
+        int ClickCountTxtMiddleName = 0;
+        int ClickCountTxtLastName = 0;
+        int ClickCountTxtPhoneNumber = 0;
+        int ClickCountTxtEmailId = 0;
+        int ClickCountTxtEmergencyContact = 0;
+        int ClickCountTxtState = 0;
+        int ClickCountTxtCity = 0;
+        int ClickCountTxtDistrict = 0;
         private void LoadShiftComboBox()
         {
             List<ShiftUI> shifts = LookupUI.GetShifts();
@@ -26,7 +39,6 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberShiftTime.ValueMember = "ShiftId";
             cmbSelectMemberShiftTime.SelectedIndex = -1;
         }
-
         private void LoadMembershipPlanComboBox()
         {
             List<MembershipPlanUI> membershipPlansUI = LookupUI.GetMembershipPlans();
@@ -35,30 +47,53 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberMemberMembershipPlan.ValueMember = "MembershipPlanId";
             cmbSelectMemberMemberMembershipPlan.SelectedIndex = -1;
         }
-
+        private void LoadDietPlanComboBox()
+        {
+            List<DietPlanUI> dietPlansUI = LookupUI.GetDietPlans();
+            cmbSelectMemberDietPlan.DataSource = dietPlansUI;
+            cmbSelectMemberDietPlan.DisplayMember = "CaloriesPerDay";
+            cmbSelectMemberDietPlan.ValueMember = "DietPlanId";
+            cmbSelectMemberDietPlan.SelectedIndex = -1;
+        }
+        private void LoadGenderComboBox()
+        {
+            cmbSelectMemberGender.DataSource = LookupUI.GetGenderDetails();
+            cmbSelectMemberGender.DisplayMember = "GenderName";
+            cmbSelectMemberGender.ValueMember = "GenderId";
+            cmbSelectMemberGender.SelectedIndex = -1;
+        }
+        private void LoadPaymentMethodComboBox()
+        {
+            cmbSelectMemberPaymentMethod.DataSource = LookupUI.GetPaymentMethods();
+            cmbSelectMemberPaymentMethod.SelectedIndex = -1;
+        }
         private void FrmMemberRegistration_Load(object sender, EventArgs e)
         {
-            SetPlaceholder(this);
+            //SetPlaceholder(this);
             this.ActiveControl = null;
             LoadShiftComboBox();
             LoadMembershipPlanComboBox();
+            LoadDietPlanComboBox();
+            LoadGenderComboBox();
+            LoadPaymentMethodComboBox();
         }
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
         {
-            txtEnterMemberFirstName.Clear();
+            
             txtEnterMemberFirstName.ForeColor = Color.Black;
+            ClickCountTxtFirstName = ValidationUI.ClearTextBox(txtEnterMemberFirstName,ClickCountTxtFirstName);
         }
 
         private void txtEnterMemberMiddleName_Click(object sender, EventArgs e)
         {
-            txtEnterMemberMiddleName.Clear();
+            ClickCountTxtMiddleName = ValidationUI.ClearTextBox(txtEnterMemberMiddleName, ClickCountTxtMiddleName);
             txtEnterMemberMiddleName.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberLastName_Click(object sender, EventArgs e)
         {
-            txtEnterMemberLastName.Clear();
+            ClickCountTxtLastName = ValidationUI.ClearTextBox(txtEnterMemberLastName, ClickCountTxtLastName);
             txtEnterMemberLastName.ForeColor = Color.Black;
         }
 
@@ -66,44 +101,44 @@ namespace GymManagementSystem.FORMS.Member
 
         private void txtEnterMemberPhoneNumber_Click(object sender, EventArgs e)
         {
-            txtEnterMemberPhoneNumber.Clear();
+            ClickCountTxtPhoneNumber = ValidationUI.ClearTextBox(txtEnterMemberPhoneNumber, ClickCountTxtPhoneNumber);
             txtEnterMemberPhoneNumber.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberEmailId_Click(object sender, EventArgs e)
         {
-            txtEnterMemberEmailId.Clear();
+            ClickCountTxtEmailId = ValidationUI.ClearTextBox(txtEnterMemberEmailId, ClickCountTxtEmailId);
             txtEnterMemberEmailId.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberCity_Click(object sender, EventArgs e)
         {
-            txtEnterMemberCity.Clear();
+            ClickCountTxtCity = ValidationUI.ClearTextBox(txtEnterMemberCity, ClickCountTxtCity);
             txtEnterMemberCity.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberDistrict_Click(object sender, EventArgs e)
         {
-            txtEnterMemberDistrict.Clear();
+            ClickCountTxtDistrict = ValidationUI.ClearTextBox(txtEnterMemberDistrict, ClickCountTxtDistrict);
             txtEnterMemberDistrict.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberState_Click(object sender, EventArgs e)
         {
-            txtEnterMemberState.Clear();
+            ClickCountTxtState = ValidationUI.ClearTextBox(txtEnterMemberState, ClickCountTxtState);
             txtEnterMemberState.ForeColor = Color.Black;
         }
 
         private void txtEnterMemberEmergencyContact_Click(object sender, EventArgs e)
         {
-            txtEnterMemberEmergencyContact.Clear();
+            ClickCountTxtEmergencyContact = ValidationUI.ClearTextBox(txtEnterMemberEmergencyContact, ClickCountTxtEmergencyContact);
             txtEnterMemberEmergencyContact.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberMemberMembershipPlan_Click(object sender, EventArgs e)
         {
-            cmbSelectMemberMemberMembershipPlan.Items.Clear();
-            cmbSelectMemberMemberMembershipPlan.Text = null;
+            //cmbSelectMemberMemberMembershipPlan.Items.Clear();
+            //cmbSelectMemberMemberMembershipPlan.Text = null;
             //cmbSelectMemberMemberMembershipPlan.ForeColor = Color.Black;
         }
 
@@ -116,14 +151,14 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberDietPlan_Click(object sender, EventArgs e)
         {
-            cmbSelectMemberDietPlan.Items.Clear();
-            cmbSelectMemberDietPlan.Text = null;
+            //cmbSelectMemberDietPlan.Items.Clear();
+            //cmbSelectMemberDietPlan.Text = null;
             cmbSelectMemberDietPlan.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberPaymentMethod_Click(object sender, EventArgs e)
         {
-            cmbSelectMemberPaymentMethod.Items.Clear();
+            //cmbSelectMemberPaymentMethod.Items.Clear();
             cmbSelectMemberPaymentMethod.Text = null;
             cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
         }
@@ -136,57 +171,57 @@ namespace GymManagementSystem.FORMS.Member
         
         }
 
-        private void SetPlaceholder(Control parent)
-        {
-            foreach (Control c in parent.Controls)
-            {
-                if (c is TextBox)
-                {
-                    TextBox txt = (TextBox)c;
+        //private void SetPlaceholder(Control parent)
+        //{
+        //    foreach (Control c in parent.Controls)
+        //    {
+        //        if (c is TextBox)
+        //        {
+        //            TextBox txt = (TextBox)c;
 
-                    txt.Tag = txt.Text;        
-                    txt.ForeColor = Color.Gray;
+        //            txt.Tag = txt.Text;        
+        //            txt.ForeColor = Color.Gray;
 
-                    txt.Enter += Placeholder_Enter;
-                    txt.Leave += Placeholder_Leave;
-                }
+        //            txt.Enter += Placeholder_Enter;
+        //            txt.Leave += Placeholder_Leave;
+        //        }
 
-                if (c.HasChildren)
-                    SetPlaceholder(c);
-            }
-        }
+        //        if (c.HasChildren)
+        //            SetPlaceholder(c);
+        //    }
+        //}
 
-        private void Placeholder_Enter(object sender, EventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
+        //private void Placeholder_Enter(object sender, EventArgs e)
+        //{
+        //    TextBox txt = (TextBox)sender;
 
-            if (txt.Text == txt.Tag.ToString())
-            {
-                txt.Clear();
-                txt.ForeColor = Color.Black;
-            }
-        }
+        //    if (txt.Text == txt.Tag.ToString())
+        //    {
+        //        txt.Clear();
+        //        txt.ForeColor = Color.Black;
+        //    }
+        //}
 
-        private void Placeholder_Leave(object sender, EventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
+        //private void Placeholder_Leave(object sender, EventArgs e)
+        //{
+        //    TextBox txt = (TextBox)sender;
 
-            if (string.IsNullOrWhiteSpace(txt.Text))
-            {
-                txt.Text = txt.Tag.ToString();
-                txt.ForeColor = Color.Gray;
-            }
-        }
-        private void Placeholder_Click(object sender, MouseEventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
+        //    if (string.IsNullOrWhiteSpace(txt.Text))
+        //    {
+        //        txt.Text = txt.Tag.ToString();
+        //        txt.ForeColor = Color.Gray;
+        //    }
+        //}
+        //private void Placeholder_Click(object sender, MouseEventArgs e)
+        //{
+        //    TextBox txt = (TextBox)sender;
 
-            if (txt.Text == txt.Tag.ToString())
-            {
-                txt.Clear();
-                txt.ForeColor = Color.Black;
-            }
-        }
+        //    if (txt.Text == txt.Tag.ToString())
+        //    {
+        //        txt.Clear();
+        //        txt.ForeColor = Color.Black;
+        //    }
+        //}
 
         private void FrmMemberRegistration_Shown(object sender, EventArgs e)
         {
@@ -195,7 +230,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberGender_Click_1(object sender, EventArgs e)
         {
-            cmbSelectMemberGender.Items.Clear();
+            //cmbSelectMemberGender.Items.Clear();
             cmbSelectMemberGender.Text = null;
             cmbSelectMemberGender.ForeColor = Color.Black;
         }
@@ -252,16 +287,105 @@ namespace GymManagementSystem.FORMS.Member
 
         private void pnlRegisterButton_Click(object sender, EventArgs e)
         {
-
+            if(ClickCountTxtFirstName==0)
+            {
+                txtEnterMemberFirstName.Clear();
+            }
+            if (ClickCountTxtMiddleName == 0)
+            {
+                txtEnterMemberMiddleName.Clear();
+            }
+            if (ClickCountTxtLastName == 0)
+            {
+                txtEnterMemberLastName.Clear();
+            }
+            if (ClickCountTxtPhoneNumber == 0)
+            {
+                txtEnterMemberPhoneNumber.Clear();
+            }
+            if (ClickCountTxtEmailId == 0)
+            {
+                txtEnterMemberEmailId.Clear();
+            }
+            if (ClickCountTxtEmergencyContact == 0)
+            {
+                txtEnterMemberEmergencyContact.Clear();
+            }
+            if (ClickCountTxtState == 0)
+            {
+                txtEnterMemberState.Clear();
+            }
+            if (ClickCountTxtCity == 0)
+            {
+                txtEnterMemberCity.Clear();
+            }
+            if (ClickCountTxtDistrict == 0)
+            {
+                txtEnterMemberDistrict.Clear();
+            }
+            if (!ValidationUI.ValidateRequiredTextBoxes(
+                this.txtEnterMemberFirstName,
+                this.txtEnterMemberLastName,
+                this.txtEnterMemberPhoneNumber,
+                this.txtEnterMemberEmailId,
+                this.txtEnterMemberEmergencyContact,
+                this.txtEnterMemberState,
+                this.txtEnterMemberCity,
+                this.txtEnterMemberDistrict
+                ))
+            {
+                return;
+            }
+            MemberAllDetailsUI memberAllDetailsUI = new MemberAllDetailsUI();
+            if (!string.IsNullOrEmpty(selectedImagePath))
+            {
+                memberAllDetailsUI.ProfilePhoto =
+                    File.ReadAllBytes(selectedImagePath);
+            }
+            memberAllDetailsUI.NeedLocker =rbtnDontNeedLocker.Checked ? 1 : 0;
         }
 
         private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ActiveControl = null;
-            if (cmbSelectMemberShiftTime.SelectedIndex <= 0)
-                cmbSelectMemberShiftTime.ForeColor = Color.Gray;
-            else
-                cmbSelectMemberShiftTime.ForeColor = Color.Black;
+            cmbSelectMemberShiftTime.ForeColor = Color.Black;
+        }
+
+        private void cmbSelectMemberMemberMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+                cmbSelectMemberMemberMembershipPlan.ForeColor = Color.Black;
+        }
+
+        private void cmbSelectMemberDietPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            cmbSelectMemberDietPlan.ForeColor = Color.Black;
+        }
+
+        private void cmbSelectMemberGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            cmbSelectMemberGender.ForeColor = Color.Black;
+        }
+
+        private void cmbSelectMemberPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
+        }
+
+        private void pnlMemberBrowsePhoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Title = "Select Member Photo";
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+               picMemberUploadedPhoto.Image = Image.FromFile(openFileDialog.FileName);
+            }
         }
 
        

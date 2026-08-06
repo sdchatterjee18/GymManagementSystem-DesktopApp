@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Common\LookupDAL.cs" />
+    <Compile Include="ModulesDALayer\DietPlan\DietPlanDAL.cs" />
     <Compile Include="ModulesDALayer\MembershipPlan\MembershipPlanDAL.cs" />
     <Compile Include="ModulesDALayer\Member\MemberAllDetailsDAL.cs" />
     <Compile Include="ModulesDALayer\Member\MemberDAL.cs" />
