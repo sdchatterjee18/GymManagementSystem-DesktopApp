@@ -51,96 +51,26 @@ namespace GymManagementSystemDALayer.Common
             
             //return Shifts;
         }
-        public static List<MembershipPlanDAL> GetMembershipPlans()
-        {
-            List<MembershipPlanDAL> MembershipPlans = null;
-            SqlConnection sqlConnection = null;
-            try
-            {
-                MembershipPlans = new List<MembershipPlanDAL>();
-                using (sqlConnection = DBconnection.GetSqlConnection())
-                {
-                    SqlCommand cmd = new SqlCommand("spRetrieveMembershipPlans", sqlConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    sqlConnection.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
-                        membershipPlanDAL.MembershipPlanId = Convert.ToInt32(reader["MembershipPlanId"]);
-                        membershipPlanDAL.MembershipPlanName = reader["MembershipPlanName"].ToString();
-                        MembershipPlans.Add(membershipPlanDAL);
-                    }
-                    return MembershipPlans;
-                }
-            }
-            catch(Exception ex)
-            {
-                return MembershipPlans;
-            }
-            finally
-            {
-                if(sqlConnection!=null)
-                {
-                    sqlConnection.Close();
-                }
-            }
-        }
-        public static List<DietPlanDAL> GetDietPlans()
-      {
-         List<DietPlanDAL> dietPlans = null;
-        SqlConnection sqlConnection = null;
-        try
-        {
-          dietPlans = new List<DietPlanDAL>();
-          using (sqlConnection = DBconnection.GetSqlConnection())
-          {
-              SqlCommand cmd = new SqlCommand("spRetrieveDietPlanDetails", sqlConnection);
-              cmd.CommandType = CommandType.StoredProcedure;
-              sqlConnection.Open();
-              SqlDataReader reader = cmd.ExecuteReader();
-              while (reader.Read())
-              {
-                  DietPlanDAL dietPlan = new DietPlanDAL();
-                  dietPlan.DietPlanId = Convert.ToInt32(reader["DietPlanId"]);
-                  dietPlan.CaloriesPerDay = Convert.ToInt32(reader["CaloriesPerDay"]);
-                  dietPlans.Add(dietPlan);
-              }
-              return dietPlans;
-            }
-           }
-           catch (Exception ex)
-           {
-             return dietPlans;
-           }
-           finally
-           {
-              if (sqlConnection != null)
-              {
-                  sqlConnection.Close();
-              }
-           }
-        }
-        public static DataTable GetGenderDetails()
+        public static DataTable GetComboBoxDetails(string spName)
      {
-        DataTable dtGender = null;
+        DataTable dataTable = null;
         SqlConnection sqlConnection = null;
         try
         {
-          dtGender = new DataTable();
+           dataTable = new DataTable();
           using (sqlConnection = DBconnection.GetSqlConnection())
           {
-             SqlCommand cmd = new SqlCommand("spRetrieveGenderDetails", sqlConnection);
+              SqlCommand cmd = new SqlCommand(spName, sqlConnection);
              cmd.CommandType = CommandType.StoredProcedure;
              sqlConnection.Open();
              SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-             adapter.Fill(dtGender);
-            return dtGender;
+             adapter.Fill(dataTable);
+             return dataTable;
          }
         }
         catch (Exception ex)
         {
-          return dtGender;
+            return dataTable;
         }
         finally
         {

@@ -33,31 +33,32 @@ namespace GymManagementSystem.FORMS.Member
         int ClickCountTxtDistrict = 0;
         private void LoadShiftComboBox()
         {
-            List<ShiftUI> shifts = LookupUI.GetShifts();
-            cmbSelectMemberShiftTime.DataSource =shifts;
+            ShiftUI shiftUI = new ShiftUI();
+            cmbSelectMemberShiftTime.DataSource = shiftUI.GetShiftDetailsForComboBox();
             cmbSelectMemberShiftTime.DisplayMember = "ShiftName";
             cmbSelectMemberShiftTime.ValueMember = "ShiftId";
             cmbSelectMemberShiftTime.SelectedIndex = -1;
         }
         private void LoadMembershipPlanComboBox()
         {
-            List<MembershipPlanUI> membershipPlansUI = LookupUI.GetMembershipPlans();
-            cmbSelectMemberMemberMembershipPlan.DataSource = membershipPlansUI;
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+            DataTable dataTable = membershipPlanUI.GetMembershipPlanDetailsForComboBox();
+            cmbSelectMemberMemberMembershipPlan.DataSource = dataTable;
             cmbSelectMemberMemberMembershipPlan.DisplayMember = "MembershipPlanName";
             cmbSelectMemberMemberMembershipPlan.ValueMember = "MembershipPlanId";
             cmbSelectMemberMemberMembershipPlan.SelectedIndex = -1;
         }
         private void LoadDietPlanComboBox()
         {
-            List<DietPlanUI> dietPlansUI = LookupUI.GetDietPlans();
-            cmbSelectMemberDietPlan.DataSource = dietPlansUI;
+            DietPlanUI DietPlanUI = new DietPlan.UI.DietPlanUI();
+            cmbSelectMemberDietPlan.DataSource = DietPlanUI.GetDietPlansForComboBox();
             cmbSelectMemberDietPlan.DisplayMember = "CaloriesPerDay";
             cmbSelectMemberDietPlan.ValueMember = "DietPlanId";
             cmbSelectMemberDietPlan.SelectedIndex = -1;
         }
         private void LoadGenderComboBox()
         {
-            cmbSelectMemberGender.DataSource = LookupUI.GetGenderDetails();
+            cmbSelectMemberGender.DataSource = Gender.GenderUI.GetGenderDetailsForComboBox();
             cmbSelectMemberGender.DisplayMember = "GenderName";
             cmbSelectMemberGender.ValueMember = "GenderId";
             cmbSelectMemberGender.SelectedIndex = -1;
@@ -71,10 +72,10 @@ namespace GymManagementSystem.FORMS.Member
         {
             //SetPlaceholder(this);
             this.ActiveControl = null;
-            LoadShiftComboBox();
-            LoadMembershipPlanComboBox();
+            //LoadShiftComboBox();
+            //LoadMembershipPlanComboBox();
             LoadDietPlanComboBox();
-            LoadGenderComboBox();
+            //LoadGenderComboBox();
             LoadPaymentMethodComboBox();
         }
 
