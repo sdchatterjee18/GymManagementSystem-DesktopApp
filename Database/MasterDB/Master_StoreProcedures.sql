@@ -2017,10 +2017,10 @@ BEGIN
 END;
 GO
 
--------------------------------------------
---SP: spRetrieveMembershipPlanDetailsById--
--------------------------------------------
-CREATE PROC spRetrieveMembershipPlanDetailsById
+-----------------------------------------------
+--SP: spRetrieveMembershipPlanDetailsByMembershipPlanId--
+-----------------------------------------------
+CREATE PROC spRetrieveMembershipPlanDetailsByMembershipPlanId
 (
     @MembershipPlanId INT
 )
@@ -2066,6 +2066,7 @@ BEGIN
     END CATCH
 END;
 GO
+	
 ----------------------------------------------------
 --SP: spDeactivateMembershipPlanByMembershipPlanId--
 ----------------------------------------------------
