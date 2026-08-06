@@ -109,5 +109,22 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             DataTable dataTable = membershipPlanBLL.GetMembershipPlanDetailsForComboBox();
             return dataTable;
         }
+        public DataTable GetMembershipPlanTypeDetailsForComboBox()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+            return membershipPlanBLL.GetMembershipPlanTypeDetailsForComboBox();
+        }
+        public string InsertMembershipPlanUI()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            membershipPlanBLL.MembershipPlanName = this.MembershipPlanName;
+            membershipPlanBLL.PlanTypeId = this.PlanTypeId;
+            membershipPlanBLL.DurationInDays = this.DurationInDays;
+            membershipPlanBLL.Price = this.Price;
+            membershipPlanBLL.Description = this.Description;
+
+            return membershipPlanBLL.InsertMembershipPlanBLL();
+        }
     }
 }

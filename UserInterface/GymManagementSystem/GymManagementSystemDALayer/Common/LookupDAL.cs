@@ -212,5 +212,35 @@ namespace GymManagementSystemDALayer.Common
                     sqlConnection.Close();
             } 
         }
+        public static string InsertSpecificItem(string spName, SqlParameter[] parameters)
+        {
+            SqlConnection sqlConnection = null;
+            string RowMessage = null;
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
+                    {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddRange(parameters);
+                        sqlConnection.Open();
+                        RowMessage=Convert.ToString(sqlCommand.ExecuteScalar());
+                        return RowMessage;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
     }
 }

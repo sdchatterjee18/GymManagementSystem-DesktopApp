@@ -100,5 +100,51 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
             DataTable dataTable = membershipPlanDAL.GetMembershipPlanDetailsForComboBox();
             return dataTable;
         }
+        public DataTable GetMembershipPlanTypeDetailsForComboBox()
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+            return membershipPlanDAL.GetMembershipPlanTypeDetailsForComboBox();
+        }
+        public string InsertMembershipPlanBLL()
+        {
+            ValidationBll.CommonValidationMessage result;
+
+            result = ValidationBll.ValidateMembershipPlanName(this.MembershipPlanName);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidateDuration(this.DurationInDays.ToString());
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidatePrice(this.Price.ToString());
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidateDescription(this.Description);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            membershipPlanDAL.MembershipPlanName = this.MembershipPlanName;
+            membershipPlanDAL.PlanTypeId = this.PlanTypeId;
+            membershipPlanDAL.DurationInDays = this.DurationInDays;
+            membershipPlanDAL.Price = this.Price;
+            membershipPlanDAL.Description = this.Description;
+            return membershipPlanDAL.InsertMembershipPlanDAL();
+        }
     }
 }
