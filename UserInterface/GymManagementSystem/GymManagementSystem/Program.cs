@@ -32,7 +32,7 @@ namespace GymManagementSystem
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmMainLayout());
-            Application.Run(new FrmChangeTrainer());
+            Application.Run(new FrmAssignTrainer());
         }
     }
 }

@@ -36,11 +36,11 @@
             this.tlpCancleSection = new System.Windows.Forms.TableLayoutPanel();
             this.picCancle = new System.Windows.Forms.PictureBox();
             this.lblCancle = new System.Windows.Forms.Label();
-            this.tlpRegisterButtonSection = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpAssignTrainerButtonSection = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRegisterButton = new System.Windows.Forms.Panel();
-            this.tlpRegisterButton = new System.Windows.Forms.TableLayoutPanel();
-            this.picRegister = new System.Windows.Forms.PictureBox();
-            this.lblRegister = new System.Windows.Forms.Label();
+            this.tlpAssignButton = new System.Windows.Forms.TableLayoutPanel();
+            this.picAssignTrainer = new System.Windows.Forms.PictureBox();
+            this.lblAssignTraner = new System.Windows.Forms.Label();
             this.tlpMiddlePartOfChangePersonalTrainer = new System.Windows.Forms.TableLayoutPanel();
             this.pnlLeftBarInChangePersonal = new System.Windows.Forms.Panel();
             this.pnlRightBarInChangePersonal = new System.Windows.Forms.Panel();
@@ -159,10 +159,10 @@
             this.pnlCancleButtom.SuspendLayout();
             this.tlpCancleSection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancle)).BeginInit();
-            this.tlpRegisterButtonSection.SuspendLayout();
+            this.tlpAssignTrainerButtonSection.SuspendLayout();
             this.pnlRegisterButton.SuspendLayout();
-            this.tlpRegisterButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegister)).BeginInit();
+            this.tlpAssignButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAssignTrainer)).BeginInit();
             this.tlpMiddlePartOfChangePersonalTrainer.SuspendLayout();
             this.pnlChangePersonalTrainerBodyPart.SuspendLayout();
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.SuspendLayout();
@@ -247,7 +247,7 @@
             this.tlpPersonalTrainerChangeButtomPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpPersonalTrainerChangeButtomPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpPersonalTrainerChangeButtomPortion.Controls.Add(this.tlpCancleButtomPortion, 3, 0);
-            this.tlpPersonalTrainerChangeButtomPortion.Controls.Add(this.tlpRegisterButtonSection, 1, 0);
+            this.tlpPersonalTrainerChangeButtomPortion.Controls.Add(this.tlpAssignTrainerButtonSection, 1, 0);
             this.tlpPersonalTrainerChangeButtomPortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPersonalTrainerChangeButtomPortion.Location = new System.Drawing.Point(3, 693);
             this.tlpPersonalTrainerChangeButtomPortion.Name = "tlpPersonalTrainerChangeButtomPortion";
@@ -326,73 +326,73 @@
             this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleSection_MouseEnter);
             this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleSection_MouseLeave);
             // 
-            // tlpRegisterButtonSection
+            // tlpAssignTrainerButtonSection
             // 
-            this.tlpRegisterButtonSection.ColumnCount = 1;
-            this.tlpRegisterButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegisterButtonSection.Controls.Add(this.pnlRegisterButton, 0, 1);
-            this.tlpRegisterButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegisterButtonSection.Location = new System.Drawing.Point(348, 3);
-            this.tlpRegisterButtonSection.Name = "tlpRegisterButtonSection";
-            this.tlpRegisterButtonSection.RowCount = 3;
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.Size = new System.Drawing.Size(215, 86);
-            this.tlpRegisterButtonSection.TabIndex = 0;
+            this.tlpAssignTrainerButtonSection.ColumnCount = 1;
+            this.tlpAssignTrainerButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAssignTrainerButtonSection.Controls.Add(this.pnlRegisterButton, 0, 1);
+            this.tlpAssignTrainerButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAssignTrainerButtonSection.Location = new System.Drawing.Point(348, 3);
+            this.tlpAssignTrainerButtonSection.Name = "tlpAssignTrainerButtonSection";
+            this.tlpAssignTrainerButtonSection.RowCount = 3;
+            this.tlpAssignTrainerButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAssignTrainerButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpAssignTrainerButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAssignTrainerButtonSection.Size = new System.Drawing.Size(215, 86);
+            this.tlpAssignTrainerButtonSection.TabIndex = 0;
             // 
             // pnlRegisterButton
             // 
-            this.pnlRegisterButton.Controls.Add(this.tlpRegisterButton);
+            this.pnlRegisterButton.Controls.Add(this.tlpAssignButton);
             this.pnlRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRegisterButton.Location = new System.Drawing.Point(3, 20);
             this.pnlRegisterButton.Name = "pnlRegisterButton";
             this.pnlRegisterButton.Size = new System.Drawing.Size(209, 45);
             this.pnlRegisterButton.TabIndex = 0;
             // 
-            // tlpRegisterButton
+            // tlpAssignButton
             // 
-            this.tlpRegisterButton.BackColor = System.Drawing.Color.ForestGreen;
-            this.tlpRegisterButton.ColumnCount = 2;
-            this.tlpRegisterButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tlpRegisterButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tlpRegisterButton.Controls.Add(this.picRegister, 0, 0);
-            this.tlpRegisterButton.Controls.Add(this.lblRegister, 1, 0);
-            this.tlpRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegisterButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpRegisterButton.Name = "tlpRegisterButton";
-            this.tlpRegisterButton.RowCount = 1;
-            this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegisterButton.Size = new System.Drawing.Size(209, 45);
-            this.tlpRegisterButton.TabIndex = 2;
-            this.tlpRegisterButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
-            this.tlpRegisterButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
+            this.tlpAssignButton.BackColor = System.Drawing.Color.ForestGreen;
+            this.tlpAssignButton.ColumnCount = 2;
+            this.tlpAssignButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpAssignButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpAssignButton.Controls.Add(this.picAssignTrainer, 0, 0);
+            this.tlpAssignButton.Controls.Add(this.lblAssignTraner, 1, 0);
+            this.tlpAssignButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAssignButton.Location = new System.Drawing.Point(0, 0);
+            this.tlpAssignButton.Name = "tlpAssignButton";
+            this.tlpAssignButton.RowCount = 1;
+            this.tlpAssignButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAssignButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpAssignButton.Size = new System.Drawing.Size(209, 45);
+            this.tlpAssignButton.TabIndex = 2;
+            this.tlpAssignButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
+            this.tlpAssignButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
-            // picRegister
+            // picAssignTrainer
             // 
-            this.picRegister.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRegister.Image = ((System.Drawing.Image)(resources.GetObject("picRegister.Image")));
-            this.picRegister.Location = new System.Drawing.Point(3, 3);
-            this.picRegister.Name = "picRegister";
-            this.picRegister.Size = new System.Drawing.Size(62, 39);
-            this.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRegister.TabIndex = 0;
-            this.picRegister.TabStop = false;
+            this.picAssignTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picAssignTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picAssignTrainer.Image")));
+            this.picAssignTrainer.Location = new System.Drawing.Point(3, 3);
+            this.picAssignTrainer.Name = "picAssignTrainer";
+            this.picAssignTrainer.Size = new System.Drawing.Size(62, 39);
+            this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAssignTrainer.TabIndex = 0;
+            this.picAssignTrainer.TabStop = false;
             // 
-            // lblRegister
+            // lblAssignTraner
             // 
-            this.lblRegister.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.ForeColor = System.Drawing.Color.White;
-            this.lblRegister.Location = new System.Drawing.Point(71, 11);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(116, 23);
-            this.lblRegister.TabIndex = 1;
-            this.lblRegister.Text = "Assign Trainer";
-            this.lblRegister.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
-            this.lblRegister.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
+            this.lblAssignTraner.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAssignTraner.AutoSize = true;
+            this.lblAssignTraner.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignTraner.ForeColor = System.Drawing.Color.White;
+            this.lblAssignTraner.Location = new System.Drawing.Point(71, 11);
+            this.lblAssignTraner.Name = "lblAssignTraner";
+            this.lblAssignTraner.Size = new System.Drawing.Size(116, 23);
+            this.lblAssignTraner.TabIndex = 1;
+            this.lblAssignTraner.Text = "Assign Trainer";
+            this.lblAssignTraner.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
+            this.lblAssignTraner.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
             // tlpMiddlePartOfChangePersonalTrainer
             // 
@@ -1938,11 +1938,11 @@
             this.tlpCancleSection.ResumeLayout(false);
             this.tlpCancleSection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancle)).EndInit();
-            this.tlpRegisterButtonSection.ResumeLayout(false);
+            this.tlpAssignTrainerButtonSection.ResumeLayout(false);
             this.pnlRegisterButton.ResumeLayout(false);
-            this.tlpRegisterButton.ResumeLayout(false);
-            this.tlpRegisterButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegister)).EndInit();
+            this.tlpAssignButton.ResumeLayout(false);
+            this.tlpAssignButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAssignTrainer)).EndInit();
             this.tlpMiddlePartOfChangePersonalTrainer.ResumeLayout(false);
             this.pnlChangePersonalTrainerBodyPart.ResumeLayout(false);
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.ResumeLayout(false);
@@ -2024,11 +2024,11 @@
         private System.Windows.Forms.TableLayoutPanel tlpCancleSection;
         private System.Windows.Forms.PictureBox picCancle;
         private System.Windows.Forms.Label lblCancle;
-        private System.Windows.Forms.TableLayoutPanel tlpRegisterButtonSection;
+        private System.Windows.Forms.TableLayoutPanel tlpAssignTrainerButtonSection;
         private System.Windows.Forms.Panel pnlRegisterButton;
-        private System.Windows.Forms.TableLayoutPanel tlpRegisterButton;
-        private System.Windows.Forms.PictureBox picRegister;
-        private System.Windows.Forms.Label lblRegister;
+        private System.Windows.Forms.TableLayoutPanel tlpAssignButton;
+        private System.Windows.Forms.PictureBox picAssignTrainer;
+        private System.Windows.Forms.Label lblAssignTraner;
         private System.Windows.Forms.TableLayoutPanel tlpMiddlePartOfChangePersonalTrainer;
         private System.Windows.Forms.Panel pnlLeftBarInChangePersonal;
         private System.Windows.Forms.Panel pnlRightBarInChangePersonal;
