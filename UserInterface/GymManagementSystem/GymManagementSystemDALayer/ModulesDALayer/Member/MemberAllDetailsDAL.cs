@@ -5,11 +5,14 @@ using System.Text;
 
 namespace GymManagementSystemDALayer.ModulesDALayer.Member
 {
-    class MemberAllDetailsDAL
+    public class MemberAllDetailsDAL
     {
         //Member Personal Details
         public int MemberId { get; set; }
         public string MemberName { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
         public int GenderId { get; set; }
         public int GenderName { get; set; }
         public string PhoneNo { get; set; }
@@ -46,6 +49,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
 
         //Locker Details
         public int LockerId { get; set; }
+        public int NeedLocker { get; set; }
         public string LockerNo { get; set; }
         public string LockerStatus { get; set; }
 
@@ -55,5 +59,11 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
         public string PaymentMethod { get; set; }
         public decimal Amount { get; set; }
         public string FeesType { get; set; }
+
+        //Diet Plan Details
+        public int DietPlanId { get; set; }
+        public int CaloriesPerDay { get; set; }
+        public string DietPlanDocument { get; set; }
+        public string ConditionStatus { get; set; }
     }
 }

@@ -1618,14 +1618,14 @@
             // cmbSelectMemberPaymentFeesType
             // 
             this.cmbSelectMemberPaymentFeesType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberPaymentFeesType.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectMemberPaymentFeesType.ForeColor = System.Drawing.Color.Black;
             this.cmbSelectMemberPaymentFeesType.FormattingEnabled = true;
             this.cmbSelectMemberPaymentFeesType.Location = new System.Drawing.Point(2, 9);
             this.cmbSelectMemberPaymentFeesType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSelectMemberPaymentFeesType.Name = "cmbSelectMemberPaymentFeesType";
             this.cmbSelectMemberPaymentFeesType.Size = new System.Drawing.Size(261, 27);
             this.cmbSelectMemberPaymentFeesType.TabIndex = 9;
-            this.cmbSelectMemberPaymentFeesType.Text = "  ---Select Fees Type---";
+            this.cmbSelectMemberPaymentFeesType.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_SelectedIndexChanged);
             this.cmbSelectMemberPaymentFeesType.Click += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_Click);
             // 
             // tlpMemberInfromationSubmitResetCanclePortion
