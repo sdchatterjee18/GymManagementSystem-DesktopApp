@@ -72,10 +72,10 @@ namespace GymManagementSystem.FORMS.Member
         {
             //SetPlaceholder(this);
             this.ActiveControl = null;
-            //LoadShiftComboBox();
-            //LoadMembershipPlanComboBox();
+            LoadShiftComboBox();
+            LoadMembershipPlanComboBox();
             LoadDietPlanComboBox();
-            //LoadGenderComboBox();
+            LoadGenderComboBox();
             LoadPaymentMethodComboBox();
         }
 
