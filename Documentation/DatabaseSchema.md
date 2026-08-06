@@ -251,6 +251,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | MemberTrainerAssignmentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the member-trainer assignment. |
 | MemberId | INT | FOREIGN KEY | ❌ No | References the member assigned to the trainer. |
 | TrainerId | INT | FOREIGN KEY | ❌ No | References the assigned trainer. |
+| ShiftId | INT | FOREIGN KEY | ❌ No | References the assigned Shift. |
 | AssignedDate | DATE | DEFAULT(GETDATE()) | ❌ No | Date when the trainer was assigned to the member. |
 | IsActive | BIT | DEFAULT(1) | ❌ No | Indicates whether the assignment is currently active. |
 
@@ -284,6 +285,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | PaymentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the payment transaction. |
 | MemberId | INT | FOREIGN KEY | ❌ No | References the member who made the payment. |
 | MembershipPlanId | INT | FOREIGN KEY | ❌ No | References the membership plan purchased. |
+| SubscriptionId | INT | FOREIGN KEY | ❌ No | References the MembershipSubscription that was purchased. |
 | PaymentDate | DATETIME | DEFAULT(GETDATE()) | ❌ No | Date and time when the payment was made. |
 | PaymentMethod | VARCHAR(50) | - | ❌ No | Method used for payment (Cash, UPI, Card, Bank Transfer, etc.). |
 | Amount | DECIMAL(10,2) | CHECK(Amount >= 0) | ❌ No | Total amount paid by the member. |

@@ -216,7 +216,7 @@
             this.colSLNo.HeaderText = "SL No";
             this.colSLNo.Name = "colSLNo";
             this.colSLNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSLNo.Width = 53;
+            this.colSLNo.Width = 52;
             // 
             // colCategoryName
             // 
@@ -233,7 +233,7 @@
             this.colCategory.HeaderText = "Category";
             this.colCategory.Name = "colCategory";
             this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCategory.Width = 84;
+            this.colCategory.Width = 83;
             // 
             // colExpenseAmount
             // 
@@ -241,7 +241,7 @@
             this.colExpenseAmount.DataPropertyName = "ExpenseAmount";
             this.colExpenseAmount.HeaderText = "Amount";
             this.colExpenseAmount.Name = "colExpenseAmount";
-            this.colExpenseAmount.Width = 94;
+            this.colExpenseAmount.Width = 93;
             // 
             // colExpenseDate
             // 
@@ -349,12 +349,13 @@
             this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cmbCateogory.ForeColor = System.Drawing.Color.Black;
             this.cmbCateogory.FormattingEnabled = true;
-            this.cmbCateogory.Location = new System.Drawing.Point(225, 16);
+            this.cmbCateogory.Location = new System.Drawing.Point(225, 15);
             this.cmbCateogory.Margin = new System.Windows.Forms.Padding(0);
             this.cmbCateogory.Name = "cmbCateogory";
             this.cmbCateogory.Size = new System.Drawing.Size(241, 25);
             this.cmbCateogory.TabIndex = 1;
             this.cmbCateogory.Text = " --Select Category--";
+            this.cmbCateogory.SelectedIndexChanged += new System.EventHandler(this.cmbCateogory_SelectedIndexChanged);
             this.cmbCateogory.Click += new System.EventHandler(this.cmbCateogory_Click);
             // 
             // lblSelectCategory
@@ -373,10 +374,13 @@
             // 
             // tlpExpenseDefination
             // 
+            this.tlpExpenseDefination.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpExpenseDefination.ColumnCount = 3;
             this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
             this.tlpExpenseDefination.Controls.Add(this.btnSubmit, 2, 0);
             this.tlpExpenseDefination.Controls.Add(this.lblExpenseDefination, 0, 0);
             this.tlpExpenseDefination.Controls.Add(this.txtExpenseDefination, 1, 0);
@@ -385,7 +389,7 @@
             this.tlpExpenseDefination.Name = "tlpExpenseDefination";
             this.tlpExpenseDefination.RowCount = 1;
             this.tlpExpenseDefination.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExpenseDefination.Size = new System.Drawing.Size(774, 53);
+            this.tlpExpenseDefination.Size = new System.Drawing.Size(774, 82);
             this.tlpExpenseDefination.TabIndex = 0;
             this.tlpExpenseDefination.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -394,7 +398,7 @@
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(486, 9);
+            this.btnSubmit.Location = new System.Drawing.Point(480, 23);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(101, 35);
@@ -407,7 +411,7 @@
             this.lblExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblExpenseDefination.AutoSize = true;
             this.lblExpenseDefination.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 16);
+            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 30);
             this.lblExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.lblExpenseDefination.Name = "lblExpenseDefination";
             this.lblExpenseDefination.Size = new System.Drawing.Size(154, 21);
@@ -421,11 +425,11 @@
             this.txtExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtExpenseDefination.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtExpenseDefination.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtExpenseDefination.Location = new System.Drawing.Point(225, 3);
+            this.txtExpenseDefination.Location = new System.Drawing.Point(225, 18);
             this.txtExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.txtExpenseDefination.Multiline = true;
             this.txtExpenseDefination.Name = "txtExpenseDefination";
-            this.txtExpenseDefination.Size = new System.Drawing.Size(244, 47);
+            this.txtExpenseDefination.Size = new System.Drawing.Size(244, 46);
             this.txtExpenseDefination.TabIndex = 1;
             this.txtExpenseDefination.Text = " e.g. maintenance for treadmills";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);
@@ -529,7 +533,7 @@
             this.lblAddNewExpenseCategory.Name = "lblAddNewExpenseCategory";
             this.lblAddNewExpenseCategory.Size = new System.Drawing.Size(141, 31);
             this.lblAddNewExpenseCategory.TabIndex = 0;
-            this.lblAddNewExpenseCategory.Text = "    Add Category";
+            this.lblAddNewExpenseCategory.Text = "     Add Category";
             this.lblAddNewExpenseCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAddNewExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click);
             this.lblAddNewExpenseCategory.MouseEnter += new System.EventHandler(this.pnlAddExpenseCategory_MouseEnter);

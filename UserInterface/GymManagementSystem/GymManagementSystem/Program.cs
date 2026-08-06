@@ -15,9 +15,10 @@ using GymManagementSystem.FORMS.Attendance;
 using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
+using GymManagementSystem.FORMS.Shift;
+using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.FormsSuperAdmin.Salary;
-
-
+using GymManagementSystem.Authentication;
 namespace GymManagementSystem
 {
     static class Program
@@ -28,11 +29,20 @@ namespace GymManagementSystem
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FrmDisplayShift());
+            //Application.Run(new FrmSADisplayAllEmployee());
+            //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmMainLayout());
             Application.Run(new FrmAssignTrainer());
+            //Application.Run(new FrmSAAddNewEmployee());
+            //Application.Run(new FrmSAProfitLoss());
+            //Application.Run(new FrmMainLayout());
+            //Application.Run(new FrmMemberRegistration());
+
         }
     }
 }

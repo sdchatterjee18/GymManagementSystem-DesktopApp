@@ -48,6 +48,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\FrmAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmAdminLogin.Designer.cs">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminLogin.Designer.cs">
+      <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmSuperAdminRegistration.Designer.cs">
+      <DependentUpon>FrmSuperAdminRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\FrmUserRoleSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmUserRoleSelection.Designer.cs">
+      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LookupUI.cs" />
+    <Compile Include="Common\ValidationUI.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,18 +164,6 @@
     <Compile Include="FORMS\Attendance\FrmViewAttendance.Designer.cs">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Authentication\FrmLoginPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Authentication\FrmLoginPage.Designer.cs">
-      <DependentUpon>FrmLoginPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Authentication\FrmUserRoleSelection.Designer.cs">
-      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMS\Dashboard\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +182,7 @@
     <Compile Include="FORMS\DietPlan\FrmShowDietPlans.Designer.cs">
       <DependentUpon>FrmShowDietPlans.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\DietPlan\UI\DietPlanUI.cs" />
     <Compile Include="FORMS\Expenses\FrmAddExpenseCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +201,7 @@
     <Compile Include="FORMS\FitnessTest\FrmFitnessTest.Designer.cs">
       <DependentUpon>FrmFitnessTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Gender\GenderUI.cs" />
     <Compile Include="FORMS\Locker\FrmAddLocker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +232,7 @@
     <Compile Include="FORMS\MembershipPlan\FrmDisplayMembershipPlan.Designer.cs">
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\MembershipPlan\UI\MembershipPlanUI.cs" />
     <Compile Include="FORMS\Member\FrmAssignTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +287,8 @@
     <Compile Include="FORMS\Member\FrmMemberTrainerAssignment.Designer.cs">
       <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Member\UI\MemberAllDetailsUI.cs" />
+    <Compile Include="FORMS\Member\UI\MemberUI.cs" />
     <Compile Include="FORMS\Payments\FrmDisplayPayments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +319,7 @@
     <Compile Include="FORMS\Shift\FrmDisplayShift.Designer.cs">
       <DependentUpon>FrmDisplayShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Shift\UI\ShiftUI.cs" />
     <Compile Include="FORMS\Trainer\FrmTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +364,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Authentication\FrmAdminLogin.resx">
+      <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmSuperAdminLogin.resx">
+      <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmSuperAdminRegistration.resx">
+      <DependentUpon>FrmSuperAdminRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmUserRoleSelection.resx">
+      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,12 +420,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Attendance\FrmViewAttendance.resx">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Authentication\FrmLoginPage.resx">
-      <DependentUpon>FrmLoginPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Authentication\FrmUserRoleSelection.resx">
-      <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Dashboard\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
@@ -751,6 +777,13 @@
   <ItemGroup>
     <None Include="Resources\show.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GymManagementSystemBLLayer\GymManagementSystemBLLayer.csproj">
+      <Project>{F1835058-5C0D-4B49-A613-4C8D6287D054}</Project>
+      <Name>GymManagementSystemBLLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

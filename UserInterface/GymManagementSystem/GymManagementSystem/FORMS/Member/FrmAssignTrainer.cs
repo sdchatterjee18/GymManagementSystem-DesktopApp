@@ -18,48 +18,6 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmAssignTrainer_Load(object sender, EventArgs e)
         {
-            pnlDefaultTrainerSectionShow.Visible = true;
-            pnlTrainerInformationSectionRetrieve.Visible = false;
-
-            cmbSelectTrainer.SelectedIndex = -1;  
-            
-        }
-
-       
-        private void tlpCancleButtonCreateInAssignPersonalTrainer_MouseEnter(object sender, EventArgs e)
-        {
-            this.tlpAssignButton.BackColor = Color.DarkGreen;
-        }
-
-        private void tlpCancleButtonCreateInAssignPersonalTrainer_MouseLeave(object sender, EventArgs e)
-        {
-            this.tlpAssignButton.BackColor = Color.ForestGreen;
-        }
-
-        private void tlpCancleImageAndLevel_MouseEnter(object sender, EventArgs e)
-        {
-            this.tlpCancleButton.BackColor = Color.OrangeRed;
-        }
-
-        private void tlpCancleImageAndLevel_MouseLeave(object sender, EventArgs e)
-        {
-            this.tlpCancleButton.BackColor = Color.Red;
-        }
-
-        private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-             if (cmbSelectTrainer.SelectedIndex != -1)
-             {
-                 pnlDefaultTrainerSectionShow.Visible = false;
-                 pnlTrainerInformationSectionRetrieve.Visible = true;
-
-                 pnlTrainerInformationSectionRetrieve.BringToFront();
-             }
-             else
-             {
-                 pnlDefaultTrainerSectionShow.Visible = true;
-                 pnlTrainerInformationSectionRetrieve.Visible = false;
-             }
 
         }
     }

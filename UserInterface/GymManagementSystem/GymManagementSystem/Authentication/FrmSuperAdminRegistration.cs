@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GymManagementSystem.FORMS.Authentication
+namespace GymManagementSystem.Authentication
 {
-    public partial class FrmLoginPage : Form
+    public partial class FrmSuperAdminRegistration : Form
     {
-        public FrmLoginPage()
+        public FrmSuperAdminRegistration()
         {
             InitializeComponent();
+        }
+
+        private void FrmSuperAdminRegistration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

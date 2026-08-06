@@ -121,6 +121,7 @@
             this.pnlSpecer = new System.Windows.Forms.Panel();
             this.pnlMainPanel = new System.Windows.Forms.Panel();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
@@ -188,6 +189,7 @@
             this.pnlDropDownSettings.SuspendLayout();
             this.pnlAdminPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPasswordChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberAttendance
@@ -237,12 +239,13 @@
             // 
             this.tlpTopbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(238)))), ((int)(((byte)(248)))));
             this.tlpTopbar.ColumnCount = 5;
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tlpTopbar.Controls.Add(this.pnlExitRestoreMinimize, 4, 0);
+            this.tlpTopbar.Controls.Add(this.pictureBox1, 0, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTopbar.Location = new System.Drawing.Point(0, 0);
             this.tlpTopbar.Margin = new System.Windows.Forms.Padding(0);
@@ -258,11 +261,11 @@
             this.pnlExitRestoreMinimize.Controls.Add(this.pnlExit);
             this.pnlExitRestoreMinimize.Controls.Add(this.pnlRestore);
             this.pnlExitRestoreMinimize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlExitRestoreMinimize.Location = new System.Drawing.Point(867, 0);
+            this.pnlExitRestoreMinimize.Location = new System.Drawing.Point(866, 0);
             this.pnlExitRestoreMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.pnlExitRestoreMinimize.Name = "pnlExitRestoreMinimize";
             this.pnlExitRestoreMinimize.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.pnlExitRestoreMinimize.Size = new System.Drawing.Size(160, 45);
+            this.pnlExitRestoreMinimize.Size = new System.Drawing.Size(161, 45);
             this.pnlExitRestoreMinimize.TabIndex = 6;
             // 
             // pnlMinimize
@@ -1458,6 +1461,17 @@
             // 
             this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1560,6 +1574,7 @@
             this.pnlAdminPasswordChange.ResumeLayout(false);
             this.pnlAdminPasswordChange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPasswordChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1655,6 +1670,7 @@
         private System.Windows.Forms.PictureBox picExit;
         private System.Windows.Forms.Panel pnlRestore;
         private System.Windows.Forms.PictureBox picRestore;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

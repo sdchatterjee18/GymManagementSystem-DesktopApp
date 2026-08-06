@@ -30,6 +30,7 @@ namespace GymManagementSystem.FORMS.Expenses
             txtExpenseDefination.DeselectAll();
 
             RetrieveAllExpenses();
+            dgvExpenses.ClearSelection();
         }
         private void RetrieveAllExpenses()
         {
@@ -148,6 +149,11 @@ namespace GymManagementSystem.FORMS.Expenses
         private void tlpAddExpenses_Click(object sender, EventArgs e)
         {
             dgvExpenses.ClearSelection();
+        }
+
+        private void cmbCateogory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         
     }

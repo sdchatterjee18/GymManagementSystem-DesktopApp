@@ -146,6 +146,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             chartMonthlyRevenue.BackColor = Color.White;
         }
 
+        private void pnlTotalIncome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         
 
        

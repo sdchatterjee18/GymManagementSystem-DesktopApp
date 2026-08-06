@@ -473,7 +473,7 @@
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
+            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpPersonalInformationFirstBox.Controls.Add(this.picFirstName, 1, 0);
             this.tlpPersonalInformationFirstBox.Controls.Add(this.lblFirstName, 2, 0);
@@ -503,7 +503,7 @@
             // 
             this.picFirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picFirstName.Image = ((System.Drawing.Image)(resources.GetObject("picFirstName.Image")));
-            this.picFirstName.Location = new System.Drawing.Point(-8, 3);
+            this.picFirstName.Location = new System.Drawing.Point(0, 3);
             this.picFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.picFirstName.Name = "picFirstName";
             this.picFirstName.Size = new System.Drawing.Size(30, 32);
@@ -516,7 +516,7 @@
             this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(22, 10);
+            this.lblFirstName.Location = new System.Drawing.Point(30, 10);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(77, 19);
@@ -529,10 +529,10 @@
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.ForeColor = System.Drawing.Color.Gray;
-            this.txtFirstName.Location = new System.Drawing.Point(117, 6);
+            this.txtFirstName.Location = new System.Drawing.Point(125, 6);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(295, 26);
+            this.txtFirstName.Size = new System.Drawing.Size(270, 26);
             this.txtFirstName.TabIndex = 4;
             this.txtFirstName.Text = "  ---Enter First Name---";
             // 
@@ -540,7 +540,7 @@
             // 
             this.picMiddleName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMiddleName.Image = ((System.Drawing.Image)(resources.GetObject("picMiddleName.Image")));
-            this.picMiddleName.Location = new System.Drawing.Point(-8, 42);
+            this.picMiddleName.Location = new System.Drawing.Point(0, 42);
             this.picMiddleName.Margin = new System.Windows.Forms.Padding(0);
             this.picMiddleName.Name = "picMiddleName";
             this.picMiddleName.Size = new System.Drawing.Size(30, 32);
@@ -553,7 +553,7 @@
             this.lblMiddleName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(22, 49);
+            this.lblMiddleName.Location = new System.Drawing.Point(30, 49);
             this.lblMiddleName.Margin = new System.Windows.Forms.Padding(0);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(94, 19);
@@ -566,10 +566,10 @@
             this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.ForeColor = System.Drawing.Color.Gray;
-            this.txtMiddleName.Location = new System.Drawing.Point(117, 45);
+            this.txtMiddleName.Location = new System.Drawing.Point(125, 45);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(0);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(295, 26);
+            this.txtMiddleName.Size = new System.Drawing.Size(270, 26);
             this.txtMiddleName.TabIndex = 7;
             this.txtMiddleName.Text = "  ---Enter Middle Name---";
             // 
@@ -577,7 +577,7 @@
             // 
             this.picLastName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picLastName.Image = ((System.Drawing.Image)(resources.GetObject("picLastName.Image")));
-            this.picLastName.Location = new System.Drawing.Point(-8, 81);
+            this.picLastName.Location = new System.Drawing.Point(0, 81);
             this.picLastName.Margin = new System.Windows.Forms.Padding(0);
             this.picLastName.Name = "picLastName";
             this.picLastName.Size = new System.Drawing.Size(30, 32);
@@ -590,7 +590,7 @@
             this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(22, 88);
+            this.lblLastName.Location = new System.Drawing.Point(30, 88);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(0);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(75, 19);
@@ -603,10 +603,10 @@
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.ForeColor = System.Drawing.Color.Gray;
-            this.txtLastName.Location = new System.Drawing.Point(117, 84);
+            this.txtLastName.Location = new System.Drawing.Point(125, 84);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(0);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(295, 26);
+            this.txtLastName.Size = new System.Drawing.Size(270, 26);
             this.txtLastName.TabIndex = 10;
             this.txtLastName.Text = "  ---Enter last Name---";
             // 
@@ -614,7 +614,7 @@
             // 
             this.picGender.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picGender.Image = ((System.Drawing.Image)(resources.GetObject("picGender.Image")));
-            this.picGender.Location = new System.Drawing.Point(-8, 122);
+            this.picGender.Location = new System.Drawing.Point(0, 122);
             this.picGender.Margin = new System.Windows.Forms.Padding(0);
             this.picGender.Name = "picGender";
             this.picGender.Size = new System.Drawing.Size(30, 32);
@@ -627,7 +627,7 @@
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(22, 128);
+            this.lblGender.Location = new System.Drawing.Point(30, 128);
             this.lblGender.Margin = new System.Windows.Forms.Padding(0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(54, 19);
@@ -644,12 +644,12 @@
             this.tlpRadioButton.Controls.Add(this.rdoFemale, 1, 0);
             this.tlpRadioButton.Controls.Add(this.rdoMale, 0, 0);
             this.tlpRadioButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRadioButton.Location = new System.Drawing.Point(117, 117);
+            this.tlpRadioButton.Location = new System.Drawing.Point(125, 117);
             this.tlpRadioButton.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRadioButton.Name = "tlpRadioButton";
             this.tlpRadioButton.RowCount = 1;
             this.tlpRadioButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRadioButton.Size = new System.Drawing.Size(295, 42);
+            this.tlpRadioButton.Size = new System.Drawing.Size(270, 42);
             this.tlpRadioButton.TabIndex = 12;
             // 
             // rdoOthers
@@ -657,10 +657,10 @@
             this.rdoOthers.AutoSize = true;
             this.rdoOthers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rdoOthers.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoOthers.Location = new System.Drawing.Point(194, 0);
+            this.rdoOthers.Location = new System.Drawing.Point(178, 0);
             this.rdoOthers.Margin = new System.Windows.Forms.Padding(0);
             this.rdoOthers.Name = "rdoOthers";
-            this.rdoOthers.Size = new System.Drawing.Size(101, 42);
+            this.rdoOthers.Size = new System.Drawing.Size(92, 42);
             this.rdoOthers.TabIndex = 2;
             this.rdoOthers.TabStop = true;
             this.rdoOthers.Text = "Others";
@@ -671,10 +671,10 @@
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rdoFemale.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFemale.Location = new System.Drawing.Point(97, 0);
+            this.rdoFemale.Location = new System.Drawing.Point(89, 0);
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(97, 42);
+            this.rdoFemale.Size = new System.Drawing.Size(89, 42);
             this.rdoFemale.TabIndex = 1;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Female";
@@ -688,7 +688,7 @@
             this.rdoMale.Location = new System.Drawing.Point(0, 0);
             this.rdoMale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(97, 42);
+            this.rdoMale.Size = new System.Drawing.Size(89, 42);
             this.rdoMale.TabIndex = 0;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
@@ -700,7 +700,7 @@
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 287F));
+            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpSecondboxPersonalInformation.Controls.Add(this.picPhoneNumber, 1, 1);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.picMail, 1, 2);
@@ -727,7 +727,7 @@
             // 
             this.picPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picPhoneNumber.Image = ((System.Drawing.Image)(resources.GetObject("picPhoneNumber.Image")));
-            this.picPhoneNumber.Location = new System.Drawing.Point(-8, 40);
+            this.picPhoneNumber.Location = new System.Drawing.Point(-3, 40);
             this.picPhoneNumber.Margin = new System.Windows.Forms.Padding(0);
             this.picPhoneNumber.Name = "picPhoneNumber";
             this.picPhoneNumber.Size = new System.Drawing.Size(30, 37);
@@ -739,7 +739,7 @@
             // 
             this.picMail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMail.Image = ((System.Drawing.Image)(resources.GetObject("picMail.Image")));
-            this.picMail.Location = new System.Drawing.Point(-8, 81);
+            this.picMail.Location = new System.Drawing.Point(-3, 81);
             this.picMail.Margin = new System.Windows.Forms.Padding(0);
             this.picMail.Name = "picMail";
             this.picMail.Size = new System.Drawing.Size(30, 32);
@@ -751,7 +751,7 @@
             // 
             this.picDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picDateOfBirth.Image = ((System.Drawing.Image)(resources.GetObject("picDateOfBirth.Image")));
-            this.picDateOfBirth.Location = new System.Drawing.Point(0, 7);
+            this.picDateOfBirth.Location = new System.Drawing.Point(5, 7);
             this.picDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
             this.picDateOfBirth.Name = "picDateOfBirth";
             this.picDateOfBirth.Size = new System.Drawing.Size(22, 24);
@@ -764,7 +764,7 @@
             this.lblDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(22, 10);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(27, 10);
             this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(92, 19);
@@ -777,10 +777,10 @@
             this.txtDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDateOfBirth.ForeColor = System.Drawing.Color.Gray;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(125, 6);
+            this.txtDateOfBirth.Location = new System.Drawing.Point(130, 6);
             this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(287, 26);
+            this.txtDateOfBirth.Size = new System.Drawing.Size(270, 26);
             this.txtDateOfBirth.TabIndex = 7;
             this.txtDateOfBirth.Text = "  ---Enter DOB---";
             // 
@@ -789,7 +789,7 @@
             this.lblPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(22, 49);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(27, 49);
             this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(103, 19);
@@ -802,10 +802,10 @@
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Gray;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(125, 45);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(130, 45);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(0);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(287, 26);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(270, 26);
             this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.Text = "  ---Enter 10 Digit Phone Number---";
             // 
@@ -814,7 +814,7 @@
             this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailAddress.Location = new System.Drawing.Point(22, 88);
+            this.lblEmailAddress.Location = new System.Drawing.Point(27, 88);
             this.lblEmailAddress.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(96, 19);
@@ -827,10 +827,10 @@
             this.txtEmailId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailId.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmailId.Location = new System.Drawing.Point(125, 84);
+            this.txtEmailId.Location = new System.Drawing.Point(130, 84);
             this.txtEmailId.Margin = new System.Windows.Forms.Padding(0);
             this.txtEmailId.Name = "txtEmailId";
-            this.txtEmailId.Size = new System.Drawing.Size(287, 26);
+            this.txtEmailId.Size = new System.Drawing.Size(270, 26);
             this.txtEmailId.TabIndex = 11;
             this.txtEmailId.Text = "  ---Enter Email Address---";
             // 
@@ -2069,7 +2069,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.tlpEmployeeRegistrationForm);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(879, 591);
+            this.MinimumSize = new System.Drawing.Size(663, 487);
             this.Name = "FrmSAAddNewEmployee";
             this.Text = "FrmSAAddNewEmployee";
             this.Load += new System.EventHandler(this.FrmSAAddNewEmployee_Load);

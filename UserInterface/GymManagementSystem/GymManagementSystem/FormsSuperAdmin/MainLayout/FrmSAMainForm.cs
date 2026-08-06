@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.Salary;
+using GymManagementSystem.FormsSuperAdmin.Financials;
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -188,7 +190,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlMenu)
             {
-                pnlMenu.BackColor = Color.FromArgb(34, 52, 72); // Default Sidebar Color
+                pnlMenu.BackColor = Color.Transparent;
             }
         }
 
@@ -235,7 +237,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlEmployeeManagement)
             {
-                pnlEmployeeManagement.BackColor = Color.FromArgb(34, 52, 72);
+                pnlEmployeeManagement.BackColor = Color.Transparent;
                 pnlEmployeeManagement.ForeColor = Color.White;
                 picEmployeeManagement.Image = Properties.Resources.Employee;
             }
@@ -266,7 +268,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlEmployeeSalaryManagement)
             {
-                pnlEmployeeSalaryManagement.BackColor = Color.FromArgb(34, 52, 72);
+                pnlEmployeeSalaryManagement.BackColor = Color.Transparent;
                 pnlEmployeeSalaryManagement.ForeColor = Color.White;
                 picEmployeeSalaryManagement.Image = Properties.Resources.Salary;
             }
@@ -297,7 +299,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlFinancialManagement)
             {
-                pnlFinancialManagement.BackColor = Color.FromArgb(34, 52, 72);
+                pnlFinancialManagement.BackColor = Color.Transparent;
                 pnlFinancialManagement.ForeColor = Color.White;
                 picFinancialManagement.Image = Properties.Resources.Financials;
             }
@@ -311,10 +313,11 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             picFinancialManagement.Image = Properties.Resources.Financials;
 
             ExpandIfCollapsed();
+            OpenChildForm(new FrmSAProfitLoss());
         }
         private void pnlSettings_MouseEnter(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlSettings)
+            if (selectedPanel != pnlSettings && selectedPanel != pnlSuperAdminPasswordChange)
             {
                 pnlSettings.BackColor = Color.FromArgb(190, 216, 230);
                 pnlSettings.ForeColor = Color.Black;
@@ -326,11 +329,12 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlSettings_MouseLeave(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlSettings)
+            if (selectedPanel != pnlSettings && selectedPanel != pnlSuperAdminPasswordChange)
             {
                 pnlSettings.BackColor = Color.Transparent;
                 pnlSettings.ForeColor = Color.White;
                 picSettings.Image = Properties.Resources.setting;
+                picSettingsArrowe.Image = Properties.Resources.downArrowW;
             }
 
         }
@@ -370,6 +374,10 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
+            this.Hide();
+            frmUserRoleSelection.ShowDialog();
+            this.Close();
         }
 
         private void pnlSuperAdminPasswordChange_MouseEnter(object sender, EventArgs e)
@@ -387,7 +395,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlSuperAdminPasswordChange)
             {
-                pnlSuperAdminPasswordChange.BackColor = Color.FromArgb(34, 52, 72);
+                pnlSuperAdminPasswordChange.BackColor = Color.Transparent;
                 pnlSuperAdminPasswordChange.ForeColor = Color.White;
                 picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
             }
@@ -396,6 +404,10 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlSuperAdminPasswordChange_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
+            SelectPanel(pnlSuperAdminPasswordChange);
+            selectedPanel = pnlSuperAdminPasswordChange;
+            pnlSuperAdminPasswordChange.ForeColor = Color.White;
+            picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
         }
 
         private void pnlExit_Click(object sender, EventArgs e)
@@ -441,6 +453,11 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlMinimize_MouseLeave(object sender, EventArgs e)
         {
             pnlMinimize.BackColor = Color.FromArgb(240, 244, 248);
+        }
+
+        private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
+        {
+
         }
 
         
