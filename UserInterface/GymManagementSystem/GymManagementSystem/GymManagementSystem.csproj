@@ -73,6 +73,7 @@
       <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\LookupUI.cs" />
+    <Compile Include="Common\ValidationUI.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +182,7 @@
     <Compile Include="FORMS\DietPlan\FrmShowDietPlans.Designer.cs">
       <DependentUpon>FrmShowDietPlans.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\DietPlan\UI\DietPlanUI.cs" />
     <Compile Include="FORMS\Expenses\FrmAddExpenseCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -780,6 +782,7 @@
       <Name>GymManagementSystemBLLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

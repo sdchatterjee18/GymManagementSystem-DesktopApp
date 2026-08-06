@@ -103,8 +103,8 @@
             this.lblMemberShift = new System.Windows.Forms.Label();
             this.lblMemberNeedLocker = new System.Windows.Forms.Label();
             this.tlpMemberSelectLockerOrNot = new System.Windows.Forms.TableLayoutPanel();
-            this.rdoMemberNeedLocker = new System.Windows.Forms.RadioButton();
-            this.rdoMemberNotNeedLocker = new System.Windows.Forms.RadioButton();
+            this.rbtnNeedLocker = new System.Windows.Forms.RadioButton();
+            this.rbtnDontNeedLocker = new System.Windows.Forms.RadioButton();
             this.tlpSelectMemberMembershipPlan = new System.Windows.Forms.TableLayoutPanel();
             this.tlpselectMemberShiftTime = new System.Windows.Forms.TableLayoutPanel();
             this.cmbSelectMemberShiftTime = new System.Windows.Forms.ComboBox();
@@ -224,7 +224,7 @@
             this.cmbSelectMemberMemberMembershipPlan.Name = "cmbSelectMemberMemberMembershipPlan";
             this.cmbSelectMemberMemberMembershipPlan.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberMemberMembershipPlan.TabIndex = 9;
-            this.cmbSelectMemberMemberMembershipPlan.Text = "    ---Select Membershp Plan---";
+            this.cmbSelectMemberMemberMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberMemberMembershipPlan_SelectedIndexChanged);
             this.cmbSelectMemberMemberMembershipPlan.Click += new System.EventHandler(this.cmbSelectMemberMemberMembershipPlan_Click);
             // 
             // tlpMemberRegistrationFeesWholeFrom
@@ -891,14 +891,14 @@
             // cmbSelectMemberGender
             // 
             this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Black;
             this.cmbSelectMemberGender.FormattingEnabled = true;
             this.cmbSelectMemberGender.Location = new System.Drawing.Point(2, 3);
             this.cmbSelectMemberGender.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
             this.cmbSelectMemberGender.Size = new System.Drawing.Size(180, 27);
             this.cmbSelectMemberGender.TabIndex = 9;
-            this.cmbSelectMemberGender.Text = "     ----- Select Gender---";
+            this.cmbSelectMemberGender.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberGender_SelectedIndexChanged);
             this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
             // 
             // tlpMemberProfilePhotoUploadPortion
@@ -1019,6 +1019,7 @@
             this.pnlMemberBrowsePhoto.Name = "pnlMemberBrowsePhoto";
             this.pnlMemberBrowsePhoto.Size = new System.Drawing.Size(130, 26);
             this.pnlMemberBrowsePhoto.TabIndex = 0;
+            this.pnlMemberBrowsePhoto.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             // 
             // tlpMemberBrowsePhoto
             // 
@@ -1037,6 +1038,7 @@
             this.tlpMemberBrowsePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMemberBrowsePhoto.Size = new System.Drawing.Size(128, 24);
             this.tlpMemberBrowsePhoto.TabIndex = 0;
+            this.tlpMemberBrowsePhoto.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             this.tlpMemberBrowsePhoto.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
             this.tlpMemberBrowsePhoto.MouseLeave += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
@@ -1052,6 +1054,7 @@
             this.lblMemberBrowsePhoto.Size = new System.Drawing.Size(77, 13);
             this.lblMemberBrowsePhoto.TabIndex = 11;
             this.lblMemberBrowsePhoto.Text = "Browse Photo";
+            this.lblMemberBrowsePhoto.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             this.lblMemberBrowsePhoto.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
             this.lblMemberBrowsePhoto.MouseLeave += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
@@ -1066,6 +1069,7 @@
             this.picMemberBrowseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberBrowseIcon.TabIndex = 0;
             this.picMemberBrowseIcon.TabStop = false;
+            this.picMemberBrowseIcon.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             this.picMemberBrowseIcon.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
             this.picMemberBrowseIcon.MouseHover += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseLeave);
             // 
@@ -1275,8 +1279,8 @@
             this.tlpMemberSelectLockerOrNot.ColumnCount = 2;
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tlpMemberSelectLockerOrNot.Controls.Add(this.rdoMemberNeedLocker, 0, 0);
-            this.tlpMemberSelectLockerOrNot.Controls.Add(this.rdoMemberNotNeedLocker, 1, 0);
+            this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnNeedLocker, 0, 0);
+            this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnDontNeedLocker, 1, 0);
             this.tlpMemberSelectLockerOrNot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberSelectLockerOrNot.Location = new System.Drawing.Point(172, 131);
             this.tlpMemberSelectLockerOrNot.Margin = new System.Windows.Forms.Padding(2);
@@ -1287,35 +1291,35 @@
             this.tlpMemberSelectLockerOrNot.Size = new System.Drawing.Size(277, 39);
             this.tlpMemberSelectLockerOrNot.TabIndex = 12;
             // 
-            // rdoMemberNeedLocker
+            // rbtnNeedLocker
             // 
-            this.rdoMemberNeedLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoMemberNeedLocker.AutoSize = true;
-            this.rdoMemberNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
-            this.rdoMemberNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoMemberNeedLocker.Location = new System.Drawing.Point(2, 11);
-            this.rdoMemberNeedLocker.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoMemberNeedLocker.Name = "rdoMemberNeedLocker";
-            this.rdoMemberNeedLocker.Size = new System.Drawing.Size(123, 17);
-            this.rdoMemberNeedLocker.TabIndex = 0;
-            this.rdoMemberNeedLocker.TabStop = true;
-            this.rdoMemberNeedLocker.Text = "Yes, I need a Locker";
-            this.rdoMemberNeedLocker.UseVisualStyleBackColor = false;
+            this.rbtnNeedLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnNeedLocker.AutoSize = true;
+            this.rbtnNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
+            this.rbtnNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnNeedLocker.Location = new System.Drawing.Point(2, 11);
+            this.rbtnNeedLocker.Margin = new System.Windows.Forms.Padding(2);
+            this.rbtnNeedLocker.Name = "rbtnNeedLocker";
+            this.rbtnNeedLocker.Size = new System.Drawing.Size(123, 17);
+            this.rbtnNeedLocker.TabIndex = 0;
+            this.rbtnNeedLocker.TabStop = true;
+            this.rbtnNeedLocker.Text = "Yes, I need a Locker";
+            this.rbtnNeedLocker.UseVisualStyleBackColor = false;
             // 
-            // rdoMemberNotNeedLocker
+            // rbtnDontNeedLocker
             // 
-            this.rdoMemberNotNeedLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdoMemberNotNeedLocker.AutoSize = true;
-            this.rdoMemberNotNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
-            this.rdoMemberNotNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoMemberNotNeedLocker.Location = new System.Drawing.Point(136, 11);
-            this.rdoMemberNotNeedLocker.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoMemberNotNeedLocker.Name = "rdoMemberNotNeedLocker";
-            this.rdoMemberNotNeedLocker.Size = new System.Drawing.Size(139, 17);
-            this.rdoMemberNotNeedLocker.TabIndex = 1;
-            this.rdoMemberNotNeedLocker.TabStop = true;
-            this.rdoMemberNotNeedLocker.Text = "No, I don\'t need a locker";
-            this.rdoMemberNotNeedLocker.UseVisualStyleBackColor = false;
+            this.rbtnDontNeedLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rbtnDontNeedLocker.AutoSize = true;
+            this.rbtnDontNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
+            this.rbtnDontNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(136, 11);
+            this.rbtnDontNeedLocker.Margin = new System.Windows.Forms.Padding(2);
+            this.rbtnDontNeedLocker.Name = "rbtnDontNeedLocker";
+            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(139, 17);
+            this.rbtnDontNeedLocker.TabIndex = 1;
+            this.rbtnDontNeedLocker.TabStop = true;
+            this.rbtnDontNeedLocker.Text = "No, I don\'t need a locker";
+            this.rbtnDontNeedLocker.UseVisualStyleBackColor = false;
             // 
             // tlpSelectMemberMembershipPlan
             // 
@@ -1361,7 +1365,7 @@
             this.cmbSelectMemberShiftTime.Name = "cmbSelectMemberShiftTime";
             this.cmbSelectMemberShiftTime.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberShiftTime.TabIndex = 9;
-            this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.pnlResetButton_MouseEnter);
+            this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberShiftTime_SelectedIndexChanged);
             this.cmbSelectMemberShiftTime.Click += new System.EventHandler(this.cmbSelectMemberShiftTime_Click);
             // 
             // tlpselectMemberDietPlan
@@ -1391,7 +1395,7 @@
             this.cmbSelectMemberDietPlan.Name = "cmbSelectMemberDietPlan";
             this.cmbSelectMemberDietPlan.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberDietPlan.TabIndex = 9;
-            this.cmbSelectMemberDietPlan.Text = "  --Select Diet Plan---";
+            this.cmbSelectMemberDietPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberDietPlan_SelectedIndexChanged);
             this.cmbSelectMemberDietPlan.Click += new System.EventHandler(this.cmbSelectMemberDietPlan_Click);
             // 
             // tlpMemberPaymentInfromationwholeSection
@@ -1583,14 +1587,15 @@
             // cmbSelectMemberPaymentMethod
             // 
             this.cmbSelectMemberPaymentMethod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberPaymentMethod.ForeColor = System.Drawing.Color.Gray;
+            this.cmbSelectMemberPaymentMethod.ForeColor = System.Drawing.Color.Black;
             this.cmbSelectMemberPaymentMethod.FormattingEnabled = true;
             this.cmbSelectMemberPaymentMethod.Location = new System.Drawing.Point(2, 9);
             this.cmbSelectMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSelectMemberPaymentMethod.Name = "cmbSelectMemberPaymentMethod";
             this.cmbSelectMemberPaymentMethod.Size = new System.Drawing.Size(261, 27);
             this.cmbSelectMemberPaymentMethod.TabIndex = 9;
-            this.cmbSelectMemberPaymentMethod.Text = "  ---Select Payment Method--";
+            this.cmbSelectMemberPaymentMethod.TabStop = false;
+            this.cmbSelectMemberPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentMethod_SelectedIndexChanged);
             this.cmbSelectMemberPaymentMethod.Click += new System.EventHandler(this.cmbSelectMemberPaymentMethod_Click);
             // 
             // tlpSelectMemberPaymentFeesType
@@ -1764,6 +1769,7 @@
             this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRegisterButton.Size = new System.Drawing.Size(128, 41);
             this.tlpRegisterButton.TabIndex = 2;
+            this.tlpRegisterButton.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.tlpRegisterButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
             this.tlpRegisterButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
@@ -1778,6 +1784,7 @@
             this.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRegister.TabIndex = 0;
             this.picRegister.TabStop = false;
+            this.picRegister.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.picRegister.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
             this.picRegister.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
@@ -1793,6 +1800,7 @@
             this.lblRegister.Size = new System.Drawing.Size(71, 19);
             this.lblRegister.TabIndex = 1;
             this.lblRegister.Text = "REGISTER";
+            this.lblRegister.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.lblRegister.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
             this.lblRegister.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
@@ -2054,8 +2062,8 @@
         private System.Windows.Forms.Label lblMemberShift;
         private System.Windows.Forms.Label lblMemberNeedLocker;
         private System.Windows.Forms.TableLayoutPanel tlpMemberSelectLockerOrNot;
-        private System.Windows.Forms.RadioButton rdoMemberNeedLocker;
-        private System.Windows.Forms.RadioButton rdoMemberNotNeedLocker;
+        private System.Windows.Forms.RadioButton rbtnNeedLocker;
+        private System.Windows.Forms.RadioButton rbtnDontNeedLocker;
         private System.Windows.Forms.TableLayoutPanel tlpSelectMemberMembershipPlan;
         private System.Windows.Forms.TableLayoutPanel tlpselectMemberShiftTime;
         private System.Windows.Forms.ComboBox cmbSelectMemberShiftTime;

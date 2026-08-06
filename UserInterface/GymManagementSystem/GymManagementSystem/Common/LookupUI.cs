@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using GymManagementSystem.FORMS.Shift.UI;
 using GymManagementSystem.FORMS.MembershipPlan.UI;
 using GymManagementSystemBLLayer.ModulesBLLayer.Shift;
 using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
+using GymManagementSystemBLLayer.ModulesBLLayer.DietPlan;
+using GymManagementSystem.FORMS.DietPlan.UI;
+
 using GymManagementSystemBLLayer.Common;
 namespace GymManagementSystem.Common
 {
@@ -37,5 +41,33 @@ namespace GymManagementSystem.Common
             }
             return MembershipPlansUI;
         }
+        public static List<DietPlanUI> GetDietPlans()
+        {
+            List<DietPlanBLL> dietPlansBLL = LookupBLL.GetDietPlans();
+            List<DietPlanUI> dietPlansUI = new List<DietPlanUI>();
+
+            foreach (DietPlanBLL item in dietPlansBLL)
+            {
+                DietPlanUI dietPlan = new DietPlanUI();
+
+                dietPlan.DietPlanId = item.DietPlanId;
+                dietPlan.CaloriesPerDay = item.CaloriesPerDay;
+                dietPlan.DietPlanDocument = item.DietPlanDocument;
+                dietPlan.ConditionStatus = item.ConditionStatus;
+
+                dietPlansUI.Add(dietPlan);
+            }
+
+            return dietPlansUI;
+        }
+        public static DataTable GetGenderDetails()
+        {
+            return LookupBLL.GetGenderDetails();
+        }
+        public static List<string> GetPaymentMethods()
+        {
+            return LookupBLL.GetPaymentMethods();
+        }
+        
     }
 }

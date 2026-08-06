@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using GymManagementSystemDALayer.ModulesDALayer.Shift;
 using GymManagementSystemDALayer.ModulesDALayer.MembershipPlan;
+using GymManagementSystemDALayer.ModulesDALayer.DietPlan;
 using GymManagementSystemDALayer.SqlHelper;
 
 namespace GymManagementSystemDALayer.Common
@@ -80,6 +81,77 @@ namespace GymManagementSystemDALayer.Common
             finally
             {
                 if(sqlConnection!=null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static List<DietPlanDAL> GetDietPlans()
+        {
+            List<DietPlanDAL> dietPlans = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                dietPlans = new List<DietPlanDAL>();
+
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("spRetrieveDietPlanDetails", sqlConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    sqlConnection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DietPlanDAL dietPlan = new DietPlanDAL();
+                        dietPlan.DietPlanId = Convert.ToInt32(reader["DietPlanId"]);
+                        dietPlan.CaloriesPerDay = Convert.ToInt32(reader["CaloriesPerDay"]);
+                        dietPlans.Add(dietPlan);
+                    }
+                    return dietPlans;
+                }
+            }
+            catch (Exception)
+            {
+                return dietPlans;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable GetGenderDetails()
+        {
+            DataTable dtGender = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                dtGender = new DataTable();
+
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("spRetrieveGenderDetails", sqlConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlConnection.Open();
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dtGender);
+
+                    return dtGender;
+                }
+            }
+            catch (Exception)
+            {
+                return dtGender;
+            }
+            finally
+            {
+                if (sqlConnection != null)
                 {
                     sqlConnection.Close();
                 }
