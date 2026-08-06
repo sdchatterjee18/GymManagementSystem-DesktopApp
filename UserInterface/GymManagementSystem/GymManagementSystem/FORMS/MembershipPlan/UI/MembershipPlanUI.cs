@@ -103,6 +103,11 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 return null;
             }
         }
-
+        public DataTable GetMembershipPlanDetailsForComboBox()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+            DataTable dataTable = membershipPlanBLL.GetMembershipPlanDetailsForComboBox();
+            return dataTable;
+        }
     }
 }

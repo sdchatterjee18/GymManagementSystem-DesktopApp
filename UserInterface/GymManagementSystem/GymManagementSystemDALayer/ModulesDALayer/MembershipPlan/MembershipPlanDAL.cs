@@ -98,7 +98,11 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
             DataTable dataTableMembershipPlanDal = LookupDAL.RetrieveSpecificDetailsById("spRetrieveMembershipPlanDetailsByMembershipPlanId", id, "@MembershipPlanId");
             return dataTableMembershipPlanDal;
         }
-       
+        public DataTable GetMembershipPlanDetailsForComboBox()
+        {
+           DataTable dataTable= LookupDAL.GetComboBoxDetails("spRetrieveMembershipPlans");
+           return dataTable;
+        }
     }
 }
 

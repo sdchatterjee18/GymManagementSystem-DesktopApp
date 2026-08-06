@@ -48,12 +48,12 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
         public int LockerId { get; set; }
         public string LockerNo { get; set; }
         public string LockerStatus { get; set; }
+        public int NeedLocker { get; set; }
 
         //Last Payment Details
         public int PaymentId { get; set; }
         public DateTime PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
         public decimal Amount { get; set; }
-        public string FeesType { get; set; }
     }
 }

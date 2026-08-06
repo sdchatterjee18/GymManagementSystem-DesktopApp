@@ -397,8 +397,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         }
         private void LoadMembershipPlanComboBox()
         {
-            List<MembershipPlanUI> membershipPlansUI = LookupUI.GetMembershipPlans();
-            cmbMembershipPlan.DataSource = membershipPlansUI;
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+            cmbMembershipPlan.DataSource = membershipPlanUI.GetMembershipPlanDetailsForComboBox();
             cmbMembershipPlan.DisplayMember = "MembershipPlanName";
             cmbMembershipPlan.ValueMember = "MembershipPlanId";
             cmbMembershipPlan.SelectedIndex = -1;
@@ -412,14 +412,9 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 LoadMembershipPlans();
                 return;
             }
-
-            MembershipPlanUI selectedPlan =
-                (MembershipPlanUI)cmbMembershipPlan.SelectedItem;
-
-            int membershipPlanId = selectedPlan.MembershipPlanId;
-
+            DataRowView row1 = (DataRowView)cmbMembershipPlan.SelectedItem;
+            int membershipPlanId = Convert.ToInt32(row1["MembershipPlanId"]);
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-
             DataTable dt =
                 membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(membershipPlanId);
 
