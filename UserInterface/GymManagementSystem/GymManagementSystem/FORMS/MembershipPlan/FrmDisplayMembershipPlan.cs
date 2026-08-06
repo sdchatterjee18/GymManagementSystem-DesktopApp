@@ -406,6 +406,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void cmbMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
             if (cmbMembershipPlan.SelectedIndex == -1)
             {
                 LoadMembershipPlans();

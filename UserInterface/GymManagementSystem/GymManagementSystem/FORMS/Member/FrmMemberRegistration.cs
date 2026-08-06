@@ -342,7 +342,7 @@ namespace GymManagementSystem.FORMS.Member
                 memberAllDetailsUI.ProfilePhoto =
                     File.ReadAllBytes(selectedImagePath);
             }
-            memberAllDetailsUI.NeedLocker =rbtnDontNeedLocker.Checked ? 1 : 0;
+            memberAllDetailsUI.NeedLocker =rbtnNeedLocker.Checked ? 1 : 0;
         }
 
         private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)

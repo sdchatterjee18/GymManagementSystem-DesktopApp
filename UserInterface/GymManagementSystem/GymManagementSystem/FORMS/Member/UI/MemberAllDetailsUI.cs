@@ -48,7 +48,7 @@ namespace GymManagementSystem.FORMS.Member.UI
         public int LockerId { get; set; }
         public string LockerNo { get; set; }
         public string LockerStatus { get; set; }
-
+        public int NeedLocker { get; set; }
         //Last Payment Details
         public int PaymentId { get; set; }
         public DateTime PaymentDate { get; set; }
