@@ -2,21 +2,21 @@
 --  MASTER STORED PROCEDURES  --
 --------------------------------
 
---Super Admin Management — Line 12
---Employee Management — Line 455
---Admin Management — Line 1158
---Trainer Management — Line 1255
---Shift Management — Line 1712
---Membership Plan Management — Line 1822
---Expense Management — Line 2091
---Registration Management — Line 2556
---Locker Management — Line 2661
---Membership Subscription Management — Line 2742
---Subscription Payment Management — Line 4533
---Attendance Management — Line 4875
---Employee Salary Management — Line 5236
---Workout Schedule Management — Line 5835
---Diet Plan Management — Line 6165
+--Super Admin Management â€” Line 12
+--Employee Management â€” Line 455
+--Admin Management â€” Line 1158
+--Trainer Management â€” Line 1255
+--Shift Management â€” Line 1712
+--Membership Plan Management â€” Line 1822
+--Expense Management â€” Line 2091
+--Registration Management â€” Line 2556
+--Locker Management â€” Line 2661
+--Membership Subscription Management â€” Line 2742
+--Subscription Payment Management â€” Line 4533
+--Attendance Management â€” Line 4875
+--Employee Salary Management â€” Line 5236
+--Workout Schedule Management â€” Line 5835
+--Diet Plan Management â€” Line 6165
 
 
 -------------------------------------------------------------------
@@ -2017,35 +2017,36 @@ BEGIN
 END;
 GO
 
----------------------------------------------
---SP: spRetrieveMembershipPlanDetailsByName--
----------------------------------------------
-CREATE PROC spRetrieveMembershipPlanDetailsByName 
+-----------------------------------------------
+--SP: spRetrieveMembershipPlanDetailsByMembershipPlanId--
+-----------------------------------------------
+CREATE PROC spRetrieveMembershipPlanDetailsByMembershipPlanId
 (
-    @MembershipPlanName VARCHAR(100)
+    @MembershipPlanId INT
 )
 AS
 BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-        SET @MembershipPlanName = LTRIM(RTRIM(@MembershipPlanName));
 
-        IF @MembershipPlanName = ''
+        IF @MembershipPlanId <= 0
         BEGIN
-            SELECT 'Membership Plan Name is required.' AS Message;
+            SELECT 'Valid Membership Plan Id is required.' AS Message;
             RETURN;
         END;
+
         IF NOT EXISTS
         (
             SELECT 1
             FROM tblMembershipPlans
-            WHERE MembershipPlanName = @MembershipPlanName
+            WHERE MembershipPlanId = @MembershipPlanId
         )
         BEGIN
             SELECT 'Membership Plan not found.' AS Message;
             RETURN;
         END;
+
         SELECT
             MP.MembershipPlanId,
             MP.MembershipPlanName,
@@ -2053,18 +2054,22 @@ BEGIN
             MP.DurationInDays,
             MP.Price,
             MP.Description,
-            MP.IsActive
+            CASE
+                WHEN MP.IsActive = 1 THEN 'Active'
+                ELSE 'Inactive'
+            END AS IsActive
         FROM tblMembershipPlans AS MP
         INNER JOIN tblMembershipPlanType AS MPT
             ON MP.PlanTypeId = MPT.PlanTypeId
-        WHERE MP.MembershipPlanName = @MembershipPlanName;
+        WHERE MP.MembershipPlanId = @MembershipPlanId;
+
     END TRY
     BEGIN CATCH
         SELECT ERROR_MESSAGE() AS Message;
     END CATCH
 END;
 GO
-
+	
 ----------------------------------------------------
 --SP: spDeactivateMembershipPlanByMembershipPlanId--
 ----------------------------------------------------
@@ -2093,6 +2098,7 @@ BEGIN
         UPDATE tblMembershipPlans
         SET IsActive = 0
         WHERE MembershipPlanId = @MembershipPlanId;
+        SELECT 'Deactivate Membership Plan Successfully.' AS Message;
 
     END TRY
     BEGIN CATCH
@@ -6186,6 +6192,7 @@ AS
 BEGIN
 	BEGIN TRY
 		SELECT 
+		tblDietPlans.DietPlanId,
 		tblDietPlans.CaloriesPerDay,
 		tblDietPlans.DietPlanDocument,
 		tblDietPlans.ConditionStatus
@@ -6478,4 +6485,27 @@ BEGIN CATCH
 
 END CATCH
 END;
+GO
+-----------------------------------------------------
+	--Retrieve Gender  Details
+-----------------------------------------------------
+CREATE PROCEDURE spRetrieveGenderDetails
+AS
+BEGIN
+    BEGIN TRY
+
+        SELECT
+            GenderId,
+            GenderName
+        FROM tblGender
+        ORDER BY GenderName;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
 GO

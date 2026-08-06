@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
 
 namespace GymManagementSystem.FORMS.MembershipPlan.UI
@@ -15,10 +16,10 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
         public int DurationInDays { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
 
 
-        public List<MembershipPlanUI> RetrieveMembershipPlansDetails()
+        public List<MembershipPlanUI> RetrieveMembershipPlansDetailsUI()
         {
             List<MembershipPlanUI> membershipPlansUi = null;
             try
@@ -26,7 +27,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 membershipPlansUi = new List<MembershipPlanUI>();
                 List<MembershipPlanBLL> membershipPlansBll = new List<MembershipPlanBLL>();
                 MembershipPlanBLL membershipPlanBll = new MembershipPlanBLL();
-                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetails();
+                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetailsBLL();
                 foreach (MembershipPlanBLL membershipPlan in membershipPlansBll)
                 {
                     MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
@@ -52,6 +53,56 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             }
            
         }
-    
+        public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdUI()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            membershipPlanBLL.MembershipPlanId = this.MembershipPlanId;
+            membershipPlanBLL.Price = this.Price;
+            membershipPlanBLL.Description = this.Description;
+
+            return membershipPlanBLL.UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL();
+        }
+        public string DeactivateMembershipPlanByMembershipPlanIdUI()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            membershipPlanBLL.MembershipPlanId = this.MembershipPlanId;
+
+            return membershipPlanBLL.DeactivateMembershipPlanByMembershipPlanIdBLL();
+        }
+        public MembershipPlanUI RetrieveMembershipPlanDetailsByMembershipPlanIdUI()
+        {
+            try
+            {
+                MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+                membershipPlanBLL.MembershipPlanId = this.MembershipPlanId;
+
+                DataTable dataTable = membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(this.MembershipPlanId);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+                    membershipPlanUI.MembershipPlanId = Convert.ToInt32(dataTable.Rows[0]["MembershipPlanId"]);
+                    membershipPlanUI.MembershipPlanName = dataTable.Rows[0]["MembershipPlanName"].ToString();
+                    membershipPlanUI.PlanType = dataTable.Rows[0]["PlanType"].ToString();
+                    membershipPlanUI.DurationInDays = Convert.ToInt32(dataTable.Rows[0]["DurationInDays"]);
+                    membershipPlanUI.Price = Convert.ToDecimal(dataTable.Rows[0]["Price"]);
+                    membershipPlanUI.Description = dataTable.Rows[0]["Description"].ToString();
+                    membershipPlanUI.IsActive = dataTable.Rows[0]["IsActive"].ToString();
+
+                    return membershipPlanUI;
+                }
+
+                return null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }

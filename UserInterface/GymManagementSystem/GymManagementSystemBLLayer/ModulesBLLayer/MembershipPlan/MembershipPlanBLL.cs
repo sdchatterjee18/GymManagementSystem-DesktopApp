@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemDALayer.ModulesDALayer.MembershipPlan;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
 {
@@ -16,10 +17,10 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         public int DurationInDays { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
 
 
-        public List<MembershipPlanBLL> RetrieveMembershipPlansDetails()
+        public List<MembershipPlanBLL> RetrieveMembershipPlansDetailsBLL()
         {
             List<MembershipPlanBLL> membershipPlansBll = null;
             try
@@ -49,6 +50,49 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 return membershipPlansBll;
             }
            
+        }
+        public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL()
+        {
+            ValidationBll.CommonValidationMessage result;
+
+            result = ValidationBll.ValidatePrice(this.Price.ToString());
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+
+            result = ValidationBll.ValidateDescription(this.Description);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            return membershipPlanDAL.UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdDAL(
+                this.MembershipPlanId,
+                this.Price,
+                this.Description);
+        }
+        public string DeactivateMembershipPlanByMembershipPlanIdBLL()
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            return membershipPlanDAL.DeactivateMembershipPlanByMembershipPlanIdDAL(
+                this.MembershipPlanId);
+        }
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(int membershipPlanId)
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            DataTable dataTableMembershipPlanBLL =
+                membershipPlanDAL.RetrieveMembershipPlanDetailsByMembershipPlanIdDal(membershipPlanId);
+
+            return dataTableMembershipPlanBLL;
         }
     }
 }
