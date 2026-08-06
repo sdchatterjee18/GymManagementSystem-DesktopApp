@@ -172,58 +172,6 @@ namespace GymManagementSystem.FORMS.Member
         
         }
 
-        //private void SetPlaceholder(Control parent)
-        //{
-        //    foreach (Control c in parent.Controls)
-        //    {
-        //        if (c is TextBox)
-        //        {
-        //            TextBox txt = (TextBox)c;
-
-        //            txt.Tag = txt.Text;        
-        //            txt.ForeColor = Color.Gray;
-
-        //            txt.Enter += Placeholder_Enter;
-        //            txt.Leave += Placeholder_Leave;
-        //        }
-
-        //        if (c.HasChildren)
-        //            SetPlaceholder(c);
-        //    }
-        //}
-
-        //private void Placeholder_Enter(object sender, EventArgs e)
-        //{
-        //    TextBox txt = (TextBox)sender;
-
-        //    if (txt.Text == txt.Tag.ToString())
-        //    {
-        //        txt.Clear();
-        //        txt.ForeColor = Color.Black;
-        //    }
-        //}
-
-        //private void Placeholder_Leave(object sender, EventArgs e)
-        //{
-        //    TextBox txt = (TextBox)sender;
-
-        //    if (string.IsNullOrWhiteSpace(txt.Text))
-        //    {
-        //        txt.Text = txt.Tag.ToString();
-        //        txt.ForeColor = Color.Gray;
-        //    }
-        //}
-        //private void Placeholder_Click(object sender, MouseEventArgs e)
-        //{
-        //    TextBox txt = (TextBox)sender;
-
-        //    if (txt.Text == txt.Tag.ToString())
-        //    {
-        //        txt.Clear();
-        //        txt.ForeColor = Color.Black;
-        //    }
-        //}
-
         private void FrmMemberRegistration_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -231,7 +179,6 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberGender_Click_1(object sender, EventArgs e)
         {
-            //cmbSelectMemberGender.Items.Clear();
             cmbSelectMemberGender.Text = null;
             cmbSelectMemberGender.ForeColor = Color.Black;
         }
@@ -337,13 +284,32 @@ namespace GymManagementSystem.FORMS.Member
             {
                 return;
             }
+            if (!ValidationUI.ValidateRequiredComboBoxes(
+                
+                ))
+            {
+                return;
+            }
             MemberAllDetailsUI memberAllDetailsUI = new MemberAllDetailsUI();
             if (!string.IsNullOrEmpty(selectedImagePath))
             {
                 memberAllDetailsUI.ProfilePhoto =
                     File.ReadAllBytes(selectedImagePath);
             }
-            memberAllDetailsUI.NeedLocker =rbtnNeedLocker.Checked ? 1 : 0;
+            if (!ValidationUI.ValidateRadioButtonSelection(
+                    rbtnNeedLocker,
+                    rbtnDontNeedLocker))
+            {
+                return;
+            }
+            if (rbtnNeedLocker.Checked)
+            {
+                memberAllDetailsUI.NeedLocker = 1;
+            }
+            else
+            {
+                memberAllDetailsUI.NeedLocker = 0;
+            }
         }
 
         private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -385,19 +351,9 @@ namespace GymManagementSystem.FORMS.Member
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                selectedImagePath = openFileDialog.FileName;
                picMemberUploadedPhoto.Image = Image.FromFile(openFileDialog.FileName);
             }
         }
-
-       
-        //private void tlpResetButton_MouseEnter(object sender, EventArgs e)
-        //{
-        //    this.tlpResetButton.BackColor = Color.SkyBlue;
-        //}
-
-        //private void tlpResetButton_MouseLeave(object sender, EventArgs e)
-        //{
-        //    this.tlpResetButton.BackColor = Color.Navy;
-        //}
     }
 }
