@@ -109,7 +109,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         {
             ValidationBll.CommonValidationMessage result;
 
-            result = ValidationBll.ValidateMembershipPlanName(this.MembershipPlanName);
+            result = ValidationBll.ValidateName(this.MembershipPlanName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using GymManagementSystemDALayer.Common;
 
 namespace GymManagementSystemDALayer.ModulesDALayer.Member
 {
@@ -65,5 +68,36 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
         public int CaloriesPerDay { get; set; }
         public string DietPlanDocument { get; set; }
         public string ConditionStatus { get; set; }
+
+        public string InsertMembershipPlanDAL()
+        {
+            SqlParameter[] parameters =
+            {
+               new SqlParameter("@FirstName", this.FirstName),
+               new SqlParameter("@MiddleName", this.MiddleName),
+               new SqlParameter("@LastName", this.LastName),
+               new SqlParameter("@GenderId", this.GenderId),
+               new SqlParameter("@PhoneNo", this.PhoneNo),
+               new SqlParameter("@EmailId", this.EmailId),
+               new SqlParameter("@City", this.City),
+               new SqlParameter("@District", this.District),
+               new SqlParameter("@State", this.State),
+               new SqlParameter("@EmergencyContact", this.EmergencyContact),
+               new SqlParameter("@ProfilePhoto", this.ProfilePhoto),
+               // Membership
+               new SqlParameter("@MembershipPlanId", this.MembershipPlanId),
+               // Payment
+               new SqlParameter("@PaymentMethod", this.PaymentMethod),
+               new SqlParameter("@FeesType", this.FeesType),
+               // Shift
+               new SqlParameter("@ShiftId", this.ShiftId),
+               // Diet
+               new SqlParameter("@DietPlanId", this.DietPlanId),
+               // Locker
+               new SqlParameter("@NeedLocker", this.NeedLocker)
+            };
+
+            return LookupDAL.InsertSpecificItem("spRegisterNewMember", parameters);
+        }
     }
 }

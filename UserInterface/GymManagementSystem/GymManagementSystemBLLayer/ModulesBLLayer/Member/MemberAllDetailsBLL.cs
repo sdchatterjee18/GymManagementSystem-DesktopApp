@@ -69,27 +69,63 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
         public string DietPlanDocument { get; set; }
         public string ConditionStatus { get; set; }
 
-        public string RegisterNewMember()
+        public string RegisterNewMemberBLL()
         {
+            ValidationBll.CommonValidationMessage result;
 
-            // Business Validations
-            string validationMessage;
+            result = ValidationBll.ValidateName(this.FirstName);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
 
-            //validationMessage = ValidationBll.ValidateName(memberBLL.FirstName);
-            //if (validationMessage != null)
-            //    return validationMessage;
+            result = ValidationBll.ValidateName(this.MiddleName);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
 
-            //validationMessage = ValidationBll.ValidateName(memberBLL.LastName);
-            //if (validationMessage != null)
-            //    return validationMessage;
+            result = ValidationBll.ValidateName(this.LastName);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
 
-            //validationMessage = ValidationBll.ValidatePhoneNumber(memberBLL.PhoneNo);
-            //if (validationMessage != null)
-            //    return validationMessage;
+            result = ValidationBll.ValidateName(this.District);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
 
-            //validationMessage = ValidationBll.ValidateEmail(memberBLL.EmailId);
-            //if (validationMessage != null)
-            //    return validationMessage;
+            result = ValidationBll.ValidateName(this.State);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidateName(this.City);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidatePhoneNumber(this.PhoneNo);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidatePhoneNumber(this.EmergencyContact);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
+
+            result = ValidationBll.ValidatePhoneNumber(this.EmailId);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return ValidationBll.GetValidationMessage(result);
+            }
 
             // Convert BLL object to DAL object
             MemberAllDetailsDAL memberDAL = new MemberAllDetailsDAL();
@@ -111,7 +147,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
             memberDAL.ShiftId = this.ShiftId;
             memberDAL.DietPlanId = this.DietPlanId;
             memberDAL.NeedLocker = this.NeedLocker;
-            return null;
+            return memberDAL.InsertMembershipPlanDAL();
         }
     }
 }

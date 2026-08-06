@@ -354,7 +354,7 @@ namespace GymManagementSystem.FORMS.Member
             {
                 memberAllDetailsUI.NeedLocker = 0;
             }
-            string message = memberAllDetailsUI.RegisterNewMember();
+            string message = memberAllDetailsUI.RegisterNewMemberUI();
 
             MessageBox.Show(message,
                             "Registration",

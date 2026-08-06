@@ -67,7 +67,7 @@ namespace GymManagementSystem.FORMS.Member.UI
         public string ConditionStatus { get; set; }
 
         //METHODS
-        public string RegisterNewMember()
+        public string RegisterNewMemberUI()
         {
             MemberAllDetailsBLL memberBLL = new MemberAllDetailsBLL();
 
@@ -99,7 +99,7 @@ namespace GymManagementSystem.FORMS.Member.UI
             // Locker
             memberBLL.NeedLocker = this.NeedLocker;
 
-            return memberBLL.RegisterNewMember();
+            return memberBLL.RegisterNewMemberBLL();
         }
         //Method:Retrieve shifts in combo box
     }
