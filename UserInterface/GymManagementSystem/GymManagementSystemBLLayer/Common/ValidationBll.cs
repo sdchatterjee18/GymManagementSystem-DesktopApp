@@ -23,6 +23,12 @@ namespace GymManagementSystemBLLayer.Common
             EmailRequired,
             InvalidEmail,
 
+            DurationRequired,
+            DurationMustBeNumeric,
+            DurationMustBeGreaterThanZero,
+            InvalidDurationLength,
+            DurationMustBeLessThan365Days,
+
             PhoneNumberRequired,
             PhoneNumberMustBeNumeric,
             PhoneNumberMustBePositive,
@@ -127,6 +133,29 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+        //Duration Days Valitation
+        public static CommonValidationMessage ValidateDuration(string duration)
+        {
+            if (string.IsNullOrWhiteSpace(duration))
+                return CommonValidationMessage.DurationRequired;
+
+            int durationValue;
+
+            if (!int.TryParse(duration, out durationValue))
+                return CommonValidationMessage.DurationMustBeNumeric;
+
+            if (durationValue <= 0)
+                return CommonValidationMessage.DurationMustBeGreaterThanZero;
+
+            if (duration.Length > 3)
+                return CommonValidationMessage.InvalidDurationLength;
+
+            if (durationValue >= 365)
+                return CommonValidationMessage.DurationMustBeLessThan365Days;
+
+            return CommonValidationMessage.Valid;
+        }
+
         // Validation Message
         public static string GetValidationMessage(CommonValidationMessage validationMessage)
         {
@@ -170,6 +199,10 @@ namespace GymManagementSystemBLLayer.Common
 
                 case CommonValidationMessage.Valid:
                     return string.Empty;
+                case CommonValidationMessage.InvalidDurationLength:
+                    return "Duration must contain 1 to 3 digits.";
+                case CommonValidationMessage.DurationMustBeLessThan365Days:
+                    return "Duration must be less than 365 days.";
 
                 default:
                     return "Invalid data.";
