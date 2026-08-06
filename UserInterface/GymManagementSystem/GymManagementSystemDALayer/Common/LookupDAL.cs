@@ -69,6 +69,7 @@ namespace GymManagementSystemDALayer.Common
                         MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
                         membershipPlanDAL.MembershipPlanId = Convert.ToInt32(reader["MembershipPlanId"]);
                         membershipPlanDAL.MembershipPlanName = reader["MembershipPlanName"].ToString();
+                        MembershipPlans.Add(membershipPlanDAL);
                     }
                     return MembershipPlans;
                 }
@@ -85,7 +86,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-      public static List<DietPlanDAL> GetDietPlans()
+        public static List<DietPlanDAL> GetDietPlans()
       {
          List<DietPlanDAL> dietPlans = null;
         SqlConnection sqlConnection = null;
@@ -120,7 +121,7 @@ namespace GymManagementSystemDALayer.Common
               }
            }
         }
-     public static DataTable GetGenderDetails()
+        public static DataTable GetGenderDetails()
      {
         DataTable dtGender = null;
         SqlConnection sqlConnection = null;
@@ -227,7 +228,7 @@ namespace GymManagementSystemDALayer.Common
 
             try
             {
-                dataTable=new Datatable();
+                dataTable=new DataTable();
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
@@ -271,7 +272,7 @@ namespace GymManagementSystemDALayer.Common
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return dataTable;
             }
