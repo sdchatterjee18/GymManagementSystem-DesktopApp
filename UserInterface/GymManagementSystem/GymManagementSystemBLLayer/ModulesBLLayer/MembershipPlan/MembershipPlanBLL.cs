@@ -94,5 +94,11 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
 
             return dataTableMembershipPlanBLL;
         }
+        public DataTable GetMembershipPlanDetailsForComboBox()
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+            DataTable dataTable = membershipPlanDAL.GetMembershipPlanDetailsForComboBox();
+            return dataTable;
+        }
     }
 }
