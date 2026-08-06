@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.Common;
+using GymManagementSystem.FORMS.MembershipPlan.UI;
 
 namespace GymManagementSystem.FORMS.MembershipPlan
 {
@@ -25,6 +26,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             this.Text = "";
             this.ShowIcon = false;
+            LoadPlanTypes();
         }
 
         private void btnPageRemove_Click(object sender, EventArgs e)
@@ -50,28 +52,19 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
 
         }
-
         private void pnlClickSubmit_Click(object sender, EventArgs e)
         {
             if (ClickCountTxtPlanName == 0)
-            {
                 txtPlanName.Clear();
-            }
 
             if (ClickCountTxtDuration == 0)
-            {
                 txtDuration.Clear();
-            }
 
             if (ClickCountTxtAmount == 0)
-            {
                 txtAmount.Clear();
-            }
 
             if (ClickCountTxtDescription == 0)
-            {
                 txtDescription.Clear();
-            }
 
             if (!ValidationUI.ValidateRequiredTextBoxes(
                 txtPlanName,
@@ -80,6 +73,39 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 txtDescription))
             {
                 return;
+            }
+
+            if (cmbPlanType.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                    "Please select Membership Plan Type.",
+                    "Validation",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                cmbPlanType.Focus();
+                return;
+            }
+
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+            membershipPlanUI.MembershipPlanName = txtPlanName.Text.Trim();
+            membershipPlanUI.PlanTypeId = Convert.ToInt32(cmbPlanType.SelectedValue);
+            membershipPlanUI.DurationInDays = Convert.ToInt32(txtDuration.Text.Trim());
+            membershipPlanUI.Price = Convert.ToDecimal(txtAmount.Text.Trim());
+            membershipPlanUI.Description = txtDescription.Text.Trim();
+
+            string message = membershipPlanUI.InsertMembershipPlanUI();
+
+            MessageBox.Show(
+                message,
+                "Membership Plan",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            if (message == "Membership Plan Added Successfully.")
+            {
+                btnClear.PerformClick();
             }
         }
 
@@ -106,7 +132,16 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             ClickCountTxtDescription = ValidationUI.ClearTextBox(txtDescription, ClickCountTxtDescription);
             txtDescription.ForeColor = Color.Black;
         }
+        private void LoadPlanTypes()
+        {
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
 
-        
+            cmbPlanType.DataSource = membershipPlanUI.GetMembershipPlanTypeDetailsForComboBox();
+            cmbPlanType.DisplayMember = "PlanType";
+            cmbPlanType.ValueMember = "PlanTypeId";
+            cmbPlanType.SelectedIndex = -1;
+        }
+
+       
     }
 }

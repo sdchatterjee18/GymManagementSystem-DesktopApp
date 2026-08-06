@@ -103,6 +103,25 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
            DataTable dataTable= LookupDAL.GetComboBoxDetails("spRetrieveMembershipPlans");
            return dataTable;
         }
+        public DataTable GetMembershipPlanTypeDetailsForComboBox()
+        {
+            DataTable dataTable = LookupDAL.GetComboBoxDetails("spRetrieveMembershipPlanTypes");
+            return dataTable;
+        }
+        public string InsertMembershipPlanDAL()
+        {
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@MembershipPlanName", MembershipPlanName),
+                new SqlParameter("@PlanTypeId", PlanTypeId),
+                new SqlParameter("@DurationInDays", DurationInDays),
+                new SqlParameter("@Price", Price),
+                new SqlParameter("@Description", Description),
+                new SqlParameter("@IsActive", true)
+            };
+
+            return LookupDAL.InsertSpecificItem("spInsertDataIntoMembershipPlan",parameters);
+        }
     }
 }
 

@@ -208,29 +208,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             frm.StartPosition = FormStartPosition.CenterParent;
         }
 
-        private void picSearchIcon_Click(object sender, EventArgs e)
-        {
-
-        }
-
        
-
-        private void picSearchIcon_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEnterPlanName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void lblViewPlans_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pnlClickAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
         {
@@ -412,8 +390,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 LoadMembershipPlans();
                 return;
             }
-            DataRowView row1 = (DataRowView)cmbMembershipPlan.SelectedItem;
-            int membershipPlanId = Convert.ToInt32(row1["MembershipPlanId"]);
+            int membershipPlanId =Convert.ToInt32(((DataRowView)cmbMembershipPlan.SelectedItem)["MembershipPlanId"]);
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
             DataTable dt =
                 membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(membershipPlanId);
