@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Common\LookupBLL.cs" />
+    <Compile Include="ModulesBLLayer\DietPlan\DietPlanBLL.cs" />
     <Compile Include="ModulesBLLayer\MembershipPlan\MembershipPlanBLL.cs" />
     <Compile Include="ModulesBLLayer\Member\MemberAllDetailsBLL.cs" />
     <Compile Include="ModulesBLLayer\Member\MemberBLL.cs" />

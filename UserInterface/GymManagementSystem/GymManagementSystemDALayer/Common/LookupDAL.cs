@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using GymManagementSystemDALayer.ModulesDALayer.Shift;
 using GymManagementSystemDALayer.ModulesDALayer.MembershipPlan;
+using GymManagementSystemDALayer.ModulesDALayer.DietPlan;
 using GymManagementSystemDALayer.SqlHelper;
 
 namespace GymManagementSystemDALayer.Common
@@ -56,6 +57,7 @@ namespace GymManagementSystemDALayer.Common
             SqlConnection sqlConnection = null;
             try
             {
+                MembershipPlans = new List<MembershipPlanDAL>();
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
                     SqlCommand cmd = new SqlCommand("spRetrieveMembershipPlans", sqlConnection);
@@ -66,7 +68,7 @@ namespace GymManagementSystemDALayer.Common
                     {
                         MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
                         membershipPlanDAL.MembershipPlanId = Convert.ToInt32(reader["MembershipPlanId"]);
-                        membershipPlanDAL.MembershipPlanName = Convert.ToInt32(reader["MembershipPlanName"]);
+                        membershipPlanDAL.MembershipPlanName =reader["MembershipPlanName"].ToString();
                         MembershipPlans.Add(membershipPlanDAL);
                     }
                     return MembershipPlans;
@@ -79,6 +81,77 @@ namespace GymManagementSystemDALayer.Common
             finally
             {
                 if(sqlConnection!=null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static List<DietPlanDAL> GetDietPlans()
+        {
+            List<DietPlanDAL> dietPlans = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                dietPlans = new List<DietPlanDAL>();
+
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("spRetrieveDietPlanDetails", sqlConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    sqlConnection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DietPlanDAL dietPlan = new DietPlanDAL();
+                        dietPlan.DietPlanId = Convert.ToInt32(reader["DietPlanId"]);
+                        dietPlan.CaloriesPerDay = Convert.ToInt32(reader["CaloriesPerDay"]);
+                        dietPlans.Add(dietPlan);
+                    }
+                    return dietPlans;
+                }
+            }
+            catch (Exception)
+            {
+                return dietPlans;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable GetGenderDetails()
+        {
+            DataTable dtGender = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                dtGender = new DataTable();
+
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("spRetrieveGenderDetails", sqlConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlConnection.Open();
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dtGender);
+
+                    return dtGender;
+                }
+            }
+            catch (Exception)
+            {
+                return dtGender;
+            }
+            finally
+            {
+                if (sqlConnection != null)
                 {
                     sqlConnection.Close();
                 }
