@@ -37,5 +37,6 @@ namespace GymManagementSystem.Common
             }
             return MembershipPlansUI;
         }
+     
     }
 }

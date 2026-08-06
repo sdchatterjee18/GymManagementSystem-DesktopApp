@@ -33,8 +33,8 @@ namespace GymManagementSystemBLLayer.Common
             foreach (MembershipPlanDAL item in membershipPlansDAL)
             {
                 MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-                //membershipPlanBLL.MembershipPlanId = item.MembershipPlanId;
-                //membershipPlanBLL.MembershipPlanName = item.MembershipPlanName;
+                membershipPlanBLL.MembershipPlanId = item.MembershipPlanId;
+                membershipPlanBLL.MembershipPlanName = item.MembershipPlanName;
                 membershipPlansBLL.Add(membershipPlanBLL);
             }
             return membershipPlansBLL;

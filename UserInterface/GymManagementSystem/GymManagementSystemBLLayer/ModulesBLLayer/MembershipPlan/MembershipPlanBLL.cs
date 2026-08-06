@@ -17,7 +17,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         public int DurationInDays { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
 
 
         public List<MembershipPlanBLL> RetrieveMembershipPlansDetailsBLL()
@@ -77,6 +77,22 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 this.MembershipPlanId,
                 this.Price,
                 this.Description);
+        }
+        public string DeactivateMembershipPlanByMembershipPlanIdBLL()
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            return membershipPlanDAL.DeactivateMembershipPlanByMembershipPlanIdDAL(
+                this.MembershipPlanId);
+        }
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(int membershipPlanId)
+        {
+            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
+
+            DataTable dataTableMembershipPlanBLL =
+                membershipPlanDAL.RetrieveMembershipPlanDetailsByMembershipPlanIdDal(membershipPlanId);
+
+            return dataTableMembershipPlanBLL;
         }
     }
 }

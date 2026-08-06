@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using GymManagementSystemDALayer.SqlHelper;
+using GymManagementSystemDALayer.Common;
 
 namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
 {
@@ -18,92 +19,86 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
         public int DurationInDays { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
 
         public List<MembershipPlanDAL> RetrieveMembershipPlansDetailsDAL()
         {
-            SqlConnection sqlConnection=null;
-            List<MembershipPlanDAL> membershipPlansDal=null;
-            try
-            {
-                 using(sqlConnection=DBconnection.GetSqlConnection())
-                 {
-                     using (SqlCommand sqlCommand = new SqlCommand("spRetrieveMembershipPlans", sqlConnection))
-                     {
-                         sqlCommand.CommandType = CommandType.StoredProcedure;
-                         membershipPlansDal = new List<MembershipPlanDAL>();
-                         sqlConnection.Open();
-                         SqlDataReader sqlDataReader=sqlCommand.ExecuteReader();
-                         while (sqlDataReader.Read())
-                         {
-                             MembershipPlanDAL membershipPlanDal = new MembershipPlanDAL();
+            List<MembershipPlanDAL> membershipPlansDal = new List<MembershipPlanDAL>();
 
-                             membershipPlanDal.MembershipPlanId = Convert.ToInt32(sqlDataReader["MembershipPlanId"]);
-                             membershipPlanDal.MembershipPlanName = sqlDataReader["MembershipPlanName"].ToString();
-                             membershipPlanDal.PlanType = sqlDataReader["PlanType"].ToString();
-                             membershipPlanDal.DurationInDays = Convert.ToInt32(sqlDataReader["DurationInDays"]);
-                             membershipPlanDal.Price = Convert.ToDecimal(sqlDataReader["Price"]);
-                             membershipPlanDal.Description = sqlDataReader["Description"].ToString();
-                             membershipPlanDal.IsActive = Convert.ToBoolean(sqlDataReader["IsActive"]);
+            DataTable dataTable = LookupDAL.RetrieveSpecificItem(
+                "spRetrieveMembershipPlans"
+            );
 
-                             membershipPlansDal.Add(membershipPlanDal);
-                         }
-                         return membershipPlansDal;
-                     }
-                 }
-            }
-            catch (Exception ex)
+            if (dataTable != null && dataTable.Rows.Count > 0)
             {
-                return membershipPlansDal;
-            }
-            finally
-            {
-                if (sqlConnection != null)
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    sqlConnection.Close();
+                    MembershipPlanDAL membershipPlanDal = new MembershipPlanDAL();
+
+                    membershipPlanDal.MembershipPlanId =
+                        Convert.ToInt32(row["MembershipPlanId"]);
+
+                    membershipPlanDal.MembershipPlanName =
+                        row["MembershipPlanName"].ToString();
+
+                    membershipPlanDal.PlanType =
+                        row["PlanType"].ToString();
+
+                    membershipPlanDal.DurationInDays =
+                        Convert.ToInt32(row["DurationInDays"]);
+
+                    membershipPlanDal.Price =
+                        Convert.ToDecimal(row["Price"]);
+
+                    membershipPlanDal.Description =
+                        row["Description"].ToString();
+
+                    membershipPlanDal.IsActive =
+                        row["IsActive"].ToString();
+
+                    membershipPlansDal.Add(membershipPlanDal);
                 }
             }
+
+            return membershipPlansDal;
         }
         public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdDAL(int membershipPlanId,decimal price,string description)
         {
-            SqlConnection sqlConnection = null;
+            DataTable dt = LookupDAL.UpdateSpecificItemById(
+                "spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId",
+                membershipPlanId,
+                "@MembershipPlanId",
+                price,
+                description
+            );
 
-            try
+            if (dt != null && dt.Rows.Count > 0)
             {
-                using (sqlConnection = DBconnection.GetSqlConnection())
-                {
-                    using (SqlCommand sqlCommand = new SqlCommand("spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId", sqlConnection))
-                    {
-                        sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                        sqlCommand.Parameters.AddWithValue("@MembershipPlanId", membershipPlanId);
-                        sqlCommand.Parameters.AddWithValue("@Description", description);
-                        sqlCommand.Parameters.AddWithValue("@NewPrice", price);
-
-                        sqlConnection.Open();
-
-                        SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-                        if (sqlDataReader.Read())
-                        {
-                            return sqlDataReader["Message"].ToString();
-                        }
-
-                        return string.Empty;
-                    }
-                }
+                return dt.Rows[0]["Message"].ToString();
             }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-            finally
-            {
-                if (sqlConnection != null)
-                {
-                    sqlConnection.Close();
-                }
-            }
+
+            return string.Empty;
         }
+        public string DeactivateMembershipPlanByMembershipPlanIdDAL(int membershipPlanId)
+        {
+            DataTable dt = LookupDAL.DeactivateSpecificItemById(
+                "spDeactivateMembershipPlanByMembershipPlanId",
+                membershipPlanId,
+                "@MembershipPlanId");
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["Message"].ToString();
+            }
+
+            return string.Empty;
+        }
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanIdDal(int id)
+        {
+            DataTable dataTableMembershipPlanDal = LookupDAL.RetrieveSpecificDetailsById("spRetrieveMembershipPlanDetailsByMembershipPlanId", id, "@MembershipPlanId");
+            return dataTableMembershipPlanDal;
+        }
+       
     }
 }
+

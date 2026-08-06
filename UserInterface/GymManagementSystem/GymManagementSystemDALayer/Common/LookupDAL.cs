@@ -56,6 +56,7 @@ namespace GymManagementSystemDALayer.Common
             SqlConnection sqlConnection = null;
             try
             {
+                MembershipPlans = new List<MembershipPlanDAL>();
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
                     SqlCommand cmd = new SqlCommand("spRetrieveMembershipPlans", sqlConnection);
@@ -83,6 +84,143 @@ namespace GymManagementSystemDALayer.Common
                     sqlConnection.Close();
                 }
             }
+        }
+
+        public static DataTable RetrieveSpecificItem(string spName)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType =
+                            CommandType.StoredProcedure;
+
+                        dataTable = new DataTable();
+
+                        sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable UpdateSpecificItemById(string spName,int id,string parameterId,decimal price,string description)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterId, id);
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Description", description);
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@NewPrice", price);
+
+                        dataTable = new DataTable();
+
+                        sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable DeactivateSpecificItemById(string spName, int id, string parameterName)
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterName, id);
+
+                        sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        public static DataTable RetrieveSpecificDetailsById(string spName,int id,string parameterId)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter=new SqlDataAdapter(spName,sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterId, id);
+                        dataTable = new DataTable();
+                        sqlDataAdapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+            catch
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                    sqlConnection.Close();
+            }
+
+           
         }
     }
 }
