@@ -29,13 +29,13 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void FrmShowDietPlans_Load(object sender, EventArgs e)
         {
-            dgvDietPlan.AllowUserToResizeRows = false;
-            dgvDietPlan.AllowUserToResizeColumns = false;
-            dgvDietPlan.RowHeadersVisible = false;
-            dgvDietPlan.AllowUserToAddRows = false;
-            dgvDietPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvDietPlan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvDietPlan.EnableHeadersVisualStyles = false;
+            //dgvDietPlan.AllowUserToResizeRows = false;
+            //dgvDietPlan.AllowUserToResizeColumns = false;
+            //dgvDietPlan.RowHeadersVisible = false;
+            //dgvDietPlan.AllowUserToAddRows = false;
+            //dgvDietPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvDietPlan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvDietPlan.EnableHeadersVisualStyles = false;
             
             RetrieveAllDietPlan();
             
