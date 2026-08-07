@@ -126,5 +126,19 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
 
             return membershipPlanBLL.InsertMembershipPlanBLL();
         }
+        public string ValidateMembershipPlanUI(
+     string membershipPlanName,
+     string duration,
+     string price,
+     string description)
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            return membershipPlanBLL.ValidateMembershipPlanBLL(
+                membershipPlanName,
+                duration,
+                price,
+                description);
+        }
     }
 }

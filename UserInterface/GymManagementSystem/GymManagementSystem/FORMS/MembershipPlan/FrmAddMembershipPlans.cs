@@ -87,13 +87,44 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 return;
             }
 
+            //=============================
+            // Validation First
+            //=============================
+
             MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+            string validationMessage =
+                membershipPlanUI.ValidateMembershipPlanUI(
+                    txtPlanName.Text.Trim(),
+                    txtDuration.Text.Trim(),
+                    txtAmount.Text.Trim(),
+                    txtDescription.Text.Trim());
+
+            if (validationMessage != string.Empty)
+            {
+                MessageBox.Show(
+                    validationMessage,
+                    "Validation",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            //=============================
+            // Validation Pass
+            // Now Convert
+            //=============================
 
             membershipPlanUI.MembershipPlanName = txtPlanName.Text.Trim();
             membershipPlanUI.PlanTypeId = Convert.ToInt32(cmbPlanType.SelectedValue);
             membershipPlanUI.DurationInDays = Convert.ToInt32(txtDuration.Text.Trim());
             membershipPlanUI.Price = Convert.ToDecimal(txtAmount.Text.Trim());
             membershipPlanUI.Description = txtDescription.Text.Trim();
+
+            //=============================
+            // Insert
+            //=============================
 
             string message = membershipPlanUI.InsertMembershipPlanUI();
 

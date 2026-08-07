@@ -107,36 +107,6 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         }
         public string InsertMembershipPlanBLL()
         {
-            ValidationBll.CommonValidationMessage result;
-
-            result = ValidationBll.ValidateName(this.MembershipPlanName);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-            result = ValidationBll.ValidateDuration(this.DurationInDays.ToString());
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-            result = ValidationBll.ValidatePrice(this.Price.ToString());
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-            result = ValidationBll.ValidateDescription(this.Description);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
             MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
 
             membershipPlanDAL.MembershipPlanName = this.MembershipPlanName;
@@ -144,7 +114,34 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
             membershipPlanDAL.DurationInDays = this.DurationInDays;
             membershipPlanDAL.Price = this.Price;
             membershipPlanDAL.Description = this.Description;
+
             return membershipPlanDAL.InsertMembershipPlanDAL();
+        }
+        public string ValidateMembershipPlanBLL(
+       string membershipPlanName,
+       string duration,
+       string price,
+       string description)
+        {
+            ValidationBll.CommonValidationMessage result;
+
+            result = ValidationBll.ValidateName(membershipPlanName);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+                return ValidationBll.GetValidationMessage(result);
+
+            result = ValidationBll.ValidateDuration(duration);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+                return ValidationBll.GetValidationMessage(result);
+
+            result = ValidationBll.ValidatePrice(price);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+                return ValidationBll.GetValidationMessage(result);
+
+            result = ValidationBll.ValidateDescription(description);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+                return ValidationBll.GetValidationMessage(result);
+
+            return string.Empty;
         }
     }
 }
