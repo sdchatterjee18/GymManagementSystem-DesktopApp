@@ -20,5 +20,25 @@ namespace GymManagementSystem.FORMS.Member
         {
 
         }
+
+        private void tlpChangeMembershipButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpChangeMembershipButton.BackColor = Color.DarkGreen;
+        }
+
+        private void tlpChangeMembershipButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpChangeMembershipButton.BackColor = Color.ForestGreen;
+        }
+
+        private void tlpCancleSectionInChangeMembership_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpCancleSectionInChangeMembership.BackColor = Color.OrangeRed;
+        }
+
+        private void tlpCancleSectionInChangeMembership_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpCancleSectionInChangeMembership.BackColor = Color.Red;
+        }
     }
 }
