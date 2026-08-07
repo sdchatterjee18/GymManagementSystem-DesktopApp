@@ -20,5 +20,12 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.DietPlan
             DataTable dataTable = dietPlanDAL.GetDietPlansForComboBox();
             return dataTable;
         }
+
+        // Display DataGridView
+        public DataTable RetrieveDietPlansBLL()
+        {
+            DietPlanDAL dietPlanDAL = new DietPlanDAL();
+            return dietPlanDAL.RetrieveDietPlansDAL();
+        }
     }
 }

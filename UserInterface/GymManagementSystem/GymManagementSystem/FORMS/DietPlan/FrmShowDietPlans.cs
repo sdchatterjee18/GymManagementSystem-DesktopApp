@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using GymManagementSystem.FORMS.DietPlan.UI;
 
 
 namespace GymManagementSystem.FORMS.DietPlan
@@ -39,58 +40,6 @@ namespace GymManagementSystem.FORMS.DietPlan
             
             RetrieveAllDietPlan();
             
-        }
-        private void RetrieveAllDietPlan()
-        {
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnetion = null;
-            try
-            {
-                sqlConnetion = new SqlConnection(CS);
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("spDisplayAllDietPlans", sqlConnetion))
-                {
-                    sqlDataAdapter.SelectCommand.CommandType =
-                        CommandType.StoredProcedure;
-                    sqlConnetion.Open();
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    dgvDietPlan.AutoGenerateColumns = false;
-                    DataRowCollection dataRows = dataTable.Rows;
-
-                    dgvDietPlan.Rows.Clear();
-
-                    int serialNo = 1;
-
-                    foreach (DataRow dataRow in dataRows)
-                    {
-                        int rowIndex = dgvDietPlan.Rows.Add();
-
-                        dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Value = serialNo++;
-                        dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Style.ForeColor = Color.FromArgb(30, 60, 220); 
-                        dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value = dataRow["CaloriesPerDay"] + " Kcal";
-                        dgvDietPlan.Rows[rowIndex].Cells["ColDocument"].Value =dataRow["DietPlanDocument"].ToString();
-                        dgvDietPlan.Rows[rowIndex].Cells["ColCondition"].Value =dataRow["ConditionStatus"].ToString();
-
-                    }
-             
-
-
-                    //for (int i = 0; i < dgvDietPlan.Rows.Count; i++)
-                    //{
-                    //    dgvDietPlan.Rows[i].Cells["Action"].Value ="📝Update";
-                    //}
-
-                }
-                dgvDietPlan.ClearSelection();
-            }
-            catch (Exception ex)
-            {
-                dgvDietPlan.DataSource = null;
-            }
-            finally
-            {
-                sqlConnetion.Close();
-            }
         }
         private void pnlAddNewDietPlan_MouseEnter(object sender, EventArgs e)
         {
@@ -257,9 +206,48 @@ namespace GymManagementSystem.FORMS.DietPlan
            {
                dgvDietPlan.ClearSelection();
            }
+           private void RetrieveAllDietPlan()
+           {
+               try
+               {
+                   DietPlanUI dietPlanUI = new DietPlanUI();
 
-        
-  
+                   DataTable dataTable = dietPlanUI.RetrieveDietPlansUI();
+
+                   dgvDietPlan.AutoGenerateColumns = false;
+                   dgvDietPlan.Rows.Clear();
+
+                   int serialNo = 1;
+
+                   foreach (DataRow dataRow in dataTable.Rows)
+                   {
+                       int rowIndex = dgvDietPlan.Rows.Add();
+
+                       dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Value = serialNo++;
+                       dgvDietPlan.Rows[rowIndex].Cells["colSLNo"].Style.ForeColor = Color.FromArgb(30, 60, 220);
+
+                       dgvDietPlan.Rows[rowIndex].Cells["ColCaloriesPerDay"].Value =
+                           dataRow["CaloriesPerDay"] + " Kcal";
+
+                       dgvDietPlan.Rows[rowIndex].Cells["ColDocument"].Value =
+                           dataRow["DietPlanDocument"].ToString();
+
+                       dgvDietPlan.Rows[rowIndex].Cells["ColCondition"].Value =
+                           dataRow["ConditionStatus"].ToString();
+
+                       dgvDietPlan.Rows[rowIndex].Cells["colDietPlanId"].Value =
+                           Convert.ToInt32(dataRow["DietPlanId"]);
+                   }
+
+                   dgvDietPlan.ClearSelection();
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show(ex.Message);
+               }
+           }
+
+ 
        }
         
 }

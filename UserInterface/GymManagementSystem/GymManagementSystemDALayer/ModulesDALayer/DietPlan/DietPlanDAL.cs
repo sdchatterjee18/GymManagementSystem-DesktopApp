@@ -19,5 +19,10 @@ namespace GymManagementSystemDALayer.ModulesDALayer.DietPlan
             DataTable dataTable = LookupDAL.GetComboBoxDetails("spRetrieveDietPlanDetails");
             return dataTable;
         }
+        public DataTable RetrieveDietPlansDAL()
+        {
+            DataTable dataTable = LookupDAL.RetrieveSpecificItem("spRetrieveDietPlanDetails");
+            return dataTable;
+        }
     }
 }
