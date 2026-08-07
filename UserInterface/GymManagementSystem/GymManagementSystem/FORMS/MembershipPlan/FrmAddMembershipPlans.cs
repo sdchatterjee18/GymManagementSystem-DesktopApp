@@ -142,25 +142,25 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void txtPlanName_Click(object sender, EventArgs e)
         {
-            ClickCountTxtPlanName = ValidationUI.ClearTextBox(txtPlanName, ClickCountTxtPlanName);
+            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
             txtPlanName.ForeColor = Color.Black;
         }
 
         private void txtDuration_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDuration = ValidationUI.ClearTextBox(txtDuration, ClickCountTxtDuration);
+            ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
             txtDuration.ForeColor = Color.Black;
         }
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAmount = ValidationUI.ClearTextBox(txtAmount, ClickCountTxtAmount);
+            ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
             txtAmount.ForeColor = Color.Black;
         }
 
         private void txtDescription_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDescription = ValidationUI.ClearTextBox(txtDescription, ClickCountTxtDescription);
+            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
             txtDescription.ForeColor = Color.Black;
         }
         private void LoadPlanTypes()

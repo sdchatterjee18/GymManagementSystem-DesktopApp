@@ -43,7 +43,7 @@ namespace GymManagementSystem.Common
 
             return isValid;
         }
-        public static int ClearTextBox(TextBox textBox,int count)
+        public static int ClearTextBoxWhenClicked(TextBox textBox,int count)
         {
             textBox.BackColor = Color.White;
             if (count == 0)
@@ -97,6 +97,13 @@ namespace GymManagementSystem.Common
             }
 
             return isValid;
+        }
+        public static void ClearDefaultPlaceholderText(TextBox textBox, int clickCount)
+        {
+            if (clickCount == 0)
+            {
+                textBox.Clear();
+            }
         }
     }
 }
