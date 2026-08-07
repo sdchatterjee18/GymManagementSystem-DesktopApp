@@ -2017,9 +2017,9 @@ BEGIN
 END;
 GO
 
------------------------------------------------
+---------------------------------------------------------
 --SP: spRetrieveMembershipPlanDetailsByMembershipPlanId--
------------------------------------------------
+---------------------------------------------------------
 CREATE PROC spRetrieveMembershipPlanDetailsByMembershipPlanId
 (
     @MembershipPlanId INT
@@ -2069,7 +2069,32 @@ BEGIN
     END CATCH
 END;
 GO
-	
+-----------------------------------------------
+--SP: spGetMembershipPlanPriceById--
+-----------------------------------------------
+CREATE PROCEDURE spGetMembershipPlanPriceById
+(
+    @MembershipPlanId INT
+)
+AS
+BEGIN
+    BEGIN TRY
+
+        SELECT
+            Price
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId
+          AND IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 ----------------------------------------------------
 --SP: spDeactivateMembershipPlanByMembershipPlanId--
 ----------------------------------------------------
