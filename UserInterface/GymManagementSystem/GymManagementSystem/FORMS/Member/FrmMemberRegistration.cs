@@ -166,14 +166,14 @@ namespace GymManagementSystem.FORMS.Member
         private void cmbSelectMemberPaymentMethod_Click(object sender, EventArgs e)
         {
             //cmbSelectMemberPaymentMethod.Items.Clear();
-            cmbSelectMemberPaymentMethod.Text = null;
+            ///mbSelectMemberPaymentMethod.Text = null;
             cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberPaymentFeesType_Click(object sender, EventArgs e)
         {
             //cmbSelectMemberPaymentFeesType.Items.Clear();
-            cmbSelectMemberPaymentFeesType.Text = null;
+            //cmbSelectMemberPaymentFeesType.Text = null;
             cmbSelectMemberPaymentFeesType.ForeColor = Color.Black;
         
         }
@@ -185,7 +185,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberGender_Click_1(object sender, EventArgs e)
         {
-            cmbSelectMemberGender.Text = null;
+            //cmbSelectMemberGender.Text = null;
             cmbSelectMemberGender.ForeColor = Color.Black;
         }
 
@@ -290,7 +290,6 @@ namespace GymManagementSystem.FORMS.Member
                 this.txtEnterMemberLastName,
                 this.txtEnterMemberPhoneNumber,
                 this.txtEnterMemberEmailId,
-                this.txtEnterMemberEmergencyContact,
                 this.txtEnterMemberState,
                 this.txtEnterMemberCity,
                 this.txtEnterMemberDistrict

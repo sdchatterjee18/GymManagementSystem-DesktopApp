@@ -121,7 +121,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
                 return ValidationBll.GetValidationMessage(result);
             }
 
-            result = ValidationBll.ValidatePhoneNumber(this.EmailId);
+            result = ValidationBll.ValidateEmail(this.EmailId);
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
                 return ValidationBll.GetValidationMessage(result);
