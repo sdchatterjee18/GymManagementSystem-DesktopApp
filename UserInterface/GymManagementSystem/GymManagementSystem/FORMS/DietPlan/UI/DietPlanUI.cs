@@ -20,5 +20,12 @@ namespace GymManagementSystem.FORMS.DietPlan.UI
             DataTable dataTable = dietPlanBLL.GetDietPlansForComboBox();
             return dataTable;
         }
+
+        // Display DataGridView
+        public DataTable RetrieveDietPlansUI()
+        {
+            DietPlanBLL dietPlanBLL = new DietPlanBLL();
+            return dietPlanBLL.RetrieveDietPlansBLL();
+        }
     }
 }
