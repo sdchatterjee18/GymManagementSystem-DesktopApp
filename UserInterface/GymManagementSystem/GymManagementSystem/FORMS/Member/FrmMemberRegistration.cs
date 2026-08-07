@@ -370,7 +370,16 @@ namespace GymManagementSystem.FORMS.Member
         private void cmbSelectMemberMemberMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ActiveControl = null;
-                cmbSelectMemberMemberMembershipPlan.ForeColor = Color.Black;
+            cmbSelectMemberMemberMembershipPlan.ForeColor = Color.Black;
+            if (cmbSelectMemberMemberMembershipPlan.SelectedIndex != -1)
+            {
+                //MembershipPlanUI membershipPlanUI = new MembershipPlan.UI.MembershipPlanUI();
+                //int MembershipPlanId = Convert.ToInt32(cmbSelectMemberMemberMembershipPlan.SelectedValue);
+                int MembershipPlanId = Convert.ToInt32(((DataRowView)cmbSelectMemberMemberMembershipPlan.SelectedItem)["MembershipPlanId"]);
+                string MembershipPlanPrice = MembershipPlanUI.GetPriceByMembershipPlanId(MembershipPlanId).ToString();
+
+                lblRetrieveMemberPaymentAmount.Text = string.Format("₹ {0:N2}", MembershipPlanPrice);
+            }
         }
 
         private void cmbSelectMemberDietPlan_SelectedIndexChanged(object sender, EventArgs e)

@@ -140,5 +140,9 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 price,
                 description);
         }
+        public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
+        {
+            return MembershipPlanBLL.GetPriceByMembershipPlanId(membershipPlanId);
+        }
     }
 }
