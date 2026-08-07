@@ -68,6 +68,11 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberPaymentMethod.DataSource = LookupUI.GetPaymentMethods();
             cmbSelectMemberPaymentMethod.SelectedIndex = -1;
         }
+        private void LoadFeesTypeComboBox()
+        {
+            cmbSelectMemberPaymentFeesType.DataSource = LookupUI.GetFeesType();
+            cmbSelectMemberPaymentFeesType.SelectedIndex = -1;
+        }
         private void FrmMemberRegistration_Load(object sender, EventArgs e)
         {
             //SetPlaceholder(this);
@@ -77,6 +82,7 @@ namespace GymManagementSystem.FORMS.Member
             LoadDietPlanComboBox();
             LoadGenderComboBox();
             LoadPaymentMethodComboBox();
+            LoadFeesTypeComboBox();
         }
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
@@ -160,14 +166,14 @@ namespace GymManagementSystem.FORMS.Member
         private void cmbSelectMemberPaymentMethod_Click(object sender, EventArgs e)
         {
             //cmbSelectMemberPaymentMethod.Items.Clear();
-            cmbSelectMemberPaymentMethod.Text = null;
+            ///mbSelectMemberPaymentMethod.Text = null;
             cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
         }
 
         private void cmbSelectMemberPaymentFeesType_Click(object sender, EventArgs e)
         {
-            cmbSelectMemberPaymentFeesType.Items.Clear();
-            cmbSelectMemberPaymentFeesType.Text = null;
+            //cmbSelectMemberPaymentFeesType.Items.Clear();
+            //cmbSelectMemberPaymentFeesType.Text = null;
             cmbSelectMemberPaymentFeesType.ForeColor = Color.Black;
         
         }
@@ -179,7 +185,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberGender_Click_1(object sender, EventArgs e)
         {
-            cmbSelectMemberGender.Text = null;
+            //cmbSelectMemberGender.Text = null;
             cmbSelectMemberGender.ForeColor = Color.Black;
         }
 
@@ -271,12 +277,19 @@ namespace GymManagementSystem.FORMS.Member
             {
                 txtEnterMemberDistrict.Clear();
             }
+            //Radio Button Validation
+            if (!ValidationUI.ValidateRadioButtonSelection(
+                    rbtnNeedLocker,
+                    rbtnDontNeedLocker))
+            {
+                return;
+            }
+            //TextBox Validation
             if (!ValidationUI.ValidateRequiredTextBoxes(
                 this.txtEnterMemberFirstName,
                 this.txtEnterMemberLastName,
                 this.txtEnterMemberPhoneNumber,
                 this.txtEnterMemberEmailId,
-                this.txtEnterMemberEmergencyContact,
                 this.txtEnterMemberState,
                 this.txtEnterMemberCity,
                 this.txtEnterMemberDistrict
@@ -284,23 +297,53 @@ namespace GymManagementSystem.FORMS.Member
             {
                 return;
             }
+            //ComboBox Validation
             if (!ValidationUI.ValidateRequiredComboBoxes(
-                
+                cmbSelectMemberMemberMembershipPlan,
+                cmbSelectMemberShiftTime,
+                cmbSelectMemberDietPlan,
+                cmbSelectMemberPaymentMethod,
+                cmbSelectMemberPaymentFeesType,
+                cmbSelectMemberGender
                 ))
             {
                 return;
             }
+            //Object Created
             MemberAllDetailsUI memberAllDetailsUI = new MemberAllDetailsUI();
+
+            memberAllDetailsUI.FirstName = txtEnterMemberFirstName.Text.Trim();
+            memberAllDetailsUI.MiddleName = txtEnterMemberMiddleName.Text.Trim();
+            memberAllDetailsUI.LastName = txtEnterMemberLastName.Text.Trim();
+            memberAllDetailsUI.GenderId = Convert.ToInt32(cmbSelectMemberGender.SelectedValue);
+            memberAllDetailsUI.PhoneNo = txtEnterMemberPhoneNumber.Text.Trim();
+            memberAllDetailsUI.EmailId = txtEnterMemberEmailId.Text.Trim();
+            memberAllDetailsUI.City = txtEnterMemberCity.Text.Trim();
+            memberAllDetailsUI.District = txtEnterMemberDistrict.Text.Trim();
+            memberAllDetailsUI.State = txtEnterMemberState.Text.Trim();
+            memberAllDetailsUI.EmergencyContact = txtEnterMemberEmergencyContact.Text.Trim();
+            memberAllDetailsUI.MembershipPlanId = Convert.ToInt32(cmbSelectMemberMemberMembershipPlan.SelectedValue);
+
+
+            memberAllDetailsUI.PaymentMethod =cmbSelectMemberPaymentMethod.Text;
+            memberAllDetailsUI.FeesType =cmbSelectMemberPaymentFeesType.Text;
+
+            //=========================
+            // SHIFT
+            //=========================
+
+            memberAllDetailsUI.ShiftId = Convert.ToInt32(cmbSelectMemberShiftTime.SelectedValue);
+
+            //=========================
+            // DIET
+            //=========================
+
+            memberAllDetailsUI.DietPlanId =Convert.ToInt32(cmbSelectMemberDietPlan.SelectedValue);
+
             if (!string.IsNullOrEmpty(selectedImagePath))
             {
                 memberAllDetailsUI.ProfilePhoto =
                     File.ReadAllBytes(selectedImagePath);
-            }
-            if (!ValidationUI.ValidateRadioButtonSelection(
-                    rbtnNeedLocker,
-                    rbtnDontNeedLocker))
-            {
-                return;
             }
             if (rbtnNeedLocker.Checked)
             {
@@ -310,6 +353,12 @@ namespace GymManagementSystem.FORMS.Member
             {
                 memberAllDetailsUI.NeedLocker = 0;
             }
+            string message = memberAllDetailsUI.RegisterNewMemberUI();
+
+            MessageBox.Show(message,
+                            "Registration",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
         }
 
         private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -354,6 +403,11 @@ namespace GymManagementSystem.FORMS.Member
                 selectedImagePath = openFileDialog.FileName;
                picMemberUploadedPhoto.Image = Image.FromFile(openFileDialog.FileName);
             }
+        }
+
+        private void cmbSelectMemberPaymentFeesType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }

@@ -19,5 +19,9 @@ namespace GymManagementSystem.Common
         {
             return LookupBLL.GetPaymentMethods();
         }
+        public static List<string> GetFeesType()
+        {
+            return LookupBLL.GetFeesType();
+        }
     }
 }
