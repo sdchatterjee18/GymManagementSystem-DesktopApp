@@ -18,7 +18,7 @@ namespace GymManagementSystemBLLayer.Common
 
             // Membership Plan Validation
             MembershipPlanNameRequired,
-            AnyNameMustContainOnlyLettersAndNumbers,
+            AnyNameMustContainOnlyLetters,
 
             // Price Validation
             PriceRequired,
@@ -165,14 +165,14 @@ namespace GymManagementSystemBLLayer.Common
         // Membership Plan Name Validation
         public static CommonValidationMessage ValidateName(string Name)
         {
-            // Only letters, numbers and spaces are allowed
             foreach (char ch in Name)
             {
-                if (!char.IsLetter(ch))
+                if (!char.IsLetter(ch) && ch != ' ')
                 {
-                    return CommonValidationMessage.AnyNameMustContainOnlyLettersAndNumbers;
+                    return CommonValidationMessage.AnyNameMustContainOnlyLetters;
                 }
             }
+
             return CommonValidationMessage.Valid;
         }
 
@@ -195,7 +195,7 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.MembershipPlanNameRequired:
                     return "Membership Plan Name is required.";
 
-                case CommonValidationMessage.AnyNameMustContainOnlyLettersAndNumbers:
+                case CommonValidationMessage.AnyNameMustContainOnlyLetters:
                     return "Any Name can contain only letters";
 
                 // Price Validation
