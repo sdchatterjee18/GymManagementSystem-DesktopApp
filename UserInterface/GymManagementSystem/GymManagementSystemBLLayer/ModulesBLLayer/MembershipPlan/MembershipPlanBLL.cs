@@ -117,7 +117,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
 
             return membershipPlanDAL.InsertMembershipPlanDAL();
         }
-        public string ValidateMembershipPlanBLL(
+       public string ValidateMembershipPlanBLL(
        string membershipPlanName,
        string duration,
        string price,
@@ -143,5 +143,9 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
 
             return string.Empty;
         }
+       public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
+       {
+           return MembershipPlanDAL.GetPriceByMembershipPlanId(membershipPlanId);
+       }
     }
 }

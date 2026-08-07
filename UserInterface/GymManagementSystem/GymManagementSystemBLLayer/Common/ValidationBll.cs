@@ -91,16 +91,12 @@ namespace GymManagementSystemBLLayer.Common
             // Check negative number
             if (phoneNumber.StartsWith("-"))
                 return CommonValidationMessage.PhoneNumberMustBePositive;
-
-
             // Check only digits
             foreach (char c in phoneNumber)
             {
                 if (c < '0' || c > '9')
                     return CommonValidationMessage.PhoneNumberMustBeNumeric;
             }
-
-
             // Check length (Indian mobile number = 10 digits)
             if(phoneNumber != "")
             {
@@ -109,6 +105,7 @@ namespace GymManagementSystemBLLayer.Common
             }
             return CommonValidationMessage.Valid;
         }
+
 
         // Required Text Validation
         public static CommonValidationMessage ValidateRequiredText(string text)

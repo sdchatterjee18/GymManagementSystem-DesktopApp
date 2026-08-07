@@ -116,6 +116,24 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
 
             return LookupDAL.InsertSpecificItem("spInsertDataIntoMembershipPlan",parameters);
         }
+        public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
+        {
+            SqlParameter[] parameters =
+            {
+                 new SqlParameter("@MembershipPlanId", membershipPlanId)
+            };
+
+            object result = LookupDAL.GetSingleData(
+                "spGetMembershipPlanPriceById",
+                parameters);
+
+            if (result != null)
+            {
+                return Convert.ToDecimal(result);
+            }
+
+            return 0;
+        }
     }
 }
 

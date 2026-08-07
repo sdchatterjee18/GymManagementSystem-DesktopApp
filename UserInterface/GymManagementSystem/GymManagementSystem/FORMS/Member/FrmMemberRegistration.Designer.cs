@@ -225,7 +225,6 @@
             this.cmbSelectMemberMemberMembershipPlan.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberMemberMembershipPlan.TabIndex = 9;
             this.cmbSelectMemberMemberMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberMemberMembershipPlan_SelectedIndexChanged);
-            this.cmbSelectMemberMemberMembershipPlan.Click += new System.EventHandler(this.cmbSelectMemberMemberMembershipPlan_Click);
             // 
             // tlpMemberRegistrationFeesWholeFrom
             // 
@@ -899,7 +898,6 @@
             this.cmbSelectMemberGender.Size = new System.Drawing.Size(180, 27);
             this.cmbSelectMemberGender.TabIndex = 9;
             this.cmbSelectMemberGender.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberGender_SelectedIndexChanged);
-            this.cmbSelectMemberGender.Click += new System.EventHandler(this.cmbSelectMemberGender_Click_1);
             // 
             // tlpMemberProfilePhotoUploadPortion
             // 
@@ -1366,7 +1364,6 @@
             this.cmbSelectMemberShiftTime.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberShiftTime.TabIndex = 9;
             this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberShiftTime_SelectedIndexChanged);
-            this.cmbSelectMemberShiftTime.Click += new System.EventHandler(this.cmbSelectMemberShiftTime_Click);
             // 
             // tlpselectMemberDietPlan
             // 
@@ -1396,7 +1393,6 @@
             this.cmbSelectMemberDietPlan.Size = new System.Drawing.Size(273, 27);
             this.cmbSelectMemberDietPlan.TabIndex = 9;
             this.cmbSelectMemberDietPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberDietPlan_SelectedIndexChanged);
-            this.cmbSelectMemberDietPlan.Click += new System.EventHandler(this.cmbSelectMemberDietPlan_Click);
             // 
             // tlpMemberPaymentInfromationwholeSection
             // 
@@ -1596,7 +1592,6 @@
             this.cmbSelectMemberPaymentMethod.TabIndex = 9;
             this.cmbSelectMemberPaymentMethod.TabStop = false;
             this.cmbSelectMemberPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentMethod_SelectedIndexChanged);
-            this.cmbSelectMemberPaymentMethod.Click += new System.EventHandler(this.cmbSelectMemberPaymentMethod_Click);
             // 
             // tlpSelectMemberPaymentFeesType
             // 
@@ -1626,7 +1621,6 @@
             this.cmbSelectMemberPaymentFeesType.Size = new System.Drawing.Size(261, 27);
             this.cmbSelectMemberPaymentFeesType.TabIndex = 9;
             this.cmbSelectMemberPaymentFeesType.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_SelectedIndexChanged);
-            this.cmbSelectMemberPaymentFeesType.Click += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_Click);
             // 
             // tlpMemberInfromationSubmitResetCanclePortion
             // 

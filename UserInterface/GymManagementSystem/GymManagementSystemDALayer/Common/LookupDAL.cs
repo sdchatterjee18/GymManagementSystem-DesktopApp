@@ -202,7 +202,34 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-
-
+        public static object GetSingleData(string spName, SqlParameter[] parameters)
+        {
+            SqlConnection sqlConnection = null;
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(spName, sqlConnection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(parameters);
+                        sqlConnection.Open();
+                        object result = cmd.ExecuteScalar();
+                        return result;
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
     }
 }
