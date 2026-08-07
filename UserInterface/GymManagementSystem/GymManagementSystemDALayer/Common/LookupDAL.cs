@@ -13,44 +13,6 @@ namespace GymManagementSystemDALayer.Common
 {
     public class LookupDAL
     {
-        public static List<ShiftDAL> GetShifts()
-        {
-            List<ShiftDAL> Shifts = null;
-            SqlConnection sqlConnection = null;
-            try
-            {
-                Shifts = new List<ShiftDAL>();
-                //throw new Exception("Testing exception");
-                using (sqlConnection = DBconnection.GetSqlConnection())
-                {
-                    SqlCommand cmd = new SqlCommand("spRetrieveShiftTimeTable", sqlConnection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    sqlConnection.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        ShiftDAL shift = new ShiftDAL();
-                        shift.ShiftId = Convert.ToInt32(reader["ShiftId"]);
-                        shift.ShiftName = reader["ShiftName"].ToString();
-                        Shifts.Add(shift);
-                    }
-                    return Shifts;
-                }
-            }
-            catch(Exception ex)
-            {
-                return Shifts;
-            }
-            finally
-            {
-                if(sqlConnection!=null)
-                {
-                    sqlConnection.Close();
-                }
-            }
-            
-            //return Shifts;
-        }
         public static DataTable GetComboBoxDetails(string spName)
      {
         DataTable dataTable = null;
@@ -114,28 +76,40 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-        public static DataTable UpdateSpecificItem(string spName, SqlParameter[] parameters)
+        public static string UpdateSpecificItem(string spName, SqlParameter[] parameters)
         {
-            DataTable dataTable = new DataTable();
-
+            string Messege = null;
+            SqlConnection sqlConnection = null;
             try
             {
-                using (SqlConnection sqlConnection = DBconnection.GetSqlConnection())
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
+                using (sqlConnection = DBconnection.GetSqlConnection())
                 {
-                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    using (SqlCommand cmd = new SqlCommand(spName, sqlConnection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddRange(parameters);
+                        sqlConnection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            Messege = result.ToString();
+                        }
 
-                    if (parameters != null)
-                        sqlDataAdapter.SelectCommand.Parameters.AddRange(parameters);
-
-                    sqlDataAdapter.Fill(dataTable);
+                        return Messege;
+                    }
                 }
             }
             catch
             {
+                return Messege;
             }
-
-            return dataTable;
+            finally
+            {
+                if (sqlConnection!=null)
+                {
+                    sqlConnection.Close();
+                }
+            }
         }
         public static DataTable DeactivateSpecificItemById(string spName, int id, string parameterName)
         {
@@ -228,5 +202,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+
+
     }
 }
