@@ -16,9 +16,34 @@ namespace GymManagementSystem.FORMS.Member
             InitializeComponent();
         }
 
+        private void tlpChangeShiftButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpChangeShiftButton.BackColor = Color.DarkGreen;
+        }
+
+        private void tlpChangeShiftButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpChangeShiftButton.BackColor = Color.ForestGreen;
+        }
+
+        private void tlpCancleSectionInChangeMemberShift_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpCancleSectionInChangeMemberShift.BackColor = Color.OrangeRed;
+            
+        }
+
+        private void tlpCancleSectionInChangeMemberShift_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpCancleSectionInChangeMemberShift.BackColor = Color.Red;
+        }
+
         private void FrmChangeShift_Load(object sender, EventArgs e)
         {
 
         }
+
+       
+
+       
     }
 }
