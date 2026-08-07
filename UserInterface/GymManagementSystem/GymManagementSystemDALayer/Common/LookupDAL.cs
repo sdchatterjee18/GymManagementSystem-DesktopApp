@@ -114,42 +114,28 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-        public static DataTable UpdateSpecificItemById(string spName,int id,string parameterId,decimal price,string description)
+        public static DataTable UpdateSpecificItem(string spName, SqlParameter[] parameters)
         {
-            DataTable dataTable = null;
-            SqlConnection sqlConnection = null;
+            DataTable dataTable = new DataTable();
 
             try
             {
-                using (sqlConnection = DBconnection.GetSqlConnection())
+                using (SqlConnection sqlConnection = DBconnection.GetSqlConnection())
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
                 {
-                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(spName, sqlConnection))
-                    {
-                        sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue(parameterId, id);
-                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Description", description);
-                        sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@NewPrice", price);
+                    if (parameters != null)
+                        sqlDataAdapter.SelectCommand.Parameters.AddRange(parameters);
 
-                        dataTable = new DataTable();
-
-                        sqlDataAdapter.Fill(dataTable);
-
-                        return dataTable;
-                    }
+                    sqlDataAdapter.Fill(dataTable);
                 }
             }
             catch
             {
-                return dataTable;
             }
-            finally
-            {
-                if (sqlConnection != null)
-                {
-                    sqlConnection.Close();
-                }
-            }
+
+            return dataTable;
         }
         public static DataTable DeactivateSpecificItemById(string spName, int id, string parameterName)
         {
