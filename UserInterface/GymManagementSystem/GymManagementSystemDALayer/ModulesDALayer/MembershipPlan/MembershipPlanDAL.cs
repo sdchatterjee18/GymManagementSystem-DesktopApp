@@ -64,15 +64,18 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
         }
         public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdDAL(int membershipPlanId,decimal price,string description)
         {
-            DataTable dt = LookupDAL.UpdateSpecificItemById(
-                "spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId",
-                membershipPlanId,
-                "@MembershipPlanId",
-                price,
-                description
-            );
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@MembershipPlanId", membershipPlanId),
+                new SqlParameter("@Description", description),
+                new SqlParameter("@NewPrice", price)
+            };
 
-            if (dt != null && dt.Rows.Count > 0)
+            DataTable dt = LookupDAL.UpdateSpecificItem(
+                "spUpdateMembershipPlanDescriptionAndPriceByMembershipPlanId",
+                parameters);
+
+            if (dt.Rows.Count > 0)
             {
                 return dt.Rows[0]["Message"].ToString();
             }

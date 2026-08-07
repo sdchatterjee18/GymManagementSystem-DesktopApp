@@ -26,5 +26,13 @@ namespace GymManagementSystemBLLayer.Common
                "Net Banking"
             };
         }
+        public static List<string> GetFeesType()
+        {
+            return new List<string>
+            {
+               "Renewal",
+               "New Registration"
+            };
+        }
     }
 }
