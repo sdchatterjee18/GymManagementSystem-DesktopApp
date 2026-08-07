@@ -6413,7 +6413,7 @@ END;
 GO
 
 --------------------------------
-  --SP: spRemoveMemberDietPlan--
+  --SP: spUpdateDietPlanDetails--
 --------------------------------
 CREATE PROC spUpdateDietPlanDetails
 (
