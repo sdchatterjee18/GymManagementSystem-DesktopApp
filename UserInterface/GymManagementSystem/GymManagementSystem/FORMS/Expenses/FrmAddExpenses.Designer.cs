@@ -439,10 +439,10 @@
             this.pnlAddExpenseCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlAddExpenseCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAddExpenseCategory.Controls.Add(this.tlpAddButton);
-            this.pnlAddExpenseCategory.Location = new System.Drawing.Point(851, 32);
+            this.pnlAddExpenseCategory.Location = new System.Drawing.Point(887, 32);
             this.pnlAddExpenseCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddExpenseCategory.Name = "pnlAddExpenseCategory";
-            this.pnlAddExpenseCategory.Size = new System.Drawing.Size(178, 35);
+            this.pnlAddExpenseCategory.Size = new System.Drawing.Size(142, 35);
             this.pnlAddExpenseCategory.TabIndex = 4;
             this.pnlAddExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
             // 
@@ -460,7 +460,7 @@
             this.tlpAddButton.Name = "tlpAddButton";
             this.tlpAddButton.RowCount = 1;
             this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.Size = new System.Drawing.Size(176, 33);
+            this.tlpAddButton.Size = new System.Drawing.Size(140, 33);
             this.tlpAddButton.TabIndex = 5;
             this.tlpAddButton.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
             this.tlpAddButton.MouseEnter += new System.EventHandler(this.tlpAddButton_MouseEnter);
@@ -470,11 +470,11 @@
             // 
             this.lblAddNewExpenseCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAddNewExpenseCategory.AutoSize = true;
-            this.lblAddNewExpenseCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewExpenseCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddNewExpenseCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
-            this.lblAddNewExpenseCategory.Location = new System.Drawing.Point(35, 5);
+            this.lblAddNewExpenseCategory.Location = new System.Drawing.Point(28, 6);
             this.lblAddNewExpenseCategory.Name = "lblAddNewExpenseCategory";
-            this.lblAddNewExpenseCategory.Size = new System.Drawing.Size(117, 23);
+            this.lblAddNewExpenseCategory.Size = new System.Drawing.Size(106, 20);
             this.lblAddNewExpenseCategory.TabIndex = 1;
             this.lblAddNewExpenseCategory.Text = "Add Category";
             this.lblAddNewExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
@@ -485,7 +485,7 @@
             // 
             this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(12, 8);
+            this.picAddIcon.Location = new System.Drawing.Point(5, 8);
             this.picAddIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAddIcon.Name = "picAddIcon";
             this.picAddIcon.Size = new System.Drawing.Size(17, 17);
