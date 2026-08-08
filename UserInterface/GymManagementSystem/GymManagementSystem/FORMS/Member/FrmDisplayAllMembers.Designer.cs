@@ -83,14 +83,14 @@
             this.tlpMainDisplayMembers.Controls.Add(this.tlpDisplayMemberHeaderSection, 1, 0);
             this.tlpMainDisplayMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMainDisplayMembers.Location = new System.Drawing.Point(0, 0);
-            this.tlpMainDisplayMembers.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMainDisplayMembers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMainDisplayMembers.Name = "tlpMainDisplayMembers";
             this.tlpMainDisplayMembers.RowCount = 3;
             this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.4467F));
             this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.35025F));
             this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.117772F));
-            this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpMainDisplayMembers.Size = new System.Drawing.Size(862, 609);
+            this.tlpMainDisplayMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMainDisplayMembers.Size = new System.Drawing.Size(1149, 750);
             this.tlpMainDisplayMembers.TabIndex = 4;
             this.tlpMainDisplayMembers.Click += new System.EventHandler(this.tlpMainDisplayMembers_Click);
             // 
@@ -133,7 +133,8 @@
             this.dgvDisplayMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDisplayMemberInformation.EnableHeadersVisualStyles = false;
             this.dgvDisplayMemberInformation.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvDisplayMemberInformation.Location = new System.Drawing.Point(46, 133);
+            this.dgvDisplayMemberInformation.Location = new System.Drawing.Point(61, 164);
+            this.dgvDisplayMemberInformation.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDisplayMemberInformation.MultiSelect = false;
             this.dgvDisplayMemberInformation.Name = "dgvDisplayMemberInformation";
             this.dgvDisplayMemberInformation.ReadOnly = true;
@@ -152,7 +153,7 @@
             this.dgvDisplayMemberInformation.RowTemplate.ReadOnly = true;
             this.dgvDisplayMemberInformation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDisplayMemberInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDisplayMemberInformation.Size = new System.Drawing.Size(769, 441);
+            this.dgvDisplayMemberInformation.Size = new System.Drawing.Size(1026, 542);
             this.dgvDisplayMemberInformation.TabIndex = 1;
             this.dgvDisplayMemberInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayMemberInformation_CellClick);
             this.dgvDisplayMemberInformation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDisplayMemberInformation_CellFormatting);
@@ -242,21 +243,21 @@
             this.tlpDisplayMemberHeaderSection.Controls.Add(this.tlpTopTitleAndMemberIconPanal, 0, 0);
             this.tlpDisplayMemberHeaderSection.Controls.Add(this.tlpMemberSearchArea, 0, 1);
             this.tlpDisplayMemberHeaderSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDisplayMemberHeaderSection.Location = new System.Drawing.Point(43, 0);
+            this.tlpDisplayMemberHeaderSection.Location = new System.Drawing.Point(57, 0);
             this.tlpDisplayMemberHeaderSection.Margin = new System.Windows.Forms.Padding(0);
             this.tlpDisplayMemberHeaderSection.Name = "tlpDisplayMemberHeaderSection";
             this.tlpDisplayMemberHeaderSection.RowCount = 2;
             this.tlpDisplayMemberHeaderSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.41718F));
             this.tlpDisplayMemberHeaderSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.58282F));
-            this.tlpDisplayMemberHeaderSection.Size = new System.Drawing.Size(775, 130);
+            this.tlpDisplayMemberHeaderSection.Size = new System.Drawing.Size(1034, 160);
             this.tlpDisplayMemberHeaderSection.TabIndex = 10;
             this.tlpDisplayMemberHeaderSection.Click += new System.EventHandler(this.tlpDisplayMemberHeaderSection_Click);
             // 
             // tlpTopTitleAndMemberIconPanal
             // 
             this.tlpTopTitleAndMemberIconPanal.ColumnCount = 3;
-            this.tlpTopTitleAndMemberIconPanal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tlpTopTitleAndMemberIconPanal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tlpTopTitleAndMemberIconPanal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpTopTitleAndMemberIconPanal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpTopTitleAndMemberIconPanal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95F));
             this.tlpTopTitleAndMemberIconPanal.Controls.Add(this.tlpTopTitleAndSubTitleAndIconInDisplayMember, 1, 0);
             this.tlpTopTitleAndMemberIconPanal.Controls.Add(this.picDisplayMemberIcon, 0, 0);
@@ -266,7 +267,7 @@
             this.tlpTopTitleAndMemberIconPanal.Name = "tlpTopTitleAndMemberIconPanal";
             this.tlpTopTitleAndMemberIconPanal.RowCount = 1;
             this.tlpTopTitleAndMemberIconPanal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopTitleAndMemberIconPanal.Size = new System.Drawing.Size(775, 83);
+            this.tlpTopTitleAndMemberIconPanal.Size = new System.Drawing.Size(1034, 103);
             this.tlpTopTitleAndMemberIconPanal.TabIndex = 3;
             this.tlpTopTitleAndMemberIconPanal.Click += new System.EventHandler(this.tlpTopTitleAndMemberIconPanal_Click_1);
             // 
@@ -277,14 +278,14 @@
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Controls.Add(this.lblSubtitleDisplayAllMember, 0, 1);
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Controls.Add(this.lblTitleDisplayAllMember, 0, 0);
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Location = new System.Drawing.Point(60, 0);
+            this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Location = new System.Drawing.Point(80, 0);
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Name = "tlpTopTitleAndSubTitleAndIconInDisplayMember";
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.RowCount = 3;
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.45361F));
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.17526F));
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45833F));
-            this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Size = new System.Drawing.Size(225, 83);
+            this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Size = new System.Drawing.Size(300, 103);
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.TabIndex = 3;
             this.tlpTopTitleAndSubTitleAndIconInDisplayMember.Click += new System.EventHandler(this.tlpTopTitleAndSubTitleAndIconInDisplayMember_Click_1);
             // 
@@ -293,10 +294,9 @@
             this.lblSubtitleDisplayAllMember.AutoSize = true;
             this.lblSubtitleDisplayAllMember.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitleDisplayAllMember.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblSubtitleDisplayAllMember.Location = new System.Drawing.Point(2, 40);
-            this.lblSubtitleDisplayAllMember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubtitleDisplayAllMember.Location = new System.Drawing.Point(3, 50);
             this.lblSubtitleDisplayAllMember.Name = "lblSubtitleDisplayAllMember";
-            this.lblSubtitleDisplayAllMember.Size = new System.Drawing.Size(173, 13);
+            this.lblSubtitleDisplayAllMember.Size = new System.Drawing.Size(215, 19);
             this.lblSubtitleDisplayAllMember.TabIndex = 1;
             this.lblSubtitleDisplayAllMember.Text = "Everything About GYM Members";
             this.lblSubtitleDisplayAllMember.Click += new System.EventHandler(this.lblSubtitleDisplayAllMember_Click_1);
@@ -306,10 +306,9 @@
             this.lblTitleDisplayAllMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTitleDisplayAllMember.AutoSize = true;
             this.lblTitleDisplayAllMember.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleDisplayAllMember.Location = new System.Drawing.Point(2, 19);
-            this.lblTitleDisplayAllMember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitleDisplayAllMember.Location = new System.Drawing.Point(3, 22);
             this.lblTitleDisplayAllMember.Name = "lblTitleDisplayAllMember";
-            this.lblTitleDisplayAllMember.Size = new System.Drawing.Size(195, 21);
+            this.lblTitleDisplayAllMember.Size = new System.Drawing.Size(245, 28);
             this.lblTitleDisplayAllMember.TabIndex = 0;
             this.lblTitleDisplayAllMember.Text = "All Members Of Our GYM";
             this.lblTitleDisplayAllMember.Click += new System.EventHandler(this.lblTitleDisplayAllMember_Click);
@@ -321,7 +320,7 @@
             this.picDisplayMemberIcon.Location = new System.Drawing.Point(0, 0);
             this.picDisplayMemberIcon.Margin = new System.Windows.Forms.Padding(0);
             this.picDisplayMemberIcon.Name = "picDisplayMemberIcon";
-            this.picDisplayMemberIcon.Size = new System.Drawing.Size(60, 83);
+            this.picDisplayMemberIcon.Size = new System.Drawing.Size(80, 103);
             this.picDisplayMemberIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDisplayMemberIcon.TabIndex = 11;
             this.picDisplayMemberIcon.TabStop = false;
@@ -330,22 +329,22 @@
             // tlpMemberSearchArea
             // 
             this.tlpMemberSearchArea.ColumnCount = 5;
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tlpMemberSearchArea.Controls.Add(this.txtSearchMember, 1, 0);
             this.tlpMemberSearchArea.Controls.Add(this.btnSearchMemberByPhoneNumber, 2, 0);
             this.tlpMemberSearchArea.Controls.Add(this.picSearchMember, 0, 0);
             this.tlpMemberSearchArea.Controls.Add(this.pnlClickAddNewMember, 4, 0);
             this.tlpMemberSearchArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberSearchArea.Location = new System.Drawing.Point(2, 85);
-            this.tlpMemberSearchArea.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMemberSearchArea.Location = new System.Drawing.Point(3, 105);
+            this.tlpMemberSearchArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberSearchArea.Name = "tlpMemberSearchArea";
             this.tlpMemberSearchArea.RowCount = 1;
             this.tlpMemberSearchArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberSearchArea.Size = new System.Drawing.Size(771, 43);
+            this.tlpMemberSearchArea.Size = new System.Drawing.Size(1028, 53);
             this.tlpMemberSearchArea.TabIndex = 4;
             this.tlpMemberSearchArea.Click += new System.EventHandler(this.tlpMemberSearchArea_Click);
             // 
@@ -354,10 +353,10 @@
             this.txtSearchMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMember.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearchMember.Location = new System.Drawing.Point(39, 7);
-            this.txtSearchMember.Margin = new System.Windows.Forms.Padding(6, 2, 2, 2);
+            this.txtSearchMember.Location = new System.Drawing.Point(52, 9);
+            this.txtSearchMember.Margin = new System.Windows.Forms.Padding(8, 2, 3, 2);
             this.txtSearchMember.Name = "txtSearchMember";
-            this.txtSearchMember.Size = new System.Drawing.Size(229, 29);
+            this.txtSearchMember.Size = new System.Drawing.Size(305, 34);
             this.txtSearchMember.TabIndex = 11;
             this.txtSearchMember.Text = "Enter Mobile No.";
             this.txtSearchMember.Click += new System.EventHandler(this.txtSearchMember_Click_1);
@@ -368,10 +367,10 @@
             this.btnSearchMemberByPhoneNumber.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSearchMemberByPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMemberByPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMemberByPhoneNumber.Location = new System.Drawing.Point(272, 5);
-            this.btnSearchMemberByPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchMemberByPhoneNumber.Location = new System.Drawing.Point(363, 7);
+            this.btnSearchMemberByPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchMemberByPhoneNumber.Name = "btnSearchMemberByPhoneNumber";
-            this.btnSearchMemberByPhoneNumber.Size = new System.Drawing.Size(90, 32);
+            this.btnSearchMemberByPhoneNumber.Size = new System.Drawing.Size(119, 39);
             this.btnSearchMemberByPhoneNumber.TabIndex = 9;
             this.btnSearchMemberByPhoneNumber.Text = "Submit";
             this.btnSearchMemberByPhoneNumber.UseVisualStyleBackColor = false;
@@ -381,10 +380,10 @@
             // 
             this.picSearchMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picSearchMember.Image = ((System.Drawing.Image)(resources.GetObject("picSearchMember.Image")));
-            this.picSearchMember.Location = new System.Drawing.Point(0, 5);
+            this.picSearchMember.Location = new System.Drawing.Point(0, 7);
             this.picSearchMember.Margin = new System.Windows.Forms.Padding(0);
             this.picSearchMember.Name = "picSearchMember";
-            this.picSearchMember.Size = new System.Drawing.Size(33, 32);
+            this.picSearchMember.Size = new System.Drawing.Size(44, 39);
             this.picSearchMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchMember.TabIndex = 0;
             this.picSearchMember.TabStop = false;
@@ -395,10 +394,10 @@
             this.pnlClickAddNewMember.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlClickAddNewMember.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickAddNewMember.Controls.Add(this.tlpAddNewMember);
-            this.pnlClickAddNewMember.Location = new System.Drawing.Point(673, 7);
-            this.pnlClickAddNewMember.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlClickAddNewMember.Location = new System.Drawing.Point(905, 9);
+            this.pnlClickAddNewMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlClickAddNewMember.Name = "pnlClickAddNewMember";
-            this.pnlClickAddNewMember.Size = new System.Drawing.Size(96, 29);
+            this.pnlClickAddNewMember.Size = new System.Drawing.Size(120, 35);
             this.pnlClickAddNewMember.TabIndex = 12;
             // 
             // tlpAddNewMember
@@ -411,11 +410,11 @@
             this.tlpAddNewMember.Controls.Add(this.picAddIcon, 0, 0);
             this.tlpAddNewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddNewMember.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewMember.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpAddNewMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAddNewMember.Name = "tlpAddNewMember";
             this.tlpAddNewMember.RowCount = 1;
             this.tlpAddNewMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewMember.Size = new System.Drawing.Size(94, 27);
+            this.tlpAddNewMember.Size = new System.Drawing.Size(118, 33);
             this.tlpAddNewMember.TabIndex = 5;
             this.tlpAddNewMember.Click += new System.EventHandler(this.tlpAddNewMember_Click);
             this.tlpAddNewMember.Enter += new System.EventHandler(this.tlpAddNewMember_Enter);
@@ -426,12 +425,11 @@
             // 
             this.lblAddNewMember.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAddNewMember.AutoSize = true;
-            this.lblAddNewMember.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewMember.ForeColor = System.Drawing.Color.Blue;
-            this.lblAddNewMember.Location = new System.Drawing.Point(25, 4);
-            this.lblAddNewMember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddNewMember.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
+            this.lblAddNewMember.Location = new System.Drawing.Point(32, 6);
             this.lblAddNewMember.Name = "lblAddNewMember";
-            this.lblAddNewMember.Size = new System.Drawing.Size(67, 19);
+            this.lblAddNewMember.Size = new System.Drawing.Size(78, 20);
             this.lblAddNewMember.TabIndex = 1;
             this.lblAddNewMember.Text = "Add New ";
             this.lblAddNewMember.Click += new System.EventHandler(this.tlpAddNewMember_Click);
@@ -442,10 +440,10 @@
             // 
             this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(8, 6);
-            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.picAddIcon.Location = new System.Drawing.Point(9, 8);
+            this.picAddIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAddIcon.Name = "picAddIcon";
-            this.picAddIcon.Size = new System.Drawing.Size(13, 14);
+            this.picAddIcon.Size = new System.Drawing.Size(17, 17);
             this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddIcon.TabIndex = 2;
             this.picAddIcon.TabStop = false;
@@ -455,10 +453,11 @@
             // 
             // FrmDisplayAllMembers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 609);
+            this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpMainDisplayMembers);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisplayAllMembers";
             this.Text = "FrmDisplayAllMembers";
             this.Load += new System.EventHandler(this.FrmDisplayAllMembers_Load);

@@ -18,54 +18,50 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmAssignTrainer_Load(object sender, EventArgs e)
         {
-            pnlDefaultTrainerSection.Visible = true;
-            pnlTrainerInformationSection.Visible = false;
+            pnlDefaultTrainerSectionShow.Visible = true;
+            pnlTrainerInformationSectionRetrieve.Visible = false;
 
-            cmbSelectTrainerName.SelectedIndex = -1; 
-            
+            cmbSelectTrainer.SelectedIndex = -1;
         }
 
-        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
+        private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void cmbSelectTrainerName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbSelectTrainerName.SelectedIndex == -1)
+            if (cmbSelectTrainer.SelectedIndex != -1)
             {
-                pnlDefaultTrainerSection.Visible = true;
-                pnlTrainerInformationSection.Visible = false;
+                pnlDefaultTrainerSectionShow.Visible = false;
+                pnlTrainerInformationSectionRetrieve.Visible = true;
+
+                pnlTrainerInformationSectionRetrieve.BringToFront();
             }
             else
             {
-                pnlDefaultTrainerSection.Visible = false;
-                pnlTrainerInformationSection.Visible = true;
-                pnlTrainerInformationSection.BringToFront();
+                pnlDefaultTrainerSectionShow.Visible = true;
+                pnlTrainerInformationSectionRetrieve.Visible = false;
+
+                pnlDefaultTrainerSectionShow.BringToFront();
             }
-
-
-
         }
 
-        private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
+        private void tlpAssignButtonCreateInAssignPersonalTrainer_MouseEnter(object sender, EventArgs e)
         {
-            this.tlpAssignButton.BackColor = Color.DarkGreen;
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.BackColor = Color.DarkGreen;
         }
 
-        private void tlpRegisterButton_MouseLeave(object sender, EventArgs e)
+        private void tlpAssignButtonCreateInAssignPersonalTrainer_MouseLeave(object sender, EventArgs e)
         {
-            this.tlpAssignButton.BackColor = Color.ForestGreen;
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.BackColor = Color.ForestGreen;
         }
 
-        private void tlpCancleButton_MouseEnter(object sender, EventArgs e)
+        private void tlpCancleImageAndLevel_MouseEnter(object sender, EventArgs e)
         {
-            this.tlpCancleButton.BackColor = Color.OrangeRed;
+            this.tlpCancleImageAndLevel.BackColor = Color.OrangeRed;
         }
 
-        private void tlpCancleButton_MouseLeave(object sender, EventArgs e)
+        private void tlpCancleImageAndLevel_MouseLeave(object sender, EventArgs e)
         {
-            this.tlpCancleButton.BackColor = Color.Red;
+            this.tlpCancleImageAndLevel.BackColor = Color.Red;
         }
+
+       
     }
 }

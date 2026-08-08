@@ -30,11 +30,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSADisplayAllEmployee));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.tlpHeading = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHeaderSpace = new System.Windows.Forms.TableLayoutPanel();
@@ -60,8 +60,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colDeactivate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
             this.picBoxSearchIcon = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpHeaderSpace.SuspendLayout();
@@ -84,7 +84,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.pnlHeading.Location = new System.Drawing.Point(0, 0);
             this.pnlHeading.Margin = new System.Windows.Forms.Padding(0);
             this.pnlHeading.Name = "pnlHeading";
-            this.pnlHeading.Size = new System.Drawing.Size(783, 71);
+            this.pnlHeading.Size = new System.Drawing.Size(1044, 87);
             this.pnlHeading.TabIndex = 0;
             this.pnlHeading.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
@@ -99,28 +99,28 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.tlpHeading.Controls.Add(this.tlpHeaderSpace, 1, 0);
             this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpHeading.Location = new System.Drawing.Point(0, 0);
-            this.tlpHeading.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpHeading.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpHeading.Name = "tlpHeading";
             this.tlpHeading.RowCount = 1;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeading.Size = new System.Drawing.Size(783, 69);
+            this.tlpHeading.Size = new System.Drawing.Size(1044, 85);
             this.tlpHeading.TabIndex = 0;
             this.tlpHeading.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
             // tlpHeaderSpace
             // 
             this.tlpHeaderSpace.ColumnCount = 2;
-            this.tlpHeaderSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tlpHeaderSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tlpHeaderSpace.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpHeaderSpace.Controls.Add(this.tlpTitle, 1, 0);
             this.tlpHeaderSpace.Controls.Add(this.picBoxEmployeeIcon, 0, 0);
             this.tlpHeaderSpace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpHeaderSpace.Location = new System.Drawing.Point(29, 0);
+            this.tlpHeaderSpace.Location = new System.Drawing.Point(38, 0);
             this.tlpHeaderSpace.Margin = new System.Windows.Forms.Padding(0);
             this.tlpHeaderSpace.Name = "tlpHeaderSpace";
             this.tlpHeaderSpace.RowCount = 1;
             this.tlpHeaderSpace.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeaderSpace.Size = new System.Drawing.Size(585, 69);
+            this.tlpHeaderSpace.Size = new System.Drawing.Size(780, 85);
             this.tlpHeaderSpace.TabIndex = 0;
             this.tlpHeaderSpace.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
@@ -128,17 +128,17 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             this.tlpTitle.ColumnCount = 1;
             this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tlpTitle.Controls.Add(this.lblSubtitle, 0, 1);
             this.tlpTitle.Controls.Add(this.lblEmployeeDetails, 0, 0);
             this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitle.Location = new System.Drawing.Point(55, 2);
-            this.tlpTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpTitle.Location = new System.Drawing.Point(74, 2);
+            this.tlpTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpTitle.Name = "tlpTitle";
             this.tlpTitle.RowCount = 2;
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.76923F));
             this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.23077F));
-            this.tlpTitle.Size = new System.Drawing.Size(528, 65);
+            this.tlpTitle.Size = new System.Drawing.Size(703, 81);
             this.tlpTitle.TabIndex = 1;
             this.tlpTitle.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
@@ -147,10 +147,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblSubtitle.Location = new System.Drawing.Point(2, 32);
-            this.lblSubtitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubtitle.Location = new System.Drawing.Point(3, 41);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(155, 13);
+            this.lblSubtitle.Size = new System.Drawing.Size(188, 19);
             this.lblSubtitle.TabIndex = 1;
             this.lblSubtitle.Text = "Display all employee records";
             this.lblSubtitle.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
@@ -161,10 +160,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblEmployeeDetails.AutoSize = true;
             this.lblEmployeeDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeDetails.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployeeDetails.Location = new System.Drawing.Point(2, 11);
-            this.lblEmployeeDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmployeeDetails.Location = new System.Drawing.Point(3, 13);
             this.lblEmployeeDetails.Name = "lblEmployeeDetails";
-            this.lblEmployeeDetails.Size = new System.Drawing.Size(135, 21);
+            this.lblEmployeeDetails.Size = new System.Drawing.Size(168, 28);
             this.lblEmployeeDetails.TabIndex = 0;
             this.lblEmployeeDetails.Text = "Employee Details";
             this.lblEmployeeDetails.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
@@ -174,10 +172,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.picBoxEmployeeIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxEmployeeIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxEmployeeIcon.BackgroundImage")));
             this.picBoxEmployeeIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxEmployeeIcon.Location = new System.Drawing.Point(0, 9);
+            this.picBoxEmployeeIcon.Location = new System.Drawing.Point(0, 11);
             this.picBoxEmployeeIcon.Margin = new System.Windows.Forms.Padding(0);
             this.picBoxEmployeeIcon.Name = "picBoxEmployeeIcon";
-            this.picBoxEmployeeIcon.Size = new System.Drawing.Size(53, 51);
+            this.picBoxEmployeeIcon.Size = new System.Drawing.Size(71, 63);
             this.picBoxEmployeeIcon.TabIndex = 0;
             this.picBoxEmployeeIcon.TabStop = false;
             this.picBoxEmployeeIcon.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
@@ -186,11 +184,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             this.pnlAddNewEmployee.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlAddNewEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.pnlAddNewEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAddNewEmployee.Controls.Add(this.tlpAddNewEmployee);
-            this.pnlAddNewEmployee.Location = new System.Drawing.Point(612, 16);
+            this.pnlAddNewEmployee.Location = new System.Drawing.Point(811, 18);
             this.pnlAddNewEmployee.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAddNewEmployee.Name = "pnlAddNewEmployee";
-            this.pnlAddNewEmployee.Size = new System.Drawing.Size(103, 25);
+            this.pnlAddNewEmployee.Size = new System.Drawing.Size(143, 35);
             this.pnlAddNewEmployee.TabIndex = 1;
             this.pnlAddNewEmployee.Click += new System.EventHandler(this.pnlAddNewEmployee_Click);
             this.pnlAddNewEmployee.MouseEnter += new System.EventHandler(this.pnlAddNewEmployee_MouseEnter);
@@ -206,12 +205,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.tlpAddNewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddNewEmployee.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tlpAddNewEmployee.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpAddNewEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAddNewEmployee.Name = "tlpAddNewEmployee";
             this.tlpAddNewEmployee.RowCount = 1;
             this.tlpAddNewEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpAddNewEmployee.Size = new System.Drawing.Size(103, 25);
+            this.tlpAddNewEmployee.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpAddNewEmployee.Size = new System.Drawing.Size(141, 33);
             this.tlpAddNewEmployee.TabIndex = 0;
             this.tlpAddNewEmployee.Click += new System.EventHandler(this.tlpAddNewEmployee_Click);
             this.tlpAddNewEmployee.MouseEnter += new System.EventHandler(this.pnlAddNewEmployee_MouseEnter);
@@ -222,10 +221,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.picBoxPluseIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picBoxPluseIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxPluseIcon.BackgroundImage")));
             this.picBoxPluseIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPluseIcon.Location = new System.Drawing.Point(9, 5);
+            this.picBoxPluseIcon.Location = new System.Drawing.Point(13, 7);
             this.picBoxPluseIcon.Margin = new System.Windows.Forms.Padding(0);
             this.picBoxPluseIcon.Name = "picBoxPluseIcon";
-            this.picBoxPluseIcon.Size = new System.Drawing.Size(15, 15);
+            this.picBoxPluseIcon.Size = new System.Drawing.Size(20, 18);
             this.picBoxPluseIcon.TabIndex = 1;
             this.picBoxPluseIcon.TabStop = false;
             this.picBoxPluseIcon.Click += new System.EventHandler(this.pnlAddNewEmployee_Click);
@@ -237,11 +236,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblAddNewEmployee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAddNewEmployee.AutoSize = true;
             this.lblAddNewEmployee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewEmployee.ForeColor = System.Drawing.Color.Blue;
-            this.lblAddNewEmployee.Location = new System.Drawing.Point(26, 3);
-            this.lblAddNewEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddNewEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
+            this.lblAddNewEmployee.Location = new System.Drawing.Point(36, 5);
             this.lblAddNewEmployee.Name = "lblAddNewEmployee";
-            this.lblAddNewEmployee.Size = new System.Drawing.Size(67, 19);
+            this.lblAddNewEmployee.Size = new System.Drawing.Size(81, 23);
             this.lblAddNewEmployee.TabIndex = 2;
             this.lblAddNewEmployee.Text = "Add New";
             this.lblAddNewEmployee.Click += new System.EventHandler(this.pnlAddNewEmployee_Click);
@@ -255,19 +253,19 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.tlpEmployeeDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.57599F));
             this.tlpEmployeeDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.31545F));
             this.tlpEmployeeDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEmployeeDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tlpEmployeeDataGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tlpEmployeeDataGrid.Controls.Add(this.dvgEmployeeDetails, 1, 1);
             this.tlpEmployeeDataGrid.Controls.Add(this.tlpSearch, 1, 0);
             this.tlpEmployeeDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEmployeeDataGrid.Location = new System.Drawing.Point(0, 71);
+            this.tlpEmployeeDataGrid.Location = new System.Drawing.Point(0, 87);
             this.tlpEmployeeDataGrid.Margin = new System.Windows.Forms.Padding(0);
             this.tlpEmployeeDataGrid.Name = "tlpEmployeeDataGrid";
             this.tlpEmployeeDataGrid.RowCount = 3;
             this.tlpEmployeeDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.38849F));
             this.tlpEmployeeDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.33573F));
             this.tlpEmployeeDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEmployeeDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tlpEmployeeDataGrid.Size = new System.Drawing.Size(783, 400);
+            this.tlpEmployeeDataGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpEmployeeDataGrid.Size = new System.Drawing.Size(1044, 493);
             this.tlpEmployeeDataGrid.TabIndex = 1;
             this.tlpEmployeeDataGrid.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
@@ -275,24 +273,24 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // 
             this.dvgEmployeeDetails.AllowUserToAddRows = false;
             this.dvgEmployeeDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgEmployeeDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgEmployeeDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgEmployeeDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgEmployeeDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dvgEmployeeDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dvgEmployeeDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvgEmployeeDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgEmployeeDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dvgEmployeeDetails.ColumnHeadersHeight = 50;
             this.dvgEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dvgEmployeeDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -306,43 +304,43 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colStatus,
             this.colUpdate,
             this.colDeactivate});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvgEmployeeDetails.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgEmployeeDetails.DefaultCellStyle = dataGridViewCellStyle3;
             this.dvgEmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgEmployeeDetails.EnableHeadersVisualStyles = false;
             this.dvgEmployeeDetails.GridColor = System.Drawing.Color.Gainsboro;
-            this.dvgEmployeeDetails.Location = new System.Drawing.Point(30, 59);
-            this.dvgEmployeeDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.dvgEmployeeDetails.Location = new System.Drawing.Point(40, 73);
+            this.dvgEmployeeDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvgEmployeeDetails.Name = "dvgEmployeeDetails";
             this.dvgEmployeeDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgEmployeeDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgEmployeeDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dvgEmployeeDetails.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dvgEmployeeDetails.RowTemplate.Height = 40;
             this.dvgEmployeeDetails.RowTemplate.ReadOnly = true;
             this.dvgEmployeeDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dvgEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dvgEmployeeDetails.Size = new System.Drawing.Size(711, 318);
+            this.dvgEmployeeDetails.Size = new System.Drawing.Size(948, 393);
             this.dvgEmployeeDetails.TabIndex = 0;
             this.dvgEmployeeDetails.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseEnter);
             this.dvgEmployeeDetails.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseLeave);
@@ -435,21 +433,21 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // tlpSearch
             // 
             this.tlpSearch.ColumnCount = 4;
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSearch.Controls.Add(this.picBoxSearchIcon, 0, 0);
             this.tlpSearch.Controls.Add(this.pnlAddNewEmployee, 3, 0);
             this.tlpSearch.Controls.Add(this.btnSearch, 2, 0);
             this.tlpSearch.Controls.Add(this.txtSearch, 1, 0);
             this.tlpSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSearch.Location = new System.Drawing.Point(28, 0);
+            this.tlpSearch.Location = new System.Drawing.Point(37, 0);
             this.tlpSearch.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSearch.Name = "tlpSearch";
             this.tlpSearch.RowCount = 1;
             this.tlpSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearch.Size = new System.Drawing.Size(715, 57);
+            this.tlpSearch.Size = new System.Drawing.Size(954, 71);
             this.tlpSearch.TabIndex = 1;
             this.tlpSearch.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
             // 
@@ -458,29 +456,15 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.picBoxSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxSearchIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearchIcon.BackgroundImage")));
             this.picBoxSearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxSearchIcon.Location = new System.Drawing.Point(2, 15);
-            this.picBoxSearchIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.picBoxSearchIcon.MaximumSize = new System.Drawing.Size(29, 27);
-            this.picBoxSearchIcon.MinimumSize = new System.Drawing.Size(29, 27);
+            this.picBoxSearchIcon.Location = new System.Drawing.Point(3, 19);
+            this.picBoxSearchIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxSearchIcon.MaximumSize = new System.Drawing.Size(39, 33);
+            this.picBoxSearchIcon.MinimumSize = new System.Drawing.Size(39, 33);
             this.picBoxSearchIcon.Name = "picBoxSearchIcon";
-            this.picBoxSearchIcon.Size = new System.Drawing.Size(29, 27);
+            this.picBoxSearchIcon.Size = new System.Drawing.Size(39, 33);
             this.picBoxSearchIcon.TabIndex = 0;
             this.picBoxSearchIcon.TabStop = false;
             this.picBoxSearchIcon.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(35, 15);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(173, 27);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.Text = "Enter Mobile No";
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // btnSearch
             // 
@@ -489,23 +473,37 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(212, 11);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(283, 14);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(70, 34);
+            this.btnSearch.Size = new System.Drawing.Size(93, 42);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(47, 19);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(229, 32);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.Text = "Enter Mobile No";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
             // FrmSADisplayAllEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 471);
+            this.ClientSize = new System.Drawing.Size(1044, 580);
             this.Controls.Add(this.tlpEmployeeDataGrid);
             this.Controls.Add(this.pnlHeading);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmSADisplayAllEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSADisplayAllEmployee";

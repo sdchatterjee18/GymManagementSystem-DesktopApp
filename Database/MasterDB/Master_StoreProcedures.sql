@@ -2,6 +2,21 @@
 --  MASTER STORED PROCEDURES  --
 --------------------------------
 
+--Super Admin Management — Line 12
+--Employee Management — Line 455
+--Admin Management — Line 1158
+--Trainer Management — Line 1255
+--Shift Management — Line 1712
+--Membership Plan Management — Line 1822
+--Expense Management — Line 2091
+--Registration Management — Line 2556
+--Locker Management — Line 2661
+--Membership Subscription Management — Line 2742
+--Subscription Payment Management — Line 4533
+--Attendance Management — Line 4875
+--Employee Salary Management — Line 5236
+--Workout Schedule Management — Line 5835
+--Diet Plan Management — Line 6165
 
 
 -------------------------------------------------------------------
@@ -11,7 +26,6 @@
 --------------------------------
 -- SP: spRegisterNewSuperAdmin
 --------------------------------
-
 CREATE PROC spRegisterNewSuperAdmin
 (
     @UserName VARCHAR(100),
@@ -2003,35 +2017,36 @@ BEGIN
 END;
 GO
 
----------------------------------------------
---SP: spRetrieveMembershipPlanDetailsByName--
----------------------------------------------
-CREATE PROC spRetrieveMembershipPlanDetailsByName 
+---------------------------------------------------------
+--SP: spRetrieveMembershipPlanDetailsByMembershipPlanId--
+---------------------------------------------------------
+CREATE PROC spRetrieveMembershipPlanDetailsByMembershipPlanId
 (
-    @MembershipPlanName VARCHAR(100)
+    @MembershipPlanId INT
 )
 AS
 BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-        SET @MembershipPlanName = LTRIM(RTRIM(@MembershipPlanName));
 
-        IF @MembershipPlanName = ''
+        IF @MembershipPlanId <= 0
         BEGIN
-            SELECT 'Membership Plan Name is required.' AS Message;
+            SELECT 'Valid Membership Plan Id is required.' AS Message;
             RETURN;
         END;
+
         IF NOT EXISTS
         (
             SELECT 1
             FROM tblMembershipPlans
-            WHERE MembershipPlanName = @MembershipPlanName
+            WHERE MembershipPlanId = @MembershipPlanId
         )
         BEGIN
             SELECT 'Membership Plan not found.' AS Message;
             RETURN;
         END;
+
         SELECT
             MP.MembershipPlanId,
             MP.MembershipPlanName,
@@ -2039,18 +2054,47 @@ BEGIN
             MP.DurationInDays,
             MP.Price,
             MP.Description,
-            MP.IsActive
+            CASE
+                WHEN MP.IsActive = 1 THEN 'Active'
+                ELSE 'Inactive'
+            END AS IsActive
         FROM tblMembershipPlans AS MP
         INNER JOIN tblMembershipPlanType AS MPT
             ON MP.PlanTypeId = MPT.PlanTypeId
-        WHERE MP.MembershipPlanName = @MembershipPlanName;
+        WHERE MP.MembershipPlanId = @MembershipPlanId;
+
     END TRY
     BEGIN CATCH
         SELECT ERROR_MESSAGE() AS Message;
     END CATCH
 END;
 GO
+-----------------------------------------------
+--SP: spGetMembershipPlanPriceById--
+-----------------------------------------------
+CREATE PROCEDURE spGetMembershipPlanPriceById
+(
+    @MembershipPlanId INT
+)
+AS
+BEGIN
+    BEGIN TRY
 
+        SELECT
+            Price
+        FROM tblMembershipPlans
+        WHERE MembershipPlanId = @MembershipPlanId
+          AND IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 ----------------------------------------------------
 --SP: spDeactivateMembershipPlanByMembershipPlanId--
 ----------------------------------------------------
@@ -2079,6 +2123,7 @@ BEGIN
         UPDATE tblMembershipPlans
         SET IsActive = 0
         WHERE MembershipPlanId = @MembershipPlanId;
+        SELECT 'Deactivate Membership Plan Successfully.' AS Message;
 
     END TRY
     BEGIN CATCH
@@ -2779,9 +2824,9 @@ END;
 GO
 
 ----------------------------------------------------------------
---SP: spInsertDataIntoMembershipSubscriptionTableWhileReneweal--
+--SP: spInsertDataIntoMembershipSubscriptionTableWhileReneweal  
 ----------------------------------------------------------------
-CREATE PROC spInsertDataIntoMembershipSubscriptionTableWhileReneweal @MemberId=3,@MembershipPlanId=4,@PaymentMethod='card'
+CREATE PROC spInsertDataIntoMembershipSubscriptionTableWhileReneweal 
 (
     @MemberId INT,
     @MembershipPlanId INT,
@@ -2844,7 +2889,7 @@ BEGIN
         END
 
         SET @ExpiryDate = DATEADD(DAY, @DurationInDays - 1, @StartDate);
-
+        DECLARE @MemberSubscriptionId INT;
         INSERT INTO tblMembershipSubscription
         (
             MemberId,
@@ -2861,10 +2906,11 @@ BEGIN
             @ExpiryDate,
             1
         );
-
+        SET @MemberSubscriptionId = SCOPE_IDENTITY();
         INSERT INTO tblSubscriptionPayment
         (
             MemberId,
+            MemberSubscriptionId,
             MembershipPlanId,
             PaymentMethod,
             Amount,
@@ -2873,6 +2919,7 @@ BEGIN
         VALUES
         (
             @MemberId,
+            @MemberSubscriptionId,
             @MembershipPlanId,
             @PaymentMethod,
             @Amount,
@@ -3068,10 +3115,9 @@ END;
 GO
 
 
--------------------------------------------------------------------------------
+----------------------------------------------------------------
                    -- MemberManagement SPs --
--------------------------------------------------------------------------------
-
+----------------------------------------------------------------
 ---------------------------
 --SP: spRegisterNewMember--
 ---------------------------
@@ -3119,6 +3165,7 @@ SET NOCOUNT ON;
 	DECLARE @Price DECIMAL(10,2);
 	DECLARE @RegistrationFee DECIMAL(10,2);
 	DECLARE @TotalAmount DECIMAL(10,2);
+    DECLARE @MemberSubscriptionId INT;
 
 BEGIN TRY
 
@@ -3342,6 +3389,8 @@ BEGIN TRY
 			@StartDate,
 			@ExpiryDate
 		);
+        
+    SET @MemberSubscriptionId=SCOPE_IDENTITY();
     INSERT INTO tblMemberShift
     (
         MemberId,
@@ -3355,6 +3404,7 @@ BEGIN TRY
 	INSERT INTO tblSubscriptionPayment
 	(
 		MemberId,
+        MemberSubscriptionId,
 		MembershipPlanId,
 		PaymentMethod,
 		Amount,
@@ -3363,6 +3413,7 @@ BEGIN TRY
 	VALUES
 	(
 		@MemberId,
+        @MemberSubscriptionId,
 		@MembershipPlanId,
 		@PaymentMethod,
 		@TotalAmount,
@@ -4023,10 +4074,6 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-
-        ------------------------------------------------
-        -- Shift Validation
-        ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
@@ -4037,10 +4084,6 @@ BEGIN
             SELECT 'Invalid Shift.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Retrieve Active Members
-        ------------------------------------------------
         SELECT
             M.MemberId,
             CONCAT(M.FirstName, ' ', M.LastName) AS MemberName,
@@ -4137,10 +4180,6 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-
-        ------------------------------------------------
-        -- Member Validation
-        ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
@@ -4151,10 +4190,6 @@ BEGIN
             SELECT 'Invalid Member.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Active Shift Validation
-        ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
@@ -4166,10 +4201,6 @@ BEGIN
             SELECT 'No Active Shift Assigned To This Member.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Retrieve Current Active Shift
-        ------------------------------------------------
         SELECT
             M.MemberId,
             CONCAT
@@ -4212,24 +4243,12 @@ BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
-
-        ------------------------------------------------
-        -- Trim Phone Number
-        ------------------------------------------------
         SET @PhoneNo = LTRIM(RTRIM(@PhoneNo));
-
-        ------------------------------------------------
-        -- Phone Number Required
-        ------------------------------------------------
         IF @PhoneNo = ''
         BEGIN
             SELECT 'Phone Number is required.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Phone Number Validation
-        ------------------------------------------------
         IF LEN(@PhoneNo) <> 10
         BEGIN
             SELECT 'Phone Number must be 10 digits.' AS Message;
@@ -4241,10 +4260,6 @@ BEGIN
             SELECT 'Phone Number must contain only digits.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Member Exists
-        ------------------------------------------------
         IF NOT EXISTS
         (
             SELECT 1
@@ -4256,10 +4271,6 @@ BEGIN
             SELECT 'Member not found.' AS Message;
             RETURN;
         END;
-
-        ------------------------------------------------
-        -- Return Member Id
-        ------------------------------------------------
         SELECT
             MemberId
         FROM tblMember
@@ -4277,10 +4288,10 @@ BEGIN
 END;
 GO
 
-------------------------------------------------------------
-  --SP: spRetrieveMemberTrainerAssignmentsDetailsByPhoneNo--
-------------------------------------------------------------
-CREATE PROC spRetrieveMemberTrainerAssignmentsDetailsByPhoneNo
+------------------------------------------------------------------
+  --SP: spRetrieveMemberTrainerAssignmentsDetailsByMemberPhoneNo--
+------------------------------------------------------------------
+CREATE PROC spRetrieveMemberTrainerAssignmentsDetailsByMemberPhoneNo
 @PhoneNo VARCHAR(10)
 AS
 BEGIN
@@ -4314,9 +4325,9 @@ END
 GO
 
 -----------------------------------------
-  --SP: spRetrieveRegisterMemberDetails--
+  --SP: spRetrieveAllMemberDetails--
 -----------------------------------------
-CREATE PROC spRetrieveRegisterMemberDetails
+CREATE PROC spRetrieveAllMemberDetails
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -4533,9 +4544,7 @@ BEGIN
 
         SELECT
             M.MemberId,
-            M.FirstName,
-            M.MiddleName,
-            M.LastName,
+            m.FirstName + ' ' + ISNULL(m.MiddleName + ' ', '') + m.LastName AS MemberName,
             M.PhoneNo,
             M.EmailId,
             M.City,
@@ -4563,4 +4572,1965 @@ BEGIN
 
     END CATCH
 END;
+GO
+
+
+-------------------------------------------------------------------------------
+                   -- SubscriptionPaymentManagement SPs --
+-------------------------------------------------------------------------------
+
+--------------------------------------------------------------
+  --SP: spRetrieveSubscriptionPaymentDetailsBetweenDateRange--
+--------------------------------------------------------------
+CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange 
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF @StartDate IS NULL OR @EndDate IS NULL
+        BEGIN
+            SELECT 'Both StartDate and EndDate are required.' AS Message;
+            RETURN;
+        END
+
+        IF @StartDate > @EndDate
+        BEGIN
+            SELECT 'StartDate cannot be later than EndDate.' AS Message;
+            RETURN;
+        END
+
+        SELECT 
+            sp.PaymentId,
+            sp.MemberId,
+            CONCAT(
+                m.FirstName,
+                CASE
+                    WHEN m.MiddleName IS NOT NULL
+                         AND LTRIM(RTRIM(m.MiddleName)) <> ''
+                    THEN ' ' + m.MiddleName
+                    ELSE ''
+                END,
+                ' ',
+                m.LastName
+            ) AS MemberName,
+            m.EmailId,
+            sp.MembershipPlanId,
+            mp.MembershipPlanName,
+            ms.StartDate,
+            ms.ExpiryDate,
+            sp.PaymentDate,
+            sp.PaymentMethod,
+            sp.Amount,
+            sp.FeesType
+        FROM tblSubscriptionPayment sp
+        INNER JOIN tblMember m
+            ON sp.MemberId = m.MemberId
+        INNER JOIN tblMembershipPlans mp
+            ON sp.MembershipPlanId = mp.MembershipPlanId
+        INNER JOIN tblMembershipSubscription ms
+            ON sp.MemberSubscriptionId = ms.MemberSubscriptionId
+        WHERE sp.PaymentDate BETWEEN @StartDate AND @EndDate
+        ORDER BY sp.PaymentDate DESC, sp.PaymentId DESC;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+---------------------------------------------------------------
+  --SP: spRetrieveTotalPaidSubscriptionAmountBetweenDateRange--
+---------------------------------------------------------------
+CREATE PROC spRetrieveTotalPaidSubscriptionAmountBetweenDateRange 
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF @StartDate IS NULL OR @EndDate IS NULL
+        BEGIN
+            SELECT 'Both StartDate and EndDate are required.' AS Message;
+            RETURN;
+        END
+
+        IF @StartDate > @EndDate
+        BEGIN
+            SELECT 'StartDate cannot be later than EndDate.' AS Message;
+            RETURN;
+        END
+
+        SELECT 
+            SUM(sp.Amount) AS TotalRevenue
+        FROM tblSubscriptionPayment sp
+        JOIN tblMembershipPlans mp 
+            ON sp.MembershipPlanId = mp.MembershipPlanId
+        JOIN tblMember m 
+            ON sp.MemberId = m.MemberId
+        WHERE 
+            sp.PaymentDate BETWEEN @StartDate AND @EndDate;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT 
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END
+GO
+
+----------------------------------------------------
+  --SP: spRetrieveSubscriptionPaymentDetailsByYear--
+----------------------------------------------------
+CREATE PROC spRetrieveSubscriptionPaymentDetailsByYear
+    @Year INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @Year IS NOT NULL
+    BEGIN
+        SELECT
+            s.PaymentId,
+            s.MemberId,
+            CONCAT(
+                m.FirstName,
+                CASE
+                    WHEN m.MiddleName IS NOT NULL
+                         AND LTRIM(RTRIM(m.MiddleName)) <> ''
+                    THEN ' ' + m.MiddleName
+                    ELSE ''
+                END,
+                ' ',
+                m.LastName
+            ) AS MemberName,
+            s.PaymentDate,
+            s.PaymentMethod,
+            s.Amount,
+            m.EmailId,
+            mp.MembershipPlanName,
+            ms.StartDate,
+            ms.ExpiryDate,
+            s.FeesType
+        FROM tblSubscriptionPayment s
+        INNER JOIN tblMember m
+            ON s.MemberId = m.MemberId
+        INNER JOIN tblMembershipSubscription ms
+            ON s.MemberSubscriptionId = ms.MemberSubscriptionId
+        INNER JOIN tblMembershipPlans mp
+            ON s.MembershipPlanId = mp.MembershipPlanId
+        WHERE YEAR(s.PaymentDate) = @Year
+        ORDER BY s.PaymentDate DESC, s.PaymentId DESC;
+    END
+    ELSE
+    BEGIN
+        SELECT 'Year is required.' AS Message;
+    END
+END;
+GO
+
+----------------------------------------------------
+  --SP: spRetrieveTotalPaidSubscriptionAmountByYear--
+----------------------------------------------------
+CREATE PROC spRetrieveTotalPaidSubscriptionAmountByYear 
+    @Year INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        IF @Year IS NULL OR @Year < 1900 OR @Year > YEAR(GETDATE())
+            BEGIN
+                SELECT 
+                    'Invalid year. Please provide a valid year (1900 - current year).' AS Message
+                RETURN;
+            END
+
+        SELECT 
+            SUM(sp.Amount) AS YearlyRevenue
+        FROM tblSubscriptionPayment sp
+        JOIN tblMembershipPlans mp 
+            ON sp.MembershipPlanId = mp.MembershipPlanId
+        JOIN tblMember m 
+            ON sp.MemberId = m.MemberId
+        WHERE 
+           FORMAT(sp.PaymentDate, 'yyyy') = CAST(@Year AS VARCHAR(4))
+    END TRY
+    BEGIN CATCH
+       SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+----------------------------------------------------
+  --SP: spGetSubscriptionPaymentDetailsByMonth--
+----------------------------------------------------
+CREATE PROC spRetrieveSubscriptionPaymentDetailsByMonth
+    @Month INT,
+    @Year INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @Month IS NULL OR @Month NOT BETWEEN 1 AND 12
+    BEGIN
+        SELECT 'INVALID MONTH' AS Message;
+        RETURN;
+    END
+
+    IF @Year IS NULL OR @Year NOT BETWEEN 1900 AND 9999
+    BEGIN
+        SELECT 'INVALID YEAR' AS Message;
+        RETURN;
+    END
+
+    SELECT 
+        s.PaymentId,
+        s.MemberId,
+        CONCAT(
+            m.FirstName,
+            CASE
+                WHEN m.MiddleName IS NOT NULL
+                     AND LTRIM(RTRIM(m.MiddleName)) <> ''
+                THEN ' ' + m.MiddleName
+                ELSE ''
+            END,
+            ' ',
+            m.LastName
+        ) AS MemberName,
+        s.PaymentDate,
+        s.PaymentMethod,
+        s.Amount,
+        m.EmailId,
+        mp.MembershipPlanName,
+        ms.StartDate,
+        ms.ExpiryDate,
+        s.FeesType
+    FROM tblSubscriptionPayment s
+    INNER JOIN tblMember m
+        ON s.MemberId = m.MemberId
+    INNER JOIN tblMembershipSubscription ms
+        ON s.MemberSubscriptionId = ms.MemberSubscriptionId
+    INNER JOIN tblMembershipPlans mp
+        ON s.MembershipPlanId = mp.MembershipPlanId
+    WHERE MONTH(s.PaymentDate) = @Month
+      AND YEAR(s.PaymentDate) = @Year
+    ORDER BY s.PaymentDate DESC, s.PaymentId DESC;
+END
+GO
+
+----------------------------------------------------
+  --SP: spRetrieveTotalPaidSubscriptionAmountByYear--
+----------------------------------------------------
+CREATE PROC spRetrieveTotalPaidSubscriptionAmountByMonth 
+    @Month INT,
+    @Year INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF @Year IS NULL OR @Year < 1900 OR @Year > YEAR(GETDATE())
+            BEGIN
+                SELECT 'Invalid year. Please provide a valid year (1900 - current year).' AS Message
+                RETURN;
+            END
+
+        IF @Month IS NULL OR @Month NOT BETWEEN 1 AND 12
+            BEGIN
+                SELECT 'Invalid month. Please provide a number between 1 and 12.' AS Message
+                RETURN;
+            END
+
+        SELECT 
+            SUM(sp.Amount) AS TotalRevenueThisMonth
+        FROM tblSubscriptionPayment sp
+        LEFT JOIN tblMembershipPlans mp 
+            ON sp.MembershipPlanId = mp.MembershipPlanId
+        LEFT JOIN tblMember m 
+            ON sp.MemberId = m.MemberId
+        WHERE MONTH(sp.PaymentDate) = @Month
+          AND YEAR(sp.PaymentDate) = @Year
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+----------------------------------------------------
+  --SP: spGetSubscriptionPaymentHistoryByMemberId--
+----------------------------------------------------
+CREATE PROC spGetSubscriptionPaymentHistoryByMemberId 
+    @MemberId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @MemberId IS NOT NULL
+    BEGIN
+        SELECT
+            s.PaymentId,
+            s.MemberId,
+            CONCAT(
+                m.FirstName,
+                CASE
+                    WHEN m.MiddleName IS NOT NULL AND LTRIM(RTRIM(m.MiddleName)) <> ''
+                        THEN ' ' + m.MiddleName
+                    ELSE ''
+                END,
+                ' ',
+                m.LastName
+            ) AS MemberName,
+            s.PaymentDate,
+            s.PaymentMethod,
+            s.Amount,
+            m.EmailId,
+            mp.MembershipPlanName,
+            ms.StartDate,
+            ms.ExpiryDate,
+            s.FeesType
+        FROM tblSubscriptionPayment s
+        INNER JOIN tblMember m
+            ON s.MemberId = m.MemberId
+        INNER JOIN tblMembershipSubscription ms
+            ON s.MemberSubscriptionId = ms.MemberSubscriptionId
+        INNER JOIN tblMembershipPlans mp
+            ON s.MembershipPlanId = mp.MembershipPlanId
+        WHERE s.MemberId = @MemberId
+        ORDER BY s.PaymentDate DESC;
+    END
+    ELSE
+    BEGIN
+        SELECT 'Member Id is required.' AS Message;
+    END
+END;
+GO
+
+
+-------------------------------------------------------------------------------
+                   -- AttendanceManagement SPs --
+-------------------------------------------------------------------------------
+
+-----------------------------------------------------
+  --SP: spRetrieveAbsentMembersOnCurrentDateByShift--
+------------------------------------------------------
+CREATE PROC spRetrieveAbsentMembersOnCurrentDateByShift 
+    @ShiftId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @ShiftId IS NULL OR @ShiftId <= 0
+    BEGIN
+        SELECT 'Invalid ShiftId. Please provide a valid positive integer.' AS Message;
+        RETURN;
+    END;
+
+    IF NOT EXISTS (SELECT 1 FROM tblShift WHERE ShiftId = @ShiftId)
+    BEGIN
+        SELECT 'ShiftId does not exist in tblShift.' AS Message;
+        RETURN;
+    END;
+    SELECT DISTINCT
+        m.MemberId,
+        CONCAT(ISNULL(m.FirstName,''), ' ',
+               ISNULL(m.MiddleName,''), ' ',
+               ISNULL(m.LastName,'')) AS MemberName,
+        s.ShiftName,
+        m.PhoneNo
+    FROM tblShift s
+    INNER JOIN tblMemberShift ms
+        ON ms.ShiftId = s.ShiftId
+        AND ms.IsActive = 1
+    INNER JOIN tblMember m
+        ON m.MemberId = ms.MemberId
+        AND m.IsActive = 1
+    LEFT JOIN tblMemberAttendance ma
+        ON ma.MemberId = m.MemberId
+        AND ma.ShiftId = s.ShiftId
+        AND CAST(ma.AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
+    WHERE ms.ShiftId = @ShiftId
+      AND ma.AttendanceId IS NULL;
+END;
+GO
+
+--------------------------------
+  --SP: spMarkMemberAttendance--
+--------------------------------
+CREATE PROC spMarkMemberAttendance 
+(
+    @MemberId INT,
+    @ShiftId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Member Is Not Active.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblShift
+            WHERE ShiftId = @ShiftId
+        )
+        BEGIN
+            SELECT 'Invalid Shift.' AS Message;
+            RETURN;
+        END;
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMemberShift
+            WHERE MemberId = @MemberId
+              AND ShiftId = @ShiftId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Attendance Allowed Only In Assigned Active Shift.' AS Message;
+            RETURN;
+        END;
+        IF EXISTS
+        (
+            SELECT 1
+            FROM tblMemberAttendance
+            WHERE MemberId = @MemberId
+              AND ShiftId = @ShiftId
+              AND CAST(AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
+        )
+        BEGIN
+            SELECT 'Attendance Already Marked For Today.' AS Message;
+            RETURN;
+        END;
+        INSERT INTO tblMemberAttendance
+        (
+            MemberId,
+            ShiftId
+        )
+        VALUES
+        (
+            @MemberId,
+            @ShiftId
+        );
+
+        SELECT 'Attendance Marked Successfully.' AS Message;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
+END;
+GO
+
+--------------------------------------------
+  --SP: spRetrieveShiftWiseTotalAttendance--
+--------------------------------------------
+CREATE PROC spRetrieveShiftWiseTotalAttendance
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            S.ShiftName,
+            ISNULL(COUNT(MA.AttendanceId), 0) AS TotalAttendance
+        FROM tblShift S
+        LEFT JOIN tblMemberAttendance MA
+            ON S.ShiftId = MA.ShiftId
+           AND CAST(MA.AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
+        GROUP BY
+            S.ShiftName,
+            S.StartTime
+        ORDER BY
+            S.StartTime;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
+
+----------------------------------------
+  --SP: spRetrieveTodayAttendanceCount--
+----------------------------------------
+CREATE PROC spRetrieveTodayAttendanceCount
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            COUNT(MemberId) AS TodayAttendanceCount
+        FROM tblMemberAttendance
+        WHERE AttendanceDate >= CAST(GETDATE() AS DATE)
+          AND AttendanceDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE));
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+
+END;
+GO
+
+------------------------------------------------
+  --SP: spRetrieveMemberAttendanceCountByMonth--
+------------------------------------------------
+CREATE PROC spRetrieveMemberAttendanceCountByMonth 
+(
+    @MemberId INT,
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+        IF @Month NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 'Invalid Month.' AS Message;
+            RETURN;
+        END;
+        IF @Year < 2000
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            M.MemberId,
+            M.FirstName + ' ' + ISNULL(M.MiddleName + ' ', '') + M.LastName AS MemberName,
+            @Month AS [Month],
+            @Year AS [Year],
+            COUNT(DISTINCT CAST(MA.AttendanceDate AS DATE)) AS TotalAttendanceDays
+        FROM tblMember M
+        LEFT JOIN tblMemberAttendance MA
+            ON M.MemberId = MA.MemberId
+           AND MONTH(MA.AttendanceDate) = @Month
+           AND YEAR(MA.AttendanceDate) = @Year
+        WHERE M.MemberId = @MemberId
+        GROUP BY
+            M.MemberId,
+            M.FirstName,
+            M.MiddleName,
+            M.LastName;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
+
+--------------------------------------------------
+  --SP: spRetrieveMemberAttendanceDetailsByMonth--
+--------------------------------------------------
+CREATE PROC spRetrieveMemberAttendanceDetailsByMonth 
+(
+    @MemberId INT,
+    @Month INT,
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+              AND IsActive = 1
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+        IF @Month NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 'Invalid Month.' AS Message;
+            RETURN;
+        END;
+        IF @Year < 2000
+        BEGIN
+            SELECT 'Invalid Year.' AS Message;
+            RETURN;
+        END;
+
+        ------------------------------------------------
+        -- Monthly Attendance Details
+        ------------------------------------------------
+        SELECT
+            M.MemberId,
+
+            LTRIM(RTRIM(
+                M.FirstName + ' ' +
+                ISNULL(M.MiddleName + ' ', '') +
+                M.LastName
+            )) AS FullName,
+
+            M.GenderId,
+            M.PhoneNo,
+            M.EmailId,
+            M.City,
+            M.District,
+            M.State,
+            M.EmergencyContact,
+            M.ProfilePhoto,
+            M.JoiningDate,
+            M.IsActive,
+
+            MA.AttendanceId,
+
+            CAST(MA.AttendanceDate AS DATE) AS AttendanceDate,
+
+            MA.ShiftId,
+            S.ShiftName,
+            S.StartTime,
+            S.EndTime
+
+        FROM tblMember M
+
+        INNER JOIN tblMemberAttendance MA
+            ON M.MemberId = MA.MemberId
+
+        INNER JOIN tblShift S
+            ON MA.ShiftId = S.ShiftId
+
+        WHERE M.MemberId = @MemberId
+          AND MA.AttendanceDate >= DATEFROMPARTS(@Year, @Month, 1)
+          AND MA.AttendanceDate < DATEADD
+          (
+              MONTH,
+              1,
+              DATEFROMPARTS(@Year, @Month, 1)
+          )
+
+        ORDER BY
+            MA.AttendanceDate ASC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
+
+-------------------------------------------------------------------------------
+                   -- EmployeeSalaryManagement SPs --
+-------------------------------------------------------------------------------
+-------------------------------------------
+  --SP: spGetDetailsOfEmployeesNotPaidYet--
+-------------------------------------------
+CREATE PROC spGetDetailsOfEmployeesNotPaidYet
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        DECLARE @CurrentMonth VARCHAR(20) = DATENAME(MONTH, GETDATE());
+        DECLARE @CurrentYear  INT = DATEPART(YEAR, GETDATE());
+        
+        SELECT 
+            e.EmployeeId,
+            TRIM(
+                e.FirstName + ' ' +
+                ISNULL(e.MiddleName + ' ', '') +
+                e.LastName
+            ) AS FullName,
+            ert.Role AS RoleName,
+            e.PhoneNo,
+            e.EmailId,
+            s.SalaryId,
+            s.Amount AS SalaryAmount,
+            @CurrentMonth AS CurrentMonth,
+            @CurrentYear AS CurrentYear,
+            'Not Paid' AS PaymentStatus
+        FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
+        INNER JOIN tblSalary s
+            ON e.EmployeeId = s.EmployeeId
+        WHERE e.IsActive = 1
+          AND NOT EXISTS (
+                SELECT 1 
+                FROM tblSalaryPayment sp
+                WHERE sp.SalaryId = s.SalaryId
+                  AND sp.PaymentMonth = @CurrentMonth
+                  AND sp.PaymentYear = @CurrentYear
+                  AND sp.PaymentStatus = 'Paid'
+          )
+        ORDER BY e.EmployeeId;
+    
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+-------------------------------------------
+  --SP: spPaySalaryToEmployeeByEmployeeId--
+-------------------------------------------
+CREATE PROC spPaySalaryToEmployeeByEmployeeId
+    @EmployeeId INT = NULL,
+    @PaymentMode VARCHAR(50) = NULL
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        IF @EmployeeId IS NULL
+        BEGIN
+            SELECT 
+                'EmployeeId is required' AS Message;
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId AND IsActive = 1)
+        BEGIN
+            SELECT 
+                'EmployeeId does not exist' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentMode IS NULL OR LTRIM(RTRIM(@PaymentMode)) = ''
+        BEGIN
+            SELECT 
+                'PaymentMode is required' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentMode NOT IN ('Cash', 'Bank Transfer', 'UPI','Cheque')
+        BEGIN
+            SELECT 
+                'Invalid PaymentMode. Allowed values are: Cash, Net Banking, UPI' AS Message;
+            RETURN;
+        END
+
+        DECLARE @CurrentDate DATETIME = GETDATE();
+        DECLARE @Month VARCHAR(20) = DATENAME(MONTH, @CurrentDate);
+        DECLARE @Year INT = DATEPART(YEAR,  @CurrentDate);
+        DECLARE @PaymentStatus VARCHAR(12) = 'Paid';
+        DECLARE @SalaryId INT = (SELECT SalaryId FROM tblSalary WHERE EmployeeId = @EmployeeId);
+
+        IF @SalaryId IS NULL
+        BEGIN
+            SELECT 
+                'No salary record found for this employee' AS Message;
+            RETURN;
+        END
+
+        IF EXISTS (
+            SELECT 1 FROM tblSalaryPayment
+            WHERE SalaryId = @SalaryId
+              AND PaymentMonth = @Month
+              AND PaymentYear = @Year
+              AND PaymentStatus = @PaymentStatus
+        )
+        BEGIN
+            SELECT 
+                'Salary already paid for this month' AS Message;
+            RETURN;
+        END
+
+        INSERT INTO tblSalaryPayment
+        (
+            SalaryId, 
+            PaymentMode, 
+            PaymentMonth, 
+            PaymentYear,
+            PaymentDate,
+            PaymentStatus
+        )
+        VALUES
+        (
+            @SalaryId, 
+            @PaymentMode, 
+            @Month, 
+            @Year, 
+            @CurrentDate, 
+            @PaymentStatus
+        );
+
+        SELECT 
+            'Payment recorded successfully' AS Message;
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE()   AS Message
+    END CATCH
+END;
+GO
+----------------------------------------------
+  --SP: spGetAllEmployeeSalaryPaymentDetails--
+----------------------------------------------
+CREATE PROC spGetAllEmployeeSalaryPaymentDetails
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        SELECT 
+            e.EmployeeId,
+            TRIM(
+                e.FirstName + ' ' +
+                ISNULL(e.MiddleName + ' ', '') +
+                e.LastName
+            ) AS FullName,
+            ert.Role AS RoleName,
+            e.PhoneNo,
+            e.EmailId,
+            s.Amount AS SalaryAmount,
+            sp.PaymentMode,
+            sp.PaymentMonth,
+            sp.PaymentYear,
+            sp.PaymentDate,
+            sp.PaymentStatus
+
+        FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
+        INNER JOIN tblSalary s
+            ON e.EmployeeId = s.EmployeeId
+        INNER JOIN tblSalaryPayment sp
+            ON s.SalaryId = sp.SalaryId
+
+        ORDER BY sp.PaymentDate DESC
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+-------------------------------------------------------
+  --SP: spGetEmployeeSalaryPaymentDetailsByEmployeeId--
+-------------------------------------------------------
+CREATE PROC spGetEmployeeSalaryPaymentDetailsByEmployeeId
+    @EmployeeId INT 
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        IF @EmployeeId IS NULL
+        BEGIN
+            SELECT 
+                'EmployeeId is required' AS Message;
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblEmployee WHERE EmployeeId = @EmployeeId)
+        BEGIN
+            SELECT 
+                'EmployeeId does not exist' AS Message;
+            RETURN;
+        END
+
+        SELECT
+            e.EmployeeId,
+            TRIM(
+                e.FirstName + ' ' +
+                ISNULL(e.MiddleName + ' ', '') +
+                e.LastName
+            ) AS FullName,
+            ert.Role AS RoleName,
+            e.PhoneNo,
+            e.EmailId,
+            s.Amount AS SalaryAmount,
+            sp.PaymentMode,
+            sp.PaymentMonth,
+            sp.PaymentYear,
+            sp.PaymentDate,
+            sp.PaymentStatus
+
+        FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
+        INNER JOIN tblSalary s
+            ON e.EmployeeId = s.EmployeeId
+        INNER JOIN tblSalaryPayment sp
+            ON s.SalaryId = sp.SalaryId
+        WHERE e.EmployeeId = @EmployeeId
+        ORDER BY sp.PaymentYear, sp.PaymentMonth;
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+-------------------------------------------------
+  --SP: spGetEmployeeSalaryPaymentDetailsByYear--
+-------------------------------------------------
+CREATE PROC spGetEmployeeSalaryPaymentDetailsByYear
+    @PaymentYear INT 
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        IF @PaymentYear IS NULL
+        BEGIN
+            SELECT
+                'PaymentYear is required' AS Message;
+            RETURN;
+        END
+        
+        IF @PaymentYear < 2000 OR @PaymentYear > DATEPART(YEAR, GETDATE())
+        BEGIN
+            SELECT 
+                'Invalid PaymentYear. Year must be between 2000 and ' + 
+                CAST(DATEPART(YEAR, GETDATE()) AS VARCHAR) AS Message;
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblSalaryPayment WHERE PaymentYear = @PaymentYear)
+        BEGIN
+            SELECT 
+                'No payment records found for year ' + 
+                CAST(@PaymentYear AS VARCHAR) AS Message;
+            RETURN;
+        END
+
+        SELECT
+            e.EmployeeId,
+            TRIM(
+                e.FirstName + ' ' +
+                ISNULL(e.MiddleName + ' ', '') +
+                e.LastName
+            ) AS FullName,
+            ert.Role AS RoleName,
+            e.PhoneNo,
+            e.EmailId,
+            s.Amount AS SalaryAmount,
+            sp.PaymentMode,
+            sp.PaymentMonth,
+            sp.PaymentYear,
+            sp.PaymentDate,
+            sp.PaymentStatus
+
+        FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
+        INNER JOIN tblSalary s
+            ON e.EmployeeId = s.EmployeeId
+        INNER JOIN tblSalaryPayment sp
+            ON s.SalaryId = sp.SalaryId
+        WHERE sp.PaymentYear = @PaymentYear
+        ORDER BY e.EmployeeId, sp.PaymentMonth;
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+------------------------------------------
+  --SP: spGetTotalPaidSalaryAmountByYear--
+------------------------------------------
+CREATE PROC spGetTotalSalaryPaidAmountByYear 
+    @PaymentYear INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        SUM(s.Amount) AS TotalSalaryPaid
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON s.SalaryId = sp.SalaryId
+    WHERE sp.PaymentYear   = @PaymentYear
+      AND sp.PaymentStatus = 'Paid'
+    GROUP BY sp.PaymentYear;
+END;
+
+GO
+
+---------------------------------------------------
+  --SP: spGetSalaryPaymentDetailsBetweenDateRange--
+---------------------------------------------------
+CREATE PROC spGetSalaryPaymentDetailsBetweenDateRange 
+    @StartDate DATE,
+    @EndDate   DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF @StartDate IS NULL OR @EndDate IS NULL
+        BEGIN
+            SELECT 'Both StartDate and EndDate are required.' AS Message
+            RETURN;
+        END
+        
+        IF @StartDate > @EndDate
+        BEGIN
+            SELECT 'StartDate cannot be later than EndDate.' AS Message;
+            RETURN;
+        END
+
+        SELECT
+    e.EmployeeId,
+    (e.FirstName 
+        + CASE 
+            WHEN e.MiddleName IS NULL OR e.MiddleName = '' 
+                THEN '' 
+            ELSE ' ' + e.MiddleName 
+        END
+        + ' ' + e.LastName) AS FullName,
+    e.PhoneNo,
+    e.EmailId,
+    e.BankAccountNo,
+    r.Role AS RoleName,
+    s.SalaryId,
+    s.Amount AS SalaryAmount,
+    sp.PaymentId,
+    sp.PaymentMode,
+    sp.PaymentMonth,
+    sp.PaymentYear,
+    sp.PaymentDate,
+    sp.PaymentStatus
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON sp.SalaryId = s.SalaryId
+        INNER JOIN tblEmployee e
+            ON s.EmployeeId = e.EmployeeId
+        INNER JOIN tblEmployeeRoleType r
+            ON e.RoleId = r.RoleId
+        WHERE 
+            sp.PaymentDate >= @StartDate
+            AND sp.PaymentDate < DATEADD(DAY, 1, @EndDate)
+        ORDER BY 
+            sp.PaymentDate ASC;
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE()   AS Message;
+    END CATCH
+END
+GO
+
+----------------------------------------------------
+  --SP: spGetTotalPaidSalaryAmountBetweenDateRange--
+----------------------------------------------------
+CREATE PROC spGetTotalPaidSalaryAmountBetweenDateRange 
+    @StartDate DATE,
+    @EndDate   DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        IF @StartDate IS NULL OR @EndDate IS NULL
+        BEGIN
+            SELECT 'Both StartDate and EndDate are required.' AS Message
+            RETURN;
+        END
+        
+        IF @StartDate > @EndDate
+        BEGIN
+            SELECT 'StartDate cannot be later than EndDate.' AS Message;
+            RETURN;
+        END
+
+        SELECT
+            SUM(s.Amount)       AS GrandTotalAmountPaid
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON sp.SalaryId = s.SalaryId
+        WHERE 
+            sp.PaymentDate >= @StartDate
+            AND sp.PaymentDate < DATEADD(DAY, 1, @EndDate)
+            AND sp.PaymentStatus = 'Paid';
+
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+-------------------------------------------------
+  --SP: spGetEmployeeSalaryPaymentDetailsByMonth--
+-------------------------------------------------
+CREATE PROC spGetEmployeeSalaryPaymentDetailsByMonth
+    @PaymentMonth INT ,
+    @PaymentYear  INT
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        IF @PaymentMonth IS NULL
+        BEGIN
+            SELECT 
+                'PaymentMonth is required' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentMonth NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 
+                'Invalid PaymentMonth. Allowed values are: 1 to 12 (1 = January, 12 = December)' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentYear IS NULL
+        BEGIN
+            SELECT 
+                'PaymentYear is required' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentYear NOT BETWEEN 2000 AND YEAR(GETDATE())
+        BEGIN
+            SELECT 
+                'Invalid PaymentYear. Please provide a valid 4-digit year.' AS Message;
+            RETURN;
+        END
+
+        DECLARE @MonthName VARCHAR(20);
+        SET @MonthName = FORMAT(DATEFROMPARTS(2000, @PaymentMonth, 1), 'MMMM', 'en-US');
+
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM tblSalaryPayment 
+            WHERE PaymentMonth = @MonthName 
+              AND PaymentYear = @PaymentYear
+        )
+        BEGIN
+            SELECT 
+                'No payment records found for ' + @MonthName + ' ' + CAST(@PaymentYear AS VARCHAR(4)) AS Message;
+            RETURN;
+        END
+
+        SELECT
+            e.EmployeeId,
+            CONCAT(e.FirstName, ' ', ISNULL(e.MiddleName + ' ', ''), e.LastName) AS FullName,
+            ert.Role AS RoleName,
+            e.PhoneNo,
+            e.EmailId,
+            s.Amount AS SalaryAmount,
+            sp.PaymentMode,
+            sp.PaymentMonth,
+            sp.PaymentYear,
+            sp.PaymentDate,
+            sp.PaymentStatus
+        FROM tblEmployee e
+        INNER JOIN tblEmployeeRoleType ert
+            ON e.RoleId = ert.RoleId
+        INNER JOIN tblSalary s
+            ON e.EmployeeId = s.EmployeeId
+        INNER JOIN tblSalaryPayment sp
+            ON s.SalaryId = sp.SalaryId
+        WHERE sp.PaymentMonth = @MonthName
+          AND sp.PaymentYear = @PaymentYear
+        ORDER BY e.EmployeeId ASC;
+
+    END TRY
+    BEGIN CATCH
+        SELECT
+            ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+------------------------------------------
+  --SP: spGetTotalPaidSalaryAmountByMonth--
+------------------------------------------
+CREATE PROC spGetTotalPaidSalaryAmountByMonth
+    @PaymentMonth INT ,
+    @PaymentYear  INT 
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        IF @PaymentMonth IS NULL
+        BEGIN
+            SELECT 'PaymentMonth is required' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentMonth NOT BETWEEN 1 AND 12
+        BEGIN
+            SELECT 'Invalid PaymentMonth. Allowed values are: 1 to 12 (1 = January, 12 = December)' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentYear IS NULL
+        BEGIN
+            SELECT 'PaymentYear is required' AS Message;
+            RETURN;
+        END
+
+        IF @PaymentYear NOT BETWEEN 2000 AND YEAR(GETDATE())
+        BEGIN
+            SELECT 'Invalid PaymentYear. Please provide a valid 4-digit year.' AS Message;
+            RETURN;
+        END
+
+        DECLARE @MonthName VARCHAR(20);
+        SET @MonthName = FORMAT(DATEFROMPARTS(2000, @PaymentMonth, 1), 'MMMM', 'en-US');
+
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM tblSalaryPayment 
+            WHERE PaymentMonth = @MonthName 
+              AND PaymentYear = @PaymentYear
+              AND PaymentStatus = 'Paid'
+        )
+        BEGIN
+            SELECT 'No paid salary records found for ' + @MonthName + ' ' + CAST(@PaymentYear AS VARCHAR(4)) AS Message;
+            RETURN;
+        END
+
+        SELECT
+            SUM(s.Amount) AS TotalSalaryPaid
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON s.SalaryId = sp.SalaryId
+        WHERE sp.PaymentMonth = @MonthName
+          AND sp.PaymentYear  = @PaymentYear
+          AND sp.PaymentStatus = 'Paid';
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+
+-------------------------------------------------------------------------------
+                   -- WorkoutScheduleManagement SPs --
+-------------------------------------------------------------------------------
+
+-------------------------------------------
+  --SP: spRetrieveRecordsOfExercisesTable--
+-------------------------------------------
+CREATE PROC spRetrieveRecordsOfExercisesTable
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        ExerciseId,
+        ExerciseName,
+        MuscleType
+    FROM tblExercises
+END
+GO
+
+-----------------------------------------------
+  --SP: spRetrieveRecordsOfWorkoutPlanTable--
+-----------------------------------------------
+CREATE PROC spRetrieveRecordsOfWorkoutPlanTable
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        WorkoutPlanId,
+        WorkoutName,
+        Description
+    FROM tblWorkoutPlans
+END
+GO
+
+-------------------------------------------------
+  --SP: spRetrieveRecordsOfWorkoutScheduleTable--
+-------------------------------------------------
+CREATE PROC spRetrieveRecordsOfWorkoutScheduleTable
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        ws.WorkoutScheduleId,
+        wp.WorkoutPlanId,
+        wp.WorkoutName,
+        e.ExerciseId,
+        e.ExerciseName,
+        ws.WorkoutDay
+    FROM tblWorkoutSchedule ws
+    INNER JOIN tblExercises e 
+        ON ws.ExerciseId = e.ExerciseId
+    INNER JOIN tblWorkoutPlans wp 
+        ON ws.WorkoutPlanId = wp.WorkoutPlanId
+    ORDER BY 
+        wp.WorkoutName, 
+        e.ExerciseName;
+END
+GO
+
+----------------------------------
+  --SP: spInsertDataIntoExercise--
+----------------------------------
+CREATE PROC spInsertDataIntoExercise 
+    @ExerciseName VARCHAR(100),
+    @MuscleType VARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+   
+        IF @ExerciseName IS NULL OR LTRIM(RTRIM(@ExerciseName)) = ''
+        BEGIN
+            SELECT 
+                'ExerciseName cannot be NULL or empty.' AS Message
+            RETURN;
+        END
+
+        IF @MuscleType IS NULL OR LTRIM(RTRIM(@MuscleType)) = ''
+        BEGIN
+            SELECT 
+                'MuscleType cannot be NULL or empty.' AS Message
+            RETURN;
+        END
+
+        IF LEN(@ExerciseName) > 100
+        BEGIN
+            SELECT
+                'ExerciseName cannot exceed 100 characters.' AS Message
+            RETURN;
+        END
+
+        IF LEN(@MuscleType) > 100
+        BEGIN
+            SELECT 
+                'MuscleType cannot exceed 100 characters.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (
+            SELECT 1 FROM tblExercises
+            WHERE ExerciseName = @ExerciseName
+        )
+        BEGIN
+            SELECT
+                'An exercise with this name already exists.' AS Message
+            RETURN;
+        END
+
+            INSERT INTO tblExercises (ExerciseName, MuscleType)
+            VALUES (LTRIM(RTRIM(@ExerciseName)), LTRIM(RTRIM(@MuscleType)));
+            
+            SELECT 
+                'Record inserted successfuly' AS Message
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+------------------------------------------
+  --SP: spInsertDataIntoWorkoutPlanTable--
+------------------------------------------
+CREATE PROC spInsertDataIntoWorkoutPlanTable
+    @WorkoutName VARCHAR(100),
+    @Description VARCHAR(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+      
+        SET @WorkoutName = LTRIM(RTRIM(@WorkoutName));
+        SET @Description = ISNULL(LTRIM(RTRIM(@Description)), '');
+
+        IF @WorkoutName IS NULL OR @WorkoutName = ''
+        BEGIN
+            SELECT
+                'WorkoutName cannot be NULL or empty.' AS Message
+            RETURN;
+        END
+
+        IF LEN(@WorkoutName) > 100
+        BEGIN
+            SELECT
+                'WorkoutName cannot exceed 100 characters.' AS Message
+            RETURN;
+        END
+
+        IF @Description IS NULL OR @Description = ''
+        BEGIN
+            SELECT
+                'Description cannot be NULL or empty.' AS Message
+            RETURN;
+        END
+
+
+        IF @WorkoutName LIKE '%[^a-zA-Z0-9 ,''&/-]%'
+        BEGIN
+            SELECT
+                'WorkoutName contains invalid characters.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutName = @WorkoutName)
+        BEGIN
+            SELECT 
+                'A workout plan with this name already exists.' AS Message
+            RETURN;
+        END
+
+        INSERT INTO tblWorkoutPlans (WorkoutName, Description)
+        VALUES (@WorkoutName, @Description);
+
+        SELECT 
+            'Record inserted successfuly' AS Message
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+----------------------------------------------
+  --SP: spInsertDataIntoWorkoutScheduleTable--
+----------------------------------------------
+CREATE PROC spInsertDataIntoWorkoutScheduleTable 
+    @WorkoutPlanId INT,
+    @ExerciseId    INT,
+    @WorkoutDay    VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        
+        IF @WorkoutPlanId IS NULL OR @ExerciseId IS NULL OR LTRIM(RTRIM(ISNULL(@WorkoutDay, ''))) = ''
+        BEGIN
+            SELECT 
+                'WorkoutPlanId, ExerciseId and WorkoutDay are required.' AS Message
+            RETURN;
+        END
+
+        SET @WorkoutDay = LTRIM(RTRIM(@WorkoutDay));
+        SET @WorkoutDay = UPPER(LEFT(@WorkoutDay, 1)) + LOWER(SUBSTRING(@WorkoutDay, 2, LEN(@WorkoutDay) - 1));
+
+        IF @WorkoutDay NOT IN ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday')
+        BEGIN
+            SELECT
+                'WorkoutDay must be a valid day name (Monday-Sunday).' AS Message
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblWorkoutPlans WHERE WorkoutPlanId = @WorkoutPlanId)
+        BEGIN
+            SELECT
+                'Invalid WorkoutPlanId: no matching WorkoutPlan found.' AS Message
+            RETURN;
+        END
+
+        IF NOT EXISTS (SELECT 1 FROM tblExercises WHERE ExerciseId = @ExerciseId)
+        BEGIN
+            SELECT
+                'Invalid ExerciseId: no matching Exercise found.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (
+            SELECT 1 FROM tblWorkoutSchedule
+            WHERE WorkoutPlanId = @WorkoutPlanId
+              AND ExerciseId = @ExerciseId
+              AND WorkoutDay = @WorkoutDay
+        )
+        BEGIN
+            SELECT
+                'This exercise is already scheduled for this day in the selected workout plan.' AS Message
+            RETURN;
+        END
+
+        INSERT INTO tblWorkoutSchedule (WorkoutPlanId, ExerciseId, WorkoutDay)
+        VALUES (@WorkoutPlanId, @ExerciseId, @WorkoutDay);
+
+        SELECT
+            'Record inserted successfuly' AS Message
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+------------------------------------------------------
+  --SP: spRetrieveWorkoutScheduleRecordsByWorkoutDay--
+------------------------------------------------------
+CREATE PROC spRetrieveWorkoutScheduleRecordsByWorkoutDay
+    @WorkoutDay VARCHAR
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @WorkoutDay = LTRIM(RTRIM(@WorkoutDay));
+        SET @WorkoutDay = UPPER(LEFT(@WorkoutDay, 1)) + LOWER(SUBSTRING(@WorkoutDay, 2, LEN(@WorkoutDay) - 1));
+
+        SELECT 
+            ws.WorkoutScheduleId,
+            wp.WorkoutName,
+            e.ExerciseName,
+            ws.WorkoutDay
+        FROM tblWorkoutSchedule ws
+        INNER JOIN tblExercises e ON ws.ExerciseId = e.ExerciseId
+        INNER JOIN tblWorkoutPlans wp ON ws.WorkoutPlanId = wp.WorkoutPlanId
+        WHERE (@WorkoutDay IS NULL OR ws.WorkoutDay = @WorkoutDay)
+        ORDER BY ws.WorkoutDay, ws.WorkoutScheduleId;
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+------------------------------------------------------
+  --SP: spRetrieveWorkoutScheduleRecordsByWorkoutDay--
+------------------------------------------------------
+CREATE PROC spRemoveWorkoutScheduleByWorkoutScheduleId 
+    @WorkoutScheduleId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS (SELECT 1 FROM tblWorkoutSchedule WHERE WorkoutScheduleId = @WorkoutScheduleId)
+        BEGIN
+            SELECT
+                'Invalid WorkoutScheduleId: no matching record found.' AS Message
+            RETURN;
+        END
+
+        IF EXISTS (
+            SELECT 1 FROM tblWorkoutSchedule 
+            WHERE WorkoutScheduleId = @WorkoutScheduleId AND WorkoutDay IS NULL
+        )
+        BEGIN
+            SELECT 
+                'This schedule has already been removed.' AS Message
+            RETURN;
+        END
+
+        DELETE FROM tblWorkoutSchedule
+        WHERE WorkoutScheduleId = @WorkoutScheduleId;
+
+        SELECT 
+            'Workout Schedule record deleted successfully' AS Message
+
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message
+    END CATCH
+END
+GO
+
+
+-------------------------------------------------------------------------------
+                   -- DietPlanManagement SPs --
+-------------------------------------------------------------------------------
+
+-------------------------------
+  --SP: spDisplayAllDietPlans--
+-------------------------------
+CREATE PROCEDURE spRetrieveDietPlanDetails
+AS
+BEGIN
+	BEGIN TRY
+		SELECT 
+		tblDietPlans.DietPlanId,
+		tblDietPlans.CaloriesPerDay,
+		tblDietPlans.DietPlanDocument,
+		tblDietPlans.ConditionStatus
+		FROM tblDietPlans
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_MESSAGE() AS Message
+	END CATCH
+END
+GO
+
+------------------------------------
+  --SP: spGetMemberCurrentDietPlan--
+------------------------------------
+CREATE PROC spRetrieveMemberCurrentDietPlan
+(
+    @MemberId INT
+)
+AS
+BEGIN
+BEGIN TRY
+
+    SET NOCOUNT ON;
+    IF @MemberId IS NULL
+    BEGIN
+        SELECT 'Member Id is Required.' AS Message;
+        RETURN;
+    END
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE MemberId = @MemberId
+    )
+    BEGIN
+        SELECT 'Invalid Member Id.' AS Message;
+        RETURN;
+    END
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMemberDietAssignment
+        WHERE MemberId = @MemberId
+          AND IsActive = 1
+    )
+    BEGIN
+        SELECT 'No Active Diet Plan Found for This Member.' AS Message;
+        RETURN;
+    END
+    SELECT
+        MDA.DietAssignmentId,
+        M.MemberId,
+        M.FirstName,
+        M.LastName,
+        DP.DietPlanId,
+        DP.CaloriesPerDay,
+        DP.ConditionStatus,
+        MDA.AssignDate,
+        MDA.IsActive
+    FROM tblMemberDietAssignment MDA
+    INNER JOIN tblMember M
+        ON MDA.MemberId = M.MemberId
+    INNER JOIN tblDietPlans DP
+        ON MDA.DietPlanId = DP.DietPlanId
+    WHERE MDA.MemberId = @MemberId
+      AND MDA.IsActive = 1;
+
+END TRY
+
+BEGIN CATCH
+
+    SELECT
+        ERROR_MESSAGE() AS Message;
+
+END CATCH
+END;
+GO
+
+-----------------------------
+  --SP: spInsertNewDietPlan--
+-----------------------------
+CREATE PROC spInsertNewDietPlan  
+(
+    @CaloriesPerDay INT,
+    @DietPlanDocument VARBINARY(MAX) = NULL,
+    @ConditionStatus VARCHAR(MAX)
+)
+AS
+BEGIN
+BEGIN TRY
+
+    SET NOCOUNT ON;
+
+    -- Trim not applicable for INT/VARBINARY, only text
+    SET @ConditionStatus = LTRIM(RTRIM(@ConditionStatus));
+
+    -- Calories validation
+    IF @CaloriesPerDay IS NULL
+    BEGIN
+        SELECT 'Calories Per Day is Required.' AS Message;
+        RETURN;
+    END
+
+    IF @CaloriesPerDay <= 0
+    BEGIN
+        SELECT 'Calories Per Day Must Be Greater Than 0.' AS Message;
+        RETURN;
+    END
+
+    -- Condition Status validation
+    IF @ConditionStatus IS NULL OR @ConditionStatus = ''
+    BEGIN
+        SELECT 'Condition Status is Required.' AS Message;
+        RETURN;
+    END
+
+    IF LEN(@ConditionStatus) < 3
+    BEGIN
+        SELECT 'Condition Status is Too Short.' AS Message;
+        RETURN;
+    END
+
+    -- Insert Diet Plan
+    INSERT INTO tblDietPlans
+    (
+        CaloriesPerDay,
+        DietPlanDocument,
+        ConditionStatus
+    )
+    VALUES
+    (
+        @CaloriesPerDay,
+        @DietPlanDocument,
+        @ConditionStatus
+    );
+
+    SELECT 'Diet Plan Inserted Successfully.' AS Message;
+
+END TRY
+
+BEGIN CATCH
+
+    SELECT
+        ERROR_MESSAGE() AS Message;
+
+END CATCH
+END;
+GO
+
+--------------------------------
+  --SP: spRemoveMemberDietPlan--
+--------------------------------
+CREATE PROC spDeactivateMemberDietPlan
+(
+    @MemberId INT
+)
+AS
+BEGIN
+BEGIN TRY
+
+    SET NOCOUNT ON;
+
+    ----------------------------
+    -- Member validation
+    ----------------------------
+    IF @MemberId IS NULL
+    BEGIN
+        SELECT 'Member Id is Required.' AS Message;
+        RETURN;
+    END
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMember
+        WHERE MemberId = @MemberId
+    )
+    BEGIN
+        SELECT 'Invalid Member Id.' AS Message;
+        RETURN;
+    END
+
+    ----------------------------
+    -- Check active diet plan exists
+    ----------------------------
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblMemberDietAssignment
+        WHERE MemberId = @MemberId
+          AND IsActive = 1
+    )
+    BEGIN
+        SELECT 'No Active Diet Plan Found for This Member.' AS Message;
+        RETURN;
+    END
+
+    ----------------------------
+    -- Deactivate current diet plan
+    ----------------------------
+    UPDATE tblMemberDietAssignment
+    SET IsActive = 0
+    WHERE MemberId = @MemberId
+      AND IsActive = 1;
+
+    SELECT 'Member Diet Plan Removed Successfully.' AS Message;
+
+END TRY
+
+BEGIN CATCH
+
+    SELECT
+        ERROR_MESSAGE() AS Message;
+
+END CATCH
+END;
+GO
+
+--------------------------------
+  --SP: spUpdateDietPlanDetails--
+--------------------------------
+CREATE PROC spUpdateDietPlanDetails
+(
+    @DietPlanId INT,
+    @CaloriesPerDay INT,
+    @DietPlanDocument VARBINARY(MAX) = NULL,
+    @ConditionStatus VARCHAR(MAX)
+)
+AS
+BEGIN
+BEGIN TRY
+
+    SET NOCOUNT ON;
+
+    SET @ConditionStatus = LTRIM(RTRIM(@ConditionStatus));
+    IF @DietPlanId IS NULL
+    BEGIN
+        SELECT 'Diet Plan Id is Required.' AS Message;
+        RETURN;
+    END
+
+    IF NOT EXISTS
+    (
+        SELECT 1
+        FROM tblDietPlans
+        WHERE DietPlanId = @DietPlanId
+    )
+    BEGIN
+        SELECT 'Invalid Diet Plan Id.' AS Message;
+        RETURN;
+    END
+    IF @CaloriesPerDay IS NULL
+    BEGIN
+        SELECT 'Calories Per Day is Required.' AS Message;
+        RETURN;
+    END
+
+    IF @CaloriesPerDay <= 0
+    BEGIN
+        SELECT 'Calories Per Day Must Be Greater Than 0.' AS Message;
+        RETURN;
+    END
+    IF @ConditionStatus IS NULL OR @ConditionStatus = ''
+    BEGIN
+        SELECT 'Condition Status is Required.' AS Message;
+        RETURN;
+    END
+
+    IF LEN(@ConditionStatus) < 3
+    BEGIN
+        SELECT 'Condition Status is Too Short.' AS Message;
+        RETURN;
+    END
+    UPDATE tblDietPlans
+    SET
+        CaloriesPerDay = @CaloriesPerDay,
+        ConditionStatus = @ConditionStatus,
+        DietPlanDocument = @DietPlanDocument
+    WHERE DietPlanId = @DietPlanId;
+
+    SELECT 'Diet Plan Updated Successfully.' AS Message;
+
+END TRY
+
+BEGIN CATCH
+
+    SELECT
+        ERROR_MESSAGE() AS Message;
+
+END CATCH
+END;
+GO
+-----------------------------------------------------
+	--Retrieve Gender  Details
+-----------------------------------------------------
+CREATE PROCEDURE spRetrieveGenderDetails
+AS
+BEGIN
+    BEGIN TRY
+
+        SELECT
+            GenderId,
+            GenderName
+        FROM tblGender
+        ORDER BY GenderName;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
 GO
