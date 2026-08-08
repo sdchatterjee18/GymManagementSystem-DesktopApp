@@ -20,14 +20,13 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 {
     public partial class FrmDisplayMembershipPlan : Form
     {
-      
+        
+        // Constructor
         public FrmDisplayMembershipPlan()
         {
             InitializeComponent();
         }
-
-
-
+        // Form Load
         private void FrmDisplayMembershipPlan_Load(object sender, EventArgs e)
         {
             dgvMembershipPlan.AutoGenerateColumns = false;
@@ -37,42 +36,38 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             LoadMembershipPlanComboBox();
             
         }
+
+        // Clear DataGridView Selection
         private void pnlMembershipPlanGridview_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void tlpAllMembershipPlanTitle_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void tlpMembershipPlanSearch_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void tlpMembershipPlanEntireForm_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void txtMembershipPlanSearchBox_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void pnlAddNewMembarshipPlan_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
-
         private void FrmDisplayMembershipPlan_Click(object sender, EventArgs e)
         {
             dgvMembershipPlan.ClearSelection();
         }
 
-     
+        // DataGridView Mouse Enter
         private void dgvMembershipPlan_CellMouseEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
@@ -87,7 +82,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
            
 
         }
-
+        // DataGridView Mouse Leave
         private void dgvMembershipPlan_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
@@ -103,7 +98,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             }
         }
-
+        // DataGridView Cell Formatting
         private void dgvMembershipPlan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvMembershipPlan.Columns[e.ColumnIndex].Name == "colIsActive")
@@ -159,7 +154,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             }
 
         }
-
+        // DataGridView Button Painting
         private void dgvMembershipPlan_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvMembershipPlan.Columns["colUpdate"].Index)
@@ -199,7 +194,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             }
 
         }
-
+        // Add New Membership Plan
         private void pnlClickAddNewMembershipPlan_Click(object sender, EventArgs e)
         {
 
@@ -207,30 +202,19 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             frm.Show();
             frm.StartPosition = FormStartPosition.CenterParent;
         }
-
-       
-
-        private void pnlClickAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
-        {
-            //pnlClickAddNewMembershipPlan.ForeColor = Color.FromArgb(220,225,230);
-            //pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220,225,230);
-        }
-
+        // Add New Membership Plan Mouse Enter
         private void tlpAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
         {
             //pnlClickAddNewMembershipPlan.BackColor = Color.Red;
             pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220, 225, 230);
         }
-
-        private void lblAddNewPlan_MouseEnter(object sender, EventArgs e)
-        {
-            //pnlClickAddNewMembershipPlan.BackColor = Color.Red;
-        }
-
+        // Add New Membership Plan Mouse Leave
         private void tlpAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
             pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236,240,243);
         }
+
+        // Load Membership Plans
         private void LoadMembershipPlans()
         {
             dgvMembershipPlan.Rows.Clear();
@@ -267,7 +251,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             dgvMembershipPlan.ClearSelection();
         }
-
         private void dgvMembershipPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -373,6 +356,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 }
             }
         }
+        // Load Membership Plans ComboBox
         private void LoadMembershipPlanComboBox()
         {
             MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
@@ -381,7 +365,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             cmbMembershipPlan.ValueMember = "MembershipPlanId";
             cmbMembershipPlan.SelectedIndex = -1;
         }
-
         private void cmbMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -418,7 +401,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             dgvMembershipPlan.ClearSelection();
         }
-
+        // Display All Button
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
             LoadMembershipPlans();
@@ -429,8 +412,5 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             dgvMembershipPlan.ClearSelection();
         }
-
-
-       
     }
 }

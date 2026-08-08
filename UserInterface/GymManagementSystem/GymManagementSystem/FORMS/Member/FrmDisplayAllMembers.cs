@@ -38,7 +38,7 @@ namespace GymManagementSystem.FORMS.Member
             {
                 sqlConnection = new SqlConnection(CS);
                 sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("spRetrieveRegisterMemberDetails", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("spRetrieveAllMemberDetails", sqlConnection))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     int a = 1;

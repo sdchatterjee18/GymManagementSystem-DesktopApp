@@ -12,41 +12,70 @@ namespace GymManagementSystemBLLayer.Common
         {
             Valid,
 
+            // =========================
             // Text Validation
+            // =========================
             TextRequired,
             TextMustContainOnlyLetters,
 
+            // =========================
             // Membership Plan Validation
+            // =========================
             MembershipPlanNameRequired,
             AnyNameMustContainOnlyLetters,
 
+            // =========================
             // Price Validation
+            // =========================
             PriceRequired,
             PriceMustBeNumeric,
             PriceMustBeGreaterThanZero,
 
+            // =========================
             // Description Validation
+            // =========================
             DescriptionRequired,
 
+            // =========================
             // Email Validation
+            // =========================
             EmailRequired,
             InvalidEmail,
 
+            // =========================
             // Duration Validation
+            // =========================
             DurationRequired,
             DurationMustBeNumeric,
             DurationMustBeGreaterThanZero,
             InvalidDurationLength,
             DurationMustBeLessThan365Days,
 
+            // =========================
             // Phone Validation
+            // =========================
             PhoneNumberRequired,
             PhoneNumberMustBeNumeric,
             PhoneNumberMustBePositive,
-            InvalidPhoneNumberLength
+            InvalidPhoneNumberLength,
+
+            // =========================
+            // Diet Plan - Calories Validation
+            // =========================
+            CaloriesMustBeGreaterThanZero,
+
+            // =========================
+            // Diet Plan - Condition Status Validation
+            // =========================
+            ConditionStatusRequired,
+            ConditionStatusMustContainOnlyLetters,
+            ConditionStatusTooShort
         }
 
+
+        // =========================
         // Price Validation
+        // =========================
         public static CommonValidationMessage ValidatePrice(string price)
         {
             if (string.IsNullOrWhiteSpace(price))
@@ -63,7 +92,10 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+
+        // =========================
         // Description Validation
+        // =========================
         public static CommonValidationMessage ValidateDescription(string description)
         {
             if (string.IsNullOrWhiteSpace(description))
@@ -72,7 +104,10 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+
+        // =========================
         // Email Validation
+        // =========================
         public static CommonValidationMessage ValidateEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -84,14 +119,15 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+
+        // =========================
         // Phone Number Validation
+        // =========================
         public static CommonValidationMessage ValidatePhoneNumber(string phoneNumber)
         {
-
             // Check negative number
             if (phoneNumber.StartsWith("-"))
                 return CommonValidationMessage.PhoneNumberMustBePositive;
-
 
             // Check only digits
             foreach (char c in phoneNumber)
@@ -100,17 +136,21 @@ namespace GymManagementSystemBLLayer.Common
                     return CommonValidationMessage.PhoneNumberMustBeNumeric;
             }
 
-
-            // Check length (Indian mobile number = 10 digits)
-            if(phoneNumber != "")
+            // Check length
+            // Indian mobile number = 10 digits
+            if (phoneNumber != "")
             {
                 if (phoneNumber.Length != 10)
                     return CommonValidationMessage.InvalidPhoneNumberLength;
             }
+
             return CommonValidationMessage.Valid;
         }
 
+
+        // =========================
         // Required Text Validation
+        // =========================
         public static CommonValidationMessage ValidateRequiredText(string text)
         {
             foreach (char c in text)
@@ -123,7 +163,9 @@ namespace GymManagementSystemBLLayer.Common
         }
 
 
-        // Optional Text Validation (Middle Name)
+        // =========================
+        // Optional Text Validation
+        // =========================
         public static CommonValidationMessage ValidateOptionalText(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -138,7 +180,10 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
-        //Duration Days Valitation
+
+        // =========================
+        // Duration Validation
+        // =========================
         public static CommonValidationMessage ValidateDuration(string duration)
         {
             if (string.IsNullOrWhiteSpace(duration))
@@ -161,8 +206,10 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
-       
+
+        // =========================
         // Membership Plan Name Validation
+        // =========================
         public static CommonValidationMessage ValidateName(string Name)
         {
             foreach (char ch in Name)
@@ -176,7 +223,46 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+
+        // =========================
+        // Calories Validation
+        // =========================
+        public static CommonValidationMessage ValidateCalories(int calories)
+        {
+            if (calories <= 0)
+                return CommonValidationMessage.CaloriesMustBeGreaterThanZero;
+
+            return CommonValidationMessage.Valid;
+        }
+
+
+        // =========================
+        // Condition Status Validation
+        // =========================
+        public static CommonValidationMessage ValidateConditionStatus(string conditionStatus)
+        {
+            if (string.IsNullOrWhiteSpace(conditionStatus))
+                return CommonValidationMessage.ConditionStatusRequired;
+
+            foreach (char ch in conditionStatus)
+            {
+                if (!char.IsLetter(ch) && ch != ' ')
+                {
+                    return CommonValidationMessage
+                        .ConditionStatusMustContainOnlyLetters;
+                }
+            }
+
+            if (conditionStatus.Trim().Length < 3)
+                return CommonValidationMessage.ConditionStatusTooShort;
+
+            return CommonValidationMessage.Valid;
+        }
+
+
+        // =========================
         // Validation Message
+        // =========================
         public static string GetValidationMessage(CommonValidationMessage validationMessage)
         {
             switch (validationMessage)
@@ -184,21 +270,30 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.Valid:
                     return string.Empty;
 
+
+                // =========================
                 // Text Validation
+                // =========================
                 case CommonValidationMessage.TextRequired:
                     return "This field is required.";
 
                 case CommonValidationMessage.TextMustContainOnlyLetters:
                     return "This field must contain only letters.";
 
+
+                // =========================
                 // Membership Plan Name Validation
+                // =========================
                 case CommonValidationMessage.MembershipPlanNameRequired:
                     return "Membership Plan Name is required.";
 
                 case CommonValidationMessage.AnyNameMustContainOnlyLetters:
                     return "Any Name can contain only letters";
 
+
+                // =========================
                 // Price Validation
+                // =========================
                 case CommonValidationMessage.PriceRequired:
                     return "Price is required.";
 
@@ -208,18 +303,27 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.PriceMustBeGreaterThanZero:
                     return "Price must be greater than zero.";
 
+
+                // =========================
                 // Description Validation
+                // =========================
                 case CommonValidationMessage.DescriptionRequired:
                     return "Description cannot be empty.";
 
+
+                // =========================
                 // Email Validation
+                // =========================
                 case CommonValidationMessage.EmailRequired:
                     return "Email is required.";
 
                 case CommonValidationMessage.InvalidEmail:
                     return "Please enter a valid email address.";
 
+
+                // =========================
                 // Duration Validation
+                // =========================
                 case CommonValidationMessage.DurationRequired:
                     return "Duration is required.";
 
@@ -235,7 +339,10 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.DurationMustBeLessThan365Days:
                     return "Duration must be less than 365 days.";
 
+
+                // =========================
                 // Phone Number Validation
+                // =========================
                 case CommonValidationMessage.PhoneNumberRequired:
                     return "Phone number is required.";
 
@@ -248,10 +355,30 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.InvalidPhoneNumberLength:
                     return "Phone number must be exactly 10 digits.";
 
+
+                // =========================
+                // Diet Plan - Calories
+                // =========================
+                case CommonValidationMessage.CaloriesMustBeGreaterThanZero:
+                    return "Calories Per Day must be greater than zero.";
+
+
+                // =========================
+                // Diet Plan - Condition Status
+                // =========================
+                case CommonValidationMessage.ConditionStatusRequired:
+                    return "Condition Status is required.";
+
+                case CommonValidationMessage.ConditionStatusMustContainOnlyLetters:
+                    return "Condition Status must contain only letters.";
+
+                case CommonValidationMessage.ConditionStatusTooShort:
+                    return "Condition Status is too short.";
+
+
                 default:
                     return "Invalid data.";
             }
         }
     }
-
 }

@@ -9,11 +9,13 @@ namespace GymManagementSystem.FORMS.DietPlan.UI
 {
     public class DietPlanUI
     {
+        // Properties
         public int DietPlanId { get; set; }
         public int CaloriesPerDay { get; set; }
-        public string DietPlanDocument { get; set; }
+        public byte[] DietPlanDocument { get; set; }
         public string ConditionStatus { get; set; }
 
+        // Retrieves diet plan details for a ComboBox.
         public DataTable GetDietPlansForComboBox()
         {
             DietPlanBLL dietPlanBLL = new DietPlanBLL();
@@ -26,6 +28,43 @@ namespace GymManagementSystem.FORMS.DietPlan.UI
         {
             DietPlanBLL dietPlanBLL = new DietPlanBLL();
             return dietPlanBLL.RetrieveDietPlansBLL();
+        }
+
+        // Updates an existing diet plan through the business layer.
+        public string UpdateDietPlanUI(int dietPlanId,int caloriesPerDay,byte[] dietPlanDocument,string conditionStatus)
+        {
+            try
+            {
+                DietPlanBLL dietPlanBLL = new DietPlanBLL();
+
+                return dietPlanBLL.UpdateDietPlanBLL(
+                    dietPlanId,
+                    caloriesPerDay,
+                    dietPlanDocument,
+                    conditionStatus);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        // Inserts a new diet plan through the business layer.
+        public string InsertDietPlanUI(int caloriesPerDay,byte[] dietPlanDocument,string conditionStatus)
+        {
+            try
+            {
+                DietPlanBLL dietPlanBLL = new DietPlanBLL();
+
+                return dietPlanBLL.InsertDietPlanBLL(
+                    caloriesPerDay,
+                    dietPlanDocument,
+                    conditionStatus);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }
