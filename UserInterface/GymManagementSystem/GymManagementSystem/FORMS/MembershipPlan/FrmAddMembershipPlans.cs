@@ -13,27 +13,31 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 {
     public partial class FrmAddMembershipPlans : Form
     {
+        // Global Variables
         int ClickCountTxtPlanName = 0;
         int ClickCountTxtDuration = 0;
         int ClickCountTxtAmount = 0;
         int ClickCountTxtDescription = 0;
+        
+        // Constructor
         public FrmAddMembershipPlans()
         {
             InitializeComponent();
         }
 
+        // // Form Load
         private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
         {
             this.Text = "";
             this.ShowIcon = false;
             LoadPlanTypes();
         }
-
         private void btnPageRemove_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Clear
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtPlanName.Clear();
@@ -48,10 +52,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Submit
         private void pnlClickSubmit_Click(object sender, EventArgs e)
         {
             if (ClickCountTxtPlanName == 0)
@@ -140,29 +141,29 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             }
         }
 
+        // TextBox Click Events
         private void txtPlanName_Click(object sender, EventArgs e)
         {
             ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
             txtPlanName.ForeColor = Color.Black;
         }
-
         private void txtDuration_Click(object sender, EventArgs e)
         {
             ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
             txtDuration.ForeColor = Color.Black;
         }
-
         private void txtAmount_Click(object sender, EventArgs e)
         {
             ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
             txtAmount.ForeColor = Color.Black;
         }
-
         private void txtDescription_Click(object sender, EventArgs e)
         {
             ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
             txtDescription.ForeColor = Color.Black;
         }
+
+        // Load Membership Plan Types
         private void LoadPlanTypes()
         {
             MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
@@ -171,8 +172,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             cmbPlanType.DisplayMember = "PlanType";
             cmbPlanType.ValueMember = "PlanTypeId";
             cmbPlanType.SelectedIndex = -1;
-        }
-
-       
+        }  
     }
 }
