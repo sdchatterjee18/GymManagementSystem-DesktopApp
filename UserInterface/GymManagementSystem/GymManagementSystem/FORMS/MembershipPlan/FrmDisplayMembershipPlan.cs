@@ -20,7 +20,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 {
     public partial class FrmDisplayMembershipPlan : Form
     {
-        
+
         // Constructor
         public FrmDisplayMembershipPlan()
         {
@@ -34,7 +34,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             LoadMembershipPlans();
             LoadMembershipPlanComboBox();
-            
+
         }
 
         // Clear DataGridView Selection
@@ -73,13 +73,13 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-              
+
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
-           
+
 
         }
         // DataGridView Mouse Leave
@@ -88,13 +88,13 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                
+
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
 
-       
+
 
             }
         }
@@ -126,8 +126,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 {
                     string status = e.Value.ToString();
 
-                        e.CellStyle.ForeColor = Color.Blue;
-                     
+                    e.CellStyle.ForeColor = Color.Blue;
+
                 }
             }
 
@@ -211,7 +211,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // Add New Membership Plan Mouse Leave
         private void tlpAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236,240,243);
+            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
         }
 
         // Load Membership Plans
@@ -373,7 +373,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 LoadMembershipPlans();
                 return;
             }
-            int membershipPlanId =Convert.ToInt32(((DataRowView)cmbMembershipPlan.SelectedItem)["MembershipPlanId"]);
+            int membershipPlanId = Convert.ToInt32(((DataRowView)cmbMembershipPlan.SelectedItem)["MembershipPlanId"]);
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
             DataTable dt =
                 membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(membershipPlanId);
@@ -428,5 +428,5 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             frm.Show();
             frm.StartPosition = FormStartPosition.CenterParent;
         }
-
+    }
 }

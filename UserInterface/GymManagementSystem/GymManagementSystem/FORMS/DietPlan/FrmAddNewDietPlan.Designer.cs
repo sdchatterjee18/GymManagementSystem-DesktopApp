@@ -36,8 +36,9 @@
             this.tlpInputPlanDocumentAndBrowsePlan = new System.Windows.Forms.TableLayoutPanel();
             this.picPlanDocument = new System.Windows.Forms.PictureBox();
             this.tlpChooseFile = new System.Windows.Forms.TableLayoutPanel();
-            this.lblChooseFile = new System.Windows.Forms.Label();
             this.picChooseFile = new System.Windows.Forms.PictureBox();
+            this.lblChooseFile = new System.Windows.Forms.Label();
+            this.picImageIcon = new System.Windows.Forms.PictureBox();
             this.pnlPlanDocumentSection = new System.Windows.Forms.Panel();
             this.tlpPlanDocumentSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblPlanCondition = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.lblClear = new System.Windows.Forms.Label();
             this.tlpInputPlanConditionAndShowMessaage = new System.Windows.Forms.TableLayoutPanel();
             this.txtPlanCondition = new System.Windows.Forms.TextBox();
-            this.picImageIcon = new System.Windows.Forms.PictureBox();
             this.tlpAddNewDietPlan.SuspendLayout();
             this.pnlRequiredCaloriesPerDaySection.SuspendLayout();
             this.tlpCaloriesSection.SuspendLayout();
@@ -68,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlanDocument)).BeginInit();
             this.tlpChooseFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picChooseFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageIcon)).BeginInit();
             this.pnlPlanDocumentSection.SuspendLayout();
             this.tlpPlanDocumentSection.SuspendLayout();
             this.pnlPlanConditionSection.SuspendLayout();
@@ -82,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).BeginInit();
             this.tlpClear.SuspendLayout();
             this.tlpInputPlanConditionAndShowMessaage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpAddNewDietPlan
@@ -209,6 +209,19 @@
             this.tlpChooseFile.TabIndex = 2;
             this.tlpChooseFile.Click += new System.EventHandler(this.tlpChooseFile_Click);
             // 
+            // picChooseFile
+            // 
+            this.picChooseFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picChooseFile.Image = ((System.Drawing.Image)(resources.GetObject("picChooseFile.Image")));
+            this.picChooseFile.Location = new System.Drawing.Point(3, 2);
+            this.picChooseFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picChooseFile.Name = "picChooseFile";
+            this.picChooseFile.Size = new System.Drawing.Size(38, 26);
+            this.picChooseFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picChooseFile.TabIndex = 1;
+            this.picChooseFile.TabStop = false;
+            this.picChooseFile.Click += new System.EventHandler(this.tlpChooseFile_Click);
+            // 
             // lblChooseFile
             // 
             this.lblChooseFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -222,18 +235,18 @@
             this.lblChooseFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblChooseFile.Click += new System.EventHandler(this.tlpChooseFile_Click);
             // 
-            // picChooseFile
+            // picImageIcon
             // 
-            this.picChooseFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picChooseFile.Image = ((System.Drawing.Image)(resources.GetObject("picChooseFile.Image")));
-            this.picChooseFile.Location = new System.Drawing.Point(3, 2);
-            this.picChooseFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picChooseFile.Name = "picChooseFile";
-            this.picChooseFile.Size = new System.Drawing.Size(38, 26);
-            this.picChooseFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picChooseFile.TabIndex = 1;
-            this.picChooseFile.TabStop = false;
-            this.picChooseFile.Click += new System.EventHandler(this.tlpChooseFile_Click);
+            this.picImageIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picImageIcon.Image = ((System.Drawing.Image)(resources.GetObject("picImageIcon.Image")));
+            this.picImageIcon.Location = new System.Drawing.Point(378, 10);
+            this.picImageIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.picImageIcon.Name = "picImageIcon";
+            this.picImageIcon.Size = new System.Drawing.Size(31, 30);
+            this.picImageIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImageIcon.TabIndex = 3;
+            this.picImageIcon.TabStop = false;
+            this.picImageIcon.Click += new System.EventHandler(this.tlpChooseFile_Click);
             // 
             // pnlPlanDocumentSection
             // 
@@ -569,19 +582,6 @@
             this.txtPlanCondition.Text = "  ---Enter Plan Condition---";
             this.txtPlanCondition.Click += new System.EventHandler(this.txtPlanCondition_Click);
             // 
-            // picImageIcon
-            // 
-            this.picImageIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picImageIcon.Image = ((System.Drawing.Image)(resources.GetObject("picImageIcon.Image")));
-            this.picImageIcon.Location = new System.Drawing.Point(378, 10);
-            this.picImageIcon.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.picImageIcon.Name = "picImageIcon";
-            this.picImageIcon.Size = new System.Drawing.Size(31, 30);
-            this.picImageIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImageIcon.TabIndex = 3;
-            this.picImageIcon.TabStop = false;
-            this.picImageIcon.Click += new System.EventHandler(this.tlpChooseFile_Click);
-            // 
             // FrmAddNewDietPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -605,6 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlanDocument)).EndInit();
             this.tlpChooseFile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picChooseFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImageIcon)).EndInit();
             this.pnlPlanDocumentSection.ResumeLayout(false);
             this.tlpPlanDocumentSection.ResumeLayout(false);
             this.tlpPlanDocumentSection.PerformLayout();
@@ -623,7 +624,6 @@
             this.tlpClear.ResumeLayout(false);
             this.tlpInputPlanConditionAndShowMessaage.ResumeLayout(false);
             this.tlpInputPlanConditionAndShowMessaage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImageIcon)).EndInit();
             this.ResumeLayout(false);
 
         }

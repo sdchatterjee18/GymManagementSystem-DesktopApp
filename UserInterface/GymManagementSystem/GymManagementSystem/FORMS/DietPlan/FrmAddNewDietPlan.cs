@@ -35,13 +35,13 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Required Calories Click
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
-            ClickCountTxtRequiredCalories = ValidationUI.ClearTextBox(txtRequiredCalories,ClickCountTxtRequiredCalories);
+            ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
             txtRequiredCalories.ForeColor = Color.Black;
         }
         // Plan Condition Click
         private void txtPlanCondition_Click(object sender, EventArgs e)
         {
-            ClickCountTxtPlanCondition =ValidationUI.ClearTextBox(txtPlanCondition,ClickCountTxtPlanCondition);
+            ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
             txtPlanCondition.ForeColor = Color.Black;
         }
         // Choose File
