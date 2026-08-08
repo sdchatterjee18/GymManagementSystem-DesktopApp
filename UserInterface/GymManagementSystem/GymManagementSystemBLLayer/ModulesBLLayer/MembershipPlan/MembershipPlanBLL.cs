@@ -83,8 +83,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 return ValidationBll.GetValidationMessage(result);
 
             return string.Empty;
-        }
-        // Deactivates an existing membership plan
+        }        // Deactivates an existing membership plan
         public string DeactivateMembershipPlanByMembershipPlanIdBLL()
         {
             MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
@@ -147,6 +146,9 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
             }
 
         }
-       
+       public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
+       {
+           return MembershipPlanDAL.GetPriceByMembershipPlanId(membershipPlanId);
+       }
     }
 }

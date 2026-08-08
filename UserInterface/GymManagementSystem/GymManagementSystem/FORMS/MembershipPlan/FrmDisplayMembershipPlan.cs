@@ -31,7 +31,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             dgvMembershipPlan.AutoGenerateColumns = false;
             dgvMembershipPlan.ClearSelection();
-           
+
             LoadMembershipPlans();
             LoadMembershipPlanComboBox();
             
@@ -412,5 +412,21 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             dgvMembershipPlan.ClearSelection();
         }
-    }
+        private void pnlClickAddNewMembershipPlan_MouseEnter_1(object sender, EventArgs e)
+        {
+            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void pnlClickAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void pnlClickAddNewMembershipPlan_Click_1(object sender, EventArgs e)
+        {
+            FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
+            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterParent;
+        }
+
 }

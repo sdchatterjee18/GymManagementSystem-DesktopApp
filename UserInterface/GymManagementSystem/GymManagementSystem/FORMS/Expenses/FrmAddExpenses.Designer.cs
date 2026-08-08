@@ -55,12 +55,12 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblExpenseDefination = new System.Windows.Forms.Label();
             this.txtExpenseDefination = new System.Windows.Forms.TextBox();
+            this.pnlAddExpenseCategory = new System.Windows.Forms.Panel();
+            this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAddNewExpenseCategory = new System.Windows.Forms.Label();
+            this.picAddIcon = new System.Windows.Forms.PictureBox();
             this.tlpHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picAddExpenses = new System.Windows.Forms.PictureBox();
-            this.tlpAddButton = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlAddExpenseCategory = new System.Windows.Forms.Panel();
-            this.picAddIcon = new System.Windows.Forms.PictureBox();
-            this.lblAddNewExpenseCategory = new System.Windows.Forms.Label();
             this.tlpTitleAndSubTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblSubTitle = new System.Windows.Forms.Label();
@@ -72,11 +72,11 @@
             this.tlpAmount.SuspendLayout();
             this.tlpSelectCategory.SuspendLayout();
             this.tlpExpenseDefination.SuspendLayout();
+            this.pnlAddExpenseCategory.SuspendLayout();
+            this.tlpAddButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).BeginInit();
             this.tlpHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddExpenses)).BeginInit();
-            this.tlpAddButton.SuspendLayout();
-            this.pnlAddExpenseCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).BeginInit();
             this.tlpTitleAndSubTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,8 +97,8 @@
             this.tlpAddExpenses.Name = "tlpAddExpenses";
             this.tlpAddExpenses.RowCount = 1;
             this.tlpAddExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpAddExpenses.Size = new System.Drawing.Size(860, 642);
+            this.tlpAddExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAddExpenses.Size = new System.Drawing.Size(1147, 790);
             this.tlpAddExpenses.TabIndex = 1;
             this.tlpAddExpenses.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -112,7 +112,7 @@
             this.tlpExpenses.Controls.Add(this.tlpShowMemberTrainerAssignment, 0, 2);
             this.tlpExpenses.Controls.Add(this.tlpSearchBar, 0, 1);
             this.tlpExpenses.Controls.Add(this.tlpHeader, 0, 0);
-            this.tlpExpenses.Location = new System.Drawing.Point(43, 0);
+            this.tlpExpenses.Location = new System.Drawing.Point(57, 0);
             this.tlpExpenses.Margin = new System.Windows.Forms.Padding(0);
             this.tlpExpenses.Name = "tlpExpenses";
             this.tlpExpenses.RowCount = 4;
@@ -120,7 +120,7 @@
             this.tlpExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.63291F));
             this.tlpExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.24051F));
             this.tlpExpenses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpExpenses.Size = new System.Drawing.Size(774, 642);
+            this.tlpExpenses.Size = new System.Drawing.Size(1032, 790);
             this.tlpExpenses.TabIndex = 0;
             this.tlpExpenses.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -131,15 +131,15 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpShowMemberTrainerAssignment.ColumnCount = 1;
             this.tlpShowMemberTrainerAssignment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShowMemberTrainerAssignment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpShowMemberTrainerAssignment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpShowMemberTrainerAssignment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpShowMemberTrainerAssignment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpShowMemberTrainerAssignment.Controls.Add(this.dgvExpenses, 0, 0);
-            this.tlpShowMemberTrainerAssignment.Location = new System.Drawing.Point(0, 292);
+            this.tlpShowMemberTrainerAssignment.Location = new System.Drawing.Point(0, 360);
             this.tlpShowMemberTrainerAssignment.Margin = new System.Windows.Forms.Padding(0);
             this.tlpShowMemberTrainerAssignment.Name = "tlpShowMemberTrainerAssignment";
             this.tlpShowMemberTrainerAssignment.RowCount = 1;
             this.tlpShowMemberTrainerAssignment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShowMemberTrainerAssignment.Size = new System.Drawing.Size(774, 316);
+            this.tlpShowMemberTrainerAssignment.Size = new System.Drawing.Size(1032, 389);
             this.tlpShowMemberTrainerAssignment.TabIndex = 4;
             // 
             // dgvExpenses
@@ -187,8 +187,8 @@
             this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpenses.EnableHeadersVisualStyles = false;
             this.dgvExpenses.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvExpenses.Location = new System.Drawing.Point(2, 2);
-            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvExpenses.Location = new System.Drawing.Point(3, 2);
+            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvExpenses.Name = "dgvExpenses";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -205,7 +205,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             this.dgvExpenses.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpenses.RowTemplate.Height = 40;
-            this.dgvExpenses.Size = new System.Drawing.Size(770, 312);
+            this.dgvExpenses.Size = new System.Drawing.Size(1026, 385);
             this.dgvExpenses.TabIndex = 0;
             this.dgvExpenses.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellMouseEnter);
             this.dgvExpenses.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellMouseLeave);
@@ -216,7 +216,7 @@
             this.colSLNo.HeaderText = "SL No";
             this.colSLNo.Name = "colSLNo";
             this.colSLNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSLNo.Width = 52;
+            this.colSLNo.Width = 71;
             // 
             // colCategoryName
             // 
@@ -233,7 +233,7 @@
             this.colCategory.HeaderText = "Category";
             this.colCategory.Name = "colCategory";
             this.colCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCategory.Width = 83;
+            this.colCategory.Width = 99;
             // 
             // colExpenseAmount
             // 
@@ -241,7 +241,7 @@
             this.colExpenseAmount.DataPropertyName = "ExpenseAmount";
             this.colExpenseAmount.HeaderText = "Amount";
             this.colExpenseAmount.Name = "colExpenseAmount";
-            this.colExpenseAmount.Width = 93;
+            this.colExpenseAmount.Width = 110;
             // 
             // colExpenseDate
             // 
@@ -267,15 +267,15 @@
             this.tlpSearchBar.Controls.Add(this.tlpAmount, 0, 0);
             this.tlpSearchBar.Controls.Add(this.tlpSelectCategory, 0, 1);
             this.tlpSearchBar.Controls.Add(this.tlpExpenseDefination, 0, 2);
-            this.tlpSearchBar.Location = new System.Drawing.Point(0, 96);
+            this.tlpSearchBar.Location = new System.Drawing.Point(0, 118);
             this.tlpSearchBar.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSearchBar.Name = "tlpSearchBar";
             this.tlpSearchBar.RowCount = 3;
             this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.41176F));
             this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.41176F));
             this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.17647F));
-            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSearchBar.Size = new System.Drawing.Size(774, 196);
+            this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpSearchBar.Size = new System.Drawing.Size(1032, 242);
             this.tlpSearchBar.TabIndex = 1;
             // 
             // tlpAmount
@@ -283,9 +283,10 @@
             this.tlpAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAmount.ColumnCount = 2;
-            this.tlpAmount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
-            this.tlpAmount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAmount.ColumnCount = 3;
+            this.tlpAmount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpAmount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tlpAmount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpAmount.Controls.Add(this.lblAmount, 0, 0);
             this.tlpAmount.Controls.Add(this.txtAmount, 1, 0);
             this.tlpAmount.Location = new System.Drawing.Point(0, 0);
@@ -293,7 +294,7 @@
             this.tlpAmount.Name = "tlpAmount";
             this.tlpAmount.RowCount = 1;
             this.tlpAmount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAmount.Size = new System.Drawing.Size(774, 57);
+            this.tlpAmount.Size = new System.Drawing.Size(1032, 71);
             this.tlpAmount.TabIndex = 0;
             this.tlpAmount.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -302,10 +303,10 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblAmount.Location = new System.Drawing.Point(0, 18);
+            this.lblAmount.Location = new System.Drawing.Point(0, 21);
             this.lblAmount.Margin = new System.Windows.Forms.Padding(0);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(77, 21);
+            this.lblAmount.Size = new System.Drawing.Size(97, 28);
             this.lblAmount.TabIndex = 0;
             this.lblAmount.Text = "Amount :";
             this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -316,10 +317,10 @@
             this.txtAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtAmount.Location = new System.Drawing.Point(225, 16);
+            this.txtAmount.Location = new System.Drawing.Point(300, 20);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(0);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(241, 25);
+            this.txtAmount.Size = new System.Drawing.Size(320, 30);
             this.txtAmount.TabIndex = 1;
             this.txtAmount.Text = "Enter Amount";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
@@ -330,16 +331,16 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSelectCategory.ColumnCount = 2;
-            this.tlpSelectCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tlpSelectCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpSelectCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSelectCategory.Controls.Add(this.cmbCateogory, 1, 0);
             this.tlpSelectCategory.Controls.Add(this.lblSelectCategory, 0, 0);
-            this.tlpSelectCategory.Location = new System.Drawing.Point(0, 57);
+            this.tlpSelectCategory.Location = new System.Drawing.Point(0, 71);
             this.tlpSelectCategory.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSelectCategory.Name = "tlpSelectCategory";
             this.tlpSelectCategory.RowCount = 1;
             this.tlpSelectCategory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSelectCategory.Size = new System.Drawing.Size(774, 57);
+            this.tlpSelectCategory.Size = new System.Drawing.Size(1032, 71);
             this.tlpSelectCategory.TabIndex = 0;
             this.tlpSelectCategory.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -349,13 +350,12 @@
             this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.cmbCateogory.ForeColor = System.Drawing.Color.Black;
             this.cmbCateogory.FormattingEnabled = true;
-            this.cmbCateogory.Location = new System.Drawing.Point(225, 15);
+            this.cmbCateogory.Location = new System.Drawing.Point(300, 20);
             this.cmbCateogory.Margin = new System.Windows.Forms.Padding(0);
             this.cmbCateogory.Name = "cmbCateogory";
-            this.cmbCateogory.Size = new System.Drawing.Size(241, 25);
+            this.cmbCateogory.Size = new System.Drawing.Size(320, 31);
             this.cmbCateogory.TabIndex = 1;
             this.cmbCateogory.Text = " --Select Category--";
-            this.cmbCateogory.SelectedIndexChanged += new System.EventHandler(this.cmbCateogory_SelectedIndexChanged);
             this.cmbCateogory.Click += new System.EventHandler(this.cmbCateogory_Click);
             // 
             // lblSelectCategory
@@ -363,10 +363,10 @@
             this.lblSelectCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSelectCategory.AutoSize = true;
             this.lblSelectCategory.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblSelectCategory.Location = new System.Drawing.Point(0, 18);
+            this.lblSelectCategory.Location = new System.Drawing.Point(0, 21);
             this.lblSelectCategory.Margin = new System.Windows.Forms.Padding(0);
             this.lblSelectCategory.Name = "lblSelectCategory";
-            this.lblSelectCategory.Size = new System.Drawing.Size(150, 21);
+            this.lblSelectCategory.Size = new System.Drawing.Size(186, 28);
             this.lblSelectCategory.TabIndex = 0;
             this.lblSelectCategory.Text = "Expense Category :";
             this.lblSelectCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,22 +374,22 @@
             // 
             // tlpExpenseDefination
             // 
-            this.tlpExpenseDefination.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpExpenseDefination.ColumnCount = 3;
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
+            this.tlpExpenseDefination.ColumnCount = 4;
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpExpenseDefination.Controls.Add(this.btnSubmit, 2, 0);
             this.tlpExpenseDefination.Controls.Add(this.lblExpenseDefination, 0, 0);
             this.tlpExpenseDefination.Controls.Add(this.txtExpenseDefination, 1, 0);
-            this.tlpExpenseDefination.Location = new System.Drawing.Point(0, 114);
+            this.tlpExpenseDefination.Controls.Add(this.pnlAddExpenseCategory, 3, 0);
+            this.tlpExpenseDefination.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpExpenseDefination.Location = new System.Drawing.Point(0, 142);
             this.tlpExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.tlpExpenseDefination.Name = "tlpExpenseDefination";
             this.tlpExpenseDefination.RowCount = 1;
             this.tlpExpenseDefination.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpExpenseDefination.Size = new System.Drawing.Size(774, 82);
+            this.tlpExpenseDefination.Size = new System.Drawing.Size(1032, 100);
             this.tlpExpenseDefination.TabIndex = 0;
             this.tlpExpenseDefination.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -398,10 +398,10 @@
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(480, 23);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Location = new System.Drawing.Point(640, 28);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(101, 35);
+            this.btnSubmit.Size = new System.Drawing.Size(135, 43);
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -411,10 +411,10 @@
             this.lblExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblExpenseDefination.AutoSize = true;
             this.lblExpenseDefination.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 30);
+            this.lblExpenseDefination.Location = new System.Drawing.Point(0, 36);
             this.lblExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.lblExpenseDefination.Name = "lblExpenseDefination";
-            this.lblExpenseDefination.Size = new System.Drawing.Size(154, 21);
+            this.lblExpenseDefination.Size = new System.Drawing.Size(193, 28);
             this.lblExpenseDefination.TabIndex = 0;
             this.lblExpenseDefination.Text = "Expense Defination:";
             this.lblExpenseDefination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -425,14 +425,76 @@
             this.txtExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtExpenseDefination.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtExpenseDefination.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtExpenseDefination.Location = new System.Drawing.Point(225, 18);
+            this.txtExpenseDefination.Location = new System.Drawing.Point(300, 22);
             this.txtExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.txtExpenseDefination.Multiline = true;
             this.txtExpenseDefination.Name = "txtExpenseDefination";
-            this.txtExpenseDefination.Size = new System.Drawing.Size(244, 46);
+            this.txtExpenseDefination.Size = new System.Drawing.Size(312, 56);
             this.txtExpenseDefination.TabIndex = 1;
             this.txtExpenseDefination.Text = " e.g. maintenance for treadmills";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);
+            // 
+            // pnlAddExpenseCategory
+            // 
+            this.pnlAddExpenseCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAddExpenseCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAddExpenseCategory.Controls.Add(this.tlpAddButton);
+            this.pnlAddExpenseCategory.Location = new System.Drawing.Point(887, 32);
+            this.pnlAddExpenseCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlAddExpenseCategory.Name = "pnlAddExpenseCategory";
+            this.pnlAddExpenseCategory.Size = new System.Drawing.Size(142, 35);
+            this.pnlAddExpenseCategory.TabIndex = 4;
+            this.pnlAddExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
+            // 
+            // tlpAddButton
+            // 
+            this.tlpAddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.tlpAddButton.ColumnCount = 2;
+            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.53933F));
+            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.46067F));
+            this.tlpAddButton.Controls.Add(this.lblAddNewExpenseCategory, 1, 0);
+            this.tlpAddButton.Controls.Add(this.picAddIcon, 0, 0);
+            this.tlpAddButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAddButton.Location = new System.Drawing.Point(0, 0);
+            this.tlpAddButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpAddButton.Name = "tlpAddButton";
+            this.tlpAddButton.RowCount = 1;
+            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddButton.Size = new System.Drawing.Size(140, 33);
+            this.tlpAddButton.TabIndex = 5;
+            this.tlpAddButton.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
+            this.tlpAddButton.MouseEnter += new System.EventHandler(this.tlpAddButton_MouseEnter);
+            this.tlpAddButton.MouseLeave += new System.EventHandler(this.tlpAddButton_MouseLeave);
+            // 
+            // lblAddNewExpenseCategory
+            // 
+            this.lblAddNewExpenseCategory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAddNewExpenseCategory.AutoSize = true;
+            this.lblAddNewExpenseCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewExpenseCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
+            this.lblAddNewExpenseCategory.Location = new System.Drawing.Point(28, 6);
+            this.lblAddNewExpenseCategory.Name = "lblAddNewExpenseCategory";
+            this.lblAddNewExpenseCategory.Size = new System.Drawing.Size(106, 20);
+            this.lblAddNewExpenseCategory.TabIndex = 1;
+            this.lblAddNewExpenseCategory.Text = "Add Category";
+            this.lblAddNewExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
+            this.lblAddNewExpenseCategory.MouseEnter += new System.EventHandler(this.tlpAddButton_MouseEnter);
+            this.lblAddNewExpenseCategory.MouseLeave += new System.EventHandler(this.tlpAddButton_MouseLeave);
+            // 
+            // picAddIcon
+            // 
+            this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
+            this.picAddIcon.Location = new System.Drawing.Point(5, 8);
+            this.picAddIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picAddIcon.Name = "picAddIcon";
+            this.picAddIcon.Size = new System.Drawing.Size(17, 17);
+            this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddIcon.TabIndex = 2;
+            this.picAddIcon.TabStop = false;
+            this.picAddIcon.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click_1);
+            this.picAddIcon.MouseEnter += new System.EventHandler(this.tlpAddButton_MouseEnter);
+            this.picAddIcon.MouseLeave += new System.EventHandler(this.tlpAddButton_MouseLeave);
             // 
             // tlpHeader
             // 
@@ -440,18 +502,17 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpHeader.ColumnCount = 3;
-            this.tlpHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tlpHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tlpHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpHeader.Controls.Add(this.picAddExpenses, 0, 0);
-            this.tlpHeader.Controls.Add(this.tlpAddButton, 2, 0);
             this.tlpHeader.Controls.Add(this.tlpTitleAndSubTitle, 1, 0);
             this.tlpHeader.Location = new System.Drawing.Point(0, 0);
             this.tlpHeader.Margin = new System.Windows.Forms.Padding(0);
             this.tlpHeader.Name = "tlpHeader";
             this.tlpHeader.RowCount = 1;
             this.tlpHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeader.Size = new System.Drawing.Size(774, 96);
+            this.tlpHeader.Size = new System.Drawing.Size(1032, 118);
             this.tlpHeader.TabIndex = 0;
             this.tlpHeader.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -464,81 +525,11 @@
             this.picAddExpenses.Location = new System.Drawing.Point(0, 0);
             this.picAddExpenses.Margin = new System.Windows.Forms.Padding(0);
             this.picAddExpenses.Name = "picAddExpenses";
-            this.picAddExpenses.Size = new System.Drawing.Size(52, 96);
+            this.picAddExpenses.Size = new System.Drawing.Size(69, 118);
             this.picAddExpenses.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddExpenses.TabIndex = 1;
             this.picAddExpenses.TabStop = false;
             this.picAddExpenses.Click += new System.EventHandler(this.tlpAddExpenses_Click);
-            // 
-            // tlpAddButton
-            // 
-            this.tlpAddButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tlpAddButton.ColumnCount = 1;
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
-            this.tlpAddButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
-            this.tlpAddButton.Controls.Add(this.pnlAddExpenseCategory, 0, 0);
-            this.tlpAddButton.Location = new System.Drawing.Point(633, 32);
-            this.tlpAddButton.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpAddButton.Name = "tlpAddButton";
-            this.tlpAddButton.RowCount = 1;
-            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tlpAddButton.Size = new System.Drawing.Size(141, 31);
-            this.tlpAddButton.TabIndex = 2;
-            // 
-            // pnlAddExpenseCategory
-            // 
-            this.pnlAddExpenseCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.pnlAddExpenseCategory.Controls.Add(this.picAddIcon);
-            this.pnlAddExpenseCategory.Controls.Add(this.lblAddNewExpenseCategory);
-            this.pnlAddExpenseCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAddExpenseCategory.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddExpenseCategory.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlAddExpenseCategory.Name = "pnlAddExpenseCategory";
-            this.pnlAddExpenseCategory.Size = new System.Drawing.Size(141, 31);
-            this.pnlAddExpenseCategory.TabIndex = 1;
-            this.pnlAddExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click);
-            this.pnlAddExpenseCategory.MouseEnter += new System.EventHandler(this.pnlAddExpenseCategory_MouseEnter);
-            this.pnlAddExpenseCategory.MouseLeave += new System.EventHandler(this.pnlAddExpenseCategory_MouseLeave);
-            this.pnlAddExpenseCategory.MouseHover += new System.EventHandler(this.pnlAddExpenseCategory_MouseHover);
-            // 
-            // picAddIcon
-            // 
-            this.picAddIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAddIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(4, 8);
-            this.picAddIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddIcon.Name = "picAddIcon";
-            this.picAddIcon.Size = new System.Drawing.Size(22, 17);
-            this.picAddIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddIcon.TabIndex = 1;
-            this.picAddIcon.TabStop = false;
-            this.picAddIcon.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click);
-            this.picAddIcon.MouseEnter += new System.EventHandler(this.pnlAddExpenseCategory_MouseEnter);
-            this.picAddIcon.MouseLeave += new System.EventHandler(this.pnlAddExpenseCategory_MouseLeave);
-            this.picAddIcon.MouseHover += new System.EventHandler(this.pnlAddExpenseCategory_MouseHover);
-            // 
-            // lblAddNewExpenseCategory
-            // 
-            this.lblAddNewExpenseCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAddNewExpenseCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAddNewExpenseCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewExpenseCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblAddNewExpenseCategory.Location = new System.Drawing.Point(0, 0);
-            this.lblAddNewExpenseCategory.Margin = new System.Windows.Forms.Padding(0);
-            this.lblAddNewExpenseCategory.Name = "lblAddNewExpenseCategory";
-            this.lblAddNewExpenseCategory.Size = new System.Drawing.Size(141, 31);
-            this.lblAddNewExpenseCategory.TabIndex = 0;
-            this.lblAddNewExpenseCategory.Text = "     Add Category";
-            this.lblAddNewExpenseCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddNewExpenseCategory.Click += new System.EventHandler(this.pnlAddExpenseCategory_Click);
-            this.lblAddNewExpenseCategory.MouseEnter += new System.EventHandler(this.pnlAddExpenseCategory_MouseEnter);
-            this.lblAddNewExpenseCategory.MouseLeave += new System.EventHandler(this.pnlAddExpenseCategory_MouseLeave);
-            this.lblAddNewExpenseCategory.MouseHover += new System.EventHandler(this.pnlAddExpenseCategory_MouseHover);
             // 
             // tlpTitleAndSubTitle
             // 
@@ -547,17 +538,17 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpTitleAndSubTitle.ColumnCount = 1;
             this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpTitleAndSubTitle.Controls.Add(this.lblHeader, 0, 0);
             this.tlpTitleAndSubTitle.Controls.Add(this.lblSubTitle, 0, 1);
-            this.tlpTitleAndSubTitle.Location = new System.Drawing.Point(52, 0);
+            this.tlpTitleAndSubTitle.Location = new System.Drawing.Point(69, 0);
             this.tlpTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTitleAndSubTitle.Name = "tlpTitleAndSubTitle";
             this.tlpTitleAndSubTitle.RowCount = 3;
             this.tlpTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tlpTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpTitleAndSubTitle.Size = new System.Drawing.Size(361, 96);
+            this.tlpTitleAndSubTitle.Size = new System.Drawing.Size(481, 118);
             this.tlpTitleAndSubTitle.TabIndex = 0;
             this.tlpTitleAndSubTitle.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
@@ -567,10 +558,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoSize = true;
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblHeader.Location = new System.Drawing.Point(2, 31);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHeader.Location = new System.Drawing.Point(3, 36);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(357, 21);
+            this.lblHeader.Size = new System.Drawing.Size(475, 28);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Add New Expense";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -583,22 +573,22 @@
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblSubTitle.Location = new System.Drawing.Point(2, 52);
-            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubTitle.Location = new System.Drawing.Point(3, 64);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(357, 13);
+            this.lblSubTitle.Size = new System.Drawing.Size(475, 19);
             this.lblSubTitle.TabIndex = 1;
             this.lblSubTitle.Text = "Record a new expense and assign it to a category";
             this.lblSubTitle.Click += new System.EventHandler(this.tlpAddExpenses_Click);
             // 
             // FrmAddExpenses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(862, 609);
+            this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpAddExpenses);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAddExpenses";
             this.Text = "FrmAddExpenses";
             this.Load += new System.EventHandler(this.FrmAddExpenses_Load);
@@ -613,11 +603,12 @@
             this.tlpSelectCategory.PerformLayout();
             this.tlpExpenseDefination.ResumeLayout(false);
             this.tlpExpenseDefination.PerformLayout();
+            this.pnlAddExpenseCategory.ResumeLayout(false);
+            this.tlpAddButton.ResumeLayout(false);
+            this.tlpAddButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).EndInit();
             this.tlpHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAddExpenses)).EndInit();
-            this.tlpAddButton.ResumeLayout(false);
-            this.pnlAddExpenseCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAddIcon)).EndInit();
             this.tlpTitleAndSubTitle.ResumeLayout(false);
             this.tlpTitleAndSubTitle.PerformLayout();
             this.ResumeLayout(false);
@@ -636,10 +627,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblSubTitle;
         private System.Windows.Forms.PictureBox picAddExpenses;
-        private System.Windows.Forms.TableLayoutPanel tlpAddButton;
-        private System.Windows.Forms.Panel pnlAddExpenseCategory;
-        private System.Windows.Forms.PictureBox picAddIcon;
-        private System.Windows.Forms.Label lblAddNewExpenseCategory;
         private System.Windows.Forms.TableLayoutPanel tlpAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
@@ -656,5 +643,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNotes;
         private System.Windows.Forms.TextBox txtExpenseDefination;
+        private System.Windows.Forms.Panel pnlAddExpenseCategory;
+        private System.Windows.Forms.TableLayoutPanel tlpAddButton;
+        private System.Windows.Forms.Label lblAddNewExpenseCategory;
+        private System.Windows.Forms.PictureBox picAddIcon;
     }
 }

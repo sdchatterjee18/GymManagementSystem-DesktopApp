@@ -15,54 +15,24 @@ namespace GymManagementSystem.FORMS.DietPlan
 {
     public partial class FrmShowDietPlans : Form
     {
-        // Global Variables
         private byte[] dietPlanDocument = null;
-        private Color originalColor;
-        private Color hoverColor = Color.FromArgb(220,225,230);
-        private Color MouseLeave = Color.FromArgb(236,240,243);
-        private Color clickColor = Color.FromArgb(184, 195, 179);
-
         // Constructor
         public FrmShowDietPlans()
         {
             InitializeComponent();
-            originalColor = pnlAddNewDietPlan.BackColor;
         }
         // Load Form
-        private void FrmShowDietPlans_Load(object sender, EventArgs e)
-        {   
+        private void FrmShowDietPlans_Load(object sender, EventArgs e)  
+        {
             RetrieveAllDietPlan();
         }
-
-        // Add New Diet Plan Mouse Enter
-        private void pnlAddNewDietPlan_MouseEnter(object sender, EventArgs e)
-        {
-            pnlAddNewDietPlan.BackColor = hoverColor;
-        }
-        // Add New Diet Plan Mouse Leave
-        private void pnlAddNewDietPlan_MouseLeave(object sender, EventArgs e)
-        {
-                pnlAddNewDietPlan.BackColor = MouseLeave;
-        }
-        // Add New Diet Plan Click
         private void pnlAddNewDietPlan_Click(object sender, EventArgs e)
         {
-            pnlAddNewDietPlan.BackColor = clickColor;
             FrmAddNewDietPlan FrmAddNewDietPlan = new FrmAddNewDietPlan();
             FrmAddNewDietPlan.ShowDialog();
             RetrieveAllDietPlan();
         }
-        // Add New Diet Plan Enter
-        private void pnlAddNewDietPlan_Enter(object sender, EventArgs e)
-        {
-            pnlAddNewDietPlan.BackColor = hoverColor;
-        }
-        // Add New Diet Plan Leave
-        private void pnlAddNewDietPlan_Leave(object sender, EventArgs e)
-        {
-            pnlAddNewDietPlan.BackColor = originalColor;
-        }
-        // DataGridView Cell Mouse Enter
+
         private void dgvDietPlan_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         { 
                 if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -216,11 +186,19 @@ namespace GymManagementSystem.FORMS.DietPlan
                    MessageBox.Show(ex.Message);
                }
            }
-        //SelectDietPlanDocument Methode
+           private void tlpAddButton_MouseEnter(object sender, EventArgs e)
+           {
+               this.tlpAddButton.BackColor = Color.FromArgb(220, 225, 230);
+           }
+
+           private void tlpAddButton_MouseLeave(object sender, EventArgs e)
+           {
+               this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
+           }
+        //SelectDietPlanDocument Method
         private void SelectDietPlanDocument(int rowIndex)
            {
                OpenFileDialog openFileDialog = new OpenFileDialog();
-
                openFileDialog.Title = "Select Diet Plan Image";
                openFileDialog.Filter =
                    "Image Files|*.jpg;*.jpeg;*.png;*.bmp";

@@ -74,58 +74,11 @@ namespace GymManagementSystem.FORMS.RegistrationFee
         {
             RetrieveRegistrationFees();
         
-            //AdjustRowHeights();
         }
 
 
-        //private void AdjustRowHeights()
-        //{
-        //    try
-        //    {
-        //        dgvShowAllAddRegistrationFees.SuspendLayout();
-        //        dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        //        dgvShowAllAddRegistrationFees.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-        //        int gridHeight = dgvShowAllAddRegistrationFees.ClientSize.Height - dgvShowAllAddRegistrationFees.ColumnHeadersHeight;
-
-        //        int visibleRowCount = dgvShowAllAddRegistrationFees.Rows.GetRowCount(DataGridViewElementStates.Visible);
-
-        //        if (dgvShowAllAddRegistrationFees.AllowUserToAddRows)
-        //        {
-        //            visibleRowCount--;
-        //        }
-
-        //        if (visibleRowCount > 0)
-        //        {
-        //            int singlePartHeight = gridHeight / visibleRowCount;
-
-        //            foreach (DataGridViewRow row in dgvShowAllAddRegistrationFees.Rows)
-        //            {
-        //                if (row.IsNewRow)
-        //                    continue;
-
-        //                if (row.Visible)
-        //                {
-        //                    row.Height = singlePartHeight;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //    }
-        //    finally
-        //    {
-        //        dgvShowAllAddRegistrationFees.ResumeLayout();
-        //        dgvShowAllAddRegistrationFees.Refresh();
-        //    }
-        //}
-
-          
-
         private void FrmRegistrationFees_Resize(object sender, EventArgs e)
         {
-           // AdjustRowHeights();
            
         }
 
@@ -209,7 +162,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                //dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+            
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -222,7 +175,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             if (e.RowIndex == -1 && e.ColumnIndex >= 0)
             {
                 dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                //dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
+              
             }
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {

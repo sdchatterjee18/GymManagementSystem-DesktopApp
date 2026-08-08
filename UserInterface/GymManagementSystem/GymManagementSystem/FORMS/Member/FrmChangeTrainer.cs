@@ -20,5 +20,27 @@ namespace GymManagementSystem.FORMS.Member
         {
 
         }
+
+        private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAssignButton.BackColor = Color.DarkGreen;
+        }
+
+        private void tlpRegisterButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAssignButton.BackColor = Color.ForestGreen;
+        }
+
+        private void tlpCancleSection_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpCancleSection.BackColor = Color.OrangeRed;
+        }
+
+        private void tlpCancleSection_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpCancleSection.BackColor = Color.Red;
+        }
+
+        
     }
 }

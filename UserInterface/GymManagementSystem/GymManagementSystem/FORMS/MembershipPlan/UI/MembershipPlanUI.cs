@@ -140,6 +140,9 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
             return membershipPlanBLL.GetMembershipPlanTypeDetailsForComboBox();
         }
-      
+        public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
+        {
+            return MembershipPlanBLL.GetPriceByMembershipPlanId(membershipPlanId);
+        }
     }
 }

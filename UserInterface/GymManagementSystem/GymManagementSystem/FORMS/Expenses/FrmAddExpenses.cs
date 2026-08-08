@@ -123,38 +123,33 @@ namespace GymManagementSystem.FORMS.Expenses
             }
         }
 
-        private void pnlAddExpenseCategory_Click(object sender, EventArgs e)
-        {
-            FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
-            frmAddExpenseCategory.ShowDialog();
-
-
-        }
-
-        private void pnlAddExpenseCategory_MouseEnter(object sender, EventArgs e)
-        {
-            pnlAddExpenseCategory.BackColor = Color.FromArgb(220,225,230);
-        }
-
-        private void pnlAddExpenseCategory_MouseHover(object sender, EventArgs e)
-        {
-            pnlAddExpenseCategory.BackColor = Color.FromArgb(220, 225, 230);
-        }
-
-        private void pnlAddExpenseCategory_MouseLeave(object sender, EventArgs e)
-        {
-            pnlAddExpenseCategory.BackColor = Color.FromArgb(236, 240, 243);
-        }
 
         private void tlpAddExpenses_Click(object sender, EventArgs e)
         {
             dgvExpenses.ClearSelection();
+           
         }
 
-        private void cmbCateogory_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void pnlAddExpenseCategory_Click_1(object sender, EventArgs e)
         {
-
+            FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
+            frmAddExpenseCategory.ShowDialog();
         }
+
+        private void tlpAddButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.tlpAddButton.BackColor = Color.FromArgb(220, 225, 230);
+        }
+
+        private void tlpAddButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+       
+      
         
     }
 }
