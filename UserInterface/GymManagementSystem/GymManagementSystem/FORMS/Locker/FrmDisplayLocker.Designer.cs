@@ -18,18 +18,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayLocker));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.tlpHeading = new System.Windows.Forms.TableLayoutPanel();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.tlpAddNewLocker = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAddNewLocker = new System.Windows.Forms.Label();
             this.picBoxAddSymbol = new System.Windows.Forms.PictureBox();
+            this.lblAddNewLocker = new System.Windows.Forms.Label();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.tlpTitle = new System.Windows.Forms.TableLayoutPanel();
             this.tlplSection = new System.Windows.Forms.TableLayoutPanel();
@@ -95,12 +95,10 @@
             this.pnlButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlButton.ForeColor = System.Drawing.Color.Blue;
-            this.pnlButton.Location = new System.Drawing.Point(991, 59);
+            this.pnlButton.Location = new System.Drawing.Point(1044, 64);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlButton.MaximumSize = new System.Drawing.Size(143, 35);
-            this.pnlButton.MinimumSize = new System.Drawing.Size(143, 35);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(143, 35);
+            this.pnlButton.Size = new System.Drawing.Size(90, 30);
             this.pnlButton.TabIndex = 1;
             this.pnlButton.Click += new System.EventHandler(this.pnlButton_Click);
             this.pnlButton.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
@@ -110,10 +108,10 @@
             // 
             this.tlpAddNewLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.tlpAddNewLocker.ColumnCount = 2;
-            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewLocker.Controls.Add(this.lblAddNewLocker, 1, 0);
+            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpAddNewLocker.Controls.Add(this.picBoxAddSymbol, 0, 0);
+            this.tlpAddNewLocker.Controls.Add(this.lblAddNewLocker, 1, 0);
             this.tlpAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tlpAddNewLocker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAddNewLocker.Location = new System.Drawing.Point(0, 0);
@@ -121,39 +119,39 @@
             this.tlpAddNewLocker.Name = "tlpAddNewLocker";
             this.tlpAddNewLocker.RowCount = 1;
             this.tlpAddNewLocker.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewLocker.Size = new System.Drawing.Size(141, 33);
+            this.tlpAddNewLocker.Size = new System.Drawing.Size(88, 28);
             this.tlpAddNewLocker.TabIndex = 0;
             this.tlpAddNewLocker.Click += new System.EventHandler(this.pnlButton_Click);
             this.tlpAddNewLocker.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
             this.tlpAddNewLocker.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
-            // 
-            // lblAddNewLocker
-            // 
-            this.lblAddNewLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAddNewLocker.AutoSize = true;
-            this.lblAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAddNewLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewLocker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
-            this.lblAddNewLocker.Location = new System.Drawing.Point(44, 5);
-            this.lblAddNewLocker.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lblAddNewLocker.Name = "lblAddNewLocker";
-            this.lblAddNewLocker.Size = new System.Drawing.Size(81, 23);
-            this.lblAddNewLocker.TabIndex = 1;
-            this.lblAddNewLocker.Text = "Add New";
-            this.lblAddNewLocker.Click += new System.EventHandler(this.pnlButton_Click);
-            this.lblAddNewLocker.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
-            this.lblAddNewLocker.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
             // 
             // picBoxAddSymbol
             // 
             this.picBoxAddSymbol.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picBoxAddSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxAddSymbol.BackgroundImage")));
             this.picBoxAddSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxAddSymbol.Location = new System.Drawing.Point(14, 8);
+            this.picBoxAddSymbol.Location = new System.Drawing.Point(4, 9);
+            this.picBoxAddSymbol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBoxAddSymbol.Name = "picBoxAddSymbol";
-            this.picBoxAddSymbol.Size = new System.Drawing.Size(17, 17);
+            this.picBoxAddSymbol.Size = new System.Drawing.Size(10, 10);
             this.picBoxAddSymbol.TabIndex = 2;
             this.picBoxAddSymbol.TabStop = false;
+            // 
+            // lblAddNewLocker
+            // 
+            this.lblAddNewLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAddNewLocker.AutoSize = true;
+            this.lblAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAddNewLocker.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewLocker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
+            this.lblAddNewLocker.Location = new System.Drawing.Point(20, 0);
+            this.lblAddNewLocker.Name = "lblAddNewLocker";
+            this.lblAddNewLocker.Size = new System.Drawing.Size(41, 28);
+            this.lblAddNewLocker.TabIndex = 1;
+            this.lblAddNewLocker.Text = "Add New";
+            this.lblAddNewLocker.Click += new System.EventHandler(this.pnlButton_Click);
+            this.lblAddNewLocker.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
+            this.lblAddNewLocker.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
             // 
             // pnlTitle
             // 
@@ -275,39 +273,39 @@
             this.dgvDisplayLocker.AllowUserToDeleteRows = false;
             this.dgvDisplayLocker.AllowUserToResizeColumns = false;
             this.dgvDisplayLocker.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDisplayLocker.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDisplayLocker.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDisplayLocker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayLocker.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvDisplayLocker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDisplayLocker.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvDisplayLocker.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplayLocker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplayLocker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDisplayLocker.ColumnHeadersHeight = 50;
             this.dgvDisplayLocker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSlNo,
             this.colLNo,
             this.colAllocatedTo,
             this.colLStatus});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDisplayLocker.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDisplayLocker.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplayLocker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDisplayLocker.EnableHeadersVisualStyles = false;
             this.dgvDisplayLocker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
@@ -315,23 +313,23 @@
             this.dgvDisplayLocker.Name = "dgvDisplayLocker";
             this.dgvDisplayLocker.ReadOnly = true;
             this.dgvDisplayLocker.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplayLocker.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplayLocker.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDisplayLocker.RowHeadersVisible = false;
             this.dgvDisplayLocker.RowHeadersWidth = 40;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDisplayLocker.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplayLocker.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDisplayLocker.RowTemplate.Height = 40;
             this.dgvDisplayLocker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDisplayLocker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -345,10 +343,10 @@
             // 
             // colSlNo
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(220)))));
-            this.colSlNo.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(220)))));
+            this.colSlNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSlNo.FillWeight = 50F;
             this.colSlNo.HeaderText = "SL No.";
             this.colSlNo.MaxInputLength = 32;

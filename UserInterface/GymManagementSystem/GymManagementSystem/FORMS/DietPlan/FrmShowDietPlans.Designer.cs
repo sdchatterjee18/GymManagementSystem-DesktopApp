@@ -286,10 +286,10 @@
             this.pnlAddNewDietPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAddNewDietPlan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAddNewDietPlan.Controls.Add(this.tlpAddButton);
-            this.pnlAddNewDietPlan.Location = new System.Drawing.Point(881, 67);
+            this.pnlAddNewDietPlan.Location = new System.Drawing.Point(904, 67);
             this.pnlAddNewDietPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddNewDietPlan.Name = "pnlAddNewDietPlan";
-            this.pnlAddNewDietPlan.Size = new System.Drawing.Size(143, 35);
+            this.pnlAddNewDietPlan.Size = new System.Drawing.Size(120, 35);
             this.pnlAddNewDietPlan.TabIndex = 3;
             this.pnlAddNewDietPlan.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
             // 
@@ -307,7 +307,7 @@
             this.tlpAddButton.Name = "tlpAddButton";
             this.tlpAddButton.RowCount = 1;
             this.tlpAddButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddButton.Size = new System.Drawing.Size(141, 33);
+            this.tlpAddButton.Size = new System.Drawing.Size(118, 33);
             this.tlpAddButton.TabIndex = 5;
             this.tlpAddButton.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
             this.tlpAddButton.MouseEnter += new System.EventHandler(this.tlpAddButton_MouseEnter);
@@ -317,11 +317,11 @@
             // 
             this.lblAddNewDietPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAddNewDietPlan.AutoSize = true;
-            this.lblAddNewDietPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewDietPlan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddNewDietPlan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
-            this.lblAddNewDietPlan.Location = new System.Drawing.Point(37, 5);
+            this.lblAddNewDietPlan.Location = new System.Drawing.Point(32, 6);
             this.lblAddNewDietPlan.Name = "lblAddNewDietPlan";
-            this.lblAddNewDietPlan.Size = new System.Drawing.Size(86, 23);
+            this.lblAddNewDietPlan.Size = new System.Drawing.Size(78, 20);
             this.lblAddNewDietPlan.TabIndex = 1;
             this.lblAddNewDietPlan.Text = "Add New ";
             this.lblAddNewDietPlan.Click += new System.EventHandler(this.pnlAddNewDietPlan_Click);
@@ -332,7 +332,7 @@
             // 
             this.picAddIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddIcon.Image = ((System.Drawing.Image)(resources.GetObject("picAddIcon.Image")));
-            this.picAddIcon.Location = new System.Drawing.Point(14, 8);
+            this.picAddIcon.Location = new System.Drawing.Point(9, 8);
             this.picAddIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAddIcon.Name = "picAddIcon";
             this.picAddIcon.Size = new System.Drawing.Size(17, 17);

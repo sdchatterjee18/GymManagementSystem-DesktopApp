@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayWorkoutSchedule));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAllWorkoutSheduleEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpWorkoutSheduleHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picWorkoutShedule = new System.Windows.Forms.PictureBox();
@@ -268,10 +268,10 @@
             this.pnlClickToAddNewWorkoutShedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.pnlClickToAddNewWorkoutShedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickToAddNewWorkoutShedule.Controls.Add(this.tlpAddNewWorkoutSchedule);
-            this.pnlClickToAddNewWorkoutShedule.Location = new System.Drawing.Point(84, 62);
+            this.pnlClickToAddNewWorkoutShedule.Location = new System.Drawing.Point(96, 62);
             this.pnlClickToAddNewWorkoutShedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlClickToAddNewWorkoutShedule.Name = "pnlClickToAddNewWorkoutShedule";
-            this.pnlClickToAddNewWorkoutShedule.Size = new System.Drawing.Size(143, 35);
+            this.pnlClickToAddNewWorkoutShedule.Size = new System.Drawing.Size(120, 35);
             this.pnlClickToAddNewWorkoutShedule.TabIndex = 12;
             this.pnlClickToAddNewWorkoutShedule.Click += new System.EventHandler(this.pnlClickToAddNewWorkoutShedule_Click);
             this.pnlClickToAddNewWorkoutShedule.MouseEnter += new System.EventHandler(this.pnlClickToAddNewWorkoutShedule_MouseEnter);
@@ -290,7 +290,7 @@
             this.tlpAddNewWorkoutSchedule.Name = "tlpAddNewWorkoutSchedule";
             this.tlpAddNewWorkoutSchedule.RowCount = 1;
             this.tlpAddNewWorkoutSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewWorkoutSchedule.Size = new System.Drawing.Size(141, 33);
+            this.tlpAddNewWorkoutSchedule.Size = new System.Drawing.Size(118, 33);
             this.tlpAddNewWorkoutSchedule.TabIndex = 4;
             this.tlpAddNewWorkoutSchedule.Click += new System.EventHandler(this.pnlClickToAddNewWorkoutShedule_Click);
             this.tlpAddNewWorkoutSchedule.MouseEnter += new System.EventHandler(this.tlpAddNewWorkoutSchedule_MouseEnter);
@@ -300,7 +300,7 @@
             // 
             this.picPlusWorkoutShedule.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picPlusWorkoutShedule.Image = ((System.Drawing.Image)(resources.GetObject("picPlusWorkoutShedule.Image")));
-            this.picPlusWorkoutShedule.Location = new System.Drawing.Point(15, 8);
+            this.picPlusWorkoutShedule.Location = new System.Drawing.Point(9, 8);
             this.picPlusWorkoutShedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPlusWorkoutShedule.Name = "picPlusWorkoutShedule";
             this.picPlusWorkoutShedule.Size = new System.Drawing.Size(17, 17);
@@ -317,7 +317,7 @@
             this.lblAddNewWorkoutShedule.AutoSize = true;
             this.lblAddNewWorkoutShedule.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddNewWorkoutShedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
-            this.lblAddNewWorkoutShedule.Location = new System.Drawing.Point(38, 6);
+            this.lblAddNewWorkoutShedule.Location = new System.Drawing.Point(32, 6);
             this.lblAddNewWorkoutShedule.Name = "lblAddNewWorkoutShedule";
             this.lblAddNewWorkoutShedule.Size = new System.Drawing.Size(74, 20);
             this.lblAddNewWorkoutShedule.TabIndex = 0;
@@ -331,22 +331,22 @@
             this.dgvWorkoutShedule.AllowUserToAddRows = false;
             this.dgvWorkoutShedule.AllowUserToDeleteRows = false;
             this.dgvWorkoutShedule.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutShedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutShedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkoutShedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorkoutShedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvWorkoutShedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWorkoutShedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutShedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutShedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWorkoutShedule.ColumnHeadersHeight = 50;
             this.dgvWorkoutShedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutShedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -354,14 +354,14 @@
             this.colWorkoutName,
             this.colExerciseName,
             this.colWorkoutDay});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkoutShedule.EnableHeadersVisualStyles = false;
             this.dgvWorkoutShedule.GridColor = System.Drawing.Color.Gainsboro;
@@ -371,18 +371,18 @@
             this.dgvWorkoutShedule.Name = "dgvWorkoutShedule";
             this.dgvWorkoutShedule.ReadOnly = true;
             this.dgvWorkoutShedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWorkoutShedule.RowHeadersVisible = false;
             this.dgvWorkoutShedule.RowHeadersWidth = 50;
             this.dgvWorkoutShedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvWorkoutShedule.RowTemplate.Height = 40;
             this.dgvWorkoutShedule.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkoutShedule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -397,8 +397,8 @@
             // 
             this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo1.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSerialNo1.FillWeight = 90F;
             this.colSerialNo1.HeaderText = "Sl No.";
             this.colSerialNo1.Name = "colSerialNo1";
