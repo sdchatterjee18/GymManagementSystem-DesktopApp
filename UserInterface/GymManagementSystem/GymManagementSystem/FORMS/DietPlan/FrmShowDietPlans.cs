@@ -15,61 +15,33 @@ namespace GymManagementSystem.FORMS.DietPlan
 {
     public partial class FrmShowDietPlans : Form
     {
-        private Color originalColor;
-        private Color hoverColor = Color.FromArgb(220,225,230);
-        private Color MouseLeave = Color.FromArgb(236,240,243);
-        private Color clickColor = Color.FromArgb(184, 195, 179);
+       
 
         public FrmShowDietPlans()
         {
             InitializeComponent();
 
 
-            originalColor = pnlAddNewDietPlan.BackColor;
+            
         }
 
         private void FrmShowDietPlans_Load(object sender, EventArgs e)
         {
-            //dgvDietPlan.AllowUserToResizeRows = false;
-            //dgvDietPlan.AllowUserToResizeColumns = false;
-            //dgvDietPlan.RowHeadersVisible = false;
-            //dgvDietPlan.AllowUserToAddRows = false;
-            //dgvDietPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvDietPlan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgvDietPlan.EnableHeadersVisualStyles = false;
-            
+          
             RetrieveAllDietPlan();
             
         }
-        private void pnlAddNewDietPlan_MouseEnter(object sender, EventArgs e)
-        {
-            pnlAddNewDietPlan.BackColor = hoverColor;
+     
 
-        }
-        private void pnlAddNewDietPlan_MouseLeave(object sender, EventArgs e)
-        {
-                pnlAddNewDietPlan.BackColor = MouseLeave;
-        }
         private void pnlAddNewDietPlan_Click(object sender, EventArgs e)
         {
+            
+            FrmAddNewDietPlan frmAddNewDietPlan = new FrmAddNewDietPlan();
+            frmAddNewDietPlan.ShowDialog();
 
-            pnlAddNewDietPlan.BackColor = clickColor;
-            FrmAddNewDietPlan FrmAddNewDietPlan = new FrmAddNewDietPlan();
-            FrmAddNewDietPlan.ShowDialog();
         }
 
-        private void pnlAddNewDietPlan_Enter(object sender, EventArgs e)
-        {
-
-            pnlAddNewDietPlan.BackColor = hoverColor;
-        }
-
-        private void pnlAddNewDietPlan_Leave(object sender, EventArgs e)
-        {
-
-
-            pnlAddNewDietPlan.BackColor = originalColor;
-        }
+       
 
         private void dgvDietPlan_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         { 
@@ -246,6 +218,17 @@ namespace GymManagementSystem.FORMS.DietPlan
                    MessageBox.Show(ex.Message);
                }
            }
+           private void tlpAddButton_MouseEnter(object sender, EventArgs e)
+           {
+               this.tlpAddButton.BackColor = Color.FromArgb(220, 225, 230);
+           }
+
+           private void tlpAddButton_MouseLeave(object sender, EventArgs e)
+           {
+               this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
+           }
+
+          
 
  
        }

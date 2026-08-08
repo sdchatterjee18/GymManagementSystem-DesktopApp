@@ -430,6 +430,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             dgvMembershipPlan.ClearSelection();
         }
 
+      
+
 
        
     }
