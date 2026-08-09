@@ -292,7 +292,7 @@
             this.tlpAddDietPlanHeader.Name = "tlpAddDietPlanHeader";
             this.tlpAddDietPlanHeader.RowCount = 1;
             this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tlpAddDietPlanHeader.Size = new System.Drawing.Size(439, 85);
             this.tlpAddDietPlanHeader.TabIndex = 7;
             // 
@@ -544,7 +544,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(445, 469);
             this.Controls.Add(this.tlpAddNewDietPlan);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddNewDietPlan";
