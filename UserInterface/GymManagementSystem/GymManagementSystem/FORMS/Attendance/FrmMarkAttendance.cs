@@ -44,7 +44,8 @@ namespace GymManagementSystem.FORMS.Attendance
             if (txtMarkMemberMobileNumber.Text.Trim() == "Enter Mobile No.")
             {
                 txtMarkMemberMobileNumber.Text = "";
-                txtMarkMemberMobileNumber.ForeColor = Color.Gray;
+               
+                txtMarkMemberMobileNumber.ForeColor = Color.Black;
             }
         }
 
@@ -53,6 +54,7 @@ namespace GymManagementSystem.FORMS.Attendance
             if (string.IsNullOrWhiteSpace(txtMarkMemberMobileNumber.Text))
             {
                 txtMarkMemberMobileNumber.Text = "Enter Mobile No.";
+                
                 txtMarkMemberMobileNumber.ForeColor = Color.Gray;
             }
         }

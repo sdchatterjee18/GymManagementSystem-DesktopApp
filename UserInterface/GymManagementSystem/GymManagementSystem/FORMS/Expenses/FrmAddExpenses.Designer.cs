@@ -315,14 +315,15 @@
             // txtAmount
             // 
             this.txtAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtAmount.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.ForeColor = System.Drawing.Color.Gray;
             this.txtAmount.Location = new System.Drawing.Point(300, 20);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(0);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(320, 30);
+            this.txtAmount.Size = new System.Drawing.Size(316, 30);
             this.txtAmount.TabIndex = 1;
-            this.txtAmount.Text = "Enter Amount";
+            this.txtAmount.Text = " Enter Amount";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
             // 
             // tlpSelectCategory
@@ -347,15 +348,15 @@
             // cmbCateogory
             // 
             this.cmbCateogory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbCateogory.ForeColor = System.Drawing.Color.Black;
+            this.cmbCateogory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCateogory.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCateogory.ForeColor = System.Drawing.Color.Gray;
             this.cmbCateogory.FormattingEnabled = true;
             this.cmbCateogory.Location = new System.Drawing.Point(300, 20);
             this.cmbCateogory.Margin = new System.Windows.Forms.Padding(0);
             this.cmbCateogory.Name = "cmbCateogory";
-            this.cmbCateogory.Size = new System.Drawing.Size(320, 31);
+            this.cmbCateogory.Size = new System.Drawing.Size(316, 31);
             this.cmbCateogory.TabIndex = 1;
-            this.cmbCateogory.Text = " --Select Category--";
             this.cmbCateogory.Click += new System.EventHandler(this.cmbCateogory_Click);
             // 
             // lblSelectCategory
@@ -376,8 +377,8 @@
             // 
             this.tlpExpenseDefination.ColumnCount = 4;
             this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337F));
-            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
+            this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tlpExpenseDefination.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpExpenseDefination.Controls.Add(this.btnSubmit, 2, 0);
             this.tlpExpenseDefination.Controls.Add(this.lblExpenseDefination, 0, 0);
@@ -397,11 +398,12 @@
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSubmit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(640, 28);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(632, 30);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(135, 43);
+            this.btnSubmit.Size = new System.Drawing.Size(99, 40);
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -423,13 +425,14 @@
             // txtExpenseDefination
             // 
             this.txtExpenseDefination.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtExpenseDefination.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtExpenseDefination.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtExpenseDefination.Location = new System.Drawing.Point(300, 22);
+            this.txtExpenseDefination.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExpenseDefination.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExpenseDefination.ForeColor = System.Drawing.Color.Gray;
+            this.txtExpenseDefination.Location = new System.Drawing.Point(300, 35);
             this.txtExpenseDefination.Margin = new System.Windows.Forms.Padding(0);
             this.txtExpenseDefination.Multiline = true;
             this.txtExpenseDefination.Name = "txtExpenseDefination";
-            this.txtExpenseDefination.Size = new System.Drawing.Size(312, 56);
+            this.txtExpenseDefination.Size = new System.Drawing.Size(316, 30);
             this.txtExpenseDefination.TabIndex = 1;
             this.txtExpenseDefination.Text = " e.g. maintenance for treadmills";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);

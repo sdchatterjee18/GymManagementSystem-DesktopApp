@@ -46,12 +46,12 @@
             this.picDisplayMemberIcon = new System.Windows.Forms.PictureBox();
             this.tlpMemberSearchArea = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearchMember = new System.Windows.Forms.TextBox();
-            this.btnSearchMemberByPhoneNumber = new System.Windows.Forms.Button();
             this.picSearchMember = new System.Windows.Forms.PictureBox();
             this.pnlClickAddNewMember = new System.Windows.Forms.Panel();
             this.tlpAddNewMember = new System.Windows.Forms.TableLayoutPanel();
             this.lblAddNewMember = new System.Windows.Forms.Label();
             this.picAddIcon = new System.Windows.Forms.PictureBox();
+            this.btnSearchMemberByPhoneNumber = new System.Windows.Forms.Button();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -258,15 +258,15 @@
             // tlpMemberSearchArea
             // 
             this.tlpMemberSearchArea.ColumnCount = 5;
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
-            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMemberSearchArea.Controls.Add(this.txtSearchMember, 1, 0);
-            this.tlpMemberSearchArea.Controls.Add(this.btnSearchMemberByPhoneNumber, 2, 0);
             this.tlpMemberSearchArea.Controls.Add(this.picSearchMember, 0, 0);
             this.tlpMemberSearchArea.Controls.Add(this.pnlClickAddNewMember, 4, 0);
+            this.tlpMemberSearchArea.Controls.Add(this.btnSearchMemberByPhoneNumber, 2, 0);
             this.tlpMemberSearchArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberSearchArea.Location = new System.Drawing.Point(2, 85);
             this.tlpMemberSearchArea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -280,14 +280,15 @@
             // txtSearchMember
             // 
             this.txtSearchMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchMember.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchMember.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearchMember.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMember.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearchMember.Location = new System.Drawing.Point(39, 7);
-            this.txtSearchMember.Margin = new System.Windows.Forms.Padding(6, 2, 2, 2);
+            this.txtSearchMember.Location = new System.Drawing.Point(44, 11);
+            this.txtSearchMember.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearchMember.Name = "txtSearchMember";
-            this.txtSearchMember.Size = new System.Drawing.Size(229, 29);
+            this.txtSearchMember.Size = new System.Drawing.Size(316, 30);
             this.txtSearchMember.TabIndex = 11;
-            this.txtSearchMember.Text = "Enter Mobile No.";
+            this.txtSearchMember.Text = " Enter Mobile No.";
             this.txtSearchMember.Click += new System.EventHandler(this.txtSearchMember_Click_1);
             // 
             // btnSearchMemberByPhoneNumber
@@ -309,10 +310,10 @@
             // 
             this.picSearchMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picSearchMember.Image = ((System.Drawing.Image)(resources.GetObject("picSearchMember.Image")));
-            this.picSearchMember.Location = new System.Drawing.Point(0, 5);
+            this.picSearchMember.Location = new System.Drawing.Point(0, 9);
             this.picSearchMember.Margin = new System.Windows.Forms.Padding(0);
             this.picSearchMember.Name = "picSearchMember";
-            this.picSearchMember.Size = new System.Drawing.Size(33, 32);
+            this.picSearchMember.Size = new System.Drawing.Size(44, 35);
             this.picSearchMember.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchMember.TabIndex = 0;
             this.picSearchMember.TabStop = false;
@@ -381,6 +382,20 @@
             this.picAddIcon.MouseEnter += new System.EventHandler(this.tlpAddNewMember_MouseEnter_1);
             this.picAddIcon.MouseLeave += new System.EventHandler(this.tlpAddNewMember_MouseLeave);
             // 
+            // btnSearchMemberByPhoneNumber
+            // 
+            this.btnSearchMemberByPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchMemberByPhoneNumber.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearchMemberByPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMemberByPhoneNumber.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMemberByPhoneNumber.Location = new System.Drawing.Point(363, 6);
+            this.btnSearchMemberByPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchMemberByPhoneNumber.Name = "btnSearchMemberByPhoneNumber";
+            this.btnSearchMemberByPhoneNumber.Size = new System.Drawing.Size(99, 40);
+            this.btnSearchMemberByPhoneNumber.TabIndex = 9;
+            this.btnSearchMemberByPhoneNumber.Text = "Submit";
+            this.btnSearchMemberByPhoneNumber.UseVisualStyleBackColor = false;
+            this.btnSearchMemberByPhoneNumber.Click += new System.EventHandler(this.btnSearchMemberByPhoneNumber_Click_1);
             // colSlNo
             // 
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
