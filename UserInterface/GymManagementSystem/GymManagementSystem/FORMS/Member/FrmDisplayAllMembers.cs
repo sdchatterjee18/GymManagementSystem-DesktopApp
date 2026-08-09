@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using GymManagementSystem.FORMS.Main;
+using GymManagementSystem.FORMS.Member.UI;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -38,7 +39,7 @@ namespace GymManagementSystem.FORMS.Member
             {
                 sqlConnection = new SqlConnection(CS);
                 sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("spRetrieveRegisterMemberDetails", sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("spRetrieveAllMemberDetails", sqlConnection))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     int a = 1;
@@ -47,20 +48,23 @@ namespace GymManagementSystem.FORMS.Member
                     while (sqlDataReader.Read())
                     {
                         string status = Convert.ToInt32(sqlDataReader["MemberIsActive"]) == 1
-                   ? "Active"
-                   : "Inactive";
-                        dgvDisplayMemberInformation.Rows.Add(a,
-                            (sqlDataReader["MemberName"]).ToString(),
-                            (sqlDataReader["PhoneNo"]).ToString(),
-                           status
-                            );
+                            ? "Active"
+                            : "Inactive";
+
+                        dgvDisplayMemberInformation.Rows.Add(
+                            a,
+                            Convert.ToInt32(sqlDataReader["MemberId"]),
+                            sqlDataReader["MemberName"].ToString(),
+                            sqlDataReader["PhoneNo"].ToString(),
+                            status
+                        );
+
                         a++;
                     }
 
 
                 }
                 dgvDisplayMemberInformation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-               
                 dgvDisplayMemberInformation.ClearSelection();
             }
 
@@ -327,15 +331,42 @@ namespace GymManagementSystem.FORMS.Member
             AdminMainForm.OpenChildForm(new FrmMemberRegistration());
         }
 
-        private void dgvDisplayMemberInformation_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDisplayMemberInformation_CellClick(
+    object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
             if (dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name == "colMemberProfile")
             {
-              
-                    AdminMainForm.OpenChildForm(new FrmMemberProfile());
+                try
+                {
+                    int memberId = Convert.ToInt32(
+                        dgvDisplayMemberInformation.Rows[e.RowIndex]
+                        .Cells["colMemberId"]
+                        .Value
+                    );
+
+                    MemberAllDetailsUI memberAllDetailsUI =
+                        new MemberAllDetailsUI();
+                    MemberAllDetailsUI member =
+                        memberAllDetailsUI.GetMemberDetailsByMemberId(memberId);
+                    FrmMemberProfile frmMemberProfile =
+                        new FrmMemberProfile(member);
+                    AdminMainForm.OpenChildForm(frmMemberProfile);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Error:\n\n" +
+                        ex.Message +
+                        "\n\nStack Trace:\n" +
+                        ex.StackTrace,
+                        "Profile Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
             }
         }
 

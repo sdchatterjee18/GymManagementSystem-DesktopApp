@@ -84,7 +84,7 @@
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.63265F));
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.picNewMembershipPlans, 1, 0);
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.tlpAllMembershipPlanTitle, 2, 0);
             this.tlpMainNewMembarshipPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,11 +103,10 @@
             this.picNewMembershipPlans.Location = new System.Drawing.Point(13, 2);
             this.picNewMembershipPlans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picNewMembershipPlans.Name = "picNewMembershipPlans";
-            this.picNewMembershipPlans.Size = new System.Drawing.Size(40, 80);
+            this.picNewMembershipPlans.Size = new System.Drawing.Size(39, 80);
             this.picNewMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewMembershipPlans.TabIndex = 2;
             this.picNewMembershipPlans.TabStop = false;
-            this.picNewMembershipPlans.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tlpAllMembershipPlanTitle
             // 
@@ -116,7 +115,7 @@
             this.tlpAllMembershipPlanTitle.Controls.Add(this.lblViewPlans, 0, 1);
             this.tlpAllMembershipPlanTitle.Controls.Add(this.lblAllMembershipPlan, 0, 0);
             this.tlpAllMembershipPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllMembershipPlanTitle.Location = new System.Drawing.Point(59, 2);
+            this.tlpAllMembershipPlanTitle.Location = new System.Drawing.Point(58, 2);
             this.tlpAllMembershipPlanTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAllMembershipPlanTitle.Name = "tlpAllMembershipPlanTitle";
             this.tlpAllMembershipPlanTitle.RowCount = 3;
@@ -167,7 +166,7 @@
             this.tlpNewMembarshipPlanDetails.ColumnCount = 3;
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.954825F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.04517F));
-            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblDescription, 1, 8);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblAmount, 1, 6);
@@ -309,7 +308,7 @@
             this.tlpSubmition.RowCount = 1;
             this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpSubmition.Size = new System.Drawing.Size(403, 37);
+            this.tlpSubmition.Size = new System.Drawing.Size(402, 37);
             this.tlpSubmition.TabIndex = 6;
             // 
             // pnlClickSubmit
@@ -317,7 +316,7 @@
             this.pnlClickSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
             this.pnlClickSubmit.Controls.Add(this.tlpSubmitBox);
             this.pnlClickSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClickSubmit.Location = new System.Drawing.Point(294, 2);
+            this.pnlClickSubmit.Location = new System.Drawing.Point(293, 2);
             this.pnlClickSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlClickSubmit.Name = "pnlClickSubmit";
             this.pnlClickSubmit.Size = new System.Drawing.Size(106, 33);
@@ -388,7 +387,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(214, 1);
+            this.btnClear.Location = new System.Drawing.Point(213, 1);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(73, 36);

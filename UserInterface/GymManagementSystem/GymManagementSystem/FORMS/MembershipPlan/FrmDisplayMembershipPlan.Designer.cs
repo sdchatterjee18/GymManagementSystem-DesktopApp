@@ -96,7 +96,7 @@
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.06349F));
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.952381F));
-            this.tlpAllMembershipPlanEntireForm.Size = new System.Drawing.Size(1149, 788);
+            this.tlpAllMembershipPlanEntireForm.Size = new System.Drawing.Size(1149, 750);
             this.tlpAllMembershipPlanEntireForm.TabIndex = 0;
             // 
             // tlpAllMembershipPlanHeader
@@ -110,7 +110,7 @@
             this.tlpAllMembershipPlanHeader.Controls.Add(this.tlpAllMembershipPlanTitle, 1, 0);
             this.tlpAllMembershipPlanHeader.Controls.Add(this.picMembershipPlan, 0, 0);
             this.tlpAllMembershipPlanHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAllMembershipPlanHeader.Location = new System.Drawing.Point(57, 12);
+            this.tlpAllMembershipPlanHeader.Location = new System.Drawing.Point(57, 11);
             this.tlpAllMembershipPlanHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             this.tlpAllMembershipPlanHeader.Name = "tlpAllMembershipPlanHeader";
             this.tlpAllMembershipPlanHeader.RowCount = 1;
@@ -215,7 +215,7 @@
             this.dgvMembershipPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMembershipPlan.EnableHeadersVisualStyles = false;
             this.dgvMembershipPlan.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvMembershipPlan.Location = new System.Drawing.Point(60, 183);
+            this.dgvMembershipPlan.Location = new System.Drawing.Point(60, 182);
             this.dgvMembershipPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMembershipPlan.MultiSelect = false;
             this.dgvMembershipPlan.Name = "dgvMembershipPlan";
@@ -237,7 +237,7 @@
             this.dgvMembershipPlan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMembershipPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMembershipPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMembershipPlan.Size = new System.Drawing.Size(1028, 565);
+            this.dgvMembershipPlan.Size = new System.Drawing.Size(1028, 530);
             this.dgvMembershipPlan.TabIndex = 9;
             this.dgvMembershipPlan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembershipPlan_CellContentClick);
             this.dgvMembershipPlan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMembershipPlan_CellFormatting);
@@ -430,10 +430,10 @@
             this.pnlClickAddNewMembershipPlan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickAddNewMembershipPlan.Controls.Add(this.tlpAddNewMembershipPlan);
             this.pnlClickAddNewMembershipPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlClickAddNewMembershipPlan.Location = new System.Drawing.Point(911, 5);
+            this.pnlClickAddNewMembershipPlan.Location = new System.Drawing.Point(912, 5);
             this.pnlClickAddNewMembershipPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlClickAddNewMembershipPlan.Name = "pnlClickAddNewMembershipPlan";
-            this.pnlClickAddNewMembershipPlan.Size = new System.Drawing.Size(120, 35);
+            this.pnlClickAddNewMembershipPlan.Size = new System.Drawing.Size(119, 35);
             this.pnlClickAddNewMembershipPlan.TabIndex = 8;
             this.pnlClickAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
             this.pnlClickAddNewMembershipPlan.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
@@ -452,7 +452,7 @@
             this.tlpAddNewMembershipPlan.Name = "tlpAddNewMembershipPlan";
             this.tlpAddNewMembershipPlan.RowCount = 1;
             this.tlpAddNewMembershipPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewMembershipPlan.Size = new System.Drawing.Size(118, 33);
+            this.tlpAddNewMembershipPlan.Size = new System.Drawing.Size(117, 33);
             this.tlpAddNewMembershipPlan.TabIndex = 4;
             this.tlpAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
             this.tlpAddNewMembershipPlan.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
@@ -493,7 +493,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1149, 788);
+            this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpAllMembershipPlanEntireForm);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmDisplayMembershipPlan";

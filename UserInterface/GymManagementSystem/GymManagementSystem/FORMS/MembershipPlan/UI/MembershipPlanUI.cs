@@ -9,6 +9,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
 {
     public class MembershipPlanUI
     {
+        // Properties
         public int MembershipPlanId { get; set; }
         public string MembershipPlanName { get; set; }
         public int PlanTypeId { get; set; }
@@ -19,40 +20,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
         public string IsActive { get; set; }
 
 
-        public List<MembershipPlanUI> RetrieveMembershipPlansDetailsUI()
-        {
-            List<MembershipPlanUI> membershipPlansUi = null;
-            try
-            {
-                membershipPlansUi = new List<MembershipPlanUI>();
-                List<MembershipPlanBLL> membershipPlansBll = new List<MembershipPlanBLL>();
-                MembershipPlanBLL membershipPlanBll = new MembershipPlanBLL();
-                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetailsBLL();
-                foreach (MembershipPlanBLL membershipPlan in membershipPlansBll)
-                {
-                    MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
-
-                    membershipPlanUI.MembershipPlanId = membershipPlan.MembershipPlanId;
-                    membershipPlanUI.MembershipPlanName = membershipPlan.MembershipPlanName;
-                    membershipPlanUI.PlanTypeId = membershipPlan.PlanTypeId;
-                    membershipPlanUI.PlanType = membershipPlan.PlanType;
-                    membershipPlanUI.DurationInDays = membershipPlan.DurationInDays;
-                    membershipPlanUI.Price = membershipPlan.Price;
-                    membershipPlanUI.Description = membershipPlan.Description;
-                    membershipPlanUI.IsActive = membershipPlan.IsActive;
-
-                    membershipPlansUi.Add(membershipPlanUI);
-                }
-
-                return membershipPlansUi;
-
-            }
-            catch (Exception ex)
-            {
-                return membershipPlansUi;
-            }
-           
-        }
+        // Update Membership Plan
         public string UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdUI()
         {
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
@@ -63,6 +31,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
 
             return membershipPlanBLL.UpdateMembershipPlanDescriptionAndPriceByMembershipPlanIdBLL();
         }
+        // Deactivate Membership Plan
         public string DeactivateMembershipPlanByMembershipPlanIdUI()
         {
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
@@ -71,6 +40,26 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
 
             return membershipPlanBLL.DeactivateMembershipPlanByMembershipPlanIdBLL();
         }
+        // Insert Membership Plan
+        public string InsertMembershipPlanUI()
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+
+            membershipPlanBLL.MembershipPlanName = this.MembershipPlanName;
+            membershipPlanBLL.PlanTypeId = this.PlanTypeId;
+            membershipPlanBLL.DurationInDays = this.DurationInDays;
+            membershipPlanBLL.Price = this.Price;
+            membershipPlanBLL.Description = this.Description;
+
+            return membershipPlanBLL.InsertMembershipPlanBLL();
+        }
+        // Validate Membership Plan
+        public string ValidateMembershipPlanUI(string membershipPlanName, string duration, string price, string description)
+        {
+            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
+            return membershipPlanBLL.ValidateMembershipPlanBLL(membershipPlanName, duration, price, description);
+        }
+        // Retrieve Membership Plan By Id
         public MembershipPlanUI RetrieveMembershipPlanDetailsByMembershipPlanIdUI()
         {
             try
@@ -103,42 +92,53 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
                 return null;
             }
         }
+        // Retrieve All Membership Plans
+        public List<MembershipPlanUI> RetrieveMembershipPlansDetailsUI()
+        {
+            List<MembershipPlanUI> membershipPlansUi = null;
+            try
+            {
+                membershipPlansUi = new List<MembershipPlanUI>();
+                List<MembershipPlanBLL> membershipPlansBll = new List<MembershipPlanBLL>();
+                MembershipPlanBLL membershipPlanBll = new MembershipPlanBLL();
+                membershipPlansBll = membershipPlanBll.RetrieveMembershipPlansDetailsBLL();
+                foreach (MembershipPlanBLL membershipPlan in membershipPlansBll)
+                {
+                    MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+                    membershipPlanUI.MembershipPlanId = membershipPlan.MembershipPlanId;
+                    membershipPlanUI.MembershipPlanName = membershipPlan.MembershipPlanName;
+                    membershipPlanUI.PlanTypeId = membershipPlan.PlanTypeId;
+                    membershipPlanUI.PlanType = membershipPlan.PlanType;
+                    membershipPlanUI.DurationInDays = membershipPlan.DurationInDays;
+                    membershipPlanUI.Price = membershipPlan.Price;
+                    membershipPlanUI.Description = membershipPlan.Description;
+                    membershipPlanUI.IsActive = membershipPlan.IsActive;
+
+                    membershipPlansUi.Add(membershipPlanUI);
+                }
+
+                return membershipPlansUi;
+
+            }
+            catch (Exception ex)
+            {
+                return membershipPlansUi;
+            }
+
+        }
+        // Membership Plan ComboBox
         public DataTable GetMembershipPlanDetailsForComboBox()
         {
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
             DataTable dataTable = membershipPlanBLL.GetMembershipPlanDetailsForComboBox();
             return dataTable;
         }
+        // Membership Plan Type ComboBox
         public DataTable GetMembershipPlanTypeDetailsForComboBox()
         {
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
             return membershipPlanBLL.GetMembershipPlanTypeDetailsForComboBox();
-        }
-        public string InsertMembershipPlanUI()
-        {
-            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-
-            membershipPlanBLL.MembershipPlanName = this.MembershipPlanName;
-            membershipPlanBLL.PlanTypeId = this.PlanTypeId;
-            membershipPlanBLL.DurationInDays = this.DurationInDays;
-            membershipPlanBLL.Price = this.Price;
-            membershipPlanBLL.Description = this.Description;
-
-            return membershipPlanBLL.InsertMembershipPlanBLL();
-        }
-        public string ValidateMembershipPlanUI(
-     string membershipPlanName,
-     string duration,
-     string price,
-     string description)
-        {
-            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-
-            return membershipPlanBLL.ValidateMembershipPlanBLL(
-                membershipPlanName,
-                duration,
-                price,
-                description);
         }
         public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
         {

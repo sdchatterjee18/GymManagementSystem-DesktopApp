@@ -14,34 +14,38 @@ namespace GymManagementSystemDALayer.Common
     public class LookupDAL
     {
         public static DataTable GetComboBoxDetails(string spName)
-     {
-        DataTable dataTable = null;
-        SqlConnection sqlConnection = null;
-        try
         {
-           dataTable = new DataTable();
-          using (sqlConnection = DBconnection.GetSqlConnection())
-          {
-              SqlCommand cmd = new SqlCommand(spName, sqlConnection);
-             cmd.CommandType = CommandType.StoredProcedure;
-             sqlConnection.Open();
-             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-             adapter.Fill(dataTable);
-             return dataTable;
-         }
+            DataTable dataTable = new DataTable();
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter =
+                        new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType =
+                            CommandType.StoredProcedure;
+
+                        sqlDataAdapter.Fill(dataTable);
+                    }
+                }
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
         }
-        catch (Exception ex)
-        {
-            return dataTable;
-        }
-        finally
-        {
-           if (sqlConnection != null)
-           {
-              sqlConnection.Close();
-           }
-        }
-       }
         public static DataTable RetrieveSpecificItem(string spName)
         {
             DataTable dataTable = null;
@@ -64,7 +68,7 @@ namespace GymManagementSystemDALayer.Common
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return dataTable;
             }
@@ -76,32 +80,32 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
-        public static string UpdateSpecificItem(string spName, SqlParameter[] parameters)
+        public static string UpdateSpecificItem(string spName, SqlParameter[] sqlParameter)
         {
-            string Messege = null;
+            string UpdateMessege = null;
             SqlConnection sqlConnection = null;
             try
             {
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
-                    using (SqlCommand cmd = new SqlCommand(spName, sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddRange(parameters);
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddRange(sqlParameter);
                         sqlConnection.Open();
-                        object result = cmd.ExecuteScalar();
+                        object result = sqlCommand.ExecuteScalar();
                         if (result != null)
                         {
-                            Messege = result.ToString();
+                            UpdateMessege = result.ToString();
                         }
 
-                        return Messege;
+                        return UpdateMessege;
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                return Messege;
+                return UpdateMessege;
             }
             finally
             {
@@ -130,7 +134,7 @@ namespace GymManagementSystemDALayer.Common
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return dataTable;
             }
@@ -172,7 +176,7 @@ namespace GymManagementSystemDALayer.Common
                     sqlConnection.Close();
             } 
         }
-        public static string InsertSpecificItem(string spName, SqlParameter[] parameters)
+        public static string InsertSpecificItem(string spName, SqlParameter[] sqlParameter)
         {
             SqlConnection sqlConnection = null;
             string RowMessage = null;
@@ -183,7 +187,7 @@ namespace GymManagementSystemDALayer.Common
                     using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
-                        sqlCommand.Parameters.AddRange(parameters);
+                        sqlCommand.Parameters.AddRange(sqlParameter);
                         sqlConnection.Open();
                         RowMessage=Convert.ToString(sqlCommand.ExecuteScalar());
                         return RowMessage;
