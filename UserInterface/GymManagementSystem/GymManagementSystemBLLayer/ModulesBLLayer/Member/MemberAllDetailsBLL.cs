@@ -149,5 +149,11 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
             memberDAL.NeedLocker = this.NeedLocker;
             return memberDAL.InsertMembershipPlanDAL();
         }
+
+        public DataTable GetMemberDetailsByMemberId(int memberId)
+        {
+            MemberAllDetailsDAL memberAllDetailsDAL = new MemberAllDetailsDAL();
+            return memberAllDetailsDAL.GetMemberDetailsByMemberId(memberId);
+        }
     }
 }

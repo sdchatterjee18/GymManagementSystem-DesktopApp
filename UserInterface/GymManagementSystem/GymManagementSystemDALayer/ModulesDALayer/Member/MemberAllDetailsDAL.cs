@@ -99,5 +99,13 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
 
             return LookupDAL.InsertSpecificItem("spRegisterNewMember", parameters);
         }
+
+        public  DataTable GetMemberDetailsByMemberId(int memberId)
+        {
+            return LookupDAL.RetrieveSpecificDetailsById(
+                "spRetrieveRegisterMemberDetailsByMemberId",
+                memberId,
+                "@MemberId");
+        }
     }
 }
