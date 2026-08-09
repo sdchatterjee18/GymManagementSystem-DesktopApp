@@ -60,19 +60,23 @@ namespace GymManagementSystem.FORMS.Main
 
         public void OpenChildForm(Form childForm)
         {
-            // Close the currently opened form
-            if (activeForm != null)
-                activeForm.Close();
+            // If the same form is already active, do nothing
+            if (activeForm == childForm)
+                return;
 
-            activeForm = childForm;
-
+            // Prepare new child form
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
 
+            // Remove previous child from panel
             pnlMainPanel.Controls.Clear();
+
+            // Add new child
             pnlMainPanel.Controls.Add(childForm);
             pnlMainPanel.Tag = childForm;
+
+            activeForm = childForm;
 
             childForm.BringToFront();
             childForm.Show();
