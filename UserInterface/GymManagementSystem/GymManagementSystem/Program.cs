@@ -45,6 +45,7 @@ namespace GymManagementSystem
             Application.Run(new FrmMainLayout());
             //Application.Run(new FrmMemberRegistration());
             //Application.Run(new FrmDisplayMembershipPlan());
+            //Application.Run(new FrmDisplayWorkoutPlans());
 
         }
     }

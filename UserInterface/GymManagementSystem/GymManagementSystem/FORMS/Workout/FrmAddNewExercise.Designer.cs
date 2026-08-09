@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddNewExercise));
             this.pnlSubNewExerciseTitle = new System.Windows.Forms.Panel();
             this.tlpMainNewExerciseTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.picAddExercise = new System.Windows.Forms.PictureBox();
             this.tlpNewExerciseTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblViewExercise = new System.Windows.Forms.Label();
             this.lblNewExercise = new System.Windows.Forms.Label();
@@ -41,23 +42,22 @@
             this.tlpSubmitionExercise = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickSubmitExercise = new System.Windows.Forms.Panel();
             this.tlpSubmitBoxExercise = new System.Windows.Forms.TableLayoutPanel();
+            this.picAddButtonExercise = new System.Windows.Forms.PictureBox();
             this.lblAddNewExercise = new System.Windows.Forms.Label();
             this.btnClearExercise = new System.Windows.Forms.Button();
             this.lblMessageBoxExercise = new System.Windows.Forms.Label();
             this.txtMuscleType = new System.Windows.Forms.TextBox();
             this.pnlAddNewExerciseForm = new System.Windows.Forms.Panel();
-            this.picAddButtonExercise = new System.Windows.Forms.PictureBox();
-            this.picAddExercise = new System.Windows.Forms.PictureBox();
             this.pnlSubNewExerciseTitle.SuspendLayout();
             this.tlpMainNewExerciseTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAddExercise)).BeginInit();
             this.tlpNewExerciseTitle.SuspendLayout();
             this.tlpNewExerciseDetails.SuspendLayout();
             this.tlpSubmitionExercise.SuspendLayout();
             this.pnlClickSubmitExercise.SuspendLayout();
             this.tlpSubmitBoxExercise.SuspendLayout();
-            this.pnlAddNewExerciseForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddButtonExercise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddExercise)).BeginInit();
+            this.pnlAddNewExerciseForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSubNewExerciseTitle
@@ -65,9 +65,9 @@
             this.pnlSubNewExerciseTitle.Controls.Add(this.tlpMainNewExerciseTitle);
             this.pnlSubNewExerciseTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubNewExerciseTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubNewExerciseTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSubNewExerciseTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSubNewExerciseTitle.Name = "pnlSubNewExerciseTitle";
-            this.pnlSubNewExerciseTitle.Size = new System.Drawing.Size(399, 68);
+            this.pnlSubNewExerciseTitle.Size = new System.Drawing.Size(529, 84);
             this.pnlSubNewExerciseTitle.TabIndex = 0;
             // 
             // tlpMainNewExerciseTitle
@@ -75,19 +75,30 @@
             this.tlpMainNewExerciseTitle.ColumnCount = 5;
             this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.82609F));
             this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.17391F));
-            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
-            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271F));
+            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpMainNewExerciseTitle.Controls.Add(this.picAddExercise, 1, 0);
             this.tlpMainNewExerciseTitle.Controls.Add(this.tlpNewExerciseTitle, 2, 0);
             this.tlpMainNewExerciseTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpMainNewExerciseTitle.Location = new System.Drawing.Point(0, 0);
-            this.tlpMainNewExerciseTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMainNewExerciseTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMainNewExerciseTitle.Name = "tlpMainNewExerciseTitle";
             this.tlpMainNewExerciseTitle.RowCount = 1;
             this.tlpMainNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMainNewExerciseTitle.Size = new System.Drawing.Size(399, 63);
+            this.tlpMainNewExerciseTitle.Size = new System.Drawing.Size(529, 78);
             this.tlpMainNewExerciseTitle.TabIndex = 0;
+            // 
+            // picAddExercise
+            // 
+            this.picAddExercise.Image = ((System.Drawing.Image)(resources.GetObject("picAddExercise.Image")));
+            this.picAddExercise.Location = new System.Drawing.Point(20, 2);
+            this.picAddExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picAddExercise.Name = "picAddExercise";
+            this.picAddExercise.Size = new System.Drawing.Size(44, 71);
+            this.picAddExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddExercise.TabIndex = 2;
+            this.picAddExercise.TabStop = false;
             // 
             // tlpNewExerciseTitle
             // 
@@ -96,14 +107,14 @@
             this.tlpNewExerciseTitle.Controls.Add(this.lblViewExercise, 0, 1);
             this.tlpNewExerciseTitle.Controls.Add(this.lblNewExercise, 0, 0);
             this.tlpNewExerciseTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewExerciseTitle.Location = new System.Drawing.Point(64, 2);
-            this.tlpNewExerciseTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpNewExerciseTitle.Location = new System.Drawing.Point(79, 2);
+            this.tlpNewExerciseTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpNewExerciseTitle.Name = "tlpNewExerciseTitle";
             this.tlpNewExerciseTitle.RowCount = 3;
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.38889F));
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.05263F));
-            this.tlpNewExerciseTitle.Size = new System.Drawing.Size(199, 59);
+            this.tlpNewExerciseTitle.Size = new System.Drawing.Size(265, 74);
             this.tlpNewExerciseTitle.TabIndex = 3;
             // 
             // lblViewExercise
@@ -112,10 +123,9 @@
             this.lblViewExercise.AutoSize = true;
             this.lblViewExercise.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewExercise.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblViewExercise.Location = new System.Drawing.Point(2, 32);
-            this.lblViewExercise.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewExercise.Location = new System.Drawing.Point(3, 38);
             this.lblViewExercise.Name = "lblViewExercise";
-            this.lblViewExercise.Size = new System.Drawing.Size(142, 13);
+            this.lblViewExercise.Size = new System.Drawing.Size(169, 19);
             this.lblViewExercise.TabIndex = 3;
             this.lblViewExercise.Text = "Input New Exercise Details";
             // 
@@ -125,10 +135,9 @@
             this.lblNewExercise.AutoSize = true;
             this.lblNewExercise.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewExercise.ForeColor = System.Drawing.Color.Navy;
-            this.lblNewExercise.Location = new System.Drawing.Point(2, 9);
-            this.lblNewExercise.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNewExercise.Location = new System.Drawing.Point(3, 10);
             this.lblNewExercise.Name = "lblNewExercise";
-            this.lblNewExercise.Size = new System.Drawing.Size(106, 21);
+            this.lblNewExercise.Size = new System.Drawing.Size(131, 28);
             this.lblNewExercise.TabIndex = 2;
             this.lblNewExercise.Text = "New Exercise";
             // 
@@ -144,8 +153,8 @@
             this.tlpNewExerciseDetails.Controls.Add(this.tlpSubmitionExercise, 1, 4);
             this.tlpNewExerciseDetails.Controls.Add(this.txtMuscleType, 1, 3);
             this.tlpNewExerciseDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewExerciseDetails.Location = new System.Drawing.Point(0, 68);
-            this.tlpNewExerciseDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpNewExerciseDetails.Location = new System.Drawing.Point(0, 84);
+            this.tlpNewExerciseDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpNewExerciseDetails.Name = "tlpNewExerciseDetails";
             this.tlpNewExerciseDetails.RowCount = 6;
             this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.04036F));
@@ -154,8 +163,8 @@
             this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.97309F));
             this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.76682F));
             this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.422019F));
-            this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpNewExerciseDetails.Size = new System.Drawing.Size(399, 188);
+            this.tlpNewExerciseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpNewExerciseDetails.Size = new System.Drawing.Size(529, 221);
             this.tlpNewExerciseDetails.TabIndex = 1;
             // 
             // lblMuscleType
@@ -164,22 +173,22 @@
             this.lblMuscleType.AutoSize = true;
             this.lblMuscleType.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMuscleType.ForeColor = System.Drawing.Color.Navy;
-            this.lblMuscleType.Location = new System.Drawing.Point(19, 64);
-            this.lblMuscleType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMuscleType.Location = new System.Drawing.Point(25, 75);
             this.lblMuscleType.Name = "lblMuscleType";
-            this.lblMuscleType.Size = new System.Drawing.Size(90, 19);
+            this.lblMuscleType.Size = new System.Drawing.Size(109, 23);
             this.lblMuscleType.TabIndex = 0;
             this.lblMuscleType.Text = "MuscleType :";
             // 
             // txtExerciseName
             // 
             this.txtExerciseName.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExerciseName.Location = new System.Drawing.Point(19, 34);
-            this.txtExerciseName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtExerciseName.Location = new System.Drawing.Point(25, 40);
+            this.txtExerciseName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtExerciseName.Name = "txtExerciseName";
-            this.txtExerciseName.Size = new System.Drawing.Size(299, 21);
+            this.txtExerciseName.Size = new System.Drawing.Size(397, 25);
             this.txtExerciseName.TabIndex = 2;
-            this.txtExerciseName.Text = "Enter Exercise Name .";
+            this.txtExerciseName.Text = "Enter Exercise Name";
+            this.txtExerciseName.Click += new System.EventHandler(this.txtExerciseName_Click);
             // 
             // lblExerciseName
             // 
@@ -187,10 +196,9 @@
             this.lblExerciseName.AutoSize = true;
             this.lblExerciseName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExerciseName.ForeColor = System.Drawing.Color.Navy;
-            this.lblExerciseName.Location = new System.Drawing.Point(19, 6);
-            this.lblExerciseName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExerciseName.Location = new System.Drawing.Point(25, 7);
             this.lblExerciseName.Name = "lblExerciseName";
-            this.lblExerciseName.Size = new System.Drawing.Size(107, 19);
+            this.lblExerciseName.Size = new System.Drawing.Size(131, 23);
             this.lblExerciseName.TabIndex = 0;
             this.lblExerciseName.Text = "Exercise Name :";
             // 
@@ -204,12 +212,12 @@
             this.tlpSubmitionExercise.Controls.Add(this.btnClearExercise, 1, 0);
             this.tlpSubmitionExercise.Controls.Add(this.lblMessageBoxExercise, 0, 0);
             this.tlpSubmitionExercise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSubmitionExercise.Location = new System.Drawing.Point(19, 131);
-            this.tlpSubmitionExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSubmitionExercise.Location = new System.Drawing.Point(25, 155);
+            this.tlpSubmitionExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpSubmitionExercise.Name = "tlpSubmitionExercise";
             this.tlpSubmitionExercise.RowCount = 1;
             this.tlpSubmitionExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSubmitionExercise.Size = new System.Drawing.Size(341, 41);
+            this.tlpSubmitionExercise.Size = new System.Drawing.Size(452, 49);
             this.tlpSubmitionExercise.TabIndex = 7;
             // 
             // pnlClickSubmitExercise
@@ -217,11 +225,12 @@
             this.pnlClickSubmitExercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlClickSubmitExercise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
             this.pnlClickSubmitExercise.Controls.Add(this.tlpSubmitBoxExercise);
-            this.pnlClickSubmitExercise.Location = new System.Drawing.Point(256, 11);
-            this.pnlClickSubmitExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlClickSubmitExercise.Location = new System.Drawing.Point(338, 13);
+            this.pnlClickSubmitExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlClickSubmitExercise.Name = "pnlClickSubmitExercise";
-            this.pnlClickSubmitExercise.Size = new System.Drawing.Size(83, 28);
+            this.pnlClickSubmitExercise.Size = new System.Drawing.Size(111, 34);
             this.pnlClickSubmitExercise.TabIndex = 6;
+            this.pnlClickSubmitExercise.Click += new System.EventHandler(this.pnlClickSubmitExercise_Click);
             // 
             // tlpSubmitBoxExercise
             // 
@@ -232,13 +241,26 @@
             this.tlpSubmitBoxExercise.Controls.Add(this.lblAddNewExercise, 1, 0);
             this.tlpSubmitBoxExercise.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitBoxExercise.Location = new System.Drawing.Point(0, 0);
-            this.tlpSubmitBoxExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSubmitBoxExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpSubmitBoxExercise.Name = "tlpSubmitBoxExercise";
             this.tlpSubmitBoxExercise.RowCount = 1;
             this.tlpSubmitBoxExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSubmitBoxExercise.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSubmitBoxExercise.Size = new System.Drawing.Size(83, 28);
+            this.tlpSubmitBoxExercise.Size = new System.Drawing.Size(111, 34);
             this.tlpSubmitBoxExercise.TabIndex = 4;
+            // 
+            // picAddButtonExercise
+            // 
+            this.picAddButtonExercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAddButtonExercise.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonExercise.Image")));
+            this.picAddButtonExercise.Location = new System.Drawing.Point(14, 4);
+            this.picAddButtonExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picAddButtonExercise.Name = "picAddButtonExercise";
+            this.picAddButtonExercise.Size = new System.Drawing.Size(19, 28);
+            this.picAddButtonExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAddButtonExercise.TabIndex = 1;
+            this.picAddButtonExercise.TabStop = false;
+            this.picAddButtonExercise.Click += new System.EventHandler(this.pnlClickSubmitExercise_Click);
             // 
             // lblAddNewExercise
             // 
@@ -246,12 +268,12 @@
             this.lblAddNewExercise.AutoSize = true;
             this.lblAddNewExercise.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddNewExercise.ForeColor = System.Drawing.Color.White;
-            this.lblAddNewExercise.Location = new System.Drawing.Point(29, 4);
-            this.lblAddNewExercise.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddNewExercise.Location = new System.Drawing.Point(39, 5);
             this.lblAddNewExercise.Name = "lblAddNewExercise";
-            this.lblAddNewExercise.Size = new System.Drawing.Size(52, 19);
+            this.lblAddNewExercise.Size = new System.Drawing.Size(64, 23);
             this.lblAddNewExercise.TabIndex = 0;
             this.lblAddNewExercise.Text = "Submit";
+            this.lblAddNewExercise.Click += new System.EventHandler(this.pnlClickSubmitExercise_Click);
             // 
             // btnClearExercise
             // 
@@ -260,13 +282,14 @@
             this.btnClearExercise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearExercise.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearExercise.ForeColor = System.Drawing.Color.White;
-            this.btnClearExercise.Location = new System.Drawing.Point(192, 10);
-            this.btnClearExercise.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearExercise.Location = new System.Drawing.Point(255, 11);
+            this.btnClearExercise.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearExercise.Name = "btnClearExercise";
-            this.btnClearExercise.Size = new System.Drawing.Size(57, 29);
+            this.btnClearExercise.Size = new System.Drawing.Size(76, 36);
             this.btnClearExercise.TabIndex = 5;
             this.btnClearExercise.Text = "Clear";
             this.btnClearExercise.UseVisualStyleBackColor = false;
+            this.btnClearExercise.Click += new System.EventHandler(this.btnClearExercise_Click);
             // 
             // lblMessageBoxExercise
             // 
@@ -274,21 +297,21 @@
             this.lblMessageBoxExercise.AutoSize = true;
             this.lblMessageBoxExercise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessageBoxExercise.ForeColor = System.Drawing.Color.Maroon;
-            this.lblMessageBoxExercise.Location = new System.Drawing.Point(2, 13);
-            this.lblMessageBoxExercise.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMessageBoxExercise.Location = new System.Drawing.Point(3, 14);
             this.lblMessageBoxExercise.Name = "lblMessageBoxExercise";
-            this.lblMessageBoxExercise.Size = new System.Drawing.Size(0, 15);
+            this.lblMessageBoxExercise.Size = new System.Drawing.Size(0, 20);
             this.lblMessageBoxExercise.TabIndex = 7;
             // 
             // txtMuscleType
             // 
             this.txtMuscleType.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMuscleType.Location = new System.Drawing.Point(19, 90);
-            this.txtMuscleType.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMuscleType.Location = new System.Drawing.Point(25, 106);
+            this.txtMuscleType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMuscleType.Name = "txtMuscleType";
-            this.txtMuscleType.Size = new System.Drawing.Size(299, 21);
+            this.txtMuscleType.Size = new System.Drawing.Size(397, 25);
             this.txtMuscleType.TabIndex = 8;
-            this.txtMuscleType.Text = "Enter Muscle Type .";
+            this.txtMuscleType.Text = "Enter Muscle Type";
+            this.txtMuscleType.Click += new System.EventHandler(this.txtMuscleType_Click);
             // 
             // pnlAddNewExerciseForm
             // 
@@ -297,50 +320,30 @@
             this.pnlAddNewExerciseForm.Controls.Add(this.pnlSubNewExerciseTitle);
             this.pnlAddNewExerciseForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddNewExerciseForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddNewExerciseForm.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAddNewExerciseForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAddNewExerciseForm.Name = "pnlAddNewExerciseForm";
-            this.pnlAddNewExerciseForm.Size = new System.Drawing.Size(399, 256);
+            this.pnlAddNewExerciseForm.Size = new System.Drawing.Size(529, 305);
             this.pnlAddNewExerciseForm.TabIndex = 2;
-            // 
-            // picAddButtonExercise
-            // 
-            this.picAddButtonExercise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAddButtonExercise.Image = ((System.Drawing.Image)(resources.GetObject("picAddButtonExercise.Image")));
-            this.picAddButtonExercise.Location = new System.Drawing.Point(11, 3);
-            this.picAddButtonExercise.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddButtonExercise.Name = "picAddButtonExercise";
-            this.picAddButtonExercise.Size = new System.Drawing.Size(14, 23);
-            this.picAddButtonExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddButtonExercise.TabIndex = 1;
-            this.picAddButtonExercise.TabStop = false;
-            // 
-            // picAddExercise
-            // 
-            this.picAddExercise.Image = ((System.Drawing.Image)(resources.GetObject("picAddExercise.Image")));
-            this.picAddExercise.Location = new System.Drawing.Point(16, 2);
-            this.picAddExercise.Margin = new System.Windows.Forms.Padding(2);
-            this.picAddExercise.Name = "picAddExercise";
-            this.picAddExercise.Size = new System.Drawing.Size(33, 58);
-            this.picAddExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAddExercise.TabIndex = 2;
-            this.picAddExercise.TabStop = false;
             // 
             // FrmAddNewExercise
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 256);
+            this.ClientSize = new System.Drawing.Size(529, 305);
             this.Controls.Add(this.pnlAddNewExerciseForm);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(415, 295);
+            this.MaximumSize = new System.Drawing.Size(547, 352);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(415, 295);
+            this.MinimumSize = new System.Drawing.Size(547, 352);
             this.Name = "FrmAddNewExercise";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddNewExercise";
-            this.Load += new System.EventHandler(this.FrmAddNewExercise_Load);
+            this.Load += new System.EventHandler(this.FrmAddNewExercise_Load_1);
+            this.Shown += new System.EventHandler(this.FrmAddNewExercise_Shown_1);
             this.pnlSubNewExerciseTitle.ResumeLayout(false);
             this.tlpMainNewExerciseTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAddExercise)).EndInit();
             this.tlpNewExerciseTitle.ResumeLayout(false);
             this.tlpNewExerciseTitle.PerformLayout();
             this.tlpNewExerciseDetails.ResumeLayout(false);
@@ -350,9 +353,8 @@
             this.pnlClickSubmitExercise.ResumeLayout(false);
             this.tlpSubmitBoxExercise.ResumeLayout(false);
             this.tlpSubmitBoxExercise.PerformLayout();
-            this.pnlAddNewExerciseForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAddButtonExercise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddExercise)).EndInit();
+            this.pnlAddNewExerciseForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
