@@ -21,7 +21,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
         {
             LoadRevenueChart();
             SetPlaceholder(this);
-            this.ActiveControl = null;   
+            this.ActiveControl = null;
+
+            dgvRevenue.AutoGenerateColumns = false;
+            dgvRevenue.ClearSelection();
         }
         private void LoadRevenueChart()
         {
@@ -223,6 +226,175 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
         {
 
         }
+
+        private void dgvRevenue_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvRevenue.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvRevenue.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
+            }
+        }
+
+        private void dgvRevenue_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                dgvRevenue.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
+
+            }
+            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                dgvRevenue.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
+
+
+
+            }
+        }
+
+        private void dgvRevenue_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvRevenue.Columns[e.ColumnIndex].Name == "colIncome")
+            {
+                if (e.Value != null)
+                {
+                    string status = e.Value.ToString();
+
+                    e.CellStyle.ForeColor = Color.Green;
+
+                }
+            }
+            if (dgvRevenue.Columns[e.ColumnIndex].Name == "colExpence")
+            {
+                if (e.Value != null)
+                {
+                    string status = e.Value.ToString();
+
+                    e.CellStyle.ForeColor = Color.Brown;
+
+                }
+            }
+            if (dgvRevenue.Columns[e.ColumnIndex].Name == "colRevenue")
+            {
+                if (e.Value != null)
+                {
+                    string status = e.Value.ToString();
+
+                    e.CellStyle.ForeColor = Color.Blue;
+
+                }
+            } if (dgvRevenue.Columns[e.ColumnIndex].Name == "colSLNo")
+            {
+                if (e.Value != null)
+                {
+                    string status = e.Value.ToString();
+
+                    e.CellStyle.ForeColor = Color.Blue;
+
+                }
+            }
+        }
+
+        private void tlpMonthlyRevenueLabelpic_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpRevenueGraphLabelImage_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpRevenueOverviewTitle_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void lblRevenueOverview_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picRevenueOverview_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picRevenueGraph_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void lblRevenueGraph_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpProfitLossForm_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpSearhImageLabel_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpSummaryLabel_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void lblRevenueSummary_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpTotalIncomeValue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picTotalIncome_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picTotalExpense_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpTotalExpenseValue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picTotalRevenue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpTotalRevenueValue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void tlpAvgMonthlyRevenueValue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+        private void picAvgMonthlyRevenue_Click(object sender, EventArgs e)
+        {
+            dgvRevenue.ClearSelection();
+        }
+
+       
 
 
     }
