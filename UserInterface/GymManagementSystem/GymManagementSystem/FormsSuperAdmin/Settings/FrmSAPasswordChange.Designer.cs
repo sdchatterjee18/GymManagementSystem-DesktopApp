@@ -177,7 +177,7 @@
             this.lblNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblNewPassword.Location = new System.Drawing.Point(56, 15);
             this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new System.Drawing.Size(145, 25);
@@ -189,7 +189,7 @@
             this.lblOldPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldPassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblOldPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblOldPassword.Location = new System.Drawing.Point(51, 13);
             this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Size = new System.Drawing.Size(136, 25);
@@ -202,7 +202,7 @@
             this.lblConfermPassword.AutoSize = true;
             this.lblConfermPassword.BackColor = System.Drawing.Color.Azure;
             this.lblConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfermPassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblConfermPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblConfermPassword.Location = new System.Drawing.Point(55, 16);
             this.lblConfermPassword.Name = "lblConfermPassword";
             this.lblConfermPassword.Size = new System.Drawing.Size(181, 25);
@@ -251,8 +251,8 @@
             // tlpHeaderSuperAdminChangePassword
             // 
             this.tlpHeaderSuperAdminChangePassword.ColumnCount = 2;
-            this.tlpHeaderSuperAdminChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.82942F));
-            this.tlpHeaderSuperAdminChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.17058F));
+            this.tlpHeaderSuperAdminChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.12367F));
+            this.tlpHeaderSuperAdminChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.87634F));
             this.tlpHeaderSuperAdminChangePassword.Controls.Add(this.tlpSuperAdminChangePassword, 1, 0);
             this.tlpHeaderSuperAdminChangePassword.Controls.Add(this.picSuperAdminChangePassword, 0, 0);
             this.tlpHeaderSuperAdminChangePassword.Location = new System.Drawing.Point(33, 37);
@@ -269,7 +269,7 @@
             this.tlpSuperAdminChangePassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSuperAdminChangePassword.Controls.Add(this.lblEditSuperAdminChangePassword, 0, 1);
             this.tlpSuperAdminChangePassword.Controls.Add(this.lblSuperAdminChangePassword, 0, 0);
-            this.tlpSuperAdminChangePassword.Location = new System.Drawing.Point(95, 2);
+            this.tlpSuperAdminChangePassword.Location = new System.Drawing.Point(87, 2);
             this.tlpSuperAdminChangePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpSuperAdminChangePassword.Name = "tlpSuperAdminChangePassword";
             this.tlpSuperAdminChangePassword.RowCount = 3;
@@ -296,7 +296,7 @@
             this.lblSuperAdminChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSuperAdminChangePassword.AutoSize = true;
             this.lblSuperAdminChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuperAdminChangePassword.ForeColor = System.Drawing.Color.Navy;
+            this.lblSuperAdminChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblSuperAdminChangePassword.Location = new System.Drawing.Point(0, 24);
             this.lblSuperAdminChangePassword.Margin = new System.Windows.Forms.Padding(0);
             this.lblSuperAdminChangePassword.Name = "lblSuperAdminChangePassword";
@@ -306,11 +306,12 @@
             // 
             // picSuperAdminChangePassword
             // 
-            this.picSuperAdminChangePassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picSuperAdminChangePassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminChangePassword.Image")));
-            this.picSuperAdminChangePassword.Location = new System.Drawing.Point(3, 3);
+            this.picSuperAdminChangePassword.Location = new System.Drawing.Point(0, 3);
+            this.picSuperAdminChangePassword.Margin = new System.Windows.Forms.Padding(0);
             this.picSuperAdminChangePassword.Name = "picSuperAdminChangePassword";
-            this.picSuperAdminChangePassword.Size = new System.Drawing.Size(86, 94);
+            this.picSuperAdminChangePassword.Size = new System.Drawing.Size(84, 94);
             this.picSuperAdminChangePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminChangePassword.TabIndex = 0;
             this.picSuperAdminChangePassword.TabStop = false;
