@@ -51,6 +51,7 @@
     <Compile Include="ModulesBLLayer\Member\MemberBLL.cs" />
     <Compile Include="ModulesBLLayer\Payment\PaymentBLL.cs" />
     <Compile Include="ModulesBLLayer\Shift\ShiftBLL.cs" />
+    <Compile Include="ModulesBLLayer\Workout\WorkoutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -364,6 +364,7 @@
     <Compile Include="FORMS\Workout\FrmDisplayWorkoutSchedule.Designer.cs">
       <DependentUpon>FrmDisplayWorkoutSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Workout\UI\WorkoutUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Authentication\FrmAdminLogin.resx">

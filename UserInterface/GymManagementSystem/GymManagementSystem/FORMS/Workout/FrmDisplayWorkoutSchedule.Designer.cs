@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayWorkoutSchedule));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAllWorkoutSheduleEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpWorkoutSheduleHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picWorkoutShedule = new System.Windows.Forms.PictureBox();
@@ -46,16 +47,18 @@
             this.tlpSearchWorkoutSchedule = new System.Windows.Forms.TableLayoutPanel();
             this.picSearchWorkoutShedule = new System.Windows.Forms.PictureBox();
             this.cmbWorkoutDaySearch = new System.Windows.Forms.ComboBox();
-            this.btnWorkoutSheduleSearch = new System.Windows.Forms.Button();
+            this.btnWorkoutSheduleDisplayAll = new System.Windows.Forms.Button();
             this.pnlClickToAddNewWorkoutShedule = new System.Windows.Forms.Panel();
             this.tlpAddNewWorkoutSchedule = new System.Windows.Forms.TableLayoutPanel();
             this.picPlusWorkoutShedule = new System.Windows.Forms.PictureBox();
             this.lblAddNewWorkoutShedule = new System.Windows.Forms.Label();
             this.dgvWorkoutShedule = new System.Windows.Forms.DataGridView();
-            this.colSerialNo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExerciseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkoutDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colWorkoutScheduleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAllWorkoutSheduleFromBack = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAllWorkoutSheduleEntireForm.SuspendLayout();
             this.tlpWorkoutSheduleHeader.SuspendLayout();
@@ -205,10 +208,10 @@
             this.tlpSearchWorkoutSchedule.ColumnCount = 3;
             this.tlpSearchWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpSearchWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tlpSearchWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tlpSearchWorkoutSchedule.Controls.Add(this.picSearchWorkoutShedule, 0, 0);
             this.tlpSearchWorkoutSchedule.Controls.Add(this.cmbWorkoutDaySearch, 1, 0);
-            this.tlpSearchWorkoutSchedule.Controls.Add(this.btnWorkoutSheduleSearch, 2, 0);
+            this.tlpSearchWorkoutSchedule.Controls.Add(this.btnWorkoutSheduleDisplayAll, 2, 0);
             this.tlpSearchWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSearchWorkoutSchedule.Location = new System.Drawing.Point(3, 2);
             this.tlpSearchWorkoutSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -235,32 +238,35 @@
             // cmbWorkoutDaySearch
             // 
             this.cmbWorkoutDaySearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbWorkoutDaySearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorkoutDaySearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWorkoutDaySearch.ForeColor = System.Drawing.Color.Black;
             this.cmbWorkoutDaySearch.FormattingEnabled = true;
             this.cmbWorkoutDaySearch.Location = new System.Drawing.Point(43, 2);
             this.cmbWorkoutDaySearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbWorkoutDaySearch.Name = "cmbWorkoutDaySearch";
-            this.cmbWorkoutDaySearch.Size = new System.Drawing.Size(175, 31);
+            this.cmbWorkoutDaySearch.Size = new System.Drawing.Size(164, 31);
             this.cmbWorkoutDaySearch.TabIndex = 4;
-            this.cmbWorkoutDaySearch.Text = "----Select Day----";
+            this.cmbWorkoutDaySearch.SelectionChangeCommitted += new System.EventHandler(this.cmbWorkoutDaySearch_SelectionChangeCommitted);
             // 
-            // btnWorkoutSheduleSearch
+            // btnWorkoutSheduleDisplayAll
             // 
-            this.btnWorkoutSheduleSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.btnWorkoutSheduleDisplayAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWorkoutSheduleSearch.AutoSize = true;
-            this.btnWorkoutSheduleSearch.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnWorkoutSheduleSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnWorkoutSheduleSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnWorkoutSheduleSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWorkoutSheduleSearch.ForeColor = System.Drawing.Color.White;
-            this.btnWorkoutSheduleSearch.Location = new System.Drawing.Point(221, 0);
-            this.btnWorkoutSheduleSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.btnWorkoutSheduleSearch.Name = "btnWorkoutSheduleSearch";
-            this.btnWorkoutSheduleSearch.Size = new System.Drawing.Size(85, 36);
-            this.btnWorkoutSheduleSearch.TabIndex = 2;
-            this.btnWorkoutSheduleSearch.Text = "Search";
-            this.btnWorkoutSheduleSearch.UseVisualStyleBackColor = false;
+            this.btnWorkoutSheduleDisplayAll.AutoSize = true;
+            this.btnWorkoutSheduleDisplayAll.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnWorkoutSheduleDisplayAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnWorkoutSheduleDisplayAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnWorkoutSheduleDisplayAll.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWorkoutSheduleDisplayAll.ForeColor = System.Drawing.Color.White;
+            this.btnWorkoutSheduleDisplayAll.Location = new System.Drawing.Point(210, 0);
+            this.btnWorkoutSheduleDisplayAll.Margin = new System.Windows.Forms.Padding(0);
+            this.btnWorkoutSheduleDisplayAll.Name = "btnWorkoutSheduleDisplayAll";
+            this.btnWorkoutSheduleDisplayAll.Size = new System.Drawing.Size(96, 36);
+            this.btnWorkoutSheduleDisplayAll.TabIndex = 2;
+            this.btnWorkoutSheduleDisplayAll.Text = "Display All";
+            this.btnWorkoutSheduleDisplayAll.UseVisualStyleBackColor = false;
+            this.btnWorkoutSheduleDisplayAll.Click += new System.EventHandler(this.btnWorkoutSheduleDisplayAll_Click);
             // 
             // pnlClickToAddNewWorkoutShedule
             // 
@@ -274,7 +280,6 @@
             this.pnlClickToAddNewWorkoutShedule.Size = new System.Drawing.Size(120, 35);
             this.pnlClickToAddNewWorkoutShedule.TabIndex = 12;
             this.pnlClickToAddNewWorkoutShedule.Click += new System.EventHandler(this.pnlClickToAddNewWorkoutShedule_Click);
-            this.pnlClickToAddNewWorkoutShedule.MouseEnter += new System.EventHandler(this.pnlClickToAddNewWorkoutShedule_MouseEnter);
             // 
             // tlpAddNewWorkoutSchedule
             // 
@@ -350,18 +355,20 @@
             this.dgvWorkoutShedule.ColumnHeadersHeight = 50;
             this.dgvWorkoutShedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutShedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSerialNo1,
+            this.colSerialNo,
             this.colWorkoutName,
             this.colExerciseName,
-            this.colWorkoutDay});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colWorkoutDay,
+            this.colDelete,
+            this.colWorkoutScheduleId});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorkoutShedule.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWorkoutShedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkoutShedule.EnableHeadersVisualStyles = false;
             this.dgvWorkoutShedule.GridColor = System.Drawing.Color.Gainsboro;
@@ -371,40 +378,42 @@
             this.dgvWorkoutShedule.Name = "dgvWorkoutShedule";
             this.dgvWorkoutShedule.ReadOnly = true;
             this.dgvWorkoutShedule.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutShedule.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvWorkoutShedule.RowHeadersVisible = false;
             this.dgvWorkoutShedule.RowHeadersWidth = 50;
             this.dgvWorkoutShedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutShedule.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvWorkoutShedule.RowTemplate.Height = 40;
             this.dgvWorkoutShedule.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkoutShedule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvWorkoutShedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvWorkoutShedule.Size = new System.Drawing.Size(767, 657);
             this.dgvWorkoutShedule.TabIndex = 11;
+            this.dgvWorkoutShedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutShedule_CellContentClick);
             this.dgvWorkoutShedule.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvWorkoutShedule_CellFormatting);
             this.dgvWorkoutShedule.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutShedule_CellMouseEnter);
             this.dgvWorkoutShedule.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutShedule_CellMouseLeave);
+            this.dgvWorkoutShedule.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvWorkoutShedule_CellPainting);
             // 
-            // colSerialNo1
+            // colSerialNo
             // 
-            this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSerialNo1.DataPropertyName = "SerialNo";
+            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSerialNo.DataPropertyName = "SerialNo";
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSerialNo1.FillWeight = 90F;
-            this.colSerialNo1.HeaderText = "Sl No.";
-            this.colSerialNo1.Name = "colSerialNo1";
-            this.colSerialNo1.ReadOnly = true;
-            this.colSerialNo1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSerialNo.FillWeight = 90F;
+            this.colSerialNo.HeaderText = "Sl No.";
+            this.colSerialNo.Name = "colSerialNo";
+            this.colSerialNo.ReadOnly = true;
+            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colWorkoutName
             // 
@@ -435,6 +444,22 @@
             this.colWorkoutDay.Name = "colWorkoutDay";
             this.colWorkoutDay.ReadOnly = true;
             this.colWorkoutDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colDelete
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDelete.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            // 
+            // colWorkoutScheduleId
+            // 
+            this.colWorkoutScheduleId.HeaderText = "WorkoutSchedule Id";
+            this.colWorkoutScheduleId.Name = "colWorkoutScheduleId";
+            this.colWorkoutScheduleId.ReadOnly = true;
+            this.colWorkoutScheduleId.Visible = false;
             // 
             // tlpAllWorkoutSheduleFromBack
             // 
@@ -497,7 +522,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpWorkoutSheduleTableAndSearch;
         private System.Windows.Forms.TableLayoutPanel tlpSearchAndAddWorkoutShedule;
         private System.Windows.Forms.TableLayoutPanel tlpSearchWorkoutSchedule;
-        private System.Windows.Forms.Button btnWorkoutSheduleSearch;
+        private System.Windows.Forms.Button btnWorkoutSheduleDisplayAll;
         private System.Windows.Forms.PictureBox picSearchWorkoutShedule;
         private System.Windows.Forms.ComboBox cmbWorkoutDaySearch;
         private System.Windows.Forms.Panel pnlClickToAddNewWorkoutShedule;
@@ -505,11 +530,13 @@
         private System.Windows.Forms.PictureBox picPlusWorkoutShedule;
         private System.Windows.Forms.Label lblAddNewWorkoutShedule;
         private System.Windows.Forms.DataGridView dgvWorkoutShedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo1;
+        private System.Windows.Forms.TableLayoutPanel tlpAllWorkoutSheduleFromBack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExerciseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutDay;
-        private System.Windows.Forms.TableLayoutPanel tlpAllWorkoutSheduleFromBack;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutScheduleId;
 
 
     }

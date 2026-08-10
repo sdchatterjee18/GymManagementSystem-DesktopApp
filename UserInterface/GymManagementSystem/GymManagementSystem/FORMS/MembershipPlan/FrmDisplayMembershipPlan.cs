@@ -422,11 +422,5 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
         }
 
-        private void pnlClickAddNewMembershipPlan_Click_1(object sender, EventArgs e)
-        {
-            FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
-            frm.Show();
-            frm.StartPosition = FormStartPosition.CenterParent;
-        }
     }
 }
