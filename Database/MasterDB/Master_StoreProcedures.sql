@@ -4028,7 +4028,7 @@ GO
 ---------------------------------
   --SP: spRetrieveActiveMembers--
 ---------------------------------
-CREATE PROC spRetrieveActiveMembers
+CREATE PROC spRetrieveAllMemberDetails
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -4036,28 +4036,17 @@ BEGIN
     BEGIN TRY
 
         SELECT
-            MemberId,
-            FirstName,
-            MiddleName,
-            LastName,
-            PhoneNo,
-            EmailId,
-            City,
-            District,
-            State,
-            EmergencyContact,
-            ProfilePhoto,
-            JoiningDate,
-            UpdatedAt
-        FROM tblMember
-        WHERE IsActive = 1;
-
+            M.MemberId,
+            M.FirstName + ' ' +
+            ISNULL(M.MiddleName + ' ', '') +
+            M.LastName AS MemberName,
+            M.PhoneNo,
+            M.IsActive AS MemberIsActive
+        FROM tblMember M
+        ORDER BY M.MemberId;
     END TRY
-
     BEGIN CATCH
-
         SELECT ERROR_MESSAGE() AS Message;
-
     END CATCH
 END;
 GO
@@ -4327,14 +4316,29 @@ GO
 -----------------------------------------
   --SP: spRetrieveAllMemberDetails--
 -----------------------------------------
-CREATE PROC spRetrieveAllMemberDetails
+CREATE PROC spRetrieveRegisterMemberDetailsByMemberId
+(
+    @MemberId INT
+)
 AS
 BEGIN
     SET NOCOUNT ON;
 
     BEGIN TRY
 
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member ID.' AS Message;
+            RETURN;
+        END
+
         SELECT
+
             M.MemberId,
 
             M.FirstName + ' ' +
@@ -4346,27 +4350,68 @@ BEGIN
             M.PhoneNo,
             M.EmailId,
 
-            M.City + ', ' +
-            M.District + ', ' +
-            M.State AS Address,
+            M.City,
+            M.District,
+            M.State,
 
             M.EmergencyContact,
+
             M.ProfilePhoto,
+
             M.JoiningDate,
             M.UpdatedAt,
-            M.IsActive AS MemberIsActive,
+            M.IsActive AS MemberStatus,
 
+            -----------------------------
+            -- Membership
+            -----------------------------
+            MP.MembershipPlanId,
             MP.MembershipPlanName,
             MS.StartDate,
             MS.ExpiryDate,
 
+            -----------------------------
+            -- Shift
+            -----------------------------
+            S.ShiftId,
             S.ShiftName,
+            S.StartTime,
+            S.EndTime,
 
+            -----------------------------
+            -- Diet Plan
+            -----------------------------
+            Dp.DietPlanId,
+            DP.CaloriesPerDay,
             DP.ConditionStatus,
             DP.DietPlanDocument,
 
-            L.LockerNo,
+            -----------------------------
+            -- Trainer
+            -----------------------------
+            T.TrainerId,
 
+            E.FirstName + ' ' +
+            ISNULL(E.MiddleName + ' ', '') +
+            E.LastName AS TrainerName,
+
+            E.PhoneNo AS TrainerPhoneNo,
+            E.EmailId AS TrainerEmailId,
+
+            T.TrainerType,
+            T.Specialization,
+
+            MTA.AssignedDate,
+
+            -----------------------------
+            -- Locker
+            -----------------------------
+            L.LockerId,
+            L.LockerNo,
+            L.LockerStatus,
+            -----------------------------
+            -- Payment
+            -----------------------------
             SP.PaymentDate,
             SP.PaymentMethod,
             SP.Amount,
@@ -4377,58 +4422,82 @@ BEGIN
         LEFT JOIN tblGender G
             ON M.GenderId = G.GenderId
 
-        -- Only active membership
+        -----------------------------
+        -- Membership
+        -----------------------------
+
         LEFT JOIN tblMembershipSubscription MS
             ON M.MemberId = MS.MemberId
-           AND MS.IsActive = 1
+            AND MS.IsActive = 1
 
         LEFT JOIN tblMembershipPlans MP
             ON MS.MembershipPlanId = MP.MembershipPlanId
 
-        -- Only active shift
+        -----------------------------
+        -- Shift
+        -----------------------------
+
         LEFT JOIN tblMemberShift MSH
             ON M.MemberId = MSH.MemberId
-           AND MSH.IsActive = 1
+            AND MSH.IsActive = 1
 
         LEFT JOIN tblShift S
             ON MSH.ShiftId = S.ShiftId
 
-        -- Only active diet assignment
+        -----------------------------
+        -- Diet
+        -----------------------------
+
         LEFT JOIN tblMemberDietAssignment MDA
             ON M.MemberId = MDA.MemberId
-           AND MDA.IsActive = 1
+            AND MDA.IsActive = 1
 
         LEFT JOIN tblDietPlans DP
             ON MDA.DietPlanId = DP.DietPlanId
 
-        -- Only active locker allocation
+        -----------------------------
+        -- Trainer
+        -----------------------------
+
+        LEFT JOIN tblMemberTrainerAssignment MTA
+            ON M.MemberId = MTA.MemberId
+            AND MTA.IsActive = 1
+
+        LEFT JOIN tblTrainer T
+            ON MTA.TrainerId = T.TrainerId
+
+        LEFT JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+            AND E.IsActive = 1
+
+        -----------------------------
+        -- Locker
+        -----------------------------
+
         LEFT JOIN tblLockerAllocation LA
             ON M.MemberId = LA.MemberId
 
         LEFT JOIN tblLocker L
             ON LA.LockerId = L.LockerId
 
-        -- Only active/current payment
-        OUTER APPLY
-(
-    SELECT TOP (1)
-        PaymentDate,
-        PaymentMethod,
-        Amount,
-        FeesType
-    FROM tblSubscriptionPayment SP
-    WHERE SP.MemberId = M.MemberId
-    ORDER BY PaymentDate DESC, PaymentId DESC
-) SP
+        -----------------------------
+        -- Payment
+        -----------------------------
 
-        ORDER BY M.MemberId;
+        LEFT JOIN tblSubscriptionPayment SP
+            ON M.MemberId = SP.MemberId
+
+        WHERE M.MemberId = @MemberId;
 
     END TRY
+
     BEGIN CATCH
+
         SELECT ERROR_MESSAGE() AS Message;
+
     END CATCH
+
 END;
-GO
 
 -----------------------------------------
   --SP: spUpdateMemberContactInfo--

@@ -64,20 +64,20 @@
             // tlpMarkAttendanceHeader
             // 
             this.tlpMarkAttendanceHeader.ColumnCount = 3;
-            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 282F));
+            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 376F));
             this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMarkAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMarkAttendanceHeader.Controls.Add(this.picMarkAttendanceMark, 0, 0);
             this.tlpMarkAttendanceHeader.Controls.Add(this.tlpAttendanceTitle, 1, 0);
             this.tlpMarkAttendanceHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMarkAttendanceHeader.Location = new System.Drawing.Point(45, 15);
-            this.tlpMarkAttendanceHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMarkAttendanceHeader.Location = new System.Drawing.Point(60, 18);
+            this.tlpMarkAttendanceHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMarkAttendanceHeader.Name = "tlpMarkAttendanceHeader";
             this.tlpMarkAttendanceHeader.RowCount = 1;
             this.tlpMarkAttendanceHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMarkAttendanceHeader.Size = new System.Drawing.Size(772, 65);
+            this.tlpMarkAttendanceHeader.Size = new System.Drawing.Size(1029, 81);
             this.tlpMarkAttendanceHeader.TabIndex = 9;
             // 
             // picMarkAttendanceMark
@@ -86,7 +86,7 @@
             this.picMarkAttendanceMark.Location = new System.Drawing.Point(0, 0);
             this.picMarkAttendanceMark.Margin = new System.Windows.Forms.Padding(0);
             this.picMarkAttendanceMark.Name = "picMarkAttendanceMark";
-            this.picMarkAttendanceMark.Size = new System.Drawing.Size(57, 65);
+            this.picMarkAttendanceMark.Size = new System.Drawing.Size(76, 80);
             this.picMarkAttendanceMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMarkAttendanceMark.TabIndex = 0;
             this.picMarkAttendanceMark.TabStop = false;
@@ -97,14 +97,14 @@
             this.tlpAttendanceTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAttendanceTitle.Controls.Add(this.lblInputMarkAttendance, 0, 1);
             this.tlpAttendanceTitle.Controls.Add(this.lblMarkAttendance, 0, 0);
-            this.tlpAttendanceTitle.Location = new System.Drawing.Point(60, 0);
+            this.tlpAttendanceTitle.Location = new System.Drawing.Point(80, 0);
             this.tlpAttendanceTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpAttendanceTitle.Name = "tlpAttendanceTitle";
             this.tlpAttendanceTitle.RowCount = 3;
             this.tlpAttendanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.30769F));
             this.tlpAttendanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.53846F));
             this.tlpAttendanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.61539F));
-            this.tlpAttendanceTitle.Size = new System.Drawing.Size(267, 65);
+            this.tlpAttendanceTitle.Size = new System.Drawing.Size(356, 80);
             this.tlpAttendanceTitle.TabIndex = 1;
             // 
             // lblInputMarkAttendance
@@ -113,10 +113,9 @@
             this.lblInputMarkAttendance.AutoSize = true;
             this.lblInputMarkAttendance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInputMarkAttendance.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblInputMarkAttendance.Location = new System.Drawing.Point(2, 35);
-            this.lblInputMarkAttendance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInputMarkAttendance.Location = new System.Drawing.Point(3, 42);
             this.lblInputMarkAttendance.Name = "lblInputMarkAttendance";
-            this.lblInputMarkAttendance.Size = new System.Drawing.Size(150, 13);
+            this.lblInputMarkAttendance.Size = new System.Drawing.Size(181, 17);
             this.lblInputMarkAttendance.TabIndex = 3;
             this.lblInputMarkAttendance.Text = "Input Member\'s Attendance";
             // 
@@ -125,10 +124,9 @@
             this.lblMarkAttendance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMarkAttendance.AutoSize = true;
             this.lblMarkAttendance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarkAttendance.Location = new System.Drawing.Point(2, 13);
-            this.lblMarkAttendance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMarkAttendance.Location = new System.Drawing.Point(3, 14);
             this.lblMarkAttendance.Name = "lblMarkAttendance";
-            this.lblMarkAttendance.Size = new System.Drawing.Size(213, 21);
+            this.lblMarkAttendance.Size = new System.Drawing.Size(264, 28);
             this.lblMarkAttendance.TabIndex = 2;
             this.lblMarkAttendance.Text = "Mark Member\'s Attendance";
             // 
@@ -144,7 +142,7 @@
             this.tlpMarkAttendanceEntireForm.Controls.Add(this.tlpMarkAttendanceSearchBar, 1, 3);
             this.tlpMarkAttendanceEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMarkAttendanceEntireForm.Location = new System.Drawing.Point(0, 0);
-            this.tlpMarkAttendanceEntireForm.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMarkAttendanceEntireForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMarkAttendanceEntireForm.Name = "tlpMarkAttendanceEntireForm";
             this.tlpMarkAttendanceEntireForm.RowCount = 6;
             this.tlpMarkAttendanceEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.155712F));
@@ -153,7 +151,7 @@
             this.tlpMarkAttendanceEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.793727F));
             this.tlpMarkAttendanceEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.79673F));
             this.tlpMarkAttendanceEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.30705F));
-            this.tlpMarkAttendanceEntireForm.Size = new System.Drawing.Size(863, 609);
+            this.tlpMarkAttendanceEntireForm.Size = new System.Drawing.Size(1151, 750);
             this.tlpMarkAttendanceEntireForm.TabIndex = 0;
             // 
             // dgvMarkAttendance
@@ -196,8 +194,8 @@
             this.dgvMarkAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarkAttendance.EnableHeadersVisualStyles = false;
             this.dgvMarkAttendance.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvMarkAttendance.Location = new System.Drawing.Point(45, 134);
-            this.dgvMarkAttendance.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvMarkAttendance.Location = new System.Drawing.Point(60, 164);
+            this.dgvMarkAttendance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMarkAttendance.MultiSelect = false;
             this.dgvMarkAttendance.Name = "dgvMarkAttendance";
             this.dgvMarkAttendance.ReadOnly = true;
@@ -218,7 +216,7 @@
             this.dgvMarkAttendance.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMarkAttendance.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMarkAttendance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMarkAttendance.Size = new System.Drawing.Size(772, 439);
+            this.dgvMarkAttendance.Size = new System.Drawing.Size(1029, 541);
             this.dgvMarkAttendance.TabIndex = 18;
             // 
             // colSerialNo
@@ -278,23 +276,23 @@
             // tlpMarkAttendanceSearchBar
             // 
             this.tlpMarkAttendanceSearchBar.ColumnCount = 6;
-            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
-            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
-            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tlpMarkAttendanceSearchBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMarkAttendanceSearchBar.Controls.Add(this.btnMarkAttendanceSearch, 4, 0);
             this.tlpMarkAttendanceSearchBar.Controls.Add(this.picMarkAttendanceSearch, 0, 0);
             this.tlpMarkAttendanceSearchBar.Controls.Add(this.txtMarkMemberMobileNumber, 3, 0);
             this.tlpMarkAttendanceSearchBar.Controls.Add(this.cmbMarkAttendanceShiftSearch, 1, 0);
             this.tlpMarkAttendanceSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMarkAttendanceSearchBar.Location = new System.Drawing.Point(45, 87);
-            this.tlpMarkAttendanceSearchBar.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpMarkAttendanceSearchBar.Location = new System.Drawing.Point(60, 106);
+            this.tlpMarkAttendanceSearchBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMarkAttendanceSearchBar.Name = "tlpMarkAttendanceSearchBar";
             this.tlpMarkAttendanceSearchBar.RowCount = 1;
             this.tlpMarkAttendanceSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMarkAttendanceSearchBar.Size = new System.Drawing.Size(772, 43);
+            this.tlpMarkAttendanceSearchBar.Size = new System.Drawing.Size(1029, 54);
             this.tlpMarkAttendanceSearchBar.TabIndex = 19;
             // 
             // btnMarkAttendanceSearch
@@ -306,10 +304,10 @@
             this.btnMarkAttendanceSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnMarkAttendanceSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarkAttendanceSearch.ForeColor = System.Drawing.Color.White;
-            this.btnMarkAttendanceSearch.Location = new System.Drawing.Point(491, 7);
-            this.btnMarkAttendanceSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMarkAttendanceSearch.Location = new System.Drawing.Point(685, 7);
+            this.btnMarkAttendanceSearch.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.btnMarkAttendanceSearch.Name = "btnMarkAttendanceSearch";
-            this.btnMarkAttendanceSearch.Size = new System.Drawing.Size(65, 29);
+            this.btnMarkAttendanceSearch.Size = new System.Drawing.Size(99, 40);
             this.btnMarkAttendanceSearch.TabIndex = 2;
             this.btnMarkAttendanceSearch.Text = "Search";
             this.btnMarkAttendanceSearch.UseVisualStyleBackColor = false;
@@ -318,10 +316,10 @@
             // 
             this.picMarkAttendanceSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picMarkAttendanceSearch.Image = ((System.Drawing.Image)(resources.GetObject("picMarkAttendanceSearch.Image")));
-            this.picMarkAttendanceSearch.Location = new System.Drawing.Point(0, 8);
+            this.picMarkAttendanceSearch.Location = new System.Drawing.Point(0, 9);
             this.picMarkAttendanceSearch.Margin = new System.Windows.Forms.Padding(0);
             this.picMarkAttendanceSearch.Name = "picMarkAttendanceSearch";
-            this.picMarkAttendanceSearch.Size = new System.Drawing.Size(27, 26);
+            this.picMarkAttendanceSearch.Size = new System.Drawing.Size(44, 35);
             this.picMarkAttendanceSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMarkAttendanceSearch.TabIndex = 3;
             this.picMarkAttendanceSearch.TabStop = false;
@@ -332,33 +330,34 @@
             this.txtMarkMemberMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMarkMemberMobileNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarkMemberMobileNumber.ForeColor = System.Drawing.Color.Gray;
-            this.txtMarkMemberMobileNumber.Location = new System.Drawing.Point(268, 8);
-            this.txtMarkMemberMobileNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMarkMemberMobileNumber.Location = new System.Drawing.Point(367, 12);
+            this.txtMarkMemberMobileNumber.Margin = new System.Windows.Forms.Padding(0);
             this.txtMarkMemberMobileNumber.Name = "txtMarkMemberMobileNumber";
-            this.txtMarkMemberMobileNumber.Size = new System.Drawing.Size(221, 26);
+            this.txtMarkMemberMobileNumber.Size = new System.Drawing.Size(316, 30);
             this.txtMarkMemberMobileNumber.TabIndex = 5;
-            this.txtMarkMemberMobileNumber.Text = "Enter Mobile No.";
+            this.txtMarkMemberMobileNumber.Text = " Enter Mobile No.";
             // 
             // cmbMarkAttendanceShiftSearch
             // 
             this.cmbMarkAttendanceShiftSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbMarkAttendanceShiftSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarkAttendanceShiftSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMarkAttendanceShiftSearch.ForeColor = System.Drawing.Color.Gray;
             this.cmbMarkAttendanceShiftSearch.FormattingEnabled = true;
-            this.cmbMarkAttendanceShiftSearch.Location = new System.Drawing.Point(33, 8);
-            this.cmbMarkAttendanceShiftSearch.Margin = new System.Windows.Forms.Padding(6, 2, 2, 2);
+            this.cmbMarkAttendanceShiftSearch.Location = new System.Drawing.Point(44, 11);
+            this.cmbMarkAttendanceShiftSearch.Margin = new System.Windows.Forms.Padding(0);
             this.cmbMarkAttendanceShiftSearch.Name = "cmbMarkAttendanceShiftSearch";
-            this.cmbMarkAttendanceShiftSearch.Size = new System.Drawing.Size(223, 27);
+            this.cmbMarkAttendanceShiftSearch.Size = new System.Drawing.Size(316, 31);
             this.cmbMarkAttendanceShiftSearch.TabIndex = 4;
-            this.cmbMarkAttendanceShiftSearch.Text = "---Select Shift---";
             // 
             // FrmMarkAttendance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 609);
+            this.ClientSize = new System.Drawing.Size(1151, 750);
             this.Controls.Add(this.tlpMarkAttendanceEntireForm);
-            this.MinimumSize = new System.Drawing.Size(879, 591);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1166, 717);
             this.Name = "FrmMarkAttendance";
             this.Text = "FrmMarkAttendance";
             this.Load += new System.EventHandler(this.FrmMarkAttendance_Load);

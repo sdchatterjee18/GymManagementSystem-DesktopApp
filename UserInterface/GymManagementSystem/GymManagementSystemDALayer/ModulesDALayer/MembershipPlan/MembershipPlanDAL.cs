@@ -51,7 +51,15 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
         // Deactivates an existing membership plan using its identifier.
         public string DeactivateMembershipPlanByMembershipPlanIdDAL(int membershipPlanId)
         {
-            DataTable dt = LookupDAL.DeactivateSpecificItemById("spDeactivateMembershipPlanByMembershipPlanId",membershipPlanId,"@MembershipPlanId");
+            SqlParameter[] sqlParameters =
+                {
+                    new SqlParameter("@MembershipPlanId", membershipPlanId)
+                };
+
+            DataTable dt = LookupDAL.RetrieveSpecificDetails(
+                "spDeactivateMembershipPlanByMembershipPlanId",
+                sqlParameters
+            );
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -116,6 +124,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
 
             return membershipPlansDal;
         }
+
         public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
         {
             SqlParameter[] parameters =

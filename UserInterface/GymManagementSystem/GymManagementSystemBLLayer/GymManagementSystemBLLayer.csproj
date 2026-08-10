@@ -45,10 +45,13 @@
     <Compile Include="Common\ValidationBll.cs" />
     <Compile Include="ModulesBLLayer\DietPlan\DietPlanBLL.cs" />
     <Compile Include="ModulesBLLayer\Gender\GenderBLL.cs" />
+    <Compile Include="ModulesBLLayer\Locker\LockerBLL.cs" />
     <Compile Include="ModulesBLLayer\MembershipPlan\MembershipPlanBLL.cs" />
     <Compile Include="ModulesBLLayer\Member\MemberAllDetailsBLL.cs" />
     <Compile Include="ModulesBLLayer\Member\MemberBLL.cs" />
+    <Compile Include="ModulesBLLayer\Payment\PaymentBLL.cs" />
     <Compile Include="ModulesBLLayer\Shift\ShiftBLL.cs" />
+    <Compile Include="ModulesBLLayer\Workout\WorkoutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

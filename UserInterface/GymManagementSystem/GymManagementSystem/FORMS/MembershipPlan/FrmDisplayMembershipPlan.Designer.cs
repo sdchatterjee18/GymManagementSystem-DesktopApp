@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayMembershipPlan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAllMembershipPlanEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAllMembershipPlanHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picMembershipPlan = new System.Windows.Forms.PictureBox();
@@ -92,8 +92,8 @@
             this.tlpAllMembershipPlanEntireForm.Name = "tlpAllMembershipPlanEntireForm";
             this.tlpAllMembershipPlanEntireForm.RowCount = 5;
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.06349F));
             this.tlpAllMembershipPlanEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.952381F));
             this.tlpAllMembershipPlanEntireForm.Size = new System.Drawing.Size(1149, 750);
@@ -115,14 +115,14 @@
             this.tlpAllMembershipPlanHeader.Name = "tlpAllMembershipPlanHeader";
             this.tlpAllMembershipPlanHeader.RowCount = 1;
             this.tlpAllMembershipPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAllMembershipPlanHeader.Size = new System.Drawing.Size(1034, 102);
+            this.tlpAllMembershipPlanHeader.Size = new System.Drawing.Size(1034, 94);
             this.tlpAllMembershipPlanHeader.TabIndex = 8;
             // 
             // picMembershipPlan
             // 
             this.picMembershipPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picMembershipPlan.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipPlan.Image")));
-            this.picMembershipPlan.Location = new System.Drawing.Point(0, 16);
+            this.picMembershipPlan.Location = new System.Drawing.Point(0, 12);
             this.picMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
             this.picMembershipPlan.Name = "picMembershipPlan";
             this.picMembershipPlan.Size = new System.Drawing.Size(76, 70);
@@ -135,22 +135,22 @@
             this.dgvMembershipPlan.AllowUserToAddRows = false;
             this.dgvMembershipPlan.AllowUserToDeleteRows = false;
             this.dgvMembershipPlan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvMembershipPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dgvMembershipPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMembershipPlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMembershipPlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvMembershipPlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembershipPlan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMembershipPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembershipPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMembershipPlan.ColumnHeadersHeight = 50;
             this.dgvMembershipPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMembershipPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -164,14 +164,14 @@
             this.colMembershipPlanId,
             this.colUpdate,
             this.colDeactivate});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMembershipPlan.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMembershipPlan.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvMembershipPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMembershipPlan.EnableHeadersVisualStyles = false;
             this.dgvMembershipPlan.GridColor = System.Drawing.Color.Gainsboro;
@@ -181,18 +181,18 @@
             this.dgvMembershipPlan.Name = "dgvMembershipPlan";
             this.dgvMembershipPlan.ReadOnly = true;
             this.dgvMembershipPlan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMembershipPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembershipPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvMembershipPlan.RowHeadersVisible = false;
             this.dgvMembershipPlan.RowHeadersWidth = 50;
             this.dgvMembershipPlan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvMembershipPlan.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.dgvMembershipPlan.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvMembershipPlan.RowTemplate.Height = 50;
             this.dgvMembershipPlan.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMembershipPlan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -209,8 +209,8 @@
             // 
             this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle10;
             this.colSerialNo.FillWeight = 90F;
             this.colSerialNo.HeaderText = "Sl No.";
             this.colSerialNo.Name = "colSerialNo";
@@ -275,10 +275,10 @@
             // 
             this.colIsActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colIsActive.DataPropertyName = "IsActive";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Lime;
-            this.colIsActive.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Lime;
+            this.colIsActive.DefaultCellStyle = dataGridViewCellStyle11;
             this.colIsActive.HeaderText = "Status";
             this.colIsActive.Name = "colIsActive";
             this.colIsActive.ReadOnly = true;
@@ -316,17 +316,17 @@
             // tblSearchArea
             // 
             this.tblSearchArea.ColumnCount = 4;
-            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
-            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316F));
+            this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tblSearchArea.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblSearchArea.Controls.Add(this.pnlSearchImageHolder, 0, 0);
             this.tblSearchArea.Controls.Add(this.cmbMembershipPlan, 1, 0);
             this.tblSearchArea.Controls.Add(this.btnDisplayAll, 2, 0);
             this.tblSearchArea.Controls.Add(this.pnlClickAddNewMembershipPlan, 3, 0);
-            this.tblSearchArea.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tblSearchArea.Location = new System.Drawing.Point(57, 136);
-            this.tblSearchArea.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.tblSearchArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblSearchArea.Location = new System.Drawing.Point(57, 118);
+            this.tblSearchArea.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.tblSearchArea.Name = "tblSearchArea";
             this.tblSearchArea.RowCount = 1;
             this.tblSearchArea.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -340,12 +340,12 @@
             this.pnlSearchImageHolder.Location = new System.Drawing.Point(0, 4);
             this.pnlSearchImageHolder.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearchImageHolder.Name = "pnlSearchImageHolder";
-            this.pnlSearchImageHolder.Size = new System.Drawing.Size(47, 34);
+            this.pnlSearchImageHolder.Size = new System.Drawing.Size(44, 34);
             this.pnlSearchImageHolder.TabIndex = 5;
             // 
             // picSearchIcon
             // 
-            this.picSearchIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picSearchIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSearchIcon.Image = ((System.Drawing.Image)(resources.GetObject("picSearchIcon.Image")));
             this.picSearchIcon.Location = new System.Drawing.Point(0, 0);
             this.picSearchIcon.Margin = new System.Windows.Forms.Padding(0);
@@ -358,23 +358,27 @@
             // cmbMembershipPlan
             // 
             this.cmbMembershipPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbMembershipPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbMembershipPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMembershipPlan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMembershipPlan.ForeColor = System.Drawing.Color.Gray;
             this.cmbMembershipPlan.FormattingEnabled = true;
-            this.cmbMembershipPlan.Location = new System.Drawing.Point(47, 5);
-            this.cmbMembershipPlan.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.cmbMembershipPlan.Location = new System.Drawing.Point(44, 5);
+            this.cmbMembershipPlan.Margin = new System.Windows.Forms.Padding(0);
             this.cmbMembershipPlan.Name = "cmbMembershipPlan";
-            this.cmbMembershipPlan.Size = new System.Drawing.Size(312, 31);
+            this.cmbMembershipPlan.Size = new System.Drawing.Size(316, 31);
             this.cmbMembershipPlan.TabIndex = 6;
             this.cmbMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbMembershipPlan_SelectedIndexChanged);
             // 
             // btnDisplayAll
             // 
+            this.btnDisplayAll.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnDisplayAll.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDisplayAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDisplayAll.ForeColor = System.Drawing.Color.White;
-            this.btnDisplayAll.Location = new System.Drawing.Point(359, 0);
-            this.btnDisplayAll.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDisplayAll.Location = new System.Drawing.Point(362, 1);
+            this.btnDisplayAll.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.btnDisplayAll.Name = "btnDisplayAll";
-            this.btnDisplayAll.Size = new System.Drawing.Size(124, 42);
+            this.btnDisplayAll.Size = new System.Drawing.Size(99, 40);
             this.btnDisplayAll.TabIndex = 7;
             this.btnDisplayAll.Text = "Display All";
             this.btnDisplayAll.UseVisualStyleBackColor = false;
@@ -392,7 +396,7 @@
             this.pnlClickAddNewMembershipPlan.Name = "pnlClickAddNewMembershipPlan";
             this.pnlClickAddNewMembershipPlan.Size = new System.Drawing.Size(119, 35);
             this.pnlClickAddNewMembershipPlan.TabIndex = 8;
-            this.pnlClickAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
+            this.pnlClickAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
             this.pnlClickAddNewMembershipPlan.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
             this.pnlClickAddNewMembershipPlan.MouseLeave += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseLeave);
             // 
@@ -411,7 +415,6 @@
             this.tlpAddNewMembershipPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddNewMembershipPlan.Size = new System.Drawing.Size(117, 33);
             this.tlpAddNewMembershipPlan.TabIndex = 4;
-            this.tlpAddNewMembershipPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
             this.tlpAddNewMembershipPlan.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
             this.tlpAddNewMembershipPlan.MouseLeave += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseLeave);
             // 
@@ -426,7 +429,7 @@
             this.lblAddNewPlan.Size = new System.Drawing.Size(74, 20);
             this.lblAddNewPlan.TabIndex = 0;
             this.lblAddNewPlan.Text = "Add New";
-            this.lblAddNewPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
+            this.lblAddNewPlan.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
             this.lblAddNewPlan.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
             this.lblAddNewPlan.MouseLeave += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseLeave);
             // 
@@ -441,7 +444,7 @@
             this.picAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddButton.TabIndex = 1;
             this.picAddButton.TabStop = false;
-            this.picAddButton.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click_1);
+            this.picAddButton.Click += new System.EventHandler(this.pnlClickAddNewMembershipPlan_Click);
             this.picAddButton.MouseEnter += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseEnter_1);
             this.picAddButton.MouseLeave += new System.EventHandler(this.pnlClickAddNewMembershipPlan_MouseLeave);
             // 

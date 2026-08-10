@@ -214,6 +214,7 @@
     <Compile Include="FORMS\Locker\FrmDisplayLocker.Designer.cs">
       <DependentUpon>FrmDisplayLocker.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Locker\UI\LockerUI.cs" />
     <Compile Include="FORMS\Main\FrmMainLayout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +296,7 @@
     <Compile Include="FORMS\Payments\FrmDisplayPayments.Designer.cs">
       <DependentUpon>FrmDisplayPayments.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Payments\UI\PaymentUI.cs" />
     <Compile Include="FORMS\RegistrationFee\FrmAddRegistrationFee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +364,7 @@
     <Compile Include="FORMS\Workout\FrmDisplayWorkoutSchedule.Designer.cs">
       <DependentUpon>FrmDisplayWorkoutSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Workout\UI\WorkoutUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Authentication\FrmAdminLogin.resx">
