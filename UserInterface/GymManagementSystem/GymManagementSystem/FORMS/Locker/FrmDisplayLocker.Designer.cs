@@ -17,25 +17,15 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayLocker));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayLocker));
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.tlpHeading = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlButton = new System.Windows.Forms.Panel();
-            this.tlpAddNewLocker = new System.Windows.Forms.TableLayoutPanel();
-            this.picBoxAddSymbol = new System.Windows.Forms.PictureBox();
-            this.lblAddNewLocker = new System.Windows.Forms.Label();
-            this.pnlTitle = new System.Windows.Forms.Panel();
-            this.tlpTitle = new System.Windows.Forms.TableLayoutPanel();
-            this.tlplSection = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-            this.picBoxLockerIcon = new System.Windows.Forms.PictureBox();
             this.pnlSpaceing = new System.Windows.Forms.Panel();
             this.tlpDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDisplayLocker = new System.Windows.Forms.DataGridView();
@@ -44,18 +34,26 @@
             this.colAllocatedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFooter = new System.Windows.Forms.Panel();
+            this.tlpTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.tlplSection = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSubtitle = new System.Windows.Forms.Label();
+            this.picBoxLockerIcon = new System.Windows.Forms.PictureBox();
+            this.pnlButton = new System.Windows.Forms.Panel();
+            this.tlpAddNewLocker = new System.Windows.Forms.TableLayoutPanel();
+            this.picBoxAddSymbol = new System.Windows.Forms.PictureBox();
+            this.lblAddNewLocker = new System.Windows.Forms.Label();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
-            this.pnlButton.SuspendLayout();
-            this.tlpAddNewLocker.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddSymbol)).BeginInit();
-            this.pnlTitle.SuspendLayout();
-            this.tlpTitle.SuspendLayout();
-            this.tlplSection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLockerIcon)).BeginInit();
             this.pnlSpaceing.SuspendLayout();
             this.tlpDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayLocker)).BeginInit();
+            this.tlpTitle.SuspendLayout();
+            this.tlplSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLockerIcon)).BeginInit();
+            this.pnlButton.SuspendLayout();
+            this.tlpAddNewLocker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddSymbol)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeading
@@ -75,171 +73,17 @@
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.12354F));
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.85977F));
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpHeading.Controls.Add(this.pnlButton, 2, 0);
-            this.tlpHeading.Controls.Add(this.pnlTitle, 1, 0);
-            this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpHeading.Controls.Add(this.tlpTitle, 1, 1);
+            this.tlpHeading.Controls.Add(this.pnlButton, 2, 1);
+            this.tlpHeading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpHeading.Location = new System.Drawing.Point(0, 0);
             this.tlpHeading.Name = "tlpHeading";
-            this.tlpHeading.RowCount = 1;
+            this.tlpHeading.RowCount = 2;
             this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeading.Size = new System.Drawing.Size(1198, 96);
+            this.tlpHeading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tlpHeading.Size = new System.Drawing.Size(1198, 102);
             this.tlpHeading.TabIndex = 0;
             this.tlpHeading.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // pnlButton
-            // 
-            this.pnlButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlButton.BackColor = System.Drawing.Color.Transparent;
-            this.pnlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlButton.Controls.Add(this.tlpAddNewLocker);
-            this.pnlButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlButton.ForeColor = System.Drawing.Color.Blue;
-            this.pnlButton.Location = new System.Drawing.Point(1044, 64);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(90, 30);
-            this.pnlButton.TabIndex = 1;
-            this.pnlButton.Click += new System.EventHandler(this.pnlButton_Click);
-            this.pnlButton.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
-            this.pnlButton.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
-            // 
-            // tlpAddNewLocker
-            // 
-            this.tlpAddNewLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.tlpAddNewLocker.ColumnCount = 2;
-            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tlpAddNewLocker.Controls.Add(this.picBoxAddSymbol, 0, 0);
-            this.tlpAddNewLocker.Controls.Add(this.lblAddNewLocker, 1, 0);
-            this.tlpAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tlpAddNewLocker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAddNewLocker.Location = new System.Drawing.Point(0, 0);
-            this.tlpAddNewLocker.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpAddNewLocker.Name = "tlpAddNewLocker";
-            this.tlpAddNewLocker.RowCount = 1;
-            this.tlpAddNewLocker.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddNewLocker.Size = new System.Drawing.Size(88, 28);
-            this.tlpAddNewLocker.TabIndex = 0;
-            this.tlpAddNewLocker.Click += new System.EventHandler(this.pnlButton_Click);
-            this.tlpAddNewLocker.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
-            this.tlpAddNewLocker.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
-            // 
-            // picBoxAddSymbol
-            // 
-            this.picBoxAddSymbol.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picBoxAddSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxAddSymbol.BackgroundImage")));
-            this.picBoxAddSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxAddSymbol.Location = new System.Drawing.Point(4, 9);
-            this.picBoxAddSymbol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picBoxAddSymbol.Name = "picBoxAddSymbol";
-            this.picBoxAddSymbol.Size = new System.Drawing.Size(10, 10);
-            this.picBoxAddSymbol.TabIndex = 2;
-            this.picBoxAddSymbol.TabStop = false;
-            // 
-            // lblAddNewLocker
-            // 
-            this.lblAddNewLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAddNewLocker.AutoSize = true;
-            this.lblAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAddNewLocker.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewLocker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
-            this.lblAddNewLocker.Location = new System.Drawing.Point(20, 0);
-            this.lblAddNewLocker.Name = "lblAddNewLocker";
-            this.lblAddNewLocker.Size = new System.Drawing.Size(41, 28);
-            this.lblAddNewLocker.TabIndex = 1;
-            this.lblAddNewLocker.Text = "Add New";
-            this.lblAddNewLocker.Click += new System.EventHandler(this.pnlButton_Click);
-            this.lblAddNewLocker.MouseEnter += new System.EventHandler(this.pnlButton_MouseEnter);
-            this.lblAddNewLocker.MouseLeave += new System.EventHandler(this.pnlButton_MouseLeave);
-            // 
-            // pnlTitle
-            // 
-            this.pnlTitle.Controls.Add(this.tlpTitle);
-            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTitle.Location = new System.Drawing.Point(62, 3);
-            this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(882, 90);
-            this.pnlTitle.TabIndex = 2;
-            this.pnlTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // tlpTitle
-            // 
-            this.tlpTitle.ColumnCount = 2;
-            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.010893F));
-            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.98911F));
-            this.tlpTitle.Controls.Add(this.tlplSection, 1, 0);
-            this.tlpTitle.Controls.Add(this.picBoxLockerIcon, 0, 0);
-            this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitle.Location = new System.Drawing.Point(0, 0);
-            this.tlpTitle.Name = "tlpTitle";
-            this.tlpTitle.RowCount = 1;
-            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpTitle.Size = new System.Drawing.Size(882, 90);
-            this.tlpTitle.TabIndex = 0;
-            this.tlpTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // tlplSection
-            // 
-            this.tlplSection.ColumnCount = 1;
-            this.tlplSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlplSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlplSection.Controls.Add(this.lblTitle, 0, 1);
-            this.tlplSection.Controls.Add(this.lblSubtitle, 0, 0);
-            this.tlplSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlplSection.Location = new System.Drawing.Point(47, 3);
-            this.tlplSection.Name = "tlplSection";
-            this.tlplSection.RowCount = 3;
-            this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlplSection.Size = new System.Drawing.Size(832, 84);
-            this.tlplSection.TabIndex = 0;
-            this.tlplSection.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblTitle.Location = new System.Drawing.Point(3, 46);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(826, 19);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Current status and availability of Lockers.";
-            this.lblTitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // lblSubtitle
-            // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblSubtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.ForeColor = System.Drawing.Color.Black;
-            this.lblSubtitle.Location = new System.Drawing.Point(3, 18);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(826, 28);
-            this.lblSubtitle.TabIndex = 0;
-            this.lblSubtitle.Text = "Locker Management";
-            this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSubtitle.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
-            // picBoxLockerIcon
-            // 
-            this.picBoxLockerIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
-            this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLockerIcon.Location = new System.Drawing.Point(3, 24);
-            this.picBoxLockerIcon.MaximumSize = new System.Drawing.Size(38, 42);
-            this.picBoxLockerIcon.MinimumSize = new System.Drawing.Size(38, 42);
-            this.picBoxLockerIcon.Name = "picBoxLockerIcon";
-            this.picBoxLockerIcon.Size = new System.Drawing.Size(38, 42);
-            this.picBoxLockerIcon.TabIndex = 1;
-            this.picBoxLockerIcon.TabStop = false;
-            this.picBoxLockerIcon.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // pnlSpaceing
             // 
@@ -391,6 +235,135 @@
             this.pnlFooter.TabIndex = 2;
             this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
+            // tlpTitle
+            // 
+            this.tlpTitle.ColumnCount = 2;
+            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tlpTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTitle.Controls.Add(this.tlplSection, 1, 0);
+            this.tlpTitle.Controls.Add(this.picBoxLockerIcon, 0, 0);
+            this.tlpTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTitle.Location = new System.Drawing.Point(59, 27);
+            this.tlpTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpTitle.Name = "tlpTitle";
+            this.tlpTitle.RowCount = 1;
+            this.tlpTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTitle.Size = new System.Drawing.Size(888, 75);
+            this.tlpTitle.TabIndex = 3;
+            // 
+            // tlplSection
+            // 
+            this.tlplSection.ColumnCount = 1;
+            this.tlplSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlplSection.Controls.Add(this.lblTitle, 0, 1);
+            this.tlplSection.Controls.Add(this.lblSubtitle, 0, 0);
+            this.tlplSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlplSection.Location = new System.Drawing.Point(69, 0);
+            this.tlplSection.Margin = new System.Windows.Forms.Padding(0);
+            this.tlplSection.Name = "tlplSection";
+            this.tlplSection.RowCount = 2;
+            this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tlplSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlplSection.Size = new System.Drawing.Size(819, 75);
+            this.tlplSection.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblTitle.Location = new System.Drawing.Point(3, 42);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(813, 19);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Current status and availability of Lockers.";
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.ForeColor = System.Drawing.Color.Black;
+            this.lblSubtitle.Location = new System.Drawing.Point(3, 14);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(199, 28);
+            this.lblSubtitle.TabIndex = 0;
+            this.lblSubtitle.Text = "Locker Management";
+            this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picBoxLockerIcon
+            // 
+            this.picBoxLockerIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLockerIcon.BackgroundImage")));
+            this.picBoxLockerIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxLockerIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBoxLockerIcon.Location = new System.Drawing.Point(9, 9);
+            this.picBoxLockerIcon.Margin = new System.Windows.Forms.Padding(9);
+            this.picBoxLockerIcon.Name = "picBoxLockerIcon";
+            this.picBoxLockerIcon.Size = new System.Drawing.Size(51, 57);
+            this.picBoxLockerIcon.TabIndex = 1;
+            this.picBoxLockerIcon.TabStop = false;
+            // 
+            // pnlButton
+            // 
+            this.pnlButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlButton.BackColor = System.Drawing.Color.Transparent;
+            this.pnlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlButton.Controls.Add(this.tlpAddNewLocker);
+            this.pnlButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlButton.ForeColor = System.Drawing.Color.Blue;
+            this.pnlButton.Location = new System.Drawing.Point(1044, 77);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Size = new System.Drawing.Size(90, 23);
+            this.pnlButton.TabIndex = 4;
+            // 
+            // tlpAddNewLocker
+            // 
+            this.tlpAddNewLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.tlpAddNewLocker.ColumnCount = 2;
+            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpAddNewLocker.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpAddNewLocker.Controls.Add(this.picBoxAddSymbol, 0, 0);
+            this.tlpAddNewLocker.Controls.Add(this.lblAddNewLocker, 1, 0);
+            this.tlpAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tlpAddNewLocker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAddNewLocker.Location = new System.Drawing.Point(0, 0);
+            this.tlpAddNewLocker.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpAddNewLocker.Name = "tlpAddNewLocker";
+            this.tlpAddNewLocker.RowCount = 1;
+            this.tlpAddNewLocker.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpAddNewLocker.Size = new System.Drawing.Size(88, 21);
+            this.tlpAddNewLocker.TabIndex = 0;
+            // 
+            // picBoxAddSymbol
+            // 
+            this.picBoxAddSymbol.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picBoxAddSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxAddSymbol.BackgroundImage")));
+            this.picBoxAddSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxAddSymbol.Location = new System.Drawing.Point(4, 5);
+            this.picBoxAddSymbol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxAddSymbol.Name = "picBoxAddSymbol";
+            this.picBoxAddSymbol.Size = new System.Drawing.Size(10, 10);
+            this.picBoxAddSymbol.TabIndex = 2;
+            this.picBoxAddSymbol.TabStop = false;
+            // 
+            // lblAddNewLocker
+            // 
+            this.lblAddNewLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAddNewLocker.AutoSize = true;
+            this.lblAddNewLocker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAddNewLocker.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewLocker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(199)))));
+            this.lblAddNewLocker.Location = new System.Drawing.Point(20, 0);
+            this.lblAddNewLocker.Name = "lblAddNewLocker";
+            this.lblAddNewLocker.Size = new System.Drawing.Size(41, 21);
+            this.lblAddNewLocker.TabIndex = 1;
+            this.lblAddNewLocker.Text = "Add New";
+            // 
             // FrmDisplayLocker
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -408,18 +381,17 @@
             this.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             this.pnlHeading.ResumeLayout(false);
             this.tlpHeading.ResumeLayout(false);
-            this.pnlButton.ResumeLayout(false);
-            this.tlpAddNewLocker.ResumeLayout(false);
-            this.tlpAddNewLocker.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddSymbol)).EndInit();
-            this.pnlTitle.ResumeLayout(false);
+            this.pnlSpaceing.ResumeLayout(false);
+            this.tlpDataGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayLocker)).EndInit();
             this.tlpTitle.ResumeLayout(false);
             this.tlplSection.ResumeLayout(false);
             this.tlplSection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLockerIcon)).EndInit();
-            this.pnlSpaceing.ResumeLayout(false);
-            this.tlpDataGridView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayLocker)).EndInit();
+            this.pnlButton.ResumeLayout(false);
+            this.tlpAddNewLocker.ResumeLayout(false);
+            this.tlpAddNewLocker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxAddSymbol)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,10 +401,6 @@
         private System.Windows.Forms.Panel pnlHeading;
         private System.Windows.Forms.TableLayoutPanel tlpHeading;
         private System.Windows.Forms.Panel pnlSpaceing;
-        private System.Windows.Forms.Panel pnlButton;
-        private System.Windows.Forms.TableLayoutPanel tlpAddNewLocker;
-        private System.Windows.Forms.Label lblAddNewLocker;
-        private System.Windows.Forms.PictureBox picBoxAddSymbol;
         private System.Windows.Forms.TableLayoutPanel tlpDataGridView;
         private System.Windows.Forms.DataGridView dgvDisplayLocker;
         private System.Windows.Forms.Panel pnlFooter;
@@ -440,11 +408,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAllocatedTo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLStatus;
-        private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.TableLayoutPanel tlpTitle;
         private System.Windows.Forms.TableLayoutPanel tlplSection;
-        private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.PictureBox picBoxLockerIcon;
+        private System.Windows.Forms.Panel pnlButton;
+        private System.Windows.Forms.TableLayoutPanel tlpAddNewLocker;
+        private System.Windows.Forms.PictureBox picBoxAddSymbol;
+        private System.Windows.Forms.Label lblAddNewLocker;
     }
 }
