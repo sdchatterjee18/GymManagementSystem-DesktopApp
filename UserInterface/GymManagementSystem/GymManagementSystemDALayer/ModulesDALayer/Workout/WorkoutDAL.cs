@@ -104,7 +104,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Workout
         public DataTable RetrieveWorkoutScheduleRecordsDAL()
         {
             DataTable dataTable =
-                LookupDAL.RetrieveSpecificItem("spRetrieveWorkoutScheduleRecords");
+                LookupDAL.RetrieveSpecificItem("spRetrieveRecordsOfWorkoutScheduleTable");
             return dataTable;
         }
         // Retrieves Workout Schedule records by Workout Day
