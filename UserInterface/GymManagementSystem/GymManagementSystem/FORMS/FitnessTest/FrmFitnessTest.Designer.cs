@@ -298,7 +298,7 @@
             // txtHightInput
             // 
             this.txtHightInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHightInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHightInput.ForeColor = System.Drawing.Color.Gray;
             this.txtHightInput.Location = new System.Drawing.Point(194, 20);
             this.txtHightInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -312,7 +312,7 @@
             // txtWeightInput
             // 
             this.txtWeightInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtWeightInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeightInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWeightInput.ForeColor = System.Drawing.Color.Gray;
             this.txtWeightInput.Location = new System.Drawing.Point(194, 62);
             this.txtWeightInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -326,7 +326,8 @@
             // cmbGenderInput
             // 
             this.cmbGenderInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbGenderInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGenderInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenderInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenderInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbGenderInput.FormattingEnabled = true;
             this.cmbGenderInput.Location = new System.Drawing.Point(194, 101);
@@ -334,14 +335,13 @@
             this.cmbGenderInput.Name = "cmbGenderInput";
             this.cmbGenderInput.Size = new System.Drawing.Size(156, 31);
             this.cmbGenderInput.TabIndex = 2;
-            this.cmbGenderInput.Text = "---select---";
             this.cmbGenderInput.Enter += new System.EventHandler(this.cmbGenderInput_Enter);
             this.cmbGenderInput.Leave += new System.EventHandler(this.cmbGenderInput_Leave);
             // 
             // txtAgeInput
             // 
             this.txtAgeInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAgeInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgeInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAgeInput.ForeColor = System.Drawing.Color.Gray;
             this.txtAgeInput.Location = new System.Drawing.Point(194, 140);
             this.txtAgeInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -355,7 +355,8 @@
             // cmbActivityInput
             // 
             this.cmbActivityInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbActivityInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbActivityInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbActivityInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbActivityInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbActivityInput.FormattingEnabled = true;
             this.cmbActivityInput.Location = new System.Drawing.Point(194, 180);
@@ -363,14 +364,14 @@
             this.cmbActivityInput.Name = "cmbActivityInput";
             this.cmbActivityInput.Size = new System.Drawing.Size(156, 31);
             this.cmbActivityInput.TabIndex = 2;
-            this.cmbActivityInput.Text = "---select---";
             this.cmbActivityInput.Enter += new System.EventHandler(this.cmbActivityInput_Enter);
             this.cmbActivityInput.Leave += new System.EventHandler(this.cmbActivityInput_Leave);
             // 
             // cmbGoalInput
             // 
             this.cmbGoalInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbGoalInput.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGoalInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGoalInput.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGoalInput.ForeColor = System.Drawing.Color.Gray;
             this.cmbGoalInput.FormattingEnabled = true;
             this.cmbGoalInput.Location = new System.Drawing.Point(194, 221);
@@ -378,7 +379,6 @@
             this.cmbGoalInput.Name = "cmbGoalInput";
             this.cmbGoalInput.Size = new System.Drawing.Size(156, 31);
             this.cmbGoalInput.TabIndex = 2;
-            this.cmbGoalInput.Text = "---select---";
             this.cmbGoalInput.Enter += new System.EventHandler(this.cmbGoalInput_Enter);
             this.cmbGoalInput.Leave += new System.EventHandler(this.cmbGoalInput_Leave);
             // 

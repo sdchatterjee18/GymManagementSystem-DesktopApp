@@ -214,7 +214,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequiredCategoryName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRequiredCategoryName.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtRequiredCategoryName.ForeColor = System.Drawing.Color.Gray;
             this.txtRequiredCategoryName.Location = new System.Drawing.Point(29, 0);
             this.txtRequiredCategoryName.Margin = new System.Windows.Forms.Padding(0);
             this.txtRequiredCategoryName.Name = "txtRequiredCategoryName";

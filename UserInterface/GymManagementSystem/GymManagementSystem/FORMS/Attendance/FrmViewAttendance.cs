@@ -33,7 +33,7 @@ namespace GymManagementSystem.FORMS.Attendance
             if (txtViewMemberMobileNumber.Text.Trim() == "Enter Mobile No.")
             {
                 txtViewMemberMobileNumber.Text = "";
-                txtViewMemberMobileNumber.ForeColor = Color.Gray;
+                txtViewMemberMobileNumber.ForeColor = Color.Black;
             }
         }
 
@@ -69,7 +69,7 @@ namespace GymManagementSystem.FORMS.Attendance
             if (txtYearSearch.Text.Trim() == "Enter The Year .")
             {
                 txtYearSearch.Text = "";
-                txtYearSearch.ForeColor = Color.Gray;
+                txtYearSearch.ForeColor = Color.Black;
             }
         }
 

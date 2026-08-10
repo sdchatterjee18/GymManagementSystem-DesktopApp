@@ -124,6 +124,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
 
             return membershipPlansDal;
         }
+
         public static decimal GetPriceByMembershipPlanId(int membershipPlanId)
         {
             SqlParameter[] parameters =

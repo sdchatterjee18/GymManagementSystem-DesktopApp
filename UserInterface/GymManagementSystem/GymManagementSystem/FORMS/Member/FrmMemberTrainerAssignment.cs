@@ -147,5 +147,7 @@ namespace GymManagementSystem.FORMS.Member
         {
             dgvMemberTrainerAssignmentDetails.ClearSelection();
         }
+
+        
     }
 }
