@@ -12,12 +12,12 @@ namespace GymManagementSystem.FORMS.Workout
         int ClickCountTxtExerciseName = 0;
         int ClickCountTxtMuscleType = 0;
 
-
         // Constructor
         public FrmAddNewExercise()
         {
             InitializeComponent();
         }
+        // Exercise Name TextBox Click Event
         private void txtExerciseName_Click(object sender, EventArgs e)
         {
             ClickCountTxtExerciseName =ValidationUI.ClearTextBoxWhenClicked( txtExerciseName,ClickCountTxtExerciseName);
@@ -25,8 +25,7 @@ namespace GymManagementSystem.FORMS.Workout
             txtExerciseName.ForeColor =
                 Color.Black;
         }
-
-
+        // Muscle Type TextBox Click Event
         private void txtMuscleType_Click(object sender, EventArgs e)
         {
             ClickCountTxtMuscleType =ValidationUI.ClearTextBoxWhenClicked( txtMuscleType,ClickCountTxtMuscleType);
@@ -34,8 +33,6 @@ namespace GymManagementSystem.FORMS.Workout
             txtMuscleType.ForeColor =
                 Color.Black;
         }
-
-
         // Submit Exercise
         private void pnlClickSubmitExercise_Click(object sender, EventArgs e)
         {
@@ -65,13 +62,16 @@ namespace GymManagementSystem.FORMS.Workout
                 "Exercise",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            // Add complete
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
-
+        // Submit Exercise
         private void btnClearExercise_Click(object sender, EventArgs e)
         {
             ClearExerciseForm();
         }
-
+        // Clear Button Click Event
         private void ClearExerciseForm()
         {
             txtExerciseName.Clear();
@@ -88,22 +88,17 @@ namespace GymManagementSystem.FORMS.Workout
 
             this.ActiveControl = null;
         }
-
+        // Form Shown Event
         private void FrmAddNewExercise_Shown_1(object sender, EventArgs e)
         {
             this.ActiveControl = null;
         }
-
+        // Form Load Event
         private void FrmAddNewExercise_Load_1(object sender, EventArgs e)
         {
             this.ShowIcon = false;
             this.Text = "";
             this.ActiveControl = null;
         }
-
-       
-
-
-     
     }
 }

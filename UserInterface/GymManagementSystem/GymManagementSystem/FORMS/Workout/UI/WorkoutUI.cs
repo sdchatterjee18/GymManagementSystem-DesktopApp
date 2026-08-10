@@ -53,5 +53,100 @@ namespace GymManagementSystem.FORMS.Workout.UI
                 return ex.Message;
             }
         }
+
+        // Retrieves all workout plan records.
+        public DataTable RetrieveWorkoutPlansUI()
+        {
+            WorkoutBLL workoutBLL = new WorkoutBLL();
+            return workoutBLL.RetrieveWorkoutPlansBLL();
+        }
+        // Retrieves workout plans for ComboBox.
+        public DataTable GetWorkoutPlansForComboBox()
+        {
+            WorkoutBLL workoutBLL = new WorkoutBLL();
+            return workoutBLL.GetWorkoutPlansForComboBox();
+        }
+        // Retrieves specific workout plan details.
+        public DataTable RetrieveSpecificWorkoutPlanUI(int workoutPlanId)
+        {
+            WorkoutBLL workoutBLL = new WorkoutBLL();
+            return workoutBLL.RetrieveSpecificWorkoutPlanBLL(workoutPlanId);
+        }
+        // Insert Workout Plan
+        public string InsertWorkoutPlanUI(string workoutName,string description)
+        {
+            try
+            {
+                WorkoutBLL workoutBLL =
+                    new WorkoutBLL();
+
+                return workoutBLL.InsertWorkoutPlanBLL(
+                    workoutName,
+                    description);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        // Retrieves all workout schedule records.
+        public DataTable RetrieveWorkoutScheduleRecordsUI()
+        {
+            WorkoutBLL workoutBLL = new WorkoutBLL();
+            return workoutBLL.RetrieveWorkoutScheduleRecordsBLL();
+        }
+
+        // Retrieves workout days for ComboBox
+        public List<string> GetWorkoutDaysUI()
+        {
+            WorkoutBLL workoutBLL = new WorkoutBLL();
+            return workoutBLL.GetWorkoutDaysBLL();
+        }
+        // Retrieves Workout Schedule records by Workout Day
+        public DataTable RetrieveWorkoutScheduleByDayUI(string workoutDay)
+        {
+            try
+            {
+                WorkoutBLL workoutBLL = new WorkoutBLL();
+                return workoutBLL.RetrieveWorkoutScheduleByDayBLL(workoutDay);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //Insert workout shedule
+        public string InsertWorkoutScheduleUI(int workoutPlanId,int exerciseId,string workoutDay)
+        {
+            try
+            {
+                WorkoutBLL workoutBLL = new WorkoutBLL();
+
+                return workoutBLL.InsertWorkoutScheduleBLL(
+                    workoutPlanId,
+                    exerciseId,
+                    workoutDay);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        //Delete workoutshedule
+        public string RemoveWorkoutScheduleByIdUI(int workoutScheduleId)
+        {
+            try
+            {
+                WorkoutBLL workoutBLL = new WorkoutBLL();
+
+                return workoutBLL.RemoveWorkoutScheduleByIdBLL(
+                    workoutScheduleId);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }

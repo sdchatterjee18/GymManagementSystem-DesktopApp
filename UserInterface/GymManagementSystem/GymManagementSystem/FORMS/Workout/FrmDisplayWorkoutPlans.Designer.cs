@@ -74,6 +74,7 @@
             this.tlpWorkoutPlanTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
             this.dgvWorkoutPlans = new System.Windows.Forms.DataGridView();
             this.colSerialNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkoutPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpSearchAndAddWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
@@ -84,7 +85,7 @@
             this.tlpSearchWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.btnWorkoutPlanDisplayAll = new System.Windows.Forms.Button();
             this.picSearchWorkoutPlan = new System.Windows.Forms.PictureBox();
-            this.cmbWorkoutplans = new System.Windows.Forms.ComboBox();
+            this.cmbWorkoutplansName = new System.Windows.Forms.ComboBox();
             this.tlpEntireFormExerciseAndWorkoutPlan.SuspendLayout();
             this.pnlAllExerciseForm.SuspendLayout();
             this.tlpAllExercisesEntireForm.SuspendLayout();
@@ -327,6 +328,7 @@
             // cmbExerciseName
             // 
             this.cmbExerciseName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbExerciseName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExerciseName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbExerciseName.FormattingEnabled = true;
             this.cmbExerciseName.Location = new System.Drawing.Point(44, 0);
@@ -652,6 +654,7 @@
             this.dgvWorkoutPlans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutPlans.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo2,
+            this.colWorkoutPlanId,
             this.colWorkoutName,
             this.colDescription});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -705,6 +708,13 @@
             this.colSerialNo2.ReadOnly = true;
             this.colSerialNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSerialNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colWorkoutPlanId
+            // 
+            this.colWorkoutPlanId.HeaderText = "WorkoutPlan Id";
+            this.colWorkoutPlanId.Name = "colWorkoutPlanId";
+            this.colWorkoutPlanId.ReadOnly = true;
+            this.colWorkoutPlanId.Visible = false;
             // 
             // colWorkoutName
             // 
@@ -818,7 +828,7 @@
             this.tlpSearchWorkoutPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.34561F));
             this.tlpSearchWorkoutPlan.Controls.Add(this.btnWorkoutPlanDisplayAll, 2, 0);
             this.tlpSearchWorkoutPlan.Controls.Add(this.picSearchWorkoutPlan, 0, 0);
-            this.tlpSearchWorkoutPlan.Controls.Add(this.cmbWorkoutplans, 1, 0);
+            this.tlpSearchWorkoutPlan.Controls.Add(this.cmbWorkoutplansName, 1, 0);
             this.tlpSearchWorkoutPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSearchWorkoutPlan.Location = new System.Drawing.Point(3, 2);
             this.tlpSearchWorkoutPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -845,6 +855,7 @@
             this.btnWorkoutPlanDisplayAll.TabIndex = 2;
             this.btnWorkoutPlanDisplayAll.Text = "Display All";
             this.btnWorkoutPlanDisplayAll.UseVisualStyleBackColor = false;
+            this.btnWorkoutPlanDisplayAll.Click += new System.EventHandler(this.btnWorkoutPlanDisplayAll_Click);
             // 
             // picSearchWorkoutPlan
             // 
@@ -858,17 +869,19 @@
             this.picSearchWorkoutPlan.TabIndex = 3;
             this.picSearchWorkoutPlan.TabStop = false;
             // 
-            // cmbWorkoutplans
+            // cmbWorkoutplansName
             // 
-            this.cmbWorkoutplans.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmbWorkoutplans.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbWorkoutplans.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbWorkoutplans.FormattingEnabled = true;
-            this.cmbWorkoutplans.Location = new System.Drawing.Point(44, 0);
-            this.cmbWorkoutplans.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbWorkoutplans.Name = "cmbWorkoutplans";
-            this.cmbWorkoutplans.Size = new System.Drawing.Size(191, 28);
-            this.cmbWorkoutplans.TabIndex = 4;
+            this.cmbWorkoutplansName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbWorkoutplansName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWorkoutplansName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWorkoutplansName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbWorkoutplansName.FormattingEnabled = true;
+            this.cmbWorkoutplansName.Location = new System.Drawing.Point(44, 0);
+            this.cmbWorkoutplansName.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbWorkoutplansName.Name = "cmbWorkoutplansName";
+            this.cmbWorkoutplansName.Size = new System.Drawing.Size(191, 28);
+            this.cmbWorkoutplansName.TabIndex = 4;
+            this.cmbWorkoutplansName.SelectionChangeCommitted += new System.EventHandler(this.cmbWorkoutplansName_SelectionChangeCommitted);
             // 
             // FrmDisplayWorkoutPlans
             // 
@@ -954,15 +967,16 @@
         private System.Windows.Forms.TableLayoutPanel tlpSearchWorkoutPlan;
         private System.Windows.Forms.Button btnWorkoutPlanDisplayAll;
         private System.Windows.Forms.PictureBox picSearchWorkoutPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
-        private System.Windows.Forms.ComboBox cmbWorkoutplans;
+        private System.Windows.Forms.ComboBox cmbWorkoutplansName;
         private System.Windows.Forms.ComboBox cmbExerciseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExerciseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMuscleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExercisesId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutPlanId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
 
 
     }

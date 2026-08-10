@@ -13,6 +13,7 @@ namespace GymManagementSystemDALayer.Common
 {
     public class LookupDAL
     {
+        // Retrieves data from the database for populating ComboBox controls.
         public static DataTable GetComboBoxDetails(string spName)
         {
             DataTable dataTable = new DataTable();
@@ -46,6 +47,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+        // Retrieves data by executing the specified stored procedure.
         public static DataTable RetrieveSpecificItem(string spName)
         {
             DataTable dataTable = null;
@@ -80,6 +82,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+        // Updates a specific record by executing the specified stored procedure
         public static string UpdateSpecificItem(string spName, SqlParameter[] sqlParameter)
         {
             string UpdateMessege = null;
@@ -115,6 +118,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+        // Deactivates or changes the status of a specific record using its ID.
         public static DataTable DeactivateSpecificItemById(string spName, int id, string parameterName)
         {
             DataTable dataTable = null;
@@ -146,6 +150,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+        // Retrieves specific record details using an ID.
         public static DataTable RetrieveSpecificDetailsById(string spName,int id,string parameterId)
         {
             DataTable dataTable = null;
@@ -176,6 +181,7 @@ namespace GymManagementSystemDALayer.Common
                     sqlConnection.Close();
             } 
         }
+        // Inserts a new record by executing the specified stored procedure
         public static string InsertSpecificItem(string spName, SqlParameter[] sqlParameter)
         {
             SqlConnection sqlConnection = null;
@@ -206,6 +212,7 @@ namespace GymManagementSystemDALayer.Common
                 }
             }
         }
+        // Retrieves a single value from the database by executing
         public static object GetSingleData(string spName, SqlParameter[] parameters)
         {
             SqlConnection sqlConnection = null;
@@ -223,9 +230,44 @@ namespace GymManagementSystemDALayer.Common
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return null;
+            }
+            finally
+            {
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        // Retrieves specific records by executing the specified stored procedure
+        public static DataTable RetrieveSpecificDetails(string spName,SqlParameter[] sqlParameters)
+        {
+            DataTable dataTable = null;
+            SqlConnection sqlConnection = null;
+
+            try
+            {
+                using (sqlConnection = DBconnection.GetSqlConnection())
+                {
+                    using (SqlDataAdapter sqlDataAdapter =
+                        new SqlDataAdapter(spName, sqlConnection))
+                    {
+                        sqlDataAdapter.SelectCommand.CommandType =
+                            CommandType.StoredProcedure;
+                        sqlDataAdapter.SelectCommand.Parameters.AddRange(
+                            sqlParameters);
+                        dataTable = new DataTable();
+                        sqlDataAdapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             finally
             {
