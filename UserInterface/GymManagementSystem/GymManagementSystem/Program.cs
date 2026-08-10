@@ -21,6 +21,7 @@ using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Locker;
 using GymManagementSystem.FORMS.MembershipPlan;
+using GymManagementSystem.FormsSuperAdmin.Settings;
 namespace GymManagementSystem
 {
     static class Program
@@ -32,8 +33,8 @@ namespace GymManagementSystem
         static void Main()
         {
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmDisplayShift());
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());
@@ -46,7 +47,6 @@ namespace GymManagementSystem
             //Application.Run(new FrmMemberRegistration());
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmDisplayMembershipPlan());
-            //Application.Run(new FrmDisplayWorkoutPlans());
 
         }
     }
