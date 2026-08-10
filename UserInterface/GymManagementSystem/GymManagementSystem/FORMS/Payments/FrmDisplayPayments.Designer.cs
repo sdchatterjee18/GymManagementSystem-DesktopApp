@@ -52,7 +52,7 @@
             this.tblSearchArea = new System.Windows.Forms.TableLayoutPanel();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtEnterPlanName = new System.Windows.Forms.TextBox();
+            this.pnlSearchImageHolder = new System.Windows.Forms.Panel();
             this.picSearchIcon = new System.Windows.Forms.PictureBox();
             this.btnDisplayAll = new System.Windows.Forms.Button();
             this.tlpPaymentsEntireForm.SuspendLayout();
@@ -349,20 +349,6 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtEnterPlanName
-            // 
-            this.txtEnterPlanName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtEnterPlanName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEnterPlanName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnterPlanName.ForeColor = System.Drawing.Color.Gray;
-            this.txtEnterPlanName.Location = new System.Drawing.Point(44, 6);
-            this.txtEnterPlanName.Margin = new System.Windows.Forms.Padding(0);
-            this.txtEnterPlanName.Name = "txtEnterPlanName";
-            this.txtEnterPlanName.Size = new System.Drawing.Size(316, 30);
-            this.txtEnterPlanName.TabIndex = 3;
-            this.txtEnterPlanName.Text = " Enter mobile no. ";
-            this.txtEnterPlanName.Click += new System.EventHandler(this.txtEnterPlanName_Click);
             // 
             // picSearchIcon
             // 
