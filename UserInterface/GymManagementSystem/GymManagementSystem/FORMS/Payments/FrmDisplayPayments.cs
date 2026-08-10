@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.Payments.UI;
 
 namespace GymManagementSystem.FORMS.Payments
 {
@@ -20,55 +21,31 @@ namespace GymManagementSystem.FORMS.Payments
 
         private void FrmDisplayPayments_Load(object sender, EventArgs e)
         {
-
-
-           // LoadSubscriptionPayments();
+            LoadSubscriptionPaymentDetails();
             dgvPaymentsManagement.ClearSelection();
         }
 
-        //private void LoadSubscriptionPayments()
-        //{
-        //    string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+        //Retrieve Data From PaymentUI 
 
-        //    try
-        //    {
-        //        using (SqlConnection con = new SqlConnection(CS))
-        //        {
-        //            con.Open();
+        private void LoadSubscriptionPaymentDetails()
+        {
+            PaymentUI paymentUI = new PaymentUI();
+            List<PaymentUI> PaymentDetails = paymentUI.RetrieveAllMemberSubscriptionPaymentDetailsUI();
+            int SerialNo = 1;
+            foreach (PaymentUI PaymentDetail in PaymentDetails)
+            {
+                dgvPaymentsManagement.Rows.Add
+                    (
+                    SerialNo++,
+                    PaymentDetail.MemberShipPlanName,
+                    PaymentDetail.PaymentDate,
+                    PaymentDetail.PaymentMethod,
+                    PaymentDetail.Amount,
+                    PaymentDetail.FeesType
+                    );
+            }
 
-        //            using (SqlCommand cmd = new SqlCommand("spRetrieveSubscriptionPaymentDetails", con))
-        //            {
-        //                cmd.CommandType = CommandType.StoredProcedure;
-
-        //                using (SqlDataReader dr = cmd.ExecuteReader())
-        //                {
-        //                    dgvPaymentsManagement.Rows.Clear();
-
-        //                    int serialNo = 1;
-
-        //                    while (dr.Read())
-        //                    {
-        //                        dgvPaymentsManagement.Rows.Add(
-        //                            serialNo,
-        //                            dr["MemberFullName"].ToString(),
-        //                            dr["MembershipPlanName"].ToString(),
-        //                            Convert.ToDateTime(dr["PaymentDate"]).ToString("dd-MM-yyyy"),
-        //                            dr["PaymentMethod"].ToString(),
-        //                            Convert.ToDecimal(dr["Amount"]),
-        //                            dr["FeesType"].ToString()
-        //                        );
-
-        //                        serialNo++;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+        }
 
         private void dgvPaymentsManagement_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
