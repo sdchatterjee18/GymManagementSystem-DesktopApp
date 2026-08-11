@@ -106,34 +106,44 @@ namespace GymManagementSystem.FORMS.Dashboard
         private void LoadFreeTrainerByShift()
         {
             DashboardUI dashboardUI = new DashboardUI();
+
             DataTable dataTable =
                 dashboardUI.RetrieveFreeTrainerByShiftUI();
+
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
+                    int shiftId =
+                        Convert.ToInt32(row["ShiftId"]);
+
                     string shiftName =
                         row["ShiftName"].ToString();
+
                     string totalFreeTrainer =
                         row["TotalFreeTrainer"].ToString();
 
-                    if (shiftName == "Early Morning")
+                    if (shiftId == 1)
                     {
+                        lblEarlyMorning.Text = shiftName;
                         lblEarlyMorningValue.Text =
                             totalFreeTrainer;
                     }
-                    else if (shiftName == "Morning")
+                    else if (shiftId == 2)
                     {
+                        lblMorning.Text = shiftName;
                         lblMorningValue.Text =
                             totalFreeTrainer;
                     }
-                    else if (shiftName == "Afternoon")
+                    else if (shiftId == 3)
                     {
+                        lblAfternoon.Text = shiftName;
                         lblAfternoonValue.Text =
                             totalFreeTrainer;
                     }
-                    else if (shiftName == "Evening")
+                    else if (shiftId == 4)
                     {
+                        lblEvening.Text = shiftName;
                         lblEveningValue.Text =
                             totalFreeTrainer;
                     }
