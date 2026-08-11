@@ -117,6 +117,7 @@ namespace GymManagementSystem.FORMS.Payments
             txtPhoneNo.Clear();
             txtPhoneNo.ForeColor = Color.Black;
             txtPhoneNo.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dgvPaymentsManagement.ClearSelection();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -125,6 +126,7 @@ namespace GymManagementSystem.FORMS.Payments
             dgvPaymentsManagement.Rows.Clear();
             dgvPaymentsManagement.ReadOnly = false;
             LoadSpecificMemberSubscriptionPaymentDetails();
+            dgvPaymentsManagement.ClearSelection();
         }
 
         private void btnDisplayAll_Click(object sender, EventArgs e)
@@ -133,7 +135,39 @@ namespace GymManagementSystem.FORMS.Payments
             dgvPaymentsManagement.ReadOnly = false;
             txtPhoneNo.Clear();
             LoadSubscriptionPaymentDetails();
+            dgvPaymentsManagement.ClearSelection();
         }
+
+        private void tlpPaymentsEntireForm_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
+        private void tlpPaymentsHeader_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
+        private void tlpPaymentsTitle_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
+        private void picPayment_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
+        private void tblSearchArea_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
+        private void pnlSearchImageHolder_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.ClearSelection();
+        }
+
 
 
 

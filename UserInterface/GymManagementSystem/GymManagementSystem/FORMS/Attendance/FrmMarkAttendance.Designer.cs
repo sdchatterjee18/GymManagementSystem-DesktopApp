@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMarkAttendance));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpMarkAttendanceHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picMarkAttendanceMark = new System.Windows.Forms.PictureBox();
             this.tlpAttendanceTitle = new System.Windows.Forms.TableLayoutPanel();
@@ -77,6 +76,7 @@
             this.tlpMarkAttendanceHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMarkAttendanceHeader.Size = new System.Drawing.Size(1032, 62);
             this.tlpMarkAttendanceHeader.TabIndex = 9;
+            this.tlpMarkAttendanceHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpMarkAttendanceHeader_Paint);
             // 
             // picMarkAttendanceMark
             // 
@@ -88,6 +88,7 @@
             this.picMarkAttendanceMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMarkAttendanceMark.TabIndex = 0;
             this.picMarkAttendanceMark.TabStop = false;
+            this.picMarkAttendanceMark.Click += new System.EventHandler(this.picMarkAttendanceMark_Click);
             // 
             // tlpAttendanceTitle
             // 
@@ -103,6 +104,7 @@
             this.tlpAttendanceTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.48387F));
             this.tlpAttendanceTitle.Size = new System.Drawing.Size(356, 62);
             this.tlpAttendanceTitle.TabIndex = 1;
+            this.tlpAttendanceTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAttendanceTitle_Paint);
             // 
             // lblInputMarkAttendance
             // 
@@ -115,6 +117,7 @@
             this.lblInputMarkAttendance.Size = new System.Drawing.Size(181, 19);
             this.lblInputMarkAttendance.TabIndex = 3;
             this.lblInputMarkAttendance.Text = "Input Member\'s Attendance";
+            this.lblInputMarkAttendance.Click += new System.EventHandler(this.lblInputMarkAttendance_Click);
             // 
             // lblMarkAttendance
             // 
@@ -126,6 +129,7 @@
             this.lblMarkAttendance.Size = new System.Drawing.Size(264, 28);
             this.lblMarkAttendance.TabIndex = 2;
             this.lblMarkAttendance.Text = "Mark Member\'s Attendance";
+            this.lblMarkAttendance.Click += new System.EventHandler(this.lblMarkAttendance_Click);
             // 
             // tlpMarkAttendanceEntireForm
             // 
@@ -150,28 +154,27 @@
             this.tlpMarkAttendanceEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.317221F));
             this.tlpMarkAttendanceEntireForm.Size = new System.Drawing.Size(1151, 750);
             this.tlpMarkAttendanceEntireForm.TabIndex = 0;
+            this.tlpMarkAttendanceEntireForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpMarkAttendanceEntireForm_Paint);
             // 
             // dgvMarkAttendance
             // 
             this.dgvMarkAttendance.AllowUserToAddRows = false;
             this.dgvMarkAttendance.AllowUserToDeleteRows = false;
             this.dgvMarkAttendance.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            this.dgvMarkAttendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMarkAttendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dgvMarkAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarkAttendance.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvMarkAttendance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMarkAttendance.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarkAttendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMarkAttendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dgvMarkAttendance.ColumnHeadersHeight = 50;
             this.dgvMarkAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMarkAttendance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -180,48 +183,47 @@
             this.colPhoneNo,
             this.colShiftName,
             this.colMarkAttendance});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMarkAttendance.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMarkAttendance.DefaultCellStyle = dataGridViewCellStyle49;
             this.dgvMarkAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarkAttendance.EnableHeadersVisualStyles = false;
             this.dgvMarkAttendance.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvMarkAttendance.Location = new System.Drawing.Point(60, 164);
-            this.dgvMarkAttendance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMarkAttendance.Location = new System.Drawing.Point(61, 166);
+            this.dgvMarkAttendance.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMarkAttendance.MultiSelect = false;
             this.dgvMarkAttendance.Name = "dgvMarkAttendance";
             this.dgvMarkAttendance.ReadOnly = true;
             this.dgvMarkAttendance.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMarkAttendance.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarkAttendance.RowHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvMarkAttendance.RowHeadersVisible = false;
             this.dgvMarkAttendance.RowHeadersWidth = 50;
             this.dgvMarkAttendance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.dgvMarkAttendance.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.dgvMarkAttendance.RowTemplate.Height = 50;
-            this.dgvMarkAttendance.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarkAttendance.RowTemplate.Height = 40;
+            this.dgvMarkAttendance.RowTemplate.ReadOnly = true;
             this.dgvMarkAttendance.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMarkAttendance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMarkAttendance.Size = new System.Drawing.Size(1029, 543);
+            this.dgvMarkAttendance.Size = new System.Drawing.Size(1027, 539);
             this.dgvMarkAttendance.TabIndex = 18;
             // 
             // colSerialNo
             // 
             this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle48;
             this.colSerialNo.FillWeight = 90F;
             this.colSerialNo.HeaderText = "Sl No.";
             this.colSerialNo.Name = "colSerialNo";
@@ -291,6 +293,7 @@
             this.tlpMarkAttendanceSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMarkAttendanceSearchBar.Size = new System.Drawing.Size(1029, 53);
             this.tlpMarkAttendanceSearchBar.TabIndex = 19;
+            this.tlpMarkAttendanceSearchBar.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpMarkAttendanceSearchBar_Paint);
             // 
             // btnMarkAttendanceSearch
             // 
@@ -308,6 +311,7 @@
             this.btnMarkAttendanceSearch.TabIndex = 2;
             this.btnMarkAttendanceSearch.Text = "Search";
             this.btnMarkAttendanceSearch.UseVisualStyleBackColor = false;
+            this.btnMarkAttendanceSearch.Click += new System.EventHandler(this.btnMarkAttendanceSearch_Click);
             // 
             // picMarkAttendanceSearch
             // 
@@ -320,6 +324,7 @@
             this.picMarkAttendanceSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMarkAttendanceSearch.TabIndex = 3;
             this.picMarkAttendanceSearch.TabStop = false;
+            this.picMarkAttendanceSearch.Click += new System.EventHandler(this.picMarkAttendanceSearch_Click);
             // 
             // txtMarkMemberMobileNumber
             // 
@@ -333,6 +338,7 @@
             this.txtMarkMemberMobileNumber.Size = new System.Drawing.Size(316, 30);
             this.txtMarkMemberMobileNumber.TabIndex = 5;
             this.txtMarkMemberMobileNumber.Text = " Enter Mobile No.";
+            this.txtMarkMemberMobileNumber.TextChanged += new System.EventHandler(this.txtMarkMemberMobileNumber_TextChanged);
             // 
             // cmbMarkAttendanceShiftSearch
             // 
@@ -346,6 +352,7 @@
             this.cmbMarkAttendanceShiftSearch.Name = "cmbMarkAttendanceShiftSearch";
             this.cmbMarkAttendanceShiftSearch.Size = new System.Drawing.Size(316, 31);
             this.cmbMarkAttendanceShiftSearch.TabIndex = 4;
+            this.cmbMarkAttendanceShiftSearch.SelectedIndexChanged += new System.EventHandler(this.cmbMarkAttendanceShiftSearch_SelectedIndexChanged);
             // 
             // FrmMarkAttendance
             // 

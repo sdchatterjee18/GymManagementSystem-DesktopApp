@@ -209,6 +209,7 @@ namespace GymManagementSystem.FORMS.Workout
         // Add New Workout Schedule Panel Click Event
         private void pnlClickToAddNewWorkoutShedule_Click(object sender, EventArgs e)
         {
+            dgvWorkoutShedule.ClearSelection();
             using (FrmAddNewWorkoutSchedule frmAddNewWorkoutSchedule =
                 new FrmAddNewWorkoutSchedule())
             {
@@ -224,7 +225,7 @@ namespace GymManagementSystem.FORMS.Workout
 
                     cmbWorkoutDaySearch.SelectedIndex = -1;
 
-                    dgvWorkoutShedule.ClearSelection();
+                   
                 }
             }
         }
@@ -356,6 +357,27 @@ namespace GymManagementSystem.FORMS.Workout
 
                 e.Handled = true;
             }
+        }
+
+        private void tlpAllWorkoutSheduleTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblAllWorkoutShedule_Click(object sender, EventArgs e)
+        {
+            dgvWorkoutShedule.ClearSelection();
+
+        }
+
+        private void lblViewAllWorkoutSheduleDetails_Click(object sender, EventArgs e)
+        {
+            dgvWorkoutShedule.ClearSelection();
+        }
+
+        private void cmbWorkoutDaySearch_Click(object sender, EventArgs e)
+        {
+            dgvWorkoutShedule.ClearSelection();
         }
 
     }

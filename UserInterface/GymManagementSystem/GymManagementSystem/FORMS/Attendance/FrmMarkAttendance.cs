@@ -58,5 +58,60 @@ namespace GymManagementSystem.FORMS.Attendance
                 txtMarkMemberMobileNumber.ForeColor = Color.Gray;
             }
         }
+
+        private void tlpMarkAttendanceEntireForm_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void picMarkAttendanceMark_Click(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void lblMarkAttendance_Click(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void lblInputMarkAttendance_Click(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void tlpAttendanceTitle_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void tlpMarkAttendanceHeader_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void tlpMarkAttendanceSearchBar_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void picMarkAttendanceSearch_Click(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void cmbMarkAttendanceShiftSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void txtMarkMemberMobileNumber_TextChanged(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
+
+        private void btnMarkAttendanceSearch_Click(object sender, EventArgs e)
+        {
+            dgvMarkAttendance.ClearSelection();
+        }
     }
 }

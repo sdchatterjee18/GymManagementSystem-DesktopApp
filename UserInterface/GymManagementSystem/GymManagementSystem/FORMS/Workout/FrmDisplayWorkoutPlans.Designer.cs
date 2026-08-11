@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisplayWorkoutPlans));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpEntireFormExerciseAndWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlAllExerciseForm = new System.Windows.Forms.Panel();
             this.tlpAllExercisesEntireForm = new System.Windows.Forms.TableLayoutPanel();
@@ -69,13 +67,10 @@
             this.tlpAllWorkoutPlansHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picWorkoutPlans = new System.Windows.Forms.PictureBox();
             this.tlpAllMembershipPlanTitle = new System.Windows.Forms.TableLayoutPanel();
+            this.lblViewWorkoutPlans = new System.Windows.Forms.Label();
             this.lblAllWorkoutPlans = new System.Windows.Forms.Label();
             this.tlpWorkoutPlanTableAndSearch = new System.Windows.Forms.TableLayoutPanel();
             this.dgvWorkoutPlans = new System.Windows.Forms.DataGridView();
-            this.colSerialNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWorkoutPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpSearchAndAddWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickToAddNewWorkoutPlan = new System.Windows.Forms.Panel();
             this.tlpAddNewWorkoutPlan = new System.Windows.Forms.TableLayoutPanel();
@@ -85,7 +80,10 @@
             this.btnWorkoutPlanDisplayAll = new System.Windows.Forms.Button();
             this.picSearchWorkoutPlan = new System.Windows.Forms.PictureBox();
             this.cmbWorkoutplansName = new System.Windows.Forms.ComboBox();
-            this.lblViewWorkoutPlans = new System.Windows.Forms.Label();
+            this.colSerialNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkoutPlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWorkoutName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpEntireFormExerciseAndWorkoutPlan.SuspendLayout();
             this.pnlAllExerciseForm.SuspendLayout();
             this.tlpAllExercisesEntireForm.SuspendLayout();
@@ -405,22 +403,19 @@
             this.dgvExerciseTable.AllowUserToAddRows = false;
             this.dgvExerciseTable.AllowUserToDeleteRows = false;
             this.dgvExerciseTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.dgvExerciseTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.dgvExerciseTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExerciseTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExerciseTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvExerciseTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExerciseTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExerciseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvExerciseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvExerciseTable.ColumnHeadersHeight = 50;
             this.dgvExerciseTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExerciseTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -428,40 +423,39 @@
             this.colExerciseName,
             this.colMuscleType,
             this.colExercisesId});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExerciseTable.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExerciseTable.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExerciseTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvExerciseTable.EnableHeadersVisualStyles = false;
             this.dgvExerciseTable.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvExerciseTable.Location = new System.Drawing.Point(3, 2);
-            this.dgvExerciseTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExerciseTable.Location = new System.Drawing.Point(4, 4);
+            this.dgvExerciseTable.Margin = new System.Windows.Forms.Padding(4);
             this.dgvExerciseTable.MultiSelect = false;
             this.dgvExerciseTable.Name = "dgvExerciseTable";
             this.dgvExerciseTable.ReadOnly = true;
             this.dgvExerciseTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExerciseTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExerciseTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExerciseTable.RowHeadersVisible = false;
             this.dgvExerciseTable.RowHeadersWidth = 50;
             this.dgvExerciseTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            this.dgvExerciseTable.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvExerciseTable.RowTemplate.Height = 40;
-            this.dgvExerciseTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExerciseTable.RowTemplate.ReadOnly = true;
             this.dgvExerciseTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvExerciseTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvExerciseTable.Size = new System.Drawing.Size(664, 264);
+            this.dgvExerciseTable.Size = new System.Drawing.Size(662, 260);
             this.dgvExerciseTable.TabIndex = 11;
             this.dgvExerciseTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvExerciseTable_CellFormatting);
             this.dgvExerciseTable.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExerciseTable_CellMouseEnter);
@@ -471,8 +465,8 @@
             // 
             this.colSerialNo1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo1.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo1.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSerialNo1.FillWeight = 90F;
             this.colSerialNo1.HeaderText = "Sl No.";
             this.colSerialNo1.Name = "colSerialNo1";
@@ -587,12 +581,23 @@
             this.tlpAllMembershipPlanTitle.TabIndex = 13;
             this.tlpAllMembershipPlanTitle.Click += new System.EventHandler(this.tlpExerciseHeader_Click);
             // 
+            // lblViewWorkoutPlans
+            // 
+            this.lblViewWorkoutPlans.AutoSize = true;
+            this.lblViewWorkoutPlans.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewWorkoutPlans.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblViewWorkoutPlans.Location = new System.Drawing.Point(3, 33);
+            this.lblViewWorkoutPlans.Name = "lblViewWorkoutPlans";
+            this.lblViewWorkoutPlans.Size = new System.Drawing.Size(239, 19);
+            this.lblViewWorkoutPlans.TabIndex = 3;
+            this.lblViewWorkoutPlans.Text = "View All Typr of Workout Plans details";
+            // 
             // lblAllWorkoutPlans
             // 
             this.lblAllWorkoutPlans.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAllWorkoutPlans.AutoSize = true;
             this.lblAllWorkoutPlans.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllWorkoutPlans.Location = new System.Drawing.Point(3, 8);
+            this.lblAllWorkoutPlans.Location = new System.Drawing.Point(3, 5);
             this.lblAllWorkoutPlans.Name = "lblAllWorkoutPlans";
             this.lblAllWorkoutPlans.Size = new System.Drawing.Size(174, 28);
             this.lblAllWorkoutPlans.TabIndex = 2;
@@ -620,22 +625,19 @@
             this.dgvWorkoutPlans.AllowUserToAddRows = false;
             this.dgvWorkoutPlans.AllowUserToDeleteRows = false;
             this.dgvWorkoutPlans.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutPlans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.dgvWorkoutPlans.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvWorkoutPlans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvWorkoutPlans.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvWorkoutPlans.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvWorkoutPlans.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWorkoutPlans.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutPlans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvWorkoutPlans.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvWorkoutPlans.ColumnHeadersHeight = 50;
             this.dgvWorkoutPlans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvWorkoutPlans.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -643,85 +645,43 @@
             this.colWorkoutPlanId,
             this.colWorkoutName,
             this.colDescription});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWorkoutPlans.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWorkoutPlans.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvWorkoutPlans.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkoutPlans.EnableHeadersVisualStyles = false;
             this.dgvWorkoutPlans.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvWorkoutPlans.Location = new System.Drawing.Point(3, 2);
-            this.dgvWorkoutPlans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvWorkoutPlans.Location = new System.Drawing.Point(4, 4);
+            this.dgvWorkoutPlans.Margin = new System.Windows.Forms.Padding(4);
             this.dgvWorkoutPlans.MultiSelect = false;
             this.dgvWorkoutPlans.Name = "dgvWorkoutPlans";
             this.dgvWorkoutPlans.ReadOnly = true;
             this.dgvWorkoutPlans.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkoutPlans.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutPlans.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvWorkoutPlans.RowHeadersVisible = false;
             this.dgvWorkoutPlans.RowHeadersWidth = 50;
             this.dgvWorkoutPlans.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkoutPlans.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvWorkoutPlans.RowTemplate.Height = 40;
-            this.dgvWorkoutPlans.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkoutPlans.RowTemplate.ReadOnly = true;
             this.dgvWorkoutPlans.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvWorkoutPlans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvWorkoutPlans.Size = new System.Drawing.Size(664, 271);
+            this.dgvWorkoutPlans.Size = new System.Drawing.Size(662, 267);
             this.dgvWorkoutPlans.TabIndex = 13;
             this.dgvWorkoutPlans.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvWorkoutPlans_CellFormatting);
             this.dgvWorkoutPlans.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutPlans_CellMouseEnter);
             this.dgvWorkoutPlans.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkoutPlans_CellMouseLeave);
-            // 
-            // colSerialNo2
-            // 
-            this.colSerialNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSerialNo2.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo2.DefaultCellStyle = dataGridViewCellStyle21;
-            this.colSerialNo2.FillWeight = 90F;
-            this.colSerialNo2.HeaderText = "Sl No.";
-            this.colSerialNo2.Name = "colSerialNo2";
-            this.colSerialNo2.ReadOnly = true;
-            this.colSerialNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colWorkoutPlanId
-            // 
-            this.colWorkoutPlanId.HeaderText = "WorkoutPlan Id";
-            this.colWorkoutPlanId.Name = "colWorkoutPlanId";
-            this.colWorkoutPlanId.ReadOnly = true;
-            this.colWorkoutPlanId.Visible = false;
-            // 
-            // colWorkoutName
-            // 
-            this.colWorkoutName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colWorkoutName.DataPropertyName = "WorkoutName";
-            this.colWorkoutName.FillWeight = 180F;
-            this.colWorkoutName.HeaderText = "Workout Name ";
-            this.colWorkoutName.Name = "colWorkoutName";
-            this.colWorkoutName.ReadOnly = true;
-            this.colWorkoutName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colWorkoutName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colDescription
-            // 
-            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescription.DataPropertyName = "Description";
-            this.colDescription.HeaderText = "Description ";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            this.colDescription.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tlpSearchAndAddWorkoutPlan
             // 
@@ -869,16 +829,46 @@
             this.cmbWorkoutplansName.TabIndex = 4;
             this.cmbWorkoutplansName.SelectionChangeCommitted += new System.EventHandler(this.cmbWorkoutplansName_SelectionChangeCommitted);
             // 
-            // lblViewWorkoutPlans
+            // colSerialNo2
             // 
-            this.lblViewWorkoutPlans.AutoSize = true;
-            this.lblViewWorkoutPlans.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblViewWorkoutPlans.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblViewWorkoutPlans.Location = new System.Drawing.Point(3, 31);
-            this.lblViewWorkoutPlans.Name = "lblViewWorkoutPlans";
-            this.lblViewWorkoutPlans.Size = new System.Drawing.Size(239, 18);
-            this.lblViewWorkoutPlans.TabIndex = 3;
-            this.lblViewWorkoutPlans.Text = "View All Typr of Workout Plans details";
+            this.colSerialNo2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSerialNo2.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colSerialNo2.FillWeight = 90F;
+            this.colSerialNo2.HeaderText = "Sl No.";
+            this.colSerialNo2.Name = "colSerialNo2";
+            this.colSerialNo2.ReadOnly = true;
+            this.colSerialNo2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colWorkoutPlanId
+            // 
+            this.colWorkoutPlanId.HeaderText = "WorkoutPlan Id";
+            this.colWorkoutPlanId.Name = "colWorkoutPlanId";
+            this.colWorkoutPlanId.ReadOnly = true;
+            this.colWorkoutPlanId.Visible = false;
+            // 
+            // colWorkoutName
+            // 
+            this.colWorkoutName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colWorkoutName.DataPropertyName = "WorkoutName";
+            this.colWorkoutName.FillWeight = 180F;
+            this.colWorkoutName.HeaderText = "Workout Name ";
+            this.colWorkoutName.Name = "colWorkoutName";
+            this.colWorkoutName.ReadOnly = true;
+            this.colWorkoutName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colWorkoutName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colDescription
+            // 
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.DataPropertyName = "Description";
+            this.colDescription.HeaderText = "Description ";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            this.colDescription.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FrmDisplayWorkoutPlans
             // 
@@ -946,7 +936,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpSearchExercise;
         private System.Windows.Forms.Button btnExerciseDisplayAll;
         private System.Windows.Forms.PictureBox picSearchExercise;
-        private System.Windows.Forms.DataGridView dgvExerciseTable;
         private System.Windows.Forms.Panel pnlAllWorkoutPlanForm;
         private System.Windows.Forms.TableLayoutPanel tlpWorkoutPlanEntireForm;
         private System.Windows.Forms.TableLayoutPanel tlpAllWorkoutPlansHeader;
@@ -969,11 +958,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colExerciseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMuscleType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExercisesId;
+        private System.Windows.Forms.Label lblViewWorkoutPlans;
+        private System.Windows.Forms.DataGridView dgvExerciseTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutPlanId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWorkoutName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
-        private System.Windows.Forms.Label lblViewWorkoutPlans;
 
 
     }

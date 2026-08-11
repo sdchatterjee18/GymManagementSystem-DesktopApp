@@ -20,11 +20,12 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmMemberTrainerAssignment_Load(object sender, EventArgs e)
         {
-
+            
             txtSearchBar.Select(0, 0);
             txtSearchBar.DeselectAll(); 
 
             RetrieveMemberTrainerDetails();
+            dgvMemberTrainerAssignmentDetails.ClearSelection();
         }
 
         private void txtSearchBar_Click(object sender, EventArgs e)

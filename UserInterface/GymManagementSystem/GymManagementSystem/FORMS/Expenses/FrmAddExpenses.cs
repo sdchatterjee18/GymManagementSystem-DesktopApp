@@ -74,6 +74,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
+            dgvExpenses.ClearSelection(); 
             int AmountClick = 1;
             if (AmountClick == 1)
             {
@@ -85,11 +86,12 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void cmbCateogory_Click(object sender, EventArgs e)
         {
-            
+            dgvExpenses.ClearSelection();
         }
 
         private void txtExpenseDefination_Click(object sender, EventArgs e)
         {
+            dgvExpenses.ClearSelection();
             int ClickDefination = 1;
             if (ClickDefination == 1)
             {
@@ -136,6 +138,7 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
             frmAddExpenseCategory.ShowDialog();
+            dgvExpenses.ClearSelection();
         }
 
         private void tlpAddButton_MouseEnter(object sender, EventArgs e)
@@ -146,6 +149,11 @@ namespace GymManagementSystem.FORMS.Expenses
         private void tlpAddButton_MouseLeave(object sender, EventArgs e)
         {
             this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            dgvExpenses.ClearSelection();
         }
 
        

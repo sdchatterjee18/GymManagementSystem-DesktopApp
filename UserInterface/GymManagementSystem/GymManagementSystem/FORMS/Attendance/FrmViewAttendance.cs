@@ -81,5 +81,79 @@ namespace GymManagementSystem.FORMS.Attendance
                 txtYearSearch.ForeColor = Color.Gray;
             }
         }
+
+        private void tlpViewAttendanceEntireForm_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void tlpViewAttendanceHeader_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void picViewAttendanceMark_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void tlpViewAttendanceTitle_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void lblViewAttendance_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void lblViewMemberAttendance_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void tlpViewAttendanceSearchBar_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void picViewAttendanceSearch1_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void txtViewMemberMobileNumber_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void picViewAttendanceSearch2_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void cmbViewAttendanceShiftSearch_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void txtYearSearch_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void btnViewAttendanceSearch_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+        private void tlpViewAttendanceMonthAndYearSearch_Click(object sender, EventArgs e)
+        {
+            dgvViewAttendance.ClearSelection();
+        }
+
+       
+
+       
     }
 }

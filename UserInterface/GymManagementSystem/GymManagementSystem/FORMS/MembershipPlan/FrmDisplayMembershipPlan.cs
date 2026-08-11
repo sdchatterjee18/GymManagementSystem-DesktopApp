@@ -197,7 +197,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // Add New Membership Plan
         private void pnlClickAddNewMembershipPlan_Click(object sender, EventArgs e)
         {
-
+            dgvMembershipPlan.ClearSelection();
             FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
             frm.Show();
             frm.StartPosition = FormStartPosition.CenterParent;
@@ -420,6 +420,56 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         private void pnlClickAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
             pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
+        }
+
+        private void tlpAllMembershipPlanEntireForm_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAllMembershipPlanHeader_Paint(object sender, PaintEventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAllMembershipPlanHeader_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAllMembershipPlanTitle_Click_1(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAllMembershipPlanEntireForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void picMembershipPlan_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void picSearchIcon_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void cmbMembershipPlan_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAddNewMembershipPlan_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
+        }
+
+        private void tlpAllMembershipPlanEntireForm_Click(object sender, EventArgs e)
+        {
+            dgvMembershipPlan.ClearSelection();
         }
 
     }

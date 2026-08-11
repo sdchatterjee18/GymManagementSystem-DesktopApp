@@ -32,6 +32,7 @@ namespace GymManagementSystem.FORMS.Trainer
             txtSearchBar.Select(0, 0);
             txtSearchBar.DeselectAll();
             RetrieveTrainerDetails();
+            dgvTrainerDetails.ClearSelection();
 
         }
         
@@ -115,6 +116,7 @@ namespace GymManagementSystem.FORMS.Trainer
                 txtSearchBar.Clear();
                 txtSearchBar.ForeColor = Color.Black;
             }
+            dgvTrainerDetails.ClearSelection();
         }
 
         private void tlpTrainer_Click(object sender, EventArgs e)
@@ -181,11 +183,12 @@ namespace GymManagementSystem.FORMS.Trainer
         private void tlpPersonalTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpPersonalTrainer;
-            //tlpPersonalTrainer.BackColor = Color.FromArgb(165, 175, 240);
+            
             tlpPersonalTrainer.BackColor = Color.RoyalBlue;
             lblPersonalTrainer.ForeColor = Color.White;
             tlpGeneralTrainer.BackColor = Color.FromArgb(210,215,245);
             lblGeneralTrainer.ForeColor = Color.Blue;
+            dgvTrainerDetails.ClearSelection();
 
         }
 
@@ -208,11 +211,11 @@ namespace GymManagementSystem.FORMS.Trainer
         private void tlpGeneralTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpGeneralTrainer;
-            //tlpGeneralTrainer.BackColor = Color.FromArgb(165, 175, 240);
             tlpGeneralTrainer.BackColor = Color.RoyalBlue;
             lblGeneralTrainer.ForeColor = Color.White;
             tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 245);
             lblPersonalTrainer.ForeColor = Color.Blue;
+            dgvTrainerDetails.ClearSelection();
         }
 
         private void tlpGeneralTrainer_MouseEnter(object sender, EventArgs e)
@@ -234,38 +237,30 @@ namespace GymManagementSystem.FORMS.Trainer
             
         }
 
-        private void tlpGeneralTrainerPicture_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
         private const string PLACEHOLDER_TEXT = "Enter Mobile No.";
 
-        private void tlpGeneralTrainer_MouseHover(object sender, EventArgs e)
-        {
+       
 
+       
+        private void btnSeach_Click(object sender, EventArgs e)
+        {
+            dgvTrainerDetails.ClearSelection();
         }
 
-        private void tlpPersonalTrainer_MouseHover(object sender, EventArgs e)
+        private void picSearch_Click(object sender, EventArgs e)
         {
-
+            dgvTrainerDetails.ClearSelection();
         }
 
-        private void tlpGeneralTrainer_Paint(object sender, PaintEventArgs e)
+        private void tlpSearch_Click(object sender, EventArgs e)
         {
-        //    ControlPaint.DrawBorder(
-        //e.Graphics,
-        //tlpGeneralTrainer.ClientRectangle,
-        //Color.Blue,       // Border color
-        //ButtonBorderStyle.Solid);
+            dgvTrainerDetails.ClearSelection();
         }
 
-        private void tlpPersonalTrainer_Paint(object sender, PaintEventArgs e)
+        private void tlpSearchBar_Click(object sender, EventArgs e)
         {
-        //    ControlPaint.DrawBorder(
-        //e.Graphics,
-        //tlpGeneralTrainer.ClientRectangle,
-        //Color.Blue,       // Border color
-        //ButtonBorderStyle.Solid);
+            dgvTrainerDetails.ClearSelection();
         }
 
         

@@ -277,5 +277,15 @@ namespace GymManagementSystem.FORMS.DietPlan
                    SelectDietPlanDocument(e.RowIndex);
                }
            }
+
+        private void tlpTitleAndSubTitleBar_Click_1(object sender, EventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
+
+        private void tlpDietPlanTitleAndSubTitle_Click_1(object sender, EventArgs e)
+        {
+            dgvDietPlan.ClearSelection();
+        }
        }  
 }
