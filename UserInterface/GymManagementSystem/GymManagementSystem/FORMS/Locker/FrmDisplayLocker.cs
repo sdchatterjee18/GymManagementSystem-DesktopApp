@@ -27,16 +27,6 @@ namespace GymManagementSystem.FORMS.Locker
             this.dgvDisplayLocker.ClearSelection();
             this.dgvDisplayLocker.DefaultCellStyle.BackColor = Color.White;
         }
-
-        private void pnlButton_Click(object sender, EventArgs e)
-        {
-            FrmAddLocker frmAddLocker = new FrmAddLocker();
-            if (frmAddLocker.ShowDialog() == DialogResult.OK)
-            {
-                this.getLockersDetails();
-            }
-        }
-
         private void pnlButton_MouseEnter(object sender, EventArgs e)
         {
             this.tlpAddNewLocker.BackColor = Color.FromArgb(220, 225, 230);
@@ -154,6 +144,15 @@ namespace GymManagementSystem.FORMS.Locker
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pnlButton_Click_1(object sender, EventArgs e)
+        {
+            FrmAddLocker frmAddLocker = new FrmAddLocker();
+            if (frmAddLocker.ShowDialog() == DialogResult.OK)
+            {
+                this.getLockersDetails();
             }
         }
     }

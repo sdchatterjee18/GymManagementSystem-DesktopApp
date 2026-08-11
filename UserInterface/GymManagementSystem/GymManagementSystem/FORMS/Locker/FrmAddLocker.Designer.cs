@@ -127,6 +127,7 @@
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(68, 23);
             this.pnlButton.TabIndex = 0;
+            this.pnlButton.Click += new System.EventHandler(this.tlpButton_Click);
             // 
             // lblSubmit
             // 
@@ -140,6 +141,7 @@
             this.lblSubmit.Size = new System.Drawing.Size(62, 21);
             this.lblSubmit.TabIndex = 0;
             this.lblSubmit.Text = "Submit";
+            this.lblSubmit.Click += new System.EventHandler(this.tlpButton_Click);
             // 
             // picBoxSendIcon
             // 
@@ -153,6 +155,7 @@
             this.picBoxSendIcon.Size = new System.Drawing.Size(21, 23);
             this.picBoxSendIcon.TabIndex = 1;
             this.picBoxSendIcon.TabStop = false;
+            this.picBoxSendIcon.Click += new System.EventHandler(this.tlpButton_Click);
             // 
             // lblAddNewLocker
             // 
