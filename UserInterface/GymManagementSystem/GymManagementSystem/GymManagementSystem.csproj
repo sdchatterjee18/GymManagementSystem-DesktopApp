@@ -170,6 +170,7 @@
     <Compile Include="FORMS\Dashboard\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Dashboard\UI\DashboardUI.cs" />
     <Compile Include="FORMS\DietPlan\FrmAddNewDietPlan.cs">
       <SubType>Form</SubType>
     </Compile>
