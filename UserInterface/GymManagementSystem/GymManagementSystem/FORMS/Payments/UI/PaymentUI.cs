@@ -9,12 +9,13 @@ namespace GymManagementSystem.FORMS.Payments.UI
     public class PaymentUI
     {
         //Properties
-
+        public string MemberName { get; set; }
         public string MemberShipPlanName { get; set; }
         public DateTime PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
         public decimal Amount { get; set; }
         public string FeesType { get; set; }
+        string PhoneNo { get; set; }
 
         //Retrieve All Member Subcription Payment Details
 
@@ -29,6 +30,7 @@ namespace GymManagementSystem.FORMS.Payments.UI
                 {
                     PaymentUI PaymentUI = new PaymentUI
                     {
+                        MemberName = PaymentDetail.MemberName,
                         MemberShipPlanName = PaymentDetail.MemberShipPlanName,
                         PaymentDate = PaymentDetail.PaymentDate,
                         PaymentMethod = PaymentDetail.PaymentMethod,
@@ -44,6 +46,37 @@ namespace GymManagementSystem.FORMS.Payments.UI
             {
                 SubscriptionPaymentDetails = null;
                 return SubscriptionPaymentDetails;
+            }
+        }
+
+        //Retrieve Specific Member Subscription Payment Details
+        public List<PaymentUI> RetrieveSpecificMemberSubscriptionPaymentDetailsUI(string phoneNo)
+        {
+            List<PaymentUI> SubsctiptionPaymentDetails = null;
+            try
+            {
+                PhoneNo = phoneNo; // set the value of PhoneNo
+                SubsctiptionPaymentDetails = new List<PaymentUI>();
+                PaymentBLL paymentBLL = new PaymentBLL();
+                List<PaymentBLL> SubscriptionPaymentDetails = paymentBLL.RetrieveSpeificMemberSubscriptionPaymentDetailsByPhoneNoBLL(PhoneNo);
+                foreach (PaymentBLL paymentDetail in SubscriptionPaymentDetails)
+                {
+                    PaymentUI paymentUI = new PaymentUI
+                    {
+                        MemberName = paymentDetail.MemberName,
+                        MemberShipPlanName = paymentDetail.MemberShipPlanName,
+                        PaymentDate = paymentDetail.PaymentDate,
+                        PaymentMethod = paymentDetail.PaymentMethod,
+                        Amount = paymentDetail.Amount,
+                        FeesType = paymentDetail.FeesType
+                    };
+                    SubsctiptionPaymentDetails.Add(paymentUI);
+                }
+                return SubsctiptionPaymentDetails;
+            }
+            catch (Exception ex)
+            {
+               return SubsctiptionPaymentDetails;
             }
         }
     }

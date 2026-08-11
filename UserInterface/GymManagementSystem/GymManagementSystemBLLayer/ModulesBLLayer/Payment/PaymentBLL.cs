@@ -9,12 +9,13 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
     public class PaymentBLL
     {
         //Properties
-
+        public string MemberName { get; set; }
         public string MemberShipPlanName { get; set; }
         public DateTime PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
         public decimal Amount { get; set; }
         public string FeesType { get; set; }
+        public string PhoneNo { get; set; }
 
         //Retrieve All Member Subscription Payment Details
 
@@ -31,6 +32,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
                 {
                     PaymentBLL PaymentBLL = new PaymentBLL
                     {
+                        MemberName = PaymentDetail.MemberName,
                         MemberShipPlanName = PaymentDetail.MemberShipPlanName,
                         PaymentDate = PaymentDetail.PaymentDate,
                         PaymentMethod = PaymentDetail.PaymentMethod,
@@ -47,6 +49,38 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
             {
                 SubscriptionPaymentDetails = null;
                 return SubscriptionPaymentDetails;
+            }
+        }
+
+        //Retrieve Specific Member Subcription Payment Details
+
+        public List<PaymentBLL> RetrieveSpeificMemberSubscriptionPaymentDetailsByPhoneNoBLL(string phoneNo)
+        {
+            List<PaymentBLL> SpecificMemberSubscriptionPaymentDetails = null;
+            try
+            {
+                PhoneNo = phoneNo; //Set the value of PhoneNo
+                SpecificMemberSubscriptionPaymentDetails = new List<PaymentBLL>();
+                PaymentDAL paymentDAL = new PaymentDAL();
+                List<PaymentDAL> PaymentDetails = paymentDAL.RetrieveSpecificMemberSubscriptionByPhoneNoDAL(PhoneNo);
+                foreach (PaymentDAL PaymentDetail in PaymentDetails)
+                {
+                    PaymentBLL paymentBLL = new PaymentBLL
+                    {
+                        MemberName = PaymentDetail.MemberName,
+                        MemberShipPlanName = PaymentDetail.MemberShipPlanName,
+                        PaymentDate = PaymentDetail.PaymentDate,
+                        PaymentMethod = PaymentDetail.PaymentMethod,
+                        Amount = PaymentDetail.Amount,
+                        FeesType = PaymentDetail.FeesType
+                    };
+                    SpecificMemberSubscriptionPaymentDetails.Add(paymentBLL);
+                }
+                return SpecificMemberSubscriptionPaymentDetails;
+            }
+            catch (Exception ex)
+            {
+                return SpecificMemberSubscriptionPaymentDetails;
             }
         }
     }

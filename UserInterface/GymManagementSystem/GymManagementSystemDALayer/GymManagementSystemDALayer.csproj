@@ -55,6 +55,7 @@
     <Compile Include="ModulesDALayer\Workout\WorkoutDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelper\DBconnection.cs" />
+    <Compile Include="ModulesDALayer\Trainer\TrainerDAL.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -37,6 +37,7 @@ namespace GymManagementSystem.FORMS.Payments
                 dgvPaymentsManagement.Rows.Add
                     (
                     SerialNo++,
+                    PaymentDetail.MemberName,
                     PaymentDetail.MemberShipPlanName,
                     PaymentDetail.PaymentDate,
                     PaymentDetail.PaymentMethod,
@@ -45,6 +46,27 @@ namespace GymManagementSystem.FORMS.Payments
                     );
             }
 
+        }
+
+        private void LoadSpecificMemberSubscriptionPaymentDetails()
+        {
+            
+            PaymentUI paymentUI = new PaymentUI();
+            List<PaymentUI> SubscriptionPaymentDetails = paymentUI.RetrieveSpecificMemberSubscriptionPaymentDetailsUI(txtPhoneNo.Text);
+            int SerialNo = 1;
+            foreach (PaymentUI PaymentDetail in SubscriptionPaymentDetails)
+            {
+                dgvPaymentsManagement.Rows.Add
+                    (
+                    SerialNo++,
+                    PaymentDetail.MemberName,
+                    PaymentDetail.MemberShipPlanName,
+                    PaymentDetail.PaymentDate,
+                    PaymentDetail.PaymentMethod,
+                    PaymentDetail.Amount,
+                    PaymentDetail.FeesType
+                    );
+            }
         }
 
         private void dgvPaymentsManagement_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -92,9 +114,25 @@ namespace GymManagementSystem.FORMS.Payments
 
         private void txtEnterPlanName_Click(object sender, EventArgs e)
         {
-            txtEnterPlanName.Clear();
-            txtEnterPlanName.ForeColor = Color.Black;
-            txtEnterPlanName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            txtPhoneNo.Clear();
+            txtPhoneNo.ForeColor = Color.Black;
+            txtPhoneNo.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //dgvPaymentsManagemen
+            dgvPaymentsManagement.Rows.Clear();
+            dgvPaymentsManagement.ReadOnly = false;
+            LoadSpecificMemberSubscriptionPaymentDetails();
+        }
+
+        private void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            dgvPaymentsManagement.Rows.Clear();
+            dgvPaymentsManagement.ReadOnly = false;
+            txtPhoneNo.Clear();
+            LoadSubscriptionPaymentDetails();
         }
 
 
