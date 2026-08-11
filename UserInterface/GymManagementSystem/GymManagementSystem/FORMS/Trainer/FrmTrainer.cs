@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using System.Drawing.Drawing2D;
+using GymManagementSystem.FORMS.Trainer.UI;
 
 namespace GymManagementSystem.FORMS.Trainer
 {
@@ -31,51 +32,126 @@ namespace GymManagementSystem.FORMS.Trainer
             //For Textbox Text Deselection
             txtSearchBar.Select(0, 0);
             txtSearchBar.DeselectAll();
-            RetrieveTrainerDetails();
+
+            RetrieveAllTrainer();
 
         }
-        
 
-        
-        private void RetrieveTrainerDetails()
+        //Retrieve All Trainers
+        private void RetrieveAllTrainer()
         {
-            string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
+            DataTable AllTrainers = null;
             try
             {
-                sqlConnection = new SqlConnection(CS);
-                using (SqlCommand sqlCommand = new SqlCommand("spGetAllTrainerEmployeeDetails", sqlConnection))
+                TrainerUI TrainerUI = new TrainerUI();
+                AllTrainers = TrainerUI.RetrieveAllTrainerUI();
+                foreach (DataRow row in AllTrainers.Rows)
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    dgvTrainerDetails.DataSource = dataTable;
-                    dgvTrainerDetails.Columns["colEmployeeId"].DataPropertyName = "EmployeeId";
-                    dgvTrainerDetails.Columns["colTrainerId"].DataPropertyName = "TrainerId";
-                    dgvTrainerDetails.Columns["colTrainerName"].DataPropertyName = "TrainerName";
-                    dgvTrainerDetails.Columns["colSpecialization"].DataPropertyName = "Specialization";
-                    dgvTrainerDetails.Columns["colTrainerType"].DataPropertyName = "TrainerType";
-                    dgvTrainerDetails.Columns["colDocument"].DataPropertyName = "Document";
-                    dgvTrainerDetails.Columns["colPhoneNo"].DataPropertyName = "PhoneNo";
-                    dgvTrainerDetails.Columns["colGender"].DataPropertyName = "Gender";
-                    for ( int i = 0 ; i < dgvTrainerDetails.Rows.Count ; i++)
-                    {
-                        dgvTrainerDetails.Rows[i].Cells["colProfile"].Value = "Profile";
-                    }
-                    
+                    dgvTrainerDetails.Rows.Add(
+                        Convert.ToInt32(row["EmployeeId"]),
+                        Convert.ToInt32(row["TrainerId"]),
+                        row["TrainerName"].ToString(),
+                        row["Specialization"].ToString(),
+                        row["TrainerType"].ToString(),
+                        row["Document"].ToString(),
+                        row["PhoneNo"].ToString(),
+                        row["Gender"].ToString()
+                        );
                 }
+
             }
             catch (Exception ex)
             {
-                dgvTrainerDetails.DataSource = null;
-            }
-            finally
-            {
-                sqlConnection.Close();
+                AllTrainers = null;
             }
         }
 
+        //Retrieve Trainer By PhoneNO
+        private void RetrieveTrainerByPhoneNO()
+        {
+            DataTable RetieveTrainerByPhoneNo = null;
+            try
+            {
+                TrainerUI TrainerUI = new TrainerUI();
+                RetieveTrainerByPhoneNo = TrainerUI.RetrieveTrainerByPhoneNoUI(txtSearchBar.Text);
+                foreach (DataRow row in RetieveTrainerByPhoneNo.Rows)
+                {
+                    dgvTrainerDetails.Rows.Add(
+                        Convert.ToInt32(row["EmployeeId"]),
+                        Convert.ToInt32(row["TrainerId"]),
+                        row["TrainerName"].ToString(),
+                        row["Specialization"].ToString(),
+                        row["TrainerType"].ToString(),
+                        row["Document"].ToString(),
+                        row["PhoneNo"].ToString(),
+                        row["GenderName"].ToString()
+                        );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                RetieveTrainerByPhoneNo = null;
+            }
+        }
+
+        //Retrieve General Trainers
+        private void RetrieveGerenalTrainer()
+        {
+            DataTable GerenalTrainers = null;
+            try
+            {
+                TrainerUI TrainerUI = new TrainerUI();
+                GerenalTrainers = TrainerUI.RetrieveGeneralTrainerUI();
+                foreach (DataRow row in GerenalTrainers.Rows)
+                {
+                    dgvTrainerDetails.Rows.Add(
+                        Convert.ToInt32(row["EmployeeId"]),
+                        Convert.ToInt32(row["TrainerId"]),
+                        row["TrainerName"].ToString(),
+                        row["Specialization"].ToString(),
+                        row["TrainerType"].ToString(),
+                        row["Document"].ToString(),
+                        row["PhoneNo"].ToString(),
+                        row["GenderName"].ToString()
+                        );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                GerenalTrainers = null;
+            }
+        }
+
+        //Retrieve Personal Trainers
+        private void RetrievePersonalTrainer()
+        {
+            DataTable PersonalTrainers = null;
+            try
+            {
+                TrainerUI TrainerUI = new TrainerUI();
+                PersonalTrainers = TrainerUI.RetrievePersonalTrainerUI();
+                foreach (DataRow row in PersonalTrainers.Rows)
+                {
+                    dgvTrainerDetails.Rows.Add(
+                        Convert.ToInt32(row["EmployeeId"]),
+                        Convert.ToInt32(row["TrainerId"]),
+                        row["TrainerName"].ToString(),
+                        row["Specialization"].ToString(),
+                        row["TrainerType"].ToString(),
+                        row["Document"].ToString(),
+                        row["PhoneNo"].ToString(),
+                        row["GenderName"].ToString()
+                        );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PersonalTrainers = null;
+            }
+        }
         private void dgvTrainerDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
           
@@ -181,11 +257,14 @@ namespace GymManagementSystem.FORMS.Trainer
         private void tlpPersonalTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpPersonalTrainer;
-            //tlpPersonalTrainer.BackColor = Color.FromArgb(165, 175, 240);
             tlpPersonalTrainer.BackColor = Color.RoyalBlue;
             lblPersonalTrainer.ForeColor = Color.White;
             tlpGeneralTrainer.BackColor = Color.FromArgb(210,215,245);
             lblGeneralTrainer.ForeColor = Color.Blue;
+
+            dgvTrainerDetails.Rows.Clear();
+            dgvTrainerDetails.ReadOnly = false;
+            RetrievePersonalTrainer();
 
         }
 
@@ -208,11 +287,14 @@ namespace GymManagementSystem.FORMS.Trainer
         private void tlpGeneralTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpGeneralTrainer;
-            //tlpGeneralTrainer.BackColor = Color.FromArgb(165, 175, 240);
             tlpGeneralTrainer.BackColor = Color.RoyalBlue;
             lblGeneralTrainer.ForeColor = Color.White;
             tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 245);
             lblPersonalTrainer.ForeColor = Color.Blue;
+
+            dgvTrainerDetails.Rows.Clear();
+            dgvTrainerDetails.ReadOnly = false;
+            RetrieveGerenalTrainer();
         }
 
         private void tlpGeneralTrainer_MouseEnter(object sender, EventArgs e)
@@ -252,20 +334,19 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void tlpGeneralTrainer_Paint(object sender, PaintEventArgs e)
         {
-        //    ControlPaint.DrawBorder(
-        //e.Graphics,
-        //tlpGeneralTrainer.ClientRectangle,
-        //Color.Blue,       // Border color
-        //ButtonBorderStyle.Solid);
+        
         }
 
         private void tlpPersonalTrainer_Paint(object sender, PaintEventArgs e)
         {
-        //    ControlPaint.DrawBorder(
-        //e.Graphics,
-        //tlpGeneralTrainer.ClientRectangle,
-        //Color.Blue,       // Border color
-        //ButtonBorderStyle.Solid);
+        
+        }
+
+        private void btnSeach_Click(object sender, EventArgs e)
+        {
+            dgvTrainerDetails.Rows.Clear();
+            dgvTrainerDetails.ReadOnly = false;
+            RetrieveTrainerByPhoneNO();
         }
 
         

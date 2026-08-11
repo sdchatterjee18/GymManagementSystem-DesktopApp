@@ -53,6 +53,7 @@
     <Compile Include="ModulesBLLayer\Shift\ShiftBLL.cs" />
     <Compile Include="ModulesBLLayer\Workout\WorkoutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModulesBLLayer\Trainer\TrainerBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymManagementSystemDALayer\GymManagementSystemDALayer.csproj">
