@@ -328,6 +328,7 @@
     <Compile Include="FORMS\Trainer\FrmTrainer.Designer.cs">
       <DependentUpon>FrmTrainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Trainer\UI\TrainerUI.cs" />
     <Compile Include="FORMS\Workout\FrmAddNewExercise.cs">
       <SubType>Form</SubType>
     </Compile>
