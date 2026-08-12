@@ -116,6 +116,7 @@
     <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.Designer.cs">
       <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\UI\SAProfitLossUI.cs" />
     <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
