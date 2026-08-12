@@ -38,7 +38,7 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayShift());
             //Application.Run(new FrmSADisplayAllEmployee());
             //Application.Run(new FrmDisplayAllMembers());
-            Application.Run(new FrmSAMainForm());
+            //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmMainLayout());
             //Application.Run(new FrmAssignTrainer());
             //Application.Run(new FrmSAAddNewEmployee());
@@ -46,8 +46,8 @@ namespace GymManagementSystem
             //Application.Run(new FrmMainLayout());
             //Application.Run(new FrmMemberRegistration());
             //Application.Run(new FrmDisplayAllMembers());
-            //Application.Run(new FrmDisplayMembershipPlan());
-
+            //Application.Run(new FrmSuperAdminRegistration());
+            Application.Run(new FrmUserRoleSelection());
         }
     }
 }

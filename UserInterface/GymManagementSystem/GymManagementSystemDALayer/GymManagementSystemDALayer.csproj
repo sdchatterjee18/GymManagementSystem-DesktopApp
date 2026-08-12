@@ -53,6 +53,7 @@
     <Compile Include="ModulesDALayer\Member\MemberDAL.cs" />
     <Compile Include="ModulesDALayer\Payment\PaymentDAL.cs" />
     <Compile Include="ModulesDALayer\ProfitLoss\ProfitLossDAL.cs" />
+    <Compile Include="ModulesDALayer\RegistrationFee\RegistrtionFeeDAL.cs" />
     <Compile Include="ModulesDALayer\Shift\ShiftDAL.cs" />
     <Compile Include="ModulesDALayer\Workout\WorkoutDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

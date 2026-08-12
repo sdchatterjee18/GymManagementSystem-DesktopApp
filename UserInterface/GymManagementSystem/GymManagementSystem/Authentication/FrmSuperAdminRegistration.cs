@@ -21,95 +21,8 @@ namespace GymManagementSystem.Authentication
 
         }
 
-        private void txtRegistrationSuperAdminUsername_Enter(object sender, EventArgs e)
-        {
-            if (txtRegistrationSuperAdminUsername.Text.Trim() == "Enter Username")
-            {
-                txtRegistrationSuperAdminUsername.Text = "";
-                txtRegistrationSuperAdminUsername.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtRegistrationSuperAdminUsername_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminUsername.Text))
-            {
-                txtRegistrationSuperAdminUsername.Text = "Enter Username";
-                txtRegistrationSuperAdminUsername.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtRegistrationSuperAdminMobileNo_Enter(object sender, EventArgs e)
-        {
-            if (txtRegistrationSuperAdminMobileNo.Text.Trim() == "Enter MobileNo")
-            {
-                txtRegistrationSuperAdminMobileNo.Text = "";
-                txtRegistrationSuperAdminMobileNo.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtRegistrationSuperAdminMobileNo_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminMobileNo.Text))
-            {
-                txtRegistrationSuperAdminMobileNo.Text = "Enter MobileNo";
-                txtRegistrationSuperAdminMobileNo.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtRegistrationSuperAdminEmailId_Enter(object sender, EventArgs e)
-        {
-            if (txtRegistrationSuperAdminEmailId.Text.Trim() == "Enter Email Id")
-            {
-                txtRegistrationSuperAdminEmailId.Text = "";
-                txtRegistrationSuperAdminEmailId.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtRegistrationSuperAdminEmailId_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminEmailId.Text))
-            {
-                txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
-                txtRegistrationSuperAdminEmailId.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtRegistrationSuperAdminPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtRegistrationSuperAdminPassword.Text.Trim() == "Enter Password")
-            {
-                txtRegistrationSuperAdminPassword.Text = "";
-                txtRegistrationSuperAdminPassword.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtRegistrationSuperAdminPassword_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminPassword.Text))
-            {
-                txtRegistrationSuperAdminPassword.Text = "Enter Password";
-                txtRegistrationSuperAdminPassword.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtRegistrationSuperAdminConfermPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtRegistrationSuperAdminConfermPassword.Text.Trim() == "Confirm Password")
-            {
-                txtRegistrationSuperAdminConfermPassword.Text = "";
-                txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtRegistrationSuperAdminConfermPassword_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminConfermPassword.Text))
-            {
-                txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
-                txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Gray;
-            }
-        }
+       
+        
 
         private void FrmSuperAdminRegistration_Shown(object sender, EventArgs e)
         {
@@ -193,15 +106,15 @@ namespace GymManagementSystem.Authentication
             }
         }
 
-        private void txtRegistrationSuperAdminConfermPassword_TextChanged(object sender, EventArgs e)
+        private void txtRegistrationSuperAdminPassword_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void tlpRegistrationSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
-        {
+      
+       
 
-        }
+       
 
 
     }

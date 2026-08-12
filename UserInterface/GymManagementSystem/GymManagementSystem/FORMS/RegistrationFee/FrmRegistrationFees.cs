@@ -9,72 +9,78 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using GymManagementSystem.FORMS.RegistrationFee.UI;
 
 
 namespace GymManagementSystem.FORMS.RegistrationFee
 {
     public partial class FrmRegistrationFees : Form
     {
+        private DataTable RegistrationDataTable;
         public FrmRegistrationFees()
         {
             InitializeComponent();
             
         }
 
-        private void RetrieveRegistrationFees()
-        {
-
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-
-            DataTable dataTable = new DataTable();
-            try
-            {
-                sqlConnection = new SqlConnection(CS);
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("spGetAllRegistrationFees", sqlConnection))
-                {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    int a = 1;
-                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                   
-                    while (sqlDataReader.Read())
-                    {
-                        dgvShowAllAddRegistrationFees.Rows.Add(a,
-                            Convert.ToDecimal(sqlDataReader["FeeAmount"]),
-                            Convert.ToDateTime(sqlDataReader["CreatedAt"]).ToString("dd-MM-yyyy"),
-                            (sqlDataReader["IsActive"]).ToString());
-                        a++;
-                    }
-
-
-                }
-                dgvShowAllAddRegistrationFees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvShowAllAddRegistrationFees.ScrollBars = ScrollBars.None;
-                dgvShowAllAddRegistrationFees.ClearSelection();
-            }
-
-            catch (Exception exc)
-            {
-
-            }
-            finally
-            {
-                if (sqlConnection != null)
-                {
-                    sqlConnection.Close();
-                }
-            }
-
-        }
-
-
+ 
 
         private void FrmRegistrationFees_Load(object sender, EventArgs e)
         {
-            RetrieveRegistrationFees();
+           RetrieveRegistrationFees();
         
         }
+
+
+        private void RetrieveRegistrationFees()
+        {
+            try
+            {
+                RegistrationFeeUI registrationFeeUI = new RegistrationFeeUI();
+
+                RegistrationDataTable =
+                    registrationFeeUI.RetrieveRegistrationFeesUI();
+
+                dgvShowAllAddRegistrationFees.AutoGenerateColumns = false;
+                dgvShowAllAddRegistrationFees.Rows.Clear();
+
+                int serialNo = 1;
+
+                foreach (DataRow dataRow in RegistrationDataTable.Rows)
+                {
+                    int rowIndex = dgvShowAllAddRegistrationFees.Rows.Add();
+
+                    dgvShowAllAddRegistrationFees.Rows[rowIndex]
+                        .Cells["colSLNO"].Value = serialNo++;
+
+                    dgvShowAllAddRegistrationFees.Rows[rowIndex]
+                        .Cells["colFeeAmount"].Value =
+                         Convert.ToDecimal(dataRow["FeeAmount"]);
+
+                    dgvShowAllAddRegistrationFees.Rows[rowIndex]
+                        .Cells["colCreatedAt"].Value =
+                        Convert.ToDateTime(dataRow["CreatedAt"]).ToString("dd-MM-yyyy");
+
+                    dgvShowAllAddRegistrationFees.Rows[rowIndex]
+                        .Cells["colStatus"].Value = (dataRow["IsActive"]).ToString();
+
+
+                }
+
+                dgvShowAllAddRegistrationFees.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+
 
 
         private void FrmRegistrationFees_Resize(object sender, EventArgs e)
@@ -82,15 +88,18 @@ namespace GymManagementSystem.FORMS.RegistrationFee
            
         }
 
-    
+
         private void pnlClickAddNewFegistrationFees_Click(object sender, EventArgs e)
         {
             dgvShowAllAddRegistrationFees.ClearSelection();
-            FrmAddRegistrationFee frmAddRegistrationFee = new FrmAddRegistrationFee();
+
+            FrmAddRegistrationFee frmAddRegistrationFee =
+                new FrmAddRegistrationFee();
+
             frmAddRegistrationFee.ShowDialog();
 
+            RetrieveRegistrationFees();
         }
-
         private void dgvShowAllAddRegistrationFees_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].Name == "colStatus")
@@ -183,29 +192,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             }
 
         }
-
-     
-
-        
-
-      
-
-       
-
-       
-
-       
-
-       
-
-       
-       
-
-        
-
-        
-
-
 
     }
 }
