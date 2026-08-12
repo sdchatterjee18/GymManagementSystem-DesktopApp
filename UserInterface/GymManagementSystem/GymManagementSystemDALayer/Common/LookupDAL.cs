@@ -220,12 +220,15 @@ namespace GymManagementSystemDALayer.Common
             {
                 using (sqlConnection = DBconnection.GetSqlConnection())
                 {
-                    using (SqlCommand cmd = new SqlCommand(spName, sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddRange(parameters);
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        if (parameters != null && parameters.Length > 0)
+                        {
+                            sqlCommand.Parameters.AddRange(parameters);
+                        }
                         sqlConnection.Open();
-                        object result = cmd.ExecuteScalar();
+                        object result = sqlCommand.ExecuteScalar();
                         return result;
                     }
                 }

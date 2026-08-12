@@ -43,7 +43,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Common\LookupBLL.cs" />
     <Compile Include="Common\ValidationBll.cs" />
+    <Compile Include="ModulesBLLayer\Dashboard\DashboardBLL.cs" />
     <Compile Include="ModulesBLLayer\DietPlan\DietPlanBLL.cs" />
+    <Compile Include="ModulesBLLayer\Expense\ExpensesBLL.cs" />
     <Compile Include="ModulesBLLayer\Gender\GenderBLL.cs" />
     <Compile Include="ModulesBLLayer\Locker\LockerBLL.cs" />
     <Compile Include="ModulesBLLayer\MembershipPlan\MembershipPlanBLL.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="ModulesBLLayer\Shift\ShiftBLL.cs" />
     <Compile Include="ModulesBLLayer\Workout\WorkoutBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModulesBLLayer\Trainer\TrainerBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GymManagementSystemDALayer\GymManagementSystemDALayer.csproj">

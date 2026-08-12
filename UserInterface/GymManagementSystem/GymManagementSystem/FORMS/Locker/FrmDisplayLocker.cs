@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using GymManagementSystem.FORMS;
 using System.Configuration;
+using GymManagementSystem.FORMS.Locker.UI;
 
 namespace GymManagementSystem.FORMS.Locker
 {
@@ -26,13 +27,6 @@ namespace GymManagementSystem.FORMS.Locker
             this.dgvDisplayLocker.ClearSelection();
             this.dgvDisplayLocker.DefaultCellStyle.BackColor = Color.White;
         }
-
-        private void pnlButton_Click(object sender, EventArgs e)
-        {
-            FrmAddLocker frmAddLocker = new FrmAddLocker();
-            frmAddLocker.ShowDialog();
-        }
-
         private void pnlButton_MouseEnter(object sender, EventArgs e)
         {
             this.tlpAddNewLocker.BackColor = Color.FromArgb(220, 225, 230);
@@ -41,73 +35,6 @@ namespace GymManagementSystem.FORMS.Locker
         private void pnlButton_MouseLeave(object sender, EventArgs e)
         {
             this.tlpAddNewLocker.BackColor = Color.FromArgb(236, 240, 243);
-        }
-
-        private void getLockersDetails()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-
-            string queryStr = "select l.LockerNo,m.FirstName + CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END +' ' + m.LastName AS MemberName,l.LockerStatus from tblLocker l join tblLockerAllocation la on l.LockerId = la.LockerId join tblMember m on m.MemberId = la.MemberId order by l.LockerId,m.MiddleName";
-
-            try
-            {
-                sqlConnection = new SqlConnection(connectionString);
-
-                using (SqlCommand sqlCommand = new SqlCommand(queryStr, sqlConnection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand))
-                    {
-                        DataTable dtLockers = new DataTable();
-                        adapter.Fill(dtLockers);
-
-                        DataRowCollection dataRows = dtLockers.Rows;
-
-                        dgvDisplayLocker.Rows.Clear();
-
-                        int serialNo = 1;
-
-                        foreach (DataRow dataRow in dataRows)
-                        {
-                            int rowIndex = dgvDisplayLocker.Rows.Add();
-
-                            dgvDisplayLocker.Rows[rowIndex].Cells["colSlNo"].Value = serialNo++;
-                            dgvDisplayLocker.Rows[rowIndex].Cells["colLNo"].Value = dataRow["LockerNo"].ToString();
-                            dgvDisplayLocker.Rows[rowIndex].Cells["colAllocatedTo"].Value =dataRow["MemberName"].ToString();
-                            dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Value =dataRow["LockerStatus"].ToString();
-
-
-                            string status = dataRow["LockerStatus"].ToString().Trim();
-
-                            if (status.Equals("Available", StringComparison.OrdinalIgnoreCase))
-                            {
-                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(20, 140, 60); 
-                            }
-                            else if (status.Equals("Occupied", StringComparison.OrdinalIgnoreCase))
-                            {
-                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(200, 40, 40); 
-                            }
-                            else if (status.Equals("Maintenance", StringComparison.OrdinalIgnoreCase))
-                            {
-                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(184, 134, 11); 
-                            }
-                            else
-                            {
-                                dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.Black;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Exception");
-            }
-            finally
-            {
-                if (sqlConnection != null)
-                    sqlConnection.Close();
-            }            
         }
 
         private void dgvDisplayLocker_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -147,8 +74,6 @@ namespace GymManagementSystem.FORMS.Locker
                         dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(20, 140, 60);
                     else if (status != null && (status.Equals("Occupied", StringComparison.OrdinalIgnoreCase) || status.Equals("Inactive", StringComparison.OrdinalIgnoreCase)))
                         dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(200, 40, 40);
-                    else if (status != null && status.Equals("Maintenance", StringComparison.OrdinalIgnoreCase))
-                        dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.FromArgb(184, 134, 11);
                 }
                 else
                 {
@@ -167,6 +92,68 @@ namespace GymManagementSystem.FORMS.Locker
                 dgvDisplayLocker.ClearSelection();
             }
         }
-      
+
+        //Retrieve Locker Details
+        private void getLockersDetails()
+        {
+            try
+            {
+                LockerUI lockerUI = new LockerUI();
+
+                DataTable dataTable = lockerUI.RetrieveLockersUI();
+
+                dgvDisplayLocker.AutoGenerateColumns = false;
+                dgvDisplayLocker.Rows.Clear();
+
+                int serialNo = 1;
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    int rowIndex = dgvDisplayLocker.Rows.Add();
+
+                    dgvDisplayLocker.Rows[rowIndex].Cells["colSLNo"].Value = serialNo++;
+
+                    dgvDisplayLocker.Rows[rowIndex].Cells["colLNo"].Value =
+                        dataRow["LockerNo"]; 
+
+                    dgvDisplayLocker.Rows[rowIndex].Cells["colAllocatedTo"].Value =
+                        dataRow["MemberName"].ToString();
+
+                    dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Value =
+                        dataRow["LockerStatus"].ToString();
+                    
+                    string status = dataRow["LockerStatus"].ToString().Trim();
+
+                    // Cell conditioning
+                    if (status.Equals("Available", StringComparison.OrdinalIgnoreCase))
+                    {
+                        dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(20, 140, 60);
+                    }
+                    else if (status.Equals("Occupied", StringComparison.OrdinalIgnoreCase))
+                    {
+                        dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.FromArgb(200, 40, 40);
+                    }
+                    else
+                    {
+                        dgvDisplayLocker.Rows[rowIndex].Cells["colLStatus"].Style.ForeColor = Color.Black;
+                    }
+                }
+
+                dgvDisplayLocker.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pnlButton_Click_1(object sender, EventArgs e)
+        {
+            FrmAddLocker frmAddLocker = new FrmAddLocker();
+            if (frmAddLocker.ShowDialog() == DialogResult.OK)
+            {
+                this.getLockersDetails();
+            }
+        }
     }
 }

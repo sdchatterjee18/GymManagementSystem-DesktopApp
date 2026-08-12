@@ -1336,26 +1336,42 @@ GO
 ----------------------------------------
 -- SP: spGetAvailableTrainerCountByShift
 ----------------------------------------
-CREATE PROC spGetAvailableTrainerCountByShift
+CREATE OR ALTER PROC spRetrieveFreeTrainerByShift
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT
-        s.ShiftID,
-        s.ShiftName,
-        COUNT(ts.TrainerId) AS AvailableTrainerCount
-    FROM tblShift s
-    LEFT JOIN tblTrainerShift ts
-        ON s.ShiftId = ts.ShiftId
-        AND ts.IsActive = 1
-    GROUP BY
-        s.ShiftId,
-        s.ShiftName
-    ORDER BY
-        s.ShiftID;
+    BEGIN TRY
+
+        SELECT
+            S.ShiftId,
+            S.ShiftName,
+            COUNT(
+                CASE
+                    WHEN E.IsActive = 1 THEN TS.TrainerId
+                END
+            ) AS TotalFreeTrainer
+
+        FROM tblShift S
+
+        LEFT JOIN tblTrainerShift TS
+            ON S.ShiftId = TS.ShiftId
+            AND TS.IsActive = 1
+        LEFT JOIN tblTrainer T
+            ON TS.TrainerId = T.TrainerId
+        LEFT JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        GROUP BY
+            S.ShiftId,
+            S.ShiftName,
+            S.StartTime
+        ORDER BY
+            S.StartTime;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
 END
-GO
 
 --------------------------------------------------
 -- SP: spDisplayAssingedTrainersToMembersWithShift
@@ -1404,17 +1420,23 @@ AS
 BEGIN
 	BEGIN TRY
 		SELECT 
+		E.EmployeeId,
+		T.TrainerId,
 		CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
 		T.Specialization,
+		T.TrainerType,
+		CD.Document,
 		E.PhoneNo,
 		G.GenderName
 		FROM tblTrainer T
 		INNER JOIN tblEmployee E
-		ON T.EmployeeId=E.EmployeeId
+			ON T.EmployeeId = E.EmployeeId
 		INNER JOIN tblGender G 
-		ON E.GenderId = G.GenderId 
-		WHERE T.TrainerType='General' 
-		AND E.IsActive=1;
+			ON E.GenderId = G.GenderId
+		INNER JOIN tblCertificateDocument CD
+			ON T.TrainerId = CD.TrainerId
+		WHERE T.TrainerType = 'General' 
+		AND E.IsActive = 1;
 	END TRY
 	BEGIN CATCH
 		SELECT ERROR_MESSAGE() AS Message;
@@ -1425,28 +1447,110 @@ GO
 -------------------------------
 -- SP: DisplayPersonalTrainers
 -------------------------------
-Create PROCEDURE DisplayPersonalTrainers
+CREATE PROCEDURE DisplayPersonalTrainers
 AS
 BEGIN
 	BEGIN TRY
 		SELECT 
+		E.EmployeeId,
+		T.TrainerId,
 		CONCAT(E.FirstName,' ',E.MiddleName,' ',E.LastName) AS TrainerName,
 		T.Specialization,
+		T.TrainerType,
+		CD.Document,
 		E.PhoneNo,
 		G.GenderName
 		FROM tblTrainer T
 		INNER JOIN tblEmployee E
-		ON T.EmployeeId=E.EmployeeId
+			ON T.EmployeeId = E.EmployeeId
 		INNER JOIN tblGender G 
-		ON E.GenderId = G.GenderId 
-		WHERE T.TrainerType='Personal' 
-		AND E.IsActive=1;
+			ON E.GenderId = G.GenderId 
+		INNER JOIN tblCertificateDocument CD
+			ON T.TrainerId = CD.TrainerId
+		WHERE T.TrainerType = 'Personal' 
+		AND E.IsActive = 1;
 	END TRY
 	BEGIN CATCH	
 		SELECT ERROR_MESSAGE() AS Message;
 	END CATCH
 END
 GO
+
+-----------------------------------------
+-- SP: spRetrieveTrainersByPhoneNumber---
+-----------------------------------------
+CREATE PROC spRetrieveTrainersByPhoneNumber
+(
+    @PhoneNo VARCHAR(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @PhoneNo = LTRIM(RTRIM(@PhoneNo));
+
+        IF @PhoneNo = ''
+        BEGIN
+            SELECT 'Phone Number is required.' AS Message;
+            RETURN;
+        END;
+
+        IF LEN(@PhoneNo) <> 10
+        BEGIN
+            SELECT 'Phone Number must be 10 digits.' AS Message;
+            RETURN;
+        END;
+
+        IF @PhoneNo LIKE '%[^0-9]%'
+        BEGIN
+            SELECT 'Phone Number must contain only digits.' AS Message;
+            RETURN;
+        END;
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblTrainer T
+            INNER JOIN tblEmployee E
+                ON T.EmployeeId = E.EmployeeId
+            WHERE E.PhoneNo = @PhoneNo
+        )
+        BEGIN
+            SELECT 'Trainer not found.' AS Message;
+            RETURN;
+        END;
+
+        SELECT
+            E.EmployeeId,
+            T.TrainerId,
+            CONCAT(E.FirstName,' ',E.MiddleName, ' ',E.LastName) AS TrainerName,
+            T.Specialization,
+            T.TrainerType,
+            CD.Document,
+            E.PhoneNo,
+            G.GenderName
+        FROM tblTrainer T
+        INNER JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        INNER JOIN tblCertificateDocument CD
+            ON T.TrainerId = CD.TrainerId
+        INNER JOIN tblGender G
+            ON E.GenderId = G.GenderId
+        WHERE E.PhoneNo = @PhoneNo
+        AND E.IsActive = 1;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+
 
 -------------------------------------------
 -- SP: spDisplayMembersWithPersonalTrainer  xx
@@ -1727,6 +1831,47 @@ GO
                    -- ShiftManagement SPs --
 -------------------------------------------------------------------
 
+-------------------------------------
+--SP: spRetrieveFreeTrainerByShift---
+-------------------------------------
+CREATE PROC spRetrieveFreeTrainerByShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            S.ShiftName,
+            COUNT(
+                CASE 
+                    WHEN E.IsActive = 1 THEN TS.TrainerId
+                END
+            ) AS TotalFreeTrainer
+        FROM tblShift S
+        LEFT JOIN tblTrainerShift TS
+            ON S.ShiftId = TS.ShiftId
+            AND TS.IsActive = 1
+        LEFT JOIN tblTrainer T
+            ON TS.TrainerId = T.TrainerId
+        LEFT JOIN tblEmployee E
+            ON T.EmployeeId = E.EmployeeId
+        GROUP BY
+            S.ShiftId,
+            S.ShiftName,
+            S.StartTime
+        ORDER BY
+            S.StartTime;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 --------------------------
 --SP: spUpdateShiftTime---
 --------------------------
@@ -1837,6 +1982,39 @@ GO
                    -- MembershipPlanManagement SPs --
 -------------------------------------------------------------------
 
+-------------------------------------------
+--SP: spRetrieveTopThreeMembershipPlans--
+-------------------------------------------
+CREATE PROC spRetrieveTopThreeMembershipPlans
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT TOP 3
+            MP.MembershipPlanName,
+            COUNT(MS.MemberSubscriptionId) AS TotalSubscriptions
+        FROM tblMembershipPlans MP
+        LEFT JOIN tblMembershipSubscription MS
+            ON MP.MembershipPlanId = MS.MembershipPlanId
+            AND MS.IsActive = 1
+        GROUP BY
+            MP.MembershipPlanId,
+            MP.MembershipPlanName
+        ORDER BY
+            TotalSubscriptions DESC,
+            MP.MembershipPlanId;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 --------------------------------------
 --SP: spInsertDataIntoMembershipPlan--
 --------------------------------------
@@ -2136,6 +2314,39 @@ GO
 -------------------------------------------------------------------
                    -- ExpenseManagement SPs --
 -------------------------------------------------------------------
+------------------------------------------
+--SP: spRetrieveCurrentMonthTotalExpense--
+------------------------------------------
+CREATE PROC spRetrieveCurrentMonthTotalExpense
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        DECLARE @CurrentMonth INT = MONTH(GETDATE());
+        DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+        SELECT
+            ISNULL(SUM(ExpenseAmount), 0) AS TotalExpense
+        FROM tblExpense
+        WHERE ExpenseDate >= DATEFROMPARTS(@CurrentYear, @CurrentMonth, 1)
+          AND ExpenseDate < DATEADD(
+                MONTH,
+                1,
+                DATEFROMPARTS(@CurrentYear, @CurrentMonth, 1)
+              );
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
+
 ------------------------
 --SP: spGetAllExpenses--
 ------------------------
@@ -2788,6 +2999,37 @@ GO
                    -- MembershipSubscriptionManagement SPs --
 -------------------------------------------------------------------------------
 
+-----------------------------------------------
+--SP: spRetrieveCurrentMonthSubscriptionNo--
+-----------------------------------------------
+CREATE PROC spRetrieveCurrentMonthSubscriptionNo
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        DECLARE @StartOfMonth DATE =
+            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1);
+
+        DECLARE @StartOfNextMonth DATE =
+            DATEADD(MONTH, 1, @StartOfMonth);
+
+        SELECT
+            COUNT(*) AS SubscriptionNo
+        FROM tblMembershipSubscription
+        WHERE StartDate >= @StartOfMonth
+          AND StartDate < @StartOfNextMonth;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
 -----------------------------------------------
 --SP: spGetTopThreeHighestSellingSubscription--
 -----------------------------------------------
@@ -3495,6 +3737,72 @@ END CATCH
 END
 GO
 
+-----------------------------------------
+--SP: spRetrieveShiftWiseMemberNumbers--
+-----------------------------------------
+CREATE PROC spRetrieveShiftWiseMemberNumbers
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            s.ShiftId,
+            s.ShiftName,
+            COUNT(ms.MemberShiftId) AS MemberCount
+        FROM tblShift s
+        LEFT JOIN tblMemberShift ms
+            ON s.ShiftId = ms.ShiftId
+            AND ms.IsActive = 1
+        LEFT JOIN tblMember m
+            ON ms.MemberId = m.MemberId
+            AND m.IsActive = 1
+        GROUP BY
+            s.ShiftId,
+            s.ShiftName
+        ORDER BY
+            s.ShiftId;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+-----------------------------------------
+--SP: spRetrieveCurrentMonthNewMembers--
+-----------------------------------------
+CREATE PROC spRetrieveCurrentMonthNewMembers
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        DECLARE @StartOfMonth DATE =
+            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1);
+
+        DECLARE @StartOfNextMonth DATE =
+            DATEADD(MONTH, 1, @StartOfMonth);
+
+        SELECT
+            COUNT(*) AS NewMembers
+        FROM tblMember
+        WHERE JoiningDate >= @StartOfMonth
+          AND JoiningDate < @StartOfNextMonth;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 ---------------------------------------
 --SP: spAssignPersonalTrainerToMember--
 ---------------------------------------
@@ -4649,6 +4957,70 @@ GO
 -------------------------------------------------------------------------------
 
 --------------------------------------------------------------
+  --SP: spGetAllMemberSubscriptionPaymentDetails--
+--------------------------------------------------------------
+CREATE PROC spGetAllMemberSubscriptionPaymentDetails
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        m.FirstName + ' ' + 
+        ISNULL(m.MiddleName + ' ', '') + 
+        m.LastName AS MemberName,
+        mp.MembershipPlanName,
+        s.PaymentDate,
+        s.PaymentMethod,
+        s.Amount,
+        s.FeesType
+    FROM tblSubscriptionPayment s
+    INNER JOIN tblMembershipPlans mp
+        ON s.MembershipPlanId = mp.MembershipPlanId
+    INNER JOIN tblMember m
+        ON s.MemberId = m.MemberId
+    ORDER BY s.PaymentDate DESC;
+END
+GO
+---------------------------------------------
+  --SP: spGetSubscriptionHistoryByPhoneNo--
+---------------------------------------------
+CREATE PROC spGetSubscriptionHistoryByPhoneNo 
+    @PhoneNo VARCHAR(10)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	IF @PhoneNo IS NOT NULL AND LTRIM(RTRIM(@PhoneNo)) <> ''
+		BEGIN
+			SELECT 
+				s.PaymentId,
+				s.MemberId,
+				CONCAT(
+                    m.FirstName, 
+                    CASE WHEN m.MiddleName IS NOT NULL THEN ' ' + m.MiddleName ELSE '' END,
+                    ' ', m.LastName
+                ) AS MemberName,
+				
+				s.Amount,
+				m.EmailId,
+				m.PhoneNo,
+				mp.MembershipPlanName,
+				s.PaymentDate,
+				s.PaymentMethod,
+				s.FeesType
+			FROM tblSubscriptionPayment s 
+			JOIN tblMember m
+				ON s.MemberId = m.MemberId
+			JOIN tblMembershipPlans mp
+				ON s.MembershipPlanId = mp.MembershipPlanId
+			Where m.PhoneNo = @PhoneNo order by s.PaymentDate desc;
+		END
+	ELSE
+		BEGIN
+			SELECT 'Phone number is required.' AS Message
+		END
+END
+--------------------------------------------------------------
   --SP: spRetrieveSubscriptionPaymentDetailsBetweenDateRange--
 --------------------------------------------------------------
 CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange 
@@ -4988,7 +5360,40 @@ GO
 -------------------------------------------------------------------------------
                    -- AttendanceManagement SPs --
 -------------------------------------------------------------------------------
+-----------------------------------------
+  --SP: spRetrieveTodayMemberAttendance--
+-----------------------------------------
+CREATE PROC spRetrieveTodayMemberAttendance
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    BEGIN TRY
+
+        SELECT
+            s.ShiftId,
+            s.ShiftName,
+            COUNT(ma.AttendanceId) AS AttendanceCount
+        FROM tblShift s
+        LEFT JOIN tblMemberAttendance ma
+            ON s.ShiftId = ma.ShiftId
+            AND ma.AttendanceDate >= CAST(GETDATE() AS DATE)
+            AND ma.AttendanceDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE))
+        GROUP BY
+            s.ShiftId,
+            s.ShiftName
+        ORDER BY
+            s.ShiftId;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
 -----------------------------------------------------
   --SP: spRetrieveAbsentMembersOnCurrentDateByShift--
 ------------------------------------------------------
@@ -6273,7 +6678,42 @@ BEGIN
 END
 GO
 
+---------------------------------------
+  --SP: spRetrieveSpecificWorkoutPlan--
+---------------------------------------
+CREATE PROCEDURE spRetrieveSpecificWorkoutPlan  
+    @WorkoutPlanId INT  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    SELECT  
+        WorkoutPlanId,  
+        WorkoutName,  
+        Description  
+    FROM tblWorkoutPlans  
+    WHERE WorkoutPlanId = @WorkoutPlanId;  
+END
+GO
+---------------------------------------
+  --SP: spRetrieveSpecificExercise--
+---------------------------------------
+CREATE PROC spRetrieveSpecificExercise
+(
+    @ExerciseId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    SELECT
+        ExerciseId,
+        ExerciseName,
+        MuscleType
+    FROM tblExercises
+    WHERE ExerciseId = @ExerciseId;
+END
+GO
 -------------------------------------------------------------------------------
                    -- DietPlanManagement SPs --
 -------------------------------------------------------------------------------
@@ -6580,9 +7020,9 @@ BEGIN CATCH
 END CATCH
 END;
 GO
------------------------------------------------------
-	--Retrieve Gender  Details
------------------------------------------------------
+---------------------------------
+	--spRetrieveGenderDetails--
+---------------------------------
 CREATE PROCEDURE spRetrieveGenderDetails
 AS
 BEGIN
@@ -6602,4 +7042,25 @@ BEGIN
 
     END CATCH
 END
+GO
+
+-----------------------------------------
+	--spRetrieveMembershipPlanTypes--
+-----------------------------------------
+CREATE PROCEDURE spRetrieveMembershipPlanTypes
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT
+            PlanTypeId,
+            PlanType
+        FROM tblMembershipPlanType
+        ORDER BY PlanType ASC;
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
 GO

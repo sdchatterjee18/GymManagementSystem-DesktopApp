@@ -170,6 +170,7 @@
     <Compile Include="FORMS\Dashboard\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Dashboard\UI\DashboardUI.cs" />
     <Compile Include="FORMS\DietPlan\FrmAddNewDietPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +196,7 @@
     <Compile Include="FORMS\Expenses\FrmAddExpenses.Designer.cs">
       <DependentUpon>FrmAddExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Expenses\UI\ExpensesUI.cs" />
     <Compile Include="FORMS\FitnessTest\FrmFitnessTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +331,7 @@
     <Compile Include="FORMS\Trainer\FrmTrainer.Designer.cs">
       <DependentUpon>FrmTrainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Trainer\UI\TrainerUI.cs" />
     <Compile Include="FORMS\Workout\FrmAddNewExercise.cs">
       <SubType>Form</SubType>
     </Compile>
