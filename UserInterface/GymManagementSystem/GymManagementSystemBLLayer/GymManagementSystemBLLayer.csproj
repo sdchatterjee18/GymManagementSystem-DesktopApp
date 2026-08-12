@@ -45,6 +45,7 @@
     <Compile Include="Common\ValidationBll.cs" />
     <Compile Include="ModulesBLLayer\Dashboard\DashboardBLL.cs" />
     <Compile Include="ModulesBLLayer\DietPlan\DietPlanBLL.cs" />
+    <Compile Include="ModulesBLLayer\Expense\ExpensesBLL.cs" />
     <Compile Include="ModulesBLLayer\Gender\GenderBLL.cs" />
     <Compile Include="ModulesBLLayer\Locker\LockerBLL.cs" />
     <Compile Include="ModulesBLLayer\MembershipPlan\MembershipPlanBLL.cs" />

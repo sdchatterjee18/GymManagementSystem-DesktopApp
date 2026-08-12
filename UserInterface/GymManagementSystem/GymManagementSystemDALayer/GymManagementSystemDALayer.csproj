@@ -45,6 +45,7 @@
     <Compile Include="Common\LookupDAL.cs" />
     <Compile Include="ModulesDALayer\Dashboard\DashboardDAL.cs" />
     <Compile Include="ModulesDALayer\DietPlan\DietPlanDAL.cs" />
+    <Compile Include="ModulesDALayer\Expense\ExpensesDAL.cs" />
     <Compile Include="ModulesDALayer\Gender\GenderDAL.cs" />
     <Compile Include="ModulesDALayer\Locker\LockerDAL.cs" />
     <Compile Include="ModulesDALayer\MembershipPlan\MembershipPlanDAL.cs" />
