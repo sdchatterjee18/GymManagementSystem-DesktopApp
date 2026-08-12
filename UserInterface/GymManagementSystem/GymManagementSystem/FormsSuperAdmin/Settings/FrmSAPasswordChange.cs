@@ -18,28 +18,26 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
 
         private void FrmSAPasswordChange_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = null;
         }
 
-        private void txtOldPassword_Enter(object sender, EventArgs e)
+        
+
+        private void FrmSAPasswordChange_Shown(object sender, EventArgs e)
         {
-            if (txtOldPassword.Text.Trim() == "Enter Old Password")
-            {
-                txtOldPassword.Text = "";
-                txtOldPassword.ForeColor = Color.Black;
+            this.ActiveControl = null;
+        }
+
+        private void txtOldPassword_Click(object sender, EventArgs e)
+        {
+             if (txtOldPassword.Text.Trim() == "Enter Old Password")
+          {
+             txtOldPassword.Text = "";
+               txtOldPassword.ForeColor = Color.Black;
             }
         }
 
-        private void txtOldPassword_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtOldPassword.Text))
-            {
-                txtOldPassword.Text = "Enter Old Password";
-                txtOldPassword.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtNewPassword_Enter(object sender, EventArgs e)
+        private void txtNewPassword_Click(object sender, EventArgs e)
         {
             if (txtNewPassword.Text.Trim() == "Enter New Password")
             {
@@ -48,16 +46,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
             }
         }
 
-        private void txtNewPassword_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNewPassword.Text))
-            {
-                txtNewPassword.Text = "Enter New Password";
-                txtNewPassword.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtConfermPassword_Enter(object sender, EventArgs e)
+        private void txtConfermPassword_Click(object sender, EventArgs e)
         {
             if (txtConfermPassword.Text.Trim() == "Conferm New Password")
             {
@@ -68,16 +57,24 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
 
         private void txtConfermPassword_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtConfermPassword.Text))
-            {
-                txtConfermPassword.Text = "Conferm New Password";
-                txtConfermPassword.ForeColor = Color.Gray;
-            }
+
         }
 
-        private void FrmSAPasswordChange_Shown(object sender, EventArgs e)
+        private void txtConfermPassword_Enter(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+
         }
+
+        private void txtNewPassword_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNewPassword_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

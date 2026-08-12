@@ -74,5 +74,11 @@ namespace GymManagementSystem.Authentication
         {
             pnlSuperAdminLogin.BackColor = Color.FloralWhite;
         }
+
+        private void tlpAddNewRegistration_Click(object sender, EventArgs e)
+        {
+            FrmSuperAdminRegistration fm = new FrmSuperAdminRegistration();
+            fm.Show();
+        }
     }
 }
