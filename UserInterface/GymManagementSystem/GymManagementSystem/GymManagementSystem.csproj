@@ -197,6 +197,7 @@
     <Compile Include="FORMS\Expenses\FrmAddExpenses.Designer.cs">
       <DependentUpon>FrmAddExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Expenses\UI\ExpensesUI.cs" />
     <Compile Include="FORMS\FitnessTest\FrmFitnessTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +312,7 @@
     <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.Designer.cs">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\RegistrationFee\UI\RegistrationFeeUI.cs" />
     <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

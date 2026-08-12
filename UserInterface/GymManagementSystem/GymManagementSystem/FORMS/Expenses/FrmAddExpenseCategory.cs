@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.Expenses.UI;
+using GymManagementSystem.FORMS.Expenses;
 
 namespace GymManagementSystem.FORMS.Expenses
 {
@@ -15,10 +17,11 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             InitializeComponent();
         }
+        
 
         private void tlpSubmit_Click(object sender, EventArgs e)
         {
-
+            InsertExpenseCatogory();        
         }
 
         private void lblClear_Click(object sender, EventArgs e)
@@ -61,6 +64,25 @@ namespace GymManagementSystem.FORMS.Expenses
         private void lblCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void InsertExpenseCatogory()
+        {
+            string InsertionMessage = null;
+            try
+            {
+                ExpensesUI ExpenseUI = new ExpensesUI();
+                InsertionMessage = ExpenseUI.InsertExpenseCategoryUI(txtRequiredCategoryName.Text, txtInputCategory.Text);
+                DialogResult Result = MessageBox.Show(InsertionMessage, "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (Result == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                InsertionMessage = null; 
+            }
         }
     }
 }

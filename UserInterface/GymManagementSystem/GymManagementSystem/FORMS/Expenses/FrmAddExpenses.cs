@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.Expenses.UI;
 
 namespace GymManagementSystem.FORMS.Expenses
 {
@@ -29,48 +30,75 @@ namespace GymManagementSystem.FORMS.Expenses
             txtExpenseDefination.Select(0, 0);
             txtExpenseDefination.DeselectAll();
 
-            RetrieveAllExpenses();
+            RetrieveCategoryName();
+            RetrieveAllExpense();
             dgvExpenses.ClearSelection();
         }
-        private void RetrieveAllExpenses()
+
+
+        //Retrieve Category Name for combobox
+        public void RetrieveCategoryName()
         {
-            string CS = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
+            DataTable CategoryName = null;
             try
             {
-                sqlConnection = new SqlConnection(CS);
-                using (SqlCommand sqlCommand = new SqlCommand("spGetAllExpenses", sqlConnection))
-                {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlConnection.Open();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    DataRowCollection dataRows = dataTable.Rows;
-                    int SerialNo = 1;
-                    foreach (DataRow dataRow in dataRows)
-                    {
-                        int RowIndex = dgvExpenses.Rows.Add();
-                        dgvExpenses.Rows[RowIndex].Cells["colSLNo"].Value = SerialNo++;
-                        dgvExpenses.Rows[RowIndex].Cells["colSLNo"].Style.ForeColor = Color.RoyalBlue;
-                        dgvExpenses.Rows[RowIndex].Cells["colCategoryName"].Value = dataRow["CategoryName"].ToString();
-                        dgvExpenses.Rows[RowIndex].Cells["colCategory"].Value = dataRow["Category"].ToString();
-                        dgvExpenses.Rows[RowIndex].Cells["colExpenseAmount"].Value = dataRow["ExpenseAmount"].ToString();
-                        dgvExpenses.Rows[RowIndex].Cells["colExpenseDate"].Value = dataRow["ExpenseDate"].ToString();
-                        dgvExpenses.Rows[RowIndex].Cells["colNotes"].Value = dataRow["Notes"].ToString();
-
-                    }
-                }
+                ExpensesUI ExpenseUI = new ExpensesUI();
+                cmbCateogory.DataSource = ExpenseUI.RetrieveCategoryNameUI();
+                cmbCateogory.DisplayMember = "CategoryName";
+                cmbCateogory.ValueMember = "ExpenseCategoryID";
+                cmbCateogory.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
-                dgvExpenses.DataSource = null;
-            }
-            finally
-            {
-                sqlConnection.Close();
+                CategoryName = null;
             }
         }
+        //Retrieve All Expenses
+        private void RetrieveAllExpense()
+        {
+            dgvExpenses.Rows.Clear();
+            DataTable AllExpenses = null;
+            try
+            {
+                ExpensesUI ExpenseUI = new ExpensesUI();
+                AllExpenses = ExpenseUI.RetrieveAllExpensesUI();
+                int SerialNo = 1;
+                foreach (DataRow row in AllExpenses.Rows)
+                {
+                    dgvExpenses.Rows.Add(
+                    SerialNo++,
+                    row["CategoryName"].ToString(),
+                    row["Category"].ToString(),
+                   Convert.ToDecimal(row["ExpenseAmount"]),
+                  Convert.ToDateTime( row["ExpenseDate"]).ToString("dd-MM-yyyy"),
+                   row["Notes"].ToString()
+                    );
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                AllExpenses = null;
+            }
+        }
+
+        //Retrieve Expense
+        private void InsertExpense()
+        {
+            string InsertionMessage = null;
+            try
+            {
+                ExpensesUI ExpenseUI = new ExpensesUI();
+                InsertionMessage = ExpenseUI.InsertExpenseUI(Convert.ToInt32(cmbCateogory.SelectedValue), txtAmount.Text,txtExpenseDefination.Text);
+                DialogResult Result = MessageBox.Show(InsertionMessage, "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                
+            }
+            catch (Exception ex)
+            {
+                InsertionMessage = null;
+            }
+        }
+        
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
@@ -136,6 +164,7 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
             frmAddExpenseCategory.ShowDialog();
+            RetrieveCategoryName();
         }
 
         private void tlpAddButton_MouseEnter(object sender, EventArgs e)
@@ -148,8 +177,12 @@ namespace GymManagementSystem.FORMS.Expenses
             this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
         }
 
-       
-      
-        
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            
+            InsertExpense();
+            RetrieveAllExpense();
+            
+        } 
     }
 }

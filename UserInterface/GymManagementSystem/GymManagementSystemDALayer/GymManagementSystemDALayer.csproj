@@ -45,12 +45,14 @@
     <Compile Include="Common\LookupDAL.cs" />
     <Compile Include="ModulesDALayer\Dashboard\DashboardDAL.cs" />
     <Compile Include="ModulesDALayer\DietPlan\DietPlanDAL.cs" />
+    <Compile Include="ModulesDALayer\Expense\ExpensesDAL.cs" />
     <Compile Include="ModulesDALayer\Gender\GenderDAL.cs" />
     <Compile Include="ModulesDALayer\Locker\LockerDAL.cs" />
     <Compile Include="ModulesDALayer\MembershipPlan\MembershipPlanDAL.cs" />
     <Compile Include="ModulesDALayer\Member\MemberAllDetailsDAL.cs" />
     <Compile Include="ModulesDALayer\Member\MemberDAL.cs" />
     <Compile Include="ModulesDALayer\Payment\PaymentDAL.cs" />
+    <Compile Include="ModulesDALayer\RegistrationFee\RegistrtionFeeDAL.cs" />
     <Compile Include="ModulesDALayer\Shift\ShiftDAL.cs" />
     <Compile Include="ModulesDALayer\Workout\WorkoutDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,7 +12,7 @@
 --Registration Management — Line 2556
 --Locker Management — Line 2661
 --Membership Subscription Management — Line 2742
---Subscription Payment Management — Line 4533
+--Subscription Payment Management — Line 4956
 --Attendance Management — Line 4875
 --Employee Salary Management — Line 5236
 --Workout Schedule Management — Line 5835
@@ -2347,102 +2347,105 @@ BEGIN
 END
 GO
 
-------------------------
---SP: spGetAllExpenses--
-------------------------
+-------------------------------------
+--SP: spRetrieveAllExpenseStatement--
+------------------------------------
 CREATE PROC spRetrieveAllExpenseStatement
 AS
 BEGIN
-BEGIN TRY
+    SET NOCOUNT ON;
 
-    SELECT
-        E.ExpenseId,
-        C.CategoryName,
-        C.Category,
-        E.ExpenseAmount,
-        E.ExpenseDate,
-        E.Notes
-    FROM tblExpense E
-    INNER JOIN tblExpensesCategories C
-        ON E.ExpenseCategoryId = C.ExpenseCategoryID
-    ORDER BY E.ExpenseDate DESC;
+    BEGIN TRY
 
-END TRY
-BEGIN CATCH
-    SELECT ERROR_MESSAGE() AS Message;
-END CATCH
+        SELECT
+            E.ExpenseId,
+            C.CategoryName,
+            C.Category,
+            E.ExpenseAmount,
+            E.ExpenseDate,
+            E.Notes
+        FROM tblExpense AS E
+        INNER JOIN tblExpensesCategories AS C
+            ON E.ExpenseCategoryId = C.ExpenseCategoryId
+        ORDER BY
+            E.ExpenseDate DESC,
+            E.ExpenseId DESC;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT
+            ERROR_MESSAGE() AS Message;
+
+    END CATCH
 END;
 GO
 
 -----------------------
 --SP: spInsertExpense--
 -----------------------
-CREATE PROC spInsertExpense 
-(
-    @ExpenseCategoryId INT,
-    @ExpenseAmount DECIMAL(10,2),
-    @ExpenseDate DATE,
-    @Notes VARCHAR(MAX) 
-)
-AS
-BEGIN
-BEGIN TRY
-
-    SET NOCOUNT ON;
-
-    SET @Notes = LTRIM(RTRIM(@Notes));
-
-    IF @ExpenseCategoryId IS NULL
-    BEGIN
-        SELECT 'Expense Category is Required.' AS Message;
-        RETURN;
-    END
-
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblExpensesCategories
-        WHERE ExpenseCategoryID = @ExpenseCategoryId
-    )
-    BEGIN
-        SELECT 'Invalid Expense Category.' AS Message;
-        RETURN;
-    END
-
-    IF @ExpenseAmount IS NULL OR @ExpenseAmount < 0
-    BEGIN
-        SELECT 'Expense Amount Must Be >= 0.' AS Message;
-        RETURN;
-    END
-
-    IF @ExpenseDate IS NULL
-    BEGIN
-        SELECT 'Expense Date is Required.' AS Message;
-        RETURN;
-    END
-
-    INSERT INTO tblExpense
-    (
-        ExpenseCategoryId,
-        ExpenseAmount,
-        ExpenseDate,
-        Notes
-    )
-    VALUES
-    (
-        @ExpenseCategoryId,
-        @ExpenseAmount,
-        @ExpenseDate,
-        @Notes
-    );
-
-    SELECT 'Expense Inserted Successfully.' AS Message;
-
-END TRY
-BEGIN CATCH
-    SELECT ERROR_MESSAGE() AS Message;
-END CATCH
-END;
+CREATE PROC spInsertExpense  
+(  
+    @ExpenseCategoryId INT,  
+    @ExpenseAmount DECIMAL(10,2),  
+    @Notes VARCHAR(MAX)  
+)  
+AS  
+BEGIN  
+    BEGIN TRY  
+  
+        SET NOCOUNT ON;  
+  
+        SET @Notes = LTRIM(RTRIM(@Notes));  
+  
+        IF @ExpenseCategoryId IS NULL  
+        BEGIN  
+            SELECT 'Expense Category is Required.' AS Message;  
+            RETURN;  
+        END  
+  
+        IF NOT EXISTS  
+        (  
+            SELECT 1  
+            FROM tblExpensesCategories  
+            WHERE ExpenseCategoryId = @ExpenseCategoryId  
+        )  
+        BEGIN  
+            SELECT 'Invalid Expense Category.' AS Message;  
+            RETURN;  
+        END  
+  
+        IF @ExpenseAmount IS NULL OR @ExpenseAmount < 0  
+        BEGIN  
+            SELECT 'Expense Amount Must Be >= 0.' AS Message;  
+            RETURN;  
+        END  
+  
+        INSERT INTO tblExpense  
+        (  
+            ExpenseCategoryId,  
+            ExpenseAmount,  
+            ExpenseDate,  
+            Notes  
+        )  
+        VALUES  
+        (  
+            @ExpenseCategoryId,  
+            @ExpenseAmount,  
+            CAST(GETDATE() AS DATETIME),  
+            @Notes  
+        );  
+  
+        SELECT 'Expense Inserted Successfully.' AS Message;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
+END;  
 GO
 
 ---------------------------------------------
@@ -5020,6 +5023,631 @@ BEGIN
 			SELECT 'Phone number is required.' AS Message
 		END
 END
+------------------------------
+  --SP: spTotalMontlyIncome--
+------------------------------
+CREATE PROC spTotalMontlyIncome
+AS
+BEGIN
+DECLARE @CurrentMonth INT = MONTH(GETDATE());
+DECLARE @CurrentYear INT = YEAR(GETDATE());
+DECLARE @Income DECIMAL(18,2);
+    -- Membership Income
+  SELECT
+    @Income = ISNULL(SUM(sp.Amount), 0)
+FROM tblSubscriptionPayment sp
+WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+  AND YEAR(sp.PaymentDate) = @CurrentYear;
+SELECT @Income AS TotalIncome
+END
+GO
+---------------------------------------------
+  --SP: spGetCurrentMonthFinancialSummary--
+---------------------------------------------
+CREATE PROC spGetCurrentMonthFinancialSummary
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentMonth INT = MONTH(GETDATE());
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    DECLARE @Income DECIMAL(18,2);
+    DECLARE @Expense DECIMAL(18,2);
+    DECLARE @Salary DECIMAL(18,2);
+
+    -- Membership Income
+  SELECT
+    @Income = ISNULL(SUM(sp.Amount), 0)
+FROM tblSubscriptionPayment sp
+WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+  AND YEAR(sp.PaymentDate) = @CurrentYear;
+
+
+    -- Expense
+    SELECT
+        @Expense = ISNULL(SUM(ExpenseAmount), 0)
+    FROM tblExpense
+    WHERE MONTH(ExpenseDate) = @CurrentMonth
+      AND YEAR(ExpenseDate) = @CurrentYear;
+
+
+    -- Salary
+    SELECT
+        @Salary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+      AND YEAR(sp.PaymentDate) = @CurrentYear
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Dashboard Doughnut Chart Data
+    SELECT
+        @Income AS Income,
+        @Expense AS Expense,
+        @Salary AS Salary;
+END;
+GO
+
+---------------------------------------------
+  --SP: spGetCurrentMonthTotalIncome--
+---------------------------------------------
+CREATE PROC spGetCurrentMonthTotalIncome
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentMonth INT = MONTH(GETDATE());
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;
+
+SELECT
+    @TotalIncome = ISNULL(SUM(sp.Amount), 0)
+FROM tblSubscriptionPayment sp
+WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+  AND YEAR(sp.PaymentDate) = @CurrentYear;
+
+
+    -- Salary Paid
+    SELECT
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+      AND YEAR(sp.PaymentDate) = @CurrentYear
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Other Expenses
+    SELECT
+        @TotalExpense = ISNULL(SUM(ExpenseAmount), 0)
+    FROM tblExpense
+    WHERE MONTH(ExpenseDate) = @CurrentMonth
+      AND YEAR(ExpenseDate) = @CurrentYear;
+
+
+    -- Dashboard Total Income
+    SELECT
+        (@TotalIncome - @TotalSalary - @TotalExpense) AS TotalIncome;
+END;
+GO
+
+---------------------------------------------
+  --SP: spGetMonthlyRevenue--
+---------------------------------------------
+alter PROC spGetMonthlyRevenue
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    ;WITH Months AS
+    (
+        SELECT 1 AS MonthNumber, 'Jan' AS MonthName
+        UNION ALL SELECT 2, 'Feb'
+        UNION ALL SELECT 3, 'Mar'
+        UNION ALL SELECT 4, 'Apr'
+        UNION ALL SELECT 5, 'May'
+        UNION ALL SELECT 6, 'Jun'
+        UNION ALL SELECT 7, 'Jul'
+        UNION ALL SELECT 8, 'Aug'
+        UNION ALL SELECT 9, 'Sep'
+        UNION ALL SELECT 10, 'Oct'
+        UNION ALL SELECT 11, 'Nov'
+        UNION ALL SELECT 12, 'Dec'
+    ),
+
+    MonthlyIncome AS
+    (
+        SELECT
+            MONTH(sp.PaymentDate) AS MonthNumber,
+            SUM(sp.Amount) AS Income
+        FROM tblSubscriptionPayment sp
+        WHERE YEAR(sp.PaymentDate) = @CurrentYear
+        GROUP BY MONTH(sp.PaymentDate)
+    ),
+
+    MonthlySalary AS
+    (
+        SELECT
+            MONTH(sp.PaymentDate) AS MonthNumber,
+            SUM(s.Amount) AS Salary
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON sp.SalaryId = s.SalaryId
+        WHERE YEAR(sp.PaymentDate) = @CurrentYear
+          AND sp.PaymentStatus = 'Paid'
+        GROUP BY MONTH(sp.PaymentDate)
+    ),
+
+    MonthlyExpense AS
+    (
+        SELECT
+            MONTH(e.ExpenseDate) AS MonthNumber,
+            SUM(e.ExpenseAmount) AS Expense
+        FROM tblExpense e
+        WHERE YEAR(e.ExpenseDate) = @CurrentYear
+        GROUP BY MONTH(e.ExpenseDate)
+    )
+
+    SELECT
+        m.MonthName,
+
+        ISNULL(i.Income, 0)
+        - ISNULL(s.Salary, 0)
+        - ISNULL(e.Expense, 0) AS Revenue
+
+    FROM Months m
+
+    LEFT JOIN MonthlyIncome i
+        ON m.MonthNumber = i.MonthNumber
+
+    LEFT JOIN MonthlySalary s
+        ON m.MonthNumber = s.MonthNumber
+
+    LEFT JOIN MonthlyExpense e
+        ON m.MonthNumber = e.MonthNumber
+
+    ORDER BY m.MonthNumber;
+
+END;
+GO
+---------------------------------------------------
+  --SP: spGetCurrentMonthIncomeExpenseNetRevenue--
+--------------------------------------------------
+CREATE PROC spGetCurrentMonthIncomeExpenseNetRevenue
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentMonth INT = MONTH(GETDATE());
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;
+
+    -- Current Month Membership Income
+    SELECT
+        @TotalIncome = ISNULL(SUM(sp.Amount), 0)
+    FROM tblSubscriptionPayment sp
+    WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+      AND YEAR(sp.PaymentDate) = @CurrentYear;
+
+
+    -- Current Month Salary
+    SELECT
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE MONTH(sp.PaymentDate) = @CurrentMonth
+      AND YEAR(sp.PaymentDate) = @CurrentYear
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Current Month Other Expense
+    SELECT
+        @TotalExpense = ISNULL(SUM(e.ExpenseAmount), 0)
+    FROM tblExpense e
+    WHERE MONTH(e.ExpenseDate) = @CurrentMonth
+      AND YEAR(e.ExpenseDate) = @CurrentYear;
+
+
+    -- Final Result
+    SELECT
+        @TotalIncome AS TotalIncome,
+        (@TotalSalary + @TotalExpense) AS TotalExpense,
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) AS NetRevenue;
+
+END;
+GO
+
+---------------------------------------------------
+  --SP: spGetMonthlyRevenueForRevenueSection--
+--------------------------------------------------
+CREATE PROC spGetMonthlyRevenueForRevenueSectionOfCurrentYear
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    ;WITH Months AS
+    (
+        SELECT 1 AS MonthNumber, 'Jan' AS MonthName
+        UNION ALL SELECT 2, 'Feb'
+        UNION ALL SELECT 3, 'Mar'
+        UNION ALL SELECT 4, 'Apr'
+        UNION ALL SELECT 5, 'May'
+        UNION ALL SELECT 6, 'Jun'
+        UNION ALL SELECT 7, 'Jul'
+        UNION ALL SELECT 8, 'Aug'
+        UNION ALL SELECT 9, 'Sep'
+        UNION ALL SELECT 10, 'Oct'
+        UNION ALL SELECT 11, 'Nov'
+        UNION ALL SELECT 12, 'Dec'
+    ),
+
+    MonthlyIncome AS
+    (
+        SELECT
+            MONTH(ms.StartDate) AS MonthNumber,
+            SUM(mp.Price) AS Income
+        FROM tblMembershipSubscription ms
+        INNER JOIN tblMembershipPlans mp
+            ON ms.MembershipPlanId = mp.MembershipPlanId
+        WHERE YEAR(ms.StartDate) = @CurrentYear
+        GROUP BY MONTH(ms.StartDate)
+    ),
+
+    MonthlySalary AS
+    (
+        SELECT
+            MONTH(sp.PaymentDate) AS MonthNumber,
+            SUM(s.Amount) AS Salary
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON sp.SalaryId = s.SalaryId
+        WHERE YEAR(sp.PaymentDate) = @CurrentYear
+          AND sp.PaymentStatus = 'Paid'
+        GROUP BY MONTH(sp.PaymentDate)
+    ),
+
+    MonthlyExpense AS
+    (
+        SELECT
+            MONTH(e.ExpenseDate) AS MonthNumber,
+            SUM(e.ExpenseAmount) AS Expense
+        FROM tblExpense e
+        WHERE YEAR(e.ExpenseDate) = @CurrentYear
+        GROUP BY MONTH(e.ExpenseDate)
+    ),
+
+    MonthlyRevenue AS
+    (
+        SELECT
+            m.MonthNumber,
+            m.MonthName,
+
+            ISNULL(i.Income, 0) AS Income,
+
+            ISNULL(s.Salary, 0)
+            + ISNULL(e.Expense, 0) AS Expense,
+
+            ISNULL(i.Income, 0)
+            - ISNULL(s.Salary, 0)
+            - ISNULL(e.Expense, 0) AS Revenue
+
+        FROM Months m
+
+        LEFT JOIN MonthlyIncome i
+            ON m.MonthNumber = i.MonthNumber
+
+        LEFT JOIN MonthlySalary s
+            ON m.MonthNumber = s.MonthNumber
+
+        LEFT JOIN MonthlyExpense e
+            ON m.MonthNumber = e.MonthNumber
+    )
+
+    SELECT
+        MonthName,
+        Income,
+        Expense,
+        Revenue
+
+    FROM MonthlyRevenue
+    ORDER BY MonthNumber;
+
+END;
+GO
+
+---------------------------------------------------
+  --SP: spGetMonthlyRevenueForRevenueSectionByYear--
+--------------------------------------------------
+CREATE PROC spGetMonthlyRevenueForRevenueSectionByYear
+(
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    ;WITH Months AS
+    (
+        SELECT 1 AS MonthNumber, 'Jan' AS MonthName
+        UNION ALL SELECT 2, 'Feb'
+        UNION ALL SELECT 3, 'Mar'
+        UNION ALL SELECT 4, 'Apr'
+        UNION ALL SELECT 5, 'May'
+        UNION ALL SELECT 6, 'Jun'
+        UNION ALL SELECT 7, 'Jul'
+        UNION ALL SELECT 8, 'Aug'
+        UNION ALL SELECT 9, 'Sep'
+        UNION ALL SELECT 10, 'Oct'
+        UNION ALL SELECT 11, 'Nov'
+        UNION ALL SELECT 12, 'Dec'
+    ),
+
+    MonthlyIncome AS
+    (
+        SELECT
+            MONTH(ms.StartDate) AS MonthNumber,
+            SUM(mp.Price) AS Income
+        FROM tblMembershipSubscription ms
+        INNER JOIN tblMembershipPlans mp
+            ON ms.MembershipPlanId = mp.MembershipPlanId
+        WHERE YEAR(ms.StartDate) = @Year
+        GROUP BY MONTH(ms.StartDate)
+    ),
+
+    MonthlySalary AS
+    (
+        SELECT
+            MONTH(sp.PaymentDate) AS MonthNumber,
+            SUM(s.Amount) AS Salary
+        FROM tblSalaryPayment sp
+        INNER JOIN tblSalary s
+            ON sp.SalaryId = s.SalaryId
+        WHERE YEAR(sp.PaymentDate) = @Year
+          AND sp.PaymentStatus = 'Paid'
+        GROUP BY MONTH(sp.PaymentDate)
+    ),
+
+    MonthlyExpense AS
+    (
+        SELECT
+            MONTH(e.ExpenseDate) AS MonthNumber,
+            SUM(e.ExpenseAmount) AS Expense
+        FROM tblExpense e
+        WHERE YEAR(e.ExpenseDate) = @Year
+        GROUP BY MONTH(e.ExpenseDate)
+    ),
+
+    MonthlyRevenue AS
+    (
+        SELECT
+            m.MonthNumber,
+            m.MonthName,
+
+            ISNULL(i.Income, 0) AS Income,
+
+            -- Total Expense = Salary + Other Expense
+            ISNULL(s.Salary, 0)
+            + ISNULL(e.Expense, 0) AS Expense,
+
+            -- Revenue = Income - Total Expense
+            ISNULL(i.Income, 0)
+            - ISNULL(s.Salary, 0)
+            - ISNULL(e.Expense, 0) AS Revenue
+
+        FROM Months m
+
+        LEFT JOIN MonthlyIncome i
+            ON m.MonthNumber = i.MonthNumber
+
+        LEFT JOIN MonthlySalary s
+            ON m.MonthNumber = s.MonthNumber
+
+        LEFT JOIN MonthlyExpense e
+            ON m.MonthNumber = e.MonthNumber
+    )
+
+    SELECT
+        MonthName,
+        Income,
+        Expense,
+        Revenue
+
+    FROM MonthlyRevenue
+    ORDER BY MonthNumber;
+
+END;
+GO
+
+---------------------------------------------------
+  --SP: spGetIncomeExpenseNetRevenueOfCurrentYear--
+--------------------------------------------------
+CREATE PROC spGetIncomeExpenseNetRevenueForRevenueSectionOfCurrentYear
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;
+
+
+    -- Current Year Membership Income
+    SELECT
+        @TotalIncome = ISNULL(SUM(sp.Amount), 0)
+    FROM tblSubscriptionPayment sp
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear;
+
+
+    -- Current Year Salary
+    SELECT
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Current Year Other Expense
+    SELECT
+        @TotalExpense = ISNULL(SUM(e.ExpenseAmount), 0)
+    FROM tblExpense e
+    WHERE YEAR(e.ExpenseDate) = @CurrentYear;
+
+
+    -- Final Result
+    SELECT
+        @TotalIncome AS TotalIncome,
+
+        (@TotalSalary + @TotalExpense) AS TotalExpense,
+
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) AS NetRevenue,
+
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) / 12.0 AS AverageMonthlyRevenue;
+
+END;
+GO
+
+---------------------------------------------
+  --SP: spGetIncomeExpenseNetRevenueByYear--
+---------------------------------------------
+CREATE PROC spGetIncomeExpenseNetRevenueForRevenueSectionByYear 
+(
+    @Year INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;
+
+
+    -- Selected Year Membership Income
+    SELECT
+        @TotalIncome = ISNULL(SUM(sp.Amount), 0)
+    FROM tblSubscriptionPayment sp
+    WHERE YEAR(sp.PaymentDate) = @Year;
+
+
+    -- Selected Year Salary
+    SELECT
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE YEAR(sp.PaymentDate) = @Year
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Selected Year Other Expense
+    SELECT
+        @TotalExpense = ISNULL(SUM(e.ExpenseAmount), 0)
+    FROM tblExpense e
+    WHERE YEAR(e.ExpenseDate) = @Year;
+
+
+    -- Final Result
+    SELECT
+        @TotalIncome AS TotalIncome,
+
+        (@TotalSalary + @TotalExpense) AS TotalExpense,
+
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) AS NetRevenue,
+
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) / 12.0 AS AverageMonthlyRevenue;
+
+END;
+GO
+---------------------------------------------------
+  --SP: spGetCurrentYearIncomeExpenseNetRevenue--
+--------------------------------------------------
+CREATE PROC spGetCurrentYearIncomeExpenseNetRevenue
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentYear INT = YEAR(GETDATE());
+
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;
+
+
+    -- Current Year Membership Income
+    SELECT
+        @TotalIncome = ISNULL(SUM(sp.Amount), 0)
+    FROM tblSubscriptionPayment sp
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear;
+
+
+    -- Current Year Salary
+    SELECT
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)
+    FROM tblSalaryPayment sp
+    INNER JOIN tblSalary s
+        ON sp.SalaryId = s.SalaryId
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear
+      AND sp.PaymentStatus = 'Paid';
+
+
+    -- Current Year Other Expense
+    SELECT
+        @TotalExpense = ISNULL(SUM(e.ExpenseAmount), 0)
+    FROM tblExpense e
+    WHERE YEAR(e.ExpenseDate) = @CurrentYear;
+
+
+    -- Final Result
+    SELECT
+        @TotalIncome AS TotalIncome,
+        (@TotalSalary + @TotalExpense) AS TotalExpense,
+        (
+            @TotalIncome
+            - @TotalSalary
+            - @TotalExpense
+        ) AS NetRevenue;
+
+END;
+GO
 --------------------------------------------------------------
   --SP: spRetrieveSubscriptionPaymentDetailsBetweenDateRange--
 --------------------------------------------------------------
@@ -5394,10 +6022,11 @@ BEGIN
 
     END CATCH
 END
+GO
 -----------------------------------------------------
   --SP: spRetrieveAbsentMembersOnCurrentDateByShift--
 ------------------------------------------------------
-CREATE PROC spRetrieveAbsentMembersOnCurrentDateByShift 
+CREATE PROC spRetrieveAbsentMembersOnCurrentDateByShift
     @ShiftId INT
 AS
 BEGIN
@@ -5419,6 +6048,7 @@ BEGIN
         CONCAT(ISNULL(m.FirstName,''), ' ',
                ISNULL(m.MiddleName,''), ' ',
                ISNULL(m.LastName,'')) AS MemberName,
+        S.ShiftId,
         s.ShiftName,
         m.PhoneNo
     FROM tblShift s
@@ -5437,10 +6067,81 @@ BEGIN
 END;
 GO
 
+-----------------------------------------------------
+  --SP: spRetrieveAbsentMembersOnCurrentDateCurrentShift--
+-----------------------------------------------------
+CREATE PROC spRetrieveAbsentMembersOnCurrentDateCurrentShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);
+    DECLARE @CurrentShiftId INT;
+
+    -- Find the current shift
+    SELECT TOP 1
+        @CurrentShiftId = ShiftId
+    FROM tblShift
+    WHERE
+        (
+            StartTime <= EndTime
+            AND @CurrentTime >= StartTime
+            AND @CurrentTime < EndTime
+        )
+        OR
+        (
+            StartTime > EndTime
+            AND (
+                @CurrentTime >= StartTime
+                OR @CurrentTime < EndTime
+            )
+        )
+    ORDER BY StartTime;
+
+
+    -- No shift is currently active
+    IF @CurrentShiftId IS NULL
+    BEGIN
+        SELECT 'No shift is currently active.' AS Message;
+        RETURN;
+    END;
+
+
+    -- Get absent members of the current shift
+    SELECT DISTINCT
+        m.MemberId,
+        CONCAT(
+            ISNULL(m.FirstName, ''), ' ',
+            ISNULL(m.MiddleName, ''), ' ',
+            ISNULL(m.LastName, '')
+        ) AS MemberName,
+        S.ShiftId,
+        s.ShiftName,
+        m.PhoneNo
+    FROM tblShift s
+
+    INNER JOIN tblMemberShift ms
+        ON ms.ShiftId = s.ShiftId
+        AND ms.IsActive = 1
+
+    INNER JOIN tblMember m
+        ON m.MemberId = ms.MemberId
+        AND m.IsActive = 1
+
+    LEFT JOIN tblMemberAttendance ma
+        ON ma.MemberId = m.MemberId
+        AND ma.ShiftId = s.ShiftId
+        AND CAST(ma.AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
+
+    WHERE s.ShiftId = @CurrentShiftId
+      AND ma.AttendanceId IS NULL;
+
+END
+GO
 --------------------------------
   --SP: spMarkMemberAttendance--
 --------------------------------
-CREATE PROC spMarkMemberAttendance 
+CREATE PROC spMarkMemberAttendance
 (
     @MemberId INT,
     @ShiftId INT
