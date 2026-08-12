@@ -309,6 +309,7 @@
     <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.Designer.cs">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\RegistrationFee\UI\RegistrationFeeUI.cs" />
     <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
