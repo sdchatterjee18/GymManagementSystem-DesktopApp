@@ -117,5 +117,6 @@ namespace GymManagementSystem.FORMS.Dashboard.UI
                 dashboardBLL.RetrieveTodayMemberAttendanceBLL();
             return dataTable;
         }
+
     }
 }

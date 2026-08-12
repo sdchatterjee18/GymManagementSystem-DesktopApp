@@ -113,5 +113,62 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Dashboard
                 dashboardDAL.RetrieveTodayMemberAttendanceDAL();
             return dataTable;
         }
+
+        // SUPER ADMIN SECTION
+        // Get Active Employee Count BLL
+        public int GetActiveEmployeeCountBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            int activeEmployeeCount =
+                dashboardDAL.GetActiveEmployeeCountDAL();
+            return activeEmployeeCount;
+        }
+        // Get Current Month Total Income BLL
+        public decimal GetCurrentMonthTotalIncomeBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            decimal totalIncome =
+                dashboardDAL.GetCurrentMonthTotalIncomeDAL();
+            return totalIncome;
+        }
+        // Get Current Month Income Expense Net Revenue BLL
+        public DataTable GetCurrentMonthIncomeExpenseNetRevenueBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            DataTable dataTable =
+                dashboardDAL.GetCurrentMonthIncomeExpenseNetRevenueDAL();
+            return dataTable;
+        }
+        // Get Current Year Income Expense Net Revenue BLL
+        public DataTable GetCurrentYearIncomeExpenseNetRevenueBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            DataTable dataTable =
+                dashboardDAL.GetCurrentYearIncomeExpenseNetRevenueDAL();
+            return dataTable;
+        }
+
+        // Get Current Month Financial Summary BLL
+        public DataTable GetCurrentMonthFinancialSummaryBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            DataTable dataTable =
+                dashboardDAL.GetCurrentMonthFinancialSummaryDAL();
+            return dataTable;
+        }
+        // Get Monthly Revenue BLL
+        public DataTable GetMonthlyRevenueBLL()
+        {
+            DashboardDAL dashboardDAL =
+                new DashboardDAL();
+            DataTable dataTable =
+                dashboardDAL.GetMonthlyRevenueDAL();
+            return dataTable;
+        }
     }
 }
