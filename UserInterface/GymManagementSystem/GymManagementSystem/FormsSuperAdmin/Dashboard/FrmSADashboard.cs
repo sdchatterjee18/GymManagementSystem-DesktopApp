@@ -234,13 +234,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             DataTable dataTable =
                 dashboardUI.GetMonthlyRevenueUI();
 
+            //=========================================
+            // Clear Existing Chart
+            //=========================================
             chartMonthlyRevenue.Series.Clear();
             chartMonthlyRevenue.ChartAreas.Clear();
             chartMonthlyRevenue.Legends.Clear();
 
-            //==========================
+            //=========================================
             // Chart Area
-            //==========================
+            //=========================================
             ChartArea area =
                 new ChartArea("ChartArea1");
 
@@ -249,9 +252,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
 
             chartMonthlyRevenue.ChartAreas.Add(area);
 
-            //==========================
+            //=========================================
             // X Axis
-            //==========================
+            //=========================================
             area.AxisX.Interval = 1;
 
             area.AxisX.MajorGrid.Enabled =
@@ -266,9 +269,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             area.AxisX.LabelStyle.ForeColor =
                 Color.FromArgb(70, 70, 70);
 
-            //==========================
+            //=========================================
             // Y Axis
-            //==========================
+            //=========================================
             area.AxisY.Minimum = 0;
 
             area.AxisY.MajorGrid.Enabled =
@@ -286,9 +289,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             area.AxisY.LabelStyle.ForeColor =
                 Color.FromArgb(70, 70, 70);
 
-            //==========================
+            //=========================================
             // Revenue Series
-            //==========================
+            //=========================================
             Series revenue =
                 new Series("Revenue");
 
@@ -300,7 +303,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             revenue.Color =
                 Color.FromArgb(59, 130, 246);
 
+            //=========================================
             // Marker
+            //=========================================
             revenue.MarkerStyle =
                 MarkerStyle.Circle;
 
@@ -314,9 +319,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
 
             revenue.MarkerBorderWidth = 2;
 
-            //==========================
+            //=========================================
             // Value Label
-            //==========================
+            //=========================================
             revenue.IsValueShownAsLabel =
                 true;
 
@@ -333,22 +338,50 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
             revenue.LabelFormat =
                 "#,##0";
 
-            //==========================
-            // Add Database Data
-            //==========================
+            //=========================================
+            // Add Current Month Data Only
+            //=========================================
             if (dataTable != null &&
                 dataTable.Rows.Count > 0)
             {
+                int currentMonth =
+                    DateTime.Now.Month;
+
                 foreach (DataRow row in dataTable.Rows)
                 {
+                    //=================================
+                    // Get Month Number
+                    //=================================
+                    int monthNumber =
+                        Convert.ToInt32(
+                            row["MonthNumber"]
+                        );
+
+                    //=================================
+                    // Ignore Upcoming Months
+                    //=================================
+                    if (monthNumber > currentMonth)
+                    {
+                        continue;
+                    }
+
+                    //=================================
+                    // Get Month Name
+                    //=================================
                     string monthName =
                         row["MonthName"].ToString();
 
+                    //=================================
+                    // Get ONLY Net Revenue
+                    //=================================
                     decimal revenueValue =
                         Convert.ToDecimal(
-                            row["Revenue"]
+                            row["NetRevenue"]
                         );
 
+                    //=================================
+                    // Create Data Point
+                    //=================================
                     DataPoint point =
                         new DataPoint();
 
@@ -363,7 +396,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
                     )
                 };
 
-                    // Show Value
+                    //=================================
+                    // Show Revenue Value
+                    //=================================
                     point.Label =
                         revenueValue.ToString("N0");
 
@@ -377,25 +412,34 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
                             FontStyle.Bold
                         );
 
+                    //=================================
+                    // Add Point
+                    //=================================
                     revenue.Points.Add(point);
                 }
             }
 
+            //=========================================
+            // Add Revenue Series
+            //=========================================
             chartMonthlyRevenue.Series.Add(
                 revenue
             );
 
-            //==========================
-            // Dynamic Y-Axis
-            //==========================
+            //=========================================
+            // Dynamic Y Axis
+            //=========================================
             if (revenue.Points.Count > 0)
             {
-                double highestValue = 0;
+                double highestValue =
+                    Double.MinValue;
 
                 double lowestValue =
                     Double.MaxValue;
 
+                //=====================================
                 // Find Highest and Lowest Revenue
+                //=====================================
                 foreach (DataPoint point in revenue.Points)
                 {
                     double value =
@@ -414,93 +458,135 @@ namespace GymManagementSystem.FormsSuperAdmin.Dashboard
                     }
                 }
 
-                double range =
-                    highestValue - lowestValue;
-
-                // Handle Same Values
-                if (range == 0)
+                //=====================================
+                // All Values Are Zero
+                //=====================================
+                if (highestValue == 0 &&
+                    lowestValue == 0)
                 {
-                    range =
-                        highestValue;
-                }
+                    area.AxisY.Minimum = 0;
 
-                // Handle Zero Values
-                if (range == 0)
-                {
-                    range = 1;
-                }
+                    area.AxisY.Maximum = 10;
 
-                // Approximate Interval
-                double roughInterval =
-                    range / 5;
-
-                double magnitude =
-                    Math.Pow(
-                        10,
-                        Math.Floor(
-                            Math.Log10(
-                                roughInterval
-                            )
-                        )
-                    );
-
-                double normalizedInterval =
-                    roughInterval / magnitude;
-
-                double interval;
-
-                if (normalizedInterval <= 1)
-                {
-                    interval =
-                        1 * magnitude;
-                }
-                else if (normalizedInterval <= 2)
-                {
-                    interval =
-                        2 * magnitude;
-                }
-                else if (normalizedInterval <= 5)
-                {
-                    interval =
-                        5 * magnitude;
+                    area.AxisY.Interval = 2;
                 }
                 else
                 {
-                    interval =
-                        10 * magnitude;
+                    //=================================
+                    // Maximum Absolute Value
+                    //=================================
+                    double maxAbsoluteValue =
+                        Math.Max(
+                            Math.Abs(highestValue),
+                            Math.Abs(lowestValue)
+                        );
+
+                    //=================================
+                    // Rough Interval
+                    //=================================
+                    double roughInterval =
+                        maxAbsoluteValue / 5;
+
+                    //=================================
+                    // Magnitude
+                    //=================================
+                    double magnitude =
+                        Math.Pow(
+                            10,
+                            Math.Floor(
+                                Math.Log10(
+                                    roughInterval
+                                )
+                            )
+                        );
+
+                    //=================================
+                    // Normalized Interval
+                    //=================================
+                    double normalizedInterval =
+                        roughInterval / magnitude;
+
+                    double interval;
+
+                    //=================================
+                    // Calculate Nice Interval
+                    //=================================
+                    if (normalizedInterval <= 1)
+                    {
+                        interval =
+                            1 * magnitude;
+                    }
+                    else if (normalizedInterval <= 2)
+                    {
+                        interval =
+                            2 * magnitude;
+                    }
+                    else if (normalizedInterval <= 5)
+                    {
+                        interval =
+                            5 * magnitude;
+                    }
+                    else
+                    {
+                        interval =
+                            10 * magnitude;
+                    }
+
+                    //=================================
+                    // Calculate Maximum
+                    //=================================
+                    double maximum =
+                        Math.Ceiling(
+                            maxAbsoluteValue /
+                            interval
+                        ) * interval;
+
+                    // Add One Extra Interval
+                    maximum += interval;
+
+                    //=================================
+                    // Set Y Axis
+                    //=================================
+                    if (lowestValue < 0)
+                    {
+                        // Negative and Positive Revenue
+                        area.AxisY.Minimum =
+                            -maximum;
+
+                        area.AxisY.Maximum =
+                            maximum;
+                    }
+                    else
+                    {
+                        // Only Positive Revenue
+                        area.AxisY.Minimum =
+                            0;
+
+                        area.AxisY.Maximum =
+                            maximum;
+                    }
+
+                    area.AxisY.Interval =
+                        interval;
                 }
-
-                // Calculate Maximum
-                double maximum =
-                    Math.Ceiling(
-                        highestValue / interval
-                    ) * interval
-                    + interval;
-
-                area.AxisY.Minimum = 0;
-
-                area.AxisY.Maximum =
-                    maximum;
-
-                area.AxisY.Interval =
-                    interval;
             }
 
-            //==========================
+            //=========================================
             // Legend
-            //==========================
+            //=========================================
             Legend legend =
                 new Legend();
 
-            legend.Enabled = false;
+            legend.Enabled =
+                false;
 
             chartMonthlyRevenue.Legends.Add(
                 legend
             );
 
-            //==========================
+            //=========================================
             // Chart Background
-            //==========================
+            //=========================================
             chartMonthlyRevenue.BackColor =
                 Color.White;
         }

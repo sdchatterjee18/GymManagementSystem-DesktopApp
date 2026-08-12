@@ -204,7 +204,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Dashboard
         // Get Monthly Revenue DAL
         public DataTable GetMonthlyRevenueDAL()
         {
-            string spName = "spGetMonthlyRevenue";
+            string spName = "spGetMonthlyIncomeExpenseNetRevenueOfCurrentYear";
             DataTable dataTable =
                 LookupDAL.RetrieveSpecificItem(spName);
             return dataTable;
