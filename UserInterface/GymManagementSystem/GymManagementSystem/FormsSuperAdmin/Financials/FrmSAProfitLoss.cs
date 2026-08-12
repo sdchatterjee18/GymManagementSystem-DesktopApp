@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Data;
+using GymManagementSystem.FormsSuperAdmin.Financials.UI;
+
 
 namespace GymManagementSystem.FormsSuperAdmin.Financials
 {
@@ -19,85 +22,120 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
         private void FrmSAProfitLoss_Load(object sender, EventArgs e)
         {
-            LoadRevenueChart();
-            SetPlaceholder(this);
-            this.ActiveControl = null;
+            //=================================
+            // Set Current Year By Default
+            //=================================
+            txtSearchYear.Text =
+                DateTime.Now.Year.ToString();
 
+            //=================================
+            // Load Revenue Chart
+            //=================================
+            LoadRevenueChart();
+
+            //=================================
+            // Load Revenue Data
+            //=================================
+            LoadRevenueData();
+
+            //=================================
+            // Load Revenue Summary
+            //=================================
+            LoadRevenueSummary();
+
+            //=================================
+            // DataGridView Settings
+            //=================================
             dgvRevenue.AutoGenerateColumns = false;
+
             dgvRevenue.ClearSelection();
+
+            this.ActiveControl = null;
         }
+
+        ///Load Revenue Chart
         private void LoadRevenueChart()
         {
             //=========================
+            // Get Selected Year
+            //=========================
+            int year;
+
+            if (!int.TryParse(
+                txtSearchYear.Text.Trim(),
+                out year))
+            {
+                year = DateTime.Now.Year;
+            }
+
+            //=========================
+            // Get Data From UI Layer
+            //=========================
+            SAProfitLossUI profitLossUI =
+                new SAProfitLossUI();
+
+            DataTable dataTable =
+                profitLossUI
+                    .GetMonthlyIncomeExpenseNetRevenueByYearUI(year);
+
+            //=========================
             // Clear Previous Data
             //=========================
-            chartRevenue.Series["Income"].Points.Clear();
-            chartRevenue.Series["Expense"].Points.Clear();
-            chartRevenue.Series["Revenue"].Points.Clear();
+            chartRevenue.Series["Income"]
+                .Points.Clear();
+
+            chartRevenue.Series["Expense"]
+                .Points.Clear();
+
+            chartRevenue.Series["Revenue"]
+                .Points.Clear();
 
             //=========================
             // Chart Type
             //=========================
-            chartRevenue.Series["Income"].ChartType = SeriesChartType.Column;
-            chartRevenue.Series["Expense"].ChartType = SeriesChartType.Column;
-            chartRevenue.Series["Revenue"].ChartType = SeriesChartType.Column;
+            chartRevenue.Series["Income"].ChartType =
+                SeriesChartType.Column;
+
+            chartRevenue.Series["Expense"].ChartType =
+                SeriesChartType.Column;
+
+            chartRevenue.Series["Revenue"].ChartType =
+                SeriesChartType.Column;
 
             //=========================
-            // Sample Data
+            // Insert Database Data
             //=========================
-            string[] months =
+            foreach (DataRow row in dataTable.Rows)
             {
-                "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            };
+                string monthName =
+                    row["MonthName"].ToString();
 
-             int[] income =
-            {
-                50000,
-                60000,
-                75000,
-                90000,
-                85000,
-                95000,
-                100000,
-                110000,
-                120000,
-                130000,
-                140000,
-                150000
-            };
+                decimal income =
+                    Convert.ToDecimal(
+                        row["TotalIncome"]);
 
-              int[] expense =
-            {
-                20000,
-                25000,
-                30000,
-                40000,
-                35000,
-                45000,
-                50000,
-                55000,
-                60000,
-                30000,
-                50000,
-                80000
-            };
+                decimal expense =
+                    Convert.ToDecimal(
+                        row["TotalExpense"]);
 
-            int[] revenue = new int[income.Length];
+                decimal revenue =
+                    Convert.ToDecimal(
+                        row["NetRevenue"]);
 
-            for (int i = 0; i < income.Length; i++)
-            {
-                revenue[i] = income[i] - expense[i];
-            }
+                chartRevenue.Series["Income"]
+                    .Points.AddXY(
+                        monthName,
+                        income);
 
-            //=========================
-            // Insert Data
-            //=========================
-            for (int i = 0; i < months.Length; i++)
-            {
-                chartRevenue.Series["Income"].Points.AddXY(months[i], income[i]);
-                chartRevenue.Series["Expense"].Points.AddXY(months[i], expense[i]);
-                chartRevenue.Series["Revenue"].Points.AddXY(months[i], revenue[i]);
+                chartRevenue.Series["Expense"]
+                    .Points.AddXY(
+                        monthName,
+                        expense);
+
+                chartRevenue.Series["Revenue"]
+                    .Points.AddXY(
+                        monthName,
+                        revenue);
             }
 
             //=========================
@@ -107,7 +145,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
             {
                 series["PointWidth"] = "0.7";
             }
-
 
             //=========================
             // Hide Value Labels
@@ -121,110 +158,411 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
             //=========================
             // Chart Area
             //=========================
-            ChartArea area = chartRevenue.ChartAreas[0];
+            ChartArea area =
+                chartRevenue.ChartAreas[0];
 
-            area.BackColor = Color.White;
+            area.BackColor =
+                Color.White;
 
-            area.AxisX.LineColor = Color.LightGray;
-            area.AxisY.LineColor = Color.LightGray;
+            area.AxisX.LineColor =
+                Color.LightGray;
+
+            area.AxisY.LineColor =
+                Color.LightGray;
 
             area.AxisX.LineWidth = 1;
             area.AxisY.LineWidth = 1;
 
-            area.AxisX.MajorGrid.Enabled = false;
-
-            area.AxisY.MajorGrid.Enabled = true;
-            area.AxisY.MajorGrid.LineColor = Color.FromArgb(235, 235, 235);
-            area.AxisY.MajorGrid.LineWidth = 1;
-
-            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 9);
-            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 9);
-
-            area.AxisX.LabelStyle.ForeColor = Color.Gray;
-            area.AxisY.LabelStyle.ForeColor = Color.Gray;
-
-            area.AxisX.IsMarginVisible = true;
+            //=========================
+            // X Axis Grid
+            //=========================
+            area.AxisX.MajorGrid.Enabled =
+                false;
 
             //=========================
-            // Y Axis
+            // Y Axis Grid
             //=========================
-            area.AxisY.Minimum = 0;
-            area.AxisY.Maximum = 100000;
-            area.AxisY.Interval = 20000;
+            area.AxisY.MajorGrid.Enabled =
+                true;
+
+            area.AxisY.MajorGrid.LineColor =
+                Color.FromArgb(
+                    235,
+                    235,
+                    235);
+
+            area.AxisY.MajorGrid.LineWidth =
+                1;
+
+            //=========================
+            // Axis Font
+            //=========================
+            area.AxisX.LabelStyle.Font =
+                new Font(
+                    "Segoe UI",
+                    9);
+
+            area.AxisY.LabelStyle.Font =
+                new Font(
+                    "Segoe UI",
+                    9);
+
+            area.AxisX.LabelStyle.ForeColor =
+                Color.Gray;
+
+            area.AxisY.LabelStyle.ForeColor =
+                Color.Gray;
+
+            //=========================
+            // X Axis - Show All Months
+            //=========================
+            area.AxisX.Interval = 1;
+
+            area.AxisX.LabelStyle.Interval =
+                1;
+
+            area.AxisX.MajorTickMark.Interval =
+                1;
+
+            area.AxisX.IsMarginVisible =
+                true;
+
+            //=========================
+            // Find Highest & Lowest
+            //=========================
+            double highestValue = 0;
+            double lowestValue = 0;
+
+            foreach (Series series in chartRevenue.Series)
+            {
+                foreach (DataPoint point in series.Points)
+                {
+                    double value =
+                        point.YValues[0];
+
+                    if (value > highestValue)
+                    {
+                        highestValue = value;
+                    }
+
+                    if (value < lowestValue)
+                    {
+                        lowestValue = value;
+                    }
+                }
+            }
+
+            //=========================
+            // Dynamic Y Axis
+            //=========================
+            if (highestValue == 0 &&
+                lowestValue == 0)
+            {
+                area.AxisY.Minimum = 0;
+                area.AxisY.Maximum = 100;
+                area.AxisY.Interval = 20;
+            }
+            else
+            {
+                // Find largest absolute value
+                double largestValue =
+                    Math.Max(
+                        Math.Abs(highestValue),
+                        Math.Abs(lowestValue));
+
+                // Rough interval
+                double roughInterval =
+                    largestValue / 5;
+
+                // Prevent Log10(0)
+                if (roughInterval <= 0)
+                {
+                    roughInterval = 1;
+                }
+
+                // Magnitude
+                double magnitude =
+                    Math.Pow(
+                        10,
+                        Math.Floor(
+                            Math.Log10(
+                                roughInterval)));
+
+                // Normalized interval
+                double normalizedInterval =
+                    roughInterval / magnitude;
+
+                double interval;
+
+                //=========================
+                // Nice Interval
+                //=========================
+                if (normalizedInterval <= 1)
+                {
+                    interval =
+                        1 * magnitude;
+                }
+                else if (normalizedInterval <= 2)
+                {
+                    interval =
+                        2 * magnitude;
+                }
+                else if (normalizedInterval <= 5)
+                {
+                    interval =
+                        5 * magnitude;
+                }
+                else
+                {
+                    interval =
+                        10 * magnitude;
+                }
+
+                //=========================
+                // Positive Maximum
+                //=========================
+                double maximum =
+                    Math.Ceiling(
+                        highestValue / interval)
+                    * interval;
+
+                //=========================
+                // Negative Minimum
+                //=========================
+                double minimum =
+                    Math.Floor(
+                        lowestValue / interval)
+                    * interval;
+
+                // Prevent Same Min & Max
+                if (maximum == minimum)
+                {
+                    maximum += interval;
+                }
+
+                //=========================
+                // Set Dynamic Y Axis
+                //=========================
+                area.AxisY.Minimum =
+                    minimum;
+
+                area.AxisY.Maximum =
+                    maximum;
+
+                area.AxisY.Interval =
+                    interval;
+            }
 
             //=========================
             // Chart Border
             //=========================
-            chartRevenue.BorderlineWidth = 0;
-            chartRevenue.BorderlineColor = Color.White;
+            chartRevenue.BorderlineWidth =
+                0;
+
+            chartRevenue.BorderlineColor =
+                Color.White;
 
             //=========================
             // Legend
             //=========================
-            chartRevenue.Legends[0].Docking = Docking.Top;
-            chartRevenue.Legends[0].Alignment = StringAlignment.Center;
-            chartRevenue.Legends[0].BackColor = Color.Transparent;
-            chartRevenue.Legends[0].Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            chartRevenue.Legends[0].Docking =
+                Docking.Top;
+
+            chartRevenue.Legends[0].Alignment =
+                StringAlignment.Center;
+
+            chartRevenue.Legends[0].BackColor =
+                Color.Transparent;
+
+            chartRevenue.Legends[0].Font =
+                new Font(
+                    "Segoe UI",
+                    9,
+                    FontStyle.Bold);
         }
-        private void SetPlaceholder(Control parent)
+        // Load Revenue Data
+        private void LoadRevenueData()
         {
-            foreach (Control c in parent.Controls)
+            SAProfitLossUI profitLossUI =
+                new SAProfitLossUI();
+
+            int year;
+
+            if (!int.TryParse(
+                txtSearchYear.Text.Trim(),
+                out year))
             {
-                if (c is TextBox)
-                {
-                    TextBox txt = (TextBox)c;
+                year = DateTime.Now.Year;
+            }
 
-                    txt.Tag = txt.Text;
-                    txt.ForeColor = Color.Gray;
+            DataTable dataTable =
+                profitLossUI
+                    .GetMonthlyIncomeExpenseNetRevenueByYearUI(year);
 
-                    txt.Enter += Placeholder_Enter;
-                    txt.Leave += Placeholder_Leave;
-                }
+            dgvRevenue.Rows.Clear();
 
-                if (c.HasChildren)
-                    SetPlaceholder(c);
+            int slNo = 1;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int monthId =
+                    Convert.ToInt32(row["MonthId"]);
+
+                string month =
+                    row["MonthName"].ToString();
+
+                decimal income =
+                    Convert.ToDecimal(row["TotalIncome"]);
+
+                decimal expense =
+                    Convert.ToDecimal(row["TotalExpense"]);
+
+                decimal revenue =
+                    Convert.ToDecimal(row["NetRevenue"]);
+
+                dgvRevenue.Rows.Add(
+                    slNo,
+                    monthId,
+                    month,
+                    income,
+                    expense,
+                    revenue);
+
+                slNo++;
+            }
+
+            dgvRevenue.ClearSelection();
+        }
+        // Load Revenue Summary
+        private void LoadRevenueSummary()
+        {
+            SAProfitLossUI profitLossUI =
+                new SAProfitLossUI();
+
+            //=========================
+            // Get Selected Year
+            //=========================
+            int year;
+
+            if (!int.TryParse(
+                txtSearchYear.Text.Trim(),
+                out year))
+            {
+                year = DateTime.Now.Year;
+            }
+
+            //=========================
+            // Get Summary Data
+            //=========================
+            DataTable dataTable =
+                profitLossUI
+                    .GetIncomeExpenseNetRevenueForRevenueSectionByYearUI(
+                        year);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                DataRow row =
+                    dataTable.Rows[0];
+
+                //=========================
+                // Year
+                //=========================
+                lblYear.Text =
+                    row["CurrentYear"].ToString();
+
+                //=========================
+                // Total Income
+                //=========================
+                lblTotalIncomeValue.Text =
+                    Convert.ToDecimal(
+                        row["TotalIncome"])
+                    .ToString("N2");
+
+                //=========================
+                // Total Expense
+                //=========================
+                lblTotalExpenseValue.Text =
+                    Convert.ToDecimal(
+                        row["TotalExpense"])
+                    .ToString("N2");
+
+                //=========================
+                // Total Revenue
+                //=========================
+                lblTotalRevenueValue.Text =
+                    Convert.ToDecimal(
+                        row["NetRevenue"])
+                    .ToString("N2");
+
+                //=========================
+                // Average Monthly Revenue
+                //=========================
+                lblAvgMonthlyRevenueValue.Text =
+                    Convert.ToDecimal(
+                        row["AverageMonthlyNetRevenue"])
+                    .ToString("N2");
             }
         }
-        private void Placeholder_Enter(object sender, EventArgs e)
+
+        private void pnlSearch_Click(object sender, EventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            int year;
 
-            if (txt.Text == txt.Tag.ToString())
+            if (!int.TryParse(
+                txtSearchYear.Text.Trim(),
+                out year))
             {
-                txt.Clear();
-                txt.ForeColor = Color.Black;
+                MessageBox.Show(
+                    "Please enter a valid year.",
+                    "Invalid Year",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                txtSearchYear.Focus();
+                return;
             }
-        }
 
-        private void Placeholder_Leave(object sender, EventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
-
-            if (string.IsNullOrWhiteSpace(txt.Text))
+            if (year < 2005)
             {
-                txt.Text = txt.Tag.ToString();
-                txt.ForeColor = Color.Gray;
-            }
-        }
-        private void Placeholder_Click(object sender, MouseEventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
+                MessageBox.Show(
+                    "Year must be 2005 or later.",
+                    "Invalid Year",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
 
-            if (txt.Text == txt.Tag.ToString())
+                txtSearchYear.Focus();
+                return;
+            }
+
+            if (year > DateTime.Now.Year)
             {
-                txt.Clear();
-                txt.ForeColor = Color.Black;
-            }
-        }
+                MessageBox.Show(
+                    "Future year is not allowed.",
+                    "Invalid Year",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
 
+                txtSearchYear.Focus();
+                return;
+            }
+
+            //=================================
+            // Load Selected Year Data
+            //=================================
+            LoadRevenueChart();
+
+            LoadRevenueData();
+
+            LoadRevenueSummary();
+
+            dgvRevenue.ClearSelection();
+
+            this.ActiveControl = null;
+        }
+       
         private void FrmSAProfitLoss_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
-        }
-
-        private void chartRevenue_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvRevenue_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -393,9 +731,5 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
         {
             dgvRevenue.ClearSelection();
         }
-
-       
-
-
     }
 }
