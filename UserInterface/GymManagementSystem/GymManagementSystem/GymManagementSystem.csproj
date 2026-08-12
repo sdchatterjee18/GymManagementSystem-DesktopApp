@@ -86,6 +86,7 @@
     <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.Designer.cs">
       <DependentUpon>FrmSADashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Dashboard\UI\SuperAdminDashboardUI.cs" />
     <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
