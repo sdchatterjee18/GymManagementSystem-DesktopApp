@@ -177,12 +177,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                 }
                 else if (colName == "colStatus")
                 {
-                    string status = cell.Value.ToString();
-                    if (status != null && status.Equals("Active", StringComparison.OrdinalIgnoreCase))
-                        cell.Style.ForeColor = Color.Green;
-                    else if (status != null && status.Equals("Inactive", StringComparison.OrdinalIgnoreCase))
-                        cell.Style.ForeColor = Color.Red;
-
                     cell.Style.BackColor = Color.Empty;
                 }
                 else if (colName == "colUpdate")

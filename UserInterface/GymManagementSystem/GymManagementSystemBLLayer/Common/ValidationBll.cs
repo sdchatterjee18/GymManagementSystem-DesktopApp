@@ -17,6 +17,8 @@ namespace GymManagementSystemBLLayer.Common
             // =========================
             TextRequired,
             TextMustContainOnlyLetters,
+            UserNameRequired,
+            PasswordRequired,
 
             // =========================
             // Membership Plan Validation
@@ -253,7 +255,28 @@ namespace GymManagementSystemBLLayer.Common
 
             return CommonValidationMessage.Valid;
         }
+        // =========================
+        // UserName Validation
+        // =========================
+        public static CommonValidationMessage ValidateUserName(string userName)
+        {
+            if (string.IsNullOrWhiteSpace(userName))
+                return CommonValidationMessage.UserNameRequired;
 
+            return CommonValidationMessage.Valid;
+        }
+
+
+        // =========================
+        // Password Validation
+        // =========================
+        public static CommonValidationMessage ValidatePassword(string password)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+                return CommonValidationMessage.PasswordRequired;
+
+            return CommonValidationMessage.Valid;
+        }
 
         // =========================
         // Validation Message
@@ -369,6 +392,15 @@ namespace GymManagementSystemBLLayer.Common
 
                 case CommonValidationMessage.ConditionStatusTooShort:
                     return "Condition Status is too short.";
+
+                // =========================
+                // UserName Validation
+                // =========================
+                case CommonValidationMessage.UserNameRequired:
+                    return "Username is required.";
+
+                case CommonValidationMessage.PasswordRequired:
+                    return "Password is required.";
 
 
                 default:

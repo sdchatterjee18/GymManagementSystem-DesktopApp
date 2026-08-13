@@ -104,6 +104,7 @@
     <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.Designer.cs">
       <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\UI\EmployeeUI.cs" />
     <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs">
       <SubType>Form</SubType>
     </Compile>
