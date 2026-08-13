@@ -105,5 +105,22 @@ namespace GymManagementSystem.Common
                 textBox.Clear();
             }
         }
+        public static bool ValidateGenderRadioButtonSelection(params RadioButton[] radioButtons)
+        {
+            foreach (RadioButton radioButton in radioButtons)
+            {
+                if (radioButton.Checked)
+                {
+                    return true;
+                }
+            }
+
+            MessageBox.Show(
+                "Please choose a gender.",
+                "Validation",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            return false;
+        }
     }
 }
