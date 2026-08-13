@@ -164,6 +164,7 @@
     <Compile Include="FORMS\Attendance\FrmViewAttendance.Designer.cs">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Attendance\UI\AttendanceUI.cs" />
     <Compile Include="FORMS\Dashboard\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

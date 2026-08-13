@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Common\LookupBLL.cs" />
     <Compile Include="Common\ValidationBll.cs" />
+    <Compile Include="ModulesBLLayer\Attendance\AttendanceBLL.cs" />
     <Compile Include="ModulesBLLayer\Dashboard\DashboardBLL.cs" />
     <Compile Include="ModulesBLLayer\DietPlan\DietPlanBLL.cs" />
     <Compile Include="ModulesBLLayer\Expense\ExpensesBLL.cs" />
