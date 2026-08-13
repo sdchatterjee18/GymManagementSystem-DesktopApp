@@ -110,6 +110,12 @@
     <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.Designer.cs">
       <DependentUpon>FrmSAExpense.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\FrmSAPayment.Designer.cs">
+      <DependentUpon>FrmSAPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAExpense.resx">
       <DependentUpon>FrmSAExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAPayment.resx">
+      <DependentUpon>FrmSAPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.resx">
       <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
