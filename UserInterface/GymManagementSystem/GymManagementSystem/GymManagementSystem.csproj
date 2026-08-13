@@ -86,6 +86,7 @@
     <Compile Include="FormsSuperAdmin\Dashboard\FrmSADashboard.Designer.cs">
       <DependentUpon>FrmSADashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Dashboard\UI\SuperAdminDashboardUI.cs" />
     <Compile Include="FormsSuperAdmin\Employee\FrmSAAddNewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +118,7 @@
     <Compile Include="FormsSuperAdmin\Financials\FrmSAProfitLoss.Designer.cs">
       <DependentUpon>FrmSAProfitLoss.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Financials\UI\SAProfitLossUI.cs" />
     <Compile Include="FormsSuperAdmin\MainLayout\FrmSAMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +314,7 @@
     <Compile Include="FORMS\RegistrationFee\FrmRegistrationFees.Designer.cs">
       <DependentUpon>FrmRegistrationFees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\RegistrationFee\UI\RegistrationFeeUI.cs" />
     <Compile Include="FORMS\Settings\FrmChangePasswordAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

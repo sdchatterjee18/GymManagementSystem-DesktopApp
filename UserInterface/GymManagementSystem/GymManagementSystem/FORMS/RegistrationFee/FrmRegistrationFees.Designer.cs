@@ -31,15 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15= new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistrationFees));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpMainAddRegistrationFee = new System.Windows.Forms.TableLayoutPanel();
             this.dgvShowAllAddRegistrationFees = new System.Windows.Forms.DataGridView();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFeeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpTopRegistrationFeesAndAddNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
             this.pnlClickAddNewRegistrationFees = new System.Windows.Forms.Panel();
             this.tlpAddNewRegistrationFees = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +45,11 @@
             this.lblManageRegistrationFeesSubTitle = new System.Windows.Forms.Label();
             this.lblRegistrationFeesTitle = new System.Windows.Forms.Label();
             this.picRegistrationFeesIcon = new System.Windows.Forms.PictureBox();
+            this.colSLNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRegistrationFeesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFeeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpMainAddRegistrationFee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAllAddRegistrationFees)).BeginInit();
             this.tlpTopRegistrationFeesAndAddNewRegistrationFees.SuspendLayout();
@@ -102,7 +103,8 @@
             this.dgvShowAllAddRegistrationFees.ColumnHeadersHeight = 50;
             this.dgvShowAllAddRegistrationFees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvShowAllAddRegistrationFees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNo,
+            this.colSLNO,
+            this.colRegistrationFeesId,
             this.colFeeAmount,
             this.colCreatedAt,
             this.colStatus});
@@ -141,40 +143,6 @@
             this.dgvShowAllAddRegistrationFees.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvShowAllAddRegistrationFees_CellFormatting);
             this.dgvShowAllAddRegistrationFees.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellMouseEnter);
             this.dgvShowAllAddRegistrationFees.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowAllAddRegistrationFees_CellMouseLeave);
-            // 
-            // colNo
-            // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.MediumBlue;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle13;
-            this.colNo.FillWeight = 50F;
-            this.colNo.HeaderText = "SL No";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colFeeAmount
-            // 
-            this.colFeeAmount.DataPropertyName = "FeeAmount";
-            this.colFeeAmount.FillWeight = 80.83756F;
-            this.colFeeAmount.HeaderText = "Registration Fees";
-            this.colFeeAmount.Name = "colFeeAmount";
-            this.colFeeAmount.ReadOnly = true;
-            this.colFeeAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colCreatedAt
-            // 
-            this.colCreatedAt.FillWeight = 80.83756F;
-            this.colCreatedAt.HeaderText = "Created on";
-            this.colCreatedAt.Name = "colCreatedAt";
-            this.colCreatedAt.ReadOnly = true;
-            this.colCreatedAt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colStatus
-            // 
-            this.colStatus.DataPropertyName = "Status";
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
             // 
             // tlpTopRegistrationFeesAndAddNewRegistrationFees
             // 
@@ -312,6 +280,49 @@
             this.picRegistrationFeesIcon.TabStop = false;
             this.picRegistrationFeesIcon.Click += new System.EventHandler(this.picRegistrationFeesIcon_Click);
             // 
+            // colSLNO
+            // 
+            this.colSLNO.DataPropertyName = "colSLNO";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.colSLNO.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSLNO.FillWeight = 50F;
+            this.colSLNO.HeaderText = "SL No";
+            this.colSLNO.Name = "colSLNO";
+            this.colSLNO.ReadOnly = true;
+            this.colSLNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colRegistrationFeesId
+            // 
+            this.colRegistrationFeesId.HeaderText = "RegistrationFeesId";
+            this.colRegistrationFeesId.Name = "colRegistrationFeesId";
+            this.colRegistrationFeesId.ReadOnly = true;
+            this.colRegistrationFeesId.Visible = false;
+            // 
+            // colFeeAmount
+            // 
+            this.colFeeAmount.DataPropertyName = "FeeAmount";
+            this.colFeeAmount.FillWeight = 80.83756F;
+            this.colFeeAmount.HeaderText = "Registration Fees";
+            this.colFeeAmount.Name = "colFeeAmount";
+            this.colFeeAmount.ReadOnly = true;
+            this.colFeeAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colCreatedAt
+            // 
+            this.colCreatedAt.DataPropertyName = "CreatedAt";
+            this.colCreatedAt.FillWeight = 80.83756F;
+            this.colCreatedAt.HeaderText = "Created on";
+            this.colCreatedAt.Name = "colCreatedAt";
+            this.colCreatedAt.ReadOnly = true;
+            this.colCreatedAt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "IsActive";
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
             // FrmRegistrationFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,7 +362,8 @@
         private System.Windows.Forms.Label lblManageRegistrationFeesSubTitle;
         private System.Windows.Forms.PictureBox picRegistrationFeesIcon;
         private System.Windows.Forms.PictureBox picAddIcon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSLNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRegistrationFeesId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFeeAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;

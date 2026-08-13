@@ -147,6 +147,68 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Dashboard
                     "spRetrieveTodayMemberAttendance");
             return dataTable;
         }
+
+        //  SUPER ADMIN SECTION
+        // Get Active Employee Count DAL
+        public int GetActiveEmployeeCountDAL()
+        {
+            string spName = "spGetActiveEmployeeCount";
+            SqlParameter[] sqlParameter = null;
+            object result =
+                LookupDAL.GetSingleData(
+                    spName,sqlParameter);
+            if (result != null && result != DBNull.Value)
+            {
+                return Convert.ToInt32(result);
+            }
+            return 0;
+        }
+        // Get Current Month Total Income DAL
+        public decimal GetCurrentMonthTotalIncomeDAL()
+        {
+            string spName = "spTotalMontlyIncome";
+            SqlParameter[] sqlParameter = null;
+            object result =
+                LookupDAL.GetSingleData(spName,sqlParameter);
+            if (result != null && result != DBNull.Value)
+            {
+                return Convert.ToDecimal(result);
+            }
+            return 0;
+        }
+        // Get Current Month Income Expense Net Revenue DAL
+        public DataTable GetCurrentMonthIncomeExpenseNetRevenueDAL()
+        {
+            string spName =
+                "spGetCurrentMonthIncomeExpenseNetRevenue";
+            DataTable dataTable =
+                LookupDAL.RetrieveSpecificItem(spName);
+            return dataTable;
+        }
+        // Get Current Year Income Expense Net Revenue DAL
+        public DataTable GetCurrentYearIncomeExpenseNetRevenueDAL()
+        {
+            string spName =
+                "spGetCurrentYearIncomeExpenseNetRevenue";
+            DataTable dataTable =
+                LookupDAL.RetrieveSpecificItem(spName);
+            return dataTable;
+        }
+
+        // Get Current Month Financial SummaryDAL
+        public DataTable GetCurrentMonthFinancialSummaryDAL()
+        {
+            return LookupDAL.RetrieveSpecificItem(
+                "spGetCurrentMonthFinancialSummary");
+        }
+        // Get Monthly Revenue DAL
+        public DataTable GetMonthlyRevenueDAL()
+        {
+            string spName = "spGetMonthlyIncomeExpenseNetRevenueOfCurrentYear";
+            DataTable dataTable =
+                LookupDAL.RetrieveSpecificItem(spName);
+            return dataTable;
+        }
        
     }
 }

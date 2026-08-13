@@ -45,6 +45,7 @@
             this.tlpRegistrationSuperAdminPasswordInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblRegistrationSuperAdminPassword = new System.Windows.Forms.Label();
             this.txtRegistrationSuperAdminPassword = new System.Windows.Forms.TextBox();
+            this.picSuperAdminPassword = new System.Windows.Forms.PictureBox();
             this.pnlEmailIdSuperAdminRegistration = new System.Windows.Forms.Panel();
             this.tlpRegistrationSuperAdminEmailIdInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmailId = new System.Windows.Forms.Label();
@@ -59,10 +60,9 @@
             this.tlpRegistrationSuperAdminConfermPasswordInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblConferm = new System.Windows.Forms.Label();
             this.txtRegistrationSuperAdminConfermPassword = new System.Windows.Forms.TextBox();
+            this.picSuperAdminConferm = new System.Windows.Forms.PictureBox();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.chkShowConfermPassword = new System.Windows.Forms.CheckBox();
-            this.picSuperAdminPassword = new System.Windows.Forms.PictureBox();
-            this.picSuperAdminConferm = new System.Windows.Forms.PictureBox();
             this.tlpRegistrationSuperAdminLoginEntireForm.SuspendLayout();
             this.tlpRegistrationSuperAdminImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminImageRegistration)).BeginInit();
@@ -73,6 +73,7 @@
             this.tlpSuperAdminRegistration.SuspendLayout();
             this.pnlPasswordSuperAdminRegistration.SuspendLayout();
             this.tlpRegistrationSuperAdminPasswordInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPassword)).BeginInit();
             this.pnlEmailIdSuperAdminRegistration.SuspendLayout();
             this.tlpRegistrationSuperAdminEmailIdInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminEmailId)).BeginInit();
@@ -81,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminMobileNo)).BeginInit();
             this.pnlConfermPasswordSuperAdminRegistration.SuspendLayout();
             this.tlpRegistrationSuperAdminConfermPasswordInput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminConferm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +122,6 @@
             this.tlpRegistrationSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.523809F));
             this.tlpRegistrationSuperAdminLoginEntireForm.Size = new System.Drawing.Size(626, 660);
             this.tlpRegistrationSuperAdminLoginEntireForm.TabIndex = 7;
-            this.tlpRegistrationSuperAdminLoginEntireForm.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpRegistrationSuperAdminLoginEntireForm_Paint);
             // 
             // tlpRegistrationSuperAdminImage
             // 
@@ -227,8 +226,6 @@
             this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(330, 30);
             this.txtRegistrationSuperAdminUsername.TabIndex = 1;
             this.txtRegistrationSuperAdminUsername.Text = "Enter Username";
-            this.txtRegistrationSuperAdminUsername.Enter += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Enter);
-            this.txtRegistrationSuperAdminUsername.Leave += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Leave);
             // 
             // picSuperAdminUsernameRegistration
             // 
@@ -246,7 +243,7 @@
             this.tlpSuperAdminRegistration.ColumnCount = 3;
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.42285F));
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.57716F));
-            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpSuperAdminRegistration.Controls.Add(this.btnSuperAdminRegistration, 1, 0);
             this.tlpSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminRegistration.Location = new System.Drawing.Point(27, 565);
@@ -265,9 +262,9 @@
             this.btnSuperAdminRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuperAdminRegistration.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuperAdminRegistration.ForeColor = System.Drawing.Color.White;
-            this.btnSuperAdminRegistration.Location = new System.Drawing.Point(61, 3);
+            this.btnSuperAdminRegistration.Location = new System.Drawing.Point(60, 3);
             this.btnSuperAdminRegistration.Name = "btnSuperAdminRegistration";
-            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(443, 44);
+            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(441, 44);
             this.btnSuperAdminRegistration.TabIndex = 0;
             this.btnSuperAdminRegistration.Text = "Register";
             this.btnSuperAdminRegistration.UseVisualStyleBackColor = false;
@@ -326,7 +323,17 @@
             this.txtRegistrationSuperAdminPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminPassword.Text = "Enter Password";
             this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
-            this.txtRegistrationSuperAdminPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Leave);
+            // 
+            // picSuperAdminPassword
+            // 
+            this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
+            this.picSuperAdminPassword.Location = new System.Drawing.Point(3, 7);
+            this.picSuperAdminPassword.Name = "picSuperAdminPassword";
+            this.picSuperAdminPassword.Size = new System.Drawing.Size(26, 30);
+            this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSuperAdminPassword.TabIndex = 2;
+            this.picSuperAdminPassword.TabStop = false;
             // 
             // pnlEmailIdSuperAdminRegistration
             // 
@@ -380,8 +387,6 @@
             this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminEmailId.TabIndex = 1;
             this.txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
-            this.txtRegistrationSuperAdminEmailId.Enter += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Enter);
-            this.txtRegistrationSuperAdminEmailId.Leave += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Leave);
             // 
             // picSuperAdminEmailId
             // 
@@ -446,8 +451,6 @@
             this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminMobileNo.TabIndex = 1;
             this.txtRegistrationSuperAdminMobileNo.Text = "Enter MobileNo";
-            this.txtRegistrationSuperAdminMobileNo.Enter += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Enter);
-            this.txtRegistrationSuperAdminMobileNo.Leave += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Leave);
             // 
             // picSuperAdminMobileNo
             // 
@@ -513,8 +516,17 @@
             this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminConfermPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
-            this.txtRegistrationSuperAdminConfermPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Enter);
-            this.txtRegistrationSuperAdminConfermPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Leave);
+            // 
+            // picSuperAdminConferm
+            // 
+            this.picSuperAdminConferm.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picSuperAdminConferm.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminConferm.Image")));
+            this.picSuperAdminConferm.Location = new System.Drawing.Point(3, 4);
+            this.picSuperAdminConferm.Name = "picSuperAdminConferm";
+            this.picSuperAdminConferm.Size = new System.Drawing.Size(26, 30);
+            this.picSuperAdminConferm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSuperAdminConferm.TabIndex = 2;
+            this.picSuperAdminConferm.TabStop = false;
             // 
             // chkShowPassword
             // 
@@ -544,28 +556,6 @@
             this.chkShowConfermPassword.UseVisualStyleBackColor = true;
             this.chkShowConfermPassword.CheckedChanged += new System.EventHandler(this.chkShowConfermPassword_CheckedChanged);
             // 
-            // picSuperAdminPassword
-            // 
-            this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
-            this.picSuperAdminPassword.Location = new System.Drawing.Point(3, 7);
-            this.picSuperAdminPassword.Name = "picSuperAdminPassword";
-            this.picSuperAdminPassword.Size = new System.Drawing.Size(26, 30);
-            this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSuperAdminPassword.TabIndex = 2;
-            this.picSuperAdminPassword.TabStop = false;
-            // 
-            // picSuperAdminConferm
-            // 
-            this.picSuperAdminConferm.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picSuperAdminConferm.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminConferm.Image")));
-            this.picSuperAdminConferm.Location = new System.Drawing.Point(3, 4);
-            this.picSuperAdminConferm.Name = "picSuperAdminConferm";
-            this.picSuperAdminConferm.Size = new System.Drawing.Size(26, 30);
-            this.picSuperAdminConferm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSuperAdminConferm.TabIndex = 2;
-            this.picSuperAdminConferm.TabStop = false;
-            // 
             // FrmSuperAdminRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -592,6 +582,7 @@
             this.pnlPasswordSuperAdminRegistration.ResumeLayout(false);
             this.tlpRegistrationSuperAdminPasswordInput.ResumeLayout(false);
             this.tlpRegistrationSuperAdminPasswordInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPassword)).EndInit();
             this.pnlEmailIdSuperAdminRegistration.ResumeLayout(false);
             this.tlpRegistrationSuperAdminEmailIdInput.ResumeLayout(false);
             this.tlpRegistrationSuperAdminEmailIdInput.PerformLayout();
@@ -603,7 +594,6 @@
             this.pnlConfermPasswordSuperAdminRegistration.ResumeLayout(false);
             this.tlpRegistrationSuperAdminConfermPasswordInput.ResumeLayout(false);
             this.tlpRegistrationSuperAdminConfermPasswordInput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminConferm)).EndInit();
             this.ResumeLayout(false);
 
