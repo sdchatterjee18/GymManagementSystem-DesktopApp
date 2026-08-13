@@ -105,6 +105,7 @@
     <Compile Include="FormsSuperAdmin\Employee\FrmSAEmployeeProfile.Designer.cs">
       <DependentUpon>FrmSAEmployeeProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Employee\UI\EmployeeUI.cs" />
     <Compile Include="FormsSuperAdmin\Financials\FrmSAExpense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +167,7 @@
     <Compile Include="FORMS\Attendance\FrmViewAttendance.Designer.cs">
       <DependentUpon>FrmViewAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Attendance\UI\AttendanceUI.cs" />
     <Compile Include="FORMS\Dashboard\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

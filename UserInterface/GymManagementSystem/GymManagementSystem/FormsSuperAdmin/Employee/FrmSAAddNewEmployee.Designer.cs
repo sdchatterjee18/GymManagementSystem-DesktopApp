@@ -535,6 +535,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(360, 30);
             this.txtFirstName.TabIndex = 4;
             this.txtFirstName.Text = "  ---Enter First Name---";
+            this.txtFirstName.Click += new System.EventHandler(this.txtFirstName_Click);
             // 
             // picMiddleName
             // 
@@ -572,6 +573,7 @@
             this.txtMiddleName.Size = new System.Drawing.Size(360, 30);
             this.txtMiddleName.TabIndex = 7;
             this.txtMiddleName.Text = "  ---Enter Middle Name---";
+            this.txtMiddleName.Click += new System.EventHandler(this.txtMiddleName_Click);
             // 
             // picLastName
             // 
@@ -609,6 +611,7 @@
             this.txtLastName.Size = new System.Drawing.Size(360, 30);
             this.txtLastName.TabIndex = 10;
             this.txtLastName.Text = "  ---Enter last Name---";
+            this.txtLastName.Click += new System.EventHandler(this.txtLastName_Click);
             // 
             // picGender
             // 
@@ -783,6 +786,7 @@
             this.txtDateOfBirth.Size = new System.Drawing.Size(360, 30);
             this.txtDateOfBirth.TabIndex = 7;
             this.txtDateOfBirth.Text = "  ---Enter DOB---";
+            this.txtDateOfBirth.Click += new System.EventHandler(this.txtDateOfBirth_Click);
             // 
             // lblPhoneNumber
             // 
@@ -808,6 +812,7 @@
             this.txtPhoneNumber.Size = new System.Drawing.Size(360, 30);
             this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.Text = "  ---Enter 10 Digit Phone Number---";
+            this.txtPhoneNumber.Click += new System.EventHandler(this.txtPhoneNumber_Click);
             // 
             // lblEmailAddress
             // 
@@ -833,6 +838,7 @@
             this.txtEmailId.Size = new System.Drawing.Size(360, 30);
             this.txtEmailId.TabIndex = 11;
             this.txtEmailId.Text = "  ---Enter Email Address---";
+            this.txtEmailId.Click += new System.EventHandler(this.txtEmailId_Click);
             // 
             // pnlFirstHeader
             // 
@@ -977,6 +983,7 @@
             this.txtSalary.TabIndex = 6;
             this.txtSalary.Tag = "";
             this.txtSalary.Text = "  ---Enter Salary---";
+            this.txtSalary.Click += new System.EventHandler(this.txtSalary_Click);
             // 
             // txtBankAccountNo
             // 
@@ -990,6 +997,7 @@
             this.txtBankAccountNo.Size = new System.Drawing.Size(358, 30);
             this.txtBankAccountNo.TabIndex = 7;
             this.txtBankAccountNo.Text = "  ---Enter BankAccount No";
+            this.txtBankAccountNo.Click += new System.EventHandler(this.txtBankAccountNo_Click);
             // 
             // cmbEmployeeType
             // 
@@ -1303,6 +1311,7 @@
             this.txtSpecialization.Size = new System.Drawing.Size(356, 30);
             this.txtSpecialization.TabIndex = 6;
             this.txtSpecialization.Text = "  ---Give Specialization---";
+            this.txtSpecialization.Click += new System.EventHandler(this.txtSpecialization_Click);
             // 
             // txtDocument
             // 
@@ -1316,6 +1325,7 @@
             this.txtDocument.Size = new System.Drawing.Size(369, 30);
             this.txtDocument.TabIndex = 7;
             this.txtDocument.Text = "  ---Select Document---";
+            this.txtDocument.Click += new System.EventHandler(this.txtDocument_Click);
             // 
             // pnlTrainerType
             // 
@@ -1729,6 +1739,7 @@
             this.txtUserName.Size = new System.Drawing.Size(356, 30);
             this.txtUserName.TabIndex = 8;
             this.txtUserName.Text = "  ---Enter User Name--";
+            this.txtUserName.Click += new System.EventHandler(this.txtUserName_Click);
             // 
             // txtPassword
             // 
@@ -1742,6 +1753,7 @@
             this.txtPassword.Size = new System.Drawing.Size(356, 30);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "  ---Enter Password---";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // txtConfirmPassword
             // 
@@ -1757,6 +1769,7 @@
             this.txtConfirmPassword.Size = new System.Drawing.Size(369, 30);
             this.txtConfirmPassword.TabIndex = 7;
             this.txtConfirmPassword.Text = "  ---Confirm Password---";
+            this.txtConfirmPassword.Click += new System.EventHandler(this.txtConfirmPassword_Click);
             // 
             // pnlUserName
             // 
