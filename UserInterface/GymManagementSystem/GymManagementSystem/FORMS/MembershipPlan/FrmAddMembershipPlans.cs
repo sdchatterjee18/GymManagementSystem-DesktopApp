@@ -129,16 +129,17 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             string message = membershipPlanUI.InsertMembershipPlanUI();
 
-            MessageBox.Show(
+            DialogResult result = MessageBox.Show(
                 message,
                 "Membership Plan",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
             if (message == "Membership Plan Added Successfully.")
             {
                 btnClear.PerformClick();
             }
+            this.Close();
+            
         }
 
         // TextBox Click Events

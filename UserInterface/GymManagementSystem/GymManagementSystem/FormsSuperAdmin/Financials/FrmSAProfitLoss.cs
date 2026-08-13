@@ -422,7 +422,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
                 dgvRevenue.Rows.Add(
                     slNo,
-                    monthId,
                     month,
                     income,
                     expense,

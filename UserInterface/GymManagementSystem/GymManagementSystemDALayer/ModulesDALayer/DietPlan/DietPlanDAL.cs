@@ -44,7 +44,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.DietPlan
                 };
 
                 return LookupDAL.UpdateSpecificItem(
-                    "spUpdateDietPlan",
+                    "spUpdateDietPlanDetails",
                     sqlParameter);
             }
             catch (Exception ex)

@@ -197,10 +197,18 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // Add New Membership Plan
         private void pnlClickAddNewMembershipPlan_Click(object sender, EventArgs e)
         {
+            using (FrmAddMembershipPlans frm = new FrmAddMembershipPlans())
+            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadMembershipPlans();
+                }
+            }
 
-            FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
-            frm.Show();
-            frm.StartPosition = FormStartPosition.CenterParent;
+            //FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
+            //frm.Show();
+            //frm.StartPosition = FormStartPosition.CenterParent;
+            //LoadMembershipPlans();
         }
         // Add New Membership Plan Mouse Enter
         private void tlpAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)

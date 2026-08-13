@@ -200,8 +200,6 @@ namespace GymManagementSystem.FORMS.DietPlan
                     "Diet Plan",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-
-
                 // ==============================
                 // Successful Insert
                 // ==============================
