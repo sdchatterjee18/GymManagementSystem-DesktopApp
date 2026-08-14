@@ -21,7 +21,7 @@ using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Locker;
 using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
-using GymManagementSystem.FORMS.FitnessTest;
+using GymManagementSystem.FORMS
 
 namespace GymManagementSystem
 {
@@ -51,8 +51,8 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayMembershipPlan());
             //Application.Run(new FrmSAAddNewEmployee());
 
-            //Application.Run(new FrmSuperAdminRegistration());
-            Application.Run(new GymManagementSystem.FORMS.FitnessTest.());
+            Application.Run(new FrmFitnessTest());
+            
         }
     }
 }
