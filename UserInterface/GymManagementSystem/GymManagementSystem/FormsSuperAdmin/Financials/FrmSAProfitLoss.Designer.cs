@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSAProfitLoss));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpProfitLossForm = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearchYear = new System.Windows.Forms.Label();
             this.tlpRevenueOverviewTitle = new System.Windows.Forms.TableLayoutPanel();
@@ -331,7 +331,7 @@
             this.pnlRevenueOverviewGraphMainPanel.Location = new System.Drawing.Point(0, 0);
             this.pnlRevenueOverviewGraphMainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRevenueOverviewGraphMainPanel.Name = "pnlRevenueOverviewGraphMainPanel";
-            this.pnlRevenueOverviewGraphMainPanel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlRevenueOverviewGraphMainPanel.Padding = new System.Windows.Forms.Padding(8);
             this.pnlRevenueOverviewGraphMainPanel.Size = new System.Drawing.Size(643, 256);
             this.pnlRevenueOverviewGraphMainPanel.TabIndex = 0;
             // 
@@ -411,29 +411,29 @@
             // 
             // chartRevenue
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea2);
             this.chartRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend2);
             this.chartRevenue.Location = new System.Drawing.Point(2, 40);
-            this.chartRevenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.chartRevenue.Name = "chartRevenue";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Income";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Expense";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(165)))), ((int)(((byte)(250)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Revenue";
-            this.chartRevenue.Series.Add(series1);
-            this.chartRevenue.Series.Add(series2);
-            this.chartRevenue.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            series4.Legend = "Legend1";
+            series4.Name = "Income";
+            series5.ChartArea = "ChartArea1";
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(78)))), ((int)(((byte)(216)))));
+            series5.Legend = "Legend1";
+            series5.Name = "Expense";
+            series6.ChartArea = "ChartArea1";
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(165)))), ((int)(((byte)(250)))));
+            series6.Legend = "Legend1";
+            series6.Name = "Revenue";
+            this.chartRevenue.Series.Add(series4);
+            this.chartRevenue.Series.Add(series5);
+            this.chartRevenue.Series.Add(series6);
             this.chartRevenue.Size = new System.Drawing.Size(623, 198);
             this.chartRevenue.TabIndex = 1;
             this.chartRevenue.Text = "chart1";
@@ -446,7 +446,7 @@
             this.pnlMonthlyRevenueGridview.Location = new System.Drawing.Point(0, 266);
             this.pnlMonthlyRevenueGridview.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMonthlyRevenueGridview.Name = "pnlMonthlyRevenueGridview";
-            this.pnlMonthlyRevenueGridview.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlMonthlyRevenueGridview.Padding = new System.Windows.Forms.Padding(8);
             this.pnlMonthlyRevenueGridview.Size = new System.Drawing.Size(643, 257);
             this.pnlMonthlyRevenueGridview.TabIndex = 0;
             // 
@@ -529,7 +529,7 @@
             this.dvgMonthlyRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgMonthlyRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgMonthlyRevenue.Location = new System.Drawing.Point(8, 232);
-            this.dvgMonthlyRevenue.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.dvgMonthlyRevenue.Margin = new System.Windows.Forms.Padding(8);
             this.dvgMonthlyRevenue.Name = "dvgMonthlyRevenue";
             this.dvgMonthlyRevenue.RowTemplate.Height = 24;
             this.dvgMonthlyRevenue.Size = new System.Drawing.Size(611, 1);
@@ -541,24 +541,24 @@
             this.dgvRevenue.AllowUserToDeleteRows = false;
             this.dgvRevenue.AllowUserToResizeColumns = false;
             this.dgvRevenue.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvRevenue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvRevenue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvRevenue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvRevenue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRevenue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRevenue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRevenue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvRevenue.ColumnHeadersHeight = 50;
             this.dgvRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvRevenue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -567,35 +567,35 @@
             this.ColIncome,
             this.ColExpence,
             this.ColRevenue});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRevenue.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRevenue.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRevenue.EnableHeadersVisualStyles = false;
             this.dgvRevenue.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvRevenue.Location = new System.Drawing.Point(2, 38);
-            this.dgvRevenue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRevenue.Name = "dgvRevenue";
             this.dgvRevenue.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRevenue.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRevenue.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvRevenue.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dgvRevenue.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.dgvRevenue.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvRevenue.RowTemplate.Height = 40;
             this.dgvRevenue.Size = new System.Drawing.Size(623, 184);
             this.dgvRevenue.TabIndex = 2;
@@ -606,10 +606,10 @@
             // colSLNo
             // 
             this.colSLNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.colSLNo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.colSLNo.DefaultCellStyle = dataGridViewCellStyle11;
             this.colSLNo.HeaderText = "SL No";
             this.colSLNo.Name = "colSLNo";
             this.colSLNo.ReadOnly = true;
@@ -628,8 +628,8 @@
             // 
             this.ColIncome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColIncome.DataPropertyName = "Income";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColIncome.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColIncome.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColIncome.HeaderText = "Income";
             this.ColIncome.Name = "ColIncome";
             this.ColIncome.ReadOnly = true;
@@ -648,8 +648,8 @@
             // 
             this.ColRevenue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColRevenue.DataPropertyName = "Revenue";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColRevenue.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColRevenue.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColRevenue.HeaderText = "Revenue";
             this.ColRevenue.Name = "ColRevenue";
             this.ColRevenue.ReadOnly = true;
@@ -682,7 +682,7 @@
             this.pnlCardsMainPanel.Location = new System.Drawing.Point(0, 115);
             this.pnlCardsMainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCardsMainPanel.Name = "pnlCardsMainPanel";
-            this.pnlCardsMainPanel.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCardsMainPanel.Padding = new System.Windows.Forms.Padding(2);
             this.pnlCardsMainPanel.Size = new System.Drawing.Size(271, 408);
             this.pnlCardsMainPanel.TabIndex = 1;
             // 
@@ -717,7 +717,7 @@
             this.pnlTotalRevenue.Controls.Add(this.tlpTotalRevenue);
             this.pnlTotalRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTotalRevenue.Location = new System.Drawing.Point(8, 197);
-            this.pnlTotalRevenue.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlTotalRevenue.Margin = new System.Windows.Forms.Padding(8);
             this.pnlTotalRevenue.Name = "pnlTotalRevenue";
             this.pnlTotalRevenue.Size = new System.Drawing.Size(251, 74);
             this.pnlTotalRevenue.TabIndex = 0;
@@ -802,7 +802,7 @@
             this.pnlAvgMonthlyRevenue.Controls.Add(this.tlpAvgMonthlyRevenue);
             this.pnlAvgMonthlyRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAvgMonthlyRevenue.Location = new System.Drawing.Point(8, 290);
-            this.pnlAvgMonthlyRevenue.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlAvgMonthlyRevenue.Margin = new System.Windows.Forms.Padding(8);
             this.pnlAvgMonthlyRevenue.Name = "pnlAvgMonthlyRevenue";
             this.pnlAvgMonthlyRevenue.Size = new System.Drawing.Size(251, 74);
             this.pnlAvgMonthlyRevenue.TabIndex = 0;
@@ -887,7 +887,7 @@
             this.pnlTotalIncome.Controls.Add(this.tlpTotalIncome);
             this.pnlTotalIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTotalIncome.Location = new System.Drawing.Point(8, 11);
-            this.pnlTotalIncome.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlTotalIncome.Margin = new System.Windows.Forms.Padding(8);
             this.pnlTotalIncome.Name = "pnlTotalIncome";
             this.pnlTotalIncome.Size = new System.Drawing.Size(251, 74);
             this.pnlTotalIncome.TabIndex = 0;
@@ -972,7 +972,7 @@
             this.pnlTotalExpense.Controls.Add(this.tlpTotalExpense);
             this.pnlTotalExpense.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTotalExpense.Location = new System.Drawing.Point(8, 104);
-            this.pnlTotalExpense.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pnlTotalExpense.Margin = new System.Windows.Forms.Padding(8);
             this.pnlTotalExpense.Name = "pnlTotalExpense";
             this.pnlTotalExpense.Size = new System.Drawing.Size(251, 74);
             this.pnlTotalExpense.TabIndex = 0;
@@ -1131,7 +1131,7 @@
             // 
             this.tlpSearchboxLabel.ColumnCount = 3;
             this.tlpSearchboxLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tlpSearchboxLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
+            this.tlpSearchboxLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
             this.tlpSearchboxLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tlpSearchboxLabel.Controls.Add(this.tlpSearhImageLabel, 1, 0);
             this.tlpSearchboxLabel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1146,18 +1146,18 @@
             // tlpSearhImageLabel
             // 
             this.tlpSearhImageLabel.ColumnCount = 3;
-            this.tlpSearhImageLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpSearhImageLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tlpSearhImageLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tlpSearhImageLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tlpSearhImageLabel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSearhImageLabel.Controls.Add(this.picYear, 0, 0);
             this.tlpSearhImageLabel.Controls.Add(this.lclSearchYear, 1, 0);
             this.tlpSearhImageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSearhImageLabel.Location = new System.Drawing.Point(15, 0);
+            this.tlpSearhImageLabel.Location = new System.Drawing.Point(17, 0);
             this.tlpSearhImageLabel.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSearhImageLabel.Name = "tlpSearhImageLabel";
             this.tlpSearhImageLabel.RowCount = 1;
             this.tlpSearhImageLabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearhImageLabel.Size = new System.Drawing.Size(237, 54);
+            this.tlpSearhImageLabel.Size = new System.Drawing.Size(233, 54);
             this.tlpSearhImageLabel.TabIndex = 0;
             this.tlpSearhImageLabel.Click += new System.EventHandler(this.tlpSearhImageLabel_Click);
             // 
@@ -1165,7 +1165,7 @@
             // 
             this.picYear.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picYear.Image = ((System.Drawing.Image)(resources.GetObject("picYear.Image")));
-            this.picYear.Location = new System.Drawing.Point(3, 15);
+            this.picYear.Location = new System.Drawing.Point(0, 15);
             this.picYear.Margin = new System.Windows.Forms.Padding(0);
             this.picYear.Name = "picYear";
             this.picYear.Size = new System.Drawing.Size(22, 24);
@@ -1179,10 +1179,10 @@
             this.lclSearchYear.AutoSize = true;
             this.lclSearchYear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lclSearchYear.ForeColor = System.Drawing.Color.White;
-            this.lclSearchYear.Location = new System.Drawing.Point(27, 8);
+            this.lclSearchYear.Location = new System.Drawing.Point(24, 17);
             this.lclSearchYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lclSearchYear.Name = "lclSearchYear";
-            this.lclSearchYear.Size = new System.Drawing.Size(45, 38);
+            this.lclSearchYear.Size = new System.Drawing.Size(71, 19);
             this.lclSearchYear.TabIndex = 1;
             this.lclSearchYear.Text = "Enter Year";
             // 
@@ -1226,6 +1226,7 @@
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(84, 30);
             this.pnlSearch.TabIndex = 3;
+            this.pnlSearch.Click += new System.EventHandler(this.pnlSearch_Click);
             // 
             // lblSearch
             // 
@@ -1238,6 +1239,7 @@
             this.lblSearch.Size = new System.Drawing.Size(51, 19);
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Search";
+            this.lblSearch.Click += new System.EventHandler(this.pnlSearch_Click);
             // 
             // picSearchIcon
             // 
@@ -1250,6 +1252,7 @@
             this.picSearchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchIcon.TabIndex = 0;
             this.picSearchIcon.TabStop = false;
+            this.picSearchIcon.Click += new System.EventHandler(this.pnlSearch_Click);
             // 
             // FrmSAProfitLoss
             // 
@@ -1258,7 +1261,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(962, 609);
             this.Controls.Add(this.tlpProfitLossForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(878, 588);
             this.Name = "FrmSAProfitLoss";
             this.Text = "FrmSAProfitLoss";
