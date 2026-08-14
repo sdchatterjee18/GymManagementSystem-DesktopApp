@@ -28,7 +28,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Trainer
         public TrainerDAL()
         {
             ShowAllTrainerSPName = "spGetAllTrainerEmployeeDetails";
-            SearchPhoneNoSPName = "spRetrieveTrainersByPhoneNumber";
+            SearchPhoneNoSPName = "spRetrieveTrainersByPhoneNumberAndName";
             ShowGeneralTrainerSPName = "DisplayGeneralTrainers";
             ShowPersonalTrainerSPName = "DisplayPersonalTrainers";
         }
@@ -56,7 +56,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Trainer
             TrainerPhoneNo = phoneNo;
             SqlParameter[] sqlParameter = new SqlParameter[]
             {
-                new SqlParameter("@PhoneNo",TrainerPhoneNo)
+                new SqlParameter("@Search",TrainerPhoneNo)
             };
             DataTable RetrieveTrainerByPhoneNo = null;
             try

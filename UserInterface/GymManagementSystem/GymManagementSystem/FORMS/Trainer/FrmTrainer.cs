@@ -34,7 +34,7 @@ namespace GymManagementSystem.FORMS.Trainer
             txtSearchBar.DeselectAll();
 
             RetrieveAllTrainer();
-
+            
         }
 
         //Retrieve All Trainers
@@ -45,11 +45,11 @@ namespace GymManagementSystem.FORMS.Trainer
             {
                 TrainerUI TrainerUI = new TrainerUI();
                 AllTrainers = TrainerUI.RetrieveAllTrainerUI();
+                int Sl_No = 1;
                 foreach (DataRow row in AllTrainers.Rows)
                 {
                     dgvTrainerDetails.Rows.Add(
-                        Convert.ToInt32(row["EmployeeId"]),
-                        Convert.ToInt32(row["TrainerId"]),
+                        Sl_No++,
                         row["TrainerName"].ToString(),
                         row["Specialization"].ToString(),
                         row["TrainerType"].ToString(),
@@ -74,11 +74,11 @@ namespace GymManagementSystem.FORMS.Trainer
             {
                 TrainerUI TrainerUI = new TrainerUI();
                 RetieveTrainerByPhoneNo = TrainerUI.RetrieveTrainerByPhoneNoUI(txtSearchBar.Text);
+                int slNo = 1;
                 foreach (DataRow row in RetieveTrainerByPhoneNo.Rows)
                 {
                     dgvTrainerDetails.Rows.Add(
-                        Convert.ToInt32(row["EmployeeId"]),
-                        Convert.ToInt32(row["TrainerId"]),
+                        slNo++,
                         row["TrainerName"].ToString(),
                         row["Specialization"].ToString(),
                         row["TrainerType"].ToString(),
@@ -103,11 +103,11 @@ namespace GymManagementSystem.FORMS.Trainer
             {
                 TrainerUI TrainerUI = new TrainerUI();
                 GerenalTrainers = TrainerUI.RetrieveGeneralTrainerUI();
+                int Sl_no=1;
                 foreach (DataRow row in GerenalTrainers.Rows)
                 {
                     dgvTrainerDetails.Rows.Add(
-                        Convert.ToInt32(row["EmployeeId"]),
-                        Convert.ToInt32(row["TrainerId"]),
+                        Sl_no++,
                         row["TrainerName"].ToString(),
                         row["Specialization"].ToString(),
                         row["TrainerType"].ToString(),
@@ -132,11 +132,11 @@ namespace GymManagementSystem.FORMS.Trainer
             {
                 TrainerUI TrainerUI = new TrainerUI();
                 PersonalTrainers = TrainerUI.RetrievePersonalTrainerUI();
+                int Sl_no = 1;
                 foreach (DataRow row in PersonalTrainers.Rows)
                 {
                     dgvTrainerDetails.Rows.Add(
-                        Convert.ToInt32(row["EmployeeId"]),
-                        Convert.ToInt32(row["TrainerId"]),
+                        Sl_no++,
                         row["TrainerName"].ToString(),
                         row["Specialization"].ToString(),
                         row["TrainerType"].ToString(),
@@ -180,16 +180,19 @@ namespace GymManagementSystem.FORMS.Trainer
 
         private void txtSearchBar_TextChanged(object sender, EventArgs e)
         {
-
+            dgvTrainerDetails.Rows.Clear();
+            dgvTrainerDetails.ReadOnly = true;
+            RetrieveTrainerByPhoneNO();
         }
-
+        int SearchClick = 1;
         private void txtSearchBar_Click(object sender, EventArgs e)
         {
-            int SearchClick = 1;
+           
             if (SearchClick == 1)
             {
                 txtSearchBar.Clear();
                 txtSearchBar.ForeColor = Color.Black;
+                SearchClick++;
             }
         }
 
@@ -224,13 +227,9 @@ namespace GymManagementSystem.FORMS.Trainer
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvTrainerDetails.Columns["colProfile"].Index)
             {
                 e.PaintBackground(e.CellBounds, true);
-
                 ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
                     System.Windows.Forms.VisualStyles.PushButtonState.Normal);
-
-                
-                Font fixedFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-
+                Font fixedFont = new Font("Segoe UI", 9F,FontStyle.Regular);
                 TextRenderer.DrawText(
                     e.Graphics,
                     "Profile",
@@ -238,9 +237,7 @@ namespace GymManagementSystem.FORMS.Trainer
                     e.CellBounds,
                     Color.RoyalBlue,
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-
                 e.Handled = true;
-
             }
         }
 
@@ -257,10 +254,10 @@ namespace GymManagementSystem.FORMS.Trainer
         private void tlpPersonalTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpPersonalTrainer;
-            tlpPersonalTrainer.BackColor = Color.RoyalBlue;
+            tlpPersonalTrainer.BackColor = Color.FromArgb(14, 28, 65);
             lblPersonalTrainer.ForeColor = Color.White;
-            tlpGeneralTrainer.BackColor = Color.FromArgb(210,215,245);
-            lblGeneralTrainer.ForeColor = Color.Blue;
+            tlpGeneralTrainer.BackColor = Color.MidnightBlue;
+            lblGeneralTrainer.ForeColor = Color.White;
 
             dgvTrainerDetails.Rows.Clear();
             dgvTrainerDetails.ReadOnly = false;
@@ -272,7 +269,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
            if(selectedTLP!=tlpPersonalTrainer)
            {
-               tlpPersonalTrainer.BackColor = Color.FromArgb(180,188,245);
+               tlpPersonalTrainer.BackColor = Color.DarkBlue;
            }
         }
 
@@ -280,17 +277,17 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             if (selectedTLP != tlpPersonalTrainer)
             {
-                tlpPersonalTrainer.BackColor = Color.FromArgb(210,215,255);
+                tlpPersonalTrainer.BackColor = Color.MidnightBlue;
             }
         }
 
         private void tlpGeneralTrainer_Click(object sender, EventArgs e)
         {
             selectedTLP = tlpGeneralTrainer;
-            tlpGeneralTrainer.BackColor = Color.RoyalBlue;
+            tlpGeneralTrainer.BackColor = Color.FromArgb(14, 28, 65);
             lblGeneralTrainer.ForeColor = Color.White;
-            tlpPersonalTrainer.BackColor = Color.FromArgb(210, 215, 245);
-            lblPersonalTrainer.ForeColor = Color.Blue;
+            tlpPersonalTrainer.BackColor = Color.MidnightBlue;
+            lblPersonalTrainer.ForeColor = Color.White;
 
             dgvTrainerDetails.Rows.Clear();
             dgvTrainerDetails.ReadOnly = false;
@@ -301,7 +298,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             if (selectedTLP != tlpGeneralTrainer)
             {
-                tlpGeneralTrainer.BackColor = Color.FromArgb(180, 188, 245);
+                tlpGeneralTrainer.BackColor = Color.DarkBlue;
             }
         }
 
@@ -310,7 +307,7 @@ namespace GymManagementSystem.FORMS.Trainer
         {
             if (selectedTLP != tlpGeneralTrainer)
             {
-                tlpGeneralTrainer.BackColor = Color.FromArgb(210, 215, 255);
+                tlpGeneralTrainer.BackColor = Color.MidnightBlue;
             }
 
             
@@ -321,16 +318,6 @@ namespace GymManagementSystem.FORMS.Trainer
 
         }
         private const string PLACEHOLDER_TEXT = "Enter Mobile No.";
-
-        private void tlpGeneralTrainer_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tlpPersonalTrainer_MouseHover(object sender, EventArgs e)
-        {
-
-        }
 
         private void tlpGeneralTrainer_Paint(object sender, PaintEventArgs e)
         {
