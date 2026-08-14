@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.FORMS.Gender;
+using GymManagementSystem.FORMS.FitnessTest.UI;
+
 
 namespace GymManagementSystem.FORMS
 {
@@ -16,14 +19,66 @@ namespace GymManagementSystem.FORMS
             InitializeComponent();
         }
 
+        private void FrmFitnessTest_Load(object sender, EventArgs e)
+        {
+            LoadGender();
+            LoadGoalList();
+            LoadActivityLevels();
+
+            this.ActiveControl = null;
+        }
+        private void LoadGender()
+        {
+            DataTable dataTable = GenderUI.GetGenderDetailsForComboBox();
+
+            if (dataTable == null)
+            {
+                MessageBox.Show(
+                    "Gender data could not be loaded.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            cmbGenderInput.DataSource = dataTable;
+            cmbGenderInput.DisplayMember = "GenderName";
+            cmbGenderInput.ValueMember = "GenderId";
+
+            cmbGenderInput.SelectedIndex = -1;
+        }
+        private void LoadActivityLevels()
+        {
+            List<string> activityLevels =
+                FitnessTestUI.GetActivityLevels();
+
+            cmbActivityInput.Items.Clear();
+
+            foreach (string activity in activityLevels)
+            {
+                cmbActivityInput.Items.Add(activity);
+            }
+
+            cmbActivityInput.SelectedIndex = -1;
+        }
+        private void LoadGoalList()
+        {
+            List<string> goalList = FitnessTestUI.GetGoalList();
+
+            cmbGoalInput.Items.Clear();
+
+            foreach (string goal in goalList)
+            {
+                cmbGoalInput.Items.Add(goal);
+            }
+
+            cmbGoalInput.SelectedIndex = -1;
+        }
+
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void FrmFitnessTest_Load(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
         }
 
         private void txtHightInput_Enter(object sender, EventArgs e)

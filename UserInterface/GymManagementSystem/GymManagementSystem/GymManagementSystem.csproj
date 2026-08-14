@@ -207,6 +207,7 @@
     <Compile Include="FORMS\FitnessTest\FrmFitnessTest.Designer.cs">
       <DependentUpon>FrmFitnessTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\FitnessTest\UI\FitnessTestUI.cs" />
     <Compile Include="FORMS\Gender\GenderUI.cs" />
     <Compile Include="FORMS\Locker\FrmAddLocker.cs">
       <SubType>Form</SubType>

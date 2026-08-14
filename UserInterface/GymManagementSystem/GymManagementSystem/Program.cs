@@ -12,7 +12,6 @@ using GymManagementSystem.FormsSuperAdmin.MainLayout;
 using GymManagementSystem.FormsSuperAdmin.Dashboard;
 using GymManagementSystem.FORMS.DietPlan;
 using GymManagementSystem.FORMS.Attendance;
-using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FORMS.Expenses;
 using GymManagementSystem.FORMS.Settings;
 using GymManagementSystem.FORMS.Shift;
@@ -22,6 +21,8 @@ using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Locker;
 using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
+using GymManagementSystem.FORMS.FitnessTest;
+
 namespace GymManagementSystem
 {
     static class Program
@@ -51,7 +52,7 @@ namespace GymManagementSystem
             //Application.Run(new FrmSAAddNewEmployee());
 
             //Application.Run(new FrmSuperAdminRegistration());
-            Application.Run(new FrmUserRoleSelection());
+            Application.Run(new GymManagementSystem.FORMS.FitnessTest.());
         }
     }
 }

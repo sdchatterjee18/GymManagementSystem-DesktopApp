@@ -71,7 +71,20 @@ namespace GymManagementSystemBLLayer.Common
             // =========================
             ConditionStatusRequired,
             ConditionStatusMustContainOnlyLetters,
-            ConditionStatusTooShort
+            ConditionStatusTooShort,
+            // =========================
+            // Fitness Test Validation
+            // =========================
+            HeightRequired,
+            HeightMustBeNumeric,
+            HeightMustBeGreaterThanZero,
+
+            WeightRequired,
+            WeightMustBeNumeric,
+            WeightMustBeGreaterThanZero,
+            AgeRequired,
+            AgeMustBeNumeric,
+            AgeMustBeGreaterThanZero,
         }
 
 
@@ -93,6 +106,8 @@ namespace GymManagementSystemBLLayer.Common
 
             return CommonValidationMessage.Valid;
         }
+
+
 
 
         // =========================
@@ -277,6 +292,61 @@ namespace GymManagementSystemBLLayer.Common
 
             return CommonValidationMessage.Valid;
         }
+        // =========================
+        // Height Validation
+        // =========================
+        public static CommonValidationMessage ValidateHeight(string height)
+        {
+            if (string.IsNullOrWhiteSpace(height))
+                return CommonValidationMessage.HeightRequired;
+
+            decimal heightValue;
+
+            if (!decimal.TryParse(height, out heightValue))
+                return CommonValidationMessage.HeightMustBeNumeric;
+
+            if (heightValue <= 0)
+                return CommonValidationMessage.HeightMustBeGreaterThanZero;
+
+            return CommonValidationMessage.Valid;
+        }
+        // =========================
+        // Weight Validation
+        // =========================
+        public static CommonValidationMessage ValidateWeight(string weight)
+        {
+            if (string.IsNullOrWhiteSpace(weight))
+                return CommonValidationMessage.WeightRequired;
+
+            decimal weightValue;
+
+            if (!decimal.TryParse(weight, out weightValue))
+                return CommonValidationMessage.WeightMustBeNumeric;
+
+            if (weightValue <= 0)
+                return CommonValidationMessage.WeightMustBeGreaterThanZero;
+
+            return CommonValidationMessage.Valid;
+        }
+        // =========================
+        // Age Validation
+        // =========================
+        public static CommonValidationMessage ValidateAge(string age)
+        {
+            if (string.IsNullOrWhiteSpace(age))
+                return CommonValidationMessage.AgeRequired;
+
+            int ageValue;
+
+            if (!int.TryParse(age, out ageValue))
+                return CommonValidationMessage.AgeMustBeNumeric;
+
+            if (ageValue <= 0)
+                return CommonValidationMessage.AgeMustBeGreaterThanZero;
+
+            return CommonValidationMessage.Valid;
+        }
+
 
         // =========================
         // Validation Message
@@ -401,6 +471,39 @@ namespace GymManagementSystemBLLayer.Common
 
                 case CommonValidationMessage.PasswordRequired:
                     return "Password is required.";
+
+                // =========================
+                // Fitness Test Validation
+                // =========================
+
+                case CommonValidationMessage.HeightRequired:
+                    return "Height is required.";
+
+                case CommonValidationMessage.HeightMustBeNumeric:
+                    return "Height must contain only numbers.";
+
+                case CommonValidationMessage.HeightMustBeGreaterThanZero:
+                    return "Height must be greater than zero.";
+
+
+                case CommonValidationMessage.WeightRequired:
+                    return "Weight is required.";
+
+                case CommonValidationMessage.WeightMustBeNumeric:
+                    return "Weight must contain only numbers.";
+
+                case CommonValidationMessage.WeightMustBeGreaterThanZero:
+                    return "Weight must be greater than zero.";
+
+
+                case CommonValidationMessage.AgeRequired:
+                    return "Age is required.";
+
+                case CommonValidationMessage.AgeMustBeNumeric:
+                    return "Age must contain only numbers.";
+
+                case CommonValidationMessage.AgeMustBeGreaterThanZero:
+                    return "Age must be greater than zero.";
 
 
                 default:
