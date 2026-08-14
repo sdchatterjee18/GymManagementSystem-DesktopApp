@@ -264,16 +264,32 @@ namespace GymManagementSystem.FORMS.Attendance
                 MarkAttendance(memberId, shiftId);
             }
         }
-        
+ 
         private void MarkAttendance(int MemberId, int ShiftId)
         {
             string AttendanceMessage = null;
+            string MarkAttendanceConfirmation = "Are you sure you want to mark attendance?";
+            string ConfirmMessage = "Confirm Attendance";
+            string Attendance = "Attendance";
+            string ErrorMessage = "Error";
 
             try
             {
+                
+                // Before Attendance Mark  Confirmation
+                DialogResult ConfirmationResult = MessageBox.Show(
+                    MarkAttendanceConfirmation,
+                    ConfirmMessage,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+                if (ConfirmationResult != DialogResult.Yes)
+                {
+                    return;
+                }
+
                 AttendanceUI AttendanceUI = new AttendanceUI();
 
-                
                 bool isShiftSelected =
                     cmbMarkAttendanceShiftSearch.SelectedIndex >= 0;
 
@@ -291,33 +307,26 @@ namespace GymManagementSystem.FORMS.Attendance
                 AttendanceMessage =
                     AttendanceUI.MarkAttendanceUI(MemberId, ShiftId);
 
-                DialogResult Result = MessageBox.Show(
+                MessageBox.Show(
                     AttendanceMessage,
-                    "Info",
+                    Attendance,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-
-               
-                if (Result == DialogResult.OK)
+                if (isShiftSelected)
                 {
-                    if (isShiftSelected)
-                    {
-                     
-                        RetrieveShiftWiseMemberAttendance(selectedShiftId);
-                    }
-                    else
-                    {
-                      
-                        RetrieveCurrentShiftData();
-                    }
+                    RetrieveShiftWiseMemberAttendance(selectedShiftId);
+                }
+                else
+                {
+                    RetrieveCurrentShiftData();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
                     ex.Message,
-                    "Error",
+                    ErrorMessage,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
