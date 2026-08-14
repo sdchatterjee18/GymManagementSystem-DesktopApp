@@ -149,6 +149,7 @@
     <Compile Include="FormsSuperAdmin\Salary\FrmSASalaryPayment.Designer.cs">
       <DependentUpon>FrmSASalaryPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsSuperAdmin\Salary\UI\SalaryUI.cs" />
     <Compile Include="FormsSuperAdmin\Settings\FrmSAPasswordChange.cs">
       <SubType>Form</SubType>
     </Compile>
