@@ -26,7 +26,7 @@ namespace GymManagementSystem.FORMS.Attendance
             RetrieveCurrentShiftData();
         }
 
-        //Retrieve Shift Shift
+        //Retrieve Shift 
         private void RetrieveShift()
         {
             
@@ -62,8 +62,26 @@ namespace GymManagementSystem.FORMS.Attendance
                         row["MemberName"].ToString(),
                         row["PhoneNo"].ToString(),
                         Convert.ToInt32(row["ShiftId"]),
-                        row["ShiftName"].ToString()
+                        row["ShiftName"].ToString(),
+                        row["AttendanceStatus"].ToString()
                      );
+                    int rowIndex = dgvMarkAttendance.Rows.Count - 1;
+
+                    string attendanceStatus = row["AttendanceStatus"].ToString();
+
+                    if (attendanceStatus.Equals("Present", StringComparison.OrdinalIgnoreCase))
+                    {
+                        dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Green;
+
+                        // Checkbox Check
+                        dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = true;
+                    }
+                    else
+                    {
+                        dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+                        dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = false;
+                    }
                 }
                
             }
@@ -92,8 +110,26 @@ namespace GymManagementSystem.FORMS.Attendance
                         row["MemberName"].ToString(),
                         row["PhoneNo"].ToString(),
                         Convert.ToInt32(row["ShiftId"]),
-                        row["ShiftName"].ToString()
+                        row["ShiftName"].ToString(),
+                        row["AttendanceStatus"].ToString()
                       );
+                   int rowIndex = dgvMarkAttendance.Rows.Count - 1;
+
+                   string attendanceStatus = row["AttendanceStatus"].ToString();
+
+                   if (attendanceStatus.Equals("Present", StringComparison.OrdinalIgnoreCase))
+                   {
+                       dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Green;
+
+                       // Checkbox Check
+                       dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = true;
+                   }
+                   else
+                   {
+                       dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+                       dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = false;
+                   }
                 }
                
             }
@@ -103,14 +139,14 @@ namespace GymManagementSystem.FORMS.Attendance
             }
         }
 
-        private void RetrieveAbsentMemberOnCurrentShiftByPhoneNo()
+        private void SearchMembersByPhoneNoAndName()
         {
             DataTable AbsentMemberOnCurrentShift = null;
             try
             {
                 string PhoneNo = txtMarkMemberMobileNumber.Text;
                 AttendanceUI AttendanceUI = new AttendanceUI();
-                AbsentMemberOnCurrentShift = AttendanceUI.RetrieveAbsentMemberOnCurrentShiftByPhoneNoUI(PhoneNo);
+                AbsentMemberOnCurrentShift = AttendanceUI.SearchMembersByPhoneNoAndNameUI(PhoneNo);
                 dgvMarkAttendance.Rows.Clear();
                 int SerialNo = 1;
                 foreach (DataRow row in AbsentMemberOnCurrentShift.Rows)
@@ -122,8 +158,26 @@ namespace GymManagementSystem.FORMS.Attendance
                          row["MemberName"].ToString(),
                          row["PhoneNo"].ToString(),
                          Convert.ToInt32(row["ShiftId"]),
-                         row["ShiftName"].ToString()
+                         row["ShiftName"].ToString(),
+                         row["AttendanceStatus"].ToString()
                        );
+                    int rowIndex = dgvMarkAttendance.Rows.Count - 1;
+
+                    string attendanceStatus = row["AttendanceStatus"].ToString();
+
+                    if (attendanceStatus.Equals("Present", StringComparison.OrdinalIgnoreCase))
+                    {
+                        dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Green;
+
+                        // Checkbox Check
+                        dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = true;
+                    }
+                    else
+                    {
+                        dgvMarkAttendance.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+                        dgvMarkAttendance.Rows[rowIndex].Cells["colMarkAttendance"].Value = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -172,7 +226,7 @@ namespace GymManagementSystem.FORMS.Attendance
 
         private void btnMarkAttendanceSearch_Click(object sender, EventArgs e)
         {
-            RetrieveAbsentMemberOnCurrentShiftByPhoneNo();
+            
         }
 
         private void cmbMarkAttendanceShiftSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,6 +242,7 @@ namespace GymManagementSystem.FORMS.Attendance
             int shiftId = Convert.ToInt32(cmbMarkAttendanceShiftSearch.SelectedValue);
 
             RetrieveShiftWiseMemberAttendance(shiftId);
+            
             
         }
 
@@ -209,30 +264,82 @@ namespace GymManagementSystem.FORMS.Attendance
                 MarkAttendance(memberId, shiftId);
             }
         }
+        
         private void MarkAttendance(int MemberId, int ShiftId)
         {
             string AttendanceMessage = null;
+
             try
             {
                 AttendanceUI AttendanceUI = new AttendanceUI();
-                AttendanceMessage = AttendanceUI.MarkAttendanceUI(MemberId, ShiftId);
-               DialogResult Result= MessageBox.Show(AttendanceMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               if (Result == DialogResult.OK)
-               {
-                   
-                   if (cmbMarkAttendanceShiftSearch.SelectedValue == null)
-                       return;
 
-                   int shiftId = Convert.ToInt32(cmbMarkAttendanceShiftSearch.SelectedValue);
-                   RetrieveCurrentShiftData();
-                   RetrieveShiftWiseMemberAttendance(shiftId);
-                   
-               }
+                
+                bool isShiftSelected =
+                    cmbMarkAttendanceShiftSearch.SelectedIndex >= 0;
+
+                int selectedShiftId = 0;
+
+                if (isShiftSelected)
+                {
+                    selectedShiftId =
+                        Convert.ToInt32(
+                            cmbMarkAttendanceShiftSearch.SelectedValue
+                        );
+                }
+
+                // Attendance Mark
+                AttendanceMessage =
+                    AttendanceUI.MarkAttendanceUI(MemberId, ShiftId);
+
+                DialogResult Result = MessageBox.Show(
+                    AttendanceMessage,
+                    "Info",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+               
+                if (Result == DialogResult.OK)
+                {
+                    if (isShiftSelected)
+                    {
+                     
+                        RetrieveShiftWiseMemberAttendance(selectedShiftId);
+                    }
+                    else
+                    {
+                      
+                        RetrieveCurrentShiftData();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                 AttendanceMessage = null;
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
+        }
+
+        private void txtMarkMemberMobileNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMarkMemberMobileNumber == null)
+            {
+                RetrieveCurrentShiftData();
+            }
+            else
+            {
+                SearchMembersByPhoneNoAndName();
+            }
+            cmbMarkAttendanceShiftSearch.SelectedIndex = -1;
+        }
+
+        private void txtMarkMemberMobileNumber_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

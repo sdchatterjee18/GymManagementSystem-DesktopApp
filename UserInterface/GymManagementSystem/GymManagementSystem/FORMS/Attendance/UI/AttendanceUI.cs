@@ -62,14 +62,14 @@ namespace GymManagementSystem.FORMS.Attendance.UI
             }
         }
 
-        public DataTable RetrieveAbsentMemberOnCurrentShiftByPhoneNoUI(string phoneNo)
+        public DataTable SearchMembersByPhoneNoAndNameUI(string phoneNo)
         {
             DataTable AbsentMemberOnCurrentShift = null;
             try
             {
                 PhoneNo = phoneNo;
                 AttendanceBLL AttendanceBLL = new AttendanceBLL();
-                AbsentMemberOnCurrentShift = AttendanceBLL.RetrieveAbsentMemberOnCurrentShiftByPhoneNoBLL(PhoneNo);
+                AbsentMemberOnCurrentShift = AttendanceBLL.SearchMembersByPhoneNoAndNameBLL(PhoneNo);
                 return AbsentMemberOnCurrentShift;
             }
             catch (Exception ex)
