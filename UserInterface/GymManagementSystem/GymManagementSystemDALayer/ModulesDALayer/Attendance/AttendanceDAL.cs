@@ -29,9 +29,9 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
         public AttendanceDAL()
         {
             RetrieveShiftSPName = "spRetrieveShiftTimeTable";
-            RetrieveCurrentShiftAbsentMemberSPName = "spRetrieveAbsentMembersOnCurrentDateCurrentShift";
-            RetrieveAbsentMembersOnCurrentDateByShiftSPName = "spRetrieveAbsentMembersOnCurrentDateByShift";
-            RetrieveAbsentMembersOnCurrentDateCurrentShiftByPhoneNoSPName = "spRetrieveAbsentMembersOnCurrentDateCurrentShiftByPhoneNo";
+            RetrieveCurrentShiftAbsentMemberSPName = "spRetrieveAbsentPresentMembersOnCurrentDateByShift";
+            RetrieveAbsentMembersOnCurrentDateByShiftSPName = "spRetrievePresentAbsentMembersOnCurrentDateByShift";
+            RetrieveAbsentMembersOnCurrentDateCurrentShiftByPhoneNoSPName = "spRetrieveMembersByPhoneNumberAndName";
             MarkAttendanceSPName = "spMarkMemberAttendance";
             RetrieveCurrentMonthAllPresentAttendanceSPName = "spRetrieveCurrentMonthAllPresentAttendance";
             RetrieveMemberAttendanceByPhoneMonthYearSPName = "spRetrieveMemberAttendanceByPhoneMonthYear";
@@ -88,7 +88,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
         }
 
         //Retrieve Not Present Member in Current Shift By PhoneNO
-        public DataTable RetrieveAbsentMemberOnCurrentShiftByPhoneNoDAL(string phoneNo)
+        public DataTable SearchMembersByPhoneNoAndNameDAL(string phoneNo)
         {
             DataTable AbsentMemberOnCurrentShift = null;
             try
@@ -96,7 +96,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
                 PhoneNo = phoneNo;
                 SqlParameter[] sqlParameter = new SqlParameter[]
                 {
-                    new SqlParameter("@PhoneNo",PhoneNo)
+                    new SqlParameter("@Search",PhoneNo)
                 };
                 AbsentMemberOnCurrentShift = LookupDAL.RetrieveSpecificDetails(RetrieveAbsentMembersOnCurrentDateCurrentShiftByPhoneNoSPName,sqlParameter);
                 return AbsentMemberOnCurrentShift;

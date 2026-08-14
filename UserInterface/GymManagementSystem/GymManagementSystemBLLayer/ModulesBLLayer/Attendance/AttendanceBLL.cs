@@ -61,14 +61,14 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Attendance
             }
         }
 
-        public DataTable RetrieveAbsentMemberOnCurrentShiftByPhoneNoBLL(string phoneNo)
+        public DataTable SearchMembersByPhoneNoAndNameBLL(string phoneNo)
         {
             DataTable AbsentMemberOnCurrentShift = null;
             try
             {
                 PhoneNo = phoneNo;
                 AttendanceDAL AttendanceDAL = new AttendanceDAL();
-                AbsentMemberOnCurrentShift = AttendanceDAL.RetrieveAbsentMemberOnCurrentShiftByPhoneNoDAL(PhoneNo);
+                AbsentMemberOnCurrentShift = AttendanceDAL.SearchMembersByPhoneNoAndNameDAL(PhoneNo);
                 return AbsentMemberOnCurrentShift;
             }
             catch (Exception ex)
