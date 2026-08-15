@@ -155,5 +155,25 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
             MemberAllDetailsDAL memberAllDetailsDAL = new MemberAllDetailsDAL();
             return memberAllDetailsDAL.GetMemberDetailsByMemberId(memberId);
         }
+
+        // Retrieves all Assign Trainer of Members details for displaying in the DataGridView.
+        public DataTable RetrieveAssignTrainerToMemberDetailsBLL()
+        {
+            MemberAllDetailsDAL MemberAllDetailsDAL = new MemberAllDetailsDAL();
+            return MemberAllDetailsDAL.RetrieveAssignTrainerToMemberDetailsDAL();
+        }
+        //Search by Phone Number
+
+        public DataTable GetMemberTrainerAssignmentsByPhoneNo(string Search)
+        {
+            MemberAllDetailsDAL memberAllDetailsDAL = new MemberAllDetailsDAL();
+            return memberAllDetailsDAL.GetMemberTrainerAssignmentsByPhoneNo(Search);
+        }
+
+
+
+
+
+
     }
 }
