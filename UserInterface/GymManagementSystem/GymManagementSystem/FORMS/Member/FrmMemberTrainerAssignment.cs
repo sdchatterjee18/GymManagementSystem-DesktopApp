@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using GymManagementSystem.FORMS.Member.UI;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -22,7 +23,7 @@ namespace GymManagementSystem.FORMS.Member
         {
 
             txtSearchBar.Select(0, 0);
-            txtSearchBar.DeselectAll(); 
+            txtSearchBar.DeselectAll();
 
             RetrieveMemberTrainerDetails();
         }
@@ -36,46 +37,7 @@ namespace GymManagementSystem.FORMS.Member
                 txtSearchBar.ForeColor = Color.Black;
             }
         }
-        private void RetrieveMemberTrainerDetails()
-        {
-            string CS=ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-            try
-            {
-                sqlConnection = new SqlConnection(CS);
-                using (SqlCommand sqlCommand = new SqlCommand("spRetrieveAllMemberTrainerAssignmentsDetails", sqlConnection))
-                {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlConnection.Open();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    DataRowCollection dataRows = dataTable.Rows;
-                    int SerialNo = 1;
-
-                    foreach (DataRow dataRow in dataRows)
-                    {
-                        int RowIndex = dgvMemberTrainerAssignmentDetails.Rows.Add();
-                        dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colSLNo"].Value = SerialNo++;
-                        dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colSLNo"].Style.ForeColor = Color.RoyalBlue;
-                        dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colMemberName"].Value = dataRow["MemberName"].ToString();
-                        dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colPhoneNo"].Value =dataRow["PhoneNo"].ToString();
-                        dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colTrainerName"].Value = dataRow["TrainerName"].ToString();
-
-                    }
-
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                dgvMemberTrainerAssignmentDetails.DataSource = null;
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
-        }
+        
 
         private void dgvMemberTrainerAssignmentDetails_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -147,7 +109,105 @@ namespace GymManagementSystem.FORMS.Member
         {
             dgvMemberTrainerAssignmentDetails.ClearSelection();
         }
+        private void RetrieveMemberTrainerDetails()
+        {
 
+            try
+            {
+                MemberAllDetailsUI memberAllDetailsUI = new MemberAllDetailsUI();
+
+                DataTable dataTable = memberAllDetailsUI.RetrieveAssignTrainerToMemberDetailsUI();
+
+
+
+
+                int SerialNo = 1;
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    int RowIndex = dgvMemberTrainerAssignmentDetails.Rows.Add();
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colSLNo"].Value = SerialNo++;
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colSLNo"].Style.ForeColor = Color.RoyalBlue;
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colMemberName"].Value = dataRow["MemberName"].ToString();
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colPhoneNo"].Value = dataRow["PhoneNo"].ToString();
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colTrainerName"].Value = dataRow["TrainerName"].ToString();
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // Search by Phone Number
+        private void SearchMemberByPhoneNumberInTextBox()
+        {
+            string SearchData = (txtSearchBar.Text.Trim()).ToString();
+
+            try
+            {
+                MemberAllDetailsUI memberAllDetailsUI =
+                    new MemberAllDetailsUI();
+
+                DataTable dataTable =
+                    memberAllDetailsUI.GetMemberTrainerAssignmentsByPhoneNo(SearchData);
+
+                // Clear old data
+                dgvMemberTrainerAssignmentDetails.Rows.Clear();
+
+            
+
+                int SerialNo = 1;
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    int RowIndex =
+                        dgvMemberTrainerAssignmentDetails.Rows.Add();
+
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex]
+                        .Cells["colSLNo"].Value = SerialNo++;
+
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex]
+                        .Cells["colSLNo"].Style.ForeColor =
+                        Color.RoyalBlue;
+
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex]
+                        .Cells["colMemberName"].Value =
+                        dataRow["MemberName"].ToString();
+
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex]
+                        .Cells["colPhoneNo"].Value =
+                        dataRow["PhoneNo"].ToString();
+
+                    dgvMemberTrainerAssignmentDetails.Rows[RowIndex]
+                        .Cells["colTrainerName"].Value =
+                        dataRow["TrainerName"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+
+        }
+
+     
+
+        private void txtSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            SearchMemberByPhoneNumberInTextBox();
+        }
+
+       
+       
+
+        
         
     }
 }
