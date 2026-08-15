@@ -108,5 +108,136 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Expense
             }
 
         }
+
+        // Super Admin
+        public DataTable SARetrieveAllExpensesBLL()
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+                dataTable = ExpenseDAL.SARetrieveAllExpensesDAL();
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // BLL
+        public DataTable SARetrieveExpenseStatementByMonthBLL(int month, int year)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                if (month < 1 || month > 12)
+                    return dataTable;
+
+                if (year < 2000 || year > DateTime.Now.Year)
+                    return dataTable;
+
+                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+
+                dataTable = ExpenseDAL.SARetrieveExpenseStatementByMonthDAL(
+                    month,
+                    year
+                );
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // BLL
+        public DataTable SARetrieveTotalExpenseByMonthBLL(int month, int year)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                if (month < 1 || month > 12)
+                    return dataTable;
+
+                if (year < 2000 || year > DateTime.Now.Year)
+                    return dataTable;
+
+                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+
+                dataTable =
+                    ExpenseDAL.SARetrieveTotalExpenseByMonthDAL(
+                        month,
+                        year);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // BLL
+        public DataTable SARetrieveExpenseStatementByDateRangeBLL(DateTime fromDate,DateTime toDate)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                if (fromDate > DateTime.Today)
+                    return dataTable;
+
+                if (toDate > DateTime.Today)
+                    return dataTable;
+
+                if (fromDate > toDate)
+                    return dataTable;
+
+                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+
+                dataTable =
+                    ExpenseDAL.SARetrieveExpenseStatementByDateRangeDAL(
+                        fromDate,
+                        toDate);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        public DataTable SARetrieveTotalExpenseByDateRangeBLL(DateTime fromDate,DateTime toDate)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                if (fromDate > DateTime.Today)
+                    return dataTable;
+
+                if (toDate > DateTime.Today)
+                    return dataTable;
+
+                if (fromDate > toDate)
+                    return dataTable;
+
+                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+
+                dataTable =
+                    ExpenseDAL.SARetrieveTotalExpenseByDateRangeDAL(
+                        fromDate,
+                        toDate);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
     }
 }
