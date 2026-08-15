@@ -23,5 +23,9 @@ namespace GymManagementSystem.Common
         {
             return LookupBLL.GetFeesType();
         }
+        public static DataTable GetMonths()
+        {
+            return LookupBLL.GetMonths();
+        }
     }
 }

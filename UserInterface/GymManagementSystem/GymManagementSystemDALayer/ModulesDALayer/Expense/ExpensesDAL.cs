@@ -112,5 +112,117 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Expense
         }
 
 
+        
+        // Super Admin
+        public DataTable SARetrieveAllExpensesDAL()
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                dataTable = LookupDAL.RetrieveSpecificItem(AllExpenseSPName);
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // DAL
+        public DataTable SARetrieveExpenseStatementByMonthDAL(int month, int year)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+                {
+                    new SqlParameter("@Month", month),
+                    new SqlParameter("@Year", year)
+                };
+
+                dataTable = LookupDAL.RetrieveSpecificDetails(
+                    "spRetrieveExpenseStatementByMonth",
+                    sqlParameters
+                );
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // DAL
+        public DataTable SARetrieveTotalExpenseByMonthDAL(int month, int year)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+        {
+            new SqlParameter("@Month", month),
+            new SqlParameter("@Year", year)
+        };
+
+                dataTable = LookupDAL.RetrieveSpecificDetails(
+                    "spRetrieveTotalExpenseByMonth",
+                    sqlParameters);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        // DAL
+        public DataTable SARetrieveExpenseStatementByDateRangeDAL(DateTime fromDate, DateTime toDate)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+        {
+            new SqlParameter("@FromDate", fromDate),
+            new SqlParameter("@ToDate", toDate)
+        };
+
+                dataTable = LookupDAL.RetrieveSpecificDetails(
+                    "spRetrieveExpenseStatementByDateRange",
+                    sqlParameters);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
+        public DataTable SARetrieveTotalExpenseByDateRangeDAL(DateTime fromDate,DateTime toDate)
+        {
+            DataTable dataTable = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+        {
+            new SqlParameter("@FromDate", fromDate),
+            new SqlParameter("@ToDate", toDate)
+        };
+
+                dataTable = LookupDAL.RetrieveSpecificDetails(
+                    "spRetrieveTotalExpenseByDateRange",
+                    sqlParameters);
+
+                return dataTable;
+            }
+            catch (Exception)
+            {
+                return dataTable;
+            }
+        }
     }
 }

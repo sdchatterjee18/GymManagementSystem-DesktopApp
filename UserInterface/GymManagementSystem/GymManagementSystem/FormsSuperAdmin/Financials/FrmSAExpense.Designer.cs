@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSAExpense));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpExpencesHistory = new System.Windows.Forms.TableLayoutPanel();
             this.tlpExpencesHistoryHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picExpencesHistory = new System.Windows.Forms.PictureBox();
@@ -43,7 +43,11 @@
             this.lblViewExpencesHistoryDetails = new System.Windows.Forms.Label();
             this.lblExpencesHistory = new System.Windows.Forms.Label();
             this.dgvExpensesHistory = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tlpTotalExpencesHistoryAndExport = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExportExpencesHistory = new System.Windows.Forms.Button();
+            this.lblTotalExpencesHistory = new System.Windows.Forms.Label();
+            this.lblOutputTotalExpenceExpenceHistory = new System.Windows.Forms.Label();
+            this.picTotalExpencesHistory = new System.Windows.Forms.PictureBox();
             this.tlpStartAndEndDateExpencesHistory = new System.Windows.Forms.TableLayoutPanel();
             this.btnSearchExpencesHistory = new System.Windows.Forms.Button();
             this.lblStartDateExpencesHistory = new System.Windows.Forms.Label();
@@ -62,23 +66,22 @@
             this.txtYearExpencesHistory = new System.Windows.Forms.TextBox();
             this.picMonthExpencesHistory = new System.Windows.Forms.PictureBox();
             this.picYearExpencesHistory = new System.Windows.Forms.PictureBox();
-            this.picTotalExpencesHistory = new System.Windows.Forms.PictureBox();
-            this.lblOutputTotalExpenceExpenceHistory = new System.Windows.Forms.Label();
-            this.lblTotalExpencesHistory = new System.Windows.Forms.Label();
-            this.btnExportExpencesHistory = new System.Windows.Forms.Button();
-            this.tlpTotalExpencesHistoryAndExport = new System.Windows.Forms.TableLayoutPanel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.colSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExpenseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearchExpense = new System.Windows.Forms.Button();
             this.tlpExpencesHistory.SuspendLayout();
             this.tlpExpencesHistoryHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExpencesHistory)).BeginInit();
             this.tlpExpencesHistoryTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpensesHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tlpTotalExpencesHistoryAndExport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTotalExpencesHistory)).BeginInit();
             this.tlpStartAndEndDateExpencesHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStartDateExpencesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEndDateExpencesHistory)).BeginInit();
@@ -87,8 +90,7 @@
             this.tlpMonthYearSearchExpencesHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMonthExpencesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picYearExpencesHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTotalExpencesHistory)).BeginInit();
-            this.tlpTotalExpencesHistoryAndExport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpExpencesHistory
@@ -195,67 +197,141 @@
             this.dgvExpensesHistory.AllowUserToAddRows = false;
             this.dgvExpensesHistory.AllowUserToResizeColumns = false;
             this.dgvExpensesHistory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvExpensesHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvExpensesHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvExpensesHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvExpensesHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpensesHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpensesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(170)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpensesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvExpensesHistory.ColumnHeadersHeight = 55;
             this.dgvExpensesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExpensesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSLNo,
+            this.colExpenseId,
             this.colCategoryName,
             this.colCategory,
             this.colExpenseAmount,
             this.colExpenseDate,
             this.colNotes});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExpensesHistory.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExpensesHistory.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvExpensesHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvExpensesHistory.EnableHeadersVisualStyles = false;
             this.dgvExpensesHistory.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvExpensesHistory.Location = new System.Drawing.Point(18, 284);
             this.dgvExpensesHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvExpensesHistory.Name = "dgvExpensesHistory";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpensesHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpensesHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvExpensesHistory.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dgvExpensesHistory.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            this.dgvExpensesHistory.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvExpensesHistory.RowTemplate.Height = 40;
             this.dgvExpensesHistory.Size = new System.Drawing.Size(1110, 475);
             this.dgvExpensesHistory.TabIndex = 14;
             this.dgvExpensesHistory.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvExpensesHistory_CellFormatting);
             this.dgvExpensesHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpensesHistory_CellMouseEnter);
             this.dgvExpensesHistory.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpensesHistory_CellMouseLeave);
+            // 
+            // tlpTotalExpencesHistoryAndExport
+            // 
+            this.tlpTotalExpencesHistoryAndExport.ColumnCount = 5;
+            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.btnExportExpencesHistory, 4, 0);
+            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.lblTotalExpencesHistory, 1, 0);
+            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.lblOutputTotalExpenceExpenceHistory, 2, 0);
+            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.picTotalExpencesHistory, 0, 0);
+            this.tlpTotalExpencesHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTotalExpencesHistoryAndExport.Location = new System.Drawing.Point(18, 235);
+            this.tlpTotalExpencesHistoryAndExport.Name = "tlpTotalExpencesHistoryAndExport";
+            this.tlpTotalExpencesHistoryAndExport.RowCount = 1;
+            this.tlpTotalExpencesHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalExpencesHistoryAndExport.Size = new System.Drawing.Size(1110, 44);
+            this.tlpTotalExpencesHistoryAndExport.TabIndex = 15;
+            // 
+            // btnExportExpencesHistory
+            // 
+            this.btnExportExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnExportExpencesHistory.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnExportExpencesHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExportExpencesHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportExpencesHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportExpencesHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExpencesHistory.ForeColor = System.Drawing.Color.White;
+            this.btnExportExpencesHistory.Location = new System.Drawing.Point(993, 2);
+            this.btnExportExpencesHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnExportExpencesHistory.Name = "btnExportExpencesHistory";
+            this.btnExportExpencesHistory.Size = new System.Drawing.Size(117, 40);
+            this.btnExportExpencesHistory.TabIndex = 5;
+            this.btnExportExpencesHistory.Text = "Export";
+            this.btnExportExpencesHistory.UseVisualStyleBackColor = false;
+            this.btnExportExpencesHistory.Click += new System.EventHandler(this.btnExportExpencesHistory_Click);
+            // 
+            // lblTotalExpencesHistory
+            // 
+            this.lblTotalExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalExpencesHistory.AutoSize = true;
+            this.lblTotalExpencesHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalExpencesHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblTotalExpencesHistory.Location = new System.Drawing.Point(40, 10);
+            this.lblTotalExpencesHistory.Name = "lblTotalExpencesHistory";
+            this.lblTotalExpencesHistory.Size = new System.Drawing.Size(124, 23);
+            this.lblTotalExpencesHistory.TabIndex = 0;
+            this.lblTotalExpencesHistory.Text = "Total Expence :";
+            // 
+            // lblOutputTotalExpenceExpenceHistory
+            // 
+            this.lblOutputTotalExpenceExpenceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblOutputTotalExpenceExpenceHistory.AutoSize = true;
+            this.lblOutputTotalExpenceExpenceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputTotalExpenceExpenceHistory.ForeColor = System.Drawing.Color.Gray;
+            this.lblOutputTotalExpenceExpenceHistory.Location = new System.Drawing.Point(186, 10);
+            this.lblOutputTotalExpenceExpenceHistory.Name = "lblOutputTotalExpenceExpenceHistory";
+            this.lblOutputTotalExpenceExpenceHistory.Size = new System.Drawing.Size(31, 23);
+            this.lblOutputTotalExpenceExpenceHistory.TabIndex = 2;
+            this.lblOutputTotalExpenceExpenceHistory.Text = "---";
+            // 
+            // picTotalExpencesHistory
+            // 
+            this.picTotalExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picTotalExpencesHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalExpencesHistory.Image")));
+            this.picTotalExpencesHistory.Location = new System.Drawing.Point(3, 4);
+            this.picTotalExpencesHistory.Name = "picTotalExpencesHistory";
+            this.picTotalExpencesHistory.Size = new System.Drawing.Size(31, 35);
+            this.picTotalExpencesHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTotalExpencesHistory.TabIndex = 3;
+            this.picTotalExpencesHistory.TabStop = false;
             // 
             // tlpStartAndEndDateExpencesHistory
             // 
@@ -299,6 +375,7 @@
             this.btnSearchExpencesHistory.TabIndex = 5;
             this.btnSearchExpencesHistory.Text = "Search";
             this.btnSearchExpencesHistory.UseVisualStyleBackColor = false;
+            this.btnSearchExpencesHistory.Click += new System.EventHandler(this.btnSearchExpencesHistory_Click);
             // 
             // lblStartDateExpencesHistory
             // 
@@ -414,6 +491,7 @@
             this.tlpMonthYearSearchExpencesHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tlpMonthYearSearchExpencesHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMonthYearSearchExpencesHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMonthYearSearchExpencesHistory.Controls.Add(this.btnSearchExpense, 6, 0);
             this.tlpMonthYearSearchExpencesHistory.Controls.Add(this.lblMonthExpencesHistory, 1, 0);
             this.tlpMonthYearSearchExpencesHistory.Controls.Add(this.cmbMonthExpencesHistory, 2, 0);
             this.tlpMonthYearSearchExpencesHistory.Controls.Add(this.lblYearExpencesHistory, 4, 0);
@@ -474,6 +552,7 @@
             this.txtYearExpencesHistory.Size = new System.Drawing.Size(190, 30);
             this.txtYearExpencesHistory.TabIndex = 4;
             this.txtYearExpencesHistory.Text = "Enter Year";
+            this.txtYearExpencesHistory.Click += new System.EventHandler(this.txtYearExpencesHistory_Click);
             // 
             // picMonthExpencesHistory
             // 
@@ -497,78 +576,6 @@
             this.picYearExpencesHistory.TabIndex = 2;
             this.picYearExpencesHistory.TabStop = false;
             // 
-            // picTotalExpencesHistory
-            // 
-            this.picTotalExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picTotalExpencesHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalExpencesHistory.Image")));
-            this.picTotalExpencesHistory.Location = new System.Drawing.Point(3, 4);
-            this.picTotalExpencesHistory.Name = "picTotalExpencesHistory";
-            this.picTotalExpencesHistory.Size = new System.Drawing.Size(31, 35);
-            this.picTotalExpencesHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTotalExpencesHistory.TabIndex = 3;
-            this.picTotalExpencesHistory.TabStop = false;
-            // 
-            // lblOutputTotalExpenceExpenceHistory
-            // 
-            this.lblOutputTotalExpenceExpenceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblOutputTotalExpenceExpenceHistory.AutoSize = true;
-            this.lblOutputTotalExpenceExpenceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputTotalExpenceExpenceHistory.ForeColor = System.Drawing.Color.Gray;
-            this.lblOutputTotalExpenceExpenceHistory.Location = new System.Drawing.Point(186, 10);
-            this.lblOutputTotalExpenceExpenceHistory.Name = "lblOutputTotalExpenceExpenceHistory";
-            this.lblOutputTotalExpenceExpenceHistory.Size = new System.Drawing.Size(31, 23);
-            this.lblOutputTotalExpenceExpenceHistory.TabIndex = 2;
-            this.lblOutputTotalExpenceExpenceHistory.Text = "---";
-            // 
-            // lblTotalExpencesHistory
-            // 
-            this.lblTotalExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTotalExpencesHistory.AutoSize = true;
-            this.lblTotalExpencesHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalExpencesHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTotalExpencesHistory.Location = new System.Drawing.Point(40, 10);
-            this.lblTotalExpencesHistory.Name = "lblTotalExpencesHistory";
-            this.lblTotalExpencesHistory.Size = new System.Drawing.Size(124, 23);
-            this.lblTotalExpencesHistory.TabIndex = 0;
-            this.lblTotalExpencesHistory.Text = "Total Expence :";
-            // 
-            // btnExportExpencesHistory
-            // 
-            this.btnExportExpencesHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnExportExpencesHistory.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnExportExpencesHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnExportExpencesHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportExpencesHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportExpencesHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportExpencesHistory.ForeColor = System.Drawing.Color.White;
-            this.btnExportExpencesHistory.Location = new System.Drawing.Point(993, 2);
-            this.btnExportExpencesHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnExportExpencesHistory.Name = "btnExportExpencesHistory";
-            this.btnExportExpencesHistory.Size = new System.Drawing.Size(117, 40);
-            this.btnExportExpencesHistory.TabIndex = 5;
-            this.btnExportExpencesHistory.Text = "Export";
-            this.btnExportExpencesHistory.UseVisualStyleBackColor = false;
-            // 
-            // tlpTotalExpencesHistoryAndExport
-            // 
-            this.tlpTotalExpencesHistoryAndExport.ColumnCount = 5;
-            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
-            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalExpencesHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
-            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.btnExportExpencesHistory, 4, 0);
-            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.lblTotalExpencesHistory, 1, 0);
-            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.lblOutputTotalExpenceExpenceHistory, 2, 0);
-            this.tlpTotalExpencesHistoryAndExport.Controls.Add(this.picTotalExpencesHistory, 0, 0);
-            this.tlpTotalExpencesHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTotalExpencesHistoryAndExport.Location = new System.Drawing.Point(18, 235);
-            this.tlpTotalExpencesHistoryAndExport.Name = "tlpTotalExpencesHistoryAndExport";
-            this.tlpTotalExpencesHistoryAndExport.RowCount = 1;
-            this.tlpTotalExpencesHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalExpencesHistoryAndExport.Size = new System.Drawing.Size(1110, 44);
-            this.tlpTotalExpencesHistoryAndExport.TabIndex = 15;
-            // 
             // colSLNo
             // 
             this.colSLNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -577,13 +584,19 @@
             this.colSLNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colSLNo.Width = 71;
             // 
+            // colExpenseId
+            // 
+            this.colExpenseId.HeaderText = "ExpenseId";
+            this.colExpenseId.Name = "colExpenseId";
+            this.colExpenseId.Visible = false;
+            // 
             // colCategoryName
             // 
             this.colCategoryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colCategoryName.DataPropertyName = "CategoryName";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.colCategoryName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.colCategoryName.DefaultCellStyle = dataGridViewCellStyle21;
             this.colCategoryName.HeaderText = "Category Name";
             this.colCategoryName.Name = "colCategoryName";
             this.colCategoryName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -619,6 +632,24 @@
             this.colNotes.HeaderText = "Note";
             this.colNotes.Name = "colNotes";
             // 
+            // btnSearchExpense
+            // 
+            this.btnSearchExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSearchExpense.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearchExpense.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSearchExpense.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearchExpense.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearchExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchExpense.ForeColor = System.Drawing.Color.White;
+            this.btnSearchExpense.Location = new System.Drawing.Point(733, 2);
+            this.btnSearchExpense.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSearchExpense.Name = "btnSearchExpense";
+            this.btnSearchExpense.Size = new System.Drawing.Size(107, 40);
+            this.btnSearchExpense.TabIndex = 5;
+            this.btnSearchExpense.Text = "Search";
+            this.btnSearchExpense.UseVisualStyleBackColor = false;
+            this.btnSearchExpense.Click += new System.EventHandler(this.btnSearchExpense_Click);
+            // 
             // FrmSAExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -636,7 +667,9 @@
             this.tlpExpencesHistoryTitle.ResumeLayout(false);
             this.tlpExpencesHistoryTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpensesHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tlpTotalExpencesHistoryAndExport.ResumeLayout(false);
+            this.tlpTotalExpencesHistoryAndExport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTotalExpencesHistory)).EndInit();
             this.tlpStartAndEndDateExpencesHistory.ResumeLayout(false);
             this.tlpStartAndEndDateExpencesHistory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStartDateExpencesHistory)).EndInit();
@@ -648,9 +681,7 @@
             this.tlpMonthYearSearchExpencesHistory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMonthExpencesHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picYearExpencesHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTotalExpencesHistory)).EndInit();
-            this.tlpTotalExpencesHistoryAndExport.ResumeLayout(false);
-            this.tlpTotalExpencesHistoryAndExport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,10 +720,12 @@
         private System.Windows.Forms.Label lblOutputTotalExpenceExpenceHistory;
         private System.Windows.Forms.PictureBox picTotalExpencesHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSLNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNotes;
+        private System.Windows.Forms.Button btnSearchExpense;
     }
 }
