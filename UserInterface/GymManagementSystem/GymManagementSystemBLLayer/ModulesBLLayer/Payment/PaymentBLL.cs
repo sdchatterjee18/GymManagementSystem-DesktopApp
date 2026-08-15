@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using GymManagementSystemDALayer.ModulesDALayer.Payment;
 
 namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
@@ -82,6 +83,46 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
             {
                 return SpecificMemberSubscriptionPaymentDetails;
             }
+        }
+
+        //Super Admin
+        public DataTable SARetrieveSubscriptionPaymentDetailsByMonthBLL(int month, int year)
+        {
+            PaymentDAL paymentDAL = new PaymentDAL();
+
+            return paymentDAL.SARetrieveSubscriptionPaymentDetailsByMonthDAL(
+                month,
+                year);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountByMonthBLL(int month, int year)
+        {
+            PaymentDAL paymentDAL = new PaymentDAL();
+
+            return paymentDAL.SARetrieveTotalPaidSubscriptionAmountByMonthDAL(
+                month,
+                year);
+        }
+        public DataTable SARetrieveAllMemberSubscriptionPaymentDetailsBLL()
+        {
+            PaymentDAL paymentDAL = new PaymentDAL();
+
+            return paymentDAL.SARetrieveAllMemberSubscriptionPaymentDetailsDAL();
+        }
+        public DataTable SARetrieveSubscriptionPaymentDetailsBetweenDateRangeBLL(DateTime startDate, DateTime endDate)
+        {
+            PaymentDAL paymentDAL = new PaymentDAL();
+
+            return paymentDAL.SARetrieveSubscriptionPaymentDetailsBetweenDateRangeDAL(
+                startDate,
+                endDate);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountBetweenDateRangeBLL(DateTime startDate, DateTime endDate)
+        {
+            PaymentDAL paymentDAL = new PaymentDAL();
+
+            return paymentDAL.SARetrieveTotalPaidSubscriptionAmountBetweenDateRangeDAL(
+                startDate,
+                endDate);
         }
     }
 }

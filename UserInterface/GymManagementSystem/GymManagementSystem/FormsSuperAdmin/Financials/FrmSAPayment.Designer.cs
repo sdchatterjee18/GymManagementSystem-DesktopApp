@@ -60,17 +60,19 @@
             this.picStartDatePaymentHistory = new System.Windows.Forms.PictureBox();
             this.picEndDatePaymentHistory = new System.Windows.Forms.PictureBox();
             this.dgvPaymentHistory = new System.Windows.Forms.DataGridView();
-            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMembershipPlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFeesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpTotalPaymentHistoryAndExport = new System.Windows.Forms.TableLayoutPanel();
             this.btnExportPaymentHistory = new System.Windows.Forms.Button();
             this.lblTotalPaymentHistory = new System.Windows.Forms.Label();
             this.lblOutputTotalExpencePaymentHistory = new System.Windows.Forms.Label();
             this.picTotalPaymentHistory = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMembershipPlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFeesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpPaymentHistory.SuspendLayout();
             this.tlpPaymentHistoryHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPaymentHistory)).BeginInit();
@@ -197,6 +199,7 @@
             this.tlpMonthYearSearchPaymentHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tlpMonthYearSearchPaymentHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMonthYearSearchPaymentHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMonthYearSearchPaymentHistory.Controls.Add(this.btnSearch, 6, 0);
             this.tlpMonthYearSearchPaymentHistory.Controls.Add(this.lblMonthPaymentHistory, 1, 0);
             this.tlpMonthYearSearchPaymentHistory.Controls.Add(this.cmbMonthPaymentHistory, 2, 0);
             this.tlpMonthYearSearchPaymentHistory.Controls.Add(this.lblYearPaymentHistory, 4, 0);
@@ -257,6 +260,7 @@
             this.txtYearPaymentHistory.Size = new System.Drawing.Size(190, 30);
             this.txtYearPaymentHistory.TabIndex = 4;
             this.txtYearPaymentHistory.Text = "Enter Year";
+            this.txtYearPaymentHistory.Click += new System.EventHandler(this.txtYearPaymentHistory_Click);
             // 
             // picMonthPaymentHistory
             // 
@@ -361,6 +365,7 @@
             this.btnSearchPaymentHistory.TabIndex = 5;
             this.btnSearchPaymentHistory.Text = "Search";
             this.btnSearchPaymentHistory.UseVisualStyleBackColor = false;
+            this.btnSearchPaymentHistory.Click += new System.EventHandler(this.btnSearchPaymentHistory_Click);
             // 
             // lblStartDatePaymentHistory
             // 
@@ -451,6 +456,7 @@
             this.dgvPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPaymentHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo,
+            this.colPaymentId,
             this.colMembershipPlanName,
             this.colPaymentDate,
             this.colPaymentMethod,
@@ -495,6 +501,97 @@
             this.dgvPaymentHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentHistory_CellMouseEnter);
             this.dgvPaymentHistory.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentHistory_CellMouseLeave);
             // 
+            // tlpTotalPaymentHistoryAndExport
+            // 
+            this.tlpTotalPaymentHistoryAndExport.ColumnCount = 5;
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.btnExportPaymentHistory, 4, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblTotalPaymentHistory, 1, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblOutputTotalExpencePaymentHistory, 2, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.picTotalPaymentHistory, 0, 0);
+            this.tlpTotalPaymentHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTotalPaymentHistoryAndExport.Location = new System.Drawing.Point(18, 236);
+            this.tlpTotalPaymentHistoryAndExport.Name = "tlpTotalPaymentHistoryAndExport";
+            this.tlpTotalPaymentHistoryAndExport.RowCount = 1;
+            this.tlpTotalPaymentHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalPaymentHistoryAndExport.Size = new System.Drawing.Size(1110, 44);
+            this.tlpTotalPaymentHistoryAndExport.TabIndex = 18;
+            // 
+            // btnExportPaymentHistory
+            // 
+            this.btnExportPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnExportPaymentHistory.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnExportPaymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExportPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPaymentHistory.ForeColor = System.Drawing.Color.White;
+            this.btnExportPaymentHistory.Location = new System.Drawing.Point(992, 2);
+            this.btnExportPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnExportPaymentHistory.Name = "btnExportPaymentHistory";
+            this.btnExportPaymentHistory.Size = new System.Drawing.Size(118, 40);
+            this.btnExportPaymentHistory.TabIndex = 5;
+            this.btnExportPaymentHistory.Text = "Export";
+            this.btnExportPaymentHistory.UseVisualStyleBackColor = false;
+            this.btnExportPaymentHistory.Click += new System.EventHandler(this.btnExportPaymentHistory_Click);
+            // 
+            // lblTotalPaymentHistory
+            // 
+            this.lblTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalPaymentHistory.AutoSize = true;
+            this.lblTotalPaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblTotalPaymentHistory.Location = new System.Drawing.Point(40, 10);
+            this.lblTotalPaymentHistory.Name = "lblTotalPaymentHistory";
+            this.lblTotalPaymentHistory.Size = new System.Drawing.Size(135, 23);
+            this.lblTotalPaymentHistory.TabIndex = 0;
+            this.lblTotalPaymentHistory.Text = "Total Payments :";
+            // 
+            // lblOutputTotalExpencePaymentHistory
+            // 
+            this.lblOutputTotalExpencePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblOutputTotalExpencePaymentHistory.AutoSize = true;
+            this.lblOutputTotalExpencePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputTotalExpencePaymentHistory.ForeColor = System.Drawing.Color.Gray;
+            this.lblOutputTotalExpencePaymentHistory.Location = new System.Drawing.Point(190, 10);
+            this.lblOutputTotalExpencePaymentHistory.Name = "lblOutputTotalExpencePaymentHistory";
+            this.lblOutputTotalExpencePaymentHistory.Size = new System.Drawing.Size(31, 23);
+            this.lblOutputTotalExpencePaymentHistory.TabIndex = 2;
+            this.lblOutputTotalExpencePaymentHistory.Text = "---";
+            // 
+            // picTotalPaymentHistory
+            // 
+            this.picTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picTotalPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalPaymentHistory.Image")));
+            this.picTotalPaymentHistory.Location = new System.Drawing.Point(3, 4);
+            this.picTotalPaymentHistory.Name = "picTotalPaymentHistory";
+            this.picTotalPaymentHistory.Size = new System.Drawing.Size(31, 35);
+            this.picTotalPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTotalPaymentHistory.TabIndex = 3;
+            this.picTotalPaymentHistory.TabStop = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(733, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(107, 40);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // colSerialNo
             // 
             this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -507,6 +604,13 @@
             this.colSerialNo.ReadOnly = true;
             this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPaymentId
+            // 
+            this.colPaymentId.HeaderText = "PaymentId";
+            this.colPaymentId.Name = "colPaymentId";
+            this.colPaymentId.ReadOnly = true;
+            this.colPaymentId.Visible = false;
             // 
             // colMembershipPlanName
             // 
@@ -559,78 +663,6 @@
             this.colFeesType.ReadOnly = true;
             this.colFeesType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colFeesType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tlpTotalPaymentHistoryAndExport
-            // 
-            this.tlpTotalPaymentHistoryAndExport.ColumnCount = 5;
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.btnExportPaymentHistory, 4, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblTotalPaymentHistory, 1, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblOutputTotalExpencePaymentHistory, 2, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.picTotalPaymentHistory, 0, 0);
-            this.tlpTotalPaymentHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTotalPaymentHistoryAndExport.Location = new System.Drawing.Point(18, 236);
-            this.tlpTotalPaymentHistoryAndExport.Name = "tlpTotalPaymentHistoryAndExport";
-            this.tlpTotalPaymentHistoryAndExport.RowCount = 1;
-            this.tlpTotalPaymentHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalPaymentHistoryAndExport.Size = new System.Drawing.Size(1110, 44);
-            this.tlpTotalPaymentHistoryAndExport.TabIndex = 18;
-            // 
-            // btnExportPaymentHistory
-            // 
-            this.btnExportPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnExportPaymentHistory.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnExportPaymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnExportPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportPaymentHistory.ForeColor = System.Drawing.Color.White;
-            this.btnExportPaymentHistory.Location = new System.Drawing.Point(992, 2);
-            this.btnExportPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnExportPaymentHistory.Name = "btnExportPaymentHistory";
-            this.btnExportPaymentHistory.Size = new System.Drawing.Size(118, 40);
-            this.btnExportPaymentHistory.TabIndex = 5;
-            this.btnExportPaymentHistory.Text = "Export";
-            this.btnExportPaymentHistory.UseVisualStyleBackColor = false;
-            // 
-            // lblTotalPaymentHistory
-            // 
-            this.lblTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTotalPaymentHistory.AutoSize = true;
-            this.lblTotalPaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTotalPaymentHistory.Location = new System.Drawing.Point(40, 10);
-            this.lblTotalPaymentHistory.Name = "lblTotalPaymentHistory";
-            this.lblTotalPaymentHistory.Size = new System.Drawing.Size(135, 23);
-            this.lblTotalPaymentHistory.TabIndex = 0;
-            this.lblTotalPaymentHistory.Text = "Total Payments :";
-            // 
-            // lblOutputTotalExpencePaymentHistory
-            // 
-            this.lblOutputTotalExpencePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblOutputTotalExpencePaymentHistory.AutoSize = true;
-            this.lblOutputTotalExpencePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputTotalExpencePaymentHistory.ForeColor = System.Drawing.Color.Gray;
-            this.lblOutputTotalExpencePaymentHistory.Location = new System.Drawing.Point(190, 10);
-            this.lblOutputTotalExpencePaymentHistory.Name = "lblOutputTotalExpencePaymentHistory";
-            this.lblOutputTotalExpencePaymentHistory.Size = new System.Drawing.Size(31, 23);
-            this.lblOutputTotalExpencePaymentHistory.TabIndex = 2;
-            this.lblOutputTotalExpencePaymentHistory.Text = "---";
-            // 
-            // picTotalPaymentHistory
-            // 
-            this.picTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picTotalPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalPaymentHistory.Image")));
-            this.picTotalPaymentHistory.Location = new System.Drawing.Point(3, 4);
-            this.picTotalPaymentHistory.Name = "picTotalPaymentHistory";
-            this.picTotalPaymentHistory.Size = new System.Drawing.Size(31, 35);
-            this.picTotalPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTotalPaymentHistory.TabIndex = 3;
-            this.picTotalPaymentHistory.TabStop = false;
             // 
             // FrmSAPayment
             // 
@@ -693,17 +725,19 @@
         private System.Windows.Forms.PictureBox picStartDatePaymentHistory;
         private System.Windows.Forms.PictureBox picEndDatePaymentHistory;
         private System.Windows.Forms.DataGridView dgvPaymentHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentMethod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFeesType;
         private System.Windows.Forms.TableLayoutPanel tlpTotalPaymentHistoryAndExport;
         private System.Windows.Forms.Button btnExportPaymentHistory;
         private System.Windows.Forms.Label lblTotalPaymentHistory;
         private System.Windows.Forms.Label lblOutputTotalExpencePaymentHistory;
         private System.Windows.Forms.PictureBox picTotalPaymentHistory;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMembershipPlanName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFeesType;
 
     }
 }

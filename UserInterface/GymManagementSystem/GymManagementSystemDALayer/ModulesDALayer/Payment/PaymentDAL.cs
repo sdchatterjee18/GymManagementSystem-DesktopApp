@@ -93,5 +93,88 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
                 return MemberSubscriptionPaymentDetails;
             }
         }
+
+       // Super Admin 
+        public DataTable SARetrieveSubscriptionPaymentDetailsByMonthDAL(int month, int year)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Month", SqlDbType.Int)
+                {
+                    Value = month
+                },
+
+                new SqlParameter("@Year", SqlDbType.Int)
+                {
+                    Value = year
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveSubscriptionPaymentDetailsByMonth",
+                sqlParameters);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountByMonthDAL(int month, int year)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Month", SqlDbType.Int)
+                {
+                    Value = month
+                },
+
+                new SqlParameter("@Year", SqlDbType.Int)
+                {
+                    Value = year
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveTotalPaidSubscriptionAmountByMonth",
+                sqlParameters);
+        }
+        public DataTable SARetrieveAllMemberSubscriptionPaymentDetailsDAL()
+        {
+            return LookupDAL.RetrieveSpecificItem(
+                "spGetAllMemberSubscriptionPaymentDetails");
+        }
+        public DataTable SARetrieveSubscriptionPaymentDetailsBetweenDateRangeDAL(DateTime startDate, DateTime endDate)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@StartDate", SqlDbType.Date)
+                {
+                    Value = startDate
+                },
+
+                new SqlParameter("@EndDate", SqlDbType.Date)
+                {
+                    Value = endDate
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveSubscriptionPaymentDetailsBetweenDateRange",
+                sqlParameters);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountBetweenDateRangeDAL(DateTime startDate, DateTime endDate)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@StartDate", SqlDbType.Date)
+                {
+                    Value = startDate
+                },
+
+                new SqlParameter("@EndDate", SqlDbType.Date)
+                {
+                    Value = endDate
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveTotalPaidSubscriptionAmountBetweenDateRange",
+                sqlParameters);
+        }
     }
 }
