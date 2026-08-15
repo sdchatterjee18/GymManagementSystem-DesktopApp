@@ -197,11 +197,15 @@ namespace GymManagementSystem.FORMS.Member
 
         }
 
-       
+     
+
         private void txtSearchBar_TextChanged(object sender, EventArgs e)
         {
             SearchMemberByPhoneNumberInTextBox();
         }
+
+       
+       
 
         
         
