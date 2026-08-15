@@ -92,12 +92,12 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 this.MembershipPlanId);
         }
         // Retrieves the details of a specific membership plan
-        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(int membershipPlanId)
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanDetailsBLL(string search)
         {
             MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
 
             DataTable dataTableMembershipPlanBLL =
-                membershipPlanDAL.RetrieveMembershipPlanDetailsByMembershipPlanIdDal(membershipPlanId);
+                membershipPlanDAL.RetrieveMembershipPlanDetailsByMembershipPlanByDetailDal(search);
 
             return dataTableMembershipPlanBLL;
         }

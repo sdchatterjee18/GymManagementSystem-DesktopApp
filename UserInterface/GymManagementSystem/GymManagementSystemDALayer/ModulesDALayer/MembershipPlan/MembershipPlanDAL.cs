@@ -69,9 +69,13 @@ namespace GymManagementSystemDALayer.ModulesDALayer.MembershipPlan
             return string.Empty;
         }
         // Retrieves membership plan details using its identifier.
-        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanIdDal(int id)
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanByDetailDal(string Search)
         {
-            DataTable dataTableMembershipPlanDal = LookupDAL.RetrieveSpecificDetailsById("spRetrieveMembershipPlanDetailsByMembershipPlanId", id, "@MembershipPlanId");
+            SqlParameter[] parameters =
+            {
+                 new SqlParameter("@SearchText",Search)
+            };
+            DataTable dataTableMembershipPlanDal = LookupDAL.RetrieveSpecificDetails("spSearchMembershipPlans", parameters);
             return dataTableMembershipPlanDal;
         }
         // Retrieves membership plan details for a ComboBox.

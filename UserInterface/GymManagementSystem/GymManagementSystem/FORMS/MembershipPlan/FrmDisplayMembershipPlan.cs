@@ -31,10 +31,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             dgvMembershipPlan.AutoGenerateColumns = false;
             dgvMembershipPlan.ClearSelection();
-
+            this.ActiveControl = null;
             LoadMembershipPlans();
-            LoadMembershipPlanComboBox();
-
         }
 
         // Clear DataGridView Selection
@@ -70,32 +68,17 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // DataGridView Mouse Enter
         private void dgvMembershipPlan_CellMouseEnter_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
-
-
         }
         // DataGridView Mouse Leave
         private void dgvMembershipPlan_CellMouseLeave_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvMembershipPlan.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvMembershipPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-
-
             }
         }
         // DataGridView Cell Formatting
@@ -211,30 +194,20 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             //LoadMembershipPlans();
         }
         // Add New Membership Plan Mouse Enter
-        private void tlpAddNewMembershipPlan_MouseEnter(object sender, EventArgs e)
-        {
-            //pnlClickAddNewMembershipPlan.BackColor = Color.Red;
-            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220, 225, 230);
-        }
         // Add New Membership Plan Mouse Leave
-        private void tlpAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
-        {
-            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
-        }
 
         // Load Membership Plans
         private void LoadMembershipPlans()
         {
+            
             dgvMembershipPlan.Rows.Clear();
-            dgvMembershipPlan.ReadOnly = false;
+            //foreach (DataGridViewColumn col in dgvMembershipPlan.Columns)
+            //{
+            //    col.ReadOnly = true;
+            //}
 
-            foreach (DataGridViewColumn col in dgvMembershipPlan.Columns)
-            {
-                col.ReadOnly = true;
-            }
-
-            dgvMembershipPlan.Columns["colPrice"].ReadOnly = false;
-            dgvMembershipPlan.Columns["colDescription"].ReadOnly = false;
+            //dgvMembershipPlan.Columns["colPrice"].ReadOnly = false;
+            //dgvMembershipPlan.Columns["colDescription"].ReadOnly = false;
 
             dgvMembershipPlan.EditMode = DataGridViewEditMode.EditOnEnter;
 
@@ -249,8 +222,8 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                     SlNo++,
                     plan.MembershipPlanName,
                     plan.PlanType,
-                    plan.DurationInDays,
-                    plan.Price,
+                    plan.DurationInDays + " Days",
+                    "₹ " + plan.Price,
                     plan.Description,
                     plan.IsActive,
                     plan.MembershipPlanId
@@ -364,71 +337,47 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                 }
             }
         }
-        // Load Membership Plans ComboBox
-        private void LoadMembershipPlanComboBox()
-        {
-            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
-            cmbMembershipPlan.DataSource = membershipPlanUI.GetMembershipPlanDetailsForComboBox();
-            cmbMembershipPlan.DisplayMember = "MembershipPlanName";
-            cmbMembershipPlan.ValueMember = "MembershipPlanId";
-            cmbMembershipPlan.SelectedIndex = -1;
-        }
-        private void cmbMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-            if (cmbMembershipPlan.SelectedIndex == -1)
-            {
-                LoadMembershipPlans();
-                return;
-            }
-            int membershipPlanId = Convert.ToInt32(((DataRowView)cmbMembershipPlan.SelectedItem)["MembershipPlanId"]);
-            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-            DataTable dt =
-                membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(membershipPlanId);
-
-            dgvMembershipPlan.Rows.Clear();
-
-            if (dt == null || dt.Rows.Count == 0)
-                return;
-
-            int slNo = 1;
-
-            foreach (DataRow row in dt.Rows)
-            {
-                dgvMembershipPlan.Rows.Add(
-                    slNo++,
-                    row["MembershipPlanName"],
-                    row["PlanType"],
-                    row["DurationInDays"],
-                    row["Price"],
-                    row["Description"],
-                    row["IsActive"],
-                    row["MembershipPlanId"]
-                );
-            }
-
-            dgvMembershipPlan.ClearSelection();
-        }
-        // Display All Button
-        private void btnDisplayAll_Click(object sender, EventArgs e)
-        {
-            LoadMembershipPlans();
-            LoadMembershipPlanComboBox();
-
-            cmbMembershipPlan.SelectedIndex = -1;
-            cmbMembershipPlan.Text = "";
-
-            dgvMembershipPlan.ClearSelection();
-        }
         private void pnlClickAddNewMembershipPlan_MouseEnter_1(object sender, EventArgs e)
         {
-            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(220, 225, 230);
+            pnlClickAddNewMembershipPlan.BackColor = Color.White;
+            picAddButton.Image = Properties.Resources.plusHOVER;
+            lblAddNewPlan.ForeColor = Color.MidnightBlue;
         }
 
         private void pnlClickAddNewMembershipPlan_MouseLeave(object sender, EventArgs e)
         {
-            pnlClickAddNewMembershipPlan.BackColor = Color.FromArgb(236, 240, 243);
+            pnlClickAddNewMembershipPlan.BackColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.plus;
+            lblAddNewPlan.ForeColor = Color.White;
         }
 
+        private void txtSearchPlan_TextChanged(object sender, EventArgs e)
+        {
+            string Search = txtSearchPlan.Text;
+            LoadMembershipPlansWhenSearched(Search);
+        }
+        private void LoadMembershipPlansWhenSearched(string search)
+        {
+            dgvMembershipPlan.Rows.Clear();
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+            DataTable dataTable = null;
+            dataTable = membershipPlanUI.RetrieveMembershipPlanDetailsByMembershipPlanDetails(search);
+            int SlNo = 1;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                dgvMembershipPlan.Rows.Add(
+                    SlNo++,
+                    row["MembershipPlanName"].ToString(),
+                    row["PlanType"].ToString(),
+                    row["DurationInDays"].ToString(),
+                    row["Price"].ToString(),
+                    row["Description"].ToString(),
+                    row["IsActive"].ToString(),
+                    row["MembershipPlanId"].ToString()
+                    );
+            }
+
+            dgvMembershipPlan.ClearSelection();
+        }
     }
 }

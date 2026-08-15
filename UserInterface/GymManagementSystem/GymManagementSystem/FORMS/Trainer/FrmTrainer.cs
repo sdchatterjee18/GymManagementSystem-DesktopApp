@@ -91,7 +91,7 @@ namespace GymManagementSystem.FORMS.Trainer
             }
             catch (Exception ex)
             {
-                RetieveTrainerByPhoneNo = null;
+                MessageBox.Show(ex.Message);
             }
         }
 

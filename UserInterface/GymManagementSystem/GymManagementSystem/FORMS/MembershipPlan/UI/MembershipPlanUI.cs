@@ -18,6 +18,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
         public decimal Price { get; set; }
         public string Description { get; set; }
         public string IsActive { get; set; }
+        public string search { get; set; }
 
 
         // Update Membership Plan
@@ -60,32 +61,13 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             return membershipPlanBLL.ValidateMembershipPlanBLL(membershipPlanName, duration, price, description);
         }
         // Retrieve Membership Plan By Id
-        public MembershipPlanUI RetrieveMembershipPlanDetailsByMembershipPlanIdUI()
+        public DataTable RetrieveMembershipPlanDetailsByMembershipPlanDetails(string search)
         {
             try
             {
                 MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-
-                membershipPlanBLL.MembershipPlanId = this.MembershipPlanId;
-
-                DataTable dataTable = membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanIdBLL(this.MembershipPlanId);
-
-                if (dataTable.Rows.Count > 0)
-                {
-                    MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
-
-                    membershipPlanUI.MembershipPlanId = Convert.ToInt32(dataTable.Rows[0]["MembershipPlanId"]);
-                    membershipPlanUI.MembershipPlanName = dataTable.Rows[0]["MembershipPlanName"].ToString();
-                    membershipPlanUI.PlanType = dataTable.Rows[0]["PlanType"].ToString();
-                    membershipPlanUI.DurationInDays = Convert.ToInt32(dataTable.Rows[0]["DurationInDays"]);
-                    membershipPlanUI.Price = Convert.ToDecimal(dataTable.Rows[0]["Price"]);
-                    membershipPlanUI.Description = dataTable.Rows[0]["Description"].ToString();
-                    membershipPlanUI.IsActive = dataTable.Rows[0]["IsActive"].ToString();
-
-                    return membershipPlanUI;
-                }
-
-                return null;
+                DataTable dataTable = membershipPlanBLL.RetrieveMembershipPlanDetailsByMembershipPlanDetailsBLL(search);
+                return dataTable;
             }
             catch
             {
