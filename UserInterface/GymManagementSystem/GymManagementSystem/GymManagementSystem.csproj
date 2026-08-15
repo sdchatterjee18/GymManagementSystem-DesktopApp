@@ -72,6 +72,7 @@
     <Compile Include="Authentication\FrmUserRoleSelection.Designer.cs">
       <DependentUpon>FrmUserRoleSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\UI\AdminAuthenticationUI.cs" />
     <Compile Include="Common\LookupUI.cs" />
     <Compile Include="Common\ValidationUI.cs" />
     <Compile Include="Form1.cs">

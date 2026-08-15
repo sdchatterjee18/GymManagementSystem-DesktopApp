@@ -34,7 +34,6 @@ namespace GymManagementSystemBLLayer.Common
                "New Registration"
             };
         }
-
         public static DataTable GetMonths()
         {
             DataTable dataTable = new DataTable();
@@ -52,5 +51,6 @@ namespace GymManagementSystemBLLayer.Common
 
             return dataTable;
         }
+       
     }
 }

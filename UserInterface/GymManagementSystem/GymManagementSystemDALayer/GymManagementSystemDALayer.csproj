@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Common\LookupDAL.cs" />
     <Compile Include="ModulesDALayer\Attendance\AttendanceDAL.cs" />
+    <Compile Include="ModulesDALayer\Authentication\AdminAuthenticationDAL.cs" />
     <Compile Include="ModulesDALayer\Dashboard\DashboardDAL.cs" />
     <Compile Include="ModulesDALayer\DietPlan\DietPlanDAL.cs" />
     <Compile Include="ModulesDALayer\Employee\EmployeeDAL.cs" />
