@@ -20,7 +20,6 @@ using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
-using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
 namespace GymManagementSystem
 {
