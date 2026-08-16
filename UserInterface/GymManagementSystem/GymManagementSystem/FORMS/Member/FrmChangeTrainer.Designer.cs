@@ -279,6 +279,7 @@
             this.pnlCancleButtom.Name = "pnlCancleButtom";
             this.pnlCancleButtom.Size = new System.Drawing.Size(209, 45);
             this.pnlCancleButtom.TabIndex = 16;
+            this.pnlCancleButtom.Click += new System.EventHandler(this.pnlCancleButtom_Click);
             // 
             // tlpCancleSection
             // 
@@ -296,6 +297,7 @@
             this.tlpCancleSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleSection.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleSection.TabIndex = 3;
+            this.tlpCancleSection.Click += new System.EventHandler(this.pnlCancleButtom_Click);
             this.tlpCancleSection.MouseEnter += new System.EventHandler(this.tlpCancleSection_MouseEnter);
             this.tlpCancleSection.MouseLeave += new System.EventHandler(this.tlpCancleSection_MouseLeave);
             // 
@@ -309,6 +311,7 @@
             this.picCancle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancle.TabIndex = 0;
             this.picCancle.TabStop = false;
+            this.picCancle.Click += new System.EventHandler(this.pnlCancleButtom_Click);
             this.picCancle.MouseEnter += new System.EventHandler(this.tlpCancleSection_MouseEnter);
             this.picCancle.MouseLeave += new System.EventHandler(this.tlpCancleSection_MouseLeave);
             // 
@@ -323,6 +326,7 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
+            this.lblCancle.Click += new System.EventHandler(this.pnlCancleButtom_Click);
             this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleSection_MouseEnter);
             this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleSection_MouseLeave);
             // 
@@ -349,6 +353,7 @@
             this.pnlRegisterButton.Name = "pnlRegisterButton";
             this.pnlRegisterButton.Size = new System.Drawing.Size(209, 45);
             this.pnlRegisterButton.TabIndex = 0;
+            this.pnlRegisterButton.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             // 
             // tlpAssignButton
             // 
@@ -366,6 +371,7 @@
             this.tlpAssignButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignButton.Size = new System.Drawing.Size(209, 45);
             this.tlpAssignButton.TabIndex = 2;
+            this.tlpAssignButton.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.tlpAssignButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
             this.tlpAssignButton.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
@@ -379,6 +385,7 @@
             this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignTrainer.TabIndex = 0;
             this.picAssignTrainer.TabStop = false;
+            this.picAssignTrainer.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             // 
             // lblAssignTraner
             // 
@@ -391,6 +398,7 @@
             this.lblAssignTraner.Size = new System.Drawing.Size(116, 23);
             this.lblAssignTraner.TabIndex = 1;
             this.lblAssignTraner.Text = "Assign Trainer";
+            this.lblAssignTraner.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.lblAssignTraner.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
             this.lblAssignTraner.MouseLeave += new System.EventHandler(this.tlpRegisterButton_MouseLeave);
             // 
@@ -1827,11 +1835,6 @@
             this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectTrainer.FormattingEnabled = true;
-            this.cmbSelectTrainer.Items.AddRange(new object[] {
-            "Priya",
-            "Deep",
-            "Souma",
-            "Aridam"});
             this.cmbSelectTrainer.Location = new System.Drawing.Point(239, 12);
             this.cmbSelectTrainer.Name = "cmbSelectTrainer";
             this.cmbSelectTrainer.Size = new System.Drawing.Size(252, 36);

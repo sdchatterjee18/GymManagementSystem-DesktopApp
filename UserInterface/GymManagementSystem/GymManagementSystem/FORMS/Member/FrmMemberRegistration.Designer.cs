@@ -271,7 +271,7 @@
             this.tlpMemberPersonalDetails.Controls.Add(this.tlpMemberProfilePhotoUploadPortion, 0, 2);
             this.tlpMemberPersonalDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberPersonalDetails.Location = new System.Drawing.Point(5, 5);
-            this.tlpMemberPersonalDetails.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tlpMemberPersonalDetails.Margin = new System.Windows.Forms.Padding(5);
             this.tlpMemberPersonalDetails.Name = "tlpMemberPersonalDetails";
             this.tlpMemberPersonalDetails.RowCount = 3;
             this.tlpMemberPersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.052661F));
@@ -1857,7 +1857,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpMemberRegistrationFeesWholeFrom);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMemberRegistration";
             this.Text = "FrmMemberRegistration";
             this.Load += new System.EventHandler(this.FrmMemberRegistration_Load);
