@@ -69,6 +69,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
         public string DietPlanDocument { get; set; }
         public string ConditionStatus { get; set; }
 
+        
         public string InsertMembershipPlanDAL()
         {
             SqlParameter[] parameters =
@@ -107,8 +108,196 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
                 memberId,
                 "@MemberId");
         }
+        public DataTable RetrieveRecentExpiredMembershipPlanDAL(int memberId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                SqlParameter[] sqlParameter = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",memberId)
+                };
+                dataTable = LookupDAL.RetrieveSpecificDetails("spGetRecentExpiredMembershipPlan", sqlParameter);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
 
+        public string RenewalMemberShipPlanDAL(int MemberId, int MemberShipPlanId, string PaymentMethod)
+        {
+            string RenewalMessage = null;
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",MemberId),
+                    new SqlParameter("@MembershipPlanId",MemberShipPlanId),
+                    new SqlParameter("@PaymentMethod",PaymentMethod)
+                };
 
+                RenewalMessage = LookupDAL.InsertSpecificItem("spInsertDataIntoMembershipSubscriptionTableWhileReneweal", sqlParameters);
+                return RenewalMessage;
+            }
+            catch (Exception ex)
+            {
+                return RenewalMessage;
+            }
+        }
+
+        public DataTable RetrievePersonalTrainersDAL(int ShiftId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                SqlParameter[] sqlParameter = new SqlParameter[]
+                {
+                    new SqlParameter("@ShiftId",ShiftId)
+                };
+
+                dataTable = LookupDAL.RetrieveSpecificDetails("spGetInactivePersonalTrainersByShift", sqlParameter);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string AssignTrainerToMemberDAL(int MemberId, int TrainerId)
+        {
+            string AssignTrainerMessage = null;
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",MemberId),
+                    new SqlParameter("@TrainerId",TrainerId)
+                };
+
+                AssignTrainerMessage = LookupDAL.InsertSpecificItem("spAssignPersonalTrainerToMember", sqlParameters);
+                return AssignTrainerMessage;
+            }
+            catch (Exception Ex)
+            {
+                return AssignTrainerMessage;
+            }
+        }
+
+        public DataTable RetrieveTrainerDetailsDAL(int TrainerId)
+        {
+            DataTable TrainerTable = null;
+            try
+            {
+                SqlParameter[] sqlParameter = new SqlParameter[]
+                {
+                    new SqlParameter("@TrainerId",TrainerId)
+                };
+
+                TrainerTable = LookupDAL.RetrieveSpecificDetails("spGetTrainerDetailsByTrainerId", sqlParameter);
+                return TrainerTable;
+            }
+            catch (Exception ex)
+            {
+                return TrainerTable;
+            }
+
+        }
+
+        public string ChangeTrainerOfMemberByNewTrainerIdDAL(int MemberId, int NewTrainerId)
+        {
+            string ChangeTrainer = null;
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",MemberId),
+                    new SqlParameter("@NewTrainerId",NewTrainerId)
+                };
+                ChangeTrainer = LookupDAL.InsertSpecificItem("spChangePersonalTrainer", sqlParameters);
+                return ChangeTrainer;
+            }
+            catch (Exception ex)
+            {
+                return ChangeTrainer;
+            }
+        }
+
+        public DataTable AvailableSlotsOfShiftDAL(int ShiftId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                SqlParameter[] sqlParameter = new SqlParameter[]
+                {
+                    new SqlParameter("@ShiftId",ShiftId)
+                };
+                dataTable = LookupDAL.RetrieveSpecificDetails("spGetAvailableShiftSlots", sqlParameter);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string ChangeShiftByMemberIdAndTrainerIdDAL(int MemberId,int NewShiftId)
+        {
+            string ChangeShiftMessage = null;
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",MemberId),
+                    new SqlParameter("@NewShiftId",NewShiftId)
+                };
+                ChangeShiftMessage = LookupDAL.InsertSpecificItem("spChangeMemberShift", sqlParameters);
+                return ChangeShiftMessage;
+            }
+            catch(Exception ex)
+            {
+                return ChangeShiftMessage;
+            }
+        }
+
+        public DataTable RetrieveConditionStatusByDietPlanIdDAL(int DietPlanId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                SqlParameter[] sqlParameter = new SqlParameter[]
+                {
+                    new SqlParameter("@DietPlanId",DietPlanId)
+                };
+                dataTable = LookupDAL.RetrieveSpecificDetails("spRetrieveConditionStatusByDietPlanId", sqlParameter);
+                return dataTable;
+            }
+            catch (Exception Ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string ChangeMemberDietPlanDAL(int MemberId, int NewDietPlanId)
+        {
+            string ChangeDietPlanMessage = null;
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId",MemberId),
+                    new SqlParameter("@NewDietPlanId",NewDietPlanId)
+                };
+
+                ChangeDietPlanMessage = LookupDAL.InsertSpecificItem("spChangeMemberDietPlan", sqlParameters);
+                return ChangeDietPlanMessage;
+            }
+            catch (Exception ex)
+            {
+                return ChangeDietPlanMessage;
+            }
         // Retrieves all Assign Trainer of Members details for displaying in the DataGridView.
         public DataTable RetrieveAssignTrainerToMemberDetailsDAL()
         {

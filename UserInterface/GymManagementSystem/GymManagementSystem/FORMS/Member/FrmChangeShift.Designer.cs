@@ -228,6 +228,7 @@
             this.pnlCancleButtomInChangeMemberShift.Name = "pnlCancleButtomInChangeMemberShift";
             this.pnlCancleButtomInChangeMemberShift.Size = new System.Drawing.Size(209, 45);
             this.pnlCancleButtomInChangeMemberShift.TabIndex = 16;
+            this.pnlCancleButtomInChangeMemberShift.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberShift_Click);
             // 
             // tlpCancleSectionInChangeMemberShift
             // 
@@ -245,6 +246,7 @@
             this.tlpCancleSectionInChangeMemberShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleSectionInChangeMemberShift.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleSectionInChangeMemberShift.TabIndex = 3;
+            this.tlpCancleSectionInChangeMemberShift.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberShift_Click);
             this.tlpCancleSectionInChangeMemberShift.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseEnter);
             this.tlpCancleSectionInChangeMemberShift.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseLeave);
             // 
@@ -258,6 +260,7 @@
             this.picCancleInChangeMemberShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancleInChangeMemberShift.TabIndex = 0;
             this.picCancleInChangeMemberShift.TabStop = false;
+            this.picCancleInChangeMemberShift.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberShift_Click);
             this.picCancleInChangeMemberShift.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseEnter);
             this.picCancleInChangeMemberShift.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseLeave);
             // 
@@ -272,6 +275,7 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
+            this.lblCancle.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberShift_Click);
             this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseEnter);
             this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberShift_MouseLeave);
             // 
@@ -298,6 +302,7 @@
             this.pnlChangeShiftButton.Name = "pnlChangeShiftButton";
             this.pnlChangeShiftButton.Size = new System.Drawing.Size(209, 45);
             this.pnlChangeShiftButton.TabIndex = 0;
+            this.pnlChangeShiftButton.Click += new System.EventHandler(this.pnlChangeShiftButton_Click);
             // 
             // tlpChangeShiftButton
             // 
@@ -315,6 +320,7 @@
             this.tlpChangeShiftButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeShiftButton.Size = new System.Drawing.Size(209, 45);
             this.tlpChangeShiftButton.TabIndex = 2;
+            this.tlpChangeShiftButton.Click += new System.EventHandler(this.pnlChangeShiftButton_Click);
             this.tlpChangeShiftButton.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.tlpChangeShiftButton.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -329,6 +335,7 @@
             this.picChangeShiftIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeShiftIcon.TabIndex = 0;
             this.picChangeShiftIcon.TabStop = false;
+            this.picChangeShiftIcon.Click += new System.EventHandler(this.pnlChangeShiftButton_Click);
             this.picChangeShiftIcon.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.picChangeShiftIcon.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -343,6 +350,7 @@
             this.lblChangeShift.Size = new System.Drawing.Size(129, 23);
             this.lblChangeShift.TabIndex = 1;
             this.lblChangeShift.Text = "CHANGE SHIFT";
+            this.lblChangeShift.Click += new System.EventHandler(this.pnlChangeShiftButton_Click);
             this.lblChangeShift.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.lblChangeShift.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -1232,6 +1240,7 @@
             this.cmbSelectMembershipPlan.Size = new System.Drawing.Size(361, 31);
             this.cmbSelectMembershipPlan.TabIndex = 1;
             this.cmbSelectMembershipPlan.Text = "   --- Select Membership Plan ---";
+            this.cmbSelectMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMembershipPlan_SelectedIndexChanged);
             // 
             // picCurrentMembershipPlanSelect
             // 

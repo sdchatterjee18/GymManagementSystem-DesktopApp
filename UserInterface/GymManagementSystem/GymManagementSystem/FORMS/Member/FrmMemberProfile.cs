@@ -10,17 +10,25 @@ using System.Drawing.Drawing2D;
 using GymManagementSystem.FORMS.Member.UI;
 using System.Drawing;
 using System.IO;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.FORMS.Member
 {
+    
     public partial class FrmMemberProfile : Form
     {
-        private MemberAllDetailsUI memberAllDetailsUI;
-
+        string ShiftSelectionMessage = "You need to assign a shift to the member.";
+        string MembershipExpireNotNullMessage = "Member is already assign to a membership Plan";
+        string MemberTrainerAssignmentNotNullMessage = "Member is already assign to a Trainer";
+        string MemberIsActive = "Member is not active";
+        string InfoMessage = "Info";
+        string AssignedTrainerMessage = "Member is already assign to a Trainer";
+        string ActiveTrainerMessage = "This member does not have an assigned trainer. Please assign a trainer first.";
+        private MemberAllDetailsUI memberAllDetailsUI = null;
         public FrmMemberProfile(MemberAllDetailsUI member)
         {
             InitializeComponent();
-            this.memberAllDetailsUI = member;
+            memberAllDetailsUI = member;
         }
         private void LoadMemberDetails()
         {
@@ -308,8 +316,117 @@ namespace GymManagementSystem.FORMS.Member
             this.tlpChangeDietPlan.BackColor = Color.Crimson;
         }
 
-       
-        //(200, 180, 240);
+        private void pnlRenewMembershipPlan_Click(object sender, EventArgs e)
+        {
+
+            if (memberAllDetailsUI.MembershipPlanId != 0) 
+            {
+                MessageBox.Show(MembershipExpireNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if(memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmMembershipRenewal frmMembershipRenewal = new FrmMembershipRenewal(memberAllDetailsUI);
+                frmMembershipRenewal.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void tlpRenewMembershipPlan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpAssignTrainerButton_Click(object sender, EventArgs e)
+        {
+
+            if (memberAllDetailsUI.TrainerId != 0)
+            {
+                MessageBox.Show(MemberTrainerAssignmentNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.ShiftId == 0)
+            {
+                MessageBox.Show(ShiftSelectionMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (memberAllDetailsUI.TrainerId != 0)
+            {
+                MessageBox.Show(AssignedTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmAssignTrainer FrmAssignTrainer = new FrmAssignTrainer(memberAllDetailsUI);
+                FrmAssignTrainer.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void pnlChangeShiftButton_Click(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmChangeShift FrmChangeShift = new FrmChangeShift(memberAllDetailsUI);
+                FrmChangeShift.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+
+        }
+
+        private void tlpChangeTrainerButton_Click(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.TrainerId == 0)
+            {
+                MessageBox.Show(ActiveTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmChangeTrainer FrmChangeTrainer = new FrmChangeTrainer(memberAllDetailsUI);
+                FrmChangeTrainer.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void pnlChangeDietPlanButton_Click(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            
+            else
+            {
+                FrmChangeDietPlan FrmChangeDietPlan = new FrmChangeDietPlan(memberAllDetailsUI);
+                FrmChangeDietPlan.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        
 
     }
 
