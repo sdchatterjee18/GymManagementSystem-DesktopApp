@@ -44,13 +44,13 @@ namespace GymManagementSystem
             //Application.Run(new FrmAssignTrainer());
             //Application.Run(new FrmSAAddNewEmployee());
             //Application.Run(new FrmSAProfitLoss());
-            Application.Run(new FrmSAAddNewEmployee());
-            Application.Run(new FrmAdminLogin());
+            //Application.Run(new FrmSAAddNewEmployee());
+            //Application.Run(new FrmAdminLogin());
             //Application.Run(new FrmMemberRegistration());
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmDisplayMembershipPlan());
             //Application.Run(new FrmSAAddNewEmployee());
-            //Application.Run(new FrmSuperAdminRegistration());
+            Application.Run(new FrmUserRoleSelection());
         }
     }
 }

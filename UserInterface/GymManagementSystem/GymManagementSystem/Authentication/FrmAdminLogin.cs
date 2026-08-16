@@ -103,8 +103,8 @@ namespace GymManagementSystem.Authentication
             // CREATE AUTHENTICATION UI OBJECT
             // ==========================================
 
-            AdminAuthenticationUI adminAuthenticationUI =
-                new AdminAuthenticationUI();
+            AuthenticationUI adminAuthenticationUI =
+                new AuthenticationUI();
 
 
             // ==========================================

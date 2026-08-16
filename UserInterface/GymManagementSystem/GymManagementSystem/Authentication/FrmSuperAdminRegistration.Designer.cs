@@ -226,6 +226,7 @@
             this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(330, 30);
             this.txtRegistrationSuperAdminUsername.TabIndex = 1;
             this.txtRegistrationSuperAdminUsername.Text = "Enter Username";
+            this.txtRegistrationSuperAdminUsername.Click += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Click);
             // 
             // picSuperAdminUsernameRegistration
             // 
@@ -243,7 +244,7 @@
             this.tlpSuperAdminRegistration.ColumnCount = 3;
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.42285F));
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.57716F));
-            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tlpSuperAdminRegistration.Controls.Add(this.btnSuperAdminRegistration, 1, 0);
             this.tlpSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminRegistration.Location = new System.Drawing.Point(27, 565);
@@ -264,10 +265,11 @@
             this.btnSuperAdminRegistration.ForeColor = System.Drawing.Color.White;
             this.btnSuperAdminRegistration.Location = new System.Drawing.Point(60, 3);
             this.btnSuperAdminRegistration.Name = "btnSuperAdminRegistration";
-            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(441, 44);
+            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(440, 44);
             this.btnSuperAdminRegistration.TabIndex = 0;
             this.btnSuperAdminRegistration.Text = "Register";
             this.btnSuperAdminRegistration.UseVisualStyleBackColor = false;
+            this.btnSuperAdminRegistration.Click += new System.EventHandler(this.btnSuperAdminRegistration_Click);
             // 
             // pnlPasswordSuperAdminRegistration
             // 
@@ -322,7 +324,7 @@
             this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminPassword.Text = "Enter Password";
-            this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
+            this.txtRegistrationSuperAdminPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Click);
             // 
             // picSuperAdminPassword
             // 
@@ -387,6 +389,7 @@
             this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminEmailId.TabIndex = 1;
             this.txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
+            this.txtRegistrationSuperAdminEmailId.Click += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Click);
             // 
             // picSuperAdminEmailId
             // 
@@ -451,6 +454,7 @@
             this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminMobileNo.TabIndex = 1;
             this.txtRegistrationSuperAdminMobileNo.Text = "Enter MobileNo";
+            this.txtRegistrationSuperAdminMobileNo.Click += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Click);
             // 
             // picSuperAdminMobileNo
             // 
@@ -516,6 +520,7 @@
             this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(329, 30);
             this.txtRegistrationSuperAdminConfermPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
+            this.txtRegistrationSuperAdminConfermPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Click);
             // 
             // picSuperAdminConferm
             // 
