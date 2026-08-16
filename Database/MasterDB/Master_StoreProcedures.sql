@@ -2,7 +2,7 @@
 --  MASTER STORED PROCEDURES  --
 --------------------------------
 
---Super Admin Management — Line 12
+--Super Admin Management — Line 23
 --Employee Management — Line 455
 --Admin Management — Line 1158
 --Trainer Management — Line 1255
@@ -4336,7 +4336,8 @@ BEGIN
             M.PhoneNo,
             M.IsActive AS MemberIsActive
         FROM tblMember M
-        ORDER BY M.MemberId;
+        ORDER BY M.IsActive DESC,
+        M.JoiningDate DESC;
     END TRY
     BEGIN CATCH
         SELECT ERROR_MESSAGE() AS Message;
@@ -5971,116 +5972,186 @@ GO
 -----------------------------------------------------
   --SP: spRetrieveAbsentMembersOnCurrentDateByShift--
 ------------------------------------------------------
-CREATE PROC spRetrieveAbsentMembersOnCurrentDateByShift
-    @ShiftId INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    IF @ShiftId IS NULL OR @ShiftId <= 0
-    BEGIN
-        SELECT 'Invalid ShiftId. Please provide a valid positive integer.' AS Message;
-        RETURN;
-    END;
-
-    IF NOT EXISTS (SELECT 1 FROM tblShift WHERE ShiftId = @ShiftId)
-    BEGIN
-        SELECT 'ShiftId does not exist in tblShift.' AS Message;
-        RETURN;
-    END;
-    SELECT DISTINCT
-        m.MemberId,
-        CONCAT(ISNULL(m.FirstName,''), ' ',
-               ISNULL(m.MiddleName,''), ' ',
-               ISNULL(m.LastName,'')) AS MemberName,
-        S.ShiftId,
-        s.ShiftName,
-        m.PhoneNo
-    FROM tblShift s
-    INNER JOIN tblMemberShift ms
-        ON ms.ShiftId = s.ShiftId
-        AND ms.IsActive = 1
-    INNER JOIN tblMember m
-        ON m.MemberId = ms.MemberId
-        AND m.IsActive = 1
-    LEFT JOIN tblMemberAttendance ma
-        ON ma.MemberId = m.MemberId
-        AND ma.ShiftId = s.ShiftId
-        AND CAST(ma.AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
-    WHERE ms.ShiftId = @ShiftId
-      AND ma.AttendanceId IS NULL;
+CREATE  PROC spRetrievePresentAbsentMembersOnCurrentDateByShift  
+    @ShiftId INT  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    BEGIN TRY  
+  
+        /* ============================================  
+           1. Validate ShiftId  
+           ============================================ */  
+  
+        IF @ShiftId IS NULL OR @ShiftId <= 0  
+        BEGIN  
+            SELECT  
+                'Invalid ShiftId. Please provide a valid positive integer.'  
+                AS Message;  
+            RETURN;  
+        END;  
+  
+  
+        /* ============================================  
+           2. Check Shift Exists  
+           ============================================ */  
+  
+        IF NOT EXISTS  
+        (  
+            SELECT 1  
+            FROM tblShift  
+            WHERE ShiftId = @ShiftId  
+        )  
+        BEGIN  
+            SELECT  
+                'ShiftId does not exist in tblShift.'  
+                AS Message;  
+            RETURN;  
+        END;  
+  
+  
+        /* ============================================  
+           3. Retrieve Present & Absent Members  
+           ============================================ */  
+  
+        SELECT DISTINCT  
+  
+            m.MemberId,  
+  
+            CONCAT(  
+                ISNULL(m.FirstName, ''),  
+                ' ',  
+                ISNULL(m.MiddleName, ''),  
+                ' ',  
+                ISNULL(m.LastName, '')  
+            ) AS MemberName,  
+  
+            s.ShiftId,  
+            s.ShiftName,  
+            m.PhoneNo,  
+  
+            CASE  
+                WHEN ma.AttendanceId IS NULL  
+                    THEN 'Absent'  
+                ELSE 'Present'  
+            END AS AttendanceStatus  
+  
+        FROM tblShift s  
+  
+        INNER JOIN tblMemberShift ms  
+            ON ms.ShiftId = s.ShiftId  
+            AND ms.IsActive = 1  
+  
+        INNER JOIN tblMember m  
+            ON m.MemberId = ms.MemberId  
+            AND m.IsActive = 1  
+  
+        LEFT JOIN tblMemberAttendance ma  
+            ON ma.MemberId = m.MemberId  
+            AND ma.ShiftId = s.ShiftId  
+            AND CAST(ma.AttendanceDate AS DATE)  
+                = CAST(GETDATE() AS DATE)  
+  
+        WHERE s.ShiftId = @ShiftId  
+  
+        ORDER BY  
+            AttendanceStatus,  
+            MemberName;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
 END;
 GO
-
------------------------------------------------------
-  --SP: spRetrieveAbsentMembersOnCurrentDateCurrentShift--
------------------------------------------------------
-CREATE PROC spRetrieveAbsentMembersOnCurrentDateCurrentShift
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);
-    DECLARE @CurrentShiftId INT;
-
-    -- Find the current shift
-    SELECT TOP 1
-        @CurrentShiftId = ShiftId
-    FROM tblShift
-    WHERE
-        (
-            StartTime <= EndTime
-            AND @CurrentTime >= StartTime
-            AND @CurrentTime < EndTime
-        )
-        OR
-        (
-            StartTime > EndTime
-            AND (
-                @CurrentTime >= StartTime
-                OR @CurrentTime < EndTime
-            )
-        )
-    ORDER BY StartTime;
-
-
-    -- No shift is currently active
-    IF @CurrentShiftId IS NULL
-    BEGIN
-        SELECT 'No shift is currently active.' AS Message;
-        RETURN;
-    END;
-
-
-    -- Get absent members of the current shift
-    SELECT DISTINCT
-        m.MemberId,
-        CONCAT(
-            ISNULL(m.FirstName, ''), ' ',
-            ISNULL(m.MiddleName, ''), ' ',
-            ISNULL(m.LastName, '')
-        ) AS MemberName,
-        S.ShiftId,
-        s.ShiftName,
-        m.PhoneNo
-    FROM tblShift s
-
-    INNER JOIN tblMemberShift ms
-        ON ms.ShiftId = s.ShiftId
-        AND ms.IsActive = 1
-
-    INNER JOIN tblMember m
-        ON m.MemberId = ms.MemberId
-        AND m.IsActive = 1
-
-    LEFT JOIN tblMemberAttendance ma
-        ON ma.MemberId = m.MemberId
-        AND ma.ShiftId = s.ShiftId
-        AND CAST(ma.AttendanceDate AS DATE) = CAST(GETDATE() AS DATE)
-
-    WHERE s.ShiftId = @CurrentShiftId
-      AND ma.AttendanceId IS NULL;
-
+-----------------------------------------------------------
+  --SP: spRetrieveAbsentPresentMembersOnCurrentDateByShift--
+-----------------------------------------------------------
+CREATE   PROC spRetrieveAbsentPresentMembersOnCurrentDateByShift  
+AS  
+BEGIN  
+    BEGIN TRY  
+  
+        DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);  
+        DECLARE @CurrentDate DATE = CAST(GETDATE() AS DATE);  
+        DECLARE @ShiftId INT;  
+        SELECT TOP 1  
+            @ShiftId = s.ShiftId  
+        FROM tblShift s  
+        WHERE  
+            (   
+                s.StartTime < s.EndTime  
+                AND @CurrentTime >= s.StartTime  
+                AND @CurrentTime < s.EndTime  
+            )  
+            OR  
+            (  
+                s.StartTime > s.EndTime  
+                AND (  
+                    @CurrentTime >= s.StartTime  
+                    OR @CurrentTime < s.EndTime  
+                )  
+            )  
+        ORDER BY s.ShiftId;  
+        IF @ShiftId IS NULL  
+        BEGIN  
+            SELECT   
+                'No active shift found for current time.' AS Message;  
+            RETURN;  
+        END;  
+        SELECT DISTINCT  
+            m.MemberId,  
+  
+            CONCAT(  
+                ISNULL(m.FirstName, ''), ' ',  
+                ISNULL(m.MiddleName, ''), ' ',  
+                ISNULL(m.LastName, '')  
+            ) AS MemberName,  
+  
+            s.ShiftId,  
+            s.ShiftName,  
+            m.PhoneNo,  
+  
+            CASE  
+                WHEN ma.AttendanceId IS NULL   
+                    THEN 'Absent'  
+                ELSE 'Present'  
+            END AS AttendanceStatus  
+  
+        FROM tblShift s  
+  
+        INNER JOIN tblMemberShift ms  
+            ON ms.ShiftId = s.ShiftId  
+            AND ms.IsActive = 1  
+  
+        INNER JOIN tblMember m  
+            ON m.MemberId = ms.MemberId  
+            AND m.IsActive = 1  
+  
+        LEFT JOIN tblMemberAttendance ma  
+            ON ma.MemberId = m.MemberId  
+            AND ma.ShiftId = s.ShiftId  
+            AND CAST(ma.AttendanceDate AS DATE) = @CurrentDate  
+  
+        WHERE s.ShiftId = @ShiftId  
+  
+        ORDER BY  
+            AttendanceStatus,  
+            MemberName;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
 END
 GO
 --------------------------------
@@ -6227,6 +6298,248 @@ BEGIN
 END;
 GO
 
+--------------------------------------------------
+  --SP: spRetrieveMembersByPhoneNumberAndName--
+-------------------------------------------------
+CREATE   PROC spRetrieveMembersByPhoneNumberAndName  
+(  
+    @Search VARCHAR(100) = NULL  
+)  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    BEGIN TRY  
+  
+        SET @Search = NULLIF(LTRIM(RTRIM(@Search)), '');  
+  
+        IF @Search IS NULL  
+        BEGIN  
+  
+            DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);  
+            DECLARE @CurrentShiftId INT;  
+  
+            SELECT TOP 1  
+                @CurrentShiftId = S.ShiftId  
+  
+            FROM tblShift S  
+  
+            WHERE  
+                (  
+                    S.StartTime < S.EndTime  
+                    AND @CurrentTime >= S.StartTime  
+                    AND @CurrentTime < S.EndTime  
+                )  
+                OR  
+                (  
+                    S.StartTime > S.EndTime  
+                    AND  
+                    (  
+                        @CurrentTime >= S.StartTime  
+                        OR @CurrentTime < S.EndTime  
+                    )  
+                )  
+  
+            ORDER BY S.ShiftId;  
+  
+            IF @CurrentShiftId IS NULL  
+            BEGIN  
+  
+                SELECT  
+                    'No active shift found for current time.' AS Message;  
+  
+                RETURN;  
+  
+            END;  
+            SELECT  
+  
+                M.MemberId,  
+  
+                LTRIM(RTRIM(  
+                    CONCAT(  
+                        ISNULL(M.FirstName, ''),  
+                        ' ',  
+                        ISNULL(M.MiddleName, ''),  
+                        ' ',  
+                        ISNULL(M.LastName, '')  
+                    )  
+                )) AS MemberName,  
+  
+                M.PhoneNo,  
+  
+                S.ShiftId,  
+  
+                S.ShiftName,  
+  
+                CASE  
+                    WHEN MA.AttendanceId IS NULL  
+                        THEN 'Absent'  
+                    ELSE 'Present'  
+                END AS AttendanceStatus  
+  
+            FROM tblShift S  
+  
+            INNER JOIN tblMemberShift MS  
+                ON MS.ShiftId = S.ShiftId  
+                AND MS.IsActive = 1  
+  
+            INNER JOIN tblMember M  
+                ON M.MemberId = MS.MemberId  
+                AND M.IsActive = 1  
+  
+            LEFT JOIN tblMemberAttendance MA  
+                ON MA.MemberId = M.MemberId  
+                AND MA.ShiftId = S.ShiftId  
+                AND CAST(MA.AttendanceDate AS DATE)  
+                    = CAST(GETDATE() AS DATE)  
+  
+            WHERE S.ShiftId = @CurrentShiftId  
+  
+            ORDER BY  
+                CASE  
+                    WHEN MA.AttendanceId IS NOT NULL THEN 1  
+                    ELSE 2  
+                END,  
+                M.FirstName;  
+  
+            RETURN;  
+  
+        END;  
+  
+  
+        /* =====================================================  
+           MODE 2:  
+           @Search has value  
+           → Search Member  
+           ===================================================== */  
+  
+        SELECT  
+  
+            M.MemberId,  
+  
+            LTRIM(RTRIM(  
+                CONCAT(  
+                    ISNULL(M.FirstName, ''),  
+                    ' ',  
+                    ISNULL(M.MiddleName, ''),  
+                    ' ',  
+                    ISNULL(M.LastName, '')  
+                )  
+            )) AS MemberName,  
+  
+            M.PhoneNo,  
+  
+            S.ShiftId,  
+  
+            S.ShiftName,  
+  
+            CASE  
+                WHEN MA.AttendanceId IS NULL  
+                    THEN 'Absent'  
+                ELSE 'Present'  
+            END AS AttendanceStatus  
+  
+        FROM tblMember M  
+  
+        LEFT JOIN tblMemberShift MS  
+            ON MS.MemberId = M.MemberId  
+            AND MS.IsActive = 1  
+  
+        LEFT JOIN tblShift S  
+            ON S.ShiftId = MS.ShiftId  
+  
+        LEFT JOIN tblMemberAttendance MA  
+            ON MA.MemberId = M.MemberId  
+            AND MA.ShiftId = S.ShiftId  
+            AND CAST(MA.AttendanceDate AS DATE)  
+                = CAST(GETDATE() AS DATE)  
+  
+        WHERE  
+            (  
+                -- Full Name  
+                LTRIM(RTRIM(  
+                    CONCAT(  
+                        ISNULL(M.FirstName, ''),  
+                        ' ',  
+                        ISNULL(M.MiddleName, ''),  
+                        ' ',  
+                        ISNULL(M.LastName, '')  
+                    )  
+                )) LIKE '%' + @Search + '%'  
+  
+                OR  
+  
+                -- First Name  
+                M.FirstName LIKE '%' + @Search + '%'  
+  
+                OR  
+  
+                -- Middle Name  
+                M.MiddleName LIKE '%' + @Search + '%'  
+  
+                OR  
+  
+                -- Last Name  
+                M.LastName LIKE '%' + @Search + '%'  
+  
+                OR  
+  
+                -- Phone Number  
+                M.PhoneNo LIKE '%' + @Search + '%'  
+            )  
+  
+            AND M.IsActive = 1  
+  
+        ORDER BY  
+  
+            CASE  
+  
+                -- 1. Phone Number  
+                WHEN M.PhoneNo LIKE @Search + '%'  
+                    THEN 1  
+  
+                -- 2. First Name  
+                WHEN M.FirstName LIKE @Search + '%'  
+                    THEN 2  
+  
+                -- 3. Middle Name  
+                WHEN M.MiddleName LIKE @Search + '%'  
+                    THEN 3  
+  
+                -- 4. Last Name  
+                WHEN M.LastName LIKE @Search + '%'  
+                    THEN 4  
+  
+                -- 5. Full Name  
+                WHEN LTRIM(RTRIM(  
+                    CONCAT(  
+                        ISNULL(M.FirstName, ''),  
+                        ' ',  
+                        ISNULL(M.MiddleName, ''),  
+                        ' ',  
+                        ISNULL(M.LastName, '')  
+                    )  
+                )) LIKE @Search + '%'  
+                    THEN 5  
+  
+                ELSE 6  
+  
+            END,  
+  
+            M.FirstName;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
+  
+END;
+GO
+
 -----------------------------------------------------
   --SP: spRetrieveCurrentMonthAllPresentAttendance--
 -----------------------------------------------------
@@ -6278,7 +6591,7 @@ BEGIN
         )
 
     ORDER BY
-        CAST(ma.AttendanceDate AS DATE) DESC;
+        CAST(ma.AttendanceDate AS DATETIME) DESC;
        
 END
 GO
@@ -6328,101 +6641,6 @@ BEGIN
     ORDER BY
         CAST(ma.AttendanceDate AS DATE) DESC;
     
-END
-GO
----------------------------------------------------------------
-  --SP: spRetrieveAbsentPresentMembersOnCurrentDateByShift--
----------------------------------------------------------------
-CREATE  PROC spRetrieveAbsentPresentMembersOnCurrentDateByShift
-AS
-BEGIN
-    BEGIN TRY
-
-        DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);
-        DECLARE @CurrentDate DATE = CAST(GETDATE() AS DATE);
-        DECLARE @ShiftId INT;
-
-        -- Current time automatically ShiftId 
-        SELECT TOP 1
-            @ShiftId = s.ShiftId
-        FROM tblShift s
-        WHERE
-            (
-                -- Normal shift: 
-                s.StartTime < s.EndTime
-                AND @CurrentTime >= s.StartTime
-                AND @CurrentTime < s.EndTime
-            )
-            OR
-            (
-                
-                s.StartTime > s.EndTime
-                AND (
-                    @CurrentTime >= s.StartTime
-                    OR @CurrentTime < s.EndTime
-                )
-            )
-        ORDER BY s.ShiftId;
-
-
-        -- If Do not have active shift 
-        IF @ShiftId IS NULL
-        BEGIN
-            SELECT 
-                'No active shift found for current time.' AS Message;
-            RETURN;
-        END;
-
-
-        -- Current shift Present/Absent members
-        SELECT DISTINCT
-            m.MemberId,
-
-            CONCAT(
-                ISNULL(m.FirstName, ''), ' ',
-                ISNULL(m.MiddleName, ''), ' ',
-                ISNULL(m.LastName, '')
-            ) AS MemberName,
-
-            s.ShiftId,
-            s.ShiftName,
-            m.PhoneNo,
-
-            CASE
-                WHEN ma.AttendanceId IS NULL 
-                    THEN 'Absent'
-                ELSE 'Present'
-            END AS AttendanceStatus
-
-        FROM tblShift s
-
-        INNER JOIN tblMemberShift ms
-            ON ms.ShiftId = s.ShiftId
-            AND ms.IsActive = 1
-
-        INNER JOIN tblMember m
-            ON m.MemberId = ms.MemberId
-            AND m.IsActive = 1
-
-        LEFT JOIN tblMemberAttendance ma
-            ON ma.MemberId = m.MemberId
-            AND ma.ShiftId = s.ShiftId
-            AND CAST(ma.AttendanceDate AS DATE) = @CurrentDate
-
-        WHERE s.ShiftId = @ShiftId
-
-        ORDER BY
-            AttendanceStatus,
-            MemberName;
-
-    END TRY
-
-    BEGIN CATCH
-
-        SELECT
-            ERROR_MESSAGE() AS Message;
-
-    END CATCH
 END
 GO
 --------------------------------------------
@@ -6701,8 +6919,70 @@ BEGIN
 END;
 GO
 
+--------------------------------------------------
+  --SP: spGetEmployeeSalaryDetailsByCurrentMonth--
+--------------------------------------------------
+CREATE PROC spGetEmployeeSalaryDetailsByCurrentMonth  
+AS  
+BEGIN  
+    BEGIN TRY  
+        SET NOCOUNT ON;  
+  
+        DECLARE @CurrentMonth VARCHAR(10) = DATENAME(MONTH, GETDATE());  
+        DECLARE @CurrentYear INT = YEAR(GETDATE());  
+  
+        SELECT  
+            e.EmployeeId,  
+  
+            TRIM(  
+                e.FirstName + ' ' +  
+                ISNULL(e.MiddleName + ' ', '') +  
+                e.LastName  
+            ) AS EmployeeName,  
+  
+            e.PhoneNo,  
+  
+            s.SalaryId,  
+  
+            s.Amount AS Salary,  
+  
+            CASE  
+                WHEN sp.PaymentId IS NOT NULL THEN 1  
+                ELSE 0  
+            END AS IsPaid  
+  
+        FROM tblEmployee e  
+  
+        INNER JOIN tblSalary s  
+            ON e.EmployeeId = s.EmployeeId  
+  
+        LEFT JOIN tblSalaryPayment sp  
+            ON s.SalaryId = sp.SalaryId  
+            AND sp.PaymentMonth = @CurrentMonth  
+            AND sp.PaymentYear = @CurrentYear  
+            AND sp.PaymentStatus = 'Paid'  
+  
+        WHERE e.IsActive = 1  
+  
+        ORDER BY  
+            CASE  
+                WHEN sp.PaymentId IS NOT NULL THEN 0  
+                ELSE 1  
+            END,  
+            e.EmployeeId;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
+END;
+GO
 -------------------------------------------
-  --SP: spPaySalaryToEmployeeByEmployeeId--
+  --SP: spPaySalaryToEmployeeByEmployeeId---
 -------------------------------------------
 CREATE PROC spPaySalaryToEmployeeByEmployeeId
     @EmployeeId INT = NULL,
@@ -6793,6 +7073,85 @@ BEGIN
         SELECT
             ERROR_MESSAGE() AS Message;
     END CATCH
+END;
+GO
+
+-------------------------------------------------------------
+  --SP: spRetrieveEmployeeSalaryDetailsByPhoneNumberAndName--
+-------------------------------------------------------------
+CREATE PROC spRetrieveEmployeeSalaryDetailsByPhoneNumberAndName  
+(  
+    @Search VARCHAR(100)  
+)  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    BEGIN TRY  
+  
+        SET @Search = LTRIM(RTRIM(@Search));  
+  
+        DECLARE @CurrentMonth VARCHAR(10) =  
+            DATENAME(MONTH, GETDATE());  
+  
+        DECLARE @CurrentYear INT =  
+            YEAR(GETDATE());  
+  
+        SELECT  
+            E.EmployeeId,  
+  
+            S.SalaryId,  
+  
+            TRIM(  
+                E.FirstName + ' ' +  
+                ISNULL(E.MiddleName + ' ', '') +  
+                E.LastName  
+            ) AS EmployeeName,  
+  
+            E.PhoneNo,  
+  
+            S.Amount AS Salary,  
+  
+            CASE  
+                WHEN SP.PaymentId IS NOT NULL THEN 1  
+                ELSE 0  
+            END AS IsPaid  
+  
+        FROM tblEmployee E  
+  
+        INNER JOIN tblSalary S  
+            ON E.EmployeeId = S.EmployeeId  
+  
+        LEFT JOIN tblSalaryPayment SP  
+            ON S.SalaryId = SP.SalaryId  
+            AND SP.PaymentMonth = @CurrentMonth  
+            AND SP.PaymentYear = @CurrentYear  
+            AND SP.PaymentStatus = 'Paid'  
+  
+        WHERE  
+            (  
+                E.FirstName LIKE @Search + '%'  
+                OR E.MiddleName LIKE @Search + '%'  
+                OR E.LastName LIKE @Search + '%'  
+                OR E.PhoneNo LIKE @Search + '%'  
+            )  
+            AND E.IsActive = 1  
+  
+        ORDER BY  
+            CASE  
+                WHEN SP.PaymentId IS NOT NULL THEN 0  
+                ELSE 1  
+            END,  
+            E.EmployeeId;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
 END;
 GO
 ----------------------------------------------
@@ -7960,3 +8319,167 @@ BEGIN
     END CATCH
 END;
 GO
+----------------------------------------------------------------------
+
+-----------------------------------------
+	--spGetCurrentShift--
+-----------------------------------------
+CREATE PROC spGetCurrentShift  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    BEGIN TRY  
+  
+        DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);  
+  
+        SELECT  
+            ShiftId,  
+            ShiftName,  
+            FORMAT(CAST(StartTime AS DATETIME), 'hh:mm tt') AS StartTime,  
+            FORMAT(CAST(EndTime AS DATETIME), 'hh:mm tt') AS EndTime  
+        FROM tblShift  
+        WHERE @CurrentTime BETWEEN StartTime AND EndTime;  
+  
+    END TRY  
+    BEGIN CATCH  
+  
+        SELECT ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
+END;  
+GO
+
+-----------------------------------------
+	--spGetActiveMemberCount--
+-----------------------------------------
+CREATE PROC spGetActiveMemberCount  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+   SELECT COUNT(*) FROM tblMember WHERE IsActive = 1;  
+END
+GO
+
+ -----------------------------------------
+	--spGetActiveMembershipPlanCount--
+-----------------------------------------
+CREATE PROC spGetActiveMembershipPlanCount  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    SELECT COUNT(*) AS ActiveMembershipPlanCount  
+    FROM tblMembershipPlans  
+    WHERE IsActive = 1;  
+END
+
+
+ -----------------------------------------
+	--spGetActiveTrainerCount--
+-----------------------------------------
+ CREATE PROC spGetActiveTrainerCount    
+AS    
+BEGIN    
+    SET NOCOUNT ON;    
+    
+    SELECT COUNT(*) AS ActiveTrainerCount    
+    FROM tblTrainer T    
+    INNER JOIN tblEmployee E    
+        ON T.EmployeeId = E.EmployeeId    
+    WHERE E.IsActive = 1;    
+END
+ -----------------------------------------
+	--spRetrieveCurrentMonthNewMembers--
+-----------------------------------------
+CREATE PROC spRetrieveCurrentMonthNewMembers  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    BEGIN TRY  
+  
+        DECLARE @StartOfMonth DATE =  
+            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1);  
+  
+        DECLARE @StartOfNextMonth DATE =  
+            DATEADD(MONTH, 1, @StartOfMonth);  
+  
+        SELECT  
+            COUNT(*) AS NewMembers  
+        FROM tblMember  
+        WHERE JoiningDate >= @StartOfMonth  
+          AND JoiningDate < @StartOfNextMonth;  
+  
+    END TRY  
+  
+    BEGIN CATCH  
+  
+        SELECT  
+            ERROR_MESSAGE() AS Message;  
+  
+    END CATCH  
+END
+
+ -----------------------------------------
+	--spGetActiveEmployeeCount--
+-----------------------------------------
+CREATE PROC spGetActiveEmployeeCount  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    SELECT   
+        COUNT(*) AS ActiveEmployeeCount  
+    FROM tblEmployee  
+    WHERE IsActive = 1;  
+END;  
+GO
+CREATE PROC spGetCurrentYearIncomeExpenseNetRevenue  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    DECLARE @CurrentYear INT = YEAR(GETDATE());  
+  
+    DECLARE @TotalIncome DECIMAL(18,2) = 0;  
+    DECLARE @TotalSalary DECIMAL(18,2) = 0;  
+    DECLARE @TotalExpense DECIMAL(18,2) = 0;  
+  
+  
+    -- Current Year Membership Income  
+    SELECT  
+        @TotalIncome = ISNULL(SUM(sp.Amount), 0)  
+    FROM tblSubscriptionPayment sp  
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear;  
+  
+  
+    -- Current Year Salary  
+    SELECT  
+        @TotalSalary = ISNULL(SUM(s.Amount), 0)  
+    FROM tblSalaryPayment sp  
+    INNER JOIN tblSalary s  
+        ON sp.SalaryId = s.SalaryId  
+    WHERE YEAR(sp.PaymentDate) = @CurrentYear  
+      AND sp.PaymentStatus = 'Paid';  
+  
+  
+    -- Current Year Other Expense  
+    SELECT  
+        @TotalExpense = ISNULL(SUM(e.ExpenseAmount), 0)  
+    FROM tblExpense e  
+    WHERE YEAR(e.ExpenseDate) = @CurrentYear;  
+  
+  
+    -- Final Result  
+    SELECT  
+        @TotalIncome AS TotalIncome,  
+        (@TotalSalary + @TotalExpense) AS TotalExpense,  
+        (  
+            @TotalIncome  
+            - @TotalSalary  
+            - @TotalExpense  
+        ) AS NetRevenue;  
+  
+END;  

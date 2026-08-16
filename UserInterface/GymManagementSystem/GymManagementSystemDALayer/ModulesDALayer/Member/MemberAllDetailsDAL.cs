@@ -108,7 +108,6 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
                 memberId,
                 "@MemberId");
         }
-
         public DataTable RetrieveRecentExpiredMembershipPlanDAL(int memberId)
         {
             DataTable dataTable = null;
@@ -299,7 +298,21 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
             {
                 return ChangeDietPlanMessage;
             }
+        // Retrieves all Assign Trainer of Members details for displaying in the DataGridView.
+        public DataTable RetrieveAssignTrainerToMemberDetailsDAL()
+        {
+            DataTable dataTable = LookupDAL.RetrieveSpecificItem("spRetrieveAllMemberTrainerAssignmentsDetails");
+            return dataTable;
+        }
 
+        //Search by Phone Number
+
+        public DataTable GetMemberTrainerAssignmentsByPhoneNo(string Search)
+        {
+
+            SqlParameter[] parameters = { new SqlParameter("@Search", Search) };
+
+            return LookupDAL.RetrieveSpecificDetails("spRetrieveMemberTrainerAssignmentsDetailsByMemberPhoneNo", parameters);
         }
     }
 }

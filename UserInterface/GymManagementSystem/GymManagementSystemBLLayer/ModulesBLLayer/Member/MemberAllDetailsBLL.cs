@@ -155,7 +155,6 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
             MemberAllDetailsDAL memberAllDetailsDAL = new MemberAllDetailsDAL();
             return memberAllDetailsDAL.GetMemberDetailsByMemberId(memberId);
         }
-
         public DataTable RetrieveRecentExpiredMembershipPlanBLL(int memberId)
         {
             DataTable dataTable = null;
@@ -307,6 +306,19 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
                 return ChangeDietPlanMessage;
             }
 
+        }
+        // Retrieves all Assign Trainer of Members details for displaying in the DataGridView.
+        public DataTable RetrieveAssignTrainerToMemberDetailsBLL()
+        {
+            MemberAllDetailsDAL MemberAllDetailsDAL = new MemberAllDetailsDAL();
+            return MemberAllDetailsDAL.RetrieveAssignTrainerToMemberDetailsDAL();
+        }
+        //Search by Phone Number
+
+        public DataTable GetMemberTrainerAssignmentsByPhoneNo(string Search)
+        {
+            MemberAllDetailsDAL memberAllDetailsDAL = new MemberAllDetailsDAL();
+            return memberAllDetailsDAL.GetMemberTrainerAssignmentsByPhoneNo(Search);
         }
     }
 }

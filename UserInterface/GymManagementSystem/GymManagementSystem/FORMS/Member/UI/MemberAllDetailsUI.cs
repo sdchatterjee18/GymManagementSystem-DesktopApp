@@ -317,7 +317,6 @@ namespace GymManagementSystem.FORMS.Member.UI
 
             return member;
         }
-
         //Retrieve Recent Expired MembershipPlan
         public DataTable RetrieveRecentExpiredMembershipPlanUI(int memberId)
         {
@@ -470,6 +469,20 @@ namespace GymManagementSystem.FORMS.Member.UI
                 return ChangeDietPlanMessage;
             }
 
+        }
+        // Display DataGridView
+        public DataTable RetrieveAssignTrainerToMemberDetailsUI()
+        {
+            MemberAllDetailsBLL memberAllDetailsBLL = new MemberAllDetailsBLL();
+            return memberAllDetailsBLL.RetrieveAssignTrainerToMemberDetailsBLL();
+        }
+
+        //Search by Phone Number
+
+        public DataTable GetMemberTrainerAssignmentsByPhoneNo(string Search)
+        {
+            MemberAllDetailsBLL memberAllDetailsBLL = new MemberAllDetailsBLL();
+            return memberAllDetailsBLL.GetMemberTrainerAssignmentsByPhoneNo(Search);
         }
 
     }
