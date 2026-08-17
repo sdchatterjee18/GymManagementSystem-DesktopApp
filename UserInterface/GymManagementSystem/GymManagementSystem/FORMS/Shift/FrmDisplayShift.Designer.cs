@@ -43,6 +43,7 @@
             this.picShift = new System.Windows.Forms.PictureBox();
             this.dgvShiftManagement = new System.Windows.Forms.DataGridView();
             this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShiftId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,6 +175,7 @@
             this.dgvShiftManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvShiftManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo,
+            this.colShiftId,
             this.colShiftName,
             this.colStartTime,
             this.colEndTime,
@@ -213,6 +215,8 @@
             this.dgvShiftManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvShiftManagement.Size = new System.Drawing.Size(993, 551);
             this.dgvShiftManagement.TabIndex = 11;
+            this.dgvShiftManagement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellClick);
+            this.dgvShiftManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellContentClick);
             this.dgvShiftManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvShiftManagement_CellFormatting);
             this.dgvShiftManagement.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellMouseEnter);
             this.dgvShiftManagement.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellMouseLeave);
@@ -230,6 +234,13 @@
             this.colSerialNo.ReadOnly = true;
             this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colShiftId
+            // 
+            this.colShiftId.HeaderText = "Shift ID";
+            this.colShiftId.Name = "colShiftId";
+            this.colShiftId.ReadOnly = true;
+            this.colShiftId.Visible = false;
             // 
             // colShiftName
             // 
@@ -300,6 +311,7 @@
         private System.Windows.Forms.PictureBox picShift;
         private System.Windows.Forms.DataGridView dgvShiftManagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colShiftId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShiftName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndTime;
