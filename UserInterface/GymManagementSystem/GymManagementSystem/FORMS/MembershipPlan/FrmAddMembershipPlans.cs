@@ -31,6 +31,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             this.Text = "";
             this.ShowIcon = false;
             LoadPlanTypes();
+            this.ActiveControl = null;
         }
         private void btnPageRemove_Click(object sender, EventArgs e)
         {
@@ -123,12 +124,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             membershipPlanUI.Price = Convert.ToDecimal(txtAmount.Text.Trim());
             membershipPlanUI.Description = txtDescription.Text.Trim();
 
-            //=============================
-            // Insert
-            //=============================
-
             string message = membershipPlanUI.InsertMembershipPlanUI();
-
             DialogResult result = MessageBox.Show(
                 message,
                 "Membership Plan",
@@ -173,6 +169,37 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             cmbPlanType.DisplayMember = "PlanType";
             cmbPlanType.ValueMember = "PlanTypeId";
             cmbPlanType.SelectedIndex = -1;
+        }
+
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.MidnightBlue;
+            btnClear.BackColor = Color.White;
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.White;
+            btnClear.BackColor = Color.MidnightBlue;
+        }
+
+        private void pnlClickSubmit_MouseEnter(object sender, EventArgs e)
+        {
+            pnlClickSubmit.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void pnlClickSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickSubmit.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picAddButton.Image = Properties.Resources.paper_plane;
+        }
+
+        private void FrmAddMembershipPlans_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }  
     }
 }

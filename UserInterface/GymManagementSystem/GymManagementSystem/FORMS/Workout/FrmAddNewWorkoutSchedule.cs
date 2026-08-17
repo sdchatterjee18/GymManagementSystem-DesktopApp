@@ -22,8 +22,8 @@ namespace GymManagementSystem.FORMS.Workout
             this.Text = "";
             this.ShowIcon = false;
             LoadWorkoutNameComboBox();
-            LoadExerciseNameComboBox();
             LoadWorkoutDaysComboBox();
+            LoadExerciseComboBox();
         }
 
         // Workout Name
@@ -48,20 +48,17 @@ namespace GymManagementSystem.FORMS.Workout
                     MessageBoxIcon.Error);
             }
         }
-        // Exercise Name
-        private void LoadExerciseNameComboBox()
+
+        private void LoadExerciseComboBox()
         {
             try
             {
                 WorkoutUI workoutUI = new WorkoutUI();
-
-                DataTable dataTable =
-                    workoutUI.GetExercisesForComboBox();
-
+                
+                DataTable dataTable = workoutUI.GetExercisesForComboBox();
                 cmbExerciseName.DataSource = dataTable;
                 cmbExerciseName.DisplayMember = "ExerciseName";
                 cmbExerciseName.ValueMember = "ExerciseId";
-
                 cmbExerciseName.SelectedIndex = -1;
             }
             catch (Exception ex)
@@ -102,6 +99,7 @@ namespace GymManagementSystem.FORMS.Workout
             }
         }
         // Submit Workout Schedule
+
         private void pnlClickSubmitWorkoutSchedule_Click(object sender, EventArgs e)
         {
             try
@@ -195,6 +193,32 @@ namespace GymManagementSystem.FORMS.Workout
             cmbExerciseName.SelectedIndex = -1;
             cmbWorkoutDays.SelectedIndex = -1;
             this.ActiveControl = null;
+        }
+
+        private void pnlClickSubmitWorkoutSchedule_MouseEnter(object sender, EventArgs e)
+        {
+            pnlClickSubmitWorkoutSchedule.BackColor = Color.White;
+            picAddButtonWorkoutSchedule.Image = Properties.Resources.paper_planeHOVER;
+            lblAddNewWorkoutSchedule.ForeColor = Color.MidnightBlue;
+        }
+
+        private void pnlClickSubmitWorkoutSchedule_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickSubmitWorkoutSchedule.BackColor = Color.MidnightBlue;
+            picAddButtonWorkoutSchedule.Image = Properties.Resources.paper_plane;
+            lblAddNewWorkoutSchedule.ForeColor = Color.White;
+        }
+
+        private void btnClearWorkoutSchedule_MouseEnter(object sender, EventArgs e)
+        {
+            btnClearWorkoutSchedule.BackColor = Color.White;
+            btnClearWorkoutSchedule.ForeColor = Color.MidnightBlue;
+        }
+
+        private void btnClearWorkoutSchedule_MouseLeave(object sender, EventArgs e)
+        {
+            btnClearWorkoutSchedule.BackColor = Color.MidnightBlue;
+            btnClearWorkoutSchedule.ForeColor = Color.White;
         }
     }
 }

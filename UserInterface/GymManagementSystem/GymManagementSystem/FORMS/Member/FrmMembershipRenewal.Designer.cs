@@ -233,6 +233,7 @@
             this.pnlCancleButtomInChangeMembership.Name = "pnlCancleButtomInChangeMembership";
             this.pnlCancleButtomInChangeMembership.Size = new System.Drawing.Size(209, 42);
             this.pnlCancleButtomInChangeMembership.TabIndex = 16;
+            this.pnlCancleButtomInChangeMembership.Click += new System.EventHandler(this.pnlCancleButtomInChangeMembership_Click);
             // 
             // tlpCancleSectionInChangeMembership
             // 
@@ -252,6 +253,7 @@
             this.tlpCancleSectionInChangeMembership.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleSectionInChangeMembership.Size = new System.Drawing.Size(209, 44);
             this.tlpCancleSectionInChangeMembership.TabIndex = 3;
+            this.tlpCancleSectionInChangeMembership.Click += new System.EventHandler(this.pnlCancleButtomInChangeMembership_Click);
             this.tlpCancleSectionInChangeMembership.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseEnter);
             this.tlpCancleSectionInChangeMembership.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseLeave);
             // 
@@ -265,6 +267,7 @@
             this.picCancleInChangeMembership.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancleInChangeMembership.TabIndex = 0;
             this.picCancleInChangeMembership.TabStop = false;
+            this.picCancleInChangeMembership.Click += new System.EventHandler(this.pnlCancleButtomInChangeMembership_Click);
             this.picCancleInChangeMembership.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseEnter);
             this.picCancleInChangeMembership.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseLeave);
             // 
@@ -279,6 +282,7 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
+            this.lblCancle.Click += new System.EventHandler(this.pnlCancleButtomInChangeMembership_Click);
             this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseEnter);
             this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMembership_MouseLeave);
             // 
@@ -305,6 +309,7 @@
             this.pnlChangeMembershipButton.Name = "pnlChangeMembershipButton";
             this.pnlChangeMembershipButton.Size = new System.Drawing.Size(209, 42);
             this.pnlChangeMembershipButton.TabIndex = 0;
+            this.pnlChangeMembershipButton.Click += new System.EventHandler(this.pnlChangeMembershipButton_Click);
             // 
             // tlpChangeMembershipButton
             // 
@@ -324,6 +329,7 @@
             this.tlpChangeMembershipButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeMembershipButton.Size = new System.Drawing.Size(209, 44);
             this.tlpChangeMembershipButton.TabIndex = 2;
+            this.tlpChangeMembershipButton.Click += new System.EventHandler(this.pnlChangeMembershipButton_Click);
             this.tlpChangeMembershipButton.MouseEnter += new System.EventHandler(this.tlpChangeMembershipButton_MouseEnter);
             this.tlpChangeMembershipButton.MouseLeave += new System.EventHandler(this.tlpChangeMembershipButton_MouseLeave);
             // 
@@ -338,6 +344,7 @@
             this.picChangeMembershipIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeMembershipIcon.TabIndex = 0;
             this.picChangeMembershipIcon.TabStop = false;
+            this.picChangeMembershipIcon.Click += new System.EventHandler(this.pnlChangeMembershipButton_Click);
             // 
             // lblChangeMembership
             // 
@@ -350,6 +357,7 @@
             this.lblChangeMembership.Size = new System.Drawing.Size(126, 23);
             this.lblChangeMembership.TabIndex = 1;
             this.lblChangeMembership.Text = "CHANGE PLAN";
+            this.lblChangeMembership.Click += new System.EventHandler(this.pnlChangeMembershipButton_Click);
             this.lblChangeMembership.MouseEnter += new System.EventHandler(this.tlpChangeMembershipButton_MouseEnter);
             this.lblChangeMembership.MouseLeave += new System.EventHandler(this.tlpChangeMembershipButton_MouseLeave);
             // 
@@ -1228,6 +1236,7 @@
             this.cmbSelectMembershipPlan.Size = new System.Drawing.Size(319, 31);
             this.cmbSelectMembershipPlan.TabIndex = 9;
             this.cmbSelectMembershipPlan.Text = "  ---Select Payment Method--";
+            this.cmbSelectMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMembershipPlan_SelectedIndexChanged);
             // 
             // pnlMemberPaymentInformationWholePortion
             // 
@@ -1265,7 +1274,7 @@
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 97.85134F));
-            this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.picMemberPaymentInfromation, 1, 0);
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.lblPaymentInfromation, 2, 0);
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.pnlMemberPaymentInformationBar, 3, 0);
@@ -1310,7 +1319,7 @@
             this.pnlMemberPaymentInformationBar.Location = new System.Drawing.Point(363, 28);
             this.pnlMemberPaymentInformationBar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMemberPaymentInformationBar.Name = "pnlMemberPaymentInformationBar";
-            this.pnlMemberPaymentInformationBar.Size = new System.Drawing.Size(648, 3);
+            this.pnlMemberPaymentInformationBar.Size = new System.Drawing.Size(644, 3);
             this.pnlMemberPaymentInformationBar.TabIndex = 4;
             // 
             // tlpMemberPaymentInfromationDetails
@@ -1477,6 +1486,7 @@
             this.cmbSelectMemberPaymentFeesType.Size = new System.Drawing.Size(310, 31);
             this.cmbSelectMemberPaymentFeesType.TabIndex = 9;
             this.cmbSelectMemberPaymentFeesType.Text = "  ---Select Fees Type---";
+            this.cmbSelectMemberPaymentFeesType.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_SelectedIndexChanged);
             // 
             // FrmMembershipRenewal
             // 

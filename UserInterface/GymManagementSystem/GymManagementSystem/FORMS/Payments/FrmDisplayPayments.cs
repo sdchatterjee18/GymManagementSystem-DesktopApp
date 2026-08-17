@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using GymManagementSystem.FORMS.Payments.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Payments
 {
@@ -18,11 +19,12 @@ namespace GymManagementSystem.FORMS.Payments
         {
             InitializeComponent();
         }
-
+        int clickCountTxtSearch = 0;
         private void FrmDisplayPayments_Load(object sender, EventArgs e)
         {
             LoadSubscriptionPaymentDetails();
             dgvPaymentsManagement.ClearSelection();
+            this.ActiveControl = null;
         }
 
         //Retrieve Data From PaymentUI 
@@ -38,9 +40,11 @@ namespace GymManagementSystem.FORMS.Payments
                     (
                     SerialNo++,
                     PaymentDetail.MemberName,
+                    PaymentDetail.PhoneNo,
                     PaymentDetail.MemberShipPlanName,
-                    PaymentDetail.PaymentDate,
+                    PaymentDetail.PaymentDate.Date,
                     PaymentDetail.PaymentMethod,
+                    "₹ "+
                     PaymentDetail.Amount,
                     PaymentDetail.FeesType
                     );
@@ -60,9 +64,11 @@ namespace GymManagementSystem.FORMS.Payments
                     (
                     SerialNo++,
                     PaymentDetail.MemberName,
+                    PaymentDetail.PhoneNo,
                     PaymentDetail.MemberShipPlanName,
                     PaymentDetail.PaymentDate,
                     PaymentDetail.PaymentMethod,
+                    "₹ "+
                     PaymentDetail.Amount,
                     PaymentDetail.FeesType
                     );
@@ -71,12 +77,7 @@ namespace GymManagementSystem.FORMS.Payments
 
         private void dgvPaymentsManagement_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvPaymentsManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -84,11 +85,7 @@ namespace GymManagementSystem.FORMS.Payments
 
         private void dgvPaymentsManagement_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvPaymentsManagement.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);    
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvPaymentsManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
                 
@@ -97,42 +94,37 @@ namespace GymManagementSystem.FORMS.Payments
 
         private void dgvPaymentsManagement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
-            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colFeesType")
-            {
-
-                e.CellStyle.ForeColor = Color.Green;
-            }
-
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
             if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colSerialNo")
             {
-
                 e.CellStyle.ForeColor = Color.Navy;
             }
 
+            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colAmount")
+            {
+                e.CellStyle.ForeColor = Color.Red;
+            }
+
+            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colPaymentMethod")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
+            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colFeesType")
+            {
+                e.CellStyle.ForeColor = Color.Green;
+            }
         }
 
-        private void txtEnterPlanName_Click(object sender, EventArgs e)
+        private void txtPhoneNo_TextChanged(object sender, EventArgs e)
         {
-            txtPhoneNo.Clear();
-            txtPhoneNo.ForeColor = Color.Black;
-            txtPhoneNo.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //dgvPaymentsManagemen
             dgvPaymentsManagement.Rows.Clear();
-            dgvPaymentsManagement.ReadOnly = false;
             LoadSpecificMemberSubscriptionPaymentDetails();
         }
 
-        private void btnDisplayAll_Click(object sender, EventArgs e)
+        private void txtPhoneNo_Click(object sender, EventArgs e)
         {
-            dgvPaymentsManagement.Rows.Clear();
-            dgvPaymentsManagement.ReadOnly = false;
-            txtPhoneNo.Clear();
-            LoadSubscriptionPaymentDetails();
+            clickCountTxtSearch = ValidationUI.ClearTextBoxWhenClicked(txtPhoneNo,clickCountTxtSearch);
         }
 
 

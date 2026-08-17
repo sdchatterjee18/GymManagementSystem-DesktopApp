@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Expenses.UI;
 using GymManagementSystem.FORMS.Expenses;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Expenses
 {
@@ -17,13 +18,8 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             InitializeComponent();
         }
-        
-
-        private void tlpSubmit_Click(object sender, EventArgs e)
-        {
-            InsertExpenseCatogory();        
-        }
-
+        int clickCountCategory = 0;
+        int clickCountCategoryName = 0;
         private void lblClear_Click(object sender, EventArgs e)
         {
             txtRequiredCategoryName.Clear();
@@ -32,22 +28,12 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtRequiredCategoryName_Click(object sender, EventArgs e)
         {
-            int CategoryName = 1;
-            if (CategoryName == 1)
-            {
-                txtRequiredCategoryName.Clear();
-                txtRequiredCategoryName.ForeColor = Color.Black;
-            }
+            clickCountCategoryName = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCategoryName,clickCountCategoryName);
         }
 
         private void txtInputCategory_Click(object sender, EventArgs e)
         {
-            int Category = 1;
-            if (Category == 1)
-            {
-                txtInputCategory.Clear();
-                txtInputCategory.ForeColor = Color.Black;
-            }
+            clickCountCategory = ValidationUI.ClearTextBoxWhenClicked(txtInputCategory, clickCountCategory);
         }
 
         private void FrmAddExpenseCategory_Load(object sender, EventArgs e)
@@ -83,6 +69,30 @@ namespace GymManagementSystem.FORMS.Expenses
             {
                 InsertionMessage = null; 
             }
+        }
+        private void tlpSubmit_MouseEnter_1(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picSubmit.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void tlpSubmit_MouseLeave_1(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picSubmit.Image = Properties.Resources.paper_plane;
+        }
+
+        private void tlpSubmit_Click_1(object sender, EventArgs e)
+        {
+            ValidationUI.ClearDefaultPlaceholderText(txtRequiredCategoryName,clickCountCategoryName);
+            ValidationUI.ClearDefaultPlaceholderText(txtInputCategory,clickCountCategory);
+            if(!ValidationUI.ValidateRequiredTextBoxes(txtInputCategory,txtRequiredCategoryName))
+            {
+                return;
+            }
+            InsertExpenseCatogory();      
         }
     }
 }

@@ -138,5 +138,20 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             }
             this.Close();
         }
+
+        private void pnlSubmitButton_MouseEnter(object sender, EventArgs e)
+        {
+            
+            pnlSubmitButton.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picSubmitIcon.Image = Properties.Resources.paper_planeHOVER;
+        }
+       
+        private void pnlSubmitButton_MouseLeave(object sender, EventArgs e)
+        {
+            pnlSubmitButton.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picSubmitIcon.Image = Properties.Resources.paper_plane;
+        }
     }
 }
