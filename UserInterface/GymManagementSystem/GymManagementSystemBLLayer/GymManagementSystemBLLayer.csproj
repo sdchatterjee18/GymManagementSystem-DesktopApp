@@ -52,6 +52,7 @@
     <Compile Include="ModulesBLLayer\Employee\EmployeeBLL.cs" />
     <Compile Include="ModulesBLLayer\Employee\TrainerBLL.cs" />
     <Compile Include="ModulesBLLayer\Expense\ExpensesBLL.cs" />
+    <Compile Include="ModulesBLLayer\FitnessTest\FitnessTestBLL.cs" />
     <Compile Include="ModulesBLLayer\Gender\GenderBLL.cs" />
     <Compile Include="ModulesBLLayer\Locker\LockerBLL.cs" />
     <Compile Include="ModulesBLLayer\MembershipPlan\MembershipPlanBLL.cs" />

@@ -20,7 +20,6 @@ using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
-using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
 namespace GymManagementSystem
 {
@@ -40,7 +39,7 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmSAMainForm());
             //Application.Run(new FrmSAMainForm());
-            //Application.Run(new FrmMainLayout());
+            Application.Run(new FrmMainLayout());
             //Application.Run(new FrmAssignTrainer());
             //Application.Run(new FrmSAAddNewEmployee());
             //Application.Run(new FrmSAProfitLoss());
@@ -49,8 +48,9 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmDisplayMembershipPlan());
             //Application.Run(new FrmSAAddNewEmployee());
-            Application.Run(new FrmUserRoleSelection());
-
+            //Application.Run(new FrmUserRoleSelection());
+            //Application.Run(new FrmSuperAdminRegistration());
+            //Application.Run(new FrmDisplayShift());
         }
     }
 }
