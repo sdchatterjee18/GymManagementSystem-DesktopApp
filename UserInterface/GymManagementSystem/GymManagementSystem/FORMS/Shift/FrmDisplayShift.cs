@@ -10,109 +10,54 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 
+using GymManagementSystem.FORMS.Shift.UI;
+
 namespace GymManagementSystem.FORMS .Shift
 {
     public partial class FrmDisplayShift : Form
     {
-        private int currentRow;
-        private int currentColumn;
+       
         private DateTimePicker dtpTime = new DateTimePicker();
-
+        private int editingRow = -1;
+        private int editingColumn = -1;
 
         public FrmDisplayShift()
         {
             InitializeComponent();
+
+            dtpTime.Format = DateTimePickerFormat.Custom;
+            dtpTime.CustomFormat = "hh:mm tt";
+            dtpTime.ShowUpDown = true;
+
+            dtpTime.Visible = false;
+
+            dtpTime.ValueChanged += dtpTime_ValueChanged;
+            dtpTime.KeyDown += dtpTime_KeyDown;
+            dgvShiftManagement.Controls.Add(dtpTime);
           
         }
 
         private void FrmDisplayShift_Load(object sender, EventArgs e)
         {
-            RetrieveAllShifts();
+          
+            RetrieveShiftDetails();
         }
 
 
-
-        private void RetrieveAllShifts()
-        {
-            string CS = ConfigurationManager
-                .ConnectionStrings["DBCS"]
-                .ConnectionString;
-
-            try
-            {
-                using (SqlConnection sqlConnection = new SqlConnection(CS))
-                {
-                    using (SqlCommand sqlCommand =
-                        new SqlCommand("spRetrieveShiftTimeTable", sqlConnection))
-                    {
-                        sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                        SqlDataAdapter sqlDataAdapter =
-                            new SqlDataAdapter(sqlCommand);
-
-                        DataTable dataTable = new DataTable();
-
-                        sqlDataAdapter.Fill(dataTable);
-
-                        dgvShiftManagement.AutoGenerateColumns = false;
-                        dgvShiftManagement.Rows.Clear();
-
-                        int serialNo = 1;
-
-                        foreach (DataRow dataRow in dataTable.Rows)
-                        {
-                            int rowIndex = dgvShiftManagement.Rows.Add();
-
-                            // SL No
-                            dgvShiftManagement.Rows[rowIndex]
-                                .Cells["colSerialNo"].Value = serialNo++;
-
-                            // Shift Name
-                            dgvShiftManagement.Rows[rowIndex]
-                                .Cells["colShiftName"].Value =
-                                dataRow["ShiftName"].ToString();
-
-                            // Start Time
-                            dgvShiftManagement.Rows[rowIndex]
-                                .Cells["colStartTime"].Value =
-                                dataRow["StartTime"].ToString();
-
-                            // End Time
-                            dgvShiftManagement.Rows[rowIndex]
-                                .Cells["colEndTime"].Value =
-                                dataRow["EndTime"].ToString();
-                        }
-
-                        dgvShiftManagement.ClearSelection();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
 
         private void dgvShiftManagement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvShiftManagement.Columns[e.ColumnIndex].Name == "colSerialNo")
             {
-
                 e.CellStyle.ForeColor = Color.Navy;
             }
 
             if (dgvShiftManagement.Columns[e.ColumnIndex].Name == "colStartTime")
             {
-
                 e.CellStyle.ForeColor = Color.Green;
             }
             if (dgvShiftManagement.Columns[e.ColumnIndex].Name == "colEndTime")
             {
-
                 e.CellStyle.ForeColor = Color.Brown;
             }
 
@@ -123,18 +68,8 @@ namespace GymManagementSystem.FORMS .Shift
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvShiftManagement.Columns["colUpdate"].Index)
             {
                 e.PaintBackground(e.CellBounds, true);
-
-                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
-                    System.Windows.Forms.VisualStyles.PushButtonState.Normal);
-
-                TextRenderer.DrawText(
-                    e.Graphics,
-                    "Update",
-                    dgvShiftManagement.Font,
-                    e.CellBounds,
-                    Color.SlateBlue, // Your desired text color
-                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-
+                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,System.Windows.Forms.VisualStyles.PushButtonState.Normal);
+                TextRenderer.DrawText(e.Graphics,"Update",dgvShiftManagement.Font,e.CellBounds,Color.SlateBlue,TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 e.Handled = true;
             }
         }
@@ -161,11 +96,136 @@ namespace GymManagementSystem.FORMS .Shift
             else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvShiftManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-
             }
         }
-       
-       
+
+
+        private void RetrieveShiftDetails()
+        {
+            try
+            {
+                ShiftUI shiftUI = new ShiftUI();
+                DataTable dataTable = shiftUI.RetrieveShiftDetailsUI();
+                int SerialNo = 1;
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    int RowIndex = dgvShiftManagement.Rows.Add();
+                    dgvShiftManagement.Rows[RowIndex].Cells["colSerialNo"].Value = SerialNo++;
+                    dgvShiftManagement.Rows[RowIndex].Cells["colShiftId"].Value = Convert.ToInt32(dataRow["ShiftId"]);
+                    dgvShiftManagement.Rows[RowIndex].Cells["colShiftName"].Value = dataRow["ShiftName"].ToString();
+                    dgvShiftManagement.Rows[RowIndex].Cells["colStartTime"].Value = dataRow["StartTime"].ToString();
+                    dgvShiftManagement.Rows[RowIndex].Cells["colEndTime"].Value = dataRow["EndTime"].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+      
+
+        private void dgvShiftManagement_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            int startColumn = dgvShiftManagement.Columns["colStartTime"].Index;
+            int endColumn = dgvShiftManagement.Columns["colEndTime"].Index;
+            if (e.ColumnIndex != startColumn && e.ColumnIndex != endColumn)
+            {
+                dtpTime.Visible = false;
+                return;
+            }
+            editingRow = e.RowIndex;
+            editingColumn = e.ColumnIndex;
+            Rectangle cellRectangle = dgvShiftManagement.GetCellDisplayRectangle( e.ColumnIndex, e.RowIndex,true);
+            dtpTime.Location = cellRectangle.Location;
+            dtpTime.Size = cellRectangle.Size;
+            string value = Convert.ToString(dgvShiftManagement.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            DateTime existingTime;
+            if (DateTime.TryParse(value, out existingTime))
+            {
+                dtpTime.Value = existingTime;
+            }
+            else
+            {
+                dtpTime.Value = DateTime.Now;
+            }
+            dtpTime.Visible = true;
+            dtpTime.BringToFront();
+            dtpTime.Focus();
+            if (e.RowIndex < 0)
+                return;
+
+
+        }
+
+        private void dtpTime_ValueChanged(object sender, EventArgs e)
+        {
+           if (editingRow >= 0 && editingColumn >= 0)
+                {
+                    dgvShiftManagement.Rows[editingRow].Cells[editingColumn].Value = dtpTime.Value.ToString("hh:mm tt");
+                    dgvShiftManagement.InvalidateCell(editingColumn,editingRow);
+                }
+         }
+        private void dtpTime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dgvShiftManagement.Rows[editingRow].Cells[editingColumn].Value = dtpTime.Value.ToString("hh:mm tt");
+                dtpTime.Visible = false;
+                dgvShiftManagement.InvalidateCell(editingColumn,editingRow);
+                e.Handled = true;
+            }
+        }
+
+        private void dgvShiftManagement_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvShiftManagement.Columns[e.ColumnIndex].Name != "colUpdate")
+                return;
+
+            int shiftId = Convert.ToInt32(dgvShiftManagement.Rows[e.RowIndex].Cells["colShiftId"].Value);
+
+            string startTimeText = Convert.ToString(dgvShiftManagement.Rows[e.RowIndex].Cells["colStartTime"].Value);
+
+            string endTimeText = Convert.ToString( dgvShiftManagement.Rows[e.RowIndex].Cells["colEndTime"].Value);
+
+            DateTime startDateTime;
+            DateTime endDateTime;
+
+            if (!DateTime.TryParse(startTimeText, out startDateTime))
+            {
+                //MessageBox.Show("Invalid Start Time.");
+                return;
+            }
+
+            if (!DateTime.TryParse(endTimeText, out endDateTime))
+            {
+               // MessageBox.Show("Invalid End Time.");
+                return;
+            }
+
+            TimeSpan startTime = startDateTime.TimeOfDay;
+            TimeSpan endTime = endDateTime.TimeOfDay;
+
+            ShiftUI shiftUI = new ShiftUI();
+
+            bool result = shiftUI.UpdateShiftDetailsUI(shiftId,startTime,endTime);
+
+            if (result)
+            {
+                MessageBox.Show("Shift updated successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Shift update failed.");
+            }
+        }
+  
     }
 }

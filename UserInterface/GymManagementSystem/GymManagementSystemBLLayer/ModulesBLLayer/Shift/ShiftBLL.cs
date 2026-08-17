@@ -20,5 +20,17 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Shift
             DataTable dataTable = shiftDAL.GetShiftDetailsForComboBox();
             return dataTable;
         }
+
+        // Retrieves all Shift Time for displaying in the DataGridView.
+        public DataTable RetrieveShiftDetailsBLL()
+        {
+            ShiftDAL shiftDAL = new ShiftDAL();
+            return shiftDAL.RetrieveShiftDetailsDAL();
+        }
+        public bool UpdateShiftDetailsBLL(int shiftId, TimeSpan startTime, TimeSpan endTime)
+        {
+            ShiftDAL shiftDAL = new ShiftDAL();
+            return shiftDAL.UpdateShiftDetailsDAL(shiftId, startTime, endTime);
+        }
     }
 }
