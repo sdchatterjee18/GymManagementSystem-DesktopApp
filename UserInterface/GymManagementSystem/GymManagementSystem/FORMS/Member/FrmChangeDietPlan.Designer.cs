@@ -231,6 +231,7 @@
             this.pnlCancleButtomInChangeMemberDietPlan.Name = "pnlCancleButtomInChangeMemberDietPlan";
             this.pnlCancleButtomInChangeMemberDietPlan.Size = new System.Drawing.Size(209, 45);
             this.pnlCancleButtomInChangeMemberDietPlan.TabIndex = 16;
+            this.pnlCancleButtomInChangeMemberDietPlan.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberDietPlan_Click);
             // 
             // tlpCancleSectionInChangeMemberDietPlan
             // 
@@ -248,6 +249,7 @@
             this.tlpCancleSectionInChangeMemberDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleSectionInChangeMemberDietPlan.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleSectionInChangeMemberDietPlan.TabIndex = 3;
+            this.tlpCancleSectionInChangeMemberDietPlan.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberDietPlan_Click);
             this.tlpCancleSectionInChangeMemberDietPlan.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseEnter);
             this.tlpCancleSectionInChangeMemberDietPlan.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseLeave);
             // 
@@ -261,6 +263,7 @@
             this.picCancleInChangeMemberDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancleInChangeMemberDietPlan.TabIndex = 0;
             this.picCancleInChangeMemberDietPlan.TabStop = false;
+            this.picCancleInChangeMemberDietPlan.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberDietPlan_Click);
             this.picCancleInChangeMemberDietPlan.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseEnter);
             this.picCancleInChangeMemberDietPlan.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseLeave);
             // 
@@ -275,6 +278,7 @@
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
             this.lblCancle.Text = "CANCEL";
+            this.lblCancle.Click += new System.EventHandler(this.pnlCancleButtomInChangeMemberDietPlan_Click);
             this.lblCancle.MouseEnter += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseEnter);
             this.lblCancle.MouseLeave += new System.EventHandler(this.tlpCancleSectionInChangeMemberDietPlan_MouseLeave);
             // 
@@ -301,6 +305,7 @@
             this.pnlChangeMemberDietPlanButton.Name = "pnlChangeMemberDietPlanButton";
             this.pnlChangeMemberDietPlanButton.Size = new System.Drawing.Size(209, 45);
             this.pnlChangeMemberDietPlanButton.TabIndex = 0;
+            this.pnlChangeMemberDietPlanButton.Click += new System.EventHandler(this.pnlChangeMemberDietPlanButton_Click);
             // 
             // tlpChangeMemberDietPlansButton
             // 
@@ -318,6 +323,7 @@
             this.tlpChangeMemberDietPlansButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeMemberDietPlansButton.Size = new System.Drawing.Size(209, 45);
             this.tlpChangeMemberDietPlansButton.TabIndex = 2;
+            this.tlpChangeMemberDietPlansButton.Click += new System.EventHandler(this.pnlChangeMemberDietPlanButton_Click);
             this.tlpChangeMemberDietPlansButton.MouseEnter += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseEnter);
             this.tlpChangeMemberDietPlansButton.MouseLeave += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseLeave);
             // 
@@ -332,6 +338,7 @@
             this.picChangeMemberDietPlansIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeMemberDietPlansIcon.TabIndex = 0;
             this.picChangeMemberDietPlansIcon.TabStop = false;
+            this.picChangeMemberDietPlansIcon.Click += new System.EventHandler(this.pnlChangeMemberDietPlanButton_Click);
             this.picChangeMemberDietPlansIcon.MouseEnter += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseEnter);
             this.picChangeMemberDietPlansIcon.MouseLeave += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseLeave);
             // 
@@ -346,6 +353,7 @@
             this.lblChangeMemberDietPlan.Size = new System.Drawing.Size(128, 23);
             this.lblChangeMemberDietPlan.TabIndex = 1;
             this.lblChangeMemberDietPlan.Text = "CHANGE DIETS";
+            this.lblChangeMemberDietPlan.Click += new System.EventHandler(this.pnlChangeMemberDietPlanButton_Click);
             this.lblChangeMemberDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseEnter);
             this.lblChangeMemberDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeMemberDietPlansButton_MouseLeave);
             // 
@@ -1266,6 +1274,7 @@
             this.cmbCaloriesPerDay.Size = new System.Drawing.Size(367, 36);
             this.cmbCaloriesPerDay.TabIndex = 1;
             this.cmbCaloriesPerDay.Text = "   --- Select Calories Per Day ---";
+            this.cmbCaloriesPerDay.SelectedIndexChanged += new System.EventHandler(this.cmbCaloriesPerDay_SelectedIndexChanged);
             // 
             // picSelectCaloriesPerDay
             // 

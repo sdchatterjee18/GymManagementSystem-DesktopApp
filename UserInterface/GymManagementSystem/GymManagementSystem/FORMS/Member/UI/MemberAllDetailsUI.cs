@@ -317,7 +317,159 @@ namespace GymManagementSystem.FORMS.Member.UI
 
             return member;
         }
+        //Retrieve Recent Expired MembershipPlan
+        public DataTable RetrieveRecentExpiredMembershipPlanUI(int memberId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                dataTable = MemberAllDetailsBLL.RetrieveRecentExpiredMembershipPlanBLL(memberId);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
 
+        public string RenewalMemberShipPlanUI(int MemberId, int MemberShipPlanId, string PaymentMethod)
+        {
+            string RenewalMessage = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                RenewalMessage = MemberAllDetailsBLL.RenewalMemberShipPlanBLL(MemberId, MemberShipPlanId, PaymentMethod);
+                return RenewalMessage;
+            }
+            catch (Exception ex)
+            {
+                return RenewalMessage;
+            }
+        }
+
+        public DataTable RetrievePersonalTrainersUI(int ShiftId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                dataTable = MemberAllDetailsBLL.RetrievePersonalTrainersBLL(ShiftId);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string AssignTrainerToMemberUI(int MemberId, int TrainerId)
+        {
+            string AssignTrainerMessage = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                AssignTrainerMessage = MemberAllDetailsBLL.AssignTrainerToMemberBLL(MemberId, TrainerId);
+                return AssignTrainerMessage;
+            }
+            catch (Exception Ex)
+            {
+                return AssignTrainerMessage;
+            }
+        }
+
+        public DataTable RetrieveTrainerDetailsUI(int TrainerId)
+        {
+            DataTable TrainerTable = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+
+                TrainerTable = MemberAllDetailsBLL.RetrieveTrainerDetailsBLL(TrainerId);
+                return TrainerTable;
+            }
+            catch (Exception ex)
+            {
+                return TrainerTable;
+            }
+
+        }
+
+        public string ChangeTrainerOfMemberByNewTrainerIdUI(int MemberId, int NewTrainerId)
+        {
+            string ChangeTrainer = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                ChangeTrainer = MemberAllDetailsBLL.ChangeTrainerOfMemberByNewTrainerIdBLL(MemberId, NewTrainerId);
+                return ChangeTrainer;
+            }
+            catch (Exception ex)
+            {
+                return ChangeTrainer;
+            }
+        }
+
+        public DataTable AvailableSlotsOfShiftUI(int ShiftId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                dataTable = MemberAllDetailsBLL.AvailableSlotsOfShiftBLL(ShiftId);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string ChangeShiftByMemberIdAndTrainerIdUI(int MemberId, int NewShiftId)
+        {
+            string ChangeShiftMessage = null;
+            try
+            {
+                MemberAllDetailsBLL MemberAllDetailsBLL = new MemberAllDetailsBLL();
+                ChangeShiftMessage = MemberAllDetailsBLL.ChangeShiftByMemberIdAndTrainerIdBLL(MemberId, NewShiftId);
+                return ChangeShiftMessage;
+            }
+            catch (Exception ex)
+            {
+                return ChangeShiftMessage;
+            }
+        }
+
+        public DataTable RetrieveConditionStatusByDietPlanIdUI(int DietPlanId)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                MemberAllDetailsBLL memberAllDetailsBLL = new MemberAllDetailsBLL();
+                dataTable = memberAllDetailsBLL.RetrieveConditionStatusByDietPlanIdBLL(DietPlanId);
+                return dataTable;
+            }
+            catch (Exception Ex)
+            {
+                return dataTable;
+            }
+        }
+
+        public string ChangeMemberDietPlanUI(int MemberId, int NewDietPlanId)
+        {
+            string ChangeDietPlanMessage = null;
+            try
+            {
+                MemberAllDetailsBLL memberAllDetailsBLL = new MemberAllDetailsBLL();
+                ChangeDietPlanMessage = memberAllDetailsBLL.ChangeMemberDietPlanBLL(MemberId, NewDietPlanId);
+                return ChangeDietPlanMessage;
+            }
+            catch (Exception ex)
+            {
+                return ChangeDietPlanMessage;
+            }
+
+        }
         // Display DataGridView
         public DataTable RetrieveAssignTrainerToMemberDetailsUI()
         {
@@ -332,8 +484,6 @@ namespace GymManagementSystem.FORMS.Member.UI
             MemberAllDetailsBLL memberAllDetailsBLL = new MemberAllDetailsBLL();
             return memberAllDetailsBLL.GetMemberTrainerAssignmentsByPhoneNo(Search);
         }
-
-
 
     }
 }

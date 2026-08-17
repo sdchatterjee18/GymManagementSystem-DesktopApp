@@ -1883,6 +1883,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(862, 609);
             this.Controls.Add(this.tlpMemberRegistrationFeesWholeFrom);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMemberRegistration";
             this.Text = "FrmMemberRegistration";
             this.Load += new System.EventHandler(this.FrmMemberRegistration_Load);

@@ -286,6 +286,7 @@
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Name = "pnlCancleButtonCreateInAssignPersonalTrainer";
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
             this.pnlCancleButtonCreateInAssignPersonalTrainer.TabIndex = 16;
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             // 
             // tlpCancleImageAndLevel
             // 
@@ -303,6 +304,7 @@
             this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleImageAndLevel.Size = new System.Drawing.Size(209, 45);
             this.tlpCancleImageAndLevel.TabIndex = 3;
+            this.tlpCancleImageAndLevel.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             this.tlpCancleImageAndLevel.MouseEnter += new System.EventHandler(this.tlpCancleImageAndLevel_MouseEnter);
             this.tlpCancleImageAndLevel.MouseLeave += new System.EventHandler(this.tlpCancleImageAndLevel_MouseLeave);
             // 
@@ -316,6 +318,7 @@
             this.picCancleInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancleInAssignPersonalTrainer.TabIndex = 0;
             this.picCancleInAssignPersonalTrainer.TabStop = false;
+            this.picCancleInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             this.picCancleInAssignPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpCancleImageAndLevel_MouseEnter);
             this.picCancleInAssignPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpCancleImageAndLevel_MouseLeave);
             // 
@@ -330,6 +333,7 @@
             this.lblcancleInPersonalTrainerAssign.Size = new System.Drawing.Size(73, 23);
             this.lblcancleInPersonalTrainerAssign.TabIndex = 1;
             this.lblcancleInPersonalTrainerAssign.Text = "CANCEL";
+            this.lblcancleInPersonalTrainerAssign.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             this.lblcancleInPersonalTrainerAssign.MouseEnter += new System.EventHandler(this.tlpCancleImageAndLevel_MouseEnter);
             this.lblcancleInPersonalTrainerAssign.MouseLeave += new System.EventHandler(this.tlpCancleImageAndLevel_MouseLeave);
             // 
@@ -356,6 +360,7 @@
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Name = "pnlAssignButtontoAssignTrainerInAssignPersonalTrainer";
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.TabIndex = 0;
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             // 
             // tlpAssignButtonCreateInAssignPersonalTrainer
             // 
@@ -373,6 +378,7 @@
             this.tlpAssignButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(209, 45);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.TabIndex = 2;
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseEnter);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseLeave);
             // 
@@ -386,6 +392,7 @@
             this.picAssignButtonCreateInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignButtonCreateInAssignPersonalTrainer.TabIndex = 0;
             this.picAssignButtonCreateInAssignPersonalTrainer.TabStop = false;
+            this.picAssignButtonCreateInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             this.picAssignButtonCreateInAssignPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseEnter);
             this.picAssignButtonCreateInAssignPersonalTrainer.MouseLeave += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseLeave);
             // 
@@ -400,6 +407,7 @@
             this.lblAssignTrainerButton.Size = new System.Drawing.Size(116, 23);
             this.lblAssignTrainerButton.TabIndex = 1;
             this.lblAssignTrainerButton.Text = "Assign Trainer";
+            this.lblAssignTrainerButton.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             this.lblAssignTrainerButton.MouseEnter += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseEnter);
             this.lblAssignTrainerButton.MouseLeave += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseLeave);
             // 
@@ -1217,11 +1225,6 @@
             this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectTrainer.FormattingEnabled = true;
-            this.cmbSelectTrainer.Items.AddRange(new object[] {
-            "Priya",
-            "Deep",
-            "Souma",
-            "Aridam"});
             this.cmbSelectTrainer.Location = new System.Drawing.Point(245, 12);
             this.cmbSelectTrainer.Name = "cmbSelectTrainer";
             this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
