@@ -32,7 +32,7 @@ namespace GymManagementSystem.Common
                 {
                     if (string.IsNullOrWhiteSpace(textBox.Text))
                     {
-                        textBox.BackColor = Color.FromArgb(255, 240, 240); // Light red
+                        textBox.BackColor = Color.FromArgb(255, 240, 240);
                     }
                     else
                     {

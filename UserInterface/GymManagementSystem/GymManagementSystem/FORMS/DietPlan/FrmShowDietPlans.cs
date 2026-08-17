@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using GymManagementSystem.FORMS.DietPlan.UI;
+using System.IO;
 
 
 namespace GymManagementSystem.FORMS.DietPlan
@@ -16,6 +17,7 @@ namespace GymManagementSystem.FORMS.DietPlan
     public partial class FrmShowDietPlans : Form
     {
         private byte[] dietPlanDocument = null;
+        DataTable dataTable = null;
         // Constructor
         public FrmShowDietPlans()
         {
@@ -28,9 +30,7 @@ namespace GymManagementSystem.FORMS.DietPlan
         }
         private void pnlAddNewDietPlan_Click(object sender, EventArgs e)
         {
-            FrmAddNewDietPlan FrmAddNewDietPlan = new FrmAddNewDietPlan();
-            FrmAddNewDietPlan.ShowDialog();
-            RetrieveAllDietPlan();
+            
         }
 
         private void dgvDietPlan_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -75,8 +75,7 @@ namespace GymManagementSystem.FORMS.DietPlan
                 ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
                     System.Windows.Forms.VisualStyles.PushButtonState.Normal);
 
-                // Explicit fixed font — won't change regardless of selection/hover state
-                Font fixedFont = new Font("Segoe UI", 10F, FontStyle.Bold);
+                Font fixedFont = new Font("Segoe UI", 10F);
 
                 TextRenderer.DrawText(
                     e.Graphics,
@@ -87,7 +86,30 @@ namespace GymManagementSystem.FORMS.DietPlan
                     TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
                 e.Handled = true;
+            }
 
+            // preview
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvDietPlan.Columns["colPreview"].Index)
+            {
+                e.PaintBackground(e.CellBounds, true);
+
+                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
+                    System.Windows.Forms.VisualStyles.PushButtonState.Normal);
+
+               Font fixedFont = new Font("Segoe UI", 10F);
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "📷Preview",
+                    fixedFont,
+                    e.CellBounds,
+                    Color.Navy,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+                e.Handled = true;
             }
         }
         // Clear DataGridView Selection
@@ -152,7 +174,7 @@ namespace GymManagementSystem.FORMS.DietPlan
                {
                    DietPlanUI dietPlanUI = new DietPlanUI();
 
-                   DataTable dataTable = dietPlanUI.RetrieveDietPlansUI();
+                   dataTable = dietPlanUI.RetrieveDietPlansUI();
 
                    dgvDietPlan.AutoGenerateColumns = false;
                    dgvDietPlan.Rows.Clear();
@@ -186,15 +208,6 @@ namespace GymManagementSystem.FORMS.DietPlan
                    MessageBox.Show(ex.Message);
                }
            }
-           private void tlpAddButton_MouseEnter(object sender, EventArgs e)
-           {
-               this.tlpAddButton.BackColor = Color.FromArgb(220, 225, 230);
-           }
-
-           private void tlpAddButton_MouseLeave(object sender, EventArgs e)
-           {
-               this.tlpAddButton.BackColor = Color.FromArgb(236, 240, 243);
-           }
         //SelectDietPlanDocument Method
         private void SelectDietPlanDocument(int rowIndex)
            {
@@ -218,18 +231,11 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Update Data On DataGridView
         private void dgvDietPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-               if (e.RowIndex < 0)
-                   return;
-
-               //if (dgvDietPlan.Columns[e.ColumnIndex].Name == "ColDocument")
-               //{
-               //    SelectDietPlanDocument(e.RowIndex);
-               //    return;
-               //}
-
+            if (e.RowIndex < 0)
+                return;
+            //Update
                if (dgvDietPlan.Columns[e.ColumnIndex].Name == "ColAction")
                {
-                   //dgvDietPlan.EndEdit();
                    DialogResult result = MessageBox.Show("Are you sure you want to update this diet plan?","Confirm Update",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                    if (result == DialogResult.Yes)
                    {
@@ -238,26 +244,16 @@ namespace GymManagementSystem.FORMS.DietPlan
                            int dietPlanId = Convert.ToInt32(
                                dgvDietPlan.Rows[e.RowIndex]
                                .Cells["colDietPlanId"].Value);
-
                            string calories = dgvDietPlan.Rows[e.RowIndex]
                                .Cells["ColCaloriesPerDay"].Value.ToString();
-
                            calories = calories.Replace(" Kcal", "");
-
                            int caloriesPerDay = Convert.ToInt32(calories);
-
                            string conditionStatus = dgvDietPlan.Rows[e.RowIndex]
                                .Cells["ColCondition"].Value.ToString();
-
                            DietPlanUI dietPlanUI = new DietPlanUI();
-
                            string message = dietPlanUI.UpdateDietPlanUI(dietPlanId,caloriesPerDay,dietPlanDocument,conditionStatus);
-
                            MessageBox.Show(message);
-
                            RetrieveAllDietPlan();
-
-                           //dietPlanDocument = null;
                        }
                        catch (Exception ex)
                        {
@@ -265,17 +261,117 @@ namespace GymManagementSystem.FORMS.DietPlan
                        }
                    }
                }
-           }
-        //Image Insert or Update On Data Gridview
-        private void dgvDietPlan_CellClick(object sender, DataGridViewCellEventArgs e)
-           {
-               if (e.RowIndex < 0)
-                   return;
-
-               if (dgvDietPlan.Columns[e.ColumnIndex].Name == "ColDocument")
+            //Document Preview
+               if (dgvDietPlan.Columns[e.ColumnIndex].Name == "colPreview")
                {
-                   SelectDietPlanDocument(e.RowIndex);
+                   int dietPlanId = Convert.ToInt32(
+                       dgvDietPlan.Rows[e.RowIndex]
+                           .Cells["colDietPlanId"].Value);
+                   DataRow[] rows = dataTable.Select(
+                       "DietPlanId = " + dietPlanId);
+                   if (rows.Length == 0)
+                   {
+                       MessageBox.Show("Unable to retrieve document.");
+                       return;
+                   }
+
+                   object value = rows[0]["DietPlanDocument"];
+
+                   if (value == null || value == DBNull.Value)
+                   {
+                       MessageBox.Show("No document available.");
+                       return;
+                   }
+
+                   byte[] documentBytes = (byte[])value;
+
+                   ShowDocument(documentBytes);
                }
            }
-       }  
-}
+        //Image Insert or Update On Data Gridview
+        private void ShowDocument(byte[] documentBytes)
+        {
+            using (MemoryStream ms = new MemoryStream(documentBytes))
+            {
+                Image image = Image.FromStream(ms);
+
+                Form previewForm = new Form();
+                previewForm.ShowIcon = false;
+                previewForm.Text = "Diet Plan Document";
+                previewForm.StartPosition = FormStartPosition.CenterScreen;
+                previewForm.Size = new Size(700, 500);
+
+                PictureBox pictureBox = new PictureBox();
+
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.Image = new Bitmap(image);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+                previewForm.Controls.Add(pictureBox);
+
+                previewForm.ShowDialog();
+            }
+        }
+
+        private void dgvDietPlan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDietPlan.Columns[e.ColumnIndex].Name == "ColDocument")
+            {
+                SelectDietPlanDocument(e.RowIndex);
+            }
+        }
+
+        private void dgvDietPlan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvDietPlan.Columns[e.ColumnIndex].Name == "Document")
+            {
+                object value = dgvDietPlan.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                if (value != null && value != DBNull.Value)
+                {
+                    byte[] document = value as byte[];
+
+                    if (document != null && document.Length > 0)
+                    {
+                        e.Value = "Document Available";
+                    }
+                    else
+                    {
+                        e.Value = "No Document";
+                    }
+                }
+                else
+                {
+                    e.Value = "No Document";
+                }
+
+                e.FormattingApplied = true;
+            }
+        }
+
+        private void pnlAddNew_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.White;
+            picAddButton.Image = Properties.Resources.plusHOVER;
+            lblAddNew.ForeColor = Color.MidnightBlue;
+        }
+
+        private void pnlAddNew_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.plus;
+            lblAddNew.ForeColor = Color.White;
+        }
+
+        private void pnlAddNew_Click(object sender, EventArgs e)
+        {
+            FrmAddNewDietPlan FrmAddNewDietPlan = new FrmAddNewDietPlan();
+            FrmAddNewDietPlan.ShowDialog();
+            RetrieveAllDietPlan();
+        }
+        }
+    }  
+

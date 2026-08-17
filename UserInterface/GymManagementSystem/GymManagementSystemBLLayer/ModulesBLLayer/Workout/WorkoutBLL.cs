@@ -33,10 +33,10 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Workout
             return workoutDAL.GetExercisesForComboBox();
         }
         // Retrieves specific exercise details.
-        public DataTable RetrieveSpecificExerciseBLL(int exerciseId)
+        public DataTable RetrieveSpecificExerciseBLL(string Search)
         {
             WorkoutDAL workoutDAL = new WorkoutDAL();
-            return workoutDAL.RetrieveSpecificExerciseDAL(exerciseId);
+            return workoutDAL.RetrieveSpecificExerciseDAL(Search);
         }
         // Insert Exercise
         public string InsertExerciseBLL(string exerciseName,string muscleType)
@@ -91,10 +91,10 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Workout
             return workoutDAL.GetWorkoutPlansForComboBox();
         }
         // Retrieves specific workout plan details.
-        public DataTable RetrieveSpecificWorkoutPlanBLL(int workoutPlanId)
+        public DataTable RetrieveSpecificWorkoutPlanBLL(string Search)
         {
             WorkoutDAL workoutDAL = new WorkoutDAL();
-            return workoutDAL.RetrieveSpecificWorkoutPlanDAL(workoutPlanId);
+            return workoutDAL.RetrieveSpecificWorkoutPlanDAL(Search);
         }
         // Insert Workout Plan
         public string InsertWorkoutPlanBLL(string workoutName, string description)

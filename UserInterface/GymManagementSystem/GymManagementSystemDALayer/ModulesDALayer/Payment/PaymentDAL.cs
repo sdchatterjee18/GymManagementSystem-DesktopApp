@@ -27,7 +27,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
         public PaymentDAL()
         {
             AllMemberPaymentSPName = "spGetAllMemberSubscriptionPaymentDetails";  //Set AllMemberPaymentSPName
-            SpecificMemberPaymentSPName = "spGetSubscriptionHistoryByPhoneNo";    // Set SpecificMemberPaymentSPName
+            SpecificMemberPaymentSPName = "spGetSubscriptionHistoryByDetails";    // Set SpecificMemberPaymentSPName
         }
 
         //Retrieve All Member Subscription Payment Details
@@ -45,8 +45,9 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
                     PaymentDAL PaymentDAL = new PaymentDAL
                     {
                         MemberName = row["MemberName"].ToString(),
+                        PhoneNo = row["PhoneNo"].ToString(),
                         MemberShipPlanName = row["MembershipPlanName"].ToString(),
-                        PaymentDate = Convert.ToDateTime( row["PaymentDate"]),
+                        PaymentDate = Convert.ToDateTime( row["PaymentDate"]).Date,
                         PaymentMethod = row["PaymentMethod"].ToString(),
                         Amount = Convert.ToDecimal(row["Amount"]),
                         FeesType = row["FeesType"].ToString()
@@ -61,16 +62,16 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
 
             }
         }
-        public List<PaymentDAL> RetrieveSpecificMemberSubscriptionByPhoneNoDAL(string phoneNo)
+        public List<PaymentDAL> RetrieveSpecificMemberSubscriptionByDetailsDAL(string Search)
         {
             List<PaymentDAL> MemberSubscriptionPaymentDetails = null;
             try
             {
-                PhoneNo = phoneNo; // Set the value of PhoneNo
+               
                 MemberSubscriptionPaymentDetails = new List<PaymentDAL>();
                 SqlParameter[] sqlParameter =new SqlParameter[]
                 {
-                    new  SqlParameter("@PhoneNo",PhoneNo)
+                    new  SqlParameter("@SearchText",Search)
                 };
                 DataTable MemberPaymentSubscriptionDataTable = LookupDAL.RetrieveSpecificDetails(SpecificMemberPaymentSPName,sqlParameter);
                 foreach (DataRow Row in MemberPaymentSubscriptionDataTable.Rows)
@@ -78,6 +79,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
                     PaymentDAL paymentDAL = new PaymentDAL
                     {
                         MemberName = Row["MemberName"].ToString(),
+                        PhoneNo = Row["PhoneNo"].ToString(),
                         MemberShipPlanName = Row["MembershipPlanName"].ToString(),
                         PaymentDate = Convert.ToDateTime(Row["PaymentDate"]),
                         PaymentMethod = Row["PaymentMethod"].ToString(),
@@ -92,6 +94,89 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Payment
             {
                 return MemberSubscriptionPaymentDetails;
             }
+        }
+
+       // Super Admin 
+        public DataTable SARetrieveSubscriptionPaymentDetailsByMonthDAL(int month, int year)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Month", SqlDbType.Int)
+                {
+                    Value = month
+                },
+
+                new SqlParameter("@Year", SqlDbType.Int)
+                {
+                    Value = year
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveSubscriptionPaymentDetailsByMonth",
+                sqlParameters);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountByMonthDAL(int month, int year)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Month", SqlDbType.Int)
+                {
+                    Value = month
+                },
+
+                new SqlParameter("@Year", SqlDbType.Int)
+                {
+                    Value = year
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveTotalPaidSubscriptionAmountByMonth",
+                sqlParameters);
+        }
+        public DataTable SARetrieveAllMemberSubscriptionPaymentDetailsDAL()
+        {
+            return LookupDAL.RetrieveSpecificItem(
+                "spGetAllMemberSubscriptionPaymentDetails");
+        }
+        public DataTable SARetrieveSubscriptionPaymentDetailsBetweenDateRangeDAL(DateTime startDate, DateTime endDate)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@StartDate", SqlDbType.Date)
+                {
+                    Value = startDate
+                },
+
+                new SqlParameter("@EndDate", SqlDbType.Date)
+                {
+                    Value = endDate
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveSubscriptionPaymentDetailsBetweenDateRange",
+                sqlParameters);
+        }
+        public DataTable SARetrieveTotalPaidSubscriptionAmountBetweenDateRangeDAL(DateTime startDate, DateTime endDate)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@StartDate", SqlDbType.Date)
+                {
+                    Value = startDate
+                },
+
+                new SqlParameter("@EndDate", SqlDbType.Date)
+                {
+                    Value = endDate
+                }
+            };
+
+            return LookupDAL.RetrieveSpecificDetails(
+                "spRetrieveTotalPaidSubscriptionAmountBetweenDateRange",
+                sqlParameters);
         }
     }
 }
