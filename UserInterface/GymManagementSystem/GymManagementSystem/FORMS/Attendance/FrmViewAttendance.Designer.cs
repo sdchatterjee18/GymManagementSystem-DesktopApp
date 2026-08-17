@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewAttendance));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpViewAttendanceEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpViewAttendanceHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picViewAttendanceMark = new System.Windows.Forms.PictureBox();
@@ -42,6 +42,11 @@
             this.lblViewMemberAttendance = new System.Windows.Forms.Label();
             this.lblViewAttendance = new System.Windows.Forms.Label();
             this.dgvViewAttendance = new System.Windows.Forms.DataGridView();
+            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAttendanceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpViewAttendanceMonthAndYearSearch = new System.Windows.Forms.TableLayoutPanel();
             this.picViewAttendanceSearch2 = new System.Windows.Forms.PictureBox();
             this.btnViewAttendanceSearch = new System.Windows.Forms.Button();
@@ -50,11 +55,6 @@
             this.tlpViewAttendanceSearchBar = new System.Windows.Forms.TableLayoutPanel();
             this.picViewAttendanceSearch1 = new System.Windows.Forms.PictureBox();
             this.txtViewMemberMobileNumber = new System.Windows.Forms.TextBox();
-            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAttendanceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpViewAttendanceEntireForm.SuspendLayout();
             this.tlpViewAttendanceHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picViewAttendanceMark)).BeginInit();
@@ -164,23 +164,23 @@
             this.dgvViewAttendance.AllowUserToAddRows = false;
             this.dgvViewAttendance.AllowUserToDeleteRows = false;
             this.dgvViewAttendance.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.dgvViewAttendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.dgvViewAttendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvViewAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvViewAttendance.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvViewAttendance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvViewAttendance.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvViewAttendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvViewAttendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvViewAttendance.ColumnHeadersHeight = 40;
             this.dgvViewAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvViewAttendance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -189,43 +189,99 @@
             this.colPhoneNo,
             this.colShiftName,
             this.colAttendanceDate});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvViewAttendance.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvViewAttendance.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvViewAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvViewAttendance.EnableHeadersVisualStyles = false;
             this.dgvViewAttendance.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvViewAttendance.Location = new System.Drawing.Point(45, 168);
-            this.dgvViewAttendance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvViewAttendance.Margin = new System.Windows.Forms.Padding(2);
             this.dgvViewAttendance.MultiSelect = false;
             this.dgvViewAttendance.Name = "dgvViewAttendance";
             this.dgvViewAttendance.ReadOnly = true;
             this.dgvViewAttendance.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvViewAttendance.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvViewAttendance.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvViewAttendance.RowHeadersVisible = false;
             this.dgvViewAttendance.RowHeadersWidth = 50;
             this.dgvViewAttendance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.dgvViewAttendance.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.dgvViewAttendance.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvViewAttendance.RowTemplate.Height = 30;
-            this.dgvViewAttendance.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvViewAttendance.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvViewAttendance.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvViewAttendance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvViewAttendance.Size = new System.Drawing.Size(772, 408);
             this.dgvViewAttendance.TabIndex = 20;
+            // 
+            // colSerialNo
+            // 
+            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colSerialNo.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSerialNo.FillWeight = 90F;
+            this.colSerialNo.HeaderText = "Sl No.";
+            this.colSerialNo.Name = "colSerialNo";
+            this.colSerialNo.ReadOnly = true;
+            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSerialNo.Width = 70;
+            // 
+            // colMemberName
+            // 
+            this.colMemberName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colMemberName.DataPropertyName = "MemberName";
+            this.colMemberName.FillWeight = 180F;
+            this.colMemberName.HeaderText = "Member Name";
+            this.colMemberName.Name = "colMemberName";
+            this.colMemberName.ReadOnly = true;
+            this.colMemberName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMemberName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMemberName.Width = 170;
+            // 
+            // colPhoneNo
+            // 
+            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPhoneNo.DataPropertyName = "PhoneNo";
+            this.colPhoneNo.HeaderText = "Phone No.";
+            this.colPhoneNo.Name = "colPhoneNo";
+            this.colPhoneNo.ReadOnly = true;
+            this.colPhoneNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colShiftName
+            // 
+            this.colShiftName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colShiftName.DataPropertyName = "ShiftName";
+            this.colShiftName.HeaderText = "Shift Name";
+            this.colShiftName.Name = "colShiftName";
+            this.colShiftName.ReadOnly = true;
+            this.colShiftName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colShiftName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colAttendanceDate
+            // 
+            this.colAttendanceDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colAttendanceDate.DataPropertyName = "AttendanceDate";
+            this.colAttendanceDate.HeaderText = "Attendance Date";
+            this.colAttendanceDate.Name = "colAttendanceDate";
+            this.colAttendanceDate.ReadOnly = true;
+            this.colAttendanceDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAttendanceDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tlpViewAttendanceMonthAndYearSearch
             // 
@@ -302,7 +358,7 @@
             this.cmbViewAttendanceShiftSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbViewAttendanceShiftSearch.ForeColor = System.Drawing.Color.Black;
             this.cmbViewAttendanceShiftSearch.FormattingEnabled = true;
-            this.cmbViewAttendanceShiftSearch.Location = new System.Drawing.Point(33, 2);
+            this.cmbViewAttendanceShiftSearch.Location = new System.Drawing.Point(33, 4);
             this.cmbViewAttendanceShiftSearch.Margin = new System.Windows.Forms.Padding(0);
             this.cmbViewAttendanceShiftSearch.Name = "cmbViewAttendanceShiftSearch";
             this.cmbViewAttendanceShiftSearch.Size = new System.Drawing.Size(237, 23);
@@ -354,62 +410,6 @@
             this.txtViewMemberMobileNumber.Text = " Enter Mobile No.";
             this.txtViewMemberMobileNumber.Enter += new System.EventHandler(this.txtViewMemberMobileNumber_Enter);
             this.txtViewMemberMobileNumber.Leave += new System.EventHandler(this.txtViewMemberMobileNumber_Leave);
-            // 
-            // colSerialNo
-            // 
-            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSerialNo.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colSerialNo.FillWeight = 90F;
-            this.colSerialNo.HeaderText = "Sl No.";
-            this.colSerialNo.Name = "colSerialNo";
-            this.colSerialNo.ReadOnly = true;
-            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSerialNo.Width = 70;
-            // 
-            // colMemberName
-            // 
-            this.colMemberName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colMemberName.DataPropertyName = "MemberName";
-            this.colMemberName.FillWeight = 180F;
-            this.colMemberName.HeaderText = "Member Name";
-            this.colMemberName.Name = "colMemberName";
-            this.colMemberName.ReadOnly = true;
-            this.colMemberName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMemberName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMemberName.Width = 170;
-            // 
-            // colPhoneNo
-            // 
-            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPhoneNo.DataPropertyName = "PhoneNo";
-            this.colPhoneNo.HeaderText = "Phone No.";
-            this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.ReadOnly = true;
-            this.colPhoneNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colShiftName
-            // 
-            this.colShiftName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colShiftName.DataPropertyName = "ShiftName";
-            this.colShiftName.HeaderText = "Shift Name";
-            this.colShiftName.Name = "colShiftName";
-            this.colShiftName.ReadOnly = true;
-            this.colShiftName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colShiftName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colAttendanceDate
-            // 
-            this.colAttendanceDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colAttendanceDate.DataPropertyName = "AttendanceDate";
-            this.colAttendanceDate.HeaderText = "Attendance Date";
-            this.colAttendanceDate.Name = "colAttendanceDate";
-            this.colAttendanceDate.ReadOnly = true;
-            this.colAttendanceDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAttendanceDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FrmViewAttendance
             // 

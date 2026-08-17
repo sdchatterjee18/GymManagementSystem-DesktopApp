@@ -69,7 +69,7 @@
             this.pnlAddNewWorkoutScheduleForm.Controls.Add(this.pnlSubNewWorkoutScheduleTitle);
             this.pnlAddNewWorkoutScheduleForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddNewWorkoutScheduleForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddNewWorkoutScheduleForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAddNewWorkoutScheduleForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAddNewWorkoutScheduleForm.Name = "pnlAddNewWorkoutScheduleForm";
             this.pnlAddNewWorkoutScheduleForm.Size = new System.Drawing.Size(344, 373);
             this.pnlAddNewWorkoutScheduleForm.TabIndex = 4;
@@ -89,7 +89,7 @@
             this.tlpNewWorkoutScheduleDetails.Controls.Add(this.cmbWorkoutDays, 1, 5);
             this.tlpNewWorkoutScheduleDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNewWorkoutScheduleDetails.Location = new System.Drawing.Point(0, 68);
-            this.tlpNewWorkoutScheduleDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewWorkoutScheduleDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutScheduleDetails.Name = "tlpNewWorkoutScheduleDetails";
             this.tlpNewWorkoutScheduleDetails.RowCount = 8;
             this.tlpNewWorkoutScheduleDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.83432F));
@@ -140,7 +140,7 @@
             this.tlpSubmitionWorkoutSchedule.Controls.Add(this.lblMessageBoxWorkoutSchedule, 0, 0);
             this.tlpSubmitionWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitionWorkoutSchedule.Location = new System.Drawing.Point(16, 257);
-            this.tlpSubmitionWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmitionWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitionWorkoutSchedule.Name = "tlpSubmitionWorkoutSchedule";
             this.tlpSubmitionWorkoutSchedule.RowCount = 1;
             this.tlpSubmitionWorkoutSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -154,7 +154,7 @@
             this.pnlClickSubmitWorkoutSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickSubmitWorkoutSchedule.Controls.Add(this.tlpSubmitBoxWorkoutSchedule);
             this.pnlClickSubmitWorkoutSchedule.Location = new System.Drawing.Point(209, 8);
-            this.pnlClickSubmitWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlClickSubmitWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.pnlClickSubmitWorkoutSchedule.Name = "pnlClickSubmitWorkoutSchedule";
             this.pnlClickSubmitWorkoutSchedule.Size = new System.Drawing.Size(83, 23);
             this.pnlClickSubmitWorkoutSchedule.TabIndex = 6;
@@ -172,7 +172,7 @@
             this.tlpSubmitBoxWorkoutSchedule.Controls.Add(this.lblAddNewWorkoutSchedule, 1, 0);
             this.tlpSubmitBoxWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitBoxWorkoutSchedule.Location = new System.Drawing.Point(0, 0);
-            this.tlpSubmitBoxWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSubmitBoxWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitBoxWorkoutSchedule.Name = "tlpSubmitBoxWorkoutSchedule";
             this.tlpSubmitBoxWorkoutSchedule.RowCount = 1;
             this.tlpSubmitBoxWorkoutSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -188,7 +188,7 @@
             this.picAddButtonWorkoutSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.picAddButtonWorkoutSchedule.Image = global::GymManagementSystem.Properties.Resources.paper_plane;
             this.picAddButtonWorkoutSchedule.Location = new System.Drawing.Point(10, 2);
-            this.picAddButtonWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddButtonWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.picAddButtonWorkoutSchedule.Name = "picAddButtonWorkoutSchedule";
             this.picAddButtonWorkoutSchedule.Size = new System.Drawing.Size(14, 17);
             this.picAddButtonWorkoutSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -222,9 +222,9 @@
             this.btnClearWorkoutSchedule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearWorkoutSchedule.ForeColor = System.Drawing.Color.White;
             this.btnClearWorkoutSchedule.Location = new System.Drawing.Point(149, 8);
-            this.btnClearWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearWorkoutSchedule.Name = "btnClearWorkoutSchedule";
-            this.btnClearWorkoutSchedule.Size = new System.Drawing.Size(54, 23);
+            this.btnClearWorkoutSchedule.Size = new System.Drawing.Size(53, 23);
             this.btnClearWorkoutSchedule.TabIndex = 5;
             this.btnClearWorkoutSchedule.Text = "Clear";
             this.btnClearWorkoutSchedule.UseVisualStyleBackColor = false;
@@ -262,7 +262,7 @@
             this.cmbWorkoutName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorkoutName.FormattingEnabled = true;
             this.cmbWorkoutName.Location = new System.Drawing.Point(16, 38);
-            this.cmbWorkoutName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbWorkoutName.Margin = new System.Windows.Forms.Padding(2);
             this.cmbWorkoutName.Name = "cmbWorkoutName";
             this.cmbWorkoutName.Size = new System.Drawing.Size(294, 21);
             this.cmbWorkoutName.TabIndex = 10;
@@ -272,7 +272,7 @@
             this.cmbExerciseName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExerciseName.FormattingEnabled = true;
             this.cmbExerciseName.Location = new System.Drawing.Point(16, 111);
-            this.cmbExerciseName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbExerciseName.Margin = new System.Windows.Forms.Padding(2);
             this.cmbExerciseName.Name = "cmbExerciseName";
             this.cmbExerciseName.Size = new System.Drawing.Size(294, 21);
             this.cmbExerciseName.TabIndex = 10;
@@ -282,7 +282,7 @@
             this.cmbWorkoutDays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorkoutDays.FormattingEnabled = true;
             this.cmbWorkoutDays.Location = new System.Drawing.Point(16, 184);
-            this.cmbWorkoutDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbWorkoutDays.Margin = new System.Windows.Forms.Padding(2);
             this.cmbWorkoutDays.Name = "cmbWorkoutDays";
             this.cmbWorkoutDays.Size = new System.Drawing.Size(294, 21);
             this.cmbWorkoutDays.TabIndex = 10;
@@ -292,7 +292,7 @@
             this.pnlSubNewWorkoutScheduleTitle.Controls.Add(this.tlpMainNewWorkoutScheduleTitle);
             this.pnlSubNewWorkoutScheduleTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubNewWorkoutScheduleTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSubNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSubNewWorkoutScheduleTitle.Name = "pnlSubNewWorkoutScheduleTitle";
             this.pnlSubNewWorkoutScheduleTitle.Size = new System.Drawing.Size(344, 68);
             this.pnlSubNewWorkoutScheduleTitle.TabIndex = 0;
@@ -302,14 +302,14 @@
             this.tlpMainNewWorkoutScheduleTitle.ColumnCount = 5;
             this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
             this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.92308F));
-            this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 182F));
-            this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMainNewWorkoutScheduleTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tlpMainNewWorkoutScheduleTitle.Controls.Add(this.picAddWorkoutSchedule, 1, 0);
             this.tlpMainNewWorkoutScheduleTitle.Controls.Add(this.tlpNewWorkoutScheduleTitle, 2, 0);
             this.tlpMainNewWorkoutScheduleTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpMainNewWorkoutScheduleTitle.Location = new System.Drawing.Point(0, 0);
-            this.tlpMainNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMainNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMainNewWorkoutScheduleTitle.Name = "tlpMainNewWorkoutScheduleTitle";
             this.tlpMainNewWorkoutScheduleTitle.RowCount = 1;
             this.tlpMainNewWorkoutScheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -320,7 +320,7 @@
             // 
             this.picAddWorkoutSchedule.Image = ((System.Drawing.Image)(resources.GetObject("picAddWorkoutSchedule.Image")));
             this.picAddWorkoutSchedule.Location = new System.Drawing.Point(14, 2);
-            this.picAddWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAddWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.picAddWorkoutSchedule.Name = "picAddWorkoutSchedule";
             this.picAddWorkoutSchedule.Size = new System.Drawing.Size(36, 58);
             this.picAddWorkoutSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,13 +335,13 @@
             this.tlpNewWorkoutScheduleTitle.Controls.Add(this.lblNewWorkoutSchedule, 0, 0);
             this.tlpNewWorkoutScheduleTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNewWorkoutScheduleTitle.Location = new System.Drawing.Point(54, 2);
-            this.tlpNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpNewWorkoutScheduleTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutScheduleTitle.Name = "tlpNewWorkoutScheduleTitle";
             this.tlpNewWorkoutScheduleTitle.RowCount = 3;
             this.tlpNewWorkoutScheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.38889F));
             this.tlpNewWorkoutScheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.59322F));
             this.tlpNewWorkoutScheduleTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.55932F));
-            this.tlpNewWorkoutScheduleTitle.Size = new System.Drawing.Size(178, 59);
+            this.tlpNewWorkoutScheduleTitle.Size = new System.Drawing.Size(202, 59);
             this.tlpNewWorkoutScheduleTitle.TabIndex = 3;
             // 
             // lblViewWorkoutSchedule
@@ -352,7 +352,7 @@
             this.lblViewWorkoutSchedule.Location = new System.Drawing.Point(2, 30);
             this.lblViewWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblViewWorkoutSchedule.Name = "lblViewWorkoutSchedule";
-            this.lblViewWorkoutSchedule.Size = new System.Drawing.Size(163, 20);
+            this.lblViewWorkoutSchedule.Size = new System.Drawing.Size(198, 13);
             this.lblViewWorkoutSchedule.TabIndex = 3;
             this.lblViewWorkoutSchedule.Text = "Input New Workout Schedule Details";
             // 
@@ -364,7 +364,7 @@
             this.lblNewWorkoutSchedule.Location = new System.Drawing.Point(2, 7);
             this.lblNewWorkoutSchedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewWorkoutSchedule.Name = "lblNewWorkoutSchedule";
-            this.lblNewWorkoutSchedule.Size = new System.Drawing.Size(174, 23);
+            this.lblNewWorkoutSchedule.Size = new System.Drawing.Size(194, 23);
             this.lblNewWorkoutSchedule.TabIndex = 2;
             this.lblNewWorkoutSchedule.Text = "New Workout Schedule";
             // 
