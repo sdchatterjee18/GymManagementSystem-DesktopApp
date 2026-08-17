@@ -304,7 +304,7 @@
             this.picPaymentDetails.Image = ((System.Drawing.Image)(resources.GetObject("picPaymentDetails.Image")));
             this.picPaymentDetails.Location = new System.Drawing.Point(3, 3);
             this.picPaymentDetails.Name = "picPaymentDetails";
-            this.picPaymentDetails.Size = new System.Drawing.Size(34, 40);
+            this.picPaymentDetails.Size = new System.Drawing.Size(38, 40);
             this.picPaymentDetails.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPaymentDetails.TabIndex = 0;
             this.picPaymentDetails.TabStop = false;
@@ -312,8 +312,8 @@
             // tlpHoleMemberProfile
             // 
             this.tlpHoleMemberProfile.ColumnCount = 2;
-            this.tlpHoleMemberProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpHoleMemberProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpHoleMemberProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.61485F));
+            this.tlpHoleMemberProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.38515F));
             this.tlpHoleMemberProfile.Controls.Add(this.tlpAsidePersonalDetails, 0, 0);
             this.tlpHoleMemberProfile.Controls.Add(this.pnlHoleMembershipAndSubscriptionDetails, 1, 0);
             this.tlpHoleMemberProfile.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -345,7 +345,7 @@
             this.tlpAsidePersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.649616F));
             this.tlpAsidePersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.184143F));
             this.tlpAsidePersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.56778F));
-            this.tlpAsidePersonalDetails.Size = new System.Drawing.Size(344, 593);
+            this.tlpAsidePersonalDetails.Size = new System.Drawing.Size(306, 593);
             this.tlpAsidePersonalDetails.TabIndex = 0;
             // 
             // tlpMemberPicture
@@ -361,17 +361,17 @@
             this.tlpMemberPicture.Name = "tlpMemberPicture";
             this.tlpMemberPicture.RowCount = 1;
             this.tlpMemberPicture.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberPicture.Size = new System.Drawing.Size(340, 123);
+            this.tlpMemberPicture.Size = new System.Drawing.Size(302, 123);
             this.tlpMemberPicture.TabIndex = 0;
             // 
             // PicMemberPicture
             // 
             this.PicMemberPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PicMemberPicture.Image = ((System.Drawing.Image)(resources.GetObject("PicMemberPicture.Image")));
-            this.PicMemberPicture.Location = new System.Drawing.Point(104, 2);
+            this.PicMemberPicture.Location = new System.Drawing.Point(92, 2);
             this.PicMemberPicture.Margin = new System.Windows.Forms.Padding(2);
             this.PicMemberPicture.Name = "PicMemberPicture";
-            this.PicMemberPicture.Size = new System.Drawing.Size(132, 119);
+            this.PicMemberPicture.Size = new System.Drawing.Size(116, 119);
             this.PicMemberPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicMemberPicture.TabIndex = 0;
             this.PicMemberPicture.TabStop = false;
@@ -389,14 +389,14 @@
             this.tlpMemberPersonalDetailsIconAndTitle.Name = "tlpMemberPersonalDetailsIconAndTitle";
             this.tlpMemberPersonalDetailsIconAndTitle.RowCount = 1;
             this.tlpMemberPersonalDetailsIconAndTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberPersonalDetailsIconAndTitle.Size = new System.Drawing.Size(340, 44);
+            this.tlpMemberPersonalDetailsIconAndTitle.Size = new System.Drawing.Size(302, 44);
             this.tlpMemberPersonalDetailsIconAndTitle.TabIndex = 3;
             // 
             // picMemberPersonalDetails
             // 
             this.picMemberPersonalDetails.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMemberPersonalDetails.Image = ((System.Drawing.Image)(resources.GetObject("picMemberPersonalDetails.Image")));
-            this.picMemberPersonalDetails.Location = new System.Drawing.Point(9, 9);
+            this.picMemberPersonalDetails.Location = new System.Drawing.Point(5, 9);
             this.picMemberPersonalDetails.Margin = new System.Windows.Forms.Padding(2);
             this.picMemberPersonalDetails.Name = "picMemberPersonalDetails";
             this.picMemberPersonalDetails.Size = new System.Drawing.Size(23, 26);
@@ -410,7 +410,7 @@
             this.lblPersonalDetails.AutoSize = true;
             this.lblPersonalDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonalDetails.ForeColor = System.Drawing.Color.Blue;
-            this.lblPersonalDetails.Location = new System.Drawing.Point(36, 11);
+            this.lblPersonalDetails.Location = new System.Drawing.Point(32, 11);
             this.lblPersonalDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPersonalDetails.Name = "lblPersonalDetails";
             this.lblPersonalDetails.Size = new System.Drawing.Size(124, 21);
@@ -430,7 +430,7 @@
             this.tlpMemberIconAndName.Name = "tlpMemberIconAndName";
             this.tlpMemberIconAndName.RowCount = 1;
             this.tlpMemberIconAndName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberIconAndName.Size = new System.Drawing.Size(340, 35);
+            this.tlpMemberIconAndName.Size = new System.Drawing.Size(302, 35);
             this.tlpMemberIconAndName.TabIndex = 4;
             // 
             // pnlMemberNameDisplay
@@ -438,10 +438,10 @@
             this.pnlMemberNameDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMemberNameDisplay.Controls.Add(this.tlpMiddlePartMemberNameAndIcon);
             this.pnlMemberNameDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMemberNameDisplay.Location = new System.Drawing.Point(70, 2);
+            this.pnlMemberNameDisplay.Location = new System.Drawing.Point(62, 2);
             this.pnlMemberNameDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMemberNameDisplay.Name = "pnlMemberNameDisplay";
-            this.pnlMemberNameDisplay.Size = new System.Drawing.Size(200, 31);
+            this.pnlMemberNameDisplay.Size = new System.Drawing.Size(177, 31);
             this.pnlMemberNameDisplay.TabIndex = 0;
             // 
             // tlpMiddlePartMemberNameAndIcon
@@ -459,7 +459,7 @@
             this.tlpMiddlePartMemberNameAndIcon.RowCount = 1;
             this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMiddlePartMemberNameAndIcon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMiddlePartMemberNameAndIcon.Size = new System.Drawing.Size(198, 29);
+            this.tlpMiddlePartMemberNameAndIcon.Size = new System.Drawing.Size(175, 29);
             this.tlpMiddlePartMemberNameAndIcon.TabIndex = 3;
             this.tlpMiddlePartMemberNameAndIcon.MouseEnter += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseEnter);
             this.tlpMiddlePartMemberNameAndIcon.MouseLeave += new System.EventHandler(this.tlpMiddlePartMemberNameAndIcon_MouseLeave);
@@ -471,7 +471,7 @@
             this.picMemberNameIcon.Location = new System.Drawing.Point(2, 2);
             this.picMemberNameIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picMemberNameIcon.Name = "picMemberNameIcon";
-            this.picMemberNameIcon.Size = new System.Drawing.Size(25, 25);
+            this.picMemberNameIcon.Size = new System.Drawing.Size(22, 25);
             this.picMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberNameIcon.TabIndex = 0;
             this.picMemberNameIcon.TabStop = false;
@@ -484,10 +484,10 @@
             this.lblMemberName.AutoSize = true;
             this.lblMemberName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberName.ForeColor = System.Drawing.Color.White;
-            this.lblMemberName.Location = new System.Drawing.Point(31, 5);
+            this.lblMemberName.Location = new System.Drawing.Point(28, 5);
             this.lblMemberName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberName.Name = "lblMemberName";
-            this.lblMemberName.Size = new System.Drawing.Size(165, 19);
+            this.lblMemberName.Size = new System.Drawing.Size(145, 19);
             this.lblMemberName.TabIndex = 1;
             this.lblMemberName.Text = "SK Kamraj";
             this.lblMemberName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -552,14 +552,14 @@
             this.tlpMemberPersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpMemberPersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpMemberPersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpMemberPersonalDetails.Size = new System.Drawing.Size(340, 346);
+            this.tlpMemberPersonalDetails.Size = new System.Drawing.Size(302, 346);
             this.tlpMemberPersonalDetails.TabIndex = 5;
             // 
             // picMemberStatus
             // 
             this.picMemberStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMemberStatus.Image = ((System.Drawing.Image)(resources.GetObject("picMemberStatus.Image")));
-            this.picMemberStatus.Location = new System.Drawing.Point(11, 277);
+            this.picMemberStatus.Location = new System.Drawing.Point(7, 277);
             this.picMemberStatus.Margin = new System.Windows.Forms.Padding(2);
             this.picMemberStatus.Name = "picMemberStatus";
             this.picMemberStatus.Size = new System.Drawing.Size(22, 24);
@@ -571,7 +571,7 @@
             // 
             this.picUpdateAt.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picUpdateAt.Image = ((System.Drawing.Image)(resources.GetObject("picUpdateAt.Image")));
-            this.picUpdateAt.Location = new System.Drawing.Point(11, 243);
+            this.picUpdateAt.Location = new System.Drawing.Point(7, 243);
             this.picUpdateAt.Margin = new System.Windows.Forms.Padding(2);
             this.picUpdateAt.Name = "picUpdateAt";
             this.picUpdateAt.Size = new System.Drawing.Size(22, 24);
@@ -583,7 +583,7 @@
             // 
             this.picJoiningDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picJoiningDate.Image = ((System.Drawing.Image)(resources.GetObject("picJoiningDate.Image")));
-            this.picJoiningDate.Location = new System.Drawing.Point(11, 209);
+            this.picJoiningDate.Location = new System.Drawing.Point(7, 209);
             this.picJoiningDate.Margin = new System.Windows.Forms.Padding(2);
             this.picJoiningDate.Name = "picJoiningDate";
             this.picJoiningDate.Size = new System.Drawing.Size(22, 24);
@@ -595,7 +595,7 @@
             // 
             this.picEmergencyContact.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picEmergencyContact.Image = ((System.Drawing.Image)(resources.GetObject("picEmergencyContact.Image")));
-            this.picEmergencyContact.Location = new System.Drawing.Point(11, 175);
+            this.picEmergencyContact.Location = new System.Drawing.Point(7, 175);
             this.picEmergencyContact.Margin = new System.Windows.Forms.Padding(2);
             this.picEmergencyContact.Name = "picEmergencyContact";
             this.picEmergencyContact.Size = new System.Drawing.Size(22, 24);
@@ -607,7 +607,7 @@
             // 
             this.picAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picAddress.Image = ((System.Drawing.Image)(resources.GetObject("picAddress.Image")));
-            this.picAddress.Location = new System.Drawing.Point(11, 141);
+            this.picAddress.Location = new System.Drawing.Point(7, 141);
             this.picAddress.Margin = new System.Windows.Forms.Padding(2);
             this.picAddress.Name = "picAddress";
             this.picAddress.Size = new System.Drawing.Size(22, 24);
@@ -619,7 +619,7 @@
             // 
             this.picEmailId.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picEmailId.Image = ((System.Drawing.Image)(resources.GetObject("picEmailId.Image")));
-            this.picEmailId.Location = new System.Drawing.Point(11, 107);
+            this.picEmailId.Location = new System.Drawing.Point(7, 107);
             this.picEmailId.Margin = new System.Windows.Forms.Padding(2);
             this.picEmailId.Name = "picEmailId";
             this.picEmailId.Size = new System.Drawing.Size(22, 24);
@@ -631,7 +631,7 @@
             // 
             this.picPhoneNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picPhoneNo.Image = ((System.Drawing.Image)(resources.GetObject("picPhoneNo.Image")));
-            this.picPhoneNo.Location = new System.Drawing.Point(11, 73);
+            this.picPhoneNo.Location = new System.Drawing.Point(7, 73);
             this.picPhoneNo.Margin = new System.Windows.Forms.Padding(2);
             this.picPhoneNo.Name = "picPhoneNo";
             this.picPhoneNo.Size = new System.Drawing.Size(22, 24);
@@ -643,7 +643,7 @@
             // 
             this.picGender.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picGender.Image = ((System.Drawing.Image)(resources.GetObject("picGender.Image")));
-            this.picGender.Location = new System.Drawing.Point(11, 39);
+            this.picGender.Location = new System.Drawing.Point(7, 39);
             this.picGender.Margin = new System.Windows.Forms.Padding(2);
             this.picGender.Name = "picGender";
             this.picGender.Size = new System.Drawing.Size(22, 24);
@@ -655,7 +655,7 @@
             // 
             this.picMemberId.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMemberId.Image = ((System.Drawing.Image)(resources.GetObject("picMemberId.Image")));
-            this.picMemberId.Location = new System.Drawing.Point(11, 5);
+            this.picMemberId.Location = new System.Drawing.Point(7, 5);
             this.picMemberId.Margin = new System.Windows.Forms.Padding(2);
             this.picMemberId.Name = "picMemberId";
             this.picMemberId.Size = new System.Drawing.Size(22, 24);
@@ -668,7 +668,7 @@
             this.lblMemberId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberId.AutoSize = true;
             this.lblMemberId.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberId.Location = new System.Drawing.Point(37, 10);
+            this.lblMemberId.Location = new System.Drawing.Point(33, 10);
             this.lblMemberId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberId.Name = "lblMemberId";
             this.lblMemberId.Size = new System.Drawing.Size(64, 13);
@@ -680,7 +680,7 @@
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(37, 44);
+            this.lblGender.Location = new System.Drawing.Point(33, 44);
             this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(44, 13);
@@ -692,7 +692,7 @@
             this.lblPhoneNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhoneNo.AutoSize = true;
             this.lblPhoneNo.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNo.Location = new System.Drawing.Point(37, 78);
+            this.lblPhoneNo.Location = new System.Drawing.Point(33, 78);
             this.lblPhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhoneNo.Name = "lblPhoneNo";
             this.lblPhoneNo.Size = new System.Drawing.Size(59, 13);
@@ -704,7 +704,7 @@
             this.lblEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmailId.AutoSize = true;
             this.lblEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailId.Location = new System.Drawing.Point(37, 112);
+            this.lblEmailId.Location = new System.Drawing.Point(33, 112);
             this.lblEmailId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmailId.Name = "lblEmailId";
             this.lblEmailId.Size = new System.Drawing.Size(49, 13);
@@ -716,7 +716,7 @@
             this.lblAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(37, 146);
+            this.lblAddress.Location = new System.Drawing.Point(33, 146);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(48, 13);
@@ -728,10 +728,10 @@
             this.lblEmergencyContact.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmergencyContact.AutoSize = true;
             this.lblEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmergencyContact.Location = new System.Drawing.Point(37, 181);
+            this.lblEmergencyContact.Location = new System.Drawing.Point(33, 175);
             this.lblEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmergencyContact.Name = "lblEmergencyContact";
-            this.lblEmergencyContact.Size = new System.Drawing.Size(94, 12);
+            this.lblEmergencyContact.Size = new System.Drawing.Size(58, 24);
             this.lblEmergencyContact.TabIndex = 14;
             this.lblEmergencyContact.Text = "Emergency Contact";
             // 
@@ -740,7 +740,7 @@
             this.lblJoiningDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblJoiningDate.AutoSize = true;
             this.lblJoiningDate.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJoiningDate.Location = new System.Drawing.Point(37, 214);
+            this.lblJoiningDate.Location = new System.Drawing.Point(33, 214);
             this.lblJoiningDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJoiningDate.Name = "lblJoiningDate";
             this.lblJoiningDate.Size = new System.Drawing.Size(70, 13);
@@ -752,7 +752,7 @@
             this.lblUpdate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUpdate.AutoSize = true;
             this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdate.Location = new System.Drawing.Point(37, 248);
+            this.lblUpdate.Location = new System.Drawing.Point(33, 248);
             this.lblUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(66, 13);
@@ -764,7 +764,7 @@
             this.lblMemberStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberStatus.AutoSize = true;
             this.lblMemberStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberStatus.Location = new System.Drawing.Point(37, 282);
+            this.lblMemberStatus.Location = new System.Drawing.Point(33, 282);
             this.lblMemberStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberStatus.Name = "lblMemberStatus";
             this.lblMemberStatus.Size = new System.Drawing.Size(84, 13);
@@ -776,10 +776,10 @@
             this.lblColonMemberId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonMemberId.AutoSize = true;
             this.lblColonMemberId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonMemberId.Location = new System.Drawing.Point(140, 6);
+            this.lblColonMemberId.Location = new System.Drawing.Point(124, 6);
             this.lblColonMemberId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonMemberId.Name = "lblColonMemberId";
-            this.lblColonMemberId.Size = new System.Drawing.Size(14, 21);
+            this.lblColonMemberId.Size = new System.Drawing.Size(13, 21);
             this.lblColonMemberId.TabIndex = 18;
             this.lblColonMemberId.Text = ":";
             // 
@@ -788,10 +788,10 @@
             this.lblColonMemberGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonMemberGender.AutoSize = true;
             this.lblColonMemberGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonMemberGender.Location = new System.Drawing.Point(140, 40);
+            this.lblColonMemberGender.Location = new System.Drawing.Point(124, 40);
             this.lblColonMemberGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonMemberGender.Name = "lblColonMemberGender";
-            this.lblColonMemberGender.Size = new System.Drawing.Size(14, 21);
+            this.lblColonMemberGender.Size = new System.Drawing.Size(13, 21);
             this.lblColonMemberGender.TabIndex = 19;
             this.lblColonMemberGender.Text = ":";
             // 
@@ -800,10 +800,10 @@
             this.lblColonPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonPhoneNumber.AutoSize = true;
             this.lblColonPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonPhoneNumber.Location = new System.Drawing.Point(140, 74);
+            this.lblColonPhoneNumber.Location = new System.Drawing.Point(124, 74);
             this.lblColonPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonPhoneNumber.Name = "lblColonPhoneNumber";
-            this.lblColonPhoneNumber.Size = new System.Drawing.Size(14, 21);
+            this.lblColonPhoneNumber.Size = new System.Drawing.Size(13, 21);
             this.lblColonPhoneNumber.TabIndex = 20;
             this.lblColonPhoneNumber.Text = ":";
             // 
@@ -812,10 +812,10 @@
             this.lblColonEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonEmailId.AutoSize = true;
             this.lblColonEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonEmailId.Location = new System.Drawing.Point(140, 108);
+            this.lblColonEmailId.Location = new System.Drawing.Point(124, 108);
             this.lblColonEmailId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonEmailId.Name = "lblColonEmailId";
-            this.lblColonEmailId.Size = new System.Drawing.Size(14, 21);
+            this.lblColonEmailId.Size = new System.Drawing.Size(13, 21);
             this.lblColonEmailId.TabIndex = 21;
             this.lblColonEmailId.Text = ":";
             // 
@@ -824,10 +824,10 @@
             this.lblColonAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonAddress.AutoSize = true;
             this.lblColonAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonAddress.Location = new System.Drawing.Point(140, 142);
+            this.lblColonAddress.Location = new System.Drawing.Point(124, 142);
             this.lblColonAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonAddress.Name = "lblColonAddress";
-            this.lblColonAddress.Size = new System.Drawing.Size(14, 21);
+            this.lblColonAddress.Size = new System.Drawing.Size(13, 21);
             this.lblColonAddress.TabIndex = 22;
             this.lblColonAddress.Text = ":";
             // 
@@ -836,10 +836,10 @@
             this.lblColonEmergencyContact.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonEmergencyContact.AutoSize = true;
             this.lblColonEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonEmergencyContact.Location = new System.Drawing.Point(140, 176);
+            this.lblColonEmergencyContact.Location = new System.Drawing.Point(124, 176);
             this.lblColonEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonEmergencyContact.Name = "lblColonEmergencyContact";
-            this.lblColonEmergencyContact.Size = new System.Drawing.Size(14, 21);
+            this.lblColonEmergencyContact.Size = new System.Drawing.Size(13, 21);
             this.lblColonEmergencyContact.TabIndex = 23;
             this.lblColonEmergencyContact.Text = ":";
             // 
@@ -848,10 +848,10 @@
             this.lblColonJoiningDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonJoiningDate.AutoSize = true;
             this.lblColonJoiningDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonJoiningDate.Location = new System.Drawing.Point(140, 210);
+            this.lblColonJoiningDate.Location = new System.Drawing.Point(124, 210);
             this.lblColonJoiningDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonJoiningDate.Name = "lblColonJoiningDate";
-            this.lblColonJoiningDate.Size = new System.Drawing.Size(14, 21);
+            this.lblColonJoiningDate.Size = new System.Drawing.Size(13, 21);
             this.lblColonJoiningDate.TabIndex = 24;
             this.lblColonJoiningDate.Text = ":";
             // 
@@ -860,10 +860,10 @@
             this.lblColonUpdatedAt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonUpdatedAt.AutoSize = true;
             this.lblColonUpdatedAt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonUpdatedAt.Location = new System.Drawing.Point(140, 244);
+            this.lblColonUpdatedAt.Location = new System.Drawing.Point(124, 244);
             this.lblColonUpdatedAt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonUpdatedAt.Name = "lblColonUpdatedAt";
-            this.lblColonUpdatedAt.Size = new System.Drawing.Size(14, 21);
+            this.lblColonUpdatedAt.Size = new System.Drawing.Size(13, 21);
             this.lblColonUpdatedAt.TabIndex = 25;
             this.lblColonUpdatedAt.Text = ":";
             // 
@@ -872,10 +872,10 @@
             this.lblColonMemberStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblColonMemberStatus.AutoSize = true;
             this.lblColonMemberStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonMemberStatus.Location = new System.Drawing.Point(140, 278);
+            this.lblColonMemberStatus.Location = new System.Drawing.Point(124, 278);
             this.lblColonMemberStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColonMemberStatus.Name = "lblColonMemberStatus";
-            this.lblColonMemberStatus.Size = new System.Drawing.Size(14, 21);
+            this.lblColonMemberStatus.Size = new System.Drawing.Size(13, 21);
             this.lblColonMemberStatus.TabIndex = 26;
             this.lblColonMemberStatus.Text = ":";
             // 
@@ -885,7 +885,7 @@
             this.lblRetrieveMemberId.AutoSize = true;
             this.lblRetrieveMemberId.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberId.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveMemberId.Location = new System.Drawing.Point(159, 10);
+            this.lblRetrieveMemberId.Location = new System.Drawing.Point(141, 10);
             this.lblRetrieveMemberId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveMemberId.Name = "lblRetrieveMemberId";
             this.lblRetrieveMemberId.Size = new System.Drawing.Size(51, 13);
@@ -898,7 +898,7 @@
             this.lblRetrieveMemberGenderName.AutoSize = true;
             this.lblRetrieveMemberGenderName.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberGenderName.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveMemberGenderName.Location = new System.Drawing.Point(159, 44);
+            this.lblRetrieveMemberGenderName.Location = new System.Drawing.Point(141, 44);
             this.lblRetrieveMemberGenderName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveMemberGenderName.Name = "lblRetrieveMemberGenderName";
             this.lblRetrieveMemberGenderName.Size = new System.Drawing.Size(32, 13);
@@ -911,7 +911,7 @@
             this.lblRetrievePhoneNo.AutoSize = true;
             this.lblRetrievePhoneNo.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrievePhoneNo.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrievePhoneNo.Location = new System.Drawing.Point(159, 78);
+            this.lblRetrievePhoneNo.Location = new System.Drawing.Point(141, 78);
             this.lblRetrievePhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrievePhoneNo.Name = "lblRetrievePhoneNo";
             this.lblRetrievePhoneNo.Size = new System.Drawing.Size(65, 13);
@@ -924,7 +924,7 @@
             this.lblRetrieveEmailId.AutoSize = true;
             this.lblRetrieveEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveEmailId.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveEmailId.Location = new System.Drawing.Point(159, 112);
+            this.lblRetrieveEmailId.Location = new System.Drawing.Point(141, 112);
             this.lblRetrieveEmailId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveEmailId.Name = "lblRetrieveEmailId";
             this.lblRetrieveEmailId.Size = new System.Drawing.Size(103, 13);
@@ -937,7 +937,7 @@
             this.lblRetrieveAddress.AutoSize = true;
             this.lblRetrieveAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveAddress.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveAddress.Location = new System.Drawing.Point(159, 146);
+            this.lblRetrieveAddress.Location = new System.Drawing.Point(141, 146);
             this.lblRetrieveAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveAddress.Name = "lblRetrieveAddress";
             this.lblRetrieveAddress.Size = new System.Drawing.Size(155, 13);
@@ -950,7 +950,7 @@
             this.lblRetrieveEmergencyContact.AutoSize = true;
             this.lblRetrieveEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveEmergencyContact.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveEmergencyContact.Location = new System.Drawing.Point(159, 180);
+            this.lblRetrieveEmergencyContact.Location = new System.Drawing.Point(141, 180);
             this.lblRetrieveEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveEmergencyContact.Name = "lblRetrieveEmergencyContact";
             this.lblRetrieveEmergencyContact.Size = new System.Drawing.Size(65, 13);
@@ -963,7 +963,7 @@
             this.lblRetrieveJoiningDate.AutoSize = true;
             this.lblRetrieveJoiningDate.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveJoiningDate.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveJoiningDate.Location = new System.Drawing.Point(159, 214);
+            this.lblRetrieveJoiningDate.Location = new System.Drawing.Point(141, 214);
             this.lblRetrieveJoiningDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveJoiningDate.Name = "lblRetrieveJoiningDate";
             this.lblRetrieveJoiningDate.Size = new System.Drawing.Size(63, 13);
@@ -976,7 +976,7 @@
             this.lblRetrieveUpdatedDateAndTime.AutoSize = true;
             this.lblRetrieveUpdatedDateAndTime.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveUpdatedDateAndTime.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveUpdatedDateAndTime.Location = new System.Drawing.Point(159, 248);
+            this.lblRetrieveUpdatedDateAndTime.Location = new System.Drawing.Point(141, 248);
             this.lblRetrieveUpdatedDateAndTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveUpdatedDateAndTime.Name = "lblRetrieveUpdatedDateAndTime";
             this.lblRetrieveUpdatedDateAndTime.Size = new System.Drawing.Size(115, 13);
@@ -990,7 +990,7 @@
             this.lblRetrieveMemberStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lblRetrieveMemberStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberStatus.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRetrieveMemberStatus.Location = new System.Drawing.Point(159, 282);
+            this.lblRetrieveMemberStatus.Location = new System.Drawing.Point(141, 282);
             this.lblRetrieveMemberStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveMemberStatus.Name = "lblRetrieveMemberStatus";
             this.lblRetrieveMemberStatus.Size = new System.Drawing.Size(38, 13);
@@ -1003,10 +1003,10 @@
             this.pnlHoleMembershipAndSubscriptionDetails.Controls.Add(this.tlpMembershipAndSubscriptionDetailsUnderlineBorder);
             this.pnlHoleMembershipAndSubscriptionDetails.Controls.Add(this.pnlMembershipAndSubscriptionDetailsUnderlineBorder);
             this.pnlHoleMembershipAndSubscriptionDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHoleMembershipAndSubscriptionDetails.Location = new System.Drawing.Point(346, 2);
+            this.pnlHoleMembershipAndSubscriptionDetails.Location = new System.Drawing.Point(308, 2);
             this.pnlHoleMembershipAndSubscriptionDetails.Margin = new System.Windows.Forms.Padding(2);
             this.pnlHoleMembershipAndSubscriptionDetails.Name = "pnlHoleMembershipAndSubscriptionDetails";
-            this.pnlHoleMembershipAndSubscriptionDetails.Size = new System.Drawing.Size(514, 589);
+            this.pnlHoleMembershipAndSubscriptionDetails.Size = new System.Drawing.Size(552, 589);
             this.pnlHoleMembershipAndSubscriptionDetails.TabIndex = 3;
             // 
             // tlpAllPortionAboutMembershipAndSubscriptionDetails
@@ -1029,7 +1029,7 @@
             this.tlpAllPortionAboutMembershipAndSubscriptionDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31F));
             this.tlpAllPortionAboutMembershipAndSubscriptionDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.06433F));
             this.tlpAllPortionAboutMembershipAndSubscriptionDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.947368F));
-            this.tlpAllPortionAboutMembershipAndSubscriptionDetails.Size = new System.Drawing.Size(514, 525);
+            this.tlpAllPortionAboutMembershipAndSubscriptionDetails.Size = new System.Drawing.Size(552, 525);
             this.tlpAllPortionAboutMembershipAndSubscriptionDetails.TabIndex = 3;
             // 
             // pnlMemberShiftPortion
@@ -1042,7 +1042,7 @@
             this.pnlMemberShiftPortion.Location = new System.Drawing.Point(8, 170);
             this.pnlMemberShiftPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlMemberShiftPortion.Name = "pnlMemberShiftPortion";
-            this.pnlMemberShiftPortion.Size = new System.Drawing.Size(241, 146);
+            this.pnlMemberShiftPortion.Size = new System.Drawing.Size(260, 146);
             this.pnlMemberShiftPortion.TabIndex = 2;
             // 
             // tlpMembershipShiftButtomWholePortion
@@ -1058,7 +1058,7 @@
             this.tlpMembershipShiftButtomWholePortion.Name = "tlpMembershipShiftButtomWholePortion";
             this.tlpMembershipShiftButtomWholePortion.RowCount = 1;
             this.tlpMembershipShiftButtomWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershipShiftButtomWholePortion.Size = new System.Drawing.Size(241, 49);
+            this.tlpMembershipShiftButtomWholePortion.Size = new System.Drawing.Size(260, 49);
             this.tlpMembershipShiftButtomWholePortion.TabIndex = 4;
             // 
             // tlpMembershipShiftButtonMiddlePortion
@@ -1067,7 +1067,7 @@
             this.tlpMembershipShiftButtonMiddlePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMembershipShiftButtonMiddlePortion.Controls.Add(this.pnlChangeShiftButton, 0, 1);
             this.tlpMembershipShiftButtonMiddlePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipShiftButtonMiddlePortion.Location = new System.Drawing.Point(28, 2);
+            this.tlpMembershipShiftButtonMiddlePortion.Location = new System.Drawing.Point(38, 2);
             this.tlpMembershipShiftButtonMiddlePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipShiftButtonMiddlePortion.Name = "tlpMembershipShiftButtonMiddlePortion";
             this.tlpMembershipShiftButtonMiddlePortion.RowCount = 3;
@@ -1153,14 +1153,14 @@
             this.tlpMembershipShiftMiddleWholePortion.Name = "tlpMembershipShiftMiddleWholePortion";
             this.tlpMembershipShiftMiddleWholePortion.RowCount = 1;
             this.tlpMembershipShiftMiddleWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershipShiftMiddleWholePortion.Size = new System.Drawing.Size(241, 34);
+            this.tlpMembershipShiftMiddleWholePortion.Size = new System.Drawing.Size(260, 34);
             this.tlpMembershipShiftMiddleWholePortion.TabIndex = 3;
             // 
             // pnlMembershipShiftBorder
             // 
             this.pnlMembershipShiftBorder.BackColor = System.Drawing.Color.Gray;
             this.pnlMembershipShiftBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMembershipShiftBorder.Location = new System.Drawing.Point(117, 2);
+            this.pnlMembershipShiftBorder.Location = new System.Drawing.Point(126, 2);
             this.pnlMembershipShiftBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMembershipShiftBorder.Name = "pnlMembershipShiftBorder";
             this.pnlMembershipShiftBorder.Size = new System.Drawing.Size(1, 30);
@@ -1174,13 +1174,13 @@
             this.tlpMembershipShiftEndTimePortion.Controls.Add(this.lblShiftEndTimeTitle, 0, 0);
             this.tlpMembershipShiftEndTimePortion.Controls.Add(this.lblShiftEndTime, 0, 1);
             this.tlpMembershipShiftEndTimePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipShiftEndTimePortion.Location = new System.Drawing.Point(121, 2);
+            this.tlpMembershipShiftEndTimePortion.Location = new System.Drawing.Point(130, 2);
             this.tlpMembershipShiftEndTimePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipShiftEndTimePortion.Name = "tlpMembershipShiftEndTimePortion";
             this.tlpMembershipShiftEndTimePortion.RowCount = 2;
             this.tlpMembershipShiftEndTimePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMembershipShiftEndTimePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMembershipShiftEndTimePortion.Size = new System.Drawing.Size(93, 30);
+            this.tlpMembershipShiftEndTimePortion.Size = new System.Drawing.Size(101, 30);
             this.tlpMembershipShiftEndTimePortion.TabIndex = 3;
             // 
             // lblShiftEndTimeTitle
@@ -1217,13 +1217,13 @@
             this.tlpMembershipShiftStartTimePortion.Controls.Add(this.lblShiftStartTimeTitle, 0, 0);
             this.tlpMembershipShiftStartTimePortion.Controls.Add(this.lblShiftStartTime, 0, 1);
             this.tlpMembershipShiftStartTimePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipShiftStartTimePortion.Location = new System.Drawing.Point(28, 2);
+            this.tlpMembershipShiftStartTimePortion.Location = new System.Drawing.Point(30, 2);
             this.tlpMembershipShiftStartTimePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipShiftStartTimePortion.Name = "tlpMembershipShiftStartTimePortion";
             this.tlpMembershipShiftStartTimePortion.RowCount = 2;
             this.tlpMembershipShiftStartTimePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMembershipShiftStartTimePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMembershipShiftStartTimePortion.Size = new System.Drawing.Size(85, 30);
+            this.tlpMembershipShiftStartTimePortion.Size = new System.Drawing.Size(92, 30);
             this.tlpMembershipShiftStartTimePortion.TabIndex = 0;
             // 
             // lblShiftStartTimeTitle
@@ -1266,7 +1266,7 @@
             this.tlpMembershipShiftTopWholePortion.RowCount = 1;
             this.tlpMembershipShiftTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMembershipShiftTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMembershipShiftTopWholePortion.Size = new System.Drawing.Size(241, 63);
+            this.tlpMembershipShiftTopWholePortion.Size = new System.Drawing.Size(260, 63);
             this.tlpMembershipShiftTopWholePortion.TabIndex = 2;
             // 
             // PicMembershipShift
@@ -1276,7 +1276,7 @@
             this.PicMembershipShift.Location = new System.Drawing.Point(4, 2);
             this.PicMembershipShift.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.PicMembershipShift.Name = "PicMembershipShift";
-            this.PicMembershipShift.Size = new System.Drawing.Size(30, 59);
+            this.PicMembershipShift.Size = new System.Drawing.Size(32, 59);
             this.PicMembershipShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicMembershipShift.TabIndex = 0;
             this.PicMembershipShift.TabStop = false;
@@ -1289,13 +1289,13 @@
             this.tlpMembershipShiftWholeTitlePortion.Controls.Add(this.lblMembershipShiftTitle, 0, 0);
             this.tlpMembershipShiftWholeTitlePortion.Controls.Add(this.lblRetrieveShiftName, 0, 1);
             this.tlpMembershipShiftWholeTitlePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipShiftWholeTitlePortion.Location = new System.Drawing.Point(38, 2);
+            this.tlpMembershipShiftWholeTitlePortion.Location = new System.Drawing.Point(40, 2);
             this.tlpMembershipShiftWholeTitlePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipShiftWholeTitlePortion.Name = "tlpMembershipShiftWholeTitlePortion";
             this.tlpMembershipShiftWholeTitlePortion.RowCount = 2;
             this.tlpMembershipShiftWholeTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.62712F));
             this.tlpMembershipShiftWholeTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.37288F));
-            this.tlpMembershipShiftWholeTitlePortion.Size = new System.Drawing.Size(201, 59);
+            this.tlpMembershipShiftWholeTitlePortion.Size = new System.Drawing.Size(218, 59);
             this.tlpMembershipShiftWholeTitlePortion.TabIndex = 1;
             // 
             // lblMembershipShiftTitle
@@ -1303,7 +1303,7 @@
             this.lblMembershipShiftTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMembershipShiftTitle.AutoSize = true;
             this.lblMembershipShiftTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembershipShiftTitle.Location = new System.Drawing.Point(2, 16);
+            this.lblMembershipShiftTitle.Location = new System.Drawing.Point(2, 17);
             this.lblMembershipShiftTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMembershipShiftTitle.Name = "lblMembershipShiftTitle";
             this.lblMembershipShiftTitle.Size = new System.Drawing.Size(90, 17);
@@ -1315,7 +1315,7 @@
             this.lblRetrieveShiftName.AutoSize = true;
             this.lblRetrieveShiftName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveShiftName.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblRetrieveShiftName.Location = new System.Drawing.Point(2, 33);
+            this.lblRetrieveShiftName.Location = new System.Drawing.Point(2, 34);
             this.lblRetrieveShiftName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveShiftName.Name = "lblRetrieveShiftName";
             this.lblRetrieveShiftName.Size = new System.Drawing.Size(81, 15);
@@ -1328,10 +1328,10 @@
             this.pnlLockerPortion.Controls.Add(this.tlpLockerStatusWholePortion);
             this.pnlLockerPortion.Controls.Add(this.tlpLockerInformationTopWholePortion);
             this.pnlLockerPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLockerPortion.Location = new System.Drawing.Point(265, 170);
+            this.pnlLockerPortion.Location = new System.Drawing.Point(284, 170);
             this.pnlLockerPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlLockerPortion.Name = "pnlLockerPortion";
-            this.pnlLockerPortion.Size = new System.Drawing.Size(241, 146);
+            this.pnlLockerPortion.Size = new System.Drawing.Size(260, 146);
             this.pnlLockerPortion.TabIndex = 3;
             // 
             // tlpLockerStatusWholePortion
@@ -1346,7 +1346,7 @@
             this.tlpLockerStatusWholePortion.Name = "tlpLockerStatusWholePortion";
             this.tlpLockerStatusWholePortion.RowCount = 1;
             this.tlpLockerStatusWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLockerStatusWholePortion.Size = new System.Drawing.Size(241, 52);
+            this.tlpLockerStatusWholePortion.Size = new System.Drawing.Size(260, 52);
             this.tlpLockerStatusWholePortion.TabIndex = 4;
             // 
             // tlpLockerStatusTitle
@@ -1364,7 +1364,7 @@
             this.tlpLockerStatusTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLockerStatusTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLockerStatusTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpLockerStatusTitle.Size = new System.Drawing.Size(231, 48);
+            this.tlpLockerStatusTitle.Size = new System.Drawing.Size(250, 48);
             this.tlpLockerStatusTitle.TabIndex = 0;
             // 
             // lblLockerStatus
@@ -1408,7 +1408,7 @@
             this.tlpLockerInformationTopWholePortion.RowCount = 1;
             this.tlpLockerInformationTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpLockerInformationTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLockerInformationTopWholePortion.Size = new System.Drawing.Size(241, 63);
+            this.tlpLockerInformationTopWholePortion.Size = new System.Drawing.Size(260, 63);
             this.tlpLockerInformationTopWholePortion.TabIndex = 3;
             // 
             // picLockerInformation
@@ -1418,7 +1418,7 @@
             this.picLockerInformation.Location = new System.Drawing.Point(4, 2);
             this.picLockerInformation.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picLockerInformation.Name = "picLockerInformation";
-            this.picLockerInformation.Size = new System.Drawing.Size(33, 59);
+            this.picLockerInformation.Size = new System.Drawing.Size(36, 59);
             this.picLockerInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLockerInformation.TabIndex = 0;
             this.picLockerInformation.TabStop = false;
@@ -1431,13 +1431,13 @@
             this.tlpLockerInformationWholeTitlePortion.Controls.Add(this.lblLockerInformationTitle, 0, 0);
             this.tlpLockerInformationWholeTitlePortion.Controls.Add(this.lblRetrieveLockerNo, 0, 1);
             this.tlpLockerInformationWholeTitlePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLockerInformationWholeTitlePortion.Location = new System.Drawing.Point(41, 2);
+            this.tlpLockerInformationWholeTitlePortion.Location = new System.Drawing.Point(44, 2);
             this.tlpLockerInformationWholeTitlePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLockerInformationWholeTitlePortion.Name = "tlpLockerInformationWholeTitlePortion";
             this.tlpLockerInformationWholeTitlePortion.RowCount = 2;
             this.tlpLockerInformationWholeTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.09091F));
             this.tlpLockerInformationWholeTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.90909F));
-            this.tlpLockerInformationWholeTitlePortion.Size = new System.Drawing.Size(198, 59);
+            this.tlpLockerInformationWholeTitlePortion.Size = new System.Drawing.Size(214, 59);
             this.tlpLockerInformationWholeTitlePortion.TabIndex = 1;
             // 
             // lblLockerInformationTitle
@@ -1474,7 +1474,7 @@
             this.pnlDietPlanPortion.Location = new System.Drawing.Point(8, 332);
             this.pnlDietPlanPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlDietPlanPortion.Name = "pnlDietPlanPortion";
-            this.pnlDietPlanPortion.Size = new System.Drawing.Size(241, 162);
+            this.pnlDietPlanPortion.Size = new System.Drawing.Size(260, 162);
             this.pnlDietPlanPortion.TabIndex = 4;
             // 
             // tlpButtonWholeChangeDietPlanPortion
@@ -1490,7 +1490,7 @@
             this.tlpButtonWholeChangeDietPlanPortion.Name = "tlpButtonWholeChangeDietPlanPortion";
             this.tlpButtonWholeChangeDietPlanPortion.RowCount = 1;
             this.tlpButtonWholeChangeDietPlanPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpButtonWholeChangeDietPlanPortion.Size = new System.Drawing.Size(241, 41);
+            this.tlpButtonWholeChangeDietPlanPortion.Size = new System.Drawing.Size(260, 41);
             this.tlpButtonWholeChangeDietPlanPortion.TabIndex = 5;
             // 
             // tlpChangeDietPlanBottonPortion
@@ -1499,7 +1499,7 @@
             this.tlpChangeDietPlanBottonPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpChangeDietPlanBottonPortion.Controls.Add(this.pnlChangeDietPlanButton, 0, 1);
             this.tlpChangeDietPlanBottonPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpChangeDietPlanBottonPortion.Location = new System.Drawing.Point(46, 2);
+            this.tlpChangeDietPlanBottonPortion.Location = new System.Drawing.Point(56, 2);
             this.tlpChangeDietPlanBottonPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeDietPlanBottonPortion.Name = "tlpChangeDietPlanBottonPortion";
             this.tlpChangeDietPlanBottonPortion.RowCount = 3;
@@ -1585,14 +1585,14 @@
             this.tlpWeightGainPlanMiddleWholePortion.Name = "tlpWeightGainPlanMiddleWholePortion";
             this.tlpWeightGainPlanMiddleWholePortion.RowCount = 1;
             this.tlpWeightGainPlanMiddleWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpWeightGainPlanMiddleWholePortion.Size = new System.Drawing.Size(241, 48);
+            this.tlpWeightGainPlanMiddleWholePortion.Size = new System.Drawing.Size(260, 48);
             this.tlpWeightGainPlanMiddleWholePortion.TabIndex = 4;
             // 
             // pnlDietPlanBorder
             // 
             this.pnlDietPlanBorder.BackColor = System.Drawing.Color.Gray;
             this.pnlDietPlanBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDietPlanBorder.Location = new System.Drawing.Point(115, 2);
+            this.pnlDietPlanBorder.Location = new System.Drawing.Point(123, 2);
             this.pnlDietPlanBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDietPlanBorder.Name = "pnlDietPlanBorder";
             this.pnlDietPlanBorder.Size = new System.Drawing.Size(1, 44);
@@ -1606,13 +1606,13 @@
             this.tlpDietPlanDocument.Controls.Add(this.lblDietPlanDocument, 0, 0);
             this.tlpDietPlanDocument.Controls.Add(this.tlpDietPlanDocumentPdf, 0, 1);
             this.tlpDietPlanDocument.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDietPlanDocument.Location = new System.Drawing.Point(119, 2);
+            this.tlpDietPlanDocument.Location = new System.Drawing.Point(127, 2);
             this.tlpDietPlanDocument.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDietPlanDocument.Name = "tlpDietPlanDocument";
             this.tlpDietPlanDocument.RowCount = 2;
             this.tlpDietPlanDocument.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDietPlanDocument.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDietPlanDocument.Size = new System.Drawing.Size(109, 44);
+            this.tlpDietPlanDocument.Size = new System.Drawing.Size(118, 44);
             this.tlpDietPlanDocument.TabIndex = 3;
             // 
             // lblDietPlanDocument
@@ -1642,7 +1642,7 @@
             this.tlpDietPlanDocumentPdf.RowCount = 1;
             this.tlpDietPlanDocumentPdf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDietPlanDocumentPdf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDietPlanDocumentPdf.Size = new System.Drawing.Size(109, 22);
+            this.tlpDietPlanDocumentPdf.Size = new System.Drawing.Size(118, 22);
             this.tlpDietPlanDocumentPdf.TabIndex = 1;
             // 
             // picDietPlanDocument
@@ -1652,7 +1652,7 @@
             this.picDietPlanDocument.Location = new System.Drawing.Point(0, 0);
             this.picDietPlanDocument.Margin = new System.Windows.Forms.Padding(0);
             this.picDietPlanDocument.Name = "picDietPlanDocument";
-            this.picDietPlanDocument.Size = new System.Drawing.Size(25, 22);
+            this.picDietPlanDocument.Size = new System.Drawing.Size(27, 22);
             this.picDietPlanDocument.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDietPlanDocument.TabIndex = 0;
             this.picDietPlanDocument.TabStop = false;
@@ -1661,10 +1661,10 @@
             // 
             this.pnlDietPlanDocumentPDF.Controls.Add(this.lblRetrieveDietPlanDocumentPDF);
             this.pnlDietPlanDocumentPDF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDietPlanDocumentPDF.Location = new System.Drawing.Point(27, 2);
+            this.pnlDietPlanDocumentPDF.Location = new System.Drawing.Point(29, 2);
             this.pnlDietPlanDocumentPDF.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDietPlanDocumentPDF.Name = "pnlDietPlanDocumentPDF";
-            this.pnlDietPlanDocumentPDF.Size = new System.Drawing.Size(80, 18);
+            this.pnlDietPlanDocumentPDF.Size = new System.Drawing.Size(87, 18);
             this.pnlDietPlanDocumentPDF.TabIndex = 1;
             // 
             // lblRetrieveDietPlanDocumentPDF
@@ -1694,7 +1694,7 @@
             this.tlpDietPlanConditionWholePortion.RowCount = 2;
             this.tlpDietPlanConditionWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDietPlanConditionWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDietPlanConditionWholePortion.Size = new System.Drawing.Size(101, 44);
+            this.tlpDietPlanConditionWholePortion.Size = new System.Drawing.Size(109, 44);
             this.tlpDietPlanConditionWholePortion.TabIndex = 0;
             // 
             // lblDietPlanCondition
@@ -1737,7 +1737,7 @@
             this.tlpDietPlanTopWholePortion.RowCount = 1;
             this.tlpDietPlanTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDietPlanTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDietPlanTopWholePortion.Size = new System.Drawing.Size(241, 73);
+            this.tlpDietPlanTopWholePortion.Size = new System.Drawing.Size(260, 73);
             this.tlpDietPlanTopWholePortion.TabIndex = 3;
             // 
             // picDietPlan
@@ -1747,7 +1747,7 @@
             this.picDietPlan.Location = new System.Drawing.Point(4, 2);
             this.picDietPlan.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picDietPlan.Name = "picDietPlan";
-            this.picDietPlan.Size = new System.Drawing.Size(31, 69);
+            this.picDietPlan.Size = new System.Drawing.Size(34, 69);
             this.picDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDietPlan.TabIndex = 0;
             this.picDietPlan.TabStop = false;
@@ -1760,13 +1760,13 @@
             this.tlpDietPlanTitlePortion.Controls.Add(this.lblDietPlan, 0, 0);
             this.tlpDietPlanTitlePortion.Controls.Add(this.lblRetrieveDietPlanName, 0, 1);
             this.tlpDietPlanTitlePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDietPlanTitlePortion.Location = new System.Drawing.Point(39, 2);
+            this.tlpDietPlanTitlePortion.Location = new System.Drawing.Point(42, 2);
             this.tlpDietPlanTitlePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDietPlanTitlePortion.Name = "tlpDietPlanTitlePortion";
             this.tlpDietPlanTitlePortion.RowCount = 2;
             this.tlpDietPlanTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.09091F));
             this.tlpDietPlanTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.90909F));
-            this.tlpDietPlanTitlePortion.Size = new System.Drawing.Size(200, 69);
+            this.tlpDietPlanTitlePortion.Size = new System.Drawing.Size(216, 69);
             this.tlpDietPlanTitlePortion.TabIndex = 1;
             // 
             // lblDietPlan
@@ -1799,10 +1799,10 @@
             this.pnlPaymentDetailsPortion.Controls.Add(this.tlpPaymentDetailsBottomPortion);
             this.pnlPaymentDetailsPortion.Controls.Add(this.tblPaymentDetailsTopWholePortion);
             this.pnlPaymentDetailsPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPaymentDetailsPortion.Location = new System.Drawing.Point(265, 332);
+            this.pnlPaymentDetailsPortion.Location = new System.Drawing.Point(284, 332);
             this.pnlPaymentDetailsPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlPaymentDetailsPortion.Name = "pnlPaymentDetailsPortion";
-            this.pnlPaymentDetailsPortion.Size = new System.Drawing.Size(241, 162);
+            this.pnlPaymentDetailsPortion.Size = new System.Drawing.Size(260, 162);
             this.pnlPaymentDetailsPortion.TabIndex = 5;
             // 
             // tlpPaymentDetailsBottomPortion
@@ -1820,7 +1820,7 @@
             this.tlpPaymentDetailsBottomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tlpPaymentDetailsBottomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpPaymentDetailsBottomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpPaymentDetailsBottomPortion.Size = new System.Drawing.Size(241, 115);
+            this.tlpPaymentDetailsBottomPortion.Size = new System.Drawing.Size(260, 115);
             this.tlpPaymentDetailsBottomPortion.TabIndex = 4;
             // 
             // tlpPaymentDetailsShow
@@ -1850,14 +1850,14 @@
             this.tlpPaymentDetailsShow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpPaymentDetailsShow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpPaymentDetailsShow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpPaymentDetailsShow.Size = new System.Drawing.Size(221, 95);
+            this.tlpPaymentDetailsShow.Size = new System.Drawing.Size(240, 95);
             this.tlpPaymentDetailsShow.TabIndex = 0;
             // 
             // lblRetrievePaymentMethod
             // 
             this.lblRetrievePaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrievePaymentMethod.AutoSize = true;
-            this.lblRetrievePaymentMethod.Location = new System.Drawing.Point(111, 28);
+            this.lblRetrievePaymentMethod.Location = new System.Drawing.Point(121, 28);
             this.lblRetrievePaymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrievePaymentMethod.Name = "lblRetrievePaymentMethod";
             this.lblRetrievePaymentMethod.Size = new System.Drawing.Size(25, 13);
@@ -1869,7 +1869,7 @@
             this.lblRetrievePaymentFeesType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrievePaymentFeesType.AutoSize = true;
             this.lblRetrievePaymentFeesType.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetrievePaymentFeesType.Location = new System.Drawing.Point(111, 75);
+            this.lblRetrievePaymentFeesType.Location = new System.Drawing.Point(121, 75);
             this.lblRetrievePaymentFeesType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrievePaymentFeesType.Name = "lblRetrievePaymentFeesType";
             this.lblRetrievePaymentFeesType.Size = new System.Drawing.Size(26, 13);
@@ -1880,7 +1880,7 @@
             // 
             this.lblRetrievePaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrievePaymentAmount.AutoSize = true;
-            this.lblRetrievePaymentAmount.Location = new System.Drawing.Point(111, 51);
+            this.lblRetrievePaymentAmount.Location = new System.Drawing.Point(121, 51);
             this.lblRetrievePaymentAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrievePaymentAmount.Name = "lblRetrievePaymentAmount";
             this.lblRetrievePaymentAmount.Size = new System.Drawing.Size(67, 13);
@@ -1943,10 +1943,10 @@
             this.lblPaymentDateColon.AutoSize = true;
             this.lblPaymentDateColon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPaymentDateColon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentDateColon.Location = new System.Drawing.Point(94, 0);
+            this.lblPaymentDateColon.Location = new System.Drawing.Point(102, 0);
             this.lblPaymentDateColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentDateColon.Name = "lblPaymentDateColon";
-            this.lblPaymentDateColon.Size = new System.Drawing.Size(13, 23);
+            this.lblPaymentDateColon.Size = new System.Drawing.Size(15, 23);
             this.lblPaymentDateColon.TabIndex = 4;
             this.lblPaymentDateColon.Text = ":";
             // 
@@ -1955,10 +1955,10 @@
             this.lblPaymentMethodColon.AutoSize = true;
             this.lblPaymentMethodColon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPaymentMethodColon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentMethodColon.Location = new System.Drawing.Point(94, 23);
+            this.lblPaymentMethodColon.Location = new System.Drawing.Point(102, 23);
             this.lblPaymentMethodColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentMethodColon.Name = "lblPaymentMethodColon";
-            this.lblPaymentMethodColon.Size = new System.Drawing.Size(13, 23);
+            this.lblPaymentMethodColon.Size = new System.Drawing.Size(15, 23);
             this.lblPaymentMethodColon.TabIndex = 5;
             this.lblPaymentMethodColon.Text = ":";
             // 
@@ -1967,10 +1967,10 @@
             this.lblPaymentAmountColon.AutoSize = true;
             this.lblPaymentAmountColon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPaymentAmountColon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentAmountColon.Location = new System.Drawing.Point(94, 46);
+            this.lblPaymentAmountColon.Location = new System.Drawing.Point(102, 46);
             this.lblPaymentAmountColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentAmountColon.Name = "lblPaymentAmountColon";
-            this.lblPaymentAmountColon.Size = new System.Drawing.Size(13, 23);
+            this.lblPaymentAmountColon.Size = new System.Drawing.Size(15, 23);
             this.lblPaymentAmountColon.TabIndex = 6;
             this.lblPaymentAmountColon.Text = ":";
             // 
@@ -1979,10 +1979,10 @@
             this.lblPaymentFeesTypesColon.AutoSize = true;
             this.lblPaymentFeesTypesColon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPaymentFeesTypesColon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentFeesTypesColon.Location = new System.Drawing.Point(94, 69);
+            this.lblPaymentFeesTypesColon.Location = new System.Drawing.Point(102, 69);
             this.lblPaymentFeesTypesColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentFeesTypesColon.Name = "lblPaymentFeesTypesColon";
-            this.lblPaymentFeesTypesColon.Size = new System.Drawing.Size(13, 26);
+            this.lblPaymentFeesTypesColon.Size = new System.Drawing.Size(15, 26);
             this.lblPaymentFeesTypesColon.TabIndex = 7;
             this.lblPaymentFeesTypesColon.Text = ":";
             // 
@@ -1990,7 +1990,7 @@
             // 
             this.lblRetrievePaymentDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrievePaymentDate.AutoSize = true;
-            this.lblRetrievePaymentDate.Location = new System.Drawing.Point(111, 5);
+            this.lblRetrievePaymentDate.Location = new System.Drawing.Point(121, 5);
             this.lblRetrievePaymentDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrievePaymentDate.Name = "lblRetrievePaymentDate";
             this.lblRetrievePaymentDate.Size = new System.Drawing.Size(69, 13);
@@ -2010,8 +2010,8 @@
             this.tblPaymentDetailsTopWholePortion.Name = "tblPaymentDetailsTopWholePortion";
             this.tblPaymentDetailsTopWholePortion.RowCount = 1;
             this.tblPaymentDetailsTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPaymentDetailsTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblPaymentDetailsTopWholePortion.Size = new System.Drawing.Size(241, 46);
+            this.tblPaymentDetailsTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblPaymentDetailsTopWholePortion.Size = new System.Drawing.Size(260, 46);
             this.tblPaymentDetailsTopWholePortion.TabIndex = 3;
             // 
             // lblPaymentDetailsTitle
@@ -2020,7 +2020,7 @@
             this.lblPaymentDetailsTitle.AutoSize = true;
             this.lblPaymentDetailsTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaymentDetailsTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblPaymentDetailsTitle.Location = new System.Drawing.Point(42, 13);
+            this.lblPaymentDetailsTitle.Location = new System.Drawing.Point(46, 13);
             this.lblPaymentDetailsTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentDetailsTitle.Name = "lblPaymentDetailsTitle";
             this.lblPaymentDetailsTitle.Size = new System.Drawing.Size(110, 19);
@@ -2037,7 +2037,7 @@
             this.pnlMembershipPlanPortion.Location = new System.Drawing.Point(8, 8);
             this.pnlMembershipPlanPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlMembershipPlanPortion.Name = "pnlMembershipPlanPortion";
-            this.pnlMembershipPlanPortion.Size = new System.Drawing.Size(241, 146);
+            this.pnlMembershipPlanPortion.Size = new System.Drawing.Size(260, 146);
             this.pnlMembershipPlanPortion.TabIndex = 6;
             // 
             // tlpMembershipPlanBottomPortion
@@ -2053,7 +2053,7 @@
             this.tlpMembershipPlanBottomPortion.Name = "tlpMembershipPlanBottomPortion";
             this.tlpMembershipPlanBottomPortion.RowCount = 1;
             this.tlpMembershipPlanBottomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershipPlanBottomPortion.Size = new System.Drawing.Size(241, 61);
+            this.tlpMembershipPlanBottomPortion.Size = new System.Drawing.Size(260, 61);
             this.tlpMembershipPlanBottomPortion.TabIndex = 3;
             // 
             // tlpRenewMembershipPlanWholePortion
@@ -2062,7 +2062,7 @@
             this.tlpRenewMembershipPlanWholePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRenewMembershipPlanWholePortion.Controls.Add(this.pnlRenewMembershipPlan, 0, 1);
             this.tlpRenewMembershipPlanWholePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRenewMembershipPlanWholePortion.Location = new System.Drawing.Point(28, 2);
+            this.tlpRenewMembershipPlanWholePortion.Location = new System.Drawing.Point(38, 2);
             this.tlpRenewMembershipPlanWholePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpRenewMembershipPlanWholePortion.Name = "tlpRenewMembershipPlanWholePortion";
             this.tlpRenewMembershipPlanWholePortion.RowCount = 3;
@@ -2082,6 +2082,7 @@
             this.pnlRenewMembershipPlan.Name = "pnlRenewMembershipPlan";
             this.pnlRenewMembershipPlan.Size = new System.Drawing.Size(168, 28);
             this.pnlRenewMembershipPlan.TabIndex = 0;
+            this.pnlRenewMembershipPlan.Click += new System.EventHandler(this.pnlRenewMembershipPlan_Click_1);
             // 
             // tlpRenewMembershipPlan
             // 
@@ -2100,6 +2101,7 @@
             this.tlpRenewMembershipPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRenewMembershipPlan.Size = new System.Drawing.Size(166, 26);
             this.tlpRenewMembershipPlan.TabIndex = 1;
+            this.tlpRenewMembershipPlan.Click += new System.EventHandler(this.pnlRenewMembershipPlan_Click_1);
             this.tlpRenewMembershipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
             this.tlpRenewMembershipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
@@ -2114,6 +2116,7 @@
             this.picRenewMemberShipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRenewMemberShipPlan.TabIndex = 0;
             this.picRenewMemberShipPlan.TabStop = false;
+            this.picRenewMemberShipPlan.Click += new System.EventHandler(this.pnlRenewMembershipPlan_Click_1);
             this.picRenewMemberShipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
             this.picRenewMemberShipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
@@ -2128,6 +2131,7 @@
             this.lblRenewMembershipPlan.Size = new System.Drawing.Size(133, 18);
             this.lblRenewMembershipPlan.TabIndex = 1;
             this.lblRenewMembershipPlan.Text = "Renew Membership Plan";
+            this.lblRenewMembershipPlan.Click += new System.EventHandler(this.pnlRenewMembershipPlan_Click_1);
             this.lblRenewMembershipPlan.MouseEnter += new System.EventHandler(this.tlpRenewMembershipPlan_MouseEnter);
             this.lblRenewMembershipPlan.MouseLeave += new System.EventHandler(this.tlpRenewMembershipPlan_MouseLeave);
             // 
@@ -2148,14 +2152,14 @@
             this.tlpMiddleMembershipPlanMiddlePortion.Name = "tlpMiddleMembershipPlanMiddlePortion";
             this.tlpMiddleMembershipPlanMiddlePortion.RowCount = 1;
             this.tlpMiddleMembershipPlanMiddlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMiddleMembershipPlanMiddlePortion.Size = new System.Drawing.Size(241, 35);
+            this.tlpMiddleMembershipPlanMiddlePortion.Size = new System.Drawing.Size(260, 35);
             this.tlpMiddleMembershipPlanMiddlePortion.TabIndex = 2;
             // 
             // pnlMembershipPlanBorder
             // 
             this.pnlMembershipPlanBorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlMembershipPlanBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMembershipPlanBorder.Location = new System.Drawing.Point(119, 2);
+            this.pnlMembershipPlanBorder.Location = new System.Drawing.Point(128, 2);
             this.pnlMembershipPlanBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMembershipPlanBorder.Name = "pnlMembershipPlanBorder";
             this.pnlMembershipPlanBorder.Size = new System.Drawing.Size(1, 31);
@@ -2169,13 +2173,13 @@
             this.tlpMembershipPlanExpiryDatePortion.Controls.Add(this.lblExpiryDateTitle, 0, 0);
             this.tlpMembershipPlanExpiryDatePortion.Controls.Add(this.lblRetrieveExpiryDate, 0, 1);
             this.tlpMembershipPlanExpiryDatePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipPlanExpiryDatePortion.Location = new System.Drawing.Point(123, 2);
+            this.tlpMembershipPlanExpiryDatePortion.Location = new System.Drawing.Point(132, 2);
             this.tlpMembershipPlanExpiryDatePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipPlanExpiryDatePortion.Name = "tlpMembershipPlanExpiryDatePortion";
             this.tlpMembershipPlanExpiryDatePortion.RowCount = 2;
             this.tlpMembershipPlanExpiryDatePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMembershipPlanExpiryDatePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMembershipPlanExpiryDatePortion.Size = new System.Drawing.Size(91, 31);
+            this.tlpMembershipPlanExpiryDatePortion.Size = new System.Drawing.Size(98, 31);
             this.tlpMembershipPlanExpiryDatePortion.TabIndex = 3;
             // 
             // lblExpiryDateTitle
@@ -2212,13 +2216,13 @@
             this.tlpMembershipPlanStartingDatePortion.Controls.Add(this.lblStartingDateTitle, 0, 0);
             this.tlpMembershipPlanStartingDatePortion.Controls.Add(this.lblRetrieveStartingDateTitle, 0, 1);
             this.tlpMembershipPlanStartingDatePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipPlanStartingDatePortion.Location = new System.Drawing.Point(28, 2);
+            this.tlpMembershipPlanStartingDatePortion.Location = new System.Drawing.Point(30, 2);
             this.tlpMembershipPlanStartingDatePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipPlanStartingDatePortion.Name = "tlpMembershipPlanStartingDatePortion";
             this.tlpMembershipPlanStartingDatePortion.RowCount = 2;
             this.tlpMembershipPlanStartingDatePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMembershipPlanStartingDatePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMembershipPlanStartingDatePortion.Size = new System.Drawing.Size(87, 31);
+            this.tlpMembershipPlanStartingDatePortion.Size = new System.Drawing.Size(94, 31);
             this.tlpMembershipPlanStartingDatePortion.TabIndex = 0;
             // 
             // lblStartingDateTitle
@@ -2261,7 +2265,7 @@
             this.tblMembershipPlantopWholeolePortion.RowCount = 1;
             this.tblMembershipPlantopWholeolePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblMembershipPlantopWholeolePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblMembershipPlantopWholeolePortion.Size = new System.Drawing.Size(241, 50);
+            this.tblMembershipPlantopWholeolePortion.Size = new System.Drawing.Size(260, 50);
             this.tblMembershipPlantopWholeolePortion.TabIndex = 1;
             // 
             // picMembersipPlan
@@ -2271,7 +2275,7 @@
             this.picMembersipPlan.Location = new System.Drawing.Point(4, 2);
             this.picMembersipPlan.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
             this.picMembersipPlan.Name = "picMembersipPlan";
-            this.picMembersipPlan.Size = new System.Drawing.Size(28, 46);
+            this.picMembersipPlan.Size = new System.Drawing.Size(31, 46);
             this.picMembersipPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMembersipPlan.TabIndex = 0;
             this.picMembersipPlan.TabStop = false;
@@ -2284,13 +2288,13 @@
             this.tlpMembershipPlanTitlePortion.Controls.Add(this.lblMembershipPlanTitle, 0, 0);
             this.tlpMembershipPlanTitlePortion.Controls.Add(this.lblRetrieveMembershipPlanName, 0, 1);
             this.tlpMembershipPlanTitlePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipPlanTitlePortion.Location = new System.Drawing.Point(36, 2);
+            this.tlpMembershipPlanTitlePortion.Location = new System.Drawing.Point(39, 2);
             this.tlpMembershipPlanTitlePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipPlanTitlePortion.Name = "tlpMembershipPlanTitlePortion";
             this.tlpMembershipPlanTitlePortion.RowCount = 2;
             this.tlpMembershipPlanTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.34783F));
             this.tlpMembershipPlanTitlePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.65217F));
-            this.tlpMembershipPlanTitlePortion.Size = new System.Drawing.Size(203, 46);
+            this.tlpMembershipPlanTitlePortion.Size = new System.Drawing.Size(219, 46);
             this.tlpMembershipPlanTitlePortion.TabIndex = 1;
             // 
             // lblMembershipPlanTitle
@@ -2324,10 +2328,10 @@
             this.pnlAssignTrainerPortion.Controls.Add(this.tlpAssignTrainerMiddleWholePortion);
             this.pnlAssignTrainerPortion.Controls.Add(this.tlpAssignTrainerTopWholePortion);
             this.pnlAssignTrainerPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAssignTrainerPortion.Location = new System.Drawing.Point(265, 8);
+            this.pnlAssignTrainerPortion.Location = new System.Drawing.Point(284, 8);
             this.pnlAssignTrainerPortion.Margin = new System.Windows.Forms.Padding(8);
             this.pnlAssignTrainerPortion.Name = "pnlAssignTrainerPortion";
-            this.pnlAssignTrainerPortion.Size = new System.Drawing.Size(241, 146);
+            this.pnlAssignTrainerPortion.Size = new System.Drawing.Size(260, 146);
             this.pnlAssignTrainerPortion.TabIndex = 0;
             // 
             // tlpAssignTrainerBottomWholePortion
@@ -2343,7 +2347,7 @@
             this.tlpAssignTrainerBottomWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpAssignTrainerBottomWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpAssignTrainerBottomWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpAssignTrainerBottomWholePortion.Size = new System.Drawing.Size(241, 24);
+            this.tlpAssignTrainerBottomWholePortion.Size = new System.Drawing.Size(260, 24);
             this.tlpAssignTrainerBottomWholePortion.TabIndex = 4;
             // 
             // pnlAssignTrainerBottonPortion
@@ -2353,7 +2357,7 @@
             this.pnlAssignTrainerBottonPortion.Location = new System.Drawing.Point(0, 2);
             this.pnlAssignTrainerBottonPortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAssignTrainerBottonPortion.Name = "pnlAssignTrainerBottonPortion";
-            this.pnlAssignTrainerBottonPortion.Size = new System.Drawing.Size(241, 19);
+            this.pnlAssignTrainerBottonPortion.Size = new System.Drawing.Size(260, 19);
             this.pnlAssignTrainerBottonPortion.TabIndex = 0;
             // 
             // tlpAssignTrainerBottomWholePortionDesign
@@ -2374,7 +2378,7 @@
             this.tlpAssignTrainerBottomWholePortionDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignTrainerBottomWholePortionDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tlpAssignTrainerBottomWholePortionDesign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAssignTrainerBottomWholePortionDesign.Size = new System.Drawing.Size(241, 19);
+            this.tlpAssignTrainerBottomWholePortionDesign.Size = new System.Drawing.Size(260, 19);
             this.tlpAssignTrainerBottomWholePortionDesign.TabIndex = 6;
             // 
             // pnlAssignTrainerButton
@@ -2382,7 +2386,7 @@
             this.pnlAssignTrainerButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAssignTrainerButton.Controls.Add(this.tlpAssignTrainerButton);
             this.pnlAssignTrainerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAssignTrainerButton.Location = new System.Drawing.Point(3, -9);
+            this.pnlAssignTrainerButton.Location = new System.Drawing.Point(12, -9);
             this.pnlAssignTrainerButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAssignTrainerButton.Name = "pnlAssignTrainerButton";
             this.pnlAssignTrainerButton.Size = new System.Drawing.Size(111, 37);
@@ -2412,7 +2416,7 @@
             // 
             this.picAssignTrainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picAssignTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picAssignTrainer.Image")));
-            this.picAssignTrainer.Location = new System.Drawing.Point(11, 0);
+            this.picAssignTrainer.Location = new System.Drawing.Point(10, 0);
             this.picAssignTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picAssignTrainer.Name = "picAssignTrainer";
             this.picAssignTrainer.Size = new System.Drawing.Size(18, 35);
@@ -2428,7 +2432,7 @@
             this.lblAssignTrainer.AutoSize = true;
             this.lblAssignTrainer.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAssignTrainer.ForeColor = System.Drawing.Color.White;
-            this.lblAssignTrainer.Location = new System.Drawing.Point(31, 11);
+            this.lblAssignTrainer.Location = new System.Drawing.Point(30, 11);
             this.lblAssignTrainer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAssignTrainer.Name = "lblAssignTrainer";
             this.lblAssignTrainer.Size = new System.Drawing.Size(65, 12);
@@ -2442,7 +2446,7 @@
             this.pnlChangeTrainerButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlChangeTrainerButton.Controls.Add(this.tlpChangeTrainerButton);
             this.pnlChangeTrainerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChangeTrainerButton.Location = new System.Drawing.Point(130, -9);
+            this.pnlChangeTrainerButton.Location = new System.Drawing.Point(139, -9);
             this.pnlChangeTrainerButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlChangeTrainerButton.Name = "pnlChangeTrainerButton";
             this.pnlChangeTrainerButton.Size = new System.Drawing.Size(108, 37);
@@ -2472,7 +2476,7 @@
             // 
             this.picChangeTrainer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picChangeTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picChangeTrainer.Image")));
-            this.picChangeTrainer.Location = new System.Drawing.Point(7, 7);
+            this.picChangeTrainer.Location = new System.Drawing.Point(8, 7);
             this.picChangeTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picChangeTrainer.Name = "picChangeTrainer";
             this.picChangeTrainer.Size = new System.Drawing.Size(18, 20);
@@ -2488,7 +2492,7 @@
             this.lblChangeTrainer.AutoSize = true;
             this.lblChangeTrainer.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeTrainer.ForeColor = System.Drawing.Color.White;
-            this.lblChangeTrainer.Location = new System.Drawing.Point(27, 11);
+            this.lblChangeTrainer.Location = new System.Drawing.Point(28, 11);
             this.lblChangeTrainer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangeTrainer.Name = "lblChangeTrainer";
             this.lblChangeTrainer.Size = new System.Drawing.Size(69, 12);
@@ -2510,7 +2514,7 @@
             this.tlpAssignTrainerMiddleWholePortion.RowCount = 1;
             this.tlpAssignTrainerMiddleWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignTrainerMiddleWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAssignTrainerMiddleWholePortion.Size = new System.Drawing.Size(241, 72);
+            this.tlpAssignTrainerMiddleWholePortion.Size = new System.Drawing.Size(260, 72);
             this.tlpAssignTrainerMiddleWholePortion.TabIndex = 3;
             // 
             // tlpTrainerDetailsPortion
@@ -2532,7 +2536,7 @@
             this.tlpTrainerDetailsPortion.Controls.Add(this.lblRetrieveTrainerSpecialization, 2, 2);
             this.tlpTrainerDetailsPortion.Controls.Add(this.lblRetrieveTrainerAssignedDate, 2, 3);
             this.tlpTrainerDetailsPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerDetailsPortion.Location = new System.Drawing.Point(11, 2);
+            this.tlpTrainerDetailsPortion.Location = new System.Drawing.Point(12, 2);
             this.tlpTrainerDetailsPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTrainerDetailsPortion.Name = "tlpTrainerDetailsPortion";
             this.tlpTrainerDetailsPortion.RowCount = 4;
@@ -2540,7 +2544,7 @@
             this.tlpTrainerDetailsPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpTrainerDetailsPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpTrainerDetailsPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpTrainerDetailsPortion.Size = new System.Drawing.Size(228, 68);
+            this.tlpTrainerDetailsPortion.Size = new System.Drawing.Size(246, 68);
             this.tlpTrainerDetailsPortion.TabIndex = 1;
             // 
             // lblTrainerNameColon
@@ -2548,7 +2552,7 @@
             this.lblTrainerNameColon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTrainerNameColon.AutoSize = true;
             this.lblTrainerNameColon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainerNameColon.Location = new System.Drawing.Point(104, 2);
+            this.lblTrainerNameColon.Location = new System.Drawing.Point(112, 2);
             this.lblTrainerNameColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainerNameColon.Name = "lblTrainerNameColon";
             this.lblTrainerNameColon.Size = new System.Drawing.Size(10, 13);
@@ -2609,7 +2613,7 @@
             this.tlpTrainerDetailsPortionColon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tlpTrainerDetailsPortionColon.AutoSize = true;
             this.tlpTrainerDetailsPortionColon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tlpTrainerDetailsPortionColon.Location = new System.Drawing.Point(104, 19);
+            this.tlpTrainerDetailsPortionColon.Location = new System.Drawing.Point(112, 19);
             this.tlpTrainerDetailsPortionColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tlpTrainerDetailsPortionColon.Name = "tlpTrainerDetailsPortionColon";
             this.tlpTrainerDetailsPortionColon.Size = new System.Drawing.Size(10, 13);
@@ -2621,7 +2625,7 @@
             this.vlblTrainerSpecializationColon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.vlblTrainerSpecializationColon.AutoSize = true;
             this.vlblTrainerSpecializationColon.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vlblTrainerSpecializationColon.Location = new System.Drawing.Point(104, 36);
+            this.vlblTrainerSpecializationColon.Location = new System.Drawing.Point(112, 36);
             this.vlblTrainerSpecializationColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.vlblTrainerSpecializationColon.Name = "vlblTrainerSpecializationColon";
             this.vlblTrainerSpecializationColon.Size = new System.Drawing.Size(10, 13);
@@ -2633,7 +2637,7 @@
             this.lblTrainerAssignedDateColon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTrainerAssignedDateColon.AutoSize = true;
             this.lblTrainerAssignedDateColon.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainerAssignedDateColon.Location = new System.Drawing.Point(104, 53);
+            this.lblTrainerAssignedDateColon.Location = new System.Drawing.Point(112, 53);
             this.lblTrainerAssignedDateColon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrainerAssignedDateColon.Name = "lblTrainerAssignedDateColon";
             this.lblTrainerAssignedDateColon.Size = new System.Drawing.Size(10, 13);
@@ -2645,7 +2649,7 @@
             this.lblRetrieveTrainerName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrieveTrainerName.AutoSize = true;
             this.lblRetrieveTrainerName.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblRetrieveTrainerName.Location = new System.Drawing.Point(120, 2);
+            this.lblRetrieveTrainerName.Location = new System.Drawing.Point(129, 2);
             this.lblRetrieveTrainerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveTrainerName.Name = "lblRetrieveTrainerName";
             this.lblRetrieveTrainerName.Size = new System.Drawing.Size(57, 13);
@@ -2657,7 +2661,7 @@
             this.lblRetrieveTrainerPhoneNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrieveTrainerPhoneNo.AutoSize = true;
             this.lblRetrieveTrainerPhoneNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRetrieveTrainerPhoneNo.Location = new System.Drawing.Point(120, 19);
+            this.lblRetrieveTrainerPhoneNo.Location = new System.Drawing.Point(129, 19);
             this.lblRetrieveTrainerPhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveTrainerPhoneNo.Name = "lblRetrieveTrainerPhoneNo";
             this.lblRetrieveTrainerPhoneNo.Size = new System.Drawing.Size(67, 13);
@@ -2668,7 +2672,7 @@
             // 
             this.lblRetrieveTrainerSpecialization.AutoSize = true;
             this.lblRetrieveTrainerSpecialization.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRetrieveTrainerSpecialization.Location = new System.Drawing.Point(120, 34);
+            this.lblRetrieveTrainerSpecialization.Location = new System.Drawing.Point(129, 34);
             this.lblRetrieveTrainerSpecialization.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveTrainerSpecialization.Name = "lblRetrieveTrainerSpecialization";
             this.lblRetrieveTrainerSpecialization.Size = new System.Drawing.Size(82, 13);
@@ -2680,7 +2684,7 @@
             this.lblRetrieveTrainerAssignedDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRetrieveTrainerAssignedDate.AutoSize = true;
             this.lblRetrieveTrainerAssignedDate.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblRetrieveTrainerAssignedDate.Location = new System.Drawing.Point(120, 53);
+            this.lblRetrieveTrainerAssignedDate.Location = new System.Drawing.Point(129, 53);
             this.lblRetrieveTrainerAssignedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRetrieveTrainerAssignedDate.Name = "lblRetrieveTrainerAssignedDate";
             this.lblRetrieveTrainerAssignedDate.Size = new System.Drawing.Size(66, 13);
@@ -2700,7 +2704,7 @@
             this.tlpAssignTrainerTopWholePortion.Name = "tlpAssignTrainerTopWholePortion";
             this.tlpAssignTrainerTopWholePortion.RowCount = 1;
             this.tlpAssignTrainerTopWholePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAssignTrainerTopWholePortion.Size = new System.Drawing.Size(241, 50);
+            this.tlpAssignTrainerTopWholePortion.Size = new System.Drawing.Size(260, 50);
             this.tlpAssignTrainerTopWholePortion.TabIndex = 2;
             // 
             // lblAssignTrainerTitle
@@ -2708,10 +2712,10 @@
             this.lblAssignTrainerTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAssignTrainerTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAssignTrainerTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblAssignTrainerTitle.Location = new System.Drawing.Point(48, 15);
+            this.lblAssignTrainerTitle.Location = new System.Drawing.Point(48, 10);
             this.lblAssignTrainerTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAssignTrainerTitle.Name = "lblAssignTrainerTitle";
-            this.lblAssignTrainerTitle.Size = new System.Drawing.Size(142, 29);
+            this.lblAssignTrainerTitle.Size = new System.Drawing.Size(210, 29);
             this.lblAssignTrainerTitle.TabIndex = 1;
             this.lblAssignTrainerTitle.Text = "Assigned Trainer";
             // 
@@ -2741,7 +2745,7 @@
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.Name = "tlpMembershipAndSubscriptionDetailsUnderlineBorder";
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.RowCount = 1;
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.Size = new System.Drawing.Size(514, 15);
+            this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.Size = new System.Drawing.Size(552, 15);
             this.tlpMembershipAndSubscriptionDetailsUnderlineBorder.TabIndex = 2;
             // 
             // pnlBlueColorLineBorder
@@ -2761,7 +2765,7 @@
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Location = new System.Drawing.Point(0, 0);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Name = "pnlMembershipAndSubscriptionDetailsUnderlineBorder";
-            this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Size = new System.Drawing.Size(514, 49);
+            this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.Size = new System.Drawing.Size(552, 49);
             this.pnlMembershipAndSubscriptionDetailsUnderlineBorder.TabIndex = 0;
             // 
             // tlpMembershpAndSubscriptionDetailsTopHederSection
@@ -2778,7 +2782,7 @@
             this.tlpMembershpAndSubscriptionDetailsTopHederSection.Name = "tlpMembershpAndSubscriptionDetailsTopHederSection";
             this.tlpMembershpAndSubscriptionDetailsTopHederSection.RowCount = 1;
             this.tlpMembershpAndSubscriptionDetailsTopHederSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Size = new System.Drawing.Size(514, 49);
+            this.tlpMembershpAndSubscriptionDetailsTopHederSection.Size = new System.Drawing.Size(552, 49);
             this.tlpMembershpAndSubscriptionDetailsTopHederSection.TabIndex = 2;
             // 
             // picMembershipAndSubscriptionDetails

@@ -27,14 +27,14 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Shift
             DataTable dataTable = LookupDAL.RetrieveSpecificItem("spRetrieveShiftTimeTable");
             return dataTable;
         }
-        public bool UpdateShiftDetailsDAL(int shiftId, TimeSpan startTime, TimeSpan endTime)
+        public string  UpdateShiftDetailsDAL(int shiftId, TimeSpan startTime, TimeSpan endTime)
         {
             SqlParameter[] parameters = { new SqlParameter("@ShiftId", shiftId), new SqlParameter("@StartTime", startTime), new SqlParameter("@EndTime", endTime) };
 
             string message = LookupDAL.UpdateSpecificItem("spUpdateShiftTime", parameters);
 
           
-            return !string.IsNullOrEmpty(message);
+            return message;
         }
     }
 }

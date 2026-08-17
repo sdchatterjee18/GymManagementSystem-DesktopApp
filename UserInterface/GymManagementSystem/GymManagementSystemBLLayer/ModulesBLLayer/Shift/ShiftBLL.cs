@@ -27,7 +27,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Shift
             ShiftDAL shiftDAL = new ShiftDAL();
             return shiftDAL.RetrieveShiftDetailsDAL();
         }
-        public bool UpdateShiftDetailsBLL(int shiftId, TimeSpan startTime, TimeSpan endTime)
+        public string UpdateShiftDetailsBLL(int shiftId, TimeSpan startTime, TimeSpan endTime)
         {
             ShiftDAL shiftDAL = new ShiftDAL();
             return shiftDAL.UpdateShiftDetailsDAL(shiftId, startTime, endTime);

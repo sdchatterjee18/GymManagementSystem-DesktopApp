@@ -319,22 +319,7 @@ namespace GymManagementSystem.FORMS.Member
         private void pnlRenewMembershipPlan_Click(object sender, EventArgs e)
         {
 
-            if (memberAllDetailsUI.MembershipPlanId != 0) 
-            {
-                MessageBox.Show(MembershipExpireNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else if(memberAllDetailsUI.IsActive == "InActive")
-            {
-                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else
-            {
-                FrmMembershipRenewal frmMembershipRenewal = new FrmMembershipRenewal(memberAllDetailsUI);
-                frmMembershipRenewal.ShowDialog();
-            }
-            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
-            this.memberAllDetailsUI = member;
-            LoadMemberDetails();
+            
         }
 
         private void tlpRenewMembershipPlan_Paint(object sender, PaintEventArgs e)
@@ -420,6 +405,26 @@ namespace GymManagementSystem.FORMS.Member
             {
                 FrmChangeDietPlan FrmChangeDietPlan = new FrmChangeDietPlan(memberAllDetailsUI);
                 FrmChangeDietPlan.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void pnlRenewMembershipPlan_Click_1(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.MembershipPlanId != 0)
+            {
+                MessageBox.Show(MembershipExpireNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmMembershipRenewal frmMembershipRenewal = new FrmMembershipRenewal(memberAllDetailsUI);
+                frmMembershipRenewal.ShowDialog();
             }
             MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
             this.memberAllDetailsUI = member;

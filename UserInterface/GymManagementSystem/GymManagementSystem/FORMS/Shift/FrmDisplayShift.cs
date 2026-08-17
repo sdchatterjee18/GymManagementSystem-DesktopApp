@@ -215,16 +215,10 @@ namespace GymManagementSystem.FORMS .Shift
 
             ShiftUI shiftUI = new ShiftUI();
 
-            bool result = shiftUI.UpdateShiftDetailsUI(shiftId,startTime,endTime);
-
-            if (result)
-            {
-                MessageBox.Show("Shift updated successfully.");
-            }
-            else
-            {
-                MessageBox.Show("Shift update failed.");
-            }
+            string result = shiftUI.UpdateShiftDetailsUI(shiftId,startTime,endTime);
+            MessageBox.Show(result);
+            dgvShiftManagement.Rows.Clear();
+            RetrieveShiftDetails();
         }
   
     }
