@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using GymManagementSystem.FORMS.Expenses.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Expenses
 {
@@ -18,8 +19,9 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             InitializeComponent();
         }
-        
 
+        int clickCountTxtAmount = 0;
+        int clickCountTxtNote = 0;
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
             //for Amount Text
@@ -69,6 +71,7 @@ namespace GymManagementSystem.FORMS.Expenses
                     SerialNo++,
                     row["CategoryName"].ToString(),
                     row["Category"].ToString(),
+                    "₹ " +
                    Convert.ToDecimal(row["ExpenseAmount"]),
                   Convert.ToDateTime( row["ExpenseDate"]).ToString("dd-MM-yyyy"),
                    row["Notes"].ToString()
@@ -180,9 +183,104 @@ namespace GymManagementSystem.FORMS.Expenses
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             
+            
+            
+        }
+
+        private void tlpSelectCategory_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpSearchBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+            ValidationUI.ClearDefaultPlaceholderText(txtExpenseDefination, clickCountTxtNote);
+            ValidationUI.ClearDefaultPlaceholderText(txtAmount, clickCountTxtAmount);
+            if (!ValidationUI.ValidateRequiredComboBoxes(cmbCateogory))
+            {
+                return;
+            }
+            if (!ValidationUI.ValidateRequiredTextBoxes(txtAmount, txtExpenseDefination))
+            {
+                return;
+            }
             InsertExpense();
             RetrieveAllExpense();
+
+        }
+
+        private void pnlAddExpenseCategory_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddExpenseCategory.BackColor = Color.White;
+            picAddIcon.Image = Properties.Resources.plusHOVER;
+            lblAddNewExpenseCategory.ForeColor = Color.MidnightBlue;
+        }
+
+        private void pnlAddExpenseCategory_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddExpenseCategory.BackColor = Color.MidnightBlue;
+            picAddIcon.Image = Properties.Resources.plus;
+            lblAddNewExpenseCategory.ForeColor = Color.White;
+        }
+
+        private void pnlAddExpenseCategory_Click(object sender, EventArgs e)
+        {
+            FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
+            frmAddExpenseCategory.ShowDialog();
+            RetrieveCategoryName();
+        }
+
+        private void btnSubmit_MouseEnter(object sender, EventArgs e)
+        {
+            btnSubmit.BackColor = Color.White;
+            btnSubmit.ForeColor = Color.MidnightBlue;
+        }
+
+        private void btnSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            btnSubmit.BackColor = Color.MidnightBlue;
+            btnSubmit.ForeColor = Color.White;
+        }
+
+        private void txtAmount_Click_1(object sender, EventArgs e)
+        {
+           clickCountTxtAmount= ValidationUI.ClearTextBoxWhenClicked(txtAmount, clickCountTxtAmount);
+           txtAmount.ForeColor = Color.Black;
+        }
+
+        private void txtExpenseDefination_Click_1(object sender, EventArgs e)
+        {
+            clickCountTxtNote=ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
+            txtExpenseDefination.ForeColor = Color.Black;
+        }
+
+        private void dgvExpenses_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvExpenses.Columns[e.ColumnIndex].Name == "colNotes")
+            {
+                e.CellStyle.ForeColor = Color.Green;
+            }
+
+            if (dgvExpenses.Columns[e.ColumnIndex].Name == "colExpenseAmount")
+            {
+                e.CellStyle.ForeColor = Color.Red;
+            }
+
+            if (dgvExpenses.Columns[e.ColumnIndex].Name == "colSLNo")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
+            if (dgvExpenses.Columns[e.ColumnIndex].Name == "ExpenseDate")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
             
         } 
+
     }
 }

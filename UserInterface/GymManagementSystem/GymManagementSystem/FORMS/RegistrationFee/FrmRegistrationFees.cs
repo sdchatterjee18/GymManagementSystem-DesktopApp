@@ -55,7 +55,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
                         .Cells["colSLNO"].Value = serialNo++;
 
                     dgvShowAllAddRegistrationFees.Rows[rowIndex]
-                        .Cells["colFeeAmount"].Value =
+                        .Cells["colFeeAmount"].Value ="₹ " +
                          Convert.ToDecimal(dataRow["FeeAmount"]);
 
                     dgvShowAllAddRegistrationFees.Rows[rowIndex]
@@ -91,14 +91,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         private void pnlClickAddNewFegistrationFees_Click(object sender, EventArgs e)
         {
-            dgvShowAllAddRegistrationFees.ClearSelection();
-
-            FrmAddRegistrationFee frmAddRegistrationFee =
-                new FrmAddRegistrationFee();
-
-            frmAddRegistrationFee.ShowDialog();
-
-            RetrieveRegistrationFees();
+            
         }
         private void dgvShowAllAddRegistrationFees_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -121,17 +114,6 @@ namespace GymManagementSystem.FORMS.RegistrationFee
                 }
             }
         }
-
-        private void tlpAddNewRegistrationFees_MouseEnter(object sender, EventArgs e)
-        {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(220, 225, 230);
-        }
-
-        private void tlpAddNewRegistrationFees_MouseLeave(object sender, EventArgs e)
-        {
-            this.tlpAddNewRegistrationFees.BackColor = Color.FromArgb(236, 240, 243);
-        }
-
         private void picRegistrationFeesIcon_Click(object sender, EventArgs e)
         {
             dgvShowAllAddRegistrationFees.ClearSelection();
@@ -168,12 +150,7 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         private void dgvShowAllAddRegistrationFees_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-            
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvShowAllAddRegistrationFees.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -181,17 +158,38 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
         private void dgvShowAllAddRegistrationFees_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-              
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvShowAllAddRegistrationFees.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
             }
 
         }
 
+        private void pnlAddRegFees_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddRegFees.BackColor = Color.White;
+            picAddButton.Image = Properties.Resources.plusHOVER;
+            lblAddregFee.ForeColor = Color.MidnightBlue;
+            
+        }
+
+        private void pnlAddRegFees_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddRegFees.BackColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.plus;
+            lblAddregFee.ForeColor = Color.White;
+        }
+
+        private void tlpAddRegFees_Click(object sender, EventArgs e)
+        {
+            dgvShowAllAddRegistrationFees.ClearSelection();
+
+            FrmAddRegistrationFee frmAddRegistrationFee =
+                new FrmAddRegistrationFee();
+
+            frmAddRegistrationFee.ShowDialog();
+
+            RetrieveRegistrationFees();
+        }
     }
 }

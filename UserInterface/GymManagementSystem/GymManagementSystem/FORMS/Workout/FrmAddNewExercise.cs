@@ -100,5 +100,31 @@ namespace GymManagementSystem.FORMS.Workout
             this.Text = "";
             this.ActiveControl = null;
         }
+
+        private void pnlClickSubmitExercise_MouseEnter(object sender, EventArgs e)
+        {
+            pnlClickSubmitExercise.BackColor = Color.White;
+            lblAddNewExercise.ForeColor = Color.MidnightBlue;
+            picAddButtonExercise.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void pnlClickSubmitExercise_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickSubmitExercise.BackColor = Color.MidnightBlue;
+            lblAddNewExercise.ForeColor = Color.White;
+            picAddButtonExercise.Image = Properties.Resources.paper_plane;
+        }
+
+        private void btnClearExercise_MouseEnter(object sender, EventArgs e)
+        {
+            btnClearExercise.BackColor = Color.White;
+            btnClearExercise.ForeColor = Color.MidnightBlue;
+        }
+
+        private void btnClearExercise_MouseLeave(object sender, EventArgs e)
+        {
+            btnClearExercise.BackColor = Color.MidnightBlue;
+            btnClearExercise.ForeColor = Color.White;
+        }
     }
 }

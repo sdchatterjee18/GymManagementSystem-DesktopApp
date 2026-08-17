@@ -264,5 +264,31 @@ namespace GymManagementSystem.FORMS.DietPlan
                 picPlanDocument.Image = null;
             }
         }
+
+        private void tlpSubmit_MouseEnter(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picSubmit.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void tlpSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picSubmit.Image = Properties.Resources.paper_plane;
+        }
+
+        private void lblClear_MouseEnter(object sender, EventArgs e)
+        {
+            lblClear.ForeColor = Color.MidnightBlue;
+            lblClear.BackColor = Color.White;
+        }
+
+        private void lblClear_MouseLeave(object sender, EventArgs e)
+        {
+            lblClear.ForeColor = Color.White;
+            lblClear.BackColor = Color.MidnightBlue;
+        }
     }
 }

@@ -489,9 +489,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmChangeDietPlan.resx">
       <DependentUpon>FrmChangeDietPlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmChangeShift.resx">
       <DependentUpon>FrmChangeShift.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmChangeTrainer.resx">
       <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
@@ -507,6 +509,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmMembershipRenewal.resx">
       <DependentUpon>FrmMembershipRenewal.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmMemberTrainerAssignment.resx">
       <DependentUpon>FrmMemberTrainerAssignment.cs</DependentUpon>
@@ -818,6 +821,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plusHOVER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-planeHOVER.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
