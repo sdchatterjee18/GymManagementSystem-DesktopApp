@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSuperAdminLogin));
-            this.btnShowPasswordSuperadmin = new System.Windows.Forms.Button();
             this.pnlPasswordSuperAdmin = new System.Windows.Forms.Panel();
             this.tlpPasswordSuperAdmin = new System.Windows.Forms.TableLayoutPanel();
-            this.picSuperAdminPassword = new System.Windows.Forms.PictureBox();
-            this.txtSuperAdminPassword = new System.Windows.Forms.TextBox();
             this.lblSuperAdminPassword = new System.Windows.Forms.Label();
+            this.txtSuperAdminPassword = new System.Windows.Forms.TextBox();
+            this.picSuperAdminPassword = new System.Windows.Forms.PictureBox();
             this.pnlUsernameSuperAdmin = new System.Windows.Forms.Panel();
             this.tlpSuperAdminUsernameInput = new System.Windows.Forms.TableLayoutPanel();
-            this.picSuperAdminUsername = new System.Windows.Forms.PictureBox();
-            this.txtSuperAdminUsername = new System.Windows.Forms.TextBox();
             this.lblSuperAdminUsername = new System.Windows.Forms.Label();
+            this.txtSuperAdminUsername = new System.Windows.Forms.TextBox();
+            this.picSuperAdminUsername = new System.Windows.Forms.PictureBox();
             this.picthreeDotSuperAdmin = new System.Windows.Forms.PictureBox();
             this.lblSuperAdmin = new System.Windows.Forms.Label();
             this.tlpSuperAdminLogin = new System.Windows.Forms.TableLayoutPanel();
@@ -59,19 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminImage)).BeginInit();
             this.tlpSuperAdminLoginEntireForm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnShowPasswordSuperadmin
-            // 
-            this.btnShowPasswordSuperadmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowPasswordSuperadmin.BackColor = System.Drawing.Color.Ivory;
-            this.btnShowPasswordSuperadmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnShowPasswordSuperadmin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPasswordSuperadmin.Location = new System.Drawing.Point(456, 421);
-            this.btnShowPasswordSuperadmin.Name = "btnShowPasswordSuperadmin";
-            this.btnShowPasswordSuperadmin.Size = new System.Drawing.Size(81, 35);
-            this.btnShowPasswordSuperadmin.TabIndex = 9;
-            this.btnShowPasswordSuperadmin.Text = "Show";
-            this.btnShowPasswordSuperadmin.UseVisualStyleBackColor = false;
             // 
             // pnlPasswordSuperAdmin
             // 
@@ -105,33 +91,6 @@
             this.tlpPasswordSuperAdmin.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
             this.tlpPasswordSuperAdmin.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
             // 
-            // picSuperAdminPassword
-            // 
-            this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
-            this.picSuperAdminPassword.Location = new System.Drawing.Point(5, 13);
-            this.picSuperAdminPassword.Name = "picSuperAdminPassword";
-            this.picSuperAdminPassword.Size = new System.Drawing.Size(30, 35);
-            this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSuperAdminPassword.TabIndex = 2;
-            this.picSuperAdminPassword.TabStop = false;
-            this.picSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
-            this.picSuperAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
-            // 
-            // txtSuperAdminPassword
-            // 
-            this.txtSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSuperAdminPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtSuperAdminPassword.Location = new System.Drawing.Point(189, 13);
-            this.txtSuperAdminPassword.Name = "txtSuperAdminPassword";
-            this.txtSuperAdminPassword.Size = new System.Drawing.Size(320, 34);
-            this.txtSuperAdminPassword.TabIndex = 1;
-            this.txtSuperAdminPassword.Text = "Enter Password";
-            this.txtSuperAdminPassword.Enter += new System.EventHandler(this.txtSuperAdminPassword_Enter);
-            this.txtSuperAdminPassword.Leave += new System.EventHandler(this.txtSuperAdminPassword_Leave);
-            this.txtSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
-            this.txtSuperAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
-            // 
             // lblSuperAdminPassword
             // 
             this.lblSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -145,6 +104,34 @@
             this.lblSuperAdminPassword.Text = "Password :";
             this.lblSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
             this.lblSuperAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
+            // 
+            // txtSuperAdminPassword
+            // 
+            this.txtSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSuperAdminPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtSuperAdminPassword.Location = new System.Drawing.Point(189, 13);
+            this.txtSuperAdminPassword.Name = "txtSuperAdminPassword";
+            this.txtSuperAdminPassword.Size = new System.Drawing.Size(320, 34);
+            this.txtSuperAdminPassword.TabIndex = 1;
+            this.txtSuperAdminPassword.Text = "Enter Password";
+            this.txtSuperAdminPassword.Click += new System.EventHandler(this.txtSuperAdminPassword_Click);
+            this.txtSuperAdminPassword.Enter += new System.EventHandler(this.txtSuperAdminPassword_Enter);
+            this.txtSuperAdminPassword.Leave += new System.EventHandler(this.txtSuperAdminPassword_Leave);
+            this.txtSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
+            this.txtSuperAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
+            // 
+            // picSuperAdminPassword
+            // 
+            this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
+            this.picSuperAdminPassword.Location = new System.Drawing.Point(5, 13);
+            this.picSuperAdminPassword.Name = "picSuperAdminPassword";
+            this.picSuperAdminPassword.Size = new System.Drawing.Size(30, 35);
+            this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSuperAdminPassword.TabIndex = 2;
+            this.picSuperAdminPassword.TabStop = false;
+            this.picSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
+            this.picSuperAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
             // 
             // pnlUsernameSuperAdmin
             // 
@@ -178,33 +165,6 @@
             this.tlpSuperAdminUsernameInput.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
             this.tlpSuperAdminUsernameInput.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
             // 
-            // picSuperAdminUsername
-            // 
-            this.picSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picSuperAdminUsername.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminUsername.Image")));
-            this.picSuperAdminUsername.Location = new System.Drawing.Point(3, 10);
-            this.picSuperAdminUsername.Name = "picSuperAdminUsername";
-            this.picSuperAdminUsername.Size = new System.Drawing.Size(32, 38);
-            this.picSuperAdminUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSuperAdminUsername.TabIndex = 2;
-            this.picSuperAdminUsername.TabStop = false;
-            this.picSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
-            this.picSuperAdminUsername.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
-            // 
-            // txtSuperAdminUsername
-            // 
-            this.txtSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtSuperAdminUsername.Location = new System.Drawing.Point(189, 12);
-            this.txtSuperAdminUsername.Name = "txtSuperAdminUsername";
-            this.txtSuperAdminUsername.Size = new System.Drawing.Size(320, 34);
-            this.txtSuperAdminUsername.TabIndex = 1;
-            this.txtSuperAdminUsername.Text = "Enter Username";
-            this.txtSuperAdminUsername.Enter += new System.EventHandler(this.txtSuperAdminUsername_Enter);
-            this.txtSuperAdminUsername.Leave += new System.EventHandler(this.txtSuperAdminUsername_Leave);
-            this.txtSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
-            this.txtSuperAdminUsername.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
-            // 
             // lblSuperAdminUsername
             // 
             this.lblSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -218,6 +178,34 @@
             this.lblSuperAdminUsername.Text = "Username :";
             this.lblSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
             this.lblSuperAdminUsername.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
+            // 
+            // txtSuperAdminUsername
+            // 
+            this.txtSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtSuperAdminUsername.Location = new System.Drawing.Point(189, 12);
+            this.txtSuperAdminUsername.Name = "txtSuperAdminUsername";
+            this.txtSuperAdminUsername.Size = new System.Drawing.Size(320, 34);
+            this.txtSuperAdminUsername.TabIndex = 1;
+            this.txtSuperAdminUsername.Text = "Enter Username";
+            this.txtSuperAdminUsername.Click += new System.EventHandler(this.txtSuperAdminUsername_Click);
+            this.txtSuperAdminUsername.Enter += new System.EventHandler(this.txtSuperAdminUsername_Enter);
+            this.txtSuperAdminUsername.Leave += new System.EventHandler(this.txtSuperAdminUsername_Leave);
+            this.txtSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
+            this.txtSuperAdminUsername.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
+            // 
+            // picSuperAdminUsername
+            // 
+            this.picSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picSuperAdminUsername.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminUsername.Image")));
+            this.picSuperAdminUsername.Location = new System.Drawing.Point(3, 10);
+            this.picSuperAdminUsername.Name = "picSuperAdminUsername";
+            this.picSuperAdminUsername.Size = new System.Drawing.Size(32, 38);
+            this.picSuperAdminUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSuperAdminUsername.TabIndex = 2;
+            this.picSuperAdminUsername.TabStop = false;
+            this.picSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
+            this.picSuperAdminUsername.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
             // 
             // picthreeDotSuperAdmin
             // 
@@ -248,7 +236,7 @@
             this.tlpSuperAdminLogin.ColumnCount = 3;
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.84716F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.15284F));
-            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tlpSuperAdminLogin.Controls.Add(this.btnSuperAdminLogin, 1, 0);
             this.tlpSuperAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLogin.Location = new System.Drawing.Point(25, 473);
@@ -269,10 +257,11 @@
             this.btnSuperAdminLogin.ForeColor = System.Drawing.Color.White;
             this.btnSuperAdminLogin.Location = new System.Drawing.Point(68, 3);
             this.btnSuperAdminLogin.Name = "btnSuperAdminLogin";
-            this.btnSuperAdminLogin.Size = new System.Drawing.Size(371, 51);
+            this.btnSuperAdminLogin.Size = new System.Drawing.Size(370, 51);
             this.btnSuperAdminLogin.TabIndex = 0;
             this.btnSuperAdminLogin.Text = "Log in";
             this.btnSuperAdminLogin.UseVisualStyleBackColor = false;
+            this.btnSuperAdminLogin.Click += new System.EventHandler(this.btnSuperAdminLogin_Click);
             // 
             // tlpSuperAdminImage
             // 
@@ -314,7 +303,6 @@
             this.tlpSuperAdminLoginEntireForm.Controls.Add(this.picthreeDotSuperAdmin, 1, 2);
             this.tlpSuperAdminLoginEntireForm.Controls.Add(this.pnlUsernameSuperAdmin, 1, 4);
             this.tlpSuperAdminLoginEntireForm.Controls.Add(this.pnlPasswordSuperAdmin, 1, 5);
-            this.tlpSuperAdminLoginEntireForm.Controls.Add(this.btnShowPasswordSuperadmin, 1, 6);
             this.tlpSuperAdminLoginEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLoginEntireForm.Location = new System.Drawing.Point(0, 0);
             this.tlpSuperAdminLoginEntireForm.Name = "tlpSuperAdminLoginEntireForm";
@@ -365,7 +353,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnShowPasswordSuperadmin;
         private System.Windows.Forms.Panel pnlPasswordSuperAdmin;
         private System.Windows.Forms.TableLayoutPanel tlpPasswordSuperAdmin;
         private System.Windows.Forms.Label lblSuperAdminPassword;

@@ -32,14 +32,14 @@
             this.tlpAdminLoginEntireForm = new System.Windows.Forms.TableLayoutPanel();
             this.tlpAdminImage = new System.Windows.Forms.TableLayoutPanel();
             this.picAdmin = new System.Windows.Forms.PictureBox();
-            this.lblAdmin = new System.Windows.Forms.Label();
             this.tblAdminLogin = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdminLogin = new System.Windows.Forms.Button();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.picThreeDotAdmin = new System.Windows.Forms.PictureBox();
             this.pnlUsernameAdmin = new System.Windows.Forms.Panel();
             this.tlpUsernameInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblAdminUsernameI = new System.Windows.Forms.Label();
-            this.txtAdminUsernameI = new System.Windows.Forms.TextBox();
+            this.txtAdminUsername = new System.Windows.Forms.TextBox();
             this.picAdminUsernameI = new System.Windows.Forms.PictureBox();
             this.pnlPasswordAdmin = new System.Windows.Forms.Panel();
             this.tlpAdminPassword = new System.Windows.Forms.TableLayoutPanel();
@@ -115,25 +115,12 @@
             this.picAdmin.TabIndex = 0;
             this.picAdmin.TabStop = false;
             // 
-            // lblAdmin
-            // 
-            this.lblAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.BackColor = System.Drawing.Color.PapayaWhip;
-            this.lblAdmin.Font = new System.Drawing.Font("Eras Bold ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblAdmin.Location = new System.Drawing.Point(160, 233);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(241, 38);
-            this.lblAdmin.TabIndex = 2;
-            this.lblAdmin.Text = "       Admin       ";
-            // 
             // tblAdminLogin
             // 
             this.tblAdminLogin.ColumnCount = 3;
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.84716F));
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.15284F));
-            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tblAdminLogin.Controls.Add(this.btnAdminLogin, 1, 0);
             this.tblAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblAdminLogin.Location = new System.Drawing.Point(24, 473);
@@ -152,12 +139,26 @@
             this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Location = new System.Drawing.Point(69, 3);
+            this.btnAdminLogin.Location = new System.Drawing.Point(68, 3);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(374, 51);
+            this.btnAdminLogin.Size = new System.Drawing.Size(372, 51);
             this.btnAdminLogin.TabIndex = 0;
             this.btnAdminLogin.Text = "Log in";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
+            // 
+            // lblAdmin
+            // 
+            this.lblAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.BackColor = System.Drawing.Color.PapayaWhip;
+            this.lblAdmin.Font = new System.Drawing.Font("Eras Bold ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblAdmin.Location = new System.Drawing.Point(160, 233);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(241, 38);
+            this.lblAdmin.TabIndex = 2;
+            this.lblAdmin.Text = "       Admin       ";
             // 
             // picThreeDotAdmin
             // 
@@ -189,7 +190,7 @@
             this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.35283F));
             this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpUsernameInput.Controls.Add(this.lblAdminUsernameI, 1, 0);
-            this.tlpUsernameInput.Controls.Add(this.txtAdminUsernameI, 2, 0);
+            this.tlpUsernameInput.Controls.Add(this.txtAdminUsername, 2, 0);
             this.tlpUsernameInput.Controls.Add(this.picAdminUsernameI, 0, 0);
             this.tlpUsernameInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpUsernameInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,19 +217,16 @@
             this.lblAdminUsernameI.MouseEnter += new System.EventHandler(this.pnlUsernameAdmin_MouseEnter);
             this.lblAdminUsernameI.MouseLeave += new System.EventHandler(this.pnlUsernameAdmin_MouseLeave);
             // 
-            // txtAdminUsernameI
+            // txtAdminUsername
             // 
-            this.txtAdminUsernameI.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtAdminUsernameI.ForeColor = System.Drawing.Color.Gray;
-            this.txtAdminUsernameI.Location = new System.Drawing.Point(189, 12);
-            this.txtAdminUsernameI.Name = "txtAdminUsernameI";
-            this.txtAdminUsernameI.Size = new System.Drawing.Size(320, 34);
-            this.txtAdminUsernameI.TabIndex = 1;
-            this.txtAdminUsernameI.Text = "Enter Username";
-            this.txtAdminUsernameI.Enter += new System.EventHandler(this.txtAdminUsernameI_Enter);
-            this.txtAdminUsernameI.Leave += new System.EventHandler(this.txtAdminUsernameI_Leave);
-            this.txtAdminUsernameI.MouseEnter += new System.EventHandler(this.pnlUsernameAdmin_MouseEnter);
-            this.txtAdminUsernameI.MouseLeave += new System.EventHandler(this.pnlUsernameAdmin_MouseLeave);
+            this.txtAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAdminUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtAdminUsername.Location = new System.Drawing.Point(189, 12);
+            this.txtAdminUsername.Name = "txtAdminUsername";
+            this.txtAdminUsername.Size = new System.Drawing.Size(320, 34);
+            this.txtAdminUsername.TabIndex = 1;
+            this.txtAdminUsername.Text = "Enter Username";
+            this.txtAdminUsername.Click += new System.EventHandler(this.txtAdminUsername_Click);
             // 
             // picAdminUsernameI
             // 
@@ -298,10 +296,7 @@
             this.txtAdminPassword.Size = new System.Drawing.Size(320, 34);
             this.txtAdminPassword.TabIndex = 1;
             this.txtAdminPassword.Text = "Enter Password";
-            this.txtAdminPassword.Enter += new System.EventHandler(this.txtAdminPassword_Enter);
-            this.txtAdminPassword.Leave += new System.EventHandler(this.txtAdminPassword_Leave);
-            this.txtAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordAdmin_MouseEnter);
-            this.txtAdminPassword.MouseLeave += new System.EventHandler(this.txtAdminPassword_Leave);
+            this.txtAdminPassword.Click += new System.EventHandler(this.txtAdminPassword_Click);
             // 
             // picAdminPassword
             // 
@@ -322,7 +317,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 565);
             this.Controls.Add(this.tlpAdminLoginEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(580, 612);
             this.MinimumSize = new System.Drawing.Size(580, 612);
             this.Name = "FrmAdminLogin";
@@ -360,7 +355,7 @@
         private System.Windows.Forms.Panel pnlUsernameAdmin;
         private System.Windows.Forms.TableLayoutPanel tlpUsernameInput;
         private System.Windows.Forms.Label lblAdminUsernameI;
-        private System.Windows.Forms.TextBox txtAdminUsernameI;
+        private System.Windows.Forms.TextBox txtAdminUsername;
         private System.Windows.Forms.PictureBox picAdminUsernameI;
         private System.Windows.Forms.Panel pnlPasswordAdmin;
         private System.Windows.Forms.TableLayoutPanel tlpAdminPassword;
