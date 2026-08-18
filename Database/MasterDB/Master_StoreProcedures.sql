@@ -24,6 +24,97 @@
 -------------------------------------------------------------------
 
 --------------------------------
+-- SP: spSuperAdminLogin
+--------------------------------
+CREATE PROC spSuperAdminLogin
+(
+    @UserName      VARCHAR(100),
+    @PasswordHash  VARCHAR(255)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @UserName = LTRIM(RTRIM(ISNULL(@UserName, '')));
+        SET @PasswordHash = LTRIM(RTRIM(ISNULL(@PasswordHash, '')));
+
+        -- Username required
+        IF @UserName = ''
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+        -- Password required
+        IF @PasswordHash = ''
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+        -- Check username + password
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblSuperAdmin
+            WHERE UserName = @UserName
+              AND PasswordHash = @PasswordHash
+        )
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+        -- Login successful
+        UPDATE tblSuperAdmin
+        SET
+            IsActive = 1,
+            LastLogin = GETDATE()
+        WHERE UserName = @UserName
+          AND PasswordHash = @PasswordHash;
+
+        -- Only 1 on successful login
+        SELECT 1 AS Success;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT 0 AS Success;
+
+    END CATCH
+END;
+GO
+
+--------------------------------
+-- SP: spSuperAdminLogout
+--------------------------------
+CREATE PROC spSuperAdminLogout
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        UPDATE tblSuperAdmin
+        SET IsActive = 0
+        WHERE IsActive = 1;
+
+        SELECT 1 AS Success;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT 0 AS Success;
+
+    END CATCH
+END;
+GO
+
+--------------------------------
 -- SP: spRegisterNewSuperAdmin
 --------------------------------
 CREATE PROC spRegisterNewSuperAdmin
@@ -173,102 +264,15 @@ BEGIN
 END;
 GO
 
------------------------------
---SP: spSuperAdminLoginLogout
------------------------------
-CREATE PROC spSuperAdminLoginLogout
-(
-    @UserName      VARCHAR(100),
-    @PasswordHash  VARCHAR(255) = NULL
-)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    BEGIN TRY
-
-        SET @UserName = LTRIM(RTRIM(ISNULL(@UserName, '')));
-        SET @PasswordHash = LTRIM(RTRIM(ISNULL(@PasswordHash, '')));
-
-        IF @UserName = ''
-        BEGIN
-            SELECT 'Username is Required.' AS Message;
-            RETURN;
-        END;
-
-        IF NOT EXISTS
-        (
-            SELECT 1
-            FROM tblSuperAdmin
-            WHERE UserName = @UserName
-        )
-        BEGIN
-            SELECT 'Invalid Username.' AS Message;
-            RETURN;
-        END;
-
-        IF EXISTS
-        (
-            SELECT 1
-            FROM tblSuperAdmin
-            WHERE UserName = @UserName
-              AND IsActive = 1
-        )
-        BEGIN
-            UPDATE tblSuperAdmin
-            SET IsActive = 0
-            WHERE UserName = @UserName;
-
-            SELECT 'Logout Successful.' AS Message;
-            RETURN;
-        END;
-
-        IF @PasswordHash = ''
-        BEGIN
-            SELECT 'Password is Required.' AS Message;
-            RETURN;
-        END;
-
-        IF NOT EXISTS
-        (
-            SELECT 1
-            FROM tblSuperAdmin
-            WHERE UserName = @UserName
-              AND PasswordHash = @PasswordHash
-        )
-        BEGIN
-            SELECT 'Invalid Password.' AS Message;
-            RETURN;
-        END;
-
-        UPDATE tblSuperAdmin
-        SET
-            IsActive = 1,
-            LastLogin = GETDATE()
-        WHERE UserName = @UserName;
-
-        SELECT 'Login Successful.' AS Message;
-
-    END TRY
-
-    BEGIN CATCH
-
-        SELECT ERROR_MESSAGE() AS Message;
-
-    END CATCH
-
-END;
-GO
 
 ------------------------------------
 -- SP: spChangeSuperAdminPassword --
 ------------------------------------
-CREATE PROC spChangeSuperAdminPassword
+CREATE PROC spChangeSuperAdminPassword 
 (
     @UserName VARCHAR(100),
     @CurrentPasswordHash VARCHAR(255),
-    @NewPasswordHash VARCHAR(255),
-    @ConfirmNewPasswordHash VARCHAR(255)
+    @NewPasswordHash VARCHAR(255)
 )
 AS
 BEGIN
@@ -276,41 +280,37 @@ BEGIN
 
     BEGIN TRY
 
-        SET @UserName = LTRIM(RTRIM(@UserName));
-        SET @CurrentPasswordHash = LTRIM(RTRIM(@CurrentPasswordHash));
-        SET @NewPasswordHash = LTRIM(RTRIM(@NewPasswordHash));
-        SET @ConfirmNewPasswordHash = LTRIM(RTRIM(@ConfirmNewPasswordHash));
+        -- Trim Values
+        SET @UserName = LTRIM(RTRIM(ISNULL(@UserName, '')));
+        SET @CurrentPasswordHash = LTRIM(RTRIM(ISNULL(@CurrentPasswordHash, '')));
+        SET @NewPasswordHash = LTRIM(RTRIM(ISNULL(@NewPasswordHash, '')));
 
+
+        -- Validate UserName
         IF @UserName = ''
         BEGIN
-            SELECT 'User Name Is Required.' AS Message;
+            SELECT 0 AS Success;
             RETURN;
         END;
 
+
+        -- Validate Current Password
         IF @CurrentPasswordHash = ''
         BEGIN
-            SELECT 'Current Password Is Required.' AS Message;
+            SELECT 0 AS Success;
             RETURN;
         END;
 
+
+        -- Validate New Password
         IF @NewPasswordHash = ''
         BEGIN
-            SELECT 'New Password Is Required.' AS Message;
+            SELECT 0 AS Success;
             RETURN;
         END;
 
-        IF @ConfirmNewPasswordHash = ''
-        BEGIN
-            SELECT 'Confirm New Password Is Required.' AS Message;
-            RETURN;
-        END;
 
-        IF @NewPasswordHash <> @ConfirmNewPasswordHash
-        BEGIN
-            SELECT 'New Password And Confirm Password Do Not Match.' AS Message;
-            RETURN;
-        END;
-
+        -- Check Current Password
         IF NOT EXISTS
         (
             SELECT 1
@@ -320,26 +320,38 @@ BEGIN
               AND IsActive = 1
         )
         BEGIN
-            SELECT 'Invalid User Name Or Current Password.' AS Message;
+            SELECT 0 AS Success;
             RETURN;
         END;
 
+
+        -- Update Password
         UPDATE tblSuperAdmin
         SET PasswordHash = @NewPasswordHash
-        WHERE UserName = @UserName;
+        WHERE UserName = @UserName
+          AND PasswordHash = @CurrentPasswordHash
+          AND IsActive = 1;
 
-        SELECT 'Password Changed Successfully.' AS Message;
+
+        -- Check Update
+        IF @@ROWCOUNT > 0
+        BEGIN
+            SELECT 1 AS Success;
+            RETURN;
+        END;
+
+
+        SELECT 0 AS Success;
 
     END TRY
 
     BEGIN CATCH
 
-        SELECT ERROR_MESSAGE() AS Message;
+        SELECT 0 AS Success;
 
     END CATCH
 END
 GO
-
 
 ---------------------------------------
 -- SP: spUpdateSuperAdminContactDetails
@@ -1176,7 +1188,6 @@ GO
 ----------------------------
 -- SP: spUpdateAdminPassword
 ----------------------------
-
 CREATE PROC spUpdateAdminPassword
 (
     @UserName VARCHAR(100),
@@ -1185,87 +1196,101 @@ CREATE PROC spUpdateAdminPassword
 )
 AS
 BEGIN
-BEGIN TRY
-
     SET NOCOUNT ON;
 
-    SET @UserName = LTRIM(RTRIM(@UserName));
-    SET @CurrentPasswordHash = LTRIM(RTRIM(@CurrentPasswordHash));
-    SET @NewPasswordHash = LTRIM(RTRIM(@NewPasswordHash));
+    BEGIN TRY
 
-    -- Username Validation
-    IF @UserName IS NULL OR @UserName = ''
-    BEGIN
-        SELECT 'Username is Required.' AS Message;
-        RETURN;
-    END
+        SET @UserName =
+            LTRIM(RTRIM(ISNULL(@UserName, '')));
 
-    -- Current Password Validation
-    IF @CurrentPasswordHash IS NULL OR @CurrentPasswordHash = ''
-    BEGIN
-        SELECT 'Current Password is Required.' AS Message;
-        RETURN;
-    END
+        SET @CurrentPasswordHash =
+            LTRIM(RTRIM(ISNULL(@CurrentPasswordHash, '')));
 
-    -- New Password Validation
-    IF @NewPasswordHash IS NULL OR @NewPasswordHash = ''
-    BEGIN
-        SELECT 'New Password is Required.' AS Message;
-        RETURN;
-    END
+        SET @NewPasswordHash =
+            LTRIM(RTRIM(ISNULL(@NewPasswordHash, '')));
 
-    -- Check Username Exists
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblAdmin
+
+        -- ==========================================
+        -- VALIDATION
+        -- ==========================================
+
+        IF @UserName = ''
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+
+        IF @CurrentPasswordHash = ''
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+
+        IF @NewPasswordHash = ''
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+
+        -- ==========================================
+        -- CHECK USERNAME + CURRENT PASSWORD
+        -- ==========================================
+
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblAdmin
+            WHERE UserName = @UserName
+              AND PasswordHash = @CurrentPasswordHash
+        )
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+
+        -- ==========================================
+        -- NEW PASSWORD SAME AS CURRENT
+        -- ==========================================
+
+        IF @CurrentPasswordHash = @NewPasswordHash
+        BEGIN
+            SELECT 0 AS Success;
+            RETURN;
+        END;
+
+
+        -- ==========================================
+        -- UPDATE PASSWORD
+        -- ==========================================
+
+        UPDATE tblAdmin
+        SET PasswordHash = @NewPasswordHash
         WHERE UserName = @UserName
-    )
-    BEGIN
-        SELECT 'Invalid Username.' AS Message;
-        RETURN;
-    END
+          AND PasswordHash = @CurrentPasswordHash;
 
-    -- Check Current Password
-    IF NOT EXISTS
-    (
-        SELECT 1
-        FROM tblAdmin
-        WHERE UserName = @UserName
-          AND PasswordHash = @CurrentPasswordHash
-    )
-    BEGIN
-        SELECT 'Current Password is Incorrect.' AS Message;
-        RETURN;
-    END
 
-    -- New Password should not be same as Current Password
-    IF @CurrentPasswordHash = @NewPasswordHash
-    BEGIN
-        SELECT 'New Password Cannot Be Same As Current Password.' AS Message;
-        RETURN;
-    END
+        IF @@ROWCOUNT > 0
+        BEGIN
+            SELECT 1 AS Success;
+            RETURN;
+        END;
 
-    -- Update Password
-    UPDATE tblAdmin
-    SET PasswordHash = @NewPasswordHash
-    WHERE UserName = @UserName
-      AND PasswordHash = @CurrentPasswordHash;
 
-    SELECT 'Password Updated Successfully.' AS Message;
+        SELECT 0 AS Success;
 
-END TRY
+    END TRY
 
-BEGIN CATCH
+    BEGIN CATCH
 
-    SELECT
-        ERROR_MESSAGE() AS Message;
+        SELECT 0 AS Success;
 
-END CATCH
-END;
+    END CATCH
+END
 GO
-
-
 -------------------------------------------------------------------
                    -- TrainerManagement SPs --
 -------------------------------------------------------------------
@@ -1372,7 +1397,7 @@ BEGIN
         SELECT ERROR_MESSAGE() AS Message;
     END CATCH
 END
-
+GO
 --------------------------------------------------
 -- SP: spDisplayAssingedTrainersToMembersWithShift
 --------------------------------------------------
@@ -1909,7 +1934,7 @@ CREATE PROC spRetrieveShiftTimeTable
 AS
 BEGIN
     SET NOCOUNT ON;
-
+    
     BEGIN TRY
 
         SELECT
@@ -2958,7 +2983,7 @@ BEGIN
         ON L.LockerId = LA.LockerId
     LEFT JOIN tblMember AS M
         ON LA.MemberId = M.MemberId
-    ORDER BY L.LockerNo;
+    ORDER BY L.LockerId ;
 END;
 GO
 
@@ -2998,6 +3023,7 @@ BEGIN
 
     END CATCH
 END
+GO
 -----------------------------------------------
 --SP: spGetTopThreeHighestSellingSubscription--
 -----------------------------------------------
@@ -3739,6 +3765,7 @@ BEGIN
 
     END CATCH
 END
+GO
 -----------------------------------------
 --SP: spRetrieveCurrentMonthNewMembers--
 -----------------------------------------
@@ -4806,7 +4833,7 @@ BEGIN
     END CATCH
 
 END;
-
+GO
 -----------------------------------------
   --SP: spUpdateMemberContactInfo--
 -----------------------------------------
@@ -4958,27 +4985,28 @@ GO
 --------------------------------------------------------------
   --SP: spGetAllMemberSubscriptionPaymentDetails--
 --------------------------------------------------------------
-CREATE PROC spGetAllMemberSubscriptionPaymentDetails
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    SELECT 
-        m.FirstName + ' ' + 
-        ISNULL(m.MiddleName + ' ', '') + 
+CREATE PROC spGetAllMemberSubscriptionPaymentDetails  
+AS  
+BEGIN  
+    SET NOCOUNT ON;  
+  
+    SELECT   
+        m.FirstName + ' ' +   
+        ISNULL(m.MiddleName + ' ', '') +   
         m.LastName AS MemberName,
-        mp.MembershipPlanName,
-        s.PaymentDate,
-        s.PaymentMethod,
-        s.Amount,
-        s.FeesType
-    FROM tblSubscriptionPayment s
-    INNER JOIN tblMembershipPlans mp
-        ON s.MembershipPlanId = mp.MembershipPlanId
-    INNER JOIN tblMember m
-        ON s.MemberId = m.MemberId
-    ORDER BY s.PaymentDate DESC;
-END
+        m.PhoneNo,
+        mp.MembershipPlanName,  
+        s.PaymentDate,  
+        s.PaymentMethod,  
+        s.Amount,  
+        s.FeesType  
+    FROM tblSubscriptionPayment s  
+    INNER JOIN tblMembershipPlans mp  
+        ON s.MembershipPlanId = mp.MembershipPlanId  
+    INNER JOIN tblMember m  
+        ON s.MemberId = m.MemberId  
+    ORDER BY s.PaymentDate DESC;  
+END  
 GO
 ---------------------------------------------
   --SP: spGetSubscriptionHistoryByPhoneNo--
@@ -5019,7 +5047,7 @@ BEGIN
 			SELECT 'Phone number is required.' AS Message
 		END
 END
-
+GO
 
 ---------------------------------------------
   --SP: spGetCurrentMonthTotalIncome--
@@ -7820,28 +7848,57 @@ END
 GO
 
 ---------------------------------------
-  --SP: spRetrieveSpecificWorkoutPlan--
+  --SP: spSearchWorkoutPlan--
 ---------------------------------------
-CREATE PROCEDURE spRetrieveSpecificWorkoutPlan  
-    @WorkoutPlanId INT  
-AS  
-BEGIN  
-    SET NOCOUNT ON;  
-  
-    SELECT  
-        WorkoutPlanId,  
-        WorkoutName,  
-        Description  
-    FROM tblWorkoutPlans  
-    WHERE WorkoutPlanId = @WorkoutPlanId;  
+CREATE PROCEDURE spSearchWorkoutPlan
+(
+    @SearchText VARCHAR(200) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        WorkoutPlanId,
+        WorkoutName,
+        Description
+    FROM tblWorkoutPlans
+    WHERE
+        @SearchText IS NULL
+        OR LTRIM(RTRIM(@SearchText)) = ''
+        OR WorkoutName LIKE '%' + @SearchText + '%'
+        OR Description LIKE '%' + @SearchText + '%';
+END
+GO
+
+---------------------------------------
+  --SP: spSearchWorkoutPlan--
+---------------------------------------
+CREATE PROCEDURE spSearchWorkoutPlan 
+    @SearchText VARCHAR(200) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        WorkoutPlanId,
+        WorkoutName,
+        Description
+    FROM tblWorkoutPlans
+    WHERE
+        @SearchText IS NULL
+        OR LTRIM(RTRIM(@SearchText)) = ''
+        OR WorkoutName LIKE '%' + @SearchText + '%'
+        OR Description LIKE '%' + @SearchText + '%';
 END
 GO
 ---------------------------------------
-  --SP: spRetrieveSpecificExercise--
+  --SP: spSearchExercise--
 ---------------------------------------
-CREATE PROC spRetrieveSpecificExercise
+CREATE PROC spSearchExercise
 (
-    @ExerciseId INT
+    @SearchText VARCHAR(100)
 )
 AS
 BEGIN
@@ -7852,8 +7909,11 @@ BEGIN
         ExerciseName,
         MuscleType
     FROM tblExercises
-    WHERE ExerciseId = @ExerciseId;
+    WHERE
+        ExerciseName LIKE '%' + @SearchText + '%'
+        OR MuscleType LIKE '%' + @SearchText + '%';
 END
+GO
 GO
 -------------------------------------------------------------------------------
                    -- DietPlanManagement SPs --
@@ -7947,6 +8007,34 @@ END CATCH
 END;
 GO
 
+-----------------------------------------------
+  --SP: spRetrieveConditionStatusByDietPlanId--
+-----------------------------------------------
+CREATE PROCEDURE spRetrieveConditionStatusByDietPlanId 
+(
+    @DietPlanId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            DietPlanId,
+            CaloriesPerDay,
+            ConditionStatus
+        FROM tblDietPlans
+        WHERE DietPlanId = @DietPlanId;
+
+    END TRY
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END
+GO
 -----------------------------
   --SP: spInsertNewDietPlan--
 -----------------------------
@@ -8253,6 +8341,7 @@ BEGIN
     FROM tblEmployeeRoleType    
     ORDER BY RoleId;    
 END
+GO
 -----------------------------------------
 	--spGetActiveMemberCount--
 -----------------------------------------
@@ -8277,7 +8366,7 @@ BEGIN
     FROM tblMembershipPlans  
     WHERE IsActive = 1;  
 END
-
+GO
 
  -----------------------------------------
 	--spGetActiveTrainerCount--
@@ -8293,6 +8382,7 @@ BEGIN
         ON T.EmployeeId = E.EmployeeId    
     WHERE E.IsActive = 1;    
 END
+GO
  -----------------------------------------
 	--spRetrieveCurrentMonthNewMembers--
 -----------------------------------------
@@ -8324,7 +8414,7 @@ BEGIN
   
     END CATCH  
 END
-
+GO
  -----------------------------------------
 	--spGetActiveEmployeeCount--
 -----------------------------------------
@@ -8339,9 +8429,9 @@ BEGIN
     WHERE IsActive = 1;  
 END;  
 GO
- -----------------------------------------
+---------------------------------------------
 	--spGetCurrentShiftPersonalTrainerCount--
------------------------------------------
+---------------------------------------------
 CREATE PROC spGetCurrentShiftPersonalTrainerCount  
 AS  
 BEGIN  

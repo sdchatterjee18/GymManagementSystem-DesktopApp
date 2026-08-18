@@ -26,7 +26,7 @@ namespace GymManagementSystem.FORMS.Shift.UI
             ShiftBLL shiftBLL = new ShiftBLL();
             return shiftBLL.RetrieveShiftDetailsBLL();
         }
-        public bool UpdateShiftDetailsUI(int shiftId, TimeSpan startTime, TimeSpan endTime)
+        public string UpdateShiftDetailsUI(int shiftId, TimeSpan startTime, TimeSpan endTime)
         {
             ShiftBLL shiftBLL = new ShiftBLL();
             return shiftBLL.UpdateShiftDetailsBLL(shiftId, startTime, endTime);
