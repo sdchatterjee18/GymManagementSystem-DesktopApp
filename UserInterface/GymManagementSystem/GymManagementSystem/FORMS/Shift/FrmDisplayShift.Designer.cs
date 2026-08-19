@@ -43,6 +43,7 @@
             this.picShift = new System.Windows.Forms.PictureBox();
             this.dgvShiftManagement = new System.Windows.Forms.DataGridView();
             this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShiftId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,7 @@
             this.tlpShiftEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpShiftEntireForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpShiftEntireForm.Location = new System.Drawing.Point(0, 0);
-            this.tlpShiftEntireForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpShiftEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftEntireForm.Name = "tlpShiftEntireForm";
             this.tlpShiftEntireForm.RowCount = 5;
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.558222F));
@@ -74,27 +75,27 @@
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.129235F));
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.0276F));
             this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.489291F));
-            this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpShiftEntireForm.Size = new System.Drawing.Size(1093, 750);
+            this.tlpShiftEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpShiftEntireForm.Size = new System.Drawing.Size(820, 609);
             this.tlpShiftEntireForm.TabIndex = 6;
             // 
             // tlpShiftHeader
             // 
             this.tlpShiftHeader.ColumnCount = 3;
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 286F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
             this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpShiftHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpShiftHeader.Controls.Add(this.tlpShiftTitle, 1, 0);
             this.tlpShiftHeader.Controls.Add(this.picShift, 0, 0);
             this.tlpShiftHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpShiftHeader.Location = new System.Drawing.Point(53, 21);
-            this.tlpShiftHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpShiftHeader.Location = new System.Drawing.Point(40, 17);
+            this.tlpShiftHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftHeader.Name = "tlpShiftHeader";
             this.tlpShiftHeader.RowCount = 1;
             this.tlpShiftHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShiftHeader.Size = new System.Drawing.Size(993, 98);
+            this.tlpShiftHeader.Size = new System.Drawing.Size(745, 79);
             this.tlpShiftHeader.TabIndex = 8;
             // 
             // tlpShiftTitle
@@ -104,13 +105,13 @@
             this.tlpShiftTitle.Controls.Add(this.lblShiftManagement, 0, 0);
             this.tlpShiftTitle.Controls.Add(this.lblShiftDeatails, 0, 1);
             this.tlpShiftTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpShiftTitle.Location = new System.Drawing.Point(86, 2);
-            this.tlpShiftTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpShiftTitle.Location = new System.Drawing.Point(64, 2);
+            this.tlpShiftTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpShiftTitle.Name = "tlpShiftTitle";
             this.tlpShiftTitle.RowCount = 2;
             this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.47525F));
             this.tlpShiftTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.52475F));
-            this.tlpShiftTitle.Size = new System.Drawing.Size(280, 94);
+            this.tlpShiftTitle.Size = new System.Drawing.Size(210, 75);
             this.tlpShiftTitle.TabIndex = 1;
             // 
             // lblShiftManagement
@@ -118,9 +119,10 @@
             this.lblShiftManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblShiftManagement.AutoSize = true;
             this.lblShiftManagement.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftManagement.Location = new System.Drawing.Point(3, 21);
+            this.lblShiftManagement.Location = new System.Drawing.Point(2, 18);
+            this.lblShiftManagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblShiftManagement.Name = "lblShiftManagement";
-            this.lblShiftManagement.Size = new System.Drawing.Size(181, 28);
+            this.lblShiftManagement.Size = new System.Drawing.Size(145, 21);
             this.lblShiftManagement.TabIndex = 2;
             this.lblShiftManagement.Text = "Shift Management";
             this.lblShiftManagement.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -130,10 +132,10 @@
             this.lblShiftDeatails.AutoSize = true;
             this.lblShiftDeatails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShiftDeatails.ForeColor = System.Drawing.Color.Gray;
-            this.lblShiftDeatails.Location = new System.Drawing.Point(4, 49);
-            this.lblShiftDeatails.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.lblShiftDeatails.Location = new System.Drawing.Point(3, 39);
+            this.lblShiftDeatails.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblShiftDeatails.Name = "lblShiftDeatails";
-            this.lblShiftDeatails.Size = new System.Drawing.Size(207, 19);
+            this.lblShiftDeatails.Size = new System.Drawing.Size(174, 13);
             this.lblShiftDeatails.TabIndex = 3;
             this.lblShiftDeatails.Text = "View All Shift Details And Timing";
             // 
@@ -144,7 +146,7 @@
             this.picShift.Location = new System.Drawing.Point(0, 0);
             this.picShift.Margin = new System.Windows.Forms.Padding(0);
             this.picShift.Name = "picShift";
-            this.picShift.Size = new System.Drawing.Size(83, 98);
+            this.picShift.Size = new System.Drawing.Size(62, 79);
             this.picShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShift.TabIndex = 0;
             this.picShift.TabStop = false;
@@ -154,18 +156,19 @@
             this.dgvShiftManagement.AllowUserToAddRows = false;
             this.dgvShiftManagement.AllowUserToDeleteRows = false;
             this.dgvShiftManagement.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.dgvShiftManagement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShiftManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShiftManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvShiftManagement.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvShiftManagement.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvShiftManagement.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -174,13 +177,14 @@
             this.dgvShiftManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvShiftManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo,
+            this.colShiftId,
             this.colShiftName,
             this.colStartTime,
             this.colEndTime,
             this.colUpdate});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -189,8 +193,8 @@
             this.dgvShiftManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShiftManagement.EnableHeadersVisualStyles = false;
             this.dgvShiftManagement.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvShiftManagement.Location = new System.Drawing.Point(53, 131);
-            this.dgvShiftManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvShiftManagement.Location = new System.Drawing.Point(40, 106);
+            this.dgvShiftManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvShiftManagement.MultiSelect = false;
             this.dgvShiftManagement.Name = "dgvShiftManagement";
             this.dgvShiftManagement.ReadOnly = true;
@@ -203,16 +207,19 @@
             this.dgvShiftManagement.RowHeadersVisible = false;
             this.dgvShiftManagement.RowHeadersWidth = 50;
             this.dgvShiftManagement.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.dgvShiftManagement.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvShiftManagement.RowTemplate.Height = 30;
-            this.dgvShiftManagement.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShiftManagement.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvShiftManagement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvShiftManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvShiftManagement.Size = new System.Drawing.Size(993, 551);
+            this.dgvShiftManagement.Size = new System.Drawing.Size(745, 447);
             this.dgvShiftManagement.TabIndex = 11;
+            this.dgvShiftManagement.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellClick);
+            this.dgvShiftManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellContentClick);
             this.dgvShiftManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvShiftManagement_CellFormatting);
             this.dgvShiftManagement.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellMouseEnter);
             this.dgvShiftManagement.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShiftManagement_CellMouseLeave);
@@ -230,6 +237,13 @@
             this.colSerialNo.ReadOnly = true;
             this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colShiftId
+            // 
+            this.colShiftId.HeaderText = "Shift ID";
+            this.colShiftId.Name = "colShiftId";
+            this.colShiftId.ReadOnly = true;
+            this.colShiftId.Visible = false;
             // 
             // colShiftName
             // 
@@ -272,12 +286,11 @@
             // 
             // FrmDisplayShift
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1093, 750);
+            this.ClientSize = new System.Drawing.Size(820, 609);
             this.Controls.Add(this.tlpShiftEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisplayShift";
             this.Load += new System.EventHandler(this.FrmDisplayShift_Load);
             this.tlpShiftEntireForm.ResumeLayout(false);
@@ -300,6 +313,7 @@
         private System.Windows.Forms.PictureBox picShift;
         private System.Windows.Forms.DataGridView dgvShiftManagement;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colShiftId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colShiftName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEndTime;

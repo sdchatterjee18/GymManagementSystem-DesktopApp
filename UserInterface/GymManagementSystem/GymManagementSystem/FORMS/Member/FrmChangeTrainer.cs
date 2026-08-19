@@ -162,6 +162,11 @@ namespace GymManagementSystem.FORMS.Member
             
         }
 
+        private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

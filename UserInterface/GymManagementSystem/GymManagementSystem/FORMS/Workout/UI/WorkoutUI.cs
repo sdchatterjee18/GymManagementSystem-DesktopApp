@@ -32,10 +32,10 @@ namespace GymManagementSystem.FORMS.Workout.UI
             return workoutBLL.GetExercisesForComboBox();
         }
         // Retrieves specific exercise details.
-        public DataTable RetrieveSpecificExerciseUI(int exerciseId)
+        public DataTable RetrieveSpecificExerciseUI(string Search)
         {
             WorkoutBLL workoutBLL = new WorkoutBLL();
-            return workoutBLL.RetrieveSpecificExerciseBLL(exerciseId);
+            return workoutBLL.RetrieveSpecificExerciseBLL(Search);
         }
         //Insert Exercise
         public string InsertExerciseUI(string exerciseName,string muscleType)
@@ -67,10 +67,10 @@ namespace GymManagementSystem.FORMS.Workout.UI
             return workoutBLL.GetWorkoutPlansForComboBox();
         }
         // Retrieves specific workout plan details.
-        public DataTable RetrieveSpecificWorkoutPlanUI(int workoutPlanId)
+        public DataTable RetrieveSpecificWorkoutPlanUI(string Search)
         {
             WorkoutBLL workoutBLL = new WorkoutBLL();
-            return workoutBLL.RetrieveSpecificWorkoutPlanBLL(workoutPlanId);
+            return workoutBLL.RetrieveSpecificWorkoutPlanBLL(Search);
         }
         // Insert Workout Plan
         public string InsertWorkoutPlanUI(string workoutName,string description)

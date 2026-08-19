@@ -276,12 +276,7 @@ namespace GymManagementSystem.FORMS.Workout
         // DataGridView Cell Mouse Enter Event
         private void dgvWorkoutShedule_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvWorkoutShedule.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvWorkoutShedule.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvWorkoutShedule.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -289,16 +284,9 @@ namespace GymManagementSystem.FORMS.Workout
         // DataGridView Cell Mouse Leave Event
         private void dgvWorkoutShedule_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvWorkoutShedule.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                dgvWorkoutShedule.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvWorkoutShedule.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-
             }
         }
         // DataGridView Cell Formatting Event
@@ -356,6 +344,20 @@ namespace GymManagementSystem.FORMS.Workout
 
                 e.Handled = true;
             }
+        }
+
+        private void pnlClickToAddNewWorkoutShedule_MouseEnter(object sender, EventArgs e)
+        {
+            pnlClickToAddNewWorkoutShedule.BackColor = Color.White;
+            picPlusWorkoutShedule.Image = Properties.Resources.plusHOVER;
+            lblAddNewWorkoutShedule.ForeColor = Color.MidnightBlue;
+        }
+
+        private void pnlClickToAddNewWorkoutShedule_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickToAddNewWorkoutShedule.BackColor = Color.MidnightBlue;
+            picPlusWorkoutShedule.Image = Properties.Resources.plus;
+            lblAddNewWorkoutShedule.ForeColor = Color.White;
         }
 
     }

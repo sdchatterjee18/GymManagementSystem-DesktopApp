@@ -27,23 +27,9 @@ namespace GymManagementSystem.FORMS.Locker
             this.dgvDisplayLocker.ClearSelection();
             this.dgvDisplayLocker.DefaultCellStyle.BackColor = Color.White;
         }
-        private void pnlButton_MouseEnter(object sender, EventArgs e)
-        {
-            this.tlpAddNewLocker.BackColor = Color.FromArgb(220, 225, 230);
-        }
-
-        private void pnlButton_MouseLeave(object sender, EventArgs e)
-        {
-            this.tlpAddNewLocker.BackColor = Color.FromArgb(236, 240, 243);
-        }
-
         private void dgvDisplayLocker_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -51,11 +37,7 @@ namespace GymManagementSystem.FORMS.Locker
 
         private void dgvDisplayLocker_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDisplayLocker.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayLocker.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
 
@@ -147,13 +129,27 @@ namespace GymManagementSystem.FORMS.Locker
             }
         }
 
-        private void pnlButton_Click_1(object sender, EventArgs e)
+        private void pnlAddNew_Click(object sender, EventArgs e)
         {
             FrmAddLocker frmAddLocker = new FrmAddLocker();
             if (frmAddLocker.ShowDialog() == DialogResult.OK)
             {
                 this.getLockersDetails();
             }
+        }
+
+        private void pnlAddNew_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.White;
+            lblAddNew.ForeColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void pnlAddNew_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.MidnightBlue;
+            lblAddNew.ForeColor = Color.White;
+            picAddButton.Image = Properties.Resources.paper_plane;
         }
     }
 }

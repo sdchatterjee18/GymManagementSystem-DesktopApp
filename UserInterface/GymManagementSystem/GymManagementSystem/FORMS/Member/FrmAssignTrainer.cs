@@ -94,6 +94,7 @@ namespace GymManagementSystem.FORMS.Member
                    if (Result == DialogResult.OK)
                    {
                        this.Dispose();
+                       
                    }
                 }
                 catch (Exception Ex)

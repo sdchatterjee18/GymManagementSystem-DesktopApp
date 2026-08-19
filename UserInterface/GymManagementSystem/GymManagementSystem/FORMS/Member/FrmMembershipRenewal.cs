@@ -31,7 +31,6 @@ namespace GymManagementSystem.FORMS.Member
             RetrieveCurrentExpiredMembershipPlan();
             LoadMembershipPlanComboBox();
             LoadPaymentMethodComboBox();
-            LoadFeesTypeComboBox();
         }
 
         private void ShowMemberIdAndName()
@@ -88,12 +87,6 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberPaymentMethod.DataSource = LookupUI.GetPaymentMethods();
             cmbSelectMemberPaymentMethod.SelectedIndex = -1;
         }
-        private void LoadFeesTypeComboBox()
-        {
-            cmbSelectMemberPaymentFeesType.DataSource = LookupUI.GetFeesType();
-            cmbSelectMemberPaymentFeesType.SelectedIndex = -1;
-        }
-
         private void RenewalMemberShipPlan()
         {
             ComboBox[] combobox = new ComboBox[]
@@ -169,20 +162,6 @@ namespace GymManagementSystem.FORMS.Member
             }
         }
 
-        private void cmbSelectMemberPaymentFeesType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-            cmbSelectMembershipPlan.ForeColor = Color.Black;
-            //CHANGE PRICE IN PAYMENT SECTION BASED ON SELECTED MEMBERSHIP PLAN
-            if (cmbSelectMembershipPlan.SelectedIndex >= 0)
-            {
-                        int MembershipPlanId = Convert.ToInt32(((DataRowView)cmbSelectMembershipPlan.SelectedItem)["MembershipPlanId"]);
-                    string MembershipPlanPrice = MembershipPlanUI.GetPriceByMembershipPlanId(MembershipPlanId).ToString();
-
-                    lblRetrieveMemberPaymentAmount.Text = string.Format("₹ {0:N2}", MembershipPlanPrice);
-            }
-        }
-
         private void pnlChangeMembershipButton_Click(object sender, EventArgs e)
         {
             RenewalMemberShipPlan();
@@ -191,6 +170,11 @@ namespace GymManagementSystem.FORMS.Member
         private void pnlCancleButtomInChangeMembership_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void lblMemberPaymentAmount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

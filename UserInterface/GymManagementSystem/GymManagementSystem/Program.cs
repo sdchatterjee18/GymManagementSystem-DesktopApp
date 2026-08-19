@@ -20,9 +20,9 @@ using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
-using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
 using GymManagementSystem.FORMS.Member;
+
 namespace GymManagementSystem
 {
     static class Program
@@ -50,8 +50,10 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayAllMembers());
             //Application.Run(new FrmDisplayMembershipPlan());
             //Application.Run(new FrmSAAddNewEmployee());
+            //Application.Run(new FrmSAPasswordChange());
             //Application.Run(new FrmSuperAdminRegistration());
-            Application.Run(new FrmMainLayout());
+            //Application.Run(new FrmMainLayout());
+            Application.Run(new FrmUserRoleSelection());
         }
     }
 }

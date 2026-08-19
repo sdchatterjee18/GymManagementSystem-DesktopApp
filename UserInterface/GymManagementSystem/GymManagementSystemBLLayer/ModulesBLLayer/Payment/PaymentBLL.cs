@@ -38,7 +38,8 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
                         PaymentDate = PaymentDetail.PaymentDate,
                         PaymentMethod = PaymentDetail.PaymentMethod,
                         Amount = PaymentDetail.Amount,
-                        FeesType = PaymentDetail.FeesType
+                        FeesType = PaymentDetail.FeesType,
+                        PhoneNo=PaymentDetail.PhoneNo
                     };
 
                     SubscriptionPaymentDetails.Add(PaymentBLL);
@@ -55,20 +56,20 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Payment
 
         //Retrieve Specific Member Subcription Payment Details
 
-        public List<PaymentBLL> RetrieveSpeificMemberSubscriptionPaymentDetailsByPhoneNoBLL(string phoneNo)
+        public List<PaymentBLL> RetrieveSpeificMemberSubscriptionPaymentDetailsByDetailsBLL(string Search)
         {
             List<PaymentBLL> SpecificMemberSubscriptionPaymentDetails = null;
             try
             {
-                PhoneNo = phoneNo; //Set the value of PhoneNo
                 SpecificMemberSubscriptionPaymentDetails = new List<PaymentBLL>();
                 PaymentDAL paymentDAL = new PaymentDAL();
-                List<PaymentDAL> PaymentDetails = paymentDAL.RetrieveSpecificMemberSubscriptionByPhoneNoDAL(PhoneNo);
+                List<PaymentDAL> PaymentDetails = paymentDAL.RetrieveSpecificMemberSubscriptionByDetailsDAL(Search);
                 foreach (PaymentDAL PaymentDetail in PaymentDetails)
                 {
                     PaymentBLL paymentBLL = new PaymentBLL
                     {
                         MemberName = PaymentDetail.MemberName,
+                        PhoneNo=PaymentDetail.PhoneNo,
                         MemberShipPlanName = PaymentDetail.MemberShipPlanName,
                         PaymentDate = PaymentDetail.PaymentDate,
                         PaymentMethod = PaymentDetail.PaymentMethod,

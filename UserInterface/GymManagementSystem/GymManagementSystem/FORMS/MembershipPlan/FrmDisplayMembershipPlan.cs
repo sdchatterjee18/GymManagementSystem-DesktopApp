@@ -180,14 +180,9 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // Add New Membership Plan
         private void pnlClickAddNewMembershipPlan_Click(object sender, EventArgs e)
         {
-            using (FrmAddMembershipPlans frm = new FrmAddMembershipPlans())
-            {
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    LoadMembershipPlans();
-                }
-            }
-
+            FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
+            frm.ShowDialog();
+            LoadMembershipPlans();
             //FrmAddMembershipPlans frm = new FrmAddMembershipPlans();
             //frm.Show();
             //frm.StartPosition = FormStartPosition.CenterParent;
@@ -201,13 +196,17 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             
             dgvMembershipPlan.Rows.Clear();
-            //foreach (DataGridViewColumn col in dgvMembershipPlan.Columns)
-            //{
-            //    col.ReadOnly = true;
-            //}
+            dgvMembershipPlan.ReadOnly = false;
 
-            //dgvMembershipPlan.Columns["colPrice"].ReadOnly = false;
-            //dgvMembershipPlan.Columns["colDescription"].ReadOnly = false;
+            // Make all columns read-only first
+            foreach (DataGridViewColumn col in dgvMembershipPlan.Columns)
+            {
+                col.ReadOnly = true;
+            }
+
+            // Only these two columns can be edited
+            dgvMembershipPlan.Columns["colPrice"].ReadOnly = false;
+            dgvMembershipPlan.Columns["colDescription"].ReadOnly = false;
 
             dgvMembershipPlan.EditMode = DataGridViewEditMode.EditOnEnter;
 

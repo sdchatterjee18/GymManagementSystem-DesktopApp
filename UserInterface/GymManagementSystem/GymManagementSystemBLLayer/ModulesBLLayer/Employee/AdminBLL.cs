@@ -83,6 +83,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
                 return ValidationBll.GetValidationMessage(result);
             }
 
+            this.PasswordHash = PasswordHelperBLL.HashPassword(this.PasswordHash);
             // ==========================================
             // BLL → DAL
             // ==========================================

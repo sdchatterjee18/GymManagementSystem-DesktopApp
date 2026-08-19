@@ -6,46 +6,26 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GymManagementSystem.Authentication.UI;
+using GymManagementSystem.Common;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.Authentication
 {
     public partial class FrmAdminLogin : Form
     {
-        public FrmAdminLogin()
+        int ClickCountTxtAdminUsername = 0;
+        int ClickCountTxtAdminPassword = 0;
+        FrmUserRoleSelection frmUserRoleSelection = null;
+        public FrmAdminLogin(FrmUserRoleSelection frmUserRoleSelection)
         {
             InitializeComponent();
+            this.frmUserRoleSelection = frmUserRoleSelection;
         }
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtAdminUsernameI_Enter(object sender, EventArgs e)
-        {
-            if (txtAdminUsernameI.Text.Trim() == "Enter Username")
-            {
-                txtAdminUsernameI.Text = "";
-                txtAdminUsernameI.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtAdminUsernameI_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtAdminUsernameI.Text))
-            {
-                txtAdminUsernameI.Text = "Enter Username";
-                txtAdminUsernameI.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtAdminPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtAdminPassword.Text.Trim() == "Enter Password")
-            {
-                txtAdminPassword.Text = "";
-                txtAdminPassword.ForeColor = Color.Gray;
-            }
         }
 
         private void txtAdminPassword_Leave(object sender, EventArgs e)
@@ -81,6 +61,102 @@ namespace GymManagementSystem.Authentication
         private void pnlUsernameAdmin_MouseLeave(object sender, EventArgs e)
         {
             pnlUsernameAdmin.BackColor = Color.FloralWhite;
+        }
+
+        private void txtAdminUsername_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminUsername =ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername,ClickCountTxtAdminUsername);
+            txtAdminUsername.ForeColor = Color.Black;
+        }
+
+        private void txtAdminPassword_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminPassword =ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword,ClickCountTxtAdminPassword);
+            txtAdminPassword.ForeColor = Color.Black;
+        }
+
+        private void btnAdminLogin_Click(object sender, EventArgs e)
+        {
+            // ==========================================
+            // CLEAR DEFAULT PLACEHOLDER TEXT
+            // ==========================================
+
+            ValidationUI.ClearDefaultPlaceholderText(
+                txtAdminUsername,
+                ClickCountTxtAdminUsername);
+
+            ValidationUI.ClearDefaultPlaceholderText(
+                txtAdminPassword,
+                ClickCountTxtAdminPassword);
+
+
+            // ==========================================
+            // REQUIRED TEXTBOX VALIDATION
+            // ==========================================
+
+            if (!ValidationUI.ValidateRequiredTextBoxes(
+                txtAdminUsername,
+                txtAdminPassword))
+            {
+                return;
+            }
+
+
+            // ==========================================
+            // CREATE AUTHENTICATION UI OBJECT
+            // ==========================================
+
+            AuthenticationUI adminAuthenticationUI =
+                new AuthenticationUI();
+
+
+            // ==========================================
+            // GET LOGIN VALUES
+            // ==========================================
+
+            string userName =
+                txtAdminUsername.Text.Trim();
+
+            string password =
+                txtAdminPassword.Text.Trim();
+
+
+            // ADMIN LOGIN
+            try
+            {
+                bool Result =
+                    adminAuthenticationUI.AdminLoginUI(
+                        userName,
+                        password);
+
+                if (Result)
+                {
+                    FrmMainLayout frmMainLayout =
+                        new FrmMainLayout();
+
+                    this.Close();
+
+                    frmMainLayout.Show();
+
+                    frmUserRoleSelection.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Invalid UserName or Password",
+                        "Admin Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

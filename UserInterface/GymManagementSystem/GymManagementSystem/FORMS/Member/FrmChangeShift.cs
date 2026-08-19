@@ -47,6 +47,8 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmChangeShift_Load(object sender, EventArgs e)
         {
+            this.ShowIcon = false;
+            this.Text = "";
             SetMemberInformation();
             LoadAllShiftTocmbBox();
         }
@@ -57,8 +59,8 @@ namespace GymManagementSystem.FORMS.Member
                 memberAllDetailsUI.MemberId.ToString();
             lblRetrieveMemberName.Text =
                 memberAllDetailsUI.MemberName.ToString();
-            lblRetrievePreviousMembershipPlan.Text =
-                memberAllDetailsUI.MembershipPlanName.ToString();
+            lblCurrentShift.Text =
+                memberAllDetailsUI.ShiftName.ToString();
             lblRetrieveTrainerName.Text =
                 memberAllDetailsUI.TrainerName.ToString();
         }

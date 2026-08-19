@@ -33,13 +33,13 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Workout
             return dataTable;
         }
         // Retrieves specific exercise details by ExerciseId.
-        public DataTable RetrieveSpecificExerciseDAL(int exerciseId)
+        public DataTable RetrieveSpecificExerciseDAL(string Search)
         {
             SqlParameter[] sqlParameters =
                 {
-                    new SqlParameter("@ExerciseId", exerciseId)
+                    new SqlParameter("@SearchText", Search)
                 };
-            DataTable dataTable = LookupDAL.RetrieveSpecificDetails("spRetrieveSpecificExercise",sqlParameters);
+            DataTable dataTable = LookupDAL.RetrieveSpecificDetails("spSearchExercise", sqlParameters);
             return dataTable;
         }
         // Insert new exercise
@@ -73,13 +73,13 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Workout
             return dataTable;
         }
         // Retrieves specific workout plan details.
-        public DataTable RetrieveSpecificWorkoutPlanDAL(int workoutPlanId)
+        public DataTable RetrieveSpecificWorkoutPlanDAL(string Search)
         {
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@WorkoutPlanId", workoutPlanId)
+                new SqlParameter("@SearchText", Search)
             };
-            DataTable dataTable = LookupDAL.RetrieveSpecificDetails( "spRetrieveSpecificWorkoutPlan", sqlParameters);
+            DataTable dataTable = LookupDAL.RetrieveSpecificDetails("spSearchWorkoutPlan", sqlParameters);
             return dataTable;
         }
         // Insert new workout plan

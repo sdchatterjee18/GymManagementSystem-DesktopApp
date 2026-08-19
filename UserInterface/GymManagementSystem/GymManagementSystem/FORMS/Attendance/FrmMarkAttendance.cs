@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Attendance.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Attendance
 {
@@ -16,12 +17,10 @@ namespace GymManagementSystem.FORMS.Attendance
         {
             InitializeComponent();
         }
-
+        int clickCountSearch = 0;
         private void FrmMarkAttendance_Load(object sender, EventArgs e)
         {
             this.ActiveControl = null;
-           
-           
             RetrieveShift();
             RetrieveCurrentShiftData();
         }
@@ -348,7 +347,9 @@ namespace GymManagementSystem.FORMS.Attendance
 
         private void txtMarkMemberMobileNumber_Click(object sender, EventArgs e)
         {
-            
+            clickCountSearch = ValidationUI.ClearTextBoxWhenClicked(txtMarkMemberMobileNumber,clickCountSearch);
+            txtMarkMemberMobileNumber.ForeColor = Color.Black;
         }
+
     }
 }

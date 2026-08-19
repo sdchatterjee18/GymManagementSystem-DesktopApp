@@ -99,5 +99,19 @@ namespace GymManagementSystem.FORMS.Locker
             }
         }
 
+        private void tlpButton_MouseEnter(object sender, EventArgs e)
+        {
+            tlpButton.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picSubmit.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void tlpButton_MouseLeave(object sender, EventArgs e)
+        {
+            tlpButton.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picSubmit.Image = Properties.Resources.paper_plane;
+        }
+
     }
 }

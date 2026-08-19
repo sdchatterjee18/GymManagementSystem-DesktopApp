@@ -20,5 +20,16 @@ namespace GymManagementSystem.FORMS.Shift.UI
             DataTable dataTable = shiftBLL.GetShiftDetailsForComboBox();
             return dataTable;
         }
+        // Retrieves all Shift Time for displaying in the DataGridView.
+        public DataTable RetrieveShiftDetailsUI()
+        {
+            ShiftBLL shiftBLL = new ShiftBLL();
+            return shiftBLL.RetrieveShiftDetailsBLL();
+        }
+        public string UpdateShiftDetailsUI(int shiftId, TimeSpan startTime, TimeSpan endTime)
+        {
+            ShiftBLL shiftBLL = new ShiftBLL();
+            return shiftBLL.UpdateShiftDetailsBLL(shiftId, startTime, endTime);
+        }
     }
 }

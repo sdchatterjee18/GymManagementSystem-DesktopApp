@@ -11,6 +11,8 @@ using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.Authentication;
+using GymManagementSystem.FormsSuperAdmin.Settings;
+using GymManagementSystem.Authentication.UI;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -21,14 +23,11 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private const int CollapsedWidth = 70;
         private bool sidebarExpand = true;
         private Form activeForm = null;
-        public FrmSAMainForm()
+        FrmUserRoleSelection frmUserRoleSelection = null;
+        public FrmSAMainForm(FrmUserRoleSelection frmUserRoleSelection)
         {
+            this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
-        }
-
-        private void FrmSAMainForm_Load(object sender, EventArgs e)
-        {
-           
         }
         private Panel selectedPanel = null;
         private void SelectPanel(Panel panel)
@@ -374,10 +373,66 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
-            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
-            this.Hide();
-            frmUserRoleSelection.ShowDialog();
-            this.Close();
+
+            // ==========================================
+            // LOGOUT CONFIRMATION
+            // ==========================================
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            // ==========================================
+            // USER CLICKED NO
+            // ==========================================
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // ==========================================
+            // PERFORM LOGOUT
+            // ==========================================
+
+            AuthenticationUI authenticationUI = new AuthenticationUI();
+
+            bool logoutResult =
+                authenticationUI.SuperAdminLogoutUI();
+
+            // ==========================================
+            // LOGOUT SUCCESS
+            // ==========================================
+
+            if (logoutResult)
+            {
+                MessageBox.Show(
+                    "Logout Successful.",
+                    "Logout",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                FrmUserRoleSelection frmUserRoleSelection =
+                    new FrmUserRoleSelection();
+
+                this.Hide();
+                frmUserRoleSelection.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                // ==========================================
+                // LOGOUT FAILED
+                // ==========================================
+
+                MessageBox.Show(
+                    "Logout Failed.",
+                    "Logout",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void pnlSuperAdminPasswordChange_MouseEnter(object sender, EventArgs e)
@@ -408,59 +463,64 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             selectedPanel = pnlSuperAdminPasswordChange;
             pnlSuperAdminPasswordChange.ForeColor = Color.White;
             picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
+            FrmSAPasswordChange frmSAPasswordChange = new FrmSAPasswordChange();
+            frmSAPasswordChange.ShowDialog();
         }
-
-        private void pnlExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pnlExit_MouseEnter(object sender, EventArgs e)
-        {
-            pnlExit.BackColor = Color.FromArgb(255, 0, 0);
-        }
-
-        private void pnlExit_MouseLeave(object sender, EventArgs e)
-        {
-            pnlExit.BackColor = Color.FromArgb(240, 244, 248);
-        }
-
-        private void pnlRestore_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlRestore_MouseEnter(object sender, EventArgs e)
-        {
-            pnlRestore.BackColor = Color.FromArgb(220, 220, 220);
-        }
-
-        private void pnlRestore_MouseLeave(object sender, EventArgs e)
-        {
-            pnlRestore.BackColor = Color.FromArgb(240, 244, 248);
-        }
-
-        private void pnlMinimize_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlMinimize_MouseEnter(object sender, EventArgs e)
-        {
-            pnlMinimize.BackColor = Color.FromArgb(220, 220, 220);
-        }
-
-        private void pnlMinimize_MouseLeave(object sender, EventArgs e)
-        {
-            pnlMinimize.BackColor = Color.FromArgb(240, 244, 248);
-        }
-
         private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
         {
 
         }
+        private void pnlMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
+        }
 
-        
+        private void pnlMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.Transparent;
+        }
+
+        private void pnlMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnlRestore_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void pnlRestore_MouseEnter(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.FromArgb(190, 205, 225);
+        }
+
+        private void pnlRestore_MouseLeave(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.Transparent;
+        }
+
+        private void pnlExit_MouseEnter(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.Red;
+        }
+
+        private void pnlExit_MouseLeave(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.Transparent;
+        }
+
+        private void pnlExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
     }
 }

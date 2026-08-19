@@ -306,8 +306,7 @@
             this.txtHightInput.Size = new System.Drawing.Size(156, 30);
             this.txtHightInput.TabIndex = 1;
             this.txtHightInput.Text = "Enter Hight";
-            this.txtHightInput.Enter += new System.EventHandler(this.txtHightInput_Enter);
-            this.txtHightInput.Leave += new System.EventHandler(this.txtHightInput_Leave);
+            this.txtHightInput.Click += new System.EventHandler(this.txtHightInput_Click);
             // 
             // txtWeightInput
             // 
@@ -320,8 +319,7 @@
             this.txtWeightInput.Size = new System.Drawing.Size(156, 30);
             this.txtWeightInput.TabIndex = 1;
             this.txtWeightInput.Text = "Enter Weight";
-            this.txtWeightInput.Enter += new System.EventHandler(this.txtWeightInput_Enter);
-            this.txtWeightInput.Leave += new System.EventHandler(this.txtWeightInput_Leave);
+            this.txtWeightInput.Click += new System.EventHandler(this.txtWeightInput_Click);
             // 
             // cmbGenderInput
             // 
@@ -335,8 +333,6 @@
             this.cmbGenderInput.Name = "cmbGenderInput";
             this.cmbGenderInput.Size = new System.Drawing.Size(156, 31);
             this.cmbGenderInput.TabIndex = 2;
-            this.cmbGenderInput.Enter += new System.EventHandler(this.cmbGenderInput_Enter);
-            this.cmbGenderInput.Leave += new System.EventHandler(this.cmbGenderInput_Leave);
             // 
             // txtAgeInput
             // 
@@ -349,8 +345,7 @@
             this.txtAgeInput.Size = new System.Drawing.Size(156, 30);
             this.txtAgeInput.TabIndex = 1;
             this.txtAgeInput.Text = "Enter Age";
-            this.txtAgeInput.Enter += new System.EventHandler(this.txtAgeInput_Enter);
-            this.txtAgeInput.Leave += new System.EventHandler(this.txtAgeInput_Leave);
+            this.txtAgeInput.Click += new System.EventHandler(this.txtAgeInput_Click);
             // 
             // cmbActivityInput
             // 
@@ -767,6 +762,7 @@
             this.btnCalculateFitnessTest.TabIndex = 3;
             this.btnCalculateFitnessTest.Text = "📱Calculate";
             this.btnCalculateFitnessTest.UseVisualStyleBackColor = false;
+            this.btnCalculateFitnessTest.Click += new System.EventHandler(this.btnCalculateFitnessTest_Click);
             // 
             // tableLayoutPanel7
             // 
