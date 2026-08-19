@@ -23,28 +23,6 @@ namespace GymManagementSystem.Authentication
             this.Text = "";
             this.ShowIcon = false;
         }
-
-        private void btnSuperAdminLogin_Click(object sender, EventArgs e)
-        {
-            FrmSAMainForm frmSAMainForm = new FrmSAMainForm();
-            this.Hide();
-            frmSAMainForm.ShowDialog();
-            this.Close();
-            //FrmSuperAdminLogin frm = new FrmSuperAdminLogin();
-            //frm.Show();
-            
-        }
-
-        private void btnAdminLogin_Click(object sender, EventArgs e)
-        {
-            //FrmAdminLogin frm = new FrmAdminLogin();
-            //frm.Show();
-            FrmMainLayout frmMainLayout = new FrmMainLayout();
-            this.Hide();
-            frmMainLayout.ShowDialog();
-            this.Close();
-        }
-
         private void pnlclickAddNewSuperadmin_MouseEnter(object sender, EventArgs e)
         {
             pnlclickAddNewSuperadmin.BackColor = Color.Cornsilk;
@@ -79,6 +57,20 @@ namespace GymManagementSystem.Authentication
         {
             FrmSuperAdminRegistration fm = new FrmSuperAdminRegistration();
             fm.Show();
+        }
+
+        private void btnSuperAdminLogin_Click(object sender, EventArgs e)
+        {
+            FrmSuperAdminLogin frmSuperAdminLogin = new FrmSuperAdminLogin(this);
+            frmSuperAdminLogin.ShowDialog();
+        }
+
+        private void btnAdminLogin_Click(object sender, EventArgs e)
+        {
+            FrmMainLayout frmMainLayout = new FrmMainLayout();
+            this.Hide();
+            frmMainLayout.ShowDialog();
+            this.Close();
         }
     }
 }

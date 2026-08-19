@@ -45,7 +45,8 @@ namespace GymManagementSystem.FORMS.Expenses
             try
             {
                 ExpensesUI ExpenseUI = new ExpensesUI();
-                cmbCateogory.DataSource = ExpenseUI.RetrieveCategoryNameUI();
+                CategoryName = ExpenseUI.RetrieveCategoryNameUI();
+                cmbCateogory.DataSource = CategoryName;
                 cmbCateogory.DisplayMember = "CategoryName";
                 cmbCateogory.ValueMember = "ExpenseCategoryID";
                 cmbCateogory.SelectedIndex = -1;

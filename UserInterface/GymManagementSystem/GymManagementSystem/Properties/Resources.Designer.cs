@@ -223,6 +223,16 @@ namespace GymManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Financials {
             get {
                 object obj = ResourceManager.GetObject("Financials", resourceCulture);
@@ -256,6 +266,16 @@ namespace GymManagementSystem.Properties {
         internal static System.Drawing.Bitmap fitnessTestHover {
             get {
                 object obj = ResourceManager.GetObject("fitnessTestHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hidden {
+            get {
+                object obj = ResourceManager.GetObject("hidden", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -235,7 +235,7 @@ namespace GymManagementSystemDALayer.Common
             }
             catch(Exception ex)
             {
-                return null;
+                throw;
             }
             finally
             {

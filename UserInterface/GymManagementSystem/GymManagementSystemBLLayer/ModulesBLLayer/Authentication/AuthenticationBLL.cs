@@ -127,62 +127,15 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
 
             return authenticationDAL.RegisterNewSuperAdminDAL(userName, passwordHash, emailId, phoneNumber);
         }
-        public string SuperAdminLoginBLL(string userName, string password)
+        public bool SuperAdminLoginBLL(string userName, string password)
         {
             ValidationBll.CommonValidationMessage result;
-
-            // ==========================================
-            // USERNAME VALIDATION
-            // ==========================================
-
-            result =
-                ValidationBll.ValidateUserName(userName);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-
-            // ==========================================
-            // PASSWORD VALIDATION
-            // ==========================================
-
-            result =
-                ValidationBll.ValidatePassword(password);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-
             // ==========================================
             // HASH PASSWORD
             // ==========================================
 
             string passwordHash = PasswordHelperBLL.HashPassword(password);
-
-
-            // ==========================================
-            // BLL → DAL
-            // ==========================================
-
-            bool loginResult = authenticationDAL.SuperAdminLoginDAL(userName, passwordHash);
-
-
-            // ==========================================
-            // LOGIN RESULT
-            // ==========================================
-
-            if (loginResult)
-            {
-                return "Login Successful.";
-            }
-
-            return "Invalid Username and Password.";
+            return authenticationDAL.SuperAdminLoginDAL(userName, passwordHash);
         }
         public string SuperAdminLogoutBLL()
         {

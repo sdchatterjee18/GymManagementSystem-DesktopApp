@@ -21,7 +21,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmMemberTrainerAssignment_Load(object sender, EventArgs e)
         {
-
+            dgvMemberTrainerAssignmentDetails.Columns["colSLNo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             txtSearchBar.Select(0, 0);
             txtSearchBar.DeselectAll();
 

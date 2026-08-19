@@ -1087,6 +1087,7 @@
             this.pnlChangeShiftButton.Name = "pnlChangeShiftButton";
             this.pnlChangeShiftButton.Size = new System.Drawing.Size(144, 28);
             this.pnlChangeShiftButton.TabIndex = 0;
+            this.pnlChangeShiftButton.Click += new System.EventHandler(this.pnlChangeShiftButton_Click_1);
             // 
             // tlpChangeShiftButton
             // 
@@ -1104,6 +1105,7 @@
             this.tlpChangeShiftButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpChangeShiftButton.Size = new System.Drawing.Size(142, 26);
             this.tlpChangeShiftButton.TabIndex = 1;
+            this.tlpChangeShiftButton.Click += new System.EventHandler(this.pnlChangeShiftButton_Click_1);
             this.tlpChangeShiftButton.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.tlpChangeShiftButton.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -1118,6 +1120,7 @@
             this.picChangeShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeShift.TabIndex = 0;
             this.picChangeShift.TabStop = false;
+            this.picChangeShift.Click += new System.EventHandler(this.pnlChangeShiftButton_Click_1);
             this.picChangeShift.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.picChangeShift.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -1133,6 +1136,7 @@
             this.lblChangeShift.Size = new System.Drawing.Size(74, 13);
             this.lblChangeShift.TabIndex = 1;
             this.lblChangeShift.Text = "Change Shift";
+            this.lblChangeShift.Click += new System.EventHandler(this.pnlChangeShiftButton_Click_1);
             this.lblChangeShift.MouseEnter += new System.EventHandler(this.tlpChangeShiftButton_MouseEnter);
             this.lblChangeShift.MouseLeave += new System.EventHandler(this.tlpChangeShiftButton_MouseLeave);
             // 
@@ -2409,6 +2413,7 @@
             this.tlpAssignTrainerButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignTrainerButton.Size = new System.Drawing.Size(109, 35);
             this.tlpAssignTrainerButton.TabIndex = 4;
+            this.tlpAssignTrainerButton.Click += new System.EventHandler(this.tlpAssignTrainerButton_Click_1);
             this.tlpAssignTrainerButton.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
             this.tlpAssignTrainerButton.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
@@ -2423,6 +2428,7 @@
             this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignTrainer.TabIndex = 0;
             this.picAssignTrainer.TabStop = false;
+            this.picAssignTrainer.Click += new System.EventHandler(this.tlpAssignTrainerButton_Click_1);
             this.picAssignTrainer.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
             this.picAssignTrainer.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
@@ -2438,6 +2444,7 @@
             this.lblAssignTrainer.Size = new System.Drawing.Size(65, 12);
             this.lblAssignTrainer.TabIndex = 1;
             this.lblAssignTrainer.Text = "Assign Trainer";
+            this.lblAssignTrainer.Click += new System.EventHandler(this.tlpAssignTrainerButton_Click_1);
             this.lblAssignTrainer.MouseEnter += new System.EventHandler(this.tlpAssignTrainerButton_MouseEnter);
             this.lblAssignTrainer.MouseLeave += new System.EventHandler(this.tlpAssignTrainerButton_MouseLeave);
             // 
@@ -2451,6 +2458,7 @@
             this.pnlChangeTrainerButton.Name = "pnlChangeTrainerButton";
             this.pnlChangeTrainerButton.Size = new System.Drawing.Size(108, 37);
             this.pnlChangeTrainerButton.TabIndex = 1;
+            this.pnlChangeTrainerButton.Click += new System.EventHandler(this.pnlChangeTrainerButton_Click);
             // 
             // tlpChangeTrainerButton
             // 
@@ -2469,6 +2477,7 @@
             this.tlpChangeTrainerButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpChangeTrainerButton.Size = new System.Drawing.Size(106, 35);
             this.tlpChangeTrainerButton.TabIndex = 3;
+            this.tlpChangeTrainerButton.Click += new System.EventHandler(this.pnlChangeTrainerButton_Click);
             this.tlpChangeTrainerButton.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
             this.tlpChangeTrainerButton.MouseLeave += new System.EventHandler(this.tlpChangeTrainerButton_MouseLeave);
             // 
@@ -2483,6 +2492,7 @@
             this.picChangeTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeTrainer.TabIndex = 0;
             this.picChangeTrainer.TabStop = false;
+            this.picChangeTrainer.Click += new System.EventHandler(this.pnlChangeTrainerButton_Click);
             this.picChangeTrainer.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
             this.picChangeTrainer.MouseLeave += new System.EventHandler(this.picChangeTrainer_MouseLeave);
             // 
@@ -2498,6 +2508,7 @@
             this.lblChangeTrainer.Size = new System.Drawing.Size(69, 12);
             this.lblChangeTrainer.TabIndex = 1;
             this.lblChangeTrainer.Text = "Change Trainer";
+            this.lblChangeTrainer.Click += new System.EventHandler(this.pnlChangeTrainerButton_Click);
             this.lblChangeTrainer.MouseEnter += new System.EventHandler(this.tlpChangeTrainerButton_MouseEnter);
             this.lblChangeTrainer.MouseLeave += new System.EventHandler(this.lblChangeTrainer_MouseLeave);
             // 

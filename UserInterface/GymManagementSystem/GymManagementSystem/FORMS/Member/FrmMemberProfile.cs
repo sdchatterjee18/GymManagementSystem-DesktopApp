@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using GymManagementSystem.FORMS.Member.UI;
-using System.Drawing;
 using System.IO;
 using GymManagementSystem.FORMS.Main;
 
@@ -326,74 +325,6 @@ namespace GymManagementSystem.FORMS.Member
         {
 
         }
-
-        private void tlpAssignTrainerButton_Click(object sender, EventArgs e)
-        {
-
-            if (memberAllDetailsUI.TrainerId != 0)
-            {
-                MessageBox.Show(MemberTrainerAssignmentNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else if (memberAllDetailsUI.IsActive == "InActive")
-            {
-                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else if (memberAllDetailsUI.ShiftId == 0)
-            {
-                MessageBox.Show(ShiftSelectionMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (memberAllDetailsUI.TrainerId != 0)
-            {
-                MessageBox.Show(AssignedTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else
-            {
-                FrmAssignTrainer FrmAssignTrainer = new FrmAssignTrainer(memberAllDetailsUI);
-                FrmAssignTrainer.ShowDialog();
-            }
-            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
-            this.memberAllDetailsUI = member;
-            LoadMemberDetails();
-        }
-
-        private void pnlChangeShiftButton_Click(object sender, EventArgs e)
-        {
-            if (memberAllDetailsUI.IsActive == "InActive")
-            {
-                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else
-            {
-                FrmChangeShift FrmChangeShift = new FrmChangeShift(memberAllDetailsUI);
-                FrmChangeShift.ShowDialog();
-            }
-            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
-            this.memberAllDetailsUI = member;
-            LoadMemberDetails();
-
-        }
-
-        private void tlpChangeTrainerButton_Click(object sender, EventArgs e)
-        {
-            if (memberAllDetailsUI.IsActive == "InActive")
-            {
-                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else if (memberAllDetailsUI.TrainerId == 0)
-            {
-                MessageBox.Show(ActiveTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            }
-            else
-            {
-                FrmChangeTrainer FrmChangeTrainer = new FrmChangeTrainer(memberAllDetailsUI);
-                FrmChangeTrainer.ShowDialog();
-            }
-            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
-            this.memberAllDetailsUI = member;
-            LoadMemberDetails();
-        }
-
         private void pnlChangeDietPlanButton_Click(object sender, EventArgs e)
         {
             if (memberAllDetailsUI.IsActive == "InActive")
@@ -425,6 +356,71 @@ namespace GymManagementSystem.FORMS.Member
             {
                 FrmMembershipRenewal frmMembershipRenewal = new FrmMembershipRenewal(memberAllDetailsUI);
                 frmMembershipRenewal.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void pnlChangeShiftButton_Click_1(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmChangeShift FrmChangeShift = new FrmChangeShift(memberAllDetailsUI);
+                FrmChangeShift.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void tlpAssignTrainerButton_Click_1(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.TrainerId != 0)
+            {
+                MessageBox.Show(MemberTrainerAssignmentNotNullMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.ShiftId == 0)
+            {
+                MessageBox.Show(ShiftSelectionMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (memberAllDetailsUI.TrainerId != 0)
+            {
+                MessageBox.Show(AssignedTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmAssignTrainer FrmAssignTrainer = new FrmAssignTrainer(memberAllDetailsUI);
+                FrmAssignTrainer.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
+        private void pnlChangeTrainerButton_Click(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else if (memberAllDetailsUI.TrainerId == 0)
+            {
+                MessageBox.Show(ActiveTrainerMessage, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmChangeTrainer FrmChangeTrainer = new FrmChangeTrainer(memberAllDetailsUI);
+                FrmChangeTrainer.ShowDialog();
             }
             MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
             this.memberAllDetailsUI = member;

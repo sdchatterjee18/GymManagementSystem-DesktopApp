@@ -11,6 +11,7 @@ using GymManagementSystem.FormsSuperAdmin.Employee;
 using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.Authentication;
+using GymManagementSystem.FormsSuperAdmin.Settings;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -21,14 +22,11 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private const int CollapsedWidth = 70;
         private bool sidebarExpand = true;
         private Form activeForm = null;
-        public FrmSAMainForm()
+        FrmUserRoleSelection frmUserRoleSelection = null;
+        public FrmSAMainForm(FrmUserRoleSelection frmUserRoleSelection)
         {
+            this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
-        }
-
-        private void FrmSAMainForm_Load(object sender, EventArgs e)
-        {
-           
         }
         private Panel selectedPanel = null;
         private void SelectPanel(Panel panel)
@@ -408,11 +406,14 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             selectedPanel = pnlSuperAdminPasswordChange;
             pnlSuperAdminPasswordChange.ForeColor = Color.White;
             picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
+            FrmSAPasswordChange frmSAPasswordChange = new FrmSAPasswordChange();
+            frmSAPasswordChange.ShowDialog();
         }
 
         private void pnlExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmUserRoleSelection.Close();
         }
 
         private void pnlExit_MouseEnter(object sender, EventArgs e)

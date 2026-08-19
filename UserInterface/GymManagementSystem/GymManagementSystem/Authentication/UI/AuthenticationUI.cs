@@ -36,7 +36,7 @@ namespace GymManagementSystem.Authentication.UI
         //  SUPERADMIN LOGIN
         // ==========================================
 
-        public string SuperAdminLoginUI(string userName,string password)
+        public bool SuperAdminLoginUI(string userName,string password)
         {
             return authenticationBLL.SuperAdminLoginBLL(
                 userName,
