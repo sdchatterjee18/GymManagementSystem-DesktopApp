@@ -298,6 +298,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
             {
                 return ChangeDietPlanMessage;
             }
+        }
         // Retrieves all Assign Trainer of Members details for displaying in the DataGridView.
         public DataTable RetrieveAssignTrainerToMemberDetailsDAL()
         {

@@ -22,6 +22,7 @@ using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FORMS.MembershipPlan;
 using GymManagementSystem.FormsSuperAdmin.Settings;
+using GymManagementSystem.FORMS.Member;
 namespace GymManagementSystem
 {
     static class Program
@@ -50,7 +51,7 @@ namespace GymManagementSystem
             //Application.Run(new FrmDisplayMembershipPlan());
             //Application.Run(new FrmSAAddNewEmployee());
             //Application.Run(new FrmSuperAdminRegistration());
-            Application.Run(new FrmDisplayShift());
+            Application.Run(new FrmMainLayout());
         }
     }
 }
