@@ -51,23 +51,53 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
 
         private void txtConfermPassword_Click(object sender, EventArgs e)
         {
-            clickCountConfirmPassword = ValidationUI.ClearTextBoxWhenClicked(txtConfermPassword,clickCountConfirmPassword);
-            txtConfermPassword.ForeColor = Color.Black;
+            clickCountConfirmPassword = ValidationUI.ClearTextBoxWhenClicked(txtConfirmPassword,clickCountConfirmPassword);
+            txtConfirmPassword.ForeColor = Color.Black;
         }
         private void txtUserName_Click(object sender, EventArgs e)
         {
             clickCountUserName = ValidationUI.ClearTextBoxWhenClicked(txtUserName, clickCountUserName);
             txtUserName.ForeColor = Color.Black;
         }
-
         private void tlpSubmit_Click(object sender, EventArgs e)
         {
-            SuperAdminChangePasswordUI superAdminChangePasswordUI = new SuperAdminChangePasswordUI();
-            UserName = txtUserName.Text.ToString();
-            CurrentPassword = txtOldPassword.Text.ToString();
-            NewPassword = txtNewPassword.Text.ToString();
-            string resultMessege=superAdminChangePasswordUI.ChangeSuperAdminPasswordUI(UserName, CurrentPassword, NewPassword);
-            MessageBox.Show(resultMessege);
+            SuperAdminChangePasswordUI superAdminChangePasswordUI =
+                new SuperAdminChangePasswordUI();
+
+            UserName = txtUserName.Text;
+            CurrentPassword = txtOldPassword.Text;
+            NewPassword = txtNewPassword.Text;
+
+             ConfirmNewPassword =
+                txtConfirmPassword.Text;
+
+            string message;
+
+            bool result =
+                superAdminChangePasswordUI.ChangeSuperAdminPasswordUI(
+                    UserName,
+                    CurrentPassword,
+                    NewPassword,
+                    ConfirmNewPassword,
+                    out message);
+
+            MessageBox.Show(message);
+
+            // CLOSE ONLY IF PASSWORD CHANGE WAS SUCCESSFUL
+            if (result)
+            {
+                this.Close();
+            }
+        }
+
+        private void tlpSubmit_MouseEnter(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.FromArgb(70, 90, 130);
+        }
+
+        private void tlpSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            tlpSubmit.BackColor = Color.MidnightBlue;
         } 
     }
 }

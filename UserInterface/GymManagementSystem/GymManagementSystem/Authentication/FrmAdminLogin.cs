@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.Authentication.UI;
 using GymManagementSystem.Common;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.Authentication
 {
@@ -15,9 +16,11 @@ namespace GymManagementSystem.Authentication
     {
         int ClickCountTxtAdminUsername = 0;
         int ClickCountTxtAdminPassword = 0;
-        public FrmAdminLogin()
+        FrmUserRoleSelection frmUserRoleSelection = null;
+        public FrmAdminLogin(FrmUserRoleSelection frmUserRoleSelection)
         {
             InitializeComponent();
+            this.frmUserRoleSelection = frmUserRoleSelection;
         }
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
@@ -118,19 +121,41 @@ namespace GymManagementSystem.Authentication
                 txtAdminPassword.Text.Trim();
 
 
-            // ==========================================
             // ADMIN LOGIN
-            // ==========================================
-
             try
             {
-                string message =adminAuthenticationUI.AdminLoginUI(userName,password);
+                bool Result =
+                    adminAuthenticationUI.AdminLoginUI(
+                        userName,
+                        password);
 
-                MessageBox.Show(message,"Admin Login", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if (Result)
+                {
+                    FrmMainLayout frmMainLayout =
+                        new FrmMainLayout();
+
+                    this.Close();
+
+                    frmMainLayout.Show();
+
+                    frmUserRoleSelection.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Invalid UserName or Password",
+                        "Admin Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }

@@ -18,7 +18,7 @@ namespace GymManagementSystem.Authentication.UI
         // ADMIN LOGIN
         // ==========================================
 
-        public string AdminLoginUI(string userName,string password)
+        public bool AdminLoginUI(string userName,string password)
         {
             return authenticationBLL.AdminLoginBLL(userName, password);
         }
@@ -29,7 +29,14 @@ namespace GymManagementSystem.Authentication.UI
 
         public string RegisterNewSuperAdminUI(string userName,string password,string emailId,string phoneNumber)
         {
-            return authenticationBLL.RegisterNewSuperAdminBLL(userName,password,emailId,phoneNumber);
+            string result =
+                authenticationBLL.RegisterNewSuperAdminBLL(
+                    userName,
+                    password,
+                    emailId,
+                    phoneNumber);
+
+            return result;
         }
 
         // ==========================================
@@ -45,7 +52,7 @@ namespace GymManagementSystem.Authentication.UI
         // ==========================================
         //  SUPERADMIN LOGOUT
         // ==========================================
-        public string SuperAdminLogoutUI()
+        public bool SuperAdminLogoutUI()
         {
             return authenticationBLL.SuperAdminLogoutBLL();
         }

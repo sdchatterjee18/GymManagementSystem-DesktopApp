@@ -15,12 +15,18 @@ namespace GymManagementSystem.FORMS.Settings.UI
 
         private AuthenticationBLL authenticationBLL = new AuthenticationBLL();
 
-        public string ChangeAdminPasswordUI(string userName,string currentPassword,string newPassword)
+        public bool ChangeAdminPasswordUI(string userName,string currentPassword,string newPassword,string confirmPassword,out string message)
         {
-            return authenticationBLL.ChangeAdminPasswordBLL(
-                userName,
-                currentPassword,
-                newPassword);
+            bool result =
+                authenticationBLL.ChangeAdminPasswordBLL(
+                    userName,
+                    currentPassword,
+                    newPassword,
+                    confirmPassword);
+
+            message = authenticationBLL.Message;
+
+            return result;
         }
     }
 }

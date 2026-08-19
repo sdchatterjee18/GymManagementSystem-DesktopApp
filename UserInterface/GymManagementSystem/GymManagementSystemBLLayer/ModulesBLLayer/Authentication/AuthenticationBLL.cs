@@ -13,40 +13,12 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
         public string PhoneNumber { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
 
         private AuthenticationDAL authenticationDAL = new AuthenticationDAL();
-        public string AdminLoginBLL(string userName, string password)
+        public bool AdminLoginBLL(string userName, string password)
         {
-            ValidationBll.CommonValidationMessage result;
-
-
-            // ==========================================
-            // USERNAME VALIDATION
-            // ==========================================
-
-            result =
-                ValidationBll.ValidateUserName(userName);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-
-            // ==========================================
-            // PASSWORD VALIDATION
-            // ==========================================
-
-            result =
-                ValidationBll.ValidatePassword(password);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
 
             // ==========================================
             // HASH PASSWORD
@@ -66,15 +38,10 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
             // ==========================================
             // LOGIN RESULT
             // ==========================================
-
-            if (loginResult)
-            {
-                return "Login Successful.";
-            }
-
-            return "Invalid Username and Password.";
+            return loginResult;
+         
         }
-        public string RegisterNewSuperAdminBLL(string userName, string password, string emailId, string phoneNumber)
+        public string RegisterNewSuperAdminBLL(string userName,string password,string emailId,string phoneNumber)
         {
             ValidationBll.CommonValidationMessage result;
 
@@ -82,10 +49,13 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
             // USERNAME VALIDATION
             // ==========================================
             result = ValidationBll.ValidateUserName(userName);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return Message;
             }
+
             // ==========================================
             // PASSWORD VALIDATION
             // ==========================================
@@ -93,43 +63,57 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return Message;
             }
+
             // ==========================================
             // EMAIL VALIDATION
             // ==========================================
             result = ValidationBll.ValidateEmail(emailId);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return Message;
             }
 
             // ==========================================
             // PHONE NUMBER VALIDATION
             // ==========================================
-
             result = ValidationBll.ValidatePhoneNumber(phoneNumber);
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return Message;
             }
 
             // ==========================================
-            // CONVERT HASH PASSWORD
+            // HASH PASSWORD
             // ==========================================
-
-            string passwordHash = PasswordHelperBLL.HashPassword(password);
+            string passwordHash =
+                PasswordHelperBLL.HashPassword(password);
 
             // ==========================================
             // BLL → DAL
             // ==========================================
+            string registerResult =
+                authenticationDAL.RegisterNewSuperAdminDAL(
+                    userName,
+                    passwordHash,
+                    emailId,
+                    phoneNumber);
 
-            return authenticationDAL.RegisterNewSuperAdminDAL(userName, passwordHash, emailId, phoneNumber);
+            // ==========================================
+            // REGISTRATION RESULT
+            // ==========================================
+            Message = registerResult;
+
+            return registerResult;
         }
         public bool SuperAdminLoginBLL(string userName, string password)
         {
-            ValidationBll.CommonValidationMessage result;
             // ==========================================
             // HASH PASSWORD
             // ==========================================
@@ -137,7 +121,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
             string passwordHash = PasswordHelperBLL.HashPassword(password);
             return authenticationDAL.SuperAdminLoginDAL(userName, passwordHash);
         }
-        public string SuperAdminLogoutBLL()
+        public bool SuperAdminLogoutBLL()
         {
             // ==========================================
             // BLL → DAL
@@ -153,164 +137,155 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
 
             if (logoutResult)
             {
-                return "Logout Successful.";
+                Message = "Logout Successful.";
+                return true;
             }
-            else
-            {
-                return "Logout Failed.";
-            }
+
+            Message = "Logout Failed.";
+            return false;
         }
-        public string ChangeSuperAdminPasswordBLL(string userName, string currentPassword, string newPassword)
+        public bool ChangeSuperAdminPasswordBLL(string userName,string currentPassword,string newPassword,string confirmPassword)
         {
             ValidationBll.CommonValidationMessage result;
 
-
-            // ==========================================
             // USERNAME VALIDATION
-            // ==========================================
+            result = ValidationBll.ValidateUserName(userName);
 
-            result =
-                ValidationBll.ValidateUserName(userName);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
 
-
-            // ==========================================
             // CURRENT PASSWORD VALIDATION
-            // ==========================================
+            result = ValidationBll.ValidatePassword(currentPassword);
 
-            result =
-                ValidationBll.ValidatePassword(currentPassword);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
 
-
-            // ==========================================
             // NEW PASSWORD VALIDATION
-            // ==========================================
+            result = ValidationBll.ValidatePassword(newPassword);
 
-            result =
-                ValidationBll.ValidatePassword(newPassword);
-
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
 
+            // CURRENT AND NEW PASSWORD MUST BE DIFFERENT
+            if (currentPassword == newPassword)
+            {
+                Message = "Current Password and New Password cannot be the same.";
+                return false;
+            }
 
-            // ==========================================
+            // NEW PASSWORD AND CONFIRM PASSWORD MUST MATCH
+            if (newPassword != confirmPassword)
+            {
+                Message = "New Password and Confirm Password do not match.";
+                return false;
+            }
+
             // HASH CURRENT PASSWORD
-            // ==========================================
-
             string currentPasswordHash =
-                PasswordHelperBLL.HashPassword(
-                    currentPassword);
+                PasswordHelperBLL.HashPassword(currentPassword);
 
-
-            // ==========================================
             // HASH NEW PASSWORD
-            // ==========================================
-
             string newPasswordHash =
-                PasswordHelperBLL.HashPassword(
-                    newPassword);
+                PasswordHelperBLL.HashPassword(newPassword);
 
-
-            // ==========================================
             // BLL → DAL
-            // ==========================================
-
             bool changePasswordResult =
                 authenticationDAL.ChangeSuperAdminPasswordDAL(
                     userName,
                     currentPasswordHash,
                     newPasswordHash);
 
-
-            // ==========================================
-            // RESULT
-            // ==========================================
-
             if (changePasswordResult)
             {
-                return "Password Changed Successfully.";
+                Message = "Password Changed Successfully.";
+                return true;
             }
 
-            return "Password Change Failed.";
+            Message = "Password Change Failed.";
+            return false;
         }
-        public string ChangeAdminPasswordBLL(string userName,string currentPassword,string newPassword)
+        public bool ChangeAdminPasswordBLL(string userName,string currentPassword,string newPassword,string confirmPassword)
         {
             ValidationBll.CommonValidationMessage result;
-
 
             // ==========================================
             // USERNAME VALIDATION
             // ==========================================
 
-            result =
-                ValidationBll.ValidateUserName(userName);
+            result = ValidationBll.ValidateUserName(userName);
 
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
-
 
             // ==========================================
             // CURRENT PASSWORD VALIDATION
             // ==========================================
 
-            result =
-                ValidationBll.ValidatePassword(currentPassword);
+            result = ValidationBll.ValidatePassword(currentPassword);
 
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
-
 
             // ==========================================
             // NEW PASSWORD VALIDATION
             // ==========================================
 
-            result =
-                ValidationBll.ValidatePassword(newPassword);
+            result = ValidationBll.ValidatePassword(newPassword);
 
-            if (result !=
-                ValidationBll.CommonValidationMessage.Valid)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                Message = ValidationBll.GetValidationMessage(result);
+                return false;
             }
 
+            // ==========================================
+            // CURRENT & NEW PASSWORD MUST BE DIFFERENT
+            // ==========================================
+
+            if (currentPassword == newPassword)
+            {
+                Message = "Current Password and New Password cannot be the same.";
+                return false;
+            }
+
+            // ==========================================
+            // NEW PASSWORD & CONFIRM PASSWORD MUST MATCH
+            // ==========================================
+
+            if (newPassword != confirmPassword)
+            {
+                Message = "New Password and Confirm Password do not match.";
+                return false;
+            }
 
             // ==========================================
             // HASH CURRENT PASSWORD
             // ==========================================
 
             string currentPasswordHash =
-                PasswordHelperBLL.HashPassword(
-                    currentPassword);
-
+                PasswordHelperBLL.HashPassword(currentPassword);
 
             // ==========================================
             // HASH NEW PASSWORD
             // ==========================================
 
             string newPasswordHash =
-                PasswordHelperBLL.HashPassword(
-                    newPassword);
-
+                PasswordHelperBLL.HashPassword(newPassword);
 
             // ==========================================
             // BLL → DAL
@@ -322,17 +297,18 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
                     currentPasswordHash,
                     newPasswordHash);
 
-
             // ==========================================
             // RESULT
             // ==========================================
 
             if (changeResult)
             {
-                return "Password Changed Successfully.";
+                Message = "Password Changed Successfully.";
+                return true;
             }
 
-            return "Password Change Failed.";
+            Message = "Password Change Failed.";
+            return false;
         }
     }
 

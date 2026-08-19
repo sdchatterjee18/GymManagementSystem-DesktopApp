@@ -12,6 +12,7 @@ using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.FormsSuperAdmin.Financials;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FormsSuperAdmin.Settings;
+using GymManagementSystem.Authentication.UI;
 
 namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
@@ -372,10 +373,66 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
-            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
-            this.Hide();
-            frmUserRoleSelection.ShowDialog();
-            this.Close();
+
+            // ==========================================
+            // LOGOUT CONFIRMATION
+            // ==========================================
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            // ==========================================
+            // USER CLICKED NO
+            // ==========================================
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // ==========================================
+            // PERFORM LOGOUT
+            // ==========================================
+
+            AuthenticationUI authenticationUI = new AuthenticationUI();
+
+            bool logoutResult =
+                authenticationUI.SuperAdminLogoutUI();
+
+            // ==========================================
+            // LOGOUT SUCCESS
+            // ==========================================
+
+            if (logoutResult)
+            {
+                MessageBox.Show(
+                    "Logout Successful.",
+                    "Logout",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                FrmUserRoleSelection frmUserRoleSelection =
+                    new FrmUserRoleSelection();
+
+                this.Hide();
+                frmUserRoleSelection.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                // ==========================================
+                // LOGOUT FAILED
+                // ==========================================
+
+                MessageBox.Show(
+                    "Logout Failed.",
+                    "Logout",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void pnlSuperAdminPasswordChange_MouseEnter(object sender, EventArgs e)

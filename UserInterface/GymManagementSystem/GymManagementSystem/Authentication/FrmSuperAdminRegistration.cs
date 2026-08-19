@@ -218,6 +218,7 @@ namespace GymManagementSystem.Authentication
                     "Super Admin Registration",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

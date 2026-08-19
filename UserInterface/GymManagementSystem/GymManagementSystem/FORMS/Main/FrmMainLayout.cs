@@ -780,10 +780,30 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlLogout_Click(object sender, EventArgs e)
         {
             ExpandIfCollapsed();
-            FrmUserRoleSelection frmUserRoleSelection = new FrmUserRoleSelection();
-            this.Hide();
-            frmUserRoleSelection.ShowDialog();
-            this.Close();
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Logout Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                FrmUserRoleSelection frmUserRoleSelection =
+                    new FrmUserRoleSelection();
+
+                this.Hide();
+
+                MessageBox.Show(
+                    "Logout Successful.",
+                    "Logout",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                frmUserRoleSelection.ShowDialog();
+
+                this.Close();
+            }
         }
 
         private void pnlMenu_MouseEnter(object sender, EventArgs e)
