@@ -73,7 +73,6 @@ namespace GymManagementSystem.FORMS.Member
                         Convert.ToInt32(row["MemberIsActive"]) == 1
                         ? "Active"
                         : "Inactive";
-
                     dgvDisplayMemberInformation.Rows.Add(
                         slNo,
                         Convert.ToInt32(row["MemberId"]),
