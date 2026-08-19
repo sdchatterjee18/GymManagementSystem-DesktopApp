@@ -21,6 +21,7 @@ using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FormsSuperAdmin.Settings;
+
 namespace GymManagementSystem
 {
     static class Program

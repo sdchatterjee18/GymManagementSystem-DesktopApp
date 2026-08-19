@@ -8,138 +8,199 @@ using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FormsSuperAdmin.Salary.UI;
 
-
 namespace GymManagementSystem.FormsSuperAdmin.Salary
 {
     public partial class FrmSASalaryPayment : Form
     {
         private int paymentModeRowIndex = -1;
-        private List<string> allPaymentMethods = new List<string>();
+        private bool isRefreshingSalaryGrid = false;
+
+        private List<string> allPaymentMethods =
+            new List<string>();
+
         private bool isFilteringPaymentMode = false;
         private bool isPaymentModeSelected = false;
         private bool isFormLoading = true;
+
+        // IMPORTANT:
+        // Prevent the same click from reaching
+        // DataGridView after payment is completed.
+        private bool ignoreNextActionCellClick = false;
+
 
         public FrmSASalaryPayment()
         {
             InitializeComponent();
 
-            cmbPaymentMode.SelectedIndexChanged +=
-                cmbPaymentMode_SelectedIndexChanged;
+            cmbPaymentMode.DropDownStyle =
+                ComboBoxStyle.DropDown;
 
-            cmbPaymentMode.TextChanged +=
-                cmbPaymentMode_TextChanged;
+            cmbPaymentMode.AutoCompleteMode =
+                AutoCompleteMode.SuggestAppend;
 
-            cmbPaymentMode.MouseClick +=
-                cmbPaymentMode_MouseClick;
-
-            cmbPaymentMode.KeyDown +=
-                cmbPaymentMode_KeyDown;
-            cmbPaymentMode.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbPaymentMode.AutoCompleteSource =
+                AutoCompleteSource.ListItems;
         }
-        private void FrmSASalaryPayment_Load(object sender, EventArgs e)
+
+
+        private void FrmSASalaryPayment_Load(
+            object sender,
+            EventArgs e)
         {
             isFormLoading = true;
 
-          
             cmbPaymentMode.DroppedDown = false;
             cmbPaymentMode.Visible = false;
             pnlPaymentMode.Visible = false;
 
-            // Payment methods load
+            // =========================================
+            // LOAD PAYMENT METHODS
+            // =========================================
+
             LoadPaymentMethods();
 
-           
             cmbPaymentMode.DroppedDown = false;
 
-            // Salary data load
+            // =========================================
+            // LOAD SALARY DATA
+            // =========================================
+
             RetrieveAllEmployeeSalary();
 
             dgvEmployeeSalaryDetails.ClearSelection();
 
             isFormLoading = false;
 
-            // Final safety
             cmbPaymentMode.DroppedDown = false;
         }
 
-        private void txtSearchBar_Click(object sender, EventArgs e)
+
+        private void txtSearchBar_Click(
+            object sender,
+            EventArgs e)
         {
             int TextBoxClick = 1;
+
             if (TextBoxClick == 1)
             {
                 txtSearchBar.Clear();
                 txtSearchBar.ForeColor = Color.Black;
             }
+
             dgvEmployeeSalaryDetails.ClearSelection();
         }
+
 
         private void RetrieveAllEmployeeSalary()
         {
-            SalaryUI salaryUI = new SalaryUI();
+            isRefreshingSalaryGrid = true;
 
-            DataTable dataTable =
-                salaryUI.GetEmployeeSalaryDetailsUI();
-
-            dgvEmployeeSalaryDetails.Rows.Clear();
-
-            int serialNo = 1;
-
-            foreach (DataRow row in dataTable.Rows)
+            try
             {
-                int rowIndex =
-                    dgvEmployeeSalaryDetails.Rows.Add();
+                SalaryUI salaryUI = new SalaryUI();
 
-                int isPaid =
-                    Convert.ToInt32(row["IsPaid"]);
+                DataTable dataTable =
+                    salaryUI.GetEmployeeSalaryDetailsUI();
 
-                dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colSLNo"].Value = serialNo++;
+                dgvEmployeeSalaryDetails.Rows.Clear();
 
-                dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colEmployeeId"].Value =
-                    row["EmployeeId"];
+                int serialNo = 1;
 
-                dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colEmployeeFullName"].Value =
-                    row["EmployeeName"];
-
-                dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colPhoneNo"].Value =
-                    row["PhoneNo"];
-
-                dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colSalary"].Value =
-                    row["Salary"];
-
-                dgvEmployeeSalaryDetails.Rows[rowIndex].Tag = isPaid;
-
-                if (isPaid == 1)
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .Cells["ColAction"].Value = "₹ Paid";
+                    int rowIndex =
+                        dgvEmployeeSalaryDetails.Rows.Add();
+
+                    int isPaid =
+                        Convert.ToInt32(row["IsPaid"]);
+
+                    // =========================================
+                    // SERIAL NUMBER
+                    // =========================================
 
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .DefaultCellStyle.ForeColor =
-                        Color.LimeGreen;
-                }
-                else
-                {
-                    dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .Cells["ColAction"].Value = "₹ Pay";
+                        .Cells["colSLNo"].Value =
+                        serialNo++;
+
+                    // =========================================
+                    // EMPLOYEE ID
+                    // =========================================
 
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .DefaultCellStyle.BackColor =
-                        Color.Empty;
+                        .Cells["colEmployeeId"].Value =
+                        row["EmployeeId"];
+
+                    // =========================================
+                    // EMPLOYEE NAME
+                    // =========================================
+
+                    dgvEmployeeSalaryDetails.Rows[rowIndex]
+                        .Cells["colEmployeeFullName"].Value =
+                        row["EmployeeName"];
+
+                    // =========================================
+                    // PHONE
+                    // =========================================
+
+                    dgvEmployeeSalaryDetails.Rows[rowIndex]
+                        .Cells["colPhoneNo"].Value =
+                        row["PhoneNo"];
+
+                    // =========================================
+                    // SALARY
+                    // =========================================
+
+                    dgvEmployeeSalaryDetails.Rows[rowIndex]
+                        .Cells["colSalary"].Value =
+                        row["Salary"];
+
+                    // =========================================
+                    // STORE PAYMENT STATUS
+                    // =========================================
+
+                    dgvEmployeeSalaryDetails.Rows[rowIndex].Tag =
+                        isPaid;
+
+                    // =========================================
+                    // ACTION
+                    // =========================================
+
+                    if (isPaid == 1)
+                    {
+                        dgvEmployeeSalaryDetails.Rows[rowIndex]
+                            .Cells["ColAction"].Value =
+                            "₹ Paid";
+
+                        dgvEmployeeSalaryDetails.Rows[rowIndex]
+                            .DefaultCellStyle.ForeColor =
+                            Color.LimeGreen;
+                    }
+                    else
+                    {
+                        dgvEmployeeSalaryDetails.Rows[rowIndex]
+                            .Cells["ColAction"].Value =
+                            "₹ Pay";
+
+                        dgvEmployeeSalaryDetails.Rows[rowIndex]
+                            .DefaultCellStyle.BackColor =
+                            Color.Empty;
+                    }
                 }
+
+                dgvEmployeeSalaryDetails.ClearSelection();
+
+                dgvEmployeeSalaryDetails.Invalidate();
             }
-
-            dgvEmployeeSalaryDetails.ClearSelection();
-
-            // Grid repaint
-            dgvEmployeeSalaryDetails.Invalidate();
+            finally
+            {
+                isRefreshingSalaryGrid = false;
+            }
         }
 
-        private void dgvEmployeeSalaryDetails_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+
+        private void dgvEmployeeSalaryDetails_CellPainting(
+            object sender,
+            DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -179,7 +240,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             }
 
             using (Font fixedFont =
-                new Font("Segoe UI", 10F, FontStyle.Bold))
+                new Font(
+                    "Segoe UI",
+                    10F,
+                    FontStyle.Bold))
             {
                 TextRenderer.DrawText(
                     e.Graphics,
@@ -192,8 +256,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             }
 
             e.Handled = true;
-
         }
+
 
         private void LoadPaymentMethods()
         {
@@ -206,61 +270,128 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
 
             foreach (string paymentMethod in allPaymentMethods)
             {
-                cmbPaymentMode.Items.Add(paymentMethod);
+                if (!string.IsNullOrWhiteSpace(paymentMethod))
+                {
+                    cmbPaymentMode.Items.Add(paymentMethod);
+                }
             }
 
             cmbPaymentMode.SelectedIndex = -1;
             cmbPaymentMode.Text = "";
         }
-        private void dgvEmployeeSalaryDetails_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvEmployeeSalaryDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
-            }
 
+
+        private void dgvEmployeeSalaryDetails_CellMouseEnter(
+            object sender,
+            DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 &&
+                e.ColumnIndex >= 0)
+            {
+                dgvEmployeeSalaryDetails
+                    .Rows[e.RowIndex]
+                    .Cells[e.ColumnIndex]
+                    .Style.BackColor =
+                    Color.LightBlue;
+            }
         }
 
-        private void dgvEmployeeSalaryDetails_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                dgvEmployeeSalaryDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-            }
 
+        private void dgvEmployeeSalaryDetails_CellMouseLeave(
+            object sender,
+            DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 &&
+                e.ColumnIndex >= 0)
+            {
+                dgvEmployeeSalaryDetails
+                    .Rows[e.RowIndex]
+                    .Cells[e.ColumnIndex]
+                    .Style.BackColor =
+                    Color.Empty;
+            }
         }
 
-        private void tlpSalary_Click(object sender, EventArgs e)
+
+        private void tlpSalary_Click(
+            object sender,
+            EventArgs e)
         {
             dgvEmployeeSalaryDetails.ClearSelection();
         }
 
-        private void FrmSASalaryPayment_Shown(object sender, EventArgs e)
+
+        private void FrmSASalaryPayment_Shown(
+            object sender,
+            EventArgs e)
         {
             this.ActiveControl = null;
         }
 
-        private void dgvEmployeeSalaryDetails_CellContentClick(object sender,DataGridViewCellEventArgs e)
+
+        private void dgvEmployeeSalaryDetails_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
+            // =========================================
+            // IGNORE CLICK DURING GRID REFRESH
+            // =========================================
+
+            if (isRefreshingSalaryGrid)
+                return;
+
+
+            // =========================================
+            // IGNORE THE EXTRA CLICK CAUSED BY
+            // PAYMENT COMBOBOX
+            // =========================================
+
+            if (ignoreNextActionCellClick)
+            {
+                ignoreNextActionCellClick = false;
+                return;
+            }
+
+
+            // =========================================
+            // INVALID ROW
+            // =========================================
+
             if (e.RowIndex < 0)
                 return;
+
+
+            // =========================================
+            // ONLY ACTION COLUMN
+            // =========================================
 
             if (e.ColumnIndex !=
                 dgvEmployeeSalaryDetails.Columns["ColAction"].Index)
                 return;
 
+
+            // =========================================
+            // GET PAYMENT STATUS
+            // =========================================
+
             int isPaid = 0;
 
-            if (dgvEmployeeSalaryDetails.Rows[e.RowIndex].Tag != null)
+            if (dgvEmployeeSalaryDetails
+                .Rows[e.RowIndex]
+                .Tag != null)
             {
                 isPaid =
                     Convert.ToInt32(
-                        dgvEmployeeSalaryDetails.Rows[e.RowIndex].Tag);
+                        dgvEmployeeSalaryDetails
+                        .Rows[e.RowIndex]
+                        .Tag);
             }
 
+
             // =========================================
-            // Already Paid
+            // ALREADY PAID
             // =========================================
+
             if (isPaid == 1)
             {
                 ClosePaymentModeComboBox();
@@ -276,9 +407,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
                 return;
             }
 
+
             // =========================================
-            // Same row clicked again
+            // SAME ROW CLICKED AGAIN
             // =========================================
+
             if (pnlPaymentMode.Visible &&
                 paymentModeRowIndex == e.RowIndex)
             {
@@ -289,29 +422,86 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
                 return;
             }
 
+
+            // =========================================
+            // GET EMPLOYEE ID
+            // =========================================
+
             int employeeId =
                 Convert.ToInt32(
-                    dgvEmployeeSalaryDetails.Rows[e.RowIndex]
-                    .Cells["colEmployeeId"].Value);
+                    dgvEmployeeSalaryDetails
+                    .Rows[e.RowIndex]
+                    .Cells["colEmployeeId"]
+                    .Value);
+
+
+            // =========================================
+            // SHOW PAYMENT MODE
+            // =========================================
 
             ShowPaymentModeComboBox(
                 e.RowIndex,
                 employeeId);
         }
-        private void ShowPaymentModeComboBox(int rowIndex, int employeeId)
+
+
+        private void ShowPaymentModeComboBox(
+            int rowIndex,
+            int employeeId)
         {
             paymentModeRowIndex = rowIndex;
 
             isPaymentModeSelected = false;
 
-            // Make sure previous dropdown is closed
+            // =========================================
+            // CLOSE PREVIOUS DROPDOWN
+            // =========================================
+
             cmbPaymentMode.DroppedDown = false;
 
+
+            // =========================================
+            // RESTORE ALL PAYMENT METHODS
+            // =========================================
+
+            cmbPaymentMode.Items.Clear();
+
+            foreach (string paymentMethod in allPaymentMethods)
+            {
+                if (!string.IsNullOrWhiteSpace(paymentMethod))
+                {
+                    cmbPaymentMode.Items.Add(paymentMethod);
+                }
+            }
+
+
+            // =========================================
+            // RESET SELECTION
+            // =========================================
+
+            cmbPaymentMode.SelectedIndex = -1;
+            cmbPaymentMode.Text = "";
+
+
+            // =========================================
+            // STORE EMPLOYEE ID
+            // =========================================
+
+            cmbPaymentMode.Tag = employeeId;
+
+
+            // =========================================
+            // GET ACTION COLUMN POSITION
+            // =========================================
+
             int actionColumnIndex =
-                dgvEmployeeSalaryDetails.Columns["ColAction"].Index;
+                dgvEmployeeSalaryDetails
+                .Columns["ColAction"]
+                .Index;
 
             Rectangle cellRectangle =
-                dgvEmployeeSalaryDetails.GetCellDisplayRectangle(
+                dgvEmployeeSalaryDetails
+                .GetCellDisplayRectangle(
                     actionColumnIndex,
                     rowIndex,
                     true);
@@ -319,38 +509,74 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             if (cellRectangle.Height <= 0)
                 return;
 
+
+            // =========================================
+            // SET PARENT
+            // =========================================
+
             cmbPaymentMode.Parent =
                 dgvEmployeeSalaryDetails;
 
             pnlPaymentMode.Parent =
                 dgvEmployeeSalaryDetails;
 
-            cmbPaymentMode.Tag = employeeId;
+
+            // =========================================
+            // SET PANEL SIZE
+            // =========================================
 
             int actionColumnWidth =
-                dgvEmployeeSalaryDetails.Columns["ColAction"].Width;
+                dgvEmployeeSalaryDetails
+                .Columns["ColAction"]
+                .Width;
 
             pnlPaymentMode.Width =
                 (int)(actionColumnWidth * 0.70);
 
             pnlPaymentMode.Height = 110;
 
-            pnlPaymentMode.Location = new Point(
-                cellRectangle.X +
-                (actionColumnWidth - pnlPaymentMode.Width) / 2,
-                cellRectangle.Bottom
-            );
+
+            // =========================================
+            // SET PANEL LOCATION
+            // =========================================
+
+            pnlPaymentMode.Location =
+                new Point(
+                    cellRectangle.X +
+                    (actionColumnWidth -
+                     pnlPaymentMode.Width) / 2,
+
+                    cellRectangle.Bottom
+                );
+
+
+            // =========================================
+            // SET COMBOBOX SIZE
+            // =========================================
 
             cmbPaymentMode.Width =
                 pnlPaymentMode.Width - 20;
 
             cmbPaymentMode.Height = 30;
 
-            cmbPaymentMode.Location = new Point(
-                pnlPaymentMode.Left +
-                (pnlPaymentMode.Width - cmbPaymentMode.Width) / 2,
-                pnlPaymentMode.Top + 10
-            );
+
+            // =========================================
+            // SET COMBOBOX LOCATION
+            // =========================================
+
+            cmbPaymentMode.Location =
+                new Point(
+                    pnlPaymentMode.Left +
+                    (pnlPaymentMode.Width -
+                     cmbPaymentMode.Width) / 2,
+
+                    pnlPaymentMode.Top + 10
+                );
+
+
+            // =========================================
+            // PANEL DESIGN
+            // =========================================
 
             pnlPaymentMode.BackColor =
                 Color.LightSkyBlue;
@@ -358,120 +584,64 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             pnlPaymentMode.BorderStyle =
                 BorderStyle.FixedSingle;
 
-            pnlPaymentMode.Visible = true;
 
+            // =========================================
+            // SHOW
+            // =========================================
+
+            pnlPaymentMode.Visible = true;
             cmbPaymentMode.Visible = true;
 
             pnlPaymentMode.BringToFront();
-
             cmbPaymentMode.BringToFront();
 
-            // Reset previous search/selection
-            cmbPaymentMode.SelectedIndex = -1;
-            cmbPaymentMode.Text = "";
 
-            // Focus ComboBox
+            // =========================================
+            // FOCUS
+            // =========================================
+
             cmbPaymentMode.Focus();
 
-            // Open dropdown
+
+            // =========================================
+            // OPEN DROPDOWN
+            // =========================================
+
             cmbPaymentMode.DroppedDown = true;
         }
 
-        private void cmbPaymentMode_SelectedIndexChanged(object sender,EventArgs e)
+
+        private void txtSearchBar_TextChanged(
+            object sender,
+            EventArgs e)
         {
-           
-            if (isFormLoading)
-                return;
-
-            if (isFilteringPaymentMode)
-                return;
-
-            if (cmbPaymentMode.SelectedIndex == -1)
-                return;
-
-            if (cmbPaymentMode.Tag == null)
-                return;
-
-            string selectedPaymentMode =
-                Convert.ToString(
-                    cmbPaymentMode.SelectedItem);
-
-            if (string.IsNullOrWhiteSpace(selectedPaymentMode))
-                return;
-
-            isPaymentModeSelected = true;
-
-            int employeeId =
-                Convert.ToInt32(cmbPaymentMode.Tag);
-
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to pay this employee's salary?\n\n" +
-                "Payment Mode : " + selectedPaymentMode,
-                "Confirm Salary Payment",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            // =========================================
-            // User clicked NO
-            // =========================================
-            if (result == DialogResult.No)
-            {
-                ClosePaymentModeComboBox();
-
-                dgvEmployeeSalaryDetails.ClearSelection();
-
-                return;
-            }
-
-            // =========================================
-            // User clicked YES
-            // =========================================
-            SalaryUI salaryUI = new SalaryUI();
-
-            string message =
-                salaryUI.PaySalaryUI(
-                    employeeId,
-                    selectedPaymentMode);
-
-            MessageBox.Show(
-                message,
-                "Salary Payment",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            // =========================================
-            // Close ComboBox + Panel
-            // =========================================
-            ClosePaymentModeComboBox();
-
-            // =========================================
-            // Refresh Data
-            // =========================================
-            RetrieveAllEmployeeSalary();
-
-            dgvEmployeeSalaryDetails.ClearSelection();
-        }
-
-        private void txtSearchBar_TextChanged(object sender, EventArgs e)
-        {
-            string search = txtSearchBar.Text.Trim();
+            string search =
+                txtSearchBar.Text.Trim();
 
             if (string.IsNullOrEmpty(search))
             {
                 RetrieveAllEmployeeSalary();
+
                 dgvEmployeeSalaryDetails.ClearSelection();
+
                 return;
             }
 
             SearchEmployeeSalary(search);
+
             dgvEmployeeSalaryDetails.ClearSelection();
         }
-        private void SearchEmployeeSalary(string search)
+
+
+        private void SearchEmployeeSalary(
+            string search)
         {
             SalaryUI salaryUI = new SalaryUI();
 
             DataTable dataTable =
-                salaryUI.RetrieveEmployeeSalaryDetailsByPhoneNumberAndNameUI(search);
+                salaryUI
+                .RetrieveEmployeeSalaryDetailsByPhoneNumberAndNameUI(
+                    search);
 
             dgvEmployeeSalaryDetails.Rows.Clear();
 
@@ -485,31 +655,41 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
                 int isPaid =
                     Convert.ToInt32(row["IsPaid"]);
 
+
                 dgvEmployeeSalaryDetails.Rows[rowIndex]
-                    .Cells["colSLNo"].Value = serialNo++;
+                    .Cells["colSLNo"].Value =
+                    serialNo++;
+
 
                 dgvEmployeeSalaryDetails.Rows[rowIndex]
                     .Cells["colEmployeeId"].Value =
                     row["EmployeeId"];
 
+
                 dgvEmployeeSalaryDetails.Rows[rowIndex]
                     .Cells["colEmployeeFullName"].Value =
                     row["EmployeeName"];
+
 
                 dgvEmployeeSalaryDetails.Rows[rowIndex]
                     .Cells["colPhoneNo"].Value =
                     row["PhoneNo"];
 
+
                 dgvEmployeeSalaryDetails.Rows[rowIndex]
                     .Cells["colSalary"].Value =
                     row["Salary"];
 
-                dgvEmployeeSalaryDetails.Rows[rowIndex].Tag = isPaid;
+
+                dgvEmployeeSalaryDetails.Rows[rowIndex].Tag =
+                    isPaid;
+
 
                 if (isPaid == 1)
                 {
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .Cells["ColAction"].Value = "₹ Paid";
+                        .Cells["ColAction"].Value =
+                        "₹ Paid";
 
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
                         .DefaultCellStyle.ForeColor =
@@ -518,7 +698,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
                 else
                 {
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
-                        .Cells["ColAction"].Value = "₹ Pay";
+                        .Cells["ColAction"].Value =
+                        "₹ Pay";
 
                     dgvEmployeeSalaryDetails.Rows[rowIndex]
                         .DefaultCellStyle.BackColor =
@@ -527,163 +708,216 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             }
 
             dgvEmployeeSalaryDetails.ClearSelection();
+
             dgvEmployeeSalaryDetails.Invalidate();
         }
 
-        private void cmbPaymentMode_MouseEnter(object sender, EventArgs e)
+
+        private void ClosePaymentModeComboBox()
         {
-            if (!cmbPaymentMode.DroppedDown)
-            {
-                cmbPaymentMode.DroppedDown = true;
-            }
+            // =========================================
+            // CLOSE DROPDOWN
+            // =========================================
+
+            cmbPaymentMode.DroppedDown = false;
+
+
+            // =========================================
+            // HIDE PANEL
+            // =========================================
+
+            pnlPaymentMode.Visible = false;
+
+
+            // =========================================
+            // HIDE COMBOBOX
+            // =========================================
+
+            cmbPaymentMode.Visible = false;
+
+
+            // =========================================
+            // RESET ROW
+            // =========================================
+
+            paymentModeRowIndex = -1;
+
+
+            // =========================================
+            // RESET SELECTION FLAG
+            // =========================================
+
+            isPaymentModeSelected = false;
+
+
+            this.ActiveControl = null;
         }
 
-        private void cmbPaymentMode_TextChanged(object sender, EventArgs e)
+
+        private void cmbPaymentMode_SelectionChangeCommitted(
+            object sender,
+            EventArgs e)
         {
-            if (isFilteringPaymentMode)
+            // =========================================
+            // VALIDATION
+            // =========================================
+
+            if (cmbPaymentMode.SelectedIndex == -1)
+                return;
+
+            if (cmbPaymentMode.Tag == null)
                 return;
 
             if (isPaymentModeSelected)
                 return;
 
-            if (!cmbPaymentMode.Visible)
+
+            // =========================================
+            // GET SELECTED PAYMENT MODE
+            // =========================================
+
+            string selectedPaymentMode =
+                Convert.ToString(
+                    cmbPaymentMode.SelectedItem);
+
+            if (string.IsNullOrWhiteSpace(
+                selectedPaymentMode))
                 return;
 
-            string searchText = cmbPaymentMode.Text.Trim();
 
-            isFilteringPaymentMode = true;
+            // =========================================
+            // MARK PAYMENT MODE SELECTED
+            // =========================================
 
-            try
-            {
-                // =========================================
-                // Save typed text
-                // =========================================
+            isPaymentModeSelected = true;
 
-                int cursorPosition = searchText.Length;
 
-                // =========================================
-                // Close current dropdown
-                // =========================================
+            // =========================================
+            // IMPORTANT
+            //
+            // Tell DataGridView that the next
+            // Action-cell click must be ignored.
+            // =========================================
 
-                cmbPaymentMode.DroppedDown = false;
+            ignoreNextActionCellClick = true;
 
-                // =========================================
-                // Clear current items
-                // =========================================
 
-                cmbPaymentMode.Items.Clear();
+            // =========================================
+            // KEEP SELECTED ITEM VISIBLE
+            // =========================================
 
-                // =========================================
-                // Filter Payment Methods
-                // =========================================
+            cmbPaymentMode.Text =
+                selectedPaymentMode;
 
-                List<string> filteredPaymentMethods;
+            cmbPaymentMode.SelectionStart =
+                cmbPaymentMode.Text.Length;
 
-                if (string.IsNullOrWhiteSpace(searchText))
-                {
-                    filteredPaymentMethods =
-                        allPaymentMethods.ToList();
-                }
-                else
-                {
-                    filteredPaymentMethods =
-                        allPaymentMethods
-                        .Where(paymentMethod =>
-                            !string.IsNullOrWhiteSpace(paymentMethod) &&
-                            paymentMethod.StartsWith(
-                                searchText,
-                                StringComparison.OrdinalIgnoreCase))
-                        .ToList();
-                }
+            cmbPaymentMode.SelectionLength = 0;
 
-                // =========================================
-                // Add filtered items
-                // =========================================
 
-                foreach (string paymentMethod in filteredPaymentMethods)
-                {
-                    cmbPaymentMode.Items.Add(paymentMethod);
-                }
+            // =========================================
+            // CLOSE DROPDOWN
+            // =========================================
 
-                // =========================================
-                // Restore typed text BEFORE opening dropdown
-                // =========================================
-
-                cmbPaymentMode.SelectedIndex = -1;
-
-                cmbPaymentMode.Text = searchText;
-
-                cmbPaymentMode.SelectionStart = cursorPosition;
-
-                cmbPaymentMode.SelectionLength = 0;
-
-                // =========================================
-                // Open dropdown
-                // =========================================
-
-                if (filteredPaymentMethods.Count > 0)
-                {
-                    cmbPaymentMode.DroppedDown = true;
-
-                    cmbPaymentMode.SelectedIndex = -1;
-
-                    cmbPaymentMode.Text = searchText;
-
-                    cmbPaymentMode.SelectionStart = cursorPosition;
-
-                    cmbPaymentMode.SelectionLength = 0;
-                }
-            }
-            finally
-            {
-                isFilteringPaymentMode = false;
-            }
-        }
-        private void cmbPaymentMode_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Down)
-            {
-                cmbPaymentMode.DroppedDown = true;
-            }
-        }
-
-        private void cmbPaymentMode_MouseLeave(object sender, EventArgs e)
-        {
-            if (cmbPaymentMode.DroppedDown)
-            {
-                cmbPaymentMode.DroppedDown = false;
-            }
-        }
-
-        private void cmbPaymentMode_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (!cmbPaymentMode.DroppedDown)
-            {
-                cmbPaymentMode.DroppedDown = true;
-            }
-        }
-        private void ClosePaymentModeComboBox()
-        {
-            // Close native ComboBox dropdown first
             cmbPaymentMode.DroppedDown = false;
 
-            // Clear ComboBox
-            cmbPaymentMode.SelectedIndex = -1;
-            cmbPaymentMode.Text = "";
-            cmbPaymentMode.Tag = null;
 
-            // Hide ComboBox
-            cmbPaymentMode.Visible = false;
+            // =========================================
+            // GET EMPLOYEE ID
+            // =========================================
 
-            // Hide Panel
-            pnlPaymentMode.Visible = false;
+            int employeeId =
+                Convert.ToInt32(
+                    cmbPaymentMode.Tag);
 
-            // Reset variables
-            paymentModeRowIndex = -1;
-            isPaymentModeSelected = false;
 
-            // Remove focus
-            this.ActiveControl = null;
+            // =========================================
+            // CONFIRM PAYMENT
+            // =========================================
+
+            DialogResult result =
+                MessageBox.Show(
+                    "Are you sure you want to pay this employee's salary?\n\n" +
+                    "Payment Mode : " +
+                    selectedPaymentMode,
+
+                    "Confirm Salary Payment",
+
+                    MessageBoxButtons.YesNo,
+
+                    MessageBoxIcon.Question);
+
+
+            // =========================================
+            // USER CLICKED NO
+            // =========================================
+
+            if (result == DialogResult.No)
+            {
+                // The payment was not made.
+                // Allow the next normal grid click.
+
+                ignoreNextActionCellClick = false;
+
+                ClosePaymentModeComboBox();
+
+                dgvEmployeeSalaryDetails.ClearSelection();
+
+                return;
+            }
+
+
+            // =========================================
+            // USER CLICKED YES
+            // =========================================
+
+            SalaryUI salaryUI =
+                new SalaryUI();
+
+            string message =
+                salaryUI.PaySalaryUI(
+                    employeeId,
+                    selectedPaymentMode);
+
+
+            // =========================================
+            // SHOW ONLY THE RETURNED MESSAGE
+            // =========================================
+
+            MessageBox.Show(
+                message,
+                "Salary Payment",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+
+            // =========================================
+            // CLOSE PAYMENT MODE
+            // =========================================
+
+            ClosePaymentModeComboBox();
+
+
+            // =========================================
+            // REFRESH GRID
+            // =========================================
+
+            RetrieveAllEmployeeSalary();
+
+            dgvEmployeeSalaryDetails.ClearSelection();
+
+
+            // =========================================
+            // RESET IGNORE FLAG AFTER CURRENT
+            // UI EVENT COMPLETES
+            // =========================================
+
+            this.BeginInvoke(
+                new MethodInvoker(
+                    delegate
+                    {
+                        ignoreNextActionCellClick = false;
+                    }));
         }
     }
 }

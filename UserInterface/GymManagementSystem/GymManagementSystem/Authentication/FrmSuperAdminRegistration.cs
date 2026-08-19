@@ -26,11 +26,7 @@ namespace GymManagementSystem.Authentication
         private void FrmSuperAdminRegistration_Load(object sender, EventArgs e)
         {
 
-        }
-
-       
-        
-
+        }  
         private void FrmSuperAdminRegistration_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
