@@ -48,7 +48,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblAddNewEmployee = new System.Windows.Forms.Label();
             this.tlpEmployeeDataGrid = new System.Windows.Forms.TableLayoutPanel();
             this.dvgEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.picBoxSearchIcon = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,10 +63,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDeactivate = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.picBoxSearchIcon = new System.Windows.Forms.PictureBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpHeaderSpace.SuspendLayout();
@@ -295,6 +296,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.dvgEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dvgEmployeeDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSlNo,
+            this.colEmployeeId,
             this.colName,
             this.colGender,
             this.colPhoneNo,
@@ -342,9 +344,77 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.dvgEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dvgEmployeeDetails.Size = new System.Drawing.Size(948, 393);
             this.dvgEmployeeDetails.TabIndex = 0;
+            this.dvgEmployeeDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellContentClick);
             this.dvgEmployeeDetails.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseEnter);
             this.dvgEmployeeDetails.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseLeave);
             this.dvgEmployeeDetails.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dvgEmployeeDetails_CellPainting);
+            // 
+            // tlpSearch
+            // 
+            this.tlpSearch.ColumnCount = 4;
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSearch.Controls.Add(this.picBoxSearchIcon, 0, 0);
+            this.tlpSearch.Controls.Add(this.pnlAddNewEmployee, 3, 0);
+            this.tlpSearch.Controls.Add(this.btnSearch, 2, 0);
+            this.tlpSearch.Controls.Add(this.txtSearch, 1, 0);
+            this.tlpSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSearch.Location = new System.Drawing.Point(37, 0);
+            this.tlpSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpSearch.Name = "tlpSearch";
+            this.tlpSearch.RowCount = 1;
+            this.tlpSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSearch.Size = new System.Drawing.Size(954, 71);
+            this.tlpSearch.TabIndex = 1;
+            this.tlpSearch.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
+            // 
+            // picBoxSearchIcon
+            // 
+            this.picBoxSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxSearchIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearchIcon.BackgroundImage")));
+            this.picBoxSearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxSearchIcon.Location = new System.Drawing.Point(3, 19);
+            this.picBoxSearchIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxSearchIcon.MaximumSize = new System.Drawing.Size(39, 33);
+            this.picBoxSearchIcon.MinimumSize = new System.Drawing.Size(39, 33);
+            this.picBoxSearchIcon.Name = "picBoxSearchIcon";
+            this.picBoxSearchIcon.Size = new System.Drawing.Size(39, 33);
+            this.picBoxSearchIcon.TabIndex = 0;
+            this.picBoxSearchIcon.TabStop = false;
+            this.picBoxSearchIcon.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(283, 14);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(93, 42);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtSearch.Location = new System.Drawing.Point(47, 19);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(229, 32);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.Text = "Enter Mobile No";
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // colSlNo
             // 
@@ -353,6 +423,13 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colSlNo.Name = "colSlNo";
             this.colSlNo.ReadOnly = true;
             this.colSlNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colEmployeeId
+            // 
+            this.colEmployeeId.DataPropertyName = "EmployeeId";
+            this.colEmployeeId.HeaderText = "Employee Id";
+            this.colEmployeeId.Name = "colEmployeeId";
+            this.colEmployeeId.Visible = false;
             // 
             // colName
             // 
@@ -430,71 +507,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colDeactivate.Name = "colDeactivate";
             this.colDeactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // tlpSearch
-            // 
-            this.tlpSearch.ColumnCount = 4;
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearch.Controls.Add(this.picBoxSearchIcon, 0, 0);
-            this.tlpSearch.Controls.Add(this.pnlAddNewEmployee, 3, 0);
-            this.tlpSearch.Controls.Add(this.btnSearch, 2, 0);
-            this.tlpSearch.Controls.Add(this.txtSearch, 1, 0);
-            this.tlpSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSearch.Location = new System.Drawing.Point(37, 0);
-            this.tlpSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpSearch.Name = "tlpSearch";
-            this.tlpSearch.RowCount = 1;
-            this.tlpSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearch.Size = new System.Drawing.Size(954, 71);
-            this.tlpSearch.TabIndex = 1;
-            this.tlpSearch.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
-            // 
-            // picBoxSearchIcon
-            // 
-            this.picBoxSearchIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxSearchIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxSearchIcon.BackgroundImage")));
-            this.picBoxSearchIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxSearchIcon.Location = new System.Drawing.Point(3, 19);
-            this.picBoxSearchIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picBoxSearchIcon.MaximumSize = new System.Drawing.Size(39, 33);
-            this.picBoxSearchIcon.MinimumSize = new System.Drawing.Size(39, 33);
-            this.picBoxSearchIcon.Name = "picBoxSearchIcon";
-            this.picBoxSearchIcon.Size = new System.Drawing.Size(39, 33);
-            this.picBoxSearchIcon.TabIndex = 0;
-            this.picBoxSearchIcon.TabStop = false;
-            this.picBoxSearchIcon.Click += new System.EventHandler(this.FrmSADisplayAllEmployee_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(283, 14);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 42);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(47, 19);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(229, 32);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.Text = "Enter Mobile No";
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
-            // 
             // FrmSADisplayAllEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -548,6 +560,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private System.Windows.Forms.PictureBox picBoxPluseIcon;
         private System.Windows.Forms.Label lblAddNewEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSlNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNo;

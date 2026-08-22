@@ -141,6 +141,23 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                 return ex.Message;
             }
         }
+        public DataTable DisplayAllEmployeeDetailsUI()
+        {
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+
+            return employeeBLL.DisplayAllEmployeeDetailsBLL();
         }
-    }
+        public DataTable DisplayEmployeeDetailsByPhoneNoUI(string phoneNo)
+        {
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+
+            return employeeBLL.DisplayEmployeeDetailsByPhoneNoBLL(phoneNo);
+        }
+        public string ToggleEmployeeActiveStatusUI(int employeeId)
+        {
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+            return employeeBLL.ToggleEmployeeActiveStatusBLL(employeeId);
+        }
+     }
+ }
 
