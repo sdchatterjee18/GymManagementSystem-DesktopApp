@@ -89,5 +89,23 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
 
             return employeeDAL.InsertEmployeeDAL();
         }
+
+        public DataTable DisplayAllEmployeeDetailsBLL()
+        {
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            return employeeDAL.DisplayAllEmployeeDetailsDAL();
+        }
+
+        public DataTable DisplayEmployeeDetailsByPhoneNoBLL(string phoneNo)
+        {
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+
+            return employeeDAL.DisplayEmployeeDetailsByPhoneNoDAL(phoneNo);
+        }
+        public string ToggleEmployeeActiveStatusBLL(int employeeId)
+        {
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            return employeeDAL.ToggleEmployeeActiveStatusDAL(employeeId);
+        }
     }
 }
