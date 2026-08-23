@@ -19,6 +19,13 @@ namespace GymManagementSystem.FORMS.Attendance
         private void FrmAttendanceHistory_Load(object sender, EventArgs e)
         {
 
+            dtpStartDateAttendanceHistory.Format = DateTimePickerFormat.Custom;
+            dtpStartDateAttendanceHistory.CustomFormat = "MMMM dd, yyyy";
+
+            dtpEndDateAttendanceHistory.Format = DateTimePickerFormat.Custom;
+            dtpEndDateAttendanceHistory.CustomFormat = "MMMM dd, yyyy";
+                  
+
         }
 
         private void dgvViewAttendanceHistory_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

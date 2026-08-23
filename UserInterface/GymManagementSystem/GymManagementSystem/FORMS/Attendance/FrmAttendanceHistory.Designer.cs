@@ -47,9 +47,6 @@
             this.tlpAttendanceHistoryTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblViewAttendanceHistoryDetails = new System.Windows.Forms.Label();
             this.lblAttendanceHistory = new System.Windows.Forms.Label();
-            this.tlpDateRangeAttendanceHistory = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDateRangeAttendanceHistory = new System.Windows.Forms.Label();
-            this.picDateRangeAttendanceHistory = new System.Windows.Forms.PictureBox();
             this.tlpStartAndEndDateAttendanceHistory = new System.Windows.Forms.TableLayoutPanel();
             this.btnSearchAttendanceHistory = new System.Windows.Forms.Button();
             this.lblStartDateAttendanceHistory = new System.Windows.Forms.Label();
@@ -66,8 +63,6 @@
             this.tlpAttendanceHistoryHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAttendanceHistory)).BeginInit();
             this.tlpAttendanceHistoryTitle.SuspendLayout();
-            this.tlpDateRangeAttendanceHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDateRangeAttendanceHistory)).BeginInit();
             this.tlpStartAndEndDateAttendanceHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStartDateAttendanceHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEndDateAttendanceHistory)).BeginInit();
@@ -83,24 +78,21 @@
             this.tlpAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.480836F));
             this.tlpAttendanceHistory.Controls.Add(this.dgvViewAttendanceHistory, 1, 5);
             this.tlpAttendanceHistory.Controls.Add(this.tlpAttendanceHistoryHeader, 1, 1);
-            this.tlpAttendanceHistory.Controls.Add(this.tlpDateRangeAttendanceHistory, 1, 2);
             this.tlpAttendanceHistory.Controls.Add(this.tlpStartAndEndDateAttendanceHistory, 1, 3);
             this.tlpAttendanceHistory.Controls.Add(this.tlpTotalAttendance, 1, 4);
             this.tlpAttendanceHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAttendanceHistory.Location = new System.Drawing.Point(0, 0);
             this.tlpAttendanceHistory.Name = "tlpAttendanceHistory";
             this.tlpAttendanceHistory.RowCount = 7;
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.039348F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.28955F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.025126F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.025126F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.145729F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.97488F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.412523F));
-            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.086719F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.8041F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.203327F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.648221F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.68958F));
+            this.tlpAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.568058F));
             this.tlpAttendanceHistory.Size = new System.Drawing.Size(1172, 796);
             this.tlpAttendanceHistory.TabIndex = 4;
-            this.tlpAttendanceHistory.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAttendanceHistory_Paint);
             // 
             // dgvViewAttendanceHistory
             // 
@@ -144,7 +136,7 @@
             this.dgvViewAttendanceHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvViewAttendanceHistory.EnableHeadersVisualStyles = false;
             this.dgvViewAttendanceHistory.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvViewAttendanceHistory.Location = new System.Drawing.Point(18, 212);
+            this.dgvViewAttendanceHistory.Location = new System.Drawing.Point(18, 205);
             this.dgvViewAttendanceHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvViewAttendanceHistory.MultiSelect = false;
             this.dgvViewAttendanceHistory.Name = "dgvViewAttendanceHistory";
@@ -167,7 +159,7 @@
             this.dgvViewAttendanceHistory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvViewAttendanceHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvViewAttendanceHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvViewAttendanceHistory.Size = new System.Drawing.Size(1133, 553);
+            this.dgvViewAttendanceHistory.Size = new System.Drawing.Size(1133, 560);
             this.dgvViewAttendanceHistory.TabIndex = 21;
             this.dgvViewAttendanceHistory.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvViewAttendanceHistory_CellFormatting);
             this.dgvViewAttendanceHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAttendanceHistory_CellMouseEnter);
@@ -245,7 +237,7 @@
             this.tlpAttendanceHistoryHeader.Name = "tlpAttendanceHistoryHeader";
             this.tlpAttendanceHistoryHeader.RowCount = 1;
             this.tlpAttendanceHistoryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAttendanceHistoryHeader.Size = new System.Drawing.Size(1133, 85);
+            this.tlpAttendanceHistoryHeader.Size = new System.Drawing.Size(1133, 86);
             this.tlpAttendanceHistoryHeader.TabIndex = 10;
             // 
             // picAttendanceHistory
@@ -255,7 +247,7 @@
             this.picAttendanceHistory.Location = new System.Drawing.Point(0, 0);
             this.picAttendanceHistory.Margin = new System.Windows.Forms.Padding(0);
             this.picAttendanceHistory.Name = "picAttendanceHistory";
-            this.picAttendanceHistory.Size = new System.Drawing.Size(73, 85);
+            this.picAttendanceHistory.Size = new System.Drawing.Size(73, 86);
             this.picAttendanceHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAttendanceHistory.TabIndex = 0;
             this.picAttendanceHistory.TabStop = false;
@@ -273,7 +265,7 @@
             this.tlpAttendanceHistoryTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.62319F));
             this.tlpAttendanceHistoryTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.84058F));
             this.tlpAttendanceHistoryTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.08696F));
-            this.tlpAttendanceHistoryTitle.Size = new System.Drawing.Size(303, 79);
+            this.tlpAttendanceHistoryTitle.Size = new System.Drawing.Size(303, 80);
             this.tlpAttendanceHistoryTitle.TabIndex = 1;
             // 
             // lblViewAttendanceHistoryDetails
@@ -282,7 +274,7 @@
             this.lblViewAttendanceHistoryDetails.AutoSize = true;
             this.lblViewAttendanceHistoryDetails.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViewAttendanceHistoryDetails.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblViewAttendanceHistoryDetails.Location = new System.Drawing.Point(3, 42);
+            this.lblViewAttendanceHistoryDetails.Location = new System.Drawing.Point(3, 43);
             this.lblViewAttendanceHistoryDetails.Name = "lblViewAttendanceHistoryDetails";
             this.lblViewAttendanceHistoryDetails.Size = new System.Drawing.Size(290, 15);
             this.lblViewAttendanceHistoryDetails.TabIndex = 3;
@@ -293,61 +285,22 @@
             this.lblAttendanceHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAttendanceHistory.AutoSize = true;
             this.lblAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAttendanceHistory.Location = new System.Drawing.Point(3, 14);
+            this.lblAttendanceHistory.Location = new System.Drawing.Point(3, 15);
             this.lblAttendanceHistory.Name = "lblAttendanceHistory";
             this.lblAttendanceHistory.Size = new System.Drawing.Size(188, 28);
             this.lblAttendanceHistory.TabIndex = 2;
             this.lblAttendanceHistory.Text = "Attendance History";
             // 
-            // tlpDateRangeAttendanceHistory
-            // 
-            this.tlpDateRangeAttendanceHistory.ColumnCount = 3;
-            this.tlpDateRangeAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpDateRangeAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
-            this.tlpDateRangeAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateRangeAttendanceHistory.Controls.Add(this.lblDateRangeAttendanceHistory, 1, 0);
-            this.tlpDateRangeAttendanceHistory.Controls.Add(this.picDateRangeAttendanceHistory, 0, 0);
-            this.tlpDateRangeAttendanceHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDateRangeAttendanceHistory.Location = new System.Drawing.Point(18, 100);
-            this.tlpDateRangeAttendanceHistory.Name = "tlpDateRangeAttendanceHistory";
-            this.tlpDateRangeAttendanceHistory.RowCount = 1;
-            this.tlpDateRangeAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDateRangeAttendanceHistory.Size = new System.Drawing.Size(1133, 34);
-            this.tlpDateRangeAttendanceHistory.TabIndex = 12;
-            // 
-            // lblDateRangeAttendanceHistory
-            // 
-            this.lblDateRangeAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDateRangeAttendanceHistory.AutoSize = true;
-            this.lblDateRangeAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateRangeAttendanceHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblDateRangeAttendanceHistory.Location = new System.Drawing.Point(40, 5);
-            this.lblDateRangeAttendanceHistory.Name = "lblDateRangeAttendanceHistory";
-            this.lblDateRangeAttendanceHistory.Size = new System.Drawing.Size(105, 23);
-            this.lblDateRangeAttendanceHistory.TabIndex = 0;
-            this.lblDateRangeAttendanceHistory.Text = "Date Range ";
-            // 
-            // picDateRangeAttendanceHistory
-            // 
-            this.picDateRangeAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picDateRangeAttendanceHistory.Image = ((System.Drawing.Image)(resources.GetObject("picDateRangeAttendanceHistory.Image")));
-            this.picDateRangeAttendanceHistory.Location = new System.Drawing.Point(3, 3);
-            this.picDateRangeAttendanceHistory.Name = "picDateRangeAttendanceHistory";
-            this.picDateRangeAttendanceHistory.Size = new System.Drawing.Size(31, 28);
-            this.picDateRangeAttendanceHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDateRangeAttendanceHistory.TabIndex = 0;
-            this.picDateRangeAttendanceHistory.TabStop = false;
-            // 
             // tlpStartAndEndDateAttendanceHistory
             // 
             this.tlpStartAndEndDateAttendanceHistory.ColumnCount = 8;
             this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
-            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 338F));
+            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 325F));
             this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
-            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
+            this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tlpStartAndEndDateAttendanceHistory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpStartAndEndDateAttendanceHistory.Controls.Add(this.btnSearchAttendanceHistory, 6, 0);
             this.tlpStartAndEndDateAttendanceHistory.Controls.Add(this.lblStartDateAttendanceHistory, 1, 0);
@@ -357,11 +310,11 @@
             this.tlpStartAndEndDateAttendanceHistory.Controls.Add(this.picStartDateAttendanceHistory, 0, 0);
             this.tlpStartAndEndDateAttendanceHistory.Controls.Add(this.picEndDateAttendanceHistory, 3, 0);
             this.tlpStartAndEndDateAttendanceHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpStartAndEndDateAttendanceHistory.Location = new System.Drawing.Point(18, 140);
+            this.tlpStartAndEndDateAttendanceHistory.Location = new System.Drawing.Point(18, 133);
             this.tlpStartAndEndDateAttendanceHistory.Name = "tlpStartAndEndDateAttendanceHistory";
             this.tlpStartAndEndDateAttendanceHistory.RowCount = 1;
             this.tlpStartAndEndDateAttendanceHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpStartAndEndDateAttendanceHistory.Size = new System.Drawing.Size(1133, 34);
+            this.tlpStartAndEndDateAttendanceHistory.Size = new System.Drawing.Size(1133, 37);
             this.tlpStartAndEndDateAttendanceHistory.TabIndex = 13;
             // 
             // btnSearchAttendanceHistory
@@ -373,10 +326,10 @@
             this.btnSearchAttendanceHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSearchAttendanceHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchAttendanceHistory.ForeColor = System.Drawing.Color.White;
-            this.btnSearchAttendanceHistory.Location = new System.Drawing.Point(1006, 0);
+            this.btnSearchAttendanceHistory.Location = new System.Drawing.Point(924, 0);
             this.btnSearchAttendanceHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.btnSearchAttendanceHistory.Name = "btnSearchAttendanceHistory";
-            this.btnSearchAttendanceHistory.Size = new System.Drawing.Size(107, 34);
+            this.btnSearchAttendanceHistory.Size = new System.Drawing.Size(107, 37);
             this.btnSearchAttendanceHistory.TabIndex = 5;
             this.btnSearchAttendanceHistory.Text = "Search";
             this.btnSearchAttendanceHistory.UseVisualStyleBackColor = false;
@@ -387,7 +340,7 @@
             this.lblStartDateAttendanceHistory.AutoSize = true;
             this.lblStartDateAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartDateAttendanceHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblStartDateAttendanceHistory.Location = new System.Drawing.Point(40, 5);
+            this.lblStartDateAttendanceHistory.Location = new System.Drawing.Point(40, 7);
             this.lblStartDateAttendanceHistory.Name = "lblStartDateAttendanceHistory";
             this.lblStartDateAttendanceHistory.Size = new System.Drawing.Size(96, 23);
             this.lblStartDateAttendanceHistory.TabIndex = 0;
@@ -397,9 +350,9 @@
             // 
             this.dtpStartDateAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpStartDateAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDateAttendanceHistory.Location = new System.Drawing.Point(168, 3);
+            this.dtpStartDateAttendanceHistory.Location = new System.Drawing.Point(159, 3);
             this.dtpStartDateAttendanceHistory.Name = "dtpStartDateAttendanceHistory";
-            this.dtpStartDateAttendanceHistory.Size = new System.Drawing.Size(319, 30);
+            this.dtpStartDateAttendanceHistory.Size = new System.Drawing.Size(250, 30);
             this.dtpStartDateAttendanceHistory.TabIndex = 1;
             // 
             // lblEndDateAttendanceHistory
@@ -408,7 +361,7 @@
             this.lblEndDateAttendanceHistory.AutoSize = true;
             this.lblEndDateAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDateAttendanceHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblEndDateAttendanceHistory.Location = new System.Drawing.Point(543, 5);
+            this.lblEndDateAttendanceHistory.Location = new System.Drawing.Point(521, 7);
             this.lblEndDateAttendanceHistory.Name = "lblEndDateAttendanceHistory";
             this.lblEndDateAttendanceHistory.Size = new System.Drawing.Size(89, 23);
             this.lblEndDateAttendanceHistory.TabIndex = 0;
@@ -418,16 +371,16 @@
             // 
             this.dtpEndDateAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpEndDateAttendanceHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEndDateAttendanceHistory.Location = new System.Drawing.Point(664, 3);
+            this.dtpEndDateAttendanceHistory.Location = new System.Drawing.Point(627, 3);
             this.dtpEndDateAttendanceHistory.Name = "dtpEndDateAttendanceHistory";
-            this.dtpEndDateAttendanceHistory.Size = new System.Drawing.Size(325, 30);
+            this.dtpEndDateAttendanceHistory.Size = new System.Drawing.Size(251, 30);
             this.dtpEndDateAttendanceHistory.TabIndex = 0;
             // 
             // picStartDateAttendanceHistory
             // 
             this.picStartDateAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picStartDateAttendanceHistory.Image = ((System.Drawing.Image)(resources.GetObject("picStartDateAttendanceHistory.Image")));
-            this.picStartDateAttendanceHistory.Location = new System.Drawing.Point(3, 3);
+            this.picStartDateAttendanceHistory.Location = new System.Drawing.Point(3, 4);
             this.picStartDateAttendanceHistory.Name = "picStartDateAttendanceHistory";
             this.picStartDateAttendanceHistory.Size = new System.Drawing.Size(31, 28);
             this.picStartDateAttendanceHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -438,7 +391,7 @@
             // 
             this.picEndDateAttendanceHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picEndDateAttendanceHistory.Image = ((System.Drawing.Image)(resources.GetObject("picEndDateAttendanceHistory.Image")));
-            this.picEndDateAttendanceHistory.Location = new System.Drawing.Point(506, 3);
+            this.picEndDateAttendanceHistory.Location = new System.Drawing.Point(484, 4);
             this.picEndDateAttendanceHistory.Name = "picEndDateAttendanceHistory";
             this.picEndDateAttendanceHistory.Size = new System.Drawing.Size(31, 28);
             this.picEndDateAttendanceHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -455,11 +408,11 @@
             this.tlpTotalAttendance.Controls.Add(this.lblTotalAttendancePaymentHistory, 1, 0);
             this.tlpTotalAttendance.Controls.Add(this.lblOutputTotalAttendance, 2, 0);
             this.tlpTotalAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTotalAttendance.Location = new System.Drawing.Point(18, 180);
+            this.tlpTotalAttendance.Location = new System.Drawing.Point(18, 176);
             this.tlpTotalAttendance.Name = "tlpTotalAttendance";
             this.tlpTotalAttendance.RowCount = 1;
             this.tlpTotalAttendance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalAttendance.Size = new System.Drawing.Size(1133, 27);
+            this.tlpTotalAttendance.Size = new System.Drawing.Size(1133, 24);
             this.tlpTotalAttendance.TabIndex = 15;
             // 
             // lblTotalAttendancePaymentHistory
@@ -468,7 +421,7 @@
             this.lblTotalAttendancePaymentHistory.AutoSize = true;
             this.lblTotalAttendancePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAttendancePaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTotalAttendancePaymentHistory.Location = new System.Drawing.Point(844, 2);
+            this.lblTotalAttendancePaymentHistory.Location = new System.Drawing.Point(844, 0);
             this.lblTotalAttendancePaymentHistory.Name = "lblTotalAttendancePaymentHistory";
             this.lblTotalAttendancePaymentHistory.Size = new System.Drawing.Size(148, 23);
             this.lblTotalAttendancePaymentHistory.TabIndex = 0;
@@ -480,7 +433,7 @@
             this.lblOutputTotalAttendance.AutoSize = true;
             this.lblOutputTotalAttendance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOutputTotalAttendance.ForeColor = System.Drawing.Color.Gray;
-            this.lblOutputTotalAttendance.Location = new System.Drawing.Point(1016, 2);
+            this.lblOutputTotalAttendance.Location = new System.Drawing.Point(1016, 0);
             this.lblOutputTotalAttendance.Name = "lblOutputTotalAttendance";
             this.lblOutputTotalAttendance.Size = new System.Drawing.Size(31, 23);
             this.lblOutputTotalAttendance.TabIndex = 2;
@@ -503,9 +456,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAttendanceHistory)).EndInit();
             this.tlpAttendanceHistoryTitle.ResumeLayout(false);
             this.tlpAttendanceHistoryTitle.PerformLayout();
-            this.tlpDateRangeAttendanceHistory.ResumeLayout(false);
-            this.tlpDateRangeAttendanceHistory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDateRangeAttendanceHistory)).EndInit();
             this.tlpStartAndEndDateAttendanceHistory.ResumeLayout(false);
             this.tlpStartAndEndDateAttendanceHistory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStartDateAttendanceHistory)).EndInit();
@@ -530,9 +480,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpAttendanceHistoryTitle;
         private System.Windows.Forms.Label lblViewAttendanceHistoryDetails;
         private System.Windows.Forms.Label lblAttendanceHistory;
-        private System.Windows.Forms.TableLayoutPanel tlpDateRangeAttendanceHistory;
-        private System.Windows.Forms.Label lblDateRangeAttendanceHistory;
-        private System.Windows.Forms.PictureBox picDateRangeAttendanceHistory;
         private System.Windows.Forms.TableLayoutPanel tlpStartAndEndDateAttendanceHistory;
         private System.Windows.Forms.Button btnSearchAttendanceHistory;
         private System.Windows.Forms.Label lblStartDateAttendanceHistory;
@@ -544,5 +491,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpTotalAttendance;
         private System.Windows.Forms.Label lblTotalAttendancePaymentHistory;
         private System.Windows.Forms.Label lblOutputTotalAttendance;
+
+
     }
 }
