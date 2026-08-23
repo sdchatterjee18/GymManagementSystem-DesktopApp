@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.Workout.UI;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Workout
 {
@@ -16,6 +17,26 @@ namespace GymManagementSystem.FORMS.Workout
         public FrmAddNewExercise()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
+        }
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+           {
+                 txtExerciseName,
+                 txtMuscleType
+           };
+
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
+
+                errorProvider1.SetIconPadding(
+                    control,
+                    15);
+            }
         }
         // Exercise Name TextBox Click Event
         private void txtExerciseName_Click(object sender, EventArgs e)
@@ -37,34 +58,121 @@ namespace GymManagementSystem.FORMS.Workout
         private void pnlClickSubmitExercise_Click(object sender, EventArgs e)
         {
 
-            // Clear Placeholder Text
-            ValidationUI.ClearDefaultPlaceholderText(txtExerciseName, ClickCountTxtExerciseName);
-            ValidationUI.ClearDefaultPlaceholderText(txtMuscleType, ClickCountTxtMuscleType);
-            //if (ClickCountTxtExerciseName == 0)
-            //    txtExerciseName.Clear();
+            // Clear placeholder text
+            ValidationUI.ClearDefaultPlaceholderText(
+                txtExerciseName,
+                ClickCountTxtExerciseName);
 
-            //if (ClickCountTxtMuscleType == 0)
-            //    txtMuscleType.Clear();
-            // ValidationB
-            //if (!ValidationUI.ValidateRequiredTextBoxes(
-            //    txtExerciseName,
-            //    txtMuscleType))
-            //{
-            //    return;
-            //}
+            ValidationUI.ClearDefaultPlaceholderText(
+                txtMuscleType,
+                ClickCountTxtMuscleType);
+
+            // =========================
+            // REQUIRED FIELD VALIDATION
+            // =========================
+
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+
+            errorProvider1.Clear();
+
+            // Exercise Name
+            result = ValidationUI.ValidateRequiredTextBox(txtExerciseName);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtExerciseName,
+                    "Exercise Name " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Muscle Type
+            result = ValidationUI.ValidateRequiredTextBox(txtMuscleType);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtMuscleType,
+                    "Muscle Type " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Stop if required validation failed
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
+                return;
+            }
+
+            // =========================
+            // CALL UI LAYER
+            // =========================
+
             WorkoutUI workoutUI = new WorkoutUI();
 
-            string message =
-                workoutUI.InsertExerciseUI(txtExerciseName.Text.Trim(),txtMuscleType.Text.Trim());
+            workoutUI.ExerciseName = txtExerciseName.Text.Trim();
+            workoutUI.MuscleType = txtMuscleType.Text.Trim();
+
+            ValidationResult validationResult =workoutUI.InsertExerciseUI();
+
+            // =========================
+            // HANDLE BLL VALIDATION
+            // =========================
+
+            HandleExerciseResult(validationResult);
+        }
+        private void HandleExerciseResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
+
+            if (result.Result ==
+                ValidationBll.CommonValidationMessage.Valid)
+            {
+                MessageBox.Show(
+                    result.Message,
+                    "Exercise",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+                return;
+            }
+
+            switch (result.FieldName)
+            {
+                case "ExerciseName":
+                    errorProvider1.SetError(
+                        txtExerciseName,
+                        result.Message);
+                    break;
+
+                case "MuscleType":
+                    errorProvider1.SetError(
+                        txtMuscleType,
+                        result.Message);
+                    break;
+            }
 
             MessageBox.Show(
-                message,
-                "Exercise",
+                result.Message,
+                "Validation Error",
                 MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            // Add complete
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
         }
         // Submit Exercise
         private void btnClearExercise_Click(object sender, EventArgs e)

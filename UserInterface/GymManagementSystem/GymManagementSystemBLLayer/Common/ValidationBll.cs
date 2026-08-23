@@ -88,7 +88,8 @@ namespace GymManagementSystemBLLayer.Common
             NumberMustBeNumeric,
             NumberMustBeGreaterThanZero,
 
-            LockerNumberMustContainOnlyLettersAndNumbers
+            LockerNumberMustContainOnlyLettersAndNumbers,
+            TextMustContainOnlyLettersAndSpaces
         }
 
 
@@ -107,8 +108,21 @@ namespace GymManagementSystemBLLayer.Common
 
             return CommonValidationMessage.Valid;
         }
+        // =========================================================
+        // LettersAndSpaces VALIDATION
+        // =========================================================
+        public static CommonValidationMessage ValidateOnlyLettersAndSpaces(string text)
+        {
+            foreach (char ch in text)
+            {
+                if (!char.IsLetter(ch) && ch != ' ')
+                {
+                    return CommonValidationMessage.TextMustContainOnlyLettersAndSpaces;
+                }
+            }
 
-
+            return CommonValidationMessage.Valid;
+        }
         // =========================================================
         // GENERAL TEXT VALIDATION
         // Letters and spaces only
@@ -464,7 +478,8 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.DurationMustBeLessThan365Days:
                     return "Duration must be less than 365 days.";
 
-
+                case CommonValidationMessage.TextMustContainOnlyLettersAndSpaces:
+                    return "should contain only letters and spaces.";
                 // =========================
                 // Calories
                 // =========================

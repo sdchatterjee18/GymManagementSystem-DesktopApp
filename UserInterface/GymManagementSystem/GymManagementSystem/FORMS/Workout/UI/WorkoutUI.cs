@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.Workout;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Workout.UI
 {
@@ -38,20 +39,14 @@ namespace GymManagementSystem.FORMS.Workout.UI
             return workoutBLL.RetrieveSpecificExerciseBLL(Search);
         }
         //Insert Exercise
-        public string InsertExerciseUI(string exerciseName,string muscleType)
+        public ValidationResult InsertExerciseUI()
         {
-            try
-            {
                 WorkoutBLL workoutBLL = new WorkoutBLL();
 
-                return workoutBLL.InsertExerciseBLL(
-                    exerciseName,
-                    muscleType);
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+                workoutBLL.ExerciseName = this.ExerciseName;
+                workoutBLL.MuscleType = this.MuscleType;
+
+                return workoutBLL.InsertExerciseBLL();
         }
 
         // Retrieves all workout plan records.
@@ -73,21 +68,14 @@ namespace GymManagementSystem.FORMS.Workout.UI
             return workoutBLL.RetrieveSpecificWorkoutPlanBLL(Search);
         }
         // Insert Workout Plan
-        public string InsertWorkoutPlanUI(string workoutName,string description)
+        public ValidationResult InsertWorkoutPlanUI()
         {
-            try
-            {
-                WorkoutBLL workoutBLL =
-                    new WorkoutBLL();
+            WorkoutBLL workoutBLL = new WorkoutBLL();
 
-                return workoutBLL.InsertWorkoutPlanBLL(
-                    workoutName,
-                    description);
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            workoutBLL.WorkoutName = this.WorkoutName;
+            workoutBLL.Description = this.Description;
+
+            return workoutBLL.InsertWorkoutPlanBLL();
         }
 
         // Retrieves all workout schedule records.
