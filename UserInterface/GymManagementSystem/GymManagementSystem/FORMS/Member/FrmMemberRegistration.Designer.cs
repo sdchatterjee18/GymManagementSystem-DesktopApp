@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMemberRegistration));
             this.cmbSelectMemberMemberMembershipPlan = new System.Windows.Forms.ComboBox();
             this.tlpMemberRegistrationFeesWholeFrom = new System.Windows.Forms.TableLayoutPanel();
@@ -41,7 +42,6 @@
             this.lblMemberMiddleName = new System.Windows.Forms.Label();
             this.lblMemberLastName = new System.Windows.Forms.Label();
             this.lblMemberGender = new System.Windows.Forms.Label();
-            this.lblMemberPhoneNumber = new System.Windows.Forms.Label();
             this.lblMemberEmail = new System.Windows.Forms.Label();
             this.lblMemberCity = new System.Windows.Forms.Label();
             this.lblMemberDistrict = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@
             this.lblMemberEmergencyContact = new System.Windows.Forms.Label();
             this.tlpEnterMemberGender = new System.Windows.Forms.TableLayoutPanel();
             this.cmbSelectMemberGender = new System.Windows.Forms.ComboBox();
+            this.lblMemberPhoneNumber = new System.Windows.Forms.Label();
             this.tlpMemberProfilePhotoUploadPortion = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMemberProfilePhoto = new System.Windows.Forms.TableLayoutPanel();
             this.picMemberProfilePhoto = new System.Windows.Forms.PictureBox();
@@ -116,16 +117,13 @@
             this.lblPaymentInfromation = new System.Windows.Forms.Label();
             this.tlpMemberPaymentInfromationDetails = new System.Windows.Forms.TableLayoutPanel();
             this.picMemberPaymentMethod = new System.Windows.Forms.PictureBox();
-            this.picMemberFeesType = new System.Windows.Forms.PictureBox();
-            this.picMemberPaymentAmount = new System.Windows.Forms.PictureBox();
             this.lblMemberPaymentMethod = new System.Windows.Forms.Label();
-            this.lblMemberPaymentFeesType = new System.Windows.Forms.Label();
-            this.lblMemberPaymentAmount = new System.Windows.Forms.Label();
-            this.lblRetrieveMemberPaymentAmount = new System.Windows.Forms.Label();
             this.tlpSelectMemberPaymentMethod = new System.Windows.Forms.TableLayoutPanel();
             this.cmbSelectMemberPaymentMethod = new System.Windows.Forms.ComboBox();
             this.tlpSelectMemberPaymentFeesType = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbSelectMemberPaymentFeesType = new System.Windows.Forms.ComboBox();
+            this.lblRetrieveMemberPaymentAmount = new System.Windows.Forms.Label();
+            this.lblMemberPaymentAmount = new System.Windows.Forms.Label();
+            this.picMemberPaymentAmount = new System.Windows.Forms.PictureBox();
             this.tlpMemberInfromationSubmitResetCanclePortion = new System.Windows.Forms.TableLayoutPanel();
             this.tlpCancleFromSection = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCancleButton = new System.Windows.Forms.Panel();
@@ -142,6 +140,7 @@
             this.tlpResetButton = new System.Windows.Forms.TableLayoutPanel();
             this.picReset = new System.Windows.Forms.PictureBox();
             this.lblReset = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tlpMemberRegistrationFeesWholeFrom.SuspendLayout();
             this.tlpMemberRegistrationDetails.SuspendLayout();
             this.tlpMemberPersonalDetails.SuspendLayout();
@@ -195,10 +194,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentInfromation)).BeginInit();
             this.tlpMemberPaymentInfromationDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentMethod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberFeesType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentAmount)).BeginInit();
             this.tlpSelectMemberPaymentMethod.SuspendLayout();
             this.tlpSelectMemberPaymentFeesType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentAmount)).BeginInit();
             this.tlpMemberInfromationSubmitResetCanclePortion.SuspendLayout();
             this.tlpCancleFromSection.SuspendLayout();
             this.pnlCancleButton.SuspendLayout();
@@ -212,17 +210,20 @@
             this.pnlResetButton.SuspendLayout();
             this.tlpResetButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbSelectMemberMemberMembershipPlan
             // 
             this.cmbSelectMemberMemberMembershipPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberMemberMembershipPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectMemberMemberMembershipPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectMemberMemberMembershipPlan.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectMemberMemberMembershipPlan.FormattingEnabled = true;
             this.cmbSelectMemberMemberMembershipPlan.Location = new System.Drawing.Point(2, 9);
-            this.cmbSelectMemberMemberMembershipPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSelectMemberMemberMembershipPlan.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.cmbSelectMemberMemberMembershipPlan.Name = "cmbSelectMemberMemberMembershipPlan";
-            this.cmbSelectMemberMemberMembershipPlan.Size = new System.Drawing.Size(273, 27);
+            this.cmbSelectMemberMemberMembershipPlan.Size = new System.Drawing.Size(260, 23);
             this.cmbSelectMemberMemberMembershipPlan.TabIndex = 9;
             this.cmbSelectMemberMemberMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberMemberMembershipPlan_SelectedIndexChanged);
             // 
@@ -329,14 +330,13 @@
             this.tlpPersonalInformationDetails.ColumnCount = 5;
             this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.366337F));
             this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.910892F));
-            this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.84158F));
-            this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.70297F));
+            this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.7467F));
+            this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
             this.tlpPersonalInformationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberFirstName, 2, 0);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberMiddleName, 2, 1);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberLastName, 2, 2);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberGender, 2, 3);
-            this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberPhoneNumber, 2, 4);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberEmail, 2, 5);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberCity, 2, 6);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberDistrict, 2, 7);
@@ -362,6 +362,7 @@
             this.tlpPersonalInformationDetails.Controls.Add(this.tlpEnterMemberEmergencyContact, 3, 9);
             this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberEmergencyContact, 2, 9);
             this.tlpPersonalInformationDetails.Controls.Add(this.tlpEnterMemberGender, 3, 3);
+            this.tlpPersonalInformationDetails.Controls.Add(this.lblMemberPhoneNumber, 2, 4);
             this.tlpPersonalInformationDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPersonalInformationDetails.Location = new System.Drawing.Point(2, 48);
             this.tlpPersonalInformationDetails.Margin = new System.Windows.Forms.Padding(2);
@@ -384,10 +385,11 @@
             // 
             this.lblMemberFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberFirstName.AutoSize = true;
-            this.lblMemberFirstName.Location = new System.Drawing.Point(47, 8);
+            this.lblMemberFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberFirstName.Location = new System.Drawing.Point(47, 9);
             this.lblMemberFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberFirstName.Name = "lblMemberFirstName";
-            this.lblMemberFirstName.Size = new System.Drawing.Size(77, 19);
+            this.lblMemberFirstName.Size = new System.Drawing.Size(74, 17);
             this.lblMemberFirstName.TabIndex = 0;
             this.lblMemberFirstName.Text = "First Name";
             // 
@@ -395,10 +397,11 @@
             // 
             this.lblMemberMiddleName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberMiddleName.AutoSize = true;
-            this.lblMemberMiddleName.Location = new System.Drawing.Point(47, 44);
+            this.lblMemberMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberMiddleName.Location = new System.Drawing.Point(47, 37);
             this.lblMemberMiddleName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberMiddleName.Name = "lblMemberMiddleName";
-            this.lblMemberMiddleName.Size = new System.Drawing.Size(94, 19);
+            this.lblMemberMiddleName.Size = new System.Drawing.Size(53, 34);
             this.lblMemberMiddleName.TabIndex = 1;
             this.lblMemberMiddleName.Text = "Middle Name";
             // 
@@ -406,10 +409,11 @@
             // 
             this.lblMemberLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberLastName.AutoSize = true;
-            this.lblMemberLastName.Location = new System.Drawing.Point(47, 80);
+            this.lblMemberLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberLastName.Location = new System.Drawing.Point(47, 81);
             this.lblMemberLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberLastName.Name = "lblMemberLastName";
-            this.lblMemberLastName.Size = new System.Drawing.Size(75, 19);
+            this.lblMemberLastName.Size = new System.Drawing.Size(72, 17);
             this.lblMemberLastName.TabIndex = 2;
             this.lblMemberLastName.Text = "Last Name";
             // 
@@ -417,32 +421,23 @@
             // 
             this.lblMemberGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberGender.AutoSize = true;
-            this.lblMemberGender.Location = new System.Drawing.Point(47, 116);
+            this.lblMemberGender.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberGender.Location = new System.Drawing.Point(47, 117);
             this.lblMemberGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberGender.Name = "lblMemberGender";
-            this.lblMemberGender.Size = new System.Drawing.Size(54, 19);
+            this.lblMemberGender.Size = new System.Drawing.Size(52, 17);
             this.lblMemberGender.TabIndex = 3;
             this.lblMemberGender.Text = "Gender";
-            // 
-            // lblMemberPhoneNumber
-            // 
-            this.lblMemberPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblMemberPhoneNumber.AutoSize = true;
-            this.lblMemberPhoneNumber.Location = new System.Drawing.Point(47, 152);
-            this.lblMemberPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMemberPhoneNumber.Name = "lblMemberPhoneNumber";
-            this.lblMemberPhoneNumber.Size = new System.Drawing.Size(103, 19);
-            this.lblMemberPhoneNumber.TabIndex = 4;
-            this.lblMemberPhoneNumber.Text = "Phone Number";
             // 
             // lblMemberEmail
             // 
             this.lblMemberEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberEmail.AutoSize = true;
-            this.lblMemberEmail.Location = new System.Drawing.Point(47, 188);
+            this.lblMemberEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberEmail.Location = new System.Drawing.Point(47, 189);
             this.lblMemberEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberEmail.Name = "lblMemberEmail";
-            this.lblMemberEmail.Size = new System.Drawing.Size(59, 19);
+            this.lblMemberEmail.Size = new System.Drawing.Size(56, 17);
             this.lblMemberEmail.TabIndex = 5;
             this.lblMemberEmail.Text = "Email Id";
             // 
@@ -450,10 +445,11 @@
             // 
             this.lblMemberCity.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberCity.AutoSize = true;
-            this.lblMemberCity.Location = new System.Drawing.Point(47, 224);
+            this.lblMemberCity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberCity.Location = new System.Drawing.Point(47, 225);
             this.lblMemberCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberCity.Name = "lblMemberCity";
-            this.lblMemberCity.Size = new System.Drawing.Size(34, 19);
+            this.lblMemberCity.Size = new System.Drawing.Size(31, 17);
             this.lblMemberCity.TabIndex = 6;
             this.lblMemberCity.Text = "City";
             // 
@@ -461,10 +457,11 @@
             // 
             this.lblMemberDistrict.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberDistrict.AutoSize = true;
-            this.lblMemberDistrict.Location = new System.Drawing.Point(47, 260);
+            this.lblMemberDistrict.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberDistrict.Location = new System.Drawing.Point(47, 261);
             this.lblMemberDistrict.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberDistrict.Name = "lblMemberDistrict";
-            this.lblMemberDistrict.Size = new System.Drawing.Size(55, 19);
+            this.lblMemberDistrict.Size = new System.Drawing.Size(50, 17);
             this.lblMemberDistrict.TabIndex = 7;
             this.lblMemberDistrict.Text = "District";
             // 
@@ -472,10 +469,11 @@
             // 
             this.lblMemberState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberState.AutoSize = true;
-            this.lblMemberState.Location = new System.Drawing.Point(47, 296);
+            this.lblMemberState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberState.Location = new System.Drawing.Point(47, 297);
             this.lblMemberState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberState.Name = "lblMemberState";
-            this.lblMemberState.Size = new System.Drawing.Size(41, 19);
+            this.lblMemberState.Size = new System.Drawing.Size(39, 17);
             this.lblMemberState.TabIndex = 8;
             this.lblMemberState.Text = "State";
             // 
@@ -605,25 +603,25 @@
             this.tlpEnterMemberFirstName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberFirstName.Controls.Add(this.txtEnterMemberFirstName, 0, 1);
             this.tlpEnterMemberFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberFirstName.Location = new System.Drawing.Point(183, 2);
+            this.tlpEnterMemberFirstName.Location = new System.Drawing.Point(137, 2);
             this.tlpEnterMemberFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberFirstName.Name = "tlpEnterMemberFirstName";
             this.tlpEnterMemberFirstName.RowCount = 3;
             this.tlpEnterMemberFirstName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberFirstName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberFirstName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberFirstName.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberFirstName.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberFirstName.TabIndex = 34;
             // 
             // txtEnterMemberFirstName
             // 
             this.txtEnterMemberFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberFirstName.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberFirstName.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberFirstName.Name = "txtEnterMemberFirstName";
-            this.txtEnterMemberFirstName.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberFirstName.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberFirstName.TabIndex = 12;
             this.txtEnterMemberFirstName.Text = "  Enter First Name";
             this.txtEnterMemberFirstName.Click += new System.EventHandler(this.txtEnterMemberFirstName_Click);
@@ -634,25 +632,25 @@
             this.tlpEnterMemberMiddleName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberMiddleName.Controls.Add(this.txtEnterMemberMiddleName, 0, 1);
             this.tlpEnterMemberMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberMiddleName.Location = new System.Drawing.Point(183, 38);
+            this.tlpEnterMemberMiddleName.Location = new System.Drawing.Point(137, 38);
             this.tlpEnterMemberMiddleName.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberMiddleName.Name = "tlpEnterMemberMiddleName";
             this.tlpEnterMemberMiddleName.RowCount = 3;
             this.tlpEnterMemberMiddleName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberMiddleName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberMiddleName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberMiddleName.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberMiddleName.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberMiddleName.TabIndex = 35;
             // 
             // txtEnterMemberMiddleName
             // 
             this.txtEnterMemberMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberMiddleName.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberMiddleName.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberMiddleName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberMiddleName.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberMiddleName.Name = "txtEnterMemberMiddleName";
-            this.txtEnterMemberMiddleName.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberMiddleName.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberMiddleName.TabIndex = 12;
             this.txtEnterMemberMiddleName.Text = "  Enter Middle Name";
             this.txtEnterMemberMiddleName.Click += new System.EventHandler(this.txtEnterMemberMiddleName_Click);
@@ -663,25 +661,25 @@
             this.tlpEnterMemberLastName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberLastName.Controls.Add(this.txtEnterMemberLastName, 0, 1);
             this.tlpEnterMemberLastName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberLastName.Location = new System.Drawing.Point(183, 74);
+            this.tlpEnterMemberLastName.Location = new System.Drawing.Point(137, 74);
             this.tlpEnterMemberLastName.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberLastName.Name = "tlpEnterMemberLastName";
             this.tlpEnterMemberLastName.RowCount = 3;
             this.tlpEnterMemberLastName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberLastName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberLastName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberLastName.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberLastName.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberLastName.TabIndex = 36;
             // 
             // txtEnterMemberLastName
             // 
             this.txtEnterMemberLastName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberLastName.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberLastName.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberLastName.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberLastName.Name = "txtEnterMemberLastName";
-            this.txtEnterMemberLastName.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberLastName.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberLastName.TabIndex = 12;
             this.txtEnterMemberLastName.Text = "  Enter Last Name";
             this.txtEnterMemberLastName.Click += new System.EventHandler(this.txtEnterMemberLastName_Click);
@@ -692,25 +690,25 @@
             this.tlpEnterMemberPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberPhoneNumber.Controls.Add(this.txtEnterMemberPhoneNumber, 0, 1);
             this.tlpEnterMemberPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberPhoneNumber.Location = new System.Drawing.Point(183, 146);
+            this.tlpEnterMemberPhoneNumber.Location = new System.Drawing.Point(137, 146);
             this.tlpEnterMemberPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberPhoneNumber.Name = "tlpEnterMemberPhoneNumber";
             this.tlpEnterMemberPhoneNumber.RowCount = 3;
             this.tlpEnterMemberPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberPhoneNumber.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberPhoneNumber.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberPhoneNumber.TabIndex = 37;
             // 
             // txtEnterMemberPhoneNumber
             // 
             this.txtEnterMemberPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberPhoneNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberPhoneNumber.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberPhoneNumber.Name = "txtEnterMemberPhoneNumber";
-            this.txtEnterMemberPhoneNumber.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberPhoneNumber.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberPhoneNumber.TabIndex = 12;
             this.txtEnterMemberPhoneNumber.Text = "  Enter 10 Digit Phone No.";
             this.txtEnterMemberPhoneNumber.Click += new System.EventHandler(this.txtEnterMemberPhoneNumber_Click);
@@ -721,25 +719,25 @@
             this.tlpSelectMemberEmailId.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSelectMemberEmailId.Controls.Add(this.txtEnterMemberEmailId, 0, 1);
             this.tlpSelectMemberEmailId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSelectMemberEmailId.Location = new System.Drawing.Point(183, 182);
+            this.tlpSelectMemberEmailId.Location = new System.Drawing.Point(137, 182);
             this.tlpSelectMemberEmailId.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSelectMemberEmailId.Name = "tlpSelectMemberEmailId";
             this.tlpSelectMemberEmailId.RowCount = 3;
             this.tlpSelectMemberEmailId.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpSelectMemberEmailId.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpSelectMemberEmailId.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpSelectMemberEmailId.Size = new System.Drawing.Size(184, 32);
+            this.tlpSelectMemberEmailId.Size = new System.Drawing.Size(230, 32);
             this.tlpSelectMemberEmailId.TabIndex = 38;
             // 
             // txtEnterMemberEmailId
             // 
             this.txtEnterMemberEmailId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberEmailId.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberEmailId.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberEmailId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberEmailId.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberEmailId.Name = "txtEnterMemberEmailId";
-            this.txtEnterMemberEmailId.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberEmailId.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberEmailId.TabIndex = 12;
             this.txtEnterMemberEmailId.Text = "  Enter Email ";
             this.txtEnterMemberEmailId.Click += new System.EventHandler(this.txtEnterMemberEmailId_Click);
@@ -750,25 +748,25 @@
             this.tlpEnterMemberCity.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberCity.Controls.Add(this.txtEnterMemberCity, 0, 1);
             this.tlpEnterMemberCity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberCity.Location = new System.Drawing.Point(183, 218);
+            this.tlpEnterMemberCity.Location = new System.Drawing.Point(137, 218);
             this.tlpEnterMemberCity.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberCity.Name = "tlpEnterMemberCity";
             this.tlpEnterMemberCity.RowCount = 3;
             this.tlpEnterMemberCity.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberCity.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberCity.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberCity.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberCity.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberCity.TabIndex = 39;
             // 
             // txtEnterMemberCity
             // 
             this.txtEnterMemberCity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberCity.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberCity.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberCity.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberCity.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberCity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberCity.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberCity.Name = "txtEnterMemberCity";
-            this.txtEnterMemberCity.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberCity.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberCity.TabIndex = 12;
             this.txtEnterMemberCity.Text = "  Enter City";
             this.txtEnterMemberCity.Click += new System.EventHandler(this.txtEnterMemberCity_Click);
@@ -779,25 +777,25 @@
             this.tlpEnterMemberDistrict.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberDistrict.Controls.Add(this.txtEnterMemberDistrict, 0, 1);
             this.tlpEnterMemberDistrict.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberDistrict.Location = new System.Drawing.Point(183, 254);
+            this.tlpEnterMemberDistrict.Location = new System.Drawing.Point(137, 254);
             this.tlpEnterMemberDistrict.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberDistrict.Name = "tlpEnterMemberDistrict";
             this.tlpEnterMemberDistrict.RowCount = 3;
             this.tlpEnterMemberDistrict.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberDistrict.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberDistrict.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberDistrict.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberDistrict.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberDistrict.TabIndex = 40;
             // 
             // txtEnterMemberDistrict
             // 
             this.txtEnterMemberDistrict.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberDistrict.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberDistrict.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberDistrict.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberDistrict.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberDistrict.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberDistrict.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberDistrict.Name = "txtEnterMemberDistrict";
-            this.txtEnterMemberDistrict.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberDistrict.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberDistrict.TabIndex = 12;
             this.txtEnterMemberDistrict.Text = "  Enter District";
             this.txtEnterMemberDistrict.Click += new System.EventHandler(this.txtEnterMemberDistrict_Click);
@@ -808,25 +806,25 @@
             this.tlpEnterMemberState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberState.Controls.Add(this.txtEnterMemberState, 0, 1);
             this.tlpEnterMemberState.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberState.Location = new System.Drawing.Point(183, 290);
+            this.tlpEnterMemberState.Location = new System.Drawing.Point(137, 290);
             this.tlpEnterMemberState.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberState.Name = "tlpEnterMemberState";
             this.tlpEnterMemberState.RowCount = 3;
             this.tlpEnterMemberState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberState.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberState.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberState.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberState.TabIndex = 41;
             // 
             // txtEnterMemberState
             // 
             this.txtEnterMemberState.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberState.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberState.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberState.Location = new System.Drawing.Point(2, 5);
-            this.txtEnterMemberState.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberState.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberState.Name = "txtEnterMemberState";
-            this.txtEnterMemberState.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberState.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberState.TabIndex = 12;
             this.txtEnterMemberState.Text = "  Enter State";
             this.txtEnterMemberState.Click += new System.EventHandler(this.txtEnterMemberState_Click);
@@ -837,25 +835,25 @@
             this.tlpEnterMemberEmergencyContact.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberEmergencyContact.Controls.Add(this.txtEnterMemberEmergencyContact, 0, 1);
             this.tlpEnterMemberEmergencyContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberEmergencyContact.Location = new System.Drawing.Point(183, 326);
+            this.tlpEnterMemberEmergencyContact.Location = new System.Drawing.Point(137, 326);
             this.tlpEnterMemberEmergencyContact.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberEmergencyContact.Name = "tlpEnterMemberEmergencyContact";
             this.tlpEnterMemberEmergencyContact.RowCount = 3;
             this.tlpEnterMemberEmergencyContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpEnterMemberEmergencyContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpEnterMemberEmergencyContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpEnterMemberEmergencyContact.Size = new System.Drawing.Size(184, 40);
+            this.tlpEnterMemberEmergencyContact.Size = new System.Drawing.Size(230, 40);
             this.tlpEnterMemberEmergencyContact.TabIndex = 42;
             // 
             // txtEnterMemberEmergencyContact
             // 
             this.txtEnterMemberEmergencyContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEnterMemberEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnterMemberEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnterMemberEmergencyContact.ForeColor = System.Drawing.Color.Gray;
             this.txtEnterMemberEmergencyContact.Location = new System.Drawing.Point(2, 6);
-            this.txtEnterMemberEmergencyContact.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEnterMemberEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.txtEnterMemberEmergencyContact.Name = "txtEnterMemberEmergencyContact";
-            this.txtEnterMemberEmergencyContact.Size = new System.Drawing.Size(180, 26);
+            this.txtEnterMemberEmergencyContact.Size = new System.Drawing.Size(213, 23);
             this.txtEnterMemberEmergencyContact.TabIndex = 12;
             this.txtEnterMemberEmergencyContact.Text = "  Enter 10 Digit Contact No.";
             this.txtEnterMemberEmergencyContact.Click += new System.EventHandler(this.txtEnterMemberEmergencyContact_Click);
@@ -864,10 +862,11 @@
             // 
             this.lblMemberEmergencyContact.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberEmergencyContact.AutoSize = true;
-            this.lblMemberEmergencyContact.Location = new System.Drawing.Point(47, 336);
+            this.lblMemberEmergencyContact.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberEmergencyContact.Location = new System.Drawing.Point(47, 329);
             this.lblMemberEmergencyContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberEmergencyContact.Name = "lblMemberEmergencyContact";
-            this.lblMemberEmergencyContact.Size = new System.Drawing.Size(130, 19);
+            this.lblMemberEmergencyContact.Size = new System.Drawing.Size(79, 34);
             this.lblMemberEmergencyContact.TabIndex = 43;
             this.lblMemberEmergencyContact.Text = "Emergency Contact";
             // 
@@ -877,27 +876,41 @@
             this.tlpEnterMemberGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEnterMemberGender.Controls.Add(this.cmbSelectMemberGender, 0, 1);
             this.tlpEnterMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEnterMemberGender.Location = new System.Drawing.Point(183, 110);
+            this.tlpEnterMemberGender.Location = new System.Drawing.Point(137, 110);
             this.tlpEnterMemberGender.Margin = new System.Windows.Forms.Padding(2);
             this.tlpEnterMemberGender.Name = "tlpEnterMemberGender";
             this.tlpEnterMemberGender.RowCount = 3;
             this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tlpEnterMemberGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpEnterMemberGender.Size = new System.Drawing.Size(184, 32);
+            this.tlpEnterMemberGender.Size = new System.Drawing.Size(230, 32);
             this.tlpEnterMemberGender.TabIndex = 44;
             // 
             // cmbSelectMemberGender
             // 
             this.cmbSelectMemberGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectMemberGender.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectMemberGender.ForeColor = System.Drawing.Color.Black;
             this.cmbSelectMemberGender.FormattingEnabled = true;
             this.cmbSelectMemberGender.Location = new System.Drawing.Point(2, 3);
-            this.cmbSelectMemberGender.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSelectMemberGender.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.cmbSelectMemberGender.Name = "cmbSelectMemberGender";
-            this.cmbSelectMemberGender.Size = new System.Drawing.Size(180, 27);
+            this.cmbSelectMemberGender.Size = new System.Drawing.Size(213, 23);
             this.cmbSelectMemberGender.TabIndex = 9;
             this.cmbSelectMemberGender.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberGender_SelectedIndexChanged);
+            // 
+            // lblMemberPhoneNumber
+            // 
+            this.lblMemberPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberPhoneNumber.AutoSize = true;
+            this.lblMemberPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberPhoneNumber.Location = new System.Drawing.Point(47, 145);
+            this.lblMemberPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMemberPhoneNumber.Name = "lblMemberPhoneNumber";
+            this.lblMemberPhoneNumber.Size = new System.Drawing.Size(58, 34);
+            this.lblMemberPhoneNumber.TabIndex = 4;
+            this.lblMemberPhoneNumber.Text = "Phone Number";
             // 
             // tlpMemberProfilePhotoUploadPortion
             // 
@@ -953,10 +966,11 @@
             // 
             this.lblMemberProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberProfilePhoto.AutoSize = true;
-            this.lblMemberProfilePhoto.Location = new System.Drawing.Point(50, 40);
+            this.lblMemberProfilePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberProfilePhoto.Location = new System.Drawing.Point(50, 41);
             this.lblMemberProfilePhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberProfilePhoto.Name = "lblMemberProfilePhoto";
-            this.lblMemberProfilePhoto.Size = new System.Drawing.Size(91, 19);
+            this.lblMemberProfilePhoto.Size = new System.Drawing.Size(87, 17);
             this.lblMemberProfilePhoto.TabIndex = 10;
             this.lblMemberProfilePhoto.Text = "Profile Photo";
             // 
@@ -1232,10 +1246,11 @@
             // 
             this.lblMemberMembershipPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberMembershipPlan.AutoSize = true;
-            this.lblMemberMembershipPlan.Location = new System.Drawing.Point(50, 12);
+            this.lblMemberMembershipPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberMembershipPlan.Location = new System.Drawing.Point(50, 13);
             this.lblMemberMembershipPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberMembershipPlan.Name = "lblMemberMembershipPlan";
-            this.lblMemberMembershipPlan.Size = new System.Drawing.Size(118, 19);
+            this.lblMemberMembershipPlan.Size = new System.Drawing.Size(114, 17);
             this.lblMemberMembershipPlan.TabIndex = 4;
             this.lblMemberMembershipPlan.Text = "Membership Plan";
             // 
@@ -1243,10 +1258,11 @@
             // 
             this.lblMemberDietPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberDietPlan.AutoSize = true;
-            this.lblMemberDietPlan.Location = new System.Drawing.Point(50, 98);
+            this.lblMemberDietPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberDietPlan.Location = new System.Drawing.Point(50, 99);
             this.lblMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberDietPlan.Name = "lblMemberDietPlan";
-            this.lblMemberDietPlan.Size = new System.Drawing.Size(66, 19);
+            this.lblMemberDietPlan.Size = new System.Drawing.Size(62, 17);
             this.lblMemberDietPlan.TabIndex = 5;
             this.lblMemberDietPlan.Text = "Diet Plan";
             // 
@@ -1254,10 +1270,11 @@
             // 
             this.lblMemberShift.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberShift.AutoSize = true;
-            this.lblMemberShift.Location = new System.Drawing.Point(50, 55);
+            this.lblMemberShift.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberShift.Location = new System.Drawing.Point(50, 56);
             this.lblMemberShift.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberShift.Name = "lblMemberShift";
-            this.lblMemberShift.Size = new System.Drawing.Size(39, 19);
+            this.lblMemberShift.Size = new System.Drawing.Size(35, 17);
             this.lblMemberShift.TabIndex = 6;
             this.lblMemberShift.Text = "Shift";
             // 
@@ -1265,18 +1282,20 @@
             // 
             this.lblMemberNeedLocker.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberNeedLocker.AutoSize = true;
-            this.lblMemberNeedLocker.Location = new System.Drawing.Point(50, 141);
+            this.lblMemberNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberNeedLocker.Location = new System.Drawing.Point(50, 142);
             this.lblMemberNeedLocker.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberNeedLocker.Name = "lblMemberNeedLocker";
-            this.lblMemberNeedLocker.Size = new System.Drawing.Size(87, 19);
+            this.lblMemberNeedLocker.Size = new System.Drawing.Size(83, 17);
             this.lblMemberNeedLocker.TabIndex = 7;
             this.lblMemberNeedLocker.Text = "Need Locker";
             // 
             // tlpMemberSelectLockerOrNot
             // 
-            this.tlpMemberSelectLockerOrNot.ColumnCount = 2;
+            this.tlpMemberSelectLockerOrNot.ColumnCount = 3;
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
+            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnNeedLocker, 0, 0);
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnDontNeedLocker, 1, 0);
             this.tlpMemberSelectLockerOrNot.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1284,8 +1303,7 @@
             this.tlpMemberSelectLockerOrNot.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMemberSelectLockerOrNot.Name = "tlpMemberSelectLockerOrNot";
             this.tlpMemberSelectLockerOrNot.RowCount = 1;
-            this.tlpMemberSelectLockerOrNot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberSelectLockerOrNot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMemberSelectLockerOrNot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberSelectLockerOrNot.Size = new System.Drawing.Size(277, 39);
             this.tlpMemberSelectLockerOrNot.TabIndex = 12;
             // 
@@ -1298,7 +1316,7 @@
             this.rbtnNeedLocker.Location = new System.Drawing.Point(2, 11);
             this.rbtnNeedLocker.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnNeedLocker.Name = "rbtnNeedLocker";
-            this.rbtnNeedLocker.Size = new System.Drawing.Size(123, 17);
+            this.rbtnNeedLocker.Size = new System.Drawing.Size(120, 17);
             this.rbtnNeedLocker.TabIndex = 0;
             this.rbtnNeedLocker.TabStop = true;
             this.rbtnNeedLocker.Text = "Yes, I need a Locker";
@@ -1310,10 +1328,10 @@
             this.rbtnDontNeedLocker.AutoSize = true;
             this.rbtnDontNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
             this.rbtnDontNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(136, 11);
+            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(126, 11);
             this.rbtnDontNeedLocker.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnDontNeedLocker.Name = "rbtnDontNeedLocker";
-            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(139, 17);
+            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(128, 17);
             this.rbtnDontNeedLocker.TabIndex = 1;
             this.rbtnDontNeedLocker.TabStop = true;
             this.rbtnDontNeedLocker.Text = "No, I don\'t need a locker";
@@ -1356,12 +1374,14 @@
             // cmbSelectMemberShiftTime
             // 
             this.cmbSelectMemberShiftTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberShiftTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectMemberShiftTime.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectMemberShiftTime.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectMemberShiftTime.FormattingEnabled = true;
             this.cmbSelectMemberShiftTime.Location = new System.Drawing.Point(2, 9);
-            this.cmbSelectMemberShiftTime.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSelectMemberShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.cmbSelectMemberShiftTime.Name = "cmbSelectMemberShiftTime";
-            this.cmbSelectMemberShiftTime.Size = new System.Drawing.Size(273, 27);
+            this.cmbSelectMemberShiftTime.Size = new System.Drawing.Size(260, 23);
             this.cmbSelectMemberShiftTime.TabIndex = 9;
             this.cmbSelectMemberShiftTime.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberShiftTime_SelectedIndexChanged);
             // 
@@ -1385,12 +1405,14 @@
             // cmbSelectMemberDietPlan
             // 
             this.cmbSelectMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberDietPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectMemberDietPlan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectMemberDietPlan.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectMemberDietPlan.FormattingEnabled = true;
             this.cmbSelectMemberDietPlan.Location = new System.Drawing.Point(2, 9);
-            this.cmbSelectMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSelectMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.cmbSelectMemberDietPlan.Name = "cmbSelectMemberDietPlan";
-            this.cmbSelectMemberDietPlan.Size = new System.Drawing.Size(273, 27);
+            this.cmbSelectMemberDietPlan.Size = new System.Drawing.Size(260, 23);
             this.cmbSelectMemberDietPlan.TabIndex = 9;
             this.cmbSelectMemberDietPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberDietPlan_SelectedIndexChanged);
             // 
@@ -1463,14 +1485,11 @@
             this.tlpMemberPaymentInfromationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.01639F));
             this.tlpMemberPaymentInfromationDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.606557F));
             this.tlpMemberPaymentInfromationDetails.Controls.Add(this.picMemberPaymentMethod, 1, 0);
-            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.picMemberFeesType, 1, 1);
-            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.picMemberPaymentAmount, 1, 2);
             this.tlpMemberPaymentInfromationDetails.Controls.Add(this.lblMemberPaymentMethod, 2, 0);
-            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.lblMemberPaymentFeesType, 2, 1);
-            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.lblMemberPaymentAmount, 2, 2);
-            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.lblRetrieveMemberPaymentAmount, 3, 2);
             this.tlpMemberPaymentInfromationDetails.Controls.Add(this.tlpSelectMemberPaymentMethod, 3, 0);
             this.tlpMemberPaymentInfromationDetails.Controls.Add(this.tlpSelectMemberPaymentFeesType, 3, 1);
+            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.lblMemberPaymentAmount, 2, 1);
+            this.tlpMemberPaymentInfromationDetails.Controls.Add(this.picMemberPaymentAmount, 1, 1);
             this.tlpMemberPaymentInfromationDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberPaymentInfromationDetails.Location = new System.Drawing.Point(2, 55);
             this.tlpMemberPaymentInfromationDetails.Margin = new System.Windows.Forms.Padding(2);
@@ -1495,73 +1514,17 @@
             this.picMemberPaymentMethod.TabIndex = 0;
             this.picMemberPaymentMethod.TabStop = false;
             // 
-            // picMemberFeesType
-            // 
-            this.picMemberFeesType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picMemberFeesType.Image = ((System.Drawing.Image)(resources.GetObject("picMemberFeesType.Image")));
-            this.picMemberFeesType.Location = new System.Drawing.Point(16, 46);
-            this.picMemberFeesType.Margin = new System.Windows.Forms.Padding(2);
-            this.picMemberFeesType.Name = "picMemberFeesType";
-            this.picMemberFeesType.Size = new System.Drawing.Size(38, 38);
-            this.picMemberFeesType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberFeesType.TabIndex = 1;
-            this.picMemberFeesType.TabStop = false;
-            // 
-            // picMemberPaymentAmount
-            // 
-            this.picMemberPaymentAmount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picMemberPaymentAmount.Image = ((System.Drawing.Image)(resources.GetObject("picMemberPaymentAmount.Image")));
-            this.picMemberPaymentAmount.Location = new System.Drawing.Point(16, 88);
-            this.picMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.picMemberPaymentAmount.Name = "picMemberPaymentAmount";
-            this.picMemberPaymentAmount.Size = new System.Drawing.Size(38, 36);
-            this.picMemberPaymentAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMemberPaymentAmount.TabIndex = 2;
-            this.picMemberPaymentAmount.TabStop = false;
-            // 
             // lblMemberPaymentMethod
             // 
             this.lblMemberPaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberPaymentMethod.AutoSize = true;
-            this.lblMemberPaymentMethod.Location = new System.Drawing.Point(58, 3);
+            this.lblMemberPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberPaymentMethod.Location = new System.Drawing.Point(58, 5);
             this.lblMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberPaymentMethod.Name = "lblMemberPaymentMethod";
-            this.lblMemberPaymentMethod.Size = new System.Drawing.Size(67, 38);
+            this.lblMemberPaymentMethod.Size = new System.Drawing.Size(66, 34);
             this.lblMemberPaymentMethod.TabIndex = 3;
             this.lblMemberPaymentMethod.Text = "Payment Method";
-            // 
-            // lblMemberPaymentFeesType
-            // 
-            this.lblMemberPaymentFeesType.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblMemberPaymentFeesType.AutoSize = true;
-            this.lblMemberPaymentFeesType.Location = new System.Drawing.Point(58, 55);
-            this.lblMemberPaymentFeesType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMemberPaymentFeesType.Name = "lblMemberPaymentFeesType";
-            this.lblMemberPaymentFeesType.Size = new System.Drawing.Size(67, 19);
-            this.lblMemberPaymentFeesType.TabIndex = 4;
-            this.lblMemberPaymentFeesType.Text = "Fees type";
-            // 
-            // lblMemberPaymentAmount
-            // 
-            this.lblMemberPaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblMemberPaymentAmount.AutoSize = true;
-            this.lblMemberPaymentAmount.Location = new System.Drawing.Point(58, 96);
-            this.lblMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMemberPaymentAmount.Name = "lblMemberPaymentAmount";
-            this.lblMemberPaymentAmount.Size = new System.Drawing.Size(59, 19);
-            this.lblMemberPaymentAmount.TabIndex = 5;
-            this.lblMemberPaymentAmount.Text = "Amount";
-            // 
-            // lblRetrieveMemberPaymentAmount
-            // 
-            this.lblRetrieveMemberPaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRetrieveMemberPaymentAmount.AutoSize = true;
-            this.lblRetrieveMemberPaymentAmount.Location = new System.Drawing.Point(173, 96);
-            this.lblRetrieveMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRetrieveMemberPaymentAmount.Name = "lblRetrieveMemberPaymentAmount";
-            this.lblRetrieveMemberPaymentAmount.Size = new System.Drawing.Size(75, 19);
-            this.lblRetrieveMemberPaymentAmount.TabIndex = 8;
-            this.lblRetrieveMemberPaymentAmount.Text = "Rs. 2000/-";
             // 
             // tlpSelectMemberPaymentMethod
             // 
@@ -1583,12 +1546,14 @@
             // cmbSelectMemberPaymentMethod
             // 
             this.cmbSelectMemberPaymentMethod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSelectMemberPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSelectMemberPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectMemberPaymentMethod.ForeColor = System.Drawing.Color.Black;
             this.cmbSelectMemberPaymentMethod.FormattingEnabled = true;
             this.cmbSelectMemberPaymentMethod.Location = new System.Drawing.Point(2, 9);
-            this.cmbSelectMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSelectMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 15, 2);
             this.cmbSelectMemberPaymentMethod.Name = "cmbSelectMemberPaymentMethod";
-            this.cmbSelectMemberPaymentMethod.Size = new System.Drawing.Size(261, 27);
+            this.cmbSelectMemberPaymentMethod.Size = new System.Drawing.Size(248, 23);
             this.cmbSelectMemberPaymentMethod.TabIndex = 9;
             this.cmbSelectMemberPaymentMethod.TabStop = false;
             this.cmbSelectMemberPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentMethod_SelectedIndexChanged);
@@ -1598,7 +1563,7 @@
             this.tlpSelectMemberPaymentFeesType.ColumnCount = 1;
             this.tlpSelectMemberPaymentFeesType.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSelectMemberPaymentFeesType.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSelectMemberPaymentFeesType.Controls.Add(this.cmbSelectMemberPaymentFeesType, 0, 1);
+            this.tlpSelectMemberPaymentFeesType.Controls.Add(this.lblRetrieveMemberPaymentAmount, 0, 1);
             this.tlpSelectMemberPaymentFeesType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSelectMemberPaymentFeesType.Location = new System.Drawing.Point(173, 46);
             this.tlpSelectMemberPaymentFeesType.Margin = new System.Windows.Forms.Padding(2);
@@ -1610,17 +1575,41 @@
             this.tlpSelectMemberPaymentFeesType.Size = new System.Drawing.Size(265, 38);
             this.tlpSelectMemberPaymentFeesType.TabIndex = 15;
             // 
-            // cmbSelectMemberPaymentFeesType
+            // lblRetrieveMemberPaymentAmount
             // 
-            this.cmbSelectMemberPaymentFeesType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSelectMemberPaymentFeesType.ForeColor = System.Drawing.Color.Black;
-            this.cmbSelectMemberPaymentFeesType.FormattingEnabled = true;
-            this.cmbSelectMemberPaymentFeesType.Location = new System.Drawing.Point(2, 9);
-            this.cmbSelectMemberPaymentFeesType.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbSelectMemberPaymentFeesType.Name = "cmbSelectMemberPaymentFeesType";
-            this.cmbSelectMemberPaymentFeesType.Size = new System.Drawing.Size(261, 27);
-            this.cmbSelectMemberPaymentFeesType.TabIndex = 9;
-            this.cmbSelectMemberPaymentFeesType.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMemberPaymentFeesType_SelectedIndexChanged);
+            this.lblRetrieveMemberPaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblRetrieveMemberPaymentAmount.AutoSize = true;
+            this.lblRetrieveMemberPaymentAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetrieveMemberPaymentAmount.Location = new System.Drawing.Point(2, 11);
+            this.lblRetrieveMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRetrieveMemberPaymentAmount.Name = "lblRetrieveMemberPaymentAmount";
+            this.lblRetrieveMemberPaymentAmount.Size = new System.Drawing.Size(63, 15);
+            this.lblRetrieveMemberPaymentAmount.TabIndex = 8;
+            this.lblRetrieveMemberPaymentAmount.Text = "Rs. 2000/-";
+            // 
+            // lblMemberPaymentAmount
+            // 
+            this.lblMemberPaymentAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblMemberPaymentAmount.AutoSize = true;
+            this.lblMemberPaymentAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberPaymentAmount.Location = new System.Drawing.Point(58, 56);
+            this.lblMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMemberPaymentAmount.Name = "lblMemberPaymentAmount";
+            this.lblMemberPaymentAmount.Size = new System.Drawing.Size(58, 17);
+            this.lblMemberPaymentAmount.TabIndex = 5;
+            this.lblMemberPaymentAmount.Text = "Amount";
+            // 
+            // picMemberPaymentAmount
+            // 
+            this.picMemberPaymentAmount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picMemberPaymentAmount.Image = ((System.Drawing.Image)(resources.GetObject("picMemberPaymentAmount.Image")));
+            this.picMemberPaymentAmount.Location = new System.Drawing.Point(16, 46);
+            this.picMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.picMemberPaymentAmount.Name = "picMemberPaymentAmount";
+            this.picMemberPaymentAmount.Size = new System.Drawing.Size(38, 38);
+            this.picMemberPaymentAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMemberPaymentAmount.TabIndex = 2;
+            this.picMemberPaymentAmount.TabStop = false;
             // 
             // tlpMemberInfromationSubmitResetCanclePortion
             // 
@@ -1876,6 +1865,12 @@
             this.lblReset.MouseEnter += new System.EventHandler(this.pnlResetButton_MouseEnter);
             this.lblReset.MouseLeave += new System.EventHandler(this.pnlResetButton_MouseLeave);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkRate = 500;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmMemberRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1959,10 +1954,10 @@
             this.tlpMemberPaymentInfromationDetails.ResumeLayout(false);
             this.tlpMemberPaymentInfromationDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentMethod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberFeesType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentAmount)).EndInit();
             this.tlpSelectMemberPaymentMethod.ResumeLayout(false);
             this.tlpSelectMemberPaymentFeesType.ResumeLayout(false);
+            this.tlpSelectMemberPaymentFeesType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMemberPaymentAmount)).EndInit();
             this.tlpMemberInfromationSubmitResetCanclePortion.ResumeLayout(false);
             this.tlpCancleFromSection.ResumeLayout(false);
             this.pnlCancleButton.ResumeLayout(false);
@@ -1979,6 +1974,7 @@
             this.tlpResetButton.ResumeLayout(false);
             this.tlpResetButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2070,16 +2066,13 @@
         private System.Windows.Forms.Label lblPaymentInfromation;
         private System.Windows.Forms.TableLayoutPanel tlpMemberPaymentInfromationDetails;
         private System.Windows.Forms.PictureBox picMemberPaymentMethod;
-        private System.Windows.Forms.PictureBox picMemberFeesType;
         private System.Windows.Forms.PictureBox picMemberPaymentAmount;
         private System.Windows.Forms.Label lblMemberPaymentMethod;
-        private System.Windows.Forms.Label lblMemberPaymentFeesType;
         private System.Windows.Forms.Label lblMemberPaymentAmount;
         private System.Windows.Forms.Label lblRetrieveMemberPaymentAmount;
         private System.Windows.Forms.TableLayoutPanel tlpSelectMemberPaymentMethod;
         private System.Windows.Forms.ComboBox cmbSelectMemberPaymentMethod;
         private System.Windows.Forms.TableLayoutPanel tlpSelectMemberPaymentFeesType;
-        private System.Windows.Forms.ComboBox cmbSelectMemberPaymentFeesType;
         private System.Windows.Forms.TableLayoutPanel tlpMemberInfromationSubmitResetCanclePortion;
         private System.Windows.Forms.TableLayoutPanel tlpCancleFromSection;
         private System.Windows.Forms.Panel pnlCancleButton;
@@ -2098,5 +2091,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpResetButton;
         private System.Windows.Forms.PictureBox picReset;
         private System.Windows.Forms.Label lblReset;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -23,30 +23,32 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Locker
         }
 
         // Inserts a new Locker.
-        public string InsertNewLockerBLL(string lockerNo)
+        public ValidationResult InsertNewLockerBLL()
         {
-            try
+            ValidationBll.CommonValidationMessage result;
+
+            result = ValidationBll.ValidateLockerNumber(this.LockerNo);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                //ValidationBll.CommonValidationMessage validationMessage =
-                //    ValidationBll. // Has To be implemented 
-
-                //if (validationMessage !=
-                //    ValidationBll.CommonValidationMessage.Valid)
-                //{
-                //    return ValidationBll.GetValidationMessage(validationMessage);
-                //}
-
-                // Insert
-                LockerDAL lockerDAL = new LockerDAL();
-
-                return lockerDAL.AddNewLockerDAL(
-                        lockerNo
-                    );
+                return new ValidationResult
+                {
+                    FieldName = "LockerNumber",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
-            catch (Exception ex)
+
+            LockerDAL lockerDAL = new LockerDAL();
+
+            string message = lockerDAL.AddNewLockerDAL(this.LockerNo);
+
+            return new ValidationResult
             {
-                return ex.Message;
-            }
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
     }
 }

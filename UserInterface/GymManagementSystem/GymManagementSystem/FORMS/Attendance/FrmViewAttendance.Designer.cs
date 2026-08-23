@@ -68,7 +68,7 @@
             // 
             // tlpViewAttendanceEntireForm
             // 
-            this.tlpViewAttendanceEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpViewAttendanceEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpViewAttendanceEntireForm.ColumnCount = 3;
             this.tlpViewAttendanceEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpViewAttendanceEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -95,8 +95,8 @@
             // tlpViewAttendanceHeader
             // 
             this.tlpViewAttendanceHeader.ColumnCount = 3;
-            this.tlpViewAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tlpViewAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+            this.tlpViewAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tlpViewAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
             this.tlpViewAttendanceHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpViewAttendanceHeader.Controls.Add(this.picViewAttendanceMark, 0, 0);
             this.tlpViewAttendanceHeader.Controls.Add(this.tlpViewAttendanceTitle, 1, 0);
@@ -115,7 +115,7 @@
             this.picViewAttendanceMark.Location = new System.Drawing.Point(0, 0);
             this.picViewAttendanceMark.Margin = new System.Windows.Forms.Padding(0, 0, 2, 2);
             this.picViewAttendanceMark.Name = "picViewAttendanceMark";
-            this.picViewAttendanceMark.Size = new System.Drawing.Size(50, 49);
+            this.picViewAttendanceMark.Size = new System.Drawing.Size(46, 49);
             this.picViewAttendanceMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picViewAttendanceMark.TabIndex = 0;
             this.picViewAttendanceMark.TabStop = false;
@@ -126,7 +126,7 @@
             this.tlpViewAttendanceTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpViewAttendanceTitle.Controls.Add(this.lblViewMemberAttendance, 0, 1);
             this.tlpViewAttendanceTitle.Controls.Add(this.lblViewAttendance, 0, 0);
-            this.tlpViewAttendanceTitle.Location = new System.Drawing.Point(52, 0);
+            this.tlpViewAttendanceTitle.Location = new System.Drawing.Point(48, 0);
             this.tlpViewAttendanceTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpViewAttendanceTitle.Name = "tlpViewAttendanceTitle";
             this.tlpViewAttendanceTitle.RowCount = 2;
@@ -415,6 +415,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(863, 609);
             this.Controls.Add(this.tlpViewAttendanceEntireForm);
             this.MinimumSize = new System.Drawing.Size(878, 590);

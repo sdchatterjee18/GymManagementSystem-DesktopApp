@@ -288,11 +288,13 @@
             // 
             // pnlExit
             // 
-            this.pnlExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlExit.Controls.Add(this.picExit);
-            this.pnlExit.Location = new System.Drawing.Point(119, 12);
+            this.pnlExit.Location = new System.Drawing.Point(116, 3);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pnlExit.Name = "pnlExit";
-            this.pnlExit.Size = new System.Drawing.Size(34, 20);
+            this.pnlExit.Size = new System.Drawing.Size(40, 35);
             this.pnlExit.TabIndex = 1;
             this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
             this.pnlExit.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlExit_Paint);
@@ -304,7 +306,7 @@
             this.picExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picExit.BackColor = System.Drawing.Color.Transparent;
             this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
-            this.picExit.Location = new System.Drawing.Point(9, 3);
+            this.picExit.Location = new System.Drawing.Point(12, 10);
             this.picExit.Margin = new System.Windows.Forms.Padding(0);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(15, 15);
@@ -317,11 +319,13 @@
             // 
             // pnlRestore
             // 
-            this.pnlRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlRestore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRestore.Controls.Add(this.picRestore);
-            this.pnlRestore.Location = new System.Drawing.Point(79, 12);
+            this.pnlRestore.Location = new System.Drawing.Point(76, 3);
+            this.pnlRestore.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pnlRestore.Name = "pnlRestore";
-            this.pnlRestore.Size = new System.Drawing.Size(34, 20);
+            this.pnlRestore.Size = new System.Drawing.Size(40, 35);
             this.pnlRestore.TabIndex = 1;
             this.pnlRestore.Click += new System.EventHandler(this.pnlRestore_Click);
             this.pnlRestore.MouseEnter += new System.EventHandler(this.pnlRestore_MouseEnter);
@@ -332,7 +336,7 @@
             this.picRestore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picRestore.BackColor = System.Drawing.Color.Transparent;
             this.picRestore.Image = ((System.Drawing.Image)(resources.GetObject("picRestore.Image")));
-            this.picRestore.Location = new System.Drawing.Point(9, 3);
+            this.picRestore.Location = new System.Drawing.Point(12, 10);
             this.picRestore.Margin = new System.Windows.Forms.Padding(0);
             this.picRestore.Name = "picRestore";
             this.picRestore.Size = new System.Drawing.Size(15, 15);
@@ -345,11 +349,13 @@
             // 
             // pnlMinimize
             // 
-            this.pnlMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMinimize.Controls.Add(this.picMinimize);
-            this.pnlMinimize.Location = new System.Drawing.Point(39, 12);
+            this.pnlMinimize.Location = new System.Drawing.Point(36, 3);
+            this.pnlMinimize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pnlMinimize.Name = "pnlMinimize";
-            this.pnlMinimize.Size = new System.Drawing.Size(34, 20);
+            this.pnlMinimize.Size = new System.Drawing.Size(40, 35);
             this.pnlMinimize.TabIndex = 1;
             this.pnlMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
             this.pnlMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
@@ -360,7 +366,7 @@
             this.picMinimize.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picMinimize.BackColor = System.Drawing.Color.Transparent;
             this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
-            this.picMinimize.Location = new System.Drawing.Point(9, 3);
+            this.picMinimize.Location = new System.Drawing.Point(12, 10);
             this.picMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(18, 15);

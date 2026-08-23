@@ -142,14 +142,14 @@ namespace GymManagementSystem.FORMS.Locker
         {
             pnlAddNew.BackColor = Color.White;
             lblAddNew.ForeColor = Color.MidnightBlue;
-            picAddButton.Image = Properties.Resources.paper_planeHOVER;
+            picAddButton.Image = Properties.Resources.plusHOVER;
         }
 
         private void pnlAddNew_MouseLeave(object sender, EventArgs e)
         {
             pnlAddNew.BackColor = Color.MidnightBlue;
             lblAddNew.ForeColor = Color.White;
-            picAddButton.Image = Properties.Resources.paper_plane;
+            picAddButton.Image = Properties.Resources.plus;
         }
     }
 }

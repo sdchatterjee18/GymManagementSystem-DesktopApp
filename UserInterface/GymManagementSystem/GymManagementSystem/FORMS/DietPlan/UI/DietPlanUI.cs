@@ -50,21 +50,21 @@ namespace GymManagementSystem.FORMS.DietPlan.UI
         }
 
         // Inserts a new diet plan through the business layer.
-        public string InsertDietPlanUI(int caloriesPerDay,byte[] dietPlanDocument,string conditionStatus)
-        {
-            try
-            {
-                DietPlanBLL dietPlanBLL = new DietPlanBLL();
+        //public string InsertDietPlanUI(int caloriesPerDay,byte[] dietPlanDocument,string conditionStatus)
+        //{
+        //    try
+        //    {
+        //        DietPlanBLL dietPlanBLL = new DietPlanBLL();
 
-                return dietPlanBLL.InsertDietPlanBLL(
-                    caloriesPerDay,
-                    dietPlanDocument,
-                    conditionStatus);
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
+        //        return dietPlanBLL.InsertDietPlanBLL(
+        //            caloriesPerDay,
+        //            dietPlanDocument,
+        //            conditionStatus);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return ex.Message;
+        //    }
+        //}
     }
 }

@@ -176,16 +176,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // REQUIRED TEXTBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtFirstName,
-                txtLastName,
-                txtPhoneNumber,
-                txtEmailId,
-                txtSalary,
-                txtBankAccountNo))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtFirstName,
+            //    txtLastName,
+            //    txtPhoneNumber,
+            //    txtEmailId,
+            //    txtSalary,
+            //    txtBankAccountNo))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================
@@ -205,11 +205,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // REQUIRED ROLE COMBOBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredComboBoxes(
-                cmbEmployeeType))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredComboBoxes(
+            //    cmbEmployeeType))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================
@@ -309,13 +309,13 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
             if (selectedRole == "Admin")
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtUserName,
-                    txtPassword,
-                    txtConfirmPassword))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredTextBoxes(
+                //    txtUserName,
+                //    txtPassword,
+                //    txtConfirmPassword))
+                //{
+                //    return;
+                //}
 
                 if (txtPassword.Text.Trim() !=
                     txtConfirmPassword.Text.Trim())
@@ -346,17 +346,17 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
             if (selectedRole == "Trainer")
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtSpecialization))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredTextBoxes(
+                //    txtSpecialization))
+                //{
+                //    return;
+                //}
 
-                if (!ValidationUI.ValidateRequiredComboBoxes(
-                    cmbTrainerType))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredComboBoxes(
+                //    cmbTrainerType))
+                //{
+                //    return;
+                //}
 
                 employeeUI.TrainerType =
                     cmbTrainerType.Text.Trim();

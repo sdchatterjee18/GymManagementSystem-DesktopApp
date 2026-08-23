@@ -25,7 +25,8 @@ namespace GymManagementSystem.Authentication
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
         {
-
+            this.ShowIcon = false;
+            this.Text = "";
         }
 
         private void txtAdminPassword_Leave(object sender, EventArgs e)
@@ -94,12 +95,12 @@ namespace GymManagementSystem.Authentication
             // REQUIRED TEXTBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtAdminUsername,
-                txtAdminPassword))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtAdminUsername,
+            //    txtAdminPassword))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================

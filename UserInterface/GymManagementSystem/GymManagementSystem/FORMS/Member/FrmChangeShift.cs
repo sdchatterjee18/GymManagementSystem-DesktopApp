@@ -96,11 +96,6 @@ namespace GymManagementSystem.FORMS.Member
             }
         }
 
-        private void cmbSelectMembershipPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AvailableSlotsOfShift();
-        }
-
         private void ChangeShiftByMemberIdAndTrainerId()
         {
             string ChangeShiftMessage = null;
@@ -156,6 +151,11 @@ namespace GymManagementSystem.FORMS.Member
         private void pnlCancleButtomInChangeMemberShift_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void cmbSelectMembershipPlan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            AvailableSlotsOfShift();
         }
 
        

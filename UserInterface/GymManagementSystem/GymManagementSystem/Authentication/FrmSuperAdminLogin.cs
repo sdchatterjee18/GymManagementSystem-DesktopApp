@@ -27,7 +27,8 @@ namespace GymManagementSystem.Authentication
 
         private void FrmSuperAdminLogin_Load(object sender, EventArgs e)
         {
-           
+            this.ShowIcon = false;
+            this.Text = "";
         }
 
         private void txtSuperAdminUsername_Enter(object sender, EventArgs e)
@@ -109,12 +110,12 @@ namespace GymManagementSystem.Authentication
                 ClickCountTxtSuperAdminPassword);
 
             // REQUIRED TEXTBOX VALIDATION
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtSuperAdminUsername,
-                txtSuperAdminPassword))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtSuperAdminUsername,
+            //    txtSuperAdminPassword))
+            //{
+            //    return;
+            //}
 
             // CREATE AUTHENTICATION UI OBJECT
             AuthenticationUI authenticationUI =

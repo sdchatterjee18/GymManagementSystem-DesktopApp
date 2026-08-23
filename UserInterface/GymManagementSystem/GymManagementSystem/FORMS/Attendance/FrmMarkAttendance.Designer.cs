@@ -133,7 +133,7 @@
             // 
             // tlpMarkAttendanceEntireForm
             // 
-            this.tlpMarkAttendanceEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpMarkAttendanceEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpMarkAttendanceEntireForm.ColumnCount = 3;
             this.tlpMarkAttendanceEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpMarkAttendanceEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -339,13 +339,12 @@
             this.txtMarkMemberMobileNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMarkMemberMobileNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMarkMemberMobileNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarkMemberMobileNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txtMarkMemberMobileNumber.ForeColor = System.Drawing.Color.Black;
             this.txtMarkMemberMobileNumber.Location = new System.Drawing.Point(275, 5);
             this.txtMarkMemberMobileNumber.Margin = new System.Windows.Forms.Padding(0);
             this.txtMarkMemberMobileNumber.Name = "txtMarkMemberMobileNumber";
             this.txtMarkMemberMobileNumber.Size = new System.Drawing.Size(237, 23);
             this.txtMarkMemberMobileNumber.TabIndex = 5;
-            this.txtMarkMemberMobileNumber.Text = " Enter Mobile No.";
             this.txtMarkMemberMobileNumber.Click += new System.EventHandler(this.txtMarkMemberMobileNumber_Click);
             this.txtMarkMemberMobileNumber.TextChanged += new System.EventHandler(this.txtMarkMemberMobileNumber_TextChanged);
             // 
@@ -368,6 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(863, 609);
             this.Controls.Add(this.tlpMarkAttendanceEntireForm);
             this.MinimumSize = new System.Drawing.Size(878, 590);

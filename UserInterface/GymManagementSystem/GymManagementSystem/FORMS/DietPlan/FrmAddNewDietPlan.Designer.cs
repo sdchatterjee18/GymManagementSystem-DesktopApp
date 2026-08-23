@@ -89,6 +89,7 @@
             // 
             // tlpAddNewDietPlan
             // 
+            this.tlpAddNewDietPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpAddNewDietPlan.ColumnCount = 1;
             this.tlpAddNewDietPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddNewDietPlan.Controls.Add(this.pnlRequiredCaloriesPerDaySection, 0, 1);
@@ -374,7 +375,7 @@
             this.tlpAddDietPlanHeader.Name = "tlpAddDietPlanHeader";
             this.tlpAddDietPlanHeader.RowCount = 1;
             this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tlpAddDietPlanHeader.Size = new System.Drawing.Size(334, 87);
             this.tlpAddDietPlanHeader.TabIndex = 7;
             // 

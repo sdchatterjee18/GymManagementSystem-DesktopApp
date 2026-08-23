@@ -94,38 +94,38 @@ namespace GymManagementSystem.FORMS.Member
                 cmbSelectMembershipPlan,
                 cmbSelectMemberPaymentMethod
             };
-            if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
-            {
-                return;
-            }
-            else
-            {
-                int MemberId = Convert.ToInt32(lblRetrieveMemberIDInChangePersonalTrainer.Text);
-                int MemberShipPlanId = Convert.ToInt32(cmbSelectMembershipPlan.SelectedIndex + 1);
-                string PaymentMethod = cmbSelectMemberPaymentMethod.Text;
+            //if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    int MemberId = Convert.ToInt32(lblRetrieveMemberIDInChangePersonalTrainer.Text);
+            //    int MemberShipPlanId = Convert.ToInt32(cmbSelectMembershipPlan.SelectedIndex + 1);
+            //    string PaymentMethod = cmbSelectMemberPaymentMethod.Text;
 
 
-                string RenewalMessage = null;
-                DialogResult result = MessageBox.Show(RenewalConfirmationMessage, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-                try
-                {
-                    MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
-                    RenewalMessage = MemberAllDetailsUI.RenewalMemberShipPlanUI(MemberId, MemberShipPlanId, PaymentMethod);
-                    DialogResult Result = MessageBox.Show(RenewalMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (Result == DialogResult.OK)
-                        {
-                            this.Dispose();
-                        }
-                }
-                catch (Exception ex)
-                {
-                    RenewalMessage = null;
-                }
-            }
+            //    string RenewalMessage = null;
+            //    DialogResult result = MessageBox.Show(RenewalConfirmationMessage, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result != DialogResult.Yes)
+            //    {
+            //        return;
+            //    }
+            //    try
+            //    {
+            //        MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
+            //        RenewalMessage = MemberAllDetailsUI.RenewalMemberShipPlanUI(MemberId, MemberShipPlanId, PaymentMethod);
+            //        DialogResult Result = MessageBox.Show(RenewalMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            if (Result == DialogResult.OK)
+            //            {
+            //                this.Dispose();
+            //            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        RenewalMessage = null;
+            //    }
+            //}
         }
 
         private void tlpChangeMembershipButton_MouseEnter(object sender, EventArgs e)

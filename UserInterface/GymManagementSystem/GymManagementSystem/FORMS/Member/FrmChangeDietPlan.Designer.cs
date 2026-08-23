@@ -202,7 +202,7 @@
             this.tlpMemberDietPlanButtomSection.Controls.Add(this.tlpChangeMemberDietPlan, 1, 0);
             this.tlpMemberDietPlanButtomSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberDietPlanButtomSection.Location = new System.Drawing.Point(2, 535);
-            this.tlpMemberDietPlanButtomSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberDietPlanButtomSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMemberDietPlanButtomSection.Name = "tlpMemberDietPlanButtomSection";
             this.tlpMemberDietPlanButtomSection.RowCount = 1;
             this.tlpMemberDietPlanButtomSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -216,7 +216,7 @@
             this.tlpCancleButtomPortionIChangeMemberDietPlan.Controls.Add(this.pnlCancleButtomInChangeMemberDietPlan, 0, 1);
             this.tlpCancleButtomPortionIChangeMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleButtomPortionIChangeMemberDietPlan.Location = new System.Drawing.Point(435, 2);
-            this.tlpCancleButtomPortionIChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleButtomPortionIChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleButtomPortionIChangeMemberDietPlan.Name = "tlpCancleButtomPortionIChangeMemberDietPlan";
             this.tlpCancleButtomPortionIChangeMemberDietPlan.RowCount = 3;
             this.tlpCancleButtomPortionIChangeMemberDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -230,7 +230,7 @@
             this.pnlCancleButtomInChangeMemberDietPlan.Controls.Add(this.tlpCancleSectionInChangeMemberDietPlan);
             this.pnlCancleButtomInChangeMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCancleButtomInChangeMemberDietPlan.Location = new System.Drawing.Point(2, 15);
-            this.pnlCancleButtomInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCancleButtomInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCancleButtomInChangeMemberDietPlan.Name = "pnlCancleButtomInChangeMemberDietPlan";
             this.pnlCancleButtomInChangeMemberDietPlan.Size = new System.Drawing.Size(158, 36);
             this.pnlCancleButtomInChangeMemberDietPlan.TabIndex = 16;
@@ -246,7 +246,7 @@
             this.tlpCancleSectionInChangeMemberDietPlan.Controls.Add(this.lblCancle, 1, 0);
             this.tlpCancleSectionInChangeMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleSectionInChangeMemberDietPlan.Location = new System.Drawing.Point(0, 0);
-            this.tlpCancleSectionInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleSectionInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleSectionInChangeMemberDietPlan.Name = "tlpCancleSectionInChangeMemberDietPlan";
             this.tlpCancleSectionInChangeMemberDietPlan.RowCount = 1;
             this.tlpCancleSectionInChangeMemberDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -262,7 +262,7 @@
             this.picCancleInChangeMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCancleInChangeMemberDietPlan.Image = ((System.Drawing.Image)(resources.GetObject("picCancleInChangeMemberDietPlan.Image")));
             this.picCancleInChangeMemberDietPlan.Location = new System.Drawing.Point(2, 2);
-            this.picCancleInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCancleInChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.picCancleInChangeMemberDietPlan.Name = "picCancleInChangeMemberDietPlan";
             this.picCancleInChangeMemberDietPlan.Size = new System.Drawing.Size(48, 32);
             this.picCancleInChangeMemberDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -295,7 +295,7 @@
             this.tlpChangeMemberDietPlan.Controls.Add(this.pnlChangeMemberDietPlanButton, 0, 1);
             this.tlpChangeMemberDietPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpChangeMemberDietPlan.Location = new System.Drawing.Point(261, 2);
-            this.tlpChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpChangeMemberDietPlan.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeMemberDietPlan.Name = "tlpChangeMemberDietPlan";
             this.tlpChangeMemberDietPlan.RowCount = 3;
             this.tlpChangeMemberDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -309,7 +309,7 @@
             this.pnlChangeMemberDietPlanButton.Controls.Add(this.tlpChangeMemberDietPlansButton);
             this.pnlChangeMemberDietPlanButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChangeMemberDietPlanButton.Location = new System.Drawing.Point(2, 15);
-            this.pnlChangeMemberDietPlanButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlChangeMemberDietPlanButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlChangeMemberDietPlanButton.Name = "pnlChangeMemberDietPlanButton";
             this.pnlChangeMemberDietPlanButton.Size = new System.Drawing.Size(158, 36);
             this.pnlChangeMemberDietPlanButton.TabIndex = 0;
@@ -325,7 +325,7 @@
             this.tlpChangeMemberDietPlansButton.Controls.Add(this.lblChangeMemberDietPlan, 1, 0);
             this.tlpChangeMemberDietPlansButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpChangeMemberDietPlansButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpChangeMemberDietPlansButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpChangeMemberDietPlansButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeMemberDietPlansButton.Name = "tlpChangeMemberDietPlansButton";
             this.tlpChangeMemberDietPlansButton.RowCount = 1;
             this.tlpChangeMemberDietPlansButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -390,7 +390,7 @@
             this.picChangeMemberDietPalnsIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picChangeMemberDietPalnsIcon.Image = ((System.Drawing.Image)(resources.GetObject("picChangeMemberDietPalnsIcon.Image")));
             this.picChangeMemberDietPalnsIcon.Location = new System.Drawing.Point(42, 2);
-            this.picChangeMemberDietPalnsIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picChangeMemberDietPalnsIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picChangeMemberDietPalnsIcon.Name = "picChangeMemberDietPalnsIcon";
             this.picChangeMemberDietPalnsIcon.Size = new System.Drawing.Size(56, 56);
             this.picChangeMemberDietPalnsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1279,6 +1279,7 @@
             // cmbCaloriesPerDay
             // 
             this.cmbCaloriesPerDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCaloriesPerDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCaloriesPerDay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCaloriesPerDay.ForeColor = System.Drawing.Color.Gray;
             this.cmbCaloriesPerDay.FormattingEnabled = true;
@@ -1287,8 +1288,7 @@
             this.cmbCaloriesPerDay.Name = "cmbCaloriesPerDay";
             this.cmbCaloriesPerDay.Size = new System.Drawing.Size(275, 29);
             this.cmbCaloriesPerDay.TabIndex = 1;
-            this.cmbCaloriesPerDay.Text = "   --- Select Calories Per Day ---";
-            this.cmbCaloriesPerDay.SelectedIndexChanged += new System.EventHandler(this.cmbCaloriesPerDay_SelectedIndexChanged);
+            this.cmbCaloriesPerDay.SelectionChangeCommitted += new System.EventHandler(this.cmbCaloriesPerDay_SelectionChangeCommitted);
             // 
             // picSelectCaloriesPerDay
             // 

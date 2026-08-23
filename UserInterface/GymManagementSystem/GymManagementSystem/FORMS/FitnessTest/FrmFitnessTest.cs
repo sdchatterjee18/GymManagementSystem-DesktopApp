@@ -153,19 +153,19 @@ namespace GymManagementSystem.FORMS
             // Required Field Validation
             // =========================================================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtHightInput,
-                txtWeightInput,
-                txtAgeInput))
-            {
-                MessageBox.Show(
-                    "Please fill up all things.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtHightInput,
+            //    txtWeightInput,
+            //    txtAgeInput))
+            //{
+            //    MessageBox.Show(
+            //        "Please fill up all things.",
+            //        "Validation",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Warning);
 
-                return;
-            }
+            //    return;
+            //}
 
 
             // =========================================================

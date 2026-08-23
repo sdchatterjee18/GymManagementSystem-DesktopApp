@@ -89,7 +89,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
 
             DataTable dataTable =
                 LookupDAL.RetrieveSpecificDetails(
-                    "spRetrieveMembersByPhoneNumberAndName",
+                    "spSearchMemberByPhoneAndName",
                     sqlParameters);
 
             return dataTable;

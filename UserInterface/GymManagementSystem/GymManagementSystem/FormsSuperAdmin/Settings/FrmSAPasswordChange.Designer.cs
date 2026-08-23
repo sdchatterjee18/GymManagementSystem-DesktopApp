@@ -35,10 +35,6 @@
             this.lblEditSuperAdminChangePassword = new System.Windows.Forms.Label();
             this.lblSuperAdminChangePassword = new System.Windows.Forms.Label();
             this.picSuperAdminChangePassword = new System.Windows.Forms.PictureBox();
-            this.tlpSubmit = new System.Windows.Forms.TableLayoutPanel();
-            this.picSumit = new System.Windows.Forms.PictureBox();
-            this.pnlSubmit = new System.Windows.Forms.Panel();
-            this.lblSubmit = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.tlpConfermPassword = new System.Windows.Forms.TableLayoutPanel();
             this.picConfermPassword = new System.Windows.Forms.PictureBox();
@@ -55,13 +51,13 @@
             this.tlpUserName = new System.Windows.Forms.TableLayoutPanel();
             this.picUserName = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.tlpSubmit = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlSubmit = new System.Windows.Forms.Panel();
+            this.lblSubmit = new System.Windows.Forms.Label();
             this.tlpSuperAdminChangePasswordEntireForm.SuspendLayout();
             this.tlpHeaderSuperAdminChangePassword.SuspendLayout();
             this.tlpSuperAdminChangePassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminChangePassword)).BeginInit();
-            this.tlpSubmit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSumit)).BeginInit();
-            this.pnlSubmit.SuspendLayout();
             this.tlpConfermPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picConfermPassword)).BeginInit();
             this.tlpNewPassword.SuspendLayout();
@@ -70,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOldPassword)).BeginInit();
             this.tlpUserName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUserName)).BeginInit();
+            this.tlpSubmit.SuspendLayout();
+            this.pnlSubmit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpSuperAdminChangePasswordEntireForm
@@ -80,7 +78,6 @@
             this.tlpSuperAdminChangePasswordEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.03297F));
             this.tlpSuperAdminChangePasswordEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.586593F));
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpHeaderSuperAdminChangePassword, 1, 1);
-            this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpSubmit, 1, 10);
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.txtConfirmPassword, 1, 9);
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpConfermPassword, 1, 8);
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.txtNewPassword, 1, 7);
@@ -89,9 +86,12 @@
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpOldPassword, 1, 4);
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.txtUserName, 1, 3);
             this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpUserName, 1, 2);
+            this.tlpSuperAdminChangePasswordEntireForm.Controls.Add(this.tlpSubmit, 1, 10);
             this.tlpSuperAdminChangePasswordEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminChangePasswordEntireForm.Location = new System.Drawing.Point(0, 0);
             this.tlpSuperAdminChangePasswordEntireForm.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.tlpSuperAdminChangePasswordEntireForm.MaximumSize = new System.Drawing.Size(364, 423);
+            this.tlpSuperAdminChangePasswordEntireForm.MinimumSize = new System.Drawing.Size(364, 423);
             this.tlpSuperAdminChangePasswordEntireForm.Name = "tlpSuperAdminChangePasswordEntireForm";
             this.tlpSuperAdminChangePasswordEntireForm.RowCount = 11;
             this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1F));
@@ -102,9 +102,9 @@
             this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.75F));
             this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.75F));
             this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.75F));
-            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.75F));
-            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.75F));
-            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9F));
+            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.219858F));
+            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.146572F));
+            this.tlpSuperAdminChangePasswordEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tlpSuperAdminChangePasswordEntireForm.Size = new System.Drawing.Size(364, 423);
             this.tlpSuperAdminChangePasswordEntireForm.TabIndex = 0;
             // 
@@ -178,76 +178,11 @@
             this.picSuperAdminChangePassword.TabIndex = 0;
             this.picSuperAdminChangePassword.TabStop = false;
             // 
-            // tlpSubmit
-            // 
-            this.tlpSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpSubmit.BackColor = System.Drawing.Color.MidnightBlue;
-            this.tlpSubmit.ColumnCount = 2;
-            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.2069F));
-            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.79311F));
-            this.tlpSubmit.Controls.Add(this.picSumit, 0, 0);
-            this.tlpSubmit.Controls.Add(this.pnlSubmit, 1, 0);
-            this.tlpSubmit.Location = new System.Drawing.Point(253, 386);
-            this.tlpSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.tlpSubmit.Name = "tlpSubmit";
-            this.tlpSubmit.RowCount = 1;
-            this.tlpSubmit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSubmit.Size = new System.Drawing.Size(88, 27);
-            this.tlpSubmit.TabIndex = 11;
-            this.tlpSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
-            this.tlpSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
-            this.tlpSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
-            // 
-            // picSumit
-            // 
-            this.picSumit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSumit.Image = global::GymManagementSystem.Properties.Resources.paper_plane;
-            this.picSumit.Location = new System.Drawing.Point(6, 2);
-            this.picSumit.Margin = new System.Windows.Forms.Padding(2);
-            this.picSumit.Name = "picSumit";
-            this.picSumit.Size = new System.Drawing.Size(15, 23);
-            this.picSumit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSumit.TabIndex = 1;
-            this.picSumit.TabStop = false;
-            this.picSumit.Click += new System.EventHandler(this.tlpSubmit_Click);
-            this.picSumit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
-            this.picSumit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
-            // 
-            // pnlSubmit
-            // 
-            this.pnlSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.pnlSubmit.Controls.Add(this.lblSubmit);
-            this.pnlSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSubmit.Location = new System.Drawing.Point(25, 2);
-            this.pnlSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlSubmit.Name = "pnlSubmit";
-            this.pnlSubmit.Size = new System.Drawing.Size(61, 23);
-            this.pnlSubmit.TabIndex = 0;
-            this.pnlSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
-            // 
-            // lblSubmit
-            // 
-            this.lblSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblSubmit.AutoSize = true;
-            this.lblSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubmit.ForeColor = System.Drawing.Color.White;
-            this.lblSubmit.Location = new System.Drawing.Point(2, 3);
-            this.lblSubmit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSubmit.Name = "lblSubmit";
-            this.lblSubmit.Size = new System.Drawing.Size(46, 15);
-            this.lblSubmit.TabIndex = 0;
-            this.lblSubmit.Text = "Submit";
-            this.lblSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
-            this.lblSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
-            this.lblSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
-            // 
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 349);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 351);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(12, 2, 2, 2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(282, 25);
@@ -270,14 +205,14 @@
             this.tlpConfermPassword.RowCount = 1;
             this.tlpConfermPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpConfermPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpConfermPassword.Size = new System.Drawing.Size(325, 37);
+            this.tlpConfermPassword.Size = new System.Drawing.Size(325, 39);
             this.tlpConfermPassword.TabIndex = 3;
             // 
             // picConfermPassword
             // 
             this.picConfermPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picConfermPassword.Image = ((System.Drawing.Image)(resources.GetObject("picConfermPassword.Image")));
-            this.picConfermPassword.Location = new System.Drawing.Point(2, 10);
+            this.picConfermPassword.Location = new System.Drawing.Point(2, 12);
             this.picConfermPassword.Margin = new System.Windows.Forms.Padding(2);
             this.picConfermPassword.Name = "picConfermPassword";
             this.picConfermPassword.Size = new System.Drawing.Size(22, 25);
@@ -292,7 +227,7 @@
             this.lblConfermPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfermPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblConfermPassword.Location = new System.Drawing.Point(31, 13);
+            this.lblConfermPassword.Location = new System.Drawing.Point(31, 15);
             this.lblConfermPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 7);
             this.lblConfermPassword.Name = "lblConfermPassword";
             this.lblConfermPassword.Size = new System.Drawing.Size(125, 17);
@@ -464,6 +399,56 @@
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "UserName";
             // 
+            // tlpSubmit
+            // 
+            this.tlpSubmit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tlpSubmit.BackColor = System.Drawing.Color.MidnightBlue;
+            this.tlpSubmit.ColumnCount = 2;
+            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.36364F));
+            this.tlpSubmit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.63636F));
+            this.tlpSubmit.Controls.Add(this.pnlSubmit, 1, 0);
+            this.tlpSubmit.Location = new System.Drawing.Point(253, 385);
+            this.tlpSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSubmit.Name = "tlpSubmit";
+            this.tlpSubmit.RowCount = 1;
+            this.tlpSubmit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSubmit.Size = new System.Drawing.Size(88, 27);
+            this.tlpSubmit.TabIndex = 11;
+            this.tlpSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
+            this.tlpSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
+            this.tlpSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
+            // 
+            // pnlSubmit
+            // 
+            this.pnlSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.pnlSubmit.Controls.Add(this.lblSubmit);
+            this.pnlSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSubmit.Location = new System.Drawing.Point(12, 2);
+            this.pnlSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSubmit.Name = "pnlSubmit";
+            this.pnlSubmit.Size = new System.Drawing.Size(74, 23);
+            this.pnlSubmit.TabIndex = 0;
+            this.pnlSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
+            this.pnlSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
+            this.pnlSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
+            // 
+            // lblSubmit
+            // 
+            this.lblSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblSubmit.AutoSize = true;
+            this.lblSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubmit.ForeColor = System.Drawing.Color.White;
+            this.lblSubmit.Location = new System.Drawing.Point(9, 3);
+            this.lblSubmit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubmit.Name = "lblSubmit";
+            this.lblSubmit.Size = new System.Drawing.Size(45, 15);
+            this.lblSubmit.TabIndex = 0;
+            this.lblSubmit.Text = "Update";
+            this.lblSubmit.Click += new System.EventHandler(this.tlpSubmit_Click);
+            this.lblSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter);
+            this.lblSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave);
+            // 
             // FrmSAPasswordChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,8 +456,8 @@
             this.ClientSize = new System.Drawing.Size(364, 423);
             this.Controls.Add(this.tlpSuperAdminChangePasswordEntireForm);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.MinimumSize = new System.Drawing.Size(16, 39);
+            this.MaximumSize = new System.Drawing.Size(380, 462);
+            this.MinimumSize = new System.Drawing.Size(380, 462);
             this.Name = "FrmSAPasswordChange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSAPasswordChange";
@@ -484,10 +469,6 @@
             this.tlpSuperAdminChangePassword.ResumeLayout(false);
             this.tlpSuperAdminChangePassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminChangePassword)).EndInit();
-            this.tlpSubmit.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picSumit)).EndInit();
-            this.pnlSubmit.ResumeLayout(false);
-            this.pnlSubmit.PerformLayout();
             this.tlpConfermPassword.ResumeLayout(false);
             this.tlpConfermPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picConfermPassword)).EndInit();
@@ -500,6 +481,9 @@
             this.tlpUserName.ResumeLayout(false);
             this.tlpUserName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUserName)).EndInit();
+            this.tlpSubmit.ResumeLayout(false);
+            this.pnlSubmit.ResumeLayout(false);
+            this.pnlSubmit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -522,9 +506,6 @@
         private System.Windows.Forms.Label lblSuperAdminChangePassword;
         private System.Windows.Forms.PictureBox picSuperAdminChangePassword;
         private System.Windows.Forms.TableLayoutPanel tlpSubmit;
-        private System.Windows.Forms.PictureBox picSumit;
-        private System.Windows.Forms.Panel pnlSubmit;
-        private System.Windows.Forms.Label lblSubmit;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TableLayoutPanel tlpConfermPassword;
         private System.Windows.Forms.PictureBox picConfermPassword;
@@ -532,5 +513,7 @@
         private System.Windows.Forms.TableLayoutPanel tlpUserName;
         private System.Windows.Forms.PictureBox picUserName;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Panel pnlSubmit;
+        private System.Windows.Forms.Label lblSubmit;
     }
 }

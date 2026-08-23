@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using GymManagementSystemBLLayer.ModulesBLLayer.Member;
 using System.Data;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Member.UI
 {
@@ -69,7 +70,7 @@ namespace GymManagementSystem.FORMS.Member.UI
         public string ConditionStatus { get; set; }
 
         //METHODS
-        public string RegisterNewMemberUI()
+        public ValidationResult RegisterNewMemberUI()
         {
             MemberAllDetailsBLL memberBLL = new MemberAllDetailsBLL();
 
@@ -90,7 +91,6 @@ namespace GymManagementSystem.FORMS.Member.UI
 
             // Payment
             memberBLL.PaymentMethod = this.PaymentMethod;
-            memberBLL.FeesType = this.FeesType;
 
             // Shift
             memberBLL.ShiftId = this.ShiftId;

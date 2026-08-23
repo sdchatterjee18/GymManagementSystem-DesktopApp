@@ -427,6 +427,22 @@ namespace GymManagementSystem.FORMS.Member
             LoadMemberDetails();
         }
 
+        private void tlpChangeDietPlan_Click(object sender, EventArgs e)
+        {
+            if (memberAllDetailsUI.IsActive == "InActive")
+            {
+                MessageBox.Show(MemberIsActive, InfoMessage, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            else
+            {
+                FrmChangeDietPlan frmChangeDietPlan = new FrmChangeDietPlan(memberAllDetailsUI);
+                frmChangeDietPlan.ShowDialog();
+            }
+            MemberAllDetailsUI member = memberAllDetailsUI.GetMemberDetailsByMemberId(memberAllDetailsUI.MemberId);
+            this.memberAllDetailsUI = member;
+            LoadMemberDetails();
+        }
+
         
 
     }

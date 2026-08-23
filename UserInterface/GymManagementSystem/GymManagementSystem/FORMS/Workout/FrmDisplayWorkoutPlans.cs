@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Workout.UI;
+using GymManagementSystem.Common;
 
 
 namespace GymManagementSystem.FORMS.Workout
@@ -18,6 +19,8 @@ namespace GymManagementSystem.FORMS.Workout
         public FrmDisplayWorkoutPlans()
         {
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvExerciseTable);
+            LookupUI.EnableDoubleBuffering(dgvWorkoutPlans);
         }
 
         private void FrmDisplayWorkoutPlans_Load(object sender, EventArgs e)

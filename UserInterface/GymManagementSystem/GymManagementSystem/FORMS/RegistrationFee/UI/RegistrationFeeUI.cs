@@ -30,11 +30,11 @@ namespace GymManagementSystem.FORMS.RegistrationFee.UI
             return registrationBLL.InsertRegistrationFeesBLL();
         }
 
-        public string ValidateRegistrationFeeUI(string FeeAmount)
-        {
-            RegistrationBLL registrationBLL = new RegistrationBLL();
-            return registrationBLL.ValidateRegistrationFeesBLL(FeeAmount);
-        }
+        //public string ValidateRegistrationFeeUI(decimal FeeAmount)
+        //{
+        //    RegistrationBLL registrationBLL = new RegistrationBLL();
+        //    return registrationBLL.ValidateRegistrationFeesBLL(FeeAmount);
+        //}
 
 
     }

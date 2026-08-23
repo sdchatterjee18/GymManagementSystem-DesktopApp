@@ -250,7 +250,7 @@
             this.tlpPersonalTrainerChangeButtomPortion.Controls.Add(this.tlpAssignTrainerButtonSection, 1, 0);
             this.tlpPersonalTrainerChangeButtomPortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPersonalTrainerChangeButtomPortion.Location = new System.Drawing.Point(2, 535);
-            this.tlpPersonalTrainerChangeButtomPortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPersonalTrainerChangeButtomPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPersonalTrainerChangeButtomPortion.Name = "tlpPersonalTrainerChangeButtomPortion";
             this.tlpPersonalTrainerChangeButtomPortion.RowCount = 1;
             this.tlpPersonalTrainerChangeButtomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -264,7 +264,7 @@
             this.tlpCancleButtomPortion.Controls.Add(this.pnlCancleButtom, 0, 1);
             this.tlpCancleButtomPortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleButtomPortion.Location = new System.Drawing.Point(435, 2);
-            this.tlpCancleButtomPortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleButtomPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleButtomPortion.Name = "tlpCancleButtomPortion";
             this.tlpCancleButtomPortion.RowCount = 3;
             this.tlpCancleButtomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -278,7 +278,7 @@
             this.pnlCancleButtom.Controls.Add(this.tlpCancleSection);
             this.pnlCancleButtom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCancleButtom.Location = new System.Drawing.Point(2, 15);
-            this.pnlCancleButtom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCancleButtom.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCancleButtom.Name = "pnlCancleButtom";
             this.pnlCancleButtom.Size = new System.Drawing.Size(158, 36);
             this.pnlCancleButtom.TabIndex = 16;
@@ -294,7 +294,7 @@
             this.tlpCancleSection.Controls.Add(this.lblCancle, 1, 0);
             this.tlpCancleSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleSection.Location = new System.Drawing.Point(0, 0);
-            this.tlpCancleSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleSection.Name = "tlpCancleSection";
             this.tlpCancleSection.RowCount = 1;
             this.tlpCancleSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -310,7 +310,7 @@
             this.picCancle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCancle.Image = ((System.Drawing.Image)(resources.GetObject("picCancle.Image")));
             this.picCancle.Location = new System.Drawing.Point(2, 2);
-            this.picCancle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCancle.Margin = new System.Windows.Forms.Padding(2);
             this.picCancle.Name = "picCancle";
             this.picCancle.Size = new System.Drawing.Size(48, 32);
             this.picCancle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -343,7 +343,7 @@
             this.tlpAssignTrainerButtonSection.Controls.Add(this.pnlRegisterButton, 0, 1);
             this.tlpAssignTrainerButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAssignTrainerButtonSection.Location = new System.Drawing.Point(261, 2);
-            this.tlpAssignTrainerButtonSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAssignTrainerButtonSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAssignTrainerButtonSection.Name = "tlpAssignTrainerButtonSection";
             this.tlpAssignTrainerButtonSection.RowCount = 3;
             this.tlpAssignTrainerButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -357,7 +357,7 @@
             this.pnlRegisterButton.Controls.Add(this.tlpAssignButton);
             this.pnlRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRegisterButton.Location = new System.Drawing.Point(2, 15);
-            this.pnlRegisterButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRegisterButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRegisterButton.Name = "pnlRegisterButton";
             this.pnlRegisterButton.Size = new System.Drawing.Size(158, 36);
             this.pnlRegisterButton.TabIndex = 0;
@@ -373,7 +373,7 @@
             this.tlpAssignButton.Controls.Add(this.lblAssignTraner, 1, 0);
             this.tlpAssignButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAssignButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpAssignButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAssignButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpAssignButton.Name = "tlpAssignButton";
             this.tlpAssignButton.RowCount = 1;
             this.tlpAssignButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -389,7 +389,7 @@
             this.picAssignTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAssignTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picAssignTrainer.Image")));
             this.picAssignTrainer.Location = new System.Drawing.Point(2, 2);
-            this.picAssignTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAssignTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.picAssignTrainer.Name = "picAssignTrainer";
             this.picAssignTrainer.Size = new System.Drawing.Size(48, 32);
             this.picAssignTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -502,7 +502,7 @@
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Controls.Add(this.tlpSelectTrainerNamePortion, 0, 1);
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Location = new System.Drawing.Point(2, 4);
-            this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.Name = "tlpMemberAndTrainerInformationInChangePersonalTrainerPortion";
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.RowCount = 3;
             this.tlpMemberAndTrainerInformationInChangePersonalTrainerPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
@@ -574,7 +574,7 @@
             this.tlpTrainerInformationBar.Controls.Add(this.pnlTrainerInformationBar, 0, 1);
             this.tlpTrainerInformationBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTrainerInformationBar.Location = new System.Drawing.Point(224, 2);
-            this.tlpTrainerInformationBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTrainerInformationBar.Margin = new System.Windows.Forms.Padding(2);
             this.tlpTrainerInformationBar.Name = "tlpTrainerInformationBar";
             this.tlpTrainerInformationBar.RowCount = 3;
             this.tlpTrainerInformationBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -588,7 +588,7 @@
             this.pnlTrainerInformationBar.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlTrainerInformationBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrainerInformationBar.Location = new System.Drawing.Point(2, 17);
-            this.pnlTrainerInformationBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTrainerInformationBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTrainerInformationBar.Name = "pnlTrainerInformationBar";
             this.pnlTrainerInformationBar.Size = new System.Drawing.Size(508, 1);
             this.pnlTrainerInformationBar.TabIndex = 0;
@@ -753,7 +753,7 @@
             this.picRetrieveTrainerNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picRetrieveTrainerNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveTrainerNameIcon.Image")));
             this.picRetrieveTrainerNameIcon.Location = new System.Drawing.Point(2, 2);
-            this.picRetrieveTrainerNameIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetrieveTrainerNameIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picRetrieveTrainerNameIcon.Name = "picRetrieveTrainerNameIcon";
             this.picRetrieveTrainerNameIcon.Size = new System.Drawing.Size(33, 32);
             this.picRetrieveTrainerNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -857,7 +857,7 @@
             this.picTrainerIDIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerIDIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerIDIcon.Image")));
             this.picTrainerIDIcon.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerIDIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerIDIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picTrainerIDIcon.Name = "picTrainerIDIcon";
             this.picTrainerIDIcon.Size = new System.Drawing.Size(33, 32);
             this.picTrainerIDIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1021,7 +1021,7 @@
             this.picTrainerExperienceIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerExperienceIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerExperienceIcon.Image")));
             this.picTrainerExperienceIcon.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerExperienceIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerExperienceIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picTrainerExperienceIcon.Name = "picTrainerExperienceIcon";
             this.picTrainerExperienceIcon.Size = new System.Drawing.Size(33, 32);
             this.picTrainerExperienceIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1124,7 +1124,7 @@
             this.picTrainerSpecializationPortion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerSpecializationPortion.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerSpecializationPortion.Image")));
             this.picTrainerSpecializationPortion.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerSpecializationPortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerSpecializationPortion.Margin = new System.Windows.Forms.Padding(2);
             this.picTrainerSpecializationPortion.Name = "picTrainerSpecializationPortion";
             this.picTrainerSpecializationPortion.Size = new System.Drawing.Size(33, 32);
             this.picTrainerSpecializationPortion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1202,7 +1202,7 @@
             this.tlpMemberInformationBar.Controls.Add(this.pnlMemebrInformationBar, 0, 1);
             this.tlpMemberInformationBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberInformationBar.Location = new System.Drawing.Point(224, 2);
-            this.tlpMemberInformationBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberInformationBar.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMemberInformationBar.Name = "tlpMemberInformationBar";
             this.tlpMemberInformationBar.RowCount = 3;
             this.tlpMemberInformationBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1216,7 +1216,7 @@
             this.pnlMemebrInformationBar.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlMemebrInformationBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMemebrInformationBar.Location = new System.Drawing.Point(2, 17);
-            this.pnlMemebrInformationBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMemebrInformationBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMemebrInformationBar.Name = "pnlMemebrInformationBar";
             this.pnlMemebrInformationBar.Size = new System.Drawing.Size(508, 1);
             this.pnlMemebrInformationBar.TabIndex = 0;
@@ -1380,7 +1380,7 @@
             // 
             this.picRetrieveMemberNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberNameIcon.Image")));
             this.picRetrieveMemberNameIcon.Location = new System.Drawing.Point(2, 2);
-            this.picRetrieveMemberNameIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetrieveMemberNameIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picRetrieveMemberNameIcon.Name = "picRetrieveMemberNameIcon";
             this.picRetrieveMemberNameIcon.Size = new System.Drawing.Size(33, 32);
             this.picRetrieveMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1483,7 +1483,7 @@
             // 
             this.picRetrieveMemberIDIcon.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberIDIcon.Image")));
             this.picRetrieveMemberIDIcon.Location = new System.Drawing.Point(2, 2);
-            this.picRetrieveMemberIDIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetrieveMemberIDIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picRetrieveMemberIDIcon.Name = "picRetrieveMemberIDIcon";
             this.picRetrieveMemberIDIcon.Size = new System.Drawing.Size(33, 32);
             this.picRetrieveMemberIDIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1632,7 +1632,7 @@
             // 
             this.picMemberCurrentShiftIcon.Image = ((System.Drawing.Image)(resources.GetObject("picMemberCurrentShiftIcon.Image")));
             this.picMemberCurrentShiftIcon.Location = new System.Drawing.Point(2, 2);
-            this.picMemberCurrentShiftIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMemberCurrentShiftIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picMemberCurrentShiftIcon.Name = "picMemberCurrentShiftIcon";
             this.picMemberCurrentShiftIcon.Size = new System.Drawing.Size(33, 32);
             this.picMemberCurrentShiftIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1764,7 +1764,7 @@
             this.picMembershipStatusActiveIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picMembershipStatusActiveIcon.Image = ((System.Drawing.Image)(resources.GetObject("picMembershipStatusActiveIcon.Image")));
             this.picMembershipStatusActiveIcon.Location = new System.Drawing.Point(250, 2);
-            this.picMembershipStatusActiveIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMembershipStatusActiveIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picMembershipStatusActiveIcon.Name = "picMembershipStatusActiveIcon";
             this.picMembershipStatusActiveIcon.Size = new System.Drawing.Size(50, 48);
             this.picMembershipStatusActiveIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1780,7 +1780,7 @@
             this.tlpMembershipStatusTitleAndRetrievePortion.Controls.Add(this.lblMemberMembershipStatusTitle, 0, 0);
             this.tlpMembershipStatusTitleAndRetrievePortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMembershipStatusTitleAndRetrievePortion.Location = new System.Drawing.Point(54, 2);
-            this.tlpMembershipStatusTitleAndRetrievePortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMembershipStatusTitleAndRetrievePortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMembershipStatusTitleAndRetrievePortion.Name = "tlpMembershipStatusTitleAndRetrievePortion";
             this.tlpMembershipStatusTitleAndRetrievePortion.RowCount = 2;
             this.tlpMembershipStatusTitleAndRetrievePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1850,7 +1850,7 @@
             this.picSelectTrainerNameIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picSelectTrainerNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picSelectTrainerNameIcon.Image")));
             this.picSelectTrainerNameIcon.Location = new System.Drawing.Point(17, 2);
-            this.picSelectTrainerNameIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picSelectTrainerNameIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picSelectTrainerNameIcon.Name = "picSelectTrainerNameIcon";
             this.picSelectTrainerNameIcon.Size = new System.Drawing.Size(34, 42);
             this.picSelectTrainerNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1864,12 +1864,13 @@
             this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectTrainer.FormattingEnabled = true;
             this.cmbSelectTrainer.Location = new System.Drawing.Point(179, 8);
-            this.cmbSelectTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSelectTrainer.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSelectTrainer.Name = "cmbSelectTrainer";
             this.cmbSelectTrainer.Size = new System.Drawing.Size(190, 29);
             this.cmbSelectTrainer.TabIndex = 2;
             this.cmbSelectTrainer.Text = "   ---Select Trainer ---";
             this.cmbSelectTrainer.SelectedIndexChanged += new System.EventHandler(this.cmbSelectTrainer_SelectedIndexChanged);
+            this.cmbSelectTrainer.SelectionChangeCommitted += new System.EventHandler(this.cmbSelectTrainer_SelectionChangeCommitted);
             // 
             // lblSelectTrainerName
             // 
@@ -1907,7 +1908,7 @@
             this.picChangePersonalTrainerIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picChangePersonalTrainerIcon.Image = ((System.Drawing.Image)(resources.GetObject("picChangePersonalTrainerIcon.Image")));
             this.picChangePersonalTrainerIcon.Location = new System.Drawing.Point(42, 2);
-            this.picChangePersonalTrainerIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picChangePersonalTrainerIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picChangePersonalTrainerIcon.Name = "picChangePersonalTrainerIcon";
             this.picChangePersonalTrainerIcon.Size = new System.Drawing.Size(56, 56);
             this.picChangePersonalTrainerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

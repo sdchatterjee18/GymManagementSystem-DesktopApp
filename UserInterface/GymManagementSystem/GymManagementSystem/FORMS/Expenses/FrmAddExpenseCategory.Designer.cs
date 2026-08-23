@@ -45,12 +45,13 @@
             this.lblNewDietPlanHeader = new System.Windows.Forms.Label();
             this.picNewDietPlan = new System.Windows.Forms.PictureBox();
             this.tlpSubmitClear = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpClear = new System.Windows.Forms.TableLayoutPanel();
-            this.lblClear = new System.Windows.Forms.Label();
             this.pnlSubmit = new System.Windows.Forms.Panel();
             this.tlpSubmit = new System.Windows.Forms.TableLayoutPanel();
             this.lblSubmit = new System.Windows.Forms.Label();
             this.picSubmit = new System.Windows.Forms.PictureBox();
+            this.pnlClear = new System.Windows.Forms.Panel();
+            this.tlpClear = new System.Windows.Forms.TableLayoutPanel();
+            this.lblClear = new System.Windows.Forms.Label();
             this.tlpInputCategory = new System.Windows.Forms.TableLayoutPanel();
             this.txtInputCategory = new System.Windows.Forms.TextBox();
             this.tlpAddExpenseCategory.SuspendLayout();
@@ -64,10 +65,11 @@
             this.tlpTitleAndSubTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNewDietPlan)).BeginInit();
             this.tlpSubmitClear.SuspendLayout();
-            this.tlpClear.SuspendLayout();
             this.pnlSubmit.SuspendLayout();
             this.tlpSubmit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).BeginInit();
+            this.pnlClear.SuspendLayout();
+            this.tlpClear.SuspendLayout();
             this.tlpInputCategory.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.tlpAddExpenseCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAddExpenseCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpAddExpenseCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpAddExpenseCategory.ColumnCount = 1;
             this.tlpAddExpenseCategory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddExpenseCategory.Controls.Add(this.pnlRequiredCaloriesPerDaySection, 0, 1);
@@ -325,8 +327,8 @@
             this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.626016F));
             this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.88372F));
             this.tlpSubmitClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.03876F));
-            this.tlpSubmitClear.Controls.Add(this.tlpClear, 2, 0);
             this.tlpSubmitClear.Controls.Add(this.pnlSubmit, 4, 0);
+            this.tlpSubmitClear.Controls.Add(this.pnlClear, 2, 0);
             this.tlpSubmitClear.Location = new System.Drawing.Point(2, 271);
             this.tlpSubmitClear.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSubmitClear.Name = "tlpSubmitClear";
@@ -334,37 +336,6 @@
             this.tlpSubmitClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSubmitClear.Size = new System.Drawing.Size(280, 38);
             this.tlpSubmitClear.TabIndex = 8;
-            // 
-            // tlpClear
-            // 
-            this.tlpClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tlpClear.ColumnCount = 1;
-            this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpClear.Controls.Add(this.lblClear, 0, 0);
-            this.tlpClear.Location = new System.Drawing.Point(112, 7);
-            this.tlpClear.Margin = new System.Windows.Forms.Padding(2);
-            this.tlpClear.Name = "tlpClear";
-            this.tlpClear.RowCount = 1;
-            this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpClear.Size = new System.Drawing.Size(59, 24);
-            this.tlpClear.TabIndex = 1;
-            // 
-            // lblClear
-            // 
-            this.lblClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblClear.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lblClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClear.ForeColor = System.Drawing.Color.White;
-            this.lblClear.Location = new System.Drawing.Point(2, 0);
-            this.lblClear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblClear.Name = "lblClear";
-            this.lblClear.Size = new System.Drawing.Size(55, 24);
-            this.lblClear.TabIndex = 0;
-            this.lblClear.Text = "Clear";
-            this.lblClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblClear.Click += new System.EventHandler(this.lblClear_Click);
             // 
             // pnlSubmit
             // 
@@ -431,6 +402,57 @@
             this.picSubmit.MouseEnter += new System.EventHandler(this.tlpSubmit_MouseEnter_1);
             this.picSubmit.MouseLeave += new System.EventHandler(this.tlpSubmit_MouseLeave_1);
             // 
+            // pnlClear
+            // 
+            this.pnlClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlClear.Controls.Add(this.tlpClear);
+            this.pnlClear.Location = new System.Drawing.Point(118, 7);
+            this.pnlClear.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlClear.Name = "pnlClear";
+            this.pnlClear.Size = new System.Drawing.Size(55, 24);
+            this.pnlClear.TabIndex = 3;
+            this.pnlClear.Click += new System.EventHandler(this.pnlClear_Click);
+            this.pnlClear.MouseEnter += new System.EventHandler(this.pnlClear_MouseEnter);
+            this.pnlClear.MouseLeave += new System.EventHandler(this.pnlClear_MouseLeave);
+            // 
+            // tlpClear
+            // 
+            this.tlpClear.BackColor = System.Drawing.Color.MidnightBlue;
+            this.tlpClear.ColumnCount = 1;
+            this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpClear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpClear.Controls.Add(this.lblClear, 0, 0);
+            this.tlpClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpClear.Location = new System.Drawing.Point(0, 0);
+            this.tlpClear.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpClear.Name = "tlpClear";
+            this.tlpClear.RowCount = 1;
+            this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpClear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tlpClear.Size = new System.Drawing.Size(53, 22);
+            this.tlpClear.TabIndex = 10;
+            this.tlpClear.Click += new System.EventHandler(this.pnlClear_Click);
+            this.tlpClear.MouseEnter += new System.EventHandler(this.pnlClear_MouseEnter);
+            this.tlpClear.MouseLeave += new System.EventHandler(this.pnlClear_MouseLeave);
+            // 
+            // lblClear
+            // 
+            this.lblClear.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblClear.BackColor = System.Drawing.Color.Transparent;
+            this.lblClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClear.ForeColor = System.Drawing.Color.White;
+            this.lblClear.Location = new System.Drawing.Point(2, 0);
+            this.lblClear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblClear.Name = "lblClear";
+            this.lblClear.Size = new System.Drawing.Size(49, 22);
+            this.lblClear.TabIndex = 0;
+            this.lblClear.Text = "Clear";
+            this.lblClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClear.Click += new System.EventHandler(this.pnlClear_Click);
+            this.lblClear.MouseEnter += new System.EventHandler(this.pnlClear_MouseEnter);
+            this.lblClear.MouseLeave += new System.EventHandler(this.pnlClear_MouseLeave);
+            // 
             // tlpInputCategory
             // 
             this.tlpInputCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -466,6 +488,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(284, 311);
             this.Controls.Add(this.tlpAddExpenseCategory);
             this.MaximizeBox = false;
@@ -490,10 +513,11 @@
             this.tlpTitleAndSubTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picNewDietPlan)).EndInit();
             this.tlpSubmitClear.ResumeLayout(false);
-            this.tlpClear.ResumeLayout(false);
             this.pnlSubmit.ResumeLayout(false);
             this.tlpSubmit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).EndInit();
+            this.pnlClear.ResumeLayout(false);
+            this.tlpClear.ResumeLayout(false);
             this.tlpInputCategory.ResumeLayout(false);
             this.tlpInputCategory.PerformLayout();
             this.ResumeLayout(false);
@@ -520,11 +544,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpInputCategory;
         private System.Windows.Forms.TextBox txtInputCategory;
         private System.Windows.Forms.TableLayoutPanel tlpSubmitClear;
-        private System.Windows.Forms.TableLayoutPanel tlpClear;
-        private System.Windows.Forms.Label lblClear;
         private System.Windows.Forms.Panel pnlSubmit;
         private System.Windows.Forms.TableLayoutPanel tlpSubmit;
         private System.Windows.Forms.Label lblSubmit;
         private System.Windows.Forms.PictureBox picSubmit;
+        private System.Windows.Forms.Panel pnlClear;
+        private System.Windows.Forms.TableLayoutPanel tlpClear;
+        private System.Windows.Forms.Label lblClear;
     }
 }

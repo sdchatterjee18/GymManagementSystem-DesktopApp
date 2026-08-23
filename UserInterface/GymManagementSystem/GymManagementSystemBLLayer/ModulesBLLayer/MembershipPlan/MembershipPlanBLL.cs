@@ -25,7 +25,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
         {
             ValidationBll.CommonValidationMessage result;
 
-            result = ValidationBll.ValidatePrice(this.Price.ToString());
+            result = ValidationBll.ValidatePrice(this.Price);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
@@ -33,7 +33,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
             }
 
 
-            result = ValidationBll.ValidateDescription(this.Description);
+            //result = ValidationBll.ValidateDescription(this.Description);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
@@ -49,41 +49,66 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan
                 this.Description);
         }
         // Inserts a new membership plan after receiving
-        public string InsertMembershipPlanBLL()
-        {
-            MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();
-
-            membershipPlanDAL.MembershipPlanName = this.MembershipPlanName;
-            membershipPlanDAL.PlanTypeId = this.PlanTypeId;
-            membershipPlanDAL.DurationInDays = this.DurationInDays;
-            membershipPlanDAL.Price = this.Price;
-            membershipPlanDAL.Description = this.Description;
-
-            return membershipPlanDAL.InsertMembershipPlanDAL();
-        }
-        // Validates the membership plan name, duration,
-        public string ValidateMembershipPlanBLL(string membershipPlanName, string duration, string price, string description)
+        public ValidationResult InsertMembershipPlanBLL()
         {
             ValidationBll.CommonValidationMessage result;
 
-            result = ValidationBll.ValidateName(membershipPlanName);
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-                return ValidationBll.GetValidationMessage(result);
+            // Plan Name
+            result = ValidationBll.ValidateName(this.MembershipPlanName);
 
-            result = ValidationBll.ValidateDuration(duration);
             if (result != ValidationBll.CommonValidationMessage.Valid)
-                return ValidationBll.GetValidationMessage(result);
+            {
+                return new ValidationResult
+                {
+                    FieldName = "PlanName",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
 
-            result = ValidationBll.ValidatePrice(price);
+            // Duration
+            result = ValidationBll.ValidateDuration(this.DurationInDays);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
-                return ValidationBll.GetValidationMessage(result);
+            {
+                return new ValidationResult
+                {
+                    FieldName = "Duration",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
 
-            result = ValidationBll.ValidateDescription(description);
+            // Amount
+            result = ValidationBll.ValidatePrice(this.Price);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
-                return ValidationBll.GetValidationMessage(result);
+            {
+                return new ValidationResult
+                {
+                    FieldName = "Amount",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
+            MembershipPlanDAL membershipPlanDAL =new MembershipPlanDAL();
+            // PASS BLL PROPERTIES TO DAL
+            membershipPlanDAL.MembershipPlanName =this.MembershipPlanName;
+            membershipPlanDAL.DurationInDays =this.DurationInDays;
+            membershipPlanDAL.PlanTypeId = this.PlanTypeId;
+            membershipPlanDAL.Price =this.Price;
+            membershipPlanDAL.Description =this.Description;
 
-            return string.Empty;
-        }        // Deactivates an existing membership plan
+            // CALL DAL INSERT METHOD
+            string message =membershipPlanDAL.InsertMembershipPlanDAL();
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
+        }
+         // Deactivates an existing membership plan
         public string DeactivateMembershipPlanByMembershipPlanIdBLL()
         {
             MembershipPlanDAL membershipPlanDAL = new MembershipPlanDAL();

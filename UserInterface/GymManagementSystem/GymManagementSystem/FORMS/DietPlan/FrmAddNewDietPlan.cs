@@ -162,12 +162,12 @@ namespace GymManagementSystem.FORMS.DietPlan
             // Common UI Validation
             // ==============================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtRequiredCalories,
-                txtPlanCondition))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtRequiredCalories,
+            //    txtPlanCondition))
+            //{
+            //    return;
+            //}
 
 
             // ==============================
@@ -188,27 +188,27 @@ namespace GymManagementSystem.FORMS.DietPlan
                     new DietPlanUI();
 
 
-                string result =
-                    dietPlanUI.InsertDietPlanUI(
-                        requiredCalories,
-                        dietPlanDocument,
-                        planCondition);
+                //string result =
+                //    dietPlanUI.InsertDietPlanUI(
+                //        requiredCalories,
+                //        dietPlanDocument,
+                //        planCondition);
 
 
-                MessageBox.Show(
-                    result,
-                    "Diet Plan",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                // ==============================
-                // Successful Insert
-                // ==============================
+                //MessageBox.Show(
+                //    result,
+                //    "Diet Plan",
+                //    MessageBoxButtons.OK,
+                //    MessageBoxIcon.Information);
+                //// ==============================
+                //// Successful Insert
+                //// ==============================
 
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                //if (!string.IsNullOrWhiteSpace(result))
+                //{
+                //    this.DialogResult = DialogResult.OK;
+                //    this.Close();
+                //}
             }
             catch (Exception ex)
             {

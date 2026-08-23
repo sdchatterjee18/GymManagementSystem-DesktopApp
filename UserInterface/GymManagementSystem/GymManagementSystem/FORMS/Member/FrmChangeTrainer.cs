@@ -68,52 +68,52 @@ namespace GymManagementSystem.FORMS.Member
             }
         }
 
-        private void ChangeTrainerOfMemberByNewTrainerId()
-        {
-            ComboBox[] combobox = new ComboBox[]
-                {
-                    cmbSelectTrainer
-                };
+        //private void ChangeTrainerOfMemberByNewTrainerId()
+        //{
+        //    ComboBox[] combobox = new ComboBox[]
+        //        {
+        //            cmbSelectTrainer
+        //        };
 
-            if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
-            {
-                return;
-            }
-            else
-            {
+        //    if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
+        //    {
+        //        return;
+        //    }
+        //    else
+        //    {
 
-                DialogResult result = MessageBox.Show
-                    (
-                     ChangeConfirmationMessage,
-                     "Confirmation",
-                     MessageBoxButtons.YesNo,
-                     MessageBoxIcon.Question
-                    );
+        //        DialogResult result = MessageBox.Show
+        //            (
+        //             ChangeConfirmationMessage,
+        //             "Confirmation",
+        //             MessageBoxButtons.YesNo,
+        //             MessageBoxIcon.Question
+        //            );
 
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-                int MemberId = memberAllDetailsUI.MemberId;
-                int NewTrainerId = Convert.ToInt32(cmbSelectTrainer.SelectedValue);
-                string ChangeTrainer = null;
-                try
-                {
-                    MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
-                    ChangeTrainer = MemberAllDetailsUI.ChangeTrainerOfMemberByNewTrainerIdUI(MemberId, NewTrainerId);
-                    DialogResult Result = MessageBox.Show(ChangeTrainer, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (Result == DialogResult.OK)
-                    {
-                        this.Dispose();
-                    }
+        //        if (result != DialogResult.Yes)
+        //        {
+        //            return;
+        //        }
+        //        int MemberId = memberAllDetailsUI.MemberId;
+        //        int NewTrainerId = Convert.ToInt32(cmbSelectTrainer.SelectedValue);
+        //        string ChangeTrainer = null;
+        //        try
+        //        {
+        //            MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
+        //            ChangeTrainer = MemberAllDetailsUI.ChangeTrainerOfMemberByNewTrainerIdUI(MemberId, NewTrainerId);
+        //            DialogResult Result = MessageBox.Show(ChangeTrainer, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            if (Result == DialogResult.OK)
+        //            {
+        //                this.Dispose();
+        //            }
 
-                }
-                catch (Exception ex)
-                {
-                    ChangeTrainer = null;
-                }
-            }
-        }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            ChangeTrainer = null;
+        //        }
+        //    }
+        //}
 
         private void tlpRegisterButton_MouseEnter(object sender, EventArgs e)
         {
@@ -155,11 +155,42 @@ namespace GymManagementSystem.FORMS.Member
 
                 return;
             }
+               // ChangeTrainerOfMemberByNewTrainerId();  
             
-                ChangeTrainerOfMemberByNewTrainerId();
+        }
+        private void RetrieveTrainerDetails(int TrainerId)
+        {
+            DataTable TrainerTable = null;
+            try
+            {
+                MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
 
-               
-            
+                TrainerTable = MemberAllDetailsUI.RetrieveTrainerDetailsUI(TrainerId);
+                if (TrainerTable.Rows.Count > 0)
+                {
+                    DataRow row = TrainerTable.Rows[0];
+
+                    lblRetrieveMemberIDInChangePersonalTrainer.Text =
+                        row["TrainerId"].ToString();
+
+                    lblRetrieveTrainerNameInChangePersonalTrainer.Text =
+                        row["TrainerName"].ToString();
+
+                    lblRetrieveTrainerSpecializationInChangePersonalTrainer.Text =
+                        row["Specialization"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                TrainerTable = null;
+            }
+        }
+
+        private void cmbSelectTrainer_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+                int trainerId = Convert.ToInt32(cmbSelectTrainer.SelectedValue);
+                RetrieveTrainerDetails(trainerId);
         }
 
         private void cmbSelectTrainer_SelectedIndexChanged(object sender, EventArgs e)

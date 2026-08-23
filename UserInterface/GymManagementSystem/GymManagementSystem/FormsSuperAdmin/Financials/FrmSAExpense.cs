@@ -183,18 +183,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
         {
             try
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtYearExpencesHistory))
-                {
-                    return;
-                }
-
-                if (!ValidationUI.ValidateRequiredComboBoxes(
-                    cmbMonthExpencesHistory))
-                {
-                    return;
-                }
-
                 int year;
 
                 if (!int.TryParse(
@@ -362,17 +350,17 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
         {
             try
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtYearExpencesHistory))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredTextBoxes(
+                //    txtYearExpencesHistory))
+                //{
+                //    return;
+                //}
 
-                if (!ValidationUI.ValidateRequiredComboBoxes(
-                    cmbMonthExpencesHistory))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredComboBoxes(
+                //    cmbMonthExpencesHistory))
+                //{
+                //    return;
+                //}
 
                 int year;
 

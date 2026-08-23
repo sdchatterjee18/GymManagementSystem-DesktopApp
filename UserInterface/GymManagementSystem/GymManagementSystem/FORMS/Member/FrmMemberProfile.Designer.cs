@@ -1523,6 +1523,7 @@
             this.pnlChangeDietPlanButton.Name = "pnlChangeDietPlanButton";
             this.pnlChangeDietPlanButton.Size = new System.Drawing.Size(144, 28);
             this.pnlChangeDietPlanButton.TabIndex = 0;
+            this.pnlChangeDietPlanButton.Click += new System.EventHandler(this.tlpChangeDietPlan_Click);
             // 
             // tlpChangeDietPlan
             // 
@@ -1540,6 +1541,7 @@
             this.tlpChangeDietPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpChangeDietPlan.Size = new System.Drawing.Size(142, 26);
             this.tlpChangeDietPlan.TabIndex = 1;
+            this.tlpChangeDietPlan.Click += new System.EventHandler(this.tlpChangeDietPlan_Click);
             this.tlpChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
             this.tlpChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 
@@ -1554,6 +1556,7 @@
             this.picChangeDietPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picChangeDietPlan.TabIndex = 0;
             this.picChangeDietPlan.TabStop = false;
+            this.picChangeDietPlan.Click += new System.EventHandler(this.tlpChangeDietPlan_Click);
             this.picChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
             this.picChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 
@@ -1569,6 +1572,7 @@
             this.lblChangeDietPlan.Size = new System.Drawing.Size(97, 13);
             this.lblChangeDietPlan.TabIndex = 1;
             this.lblChangeDietPlan.Text = "Change Diet Plan";
+            this.lblChangeDietPlan.Click += new System.EventHandler(this.tlpChangeDietPlan_Click);
             this.lblChangeDietPlan.MouseEnter += new System.EventHandler(this.tlpChangeDietPlan_MouseEnter);
             this.lblChangeDietPlan.MouseLeave += new System.EventHandler(this.tlpChangeDietPlan_MouseLeave);
             // 

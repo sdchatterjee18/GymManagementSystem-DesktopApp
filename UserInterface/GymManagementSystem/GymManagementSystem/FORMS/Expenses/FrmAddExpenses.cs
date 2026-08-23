@@ -93,7 +93,7 @@ namespace GymManagementSystem.FORMS.Expenses
             try
             {
                 ExpensesUI ExpenseUI = new ExpensesUI();
-                InsertionMessage = ExpenseUI.InsertExpenseUI(Convert.ToInt32(cmbCateogory.SelectedValue), txtAmount.Text,txtExpenseDefination.Text);
+                //InsertionMessage = ExpenseUI.InsertExpenseUI(Convert.ToInt32(cmbCateogory.SelectedValue), txtAmount.Text,txtExpenseDefination.Text);
                 DialogResult Result = MessageBox.Show(InsertionMessage, "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 
             }
@@ -202,14 +202,14 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             ValidationUI.ClearDefaultPlaceholderText(txtExpenseDefination, clickCountTxtNote);
             ValidationUI.ClearDefaultPlaceholderText(txtAmount, clickCountTxtAmount);
-            if (!ValidationUI.ValidateRequiredComboBoxes(cmbCateogory))
-            {
-                return;
-            }
-            if (!ValidationUI.ValidateRequiredTextBoxes(txtAmount, txtExpenseDefination))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredComboBoxes(cmbCateogory))
+            //{
+            //    return;
+            //}
+            //if (!ValidationUI.ValidateRequiredTextBoxes(txtAmount, txtExpenseDefination))
+            //{
+            //    return;
+            //}
             InsertExpense();
             RetrieveAllExpense();
 

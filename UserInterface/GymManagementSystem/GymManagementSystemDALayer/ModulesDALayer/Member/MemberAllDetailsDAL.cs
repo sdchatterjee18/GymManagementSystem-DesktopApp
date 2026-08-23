@@ -70,7 +70,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
         public string ConditionStatus { get; set; }
 
         
-        public string InsertMembershipPlanDAL()
+        public string InsertNewMemberDAL()
         {
             SqlParameter[] parameters =
             {
@@ -89,7 +89,6 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Member
                new SqlParameter("@MembershipPlanId", this.MembershipPlanId),
                // Payment
                new SqlParameter("@PaymentMethod", this.PaymentMethod),
-               new SqlParameter("@FeesType", this.FeesType),
                // Shift
                new SqlParameter("@ShiftId", this.ShiftId),
                // Diet

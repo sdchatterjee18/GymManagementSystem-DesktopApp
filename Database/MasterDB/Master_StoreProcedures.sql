@@ -3377,7 +3377,7 @@ CREATE PROC spRegisterNewMember
 
 	-- Payment
     @PaymentMethod VARCHAR(50),
-    @FeesType VARCHAR(50),
+    @FeesType VARCHAR(50)=null,
 
     -- Shift
     @ShiftId INT,
@@ -3420,11 +3420,6 @@ BEGIN TRY
 	IF LTRIM(RTRIM(@PaymentMethod))=''
 	BEGIN
 		SELECT 'Payment Method Required.' AS Message;
-		RETURN;
-	END
-	IF LTRIM(RTRIM(@FeesType)) = ''
-	BEGIN
-		SELECT 'Fees Type Required.' AS Message;
 		RETURN;
 	END
     IF NOT EXISTS
@@ -3653,7 +3648,7 @@ BEGIN TRY
 		@MembershipPlanId,
 		@PaymentMethod,
 		@TotalAmount,
-		@FeesType
+        'New Registration'
 	);
     INSERT INTO tblMemberDietAssignment
     (
@@ -3730,7 +3725,6 @@ END CATCH
 
 END
 GO
-
 -----------------------------------------
 --SP: spRetrieveShiftWiseMemberNumbers--
 -----------------------------------------
@@ -3765,6 +3759,57 @@ BEGIN
 
     END CATCH
 END
+GO
+
+-----------------------------------------
+--SP: spSearchMemberByPhoneAndName--
+-----------------------------------------
+CREATE PROC spSearchMemberByPhoneAndName
+(
+    @Search VARCHAR(100)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @Search = LTRIM(RTRIM(@Search));
+
+        SELECT
+            M.MemberId,
+
+            M.FirstName + ' ' +
+            ISNULL(M.MiddleName + ' ', '') +
+            M.LastName AS MemberName,
+
+            M.PhoneNo,
+            M.EmailId,
+
+            M.IsActive AS MemberIsActive
+
+        FROM tblMember M
+
+        WHERE
+        (
+            M.FirstName LIKE @Search + '%'
+            OR M.MiddleName LIKE @Search + '%'
+            OR M.LastName LIKE @Search + '%'
+            OR M.PhoneNo LIKE @Search + '%'
+        )
+
+        ORDER BY
+            M.IsActive DESC,
+            M.JoiningDate DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
 GO
 -----------------------------------------
 --SP: spRetrieveCurrentMonthNewMembers--
@@ -4331,28 +4376,39 @@ GO
 ---------------------------------
   --SP: spRetrieveActiveMembers--
 ---------------------------------
-CREATE PROC spRetrieveAllMemberDetails
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    BEGIN TRY
-
-        SELECT
-            M.MemberId,
-            M.FirstName + ' ' +
-            ISNULL(M.MiddleName + ' ', '') +
-            M.LastName AS MemberName,
+CREATE PROC spRetrieveAllMemberDetails 
+AS 
+BEGIN 
+    SET NOCOUNT ON; 
+ 
+    BEGIN TRY 
+ 
+        SELECT 
+            M.MemberId, 
+            
+            M.FirstName + ' ' + 
+            ISNULL(M.MiddleName + ' ', '') + 
+            M.LastName AS MemberName, 
+            
             M.PhoneNo,
-            M.IsActive AS MemberIsActive
-        FROM tblMember M
-        ORDER BY M.IsActive DESC,
-        M.JoiningDate DESC;
-    END TRY
-    BEGIN CATCH
-        SELECT ERROR_MESSAGE() AS Message;
-    END CATCH
-END;
+            M.EmailId,
+            
+            M.IsActive AS MemberIsActive 
+            
+        FROM tblMember M 
+        
+        ORDER BY 
+            M.IsActive DESC, 
+            M.JoiningDate DESC; 
+        
+    END TRY 
+    
+    BEGIN CATCH 
+    
+        SELECT ERROR_MESSAGE() AS Message; 
+        
+    END CATCH 
+END; 
 GO
 
 ----------------------------------------

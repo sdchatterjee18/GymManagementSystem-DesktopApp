@@ -53,12 +53,12 @@ namespace GymManagementSystem.FORMS.Workout
 
 
             // Required Validation
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtWorkoutPlanName,
-                txtDescription))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtWorkoutPlanName,
+            //    txtDescription))
+            //{
+            //    return;
+            //}
 
 
             // Workout UI

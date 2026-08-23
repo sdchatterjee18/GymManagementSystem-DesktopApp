@@ -105,6 +105,7 @@
             this.tlpRegistrationSuperAdminLoginEntireForm.Controls.Add(this.chkShowConfermPassword, 1, 10);
             this.tlpRegistrationSuperAdminLoginEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminLoginEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminLoginEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminLoginEntireForm.Name = "tlpRegistrationSuperAdminLoginEntireForm";
             this.tlpRegistrationSuperAdminLoginEntireForm.RowCount = 13;
             this.tlpRegistrationSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.047664F));
@@ -120,7 +121,7 @@
             this.tlpRegistrationSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.990783F));
             this.tlpRegistrationSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.448541F));
             this.tlpRegistrationSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.523809F));
-            this.tlpRegistrationSuperAdminLoginEntireForm.Size = new System.Drawing.Size(626, 660);
+            this.tlpRegistrationSuperAdminLoginEntireForm.Size = new System.Drawing.Size(471, 543);
             this.tlpRegistrationSuperAdminLoginEntireForm.TabIndex = 7;
             // 
             // tlpRegistrationSuperAdminImage
@@ -128,24 +129,26 @@
             this.tlpRegistrationSuperAdminImage.BackColor = System.Drawing.Color.Cornsilk;
             this.tlpRegistrationSuperAdminImage.ColumnCount = 3;
             this.tlpRegistrationSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegistrationSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tlpRegistrationSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tlpRegistrationSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRegistrationSuperAdminImage.Controls.Add(this.picSuperAdminImageRegistration, 1, 0);
             this.tlpRegistrationSuperAdminImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegistrationSuperAdminImage.Location = new System.Drawing.Point(27, 9);
+            this.tlpRegistrationSuperAdminImage.Location = new System.Drawing.Point(20, 7);
+            this.tlpRegistrationSuperAdminImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminImage.Name = "tlpRegistrationSuperAdminImage";
             this.tlpRegistrationSuperAdminImage.RowCount = 1;
             this.tlpRegistrationSuperAdminImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminImage.Size = new System.Drawing.Size(571, 146);
+            this.tlpRegistrationSuperAdminImage.Size = new System.Drawing.Size(430, 121);
             this.tlpRegistrationSuperAdminImage.TabIndex = 0;
             // 
             // picSuperAdminImageRegistration
             // 
             this.picSuperAdminImageRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picSuperAdminImageRegistration.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminImageRegistration.Image")));
-            this.picSuperAdminImageRegistration.Location = new System.Drawing.Point(168, 3);
+            this.picSuperAdminImageRegistration.Location = new System.Drawing.Point(127, 2);
+            this.picSuperAdminImageRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminImageRegistration.Name = "picSuperAdminImageRegistration";
-            this.picSuperAdminImageRegistration.Size = new System.Drawing.Size(234, 140);
+            this.picSuperAdminImageRegistration.Size = new System.Drawing.Size(176, 117);
             this.picSuperAdminImageRegistration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminImageRegistration.TabIndex = 0;
             this.picSuperAdminImageRegistration.TabStop = false;
@@ -157,9 +160,10 @@
             this.lblRegistrationSuperAdmin.BackColor = System.Drawing.Color.Cornsilk;
             this.lblRegistrationSuperAdmin.Font = new System.Drawing.Font("Eras Bold ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrationSuperAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblRegistrationSuperAdmin.Location = new System.Drawing.Point(136, 180);
+            this.lblRegistrationSuperAdmin.Location = new System.Drawing.Point(96, 148);
+            this.lblRegistrationSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistrationSuperAdmin.Name = "lblRegistrationSuperAdmin";
-            this.lblRegistrationSuperAdmin.Size = new System.Drawing.Size(352, 35);
+            this.lblRegistrationSuperAdmin.Size = new System.Drawing.Size(278, 28);
             this.lblRegistrationSuperAdmin.TabIndex = 2;
             this.lblRegistrationSuperAdmin.Text = "     New Registration    ";
             // 
@@ -167,9 +171,10 @@
             // 
             this.picRegistrationSuperAdminThreeDot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picRegistrationSuperAdminThreeDot.Image = ((System.Drawing.Image)(resources.GetObject("picRegistrationSuperAdminThreeDot.Image")));
-            this.picRegistrationSuperAdminThreeDot.Location = new System.Drawing.Point(278, 161);
+            this.picRegistrationSuperAdminThreeDot.Location = new System.Drawing.Point(209, 132);
+            this.picRegistrationSuperAdminThreeDot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picRegistrationSuperAdminThreeDot.Name = "picRegistrationSuperAdminThreeDot";
-            this.picRegistrationSuperAdminThreeDot.Size = new System.Drawing.Size(69, 16);
+            this.picRegistrationSuperAdminThreeDot.Size = new System.Drawing.Size(52, 13);
             this.picRegistrationSuperAdminThreeDot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRegistrationSuperAdminThreeDot.TabIndex = 6;
             this.picRegistrationSuperAdminThreeDot.TabStop = false;
@@ -178,9 +183,10 @@
             // 
             this.pnlUsernameSuperAdminRegistration.Controls.Add(this.tlpRegistrationSuperAdminUsernameInput);
             this.pnlUsernameSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUsernameSuperAdminRegistration.Location = new System.Drawing.Point(27, 240);
+            this.pnlUsernameSuperAdminRegistration.Location = new System.Drawing.Point(20, 197);
+            this.pnlUsernameSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlUsernameSuperAdminRegistration.Name = "pnlUsernameSuperAdminRegistration";
-            this.pnlUsernameSuperAdminRegistration.Size = new System.Drawing.Size(571, 46);
+            this.pnlUsernameSuperAdminRegistration.Size = new System.Drawing.Size(430, 39);
             this.pnlUsernameSuperAdminRegistration.TabIndex = 7;
             this.pnlUsernameSuperAdminRegistration.Enter += new System.EventHandler(this.pnlUsernameSuperAdminRegistration_Enter);
             this.pnlUsernameSuperAdminRegistration.Leave += new System.EventHandler(this.pnlUsernameSuperAdminRegistration_Leave);
@@ -191,17 +197,18 @@
             this.tlpRegistrationSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.463196F));
             this.tlpRegistrationSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.22417F));
             this.tlpRegistrationSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.4711F));
-            this.tlpRegistrationSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpRegistrationSuperAdminUsernameInput.Controls.Add(this.lblRegistrationSuperAdminUsername, 1, 0);
             this.tlpRegistrationSuperAdminUsernameInput.Controls.Add(this.txtRegistrationSuperAdminUsername, 2, 0);
             this.tlpRegistrationSuperAdminUsernameInput.Controls.Add(this.picSuperAdminUsernameRegistration, 0, 0);
             this.tlpRegistrationSuperAdminUsernameInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminUsernameInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpRegistrationSuperAdminUsernameInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminUsernameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminUsernameInput.Name = "tlpRegistrationSuperAdminUsernameInput";
             this.tlpRegistrationSuperAdminUsernameInput.RowCount = 1;
             this.tlpRegistrationSuperAdminUsernameInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminUsernameInput.Size = new System.Drawing.Size(571, 46);
+            this.tlpRegistrationSuperAdminUsernameInput.Size = new System.Drawing.Size(430, 39);
             this.tlpRegistrationSuperAdminUsernameInput.TabIndex = 5;
             // 
             // lblRegistrationSuperAdminUsername
@@ -210,9 +217,10 @@
             this.lblRegistrationSuperAdminUsername.AutoSize = true;
             this.lblRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblRegistrationSuperAdminUsername.Location = new System.Drawing.Point(39, 10);
+            this.lblRegistrationSuperAdminUsername.Location = new System.Drawing.Point(29, 9);
+            this.lblRegistrationSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistrationSuperAdminUsername.Name = "lblRegistrationSuperAdminUsername";
-            this.lblRegistrationSuperAdminUsername.Size = new System.Drawing.Size(108, 25);
+            this.lblRegistrationSuperAdminUsername.Size = new System.Drawing.Size(86, 20);
             this.lblRegistrationSuperAdminUsername.TabIndex = 0;
             this.lblRegistrationSuperAdminUsername.Text = "Username :";
             // 
@@ -221,9 +229,10 @@
             this.txtRegistrationSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(222, 8);
+            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(167, 6);
+            this.txtRegistrationSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegistrationSuperAdminUsername.Name = "txtRegistrationSuperAdminUsername";
-            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(330, 30);
+            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(248, 26);
             this.txtRegistrationSuperAdminUsername.TabIndex = 1;
             this.txtRegistrationSuperAdminUsername.Text = "Enter Username";
             this.txtRegistrationSuperAdminUsername.Click += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Click);
@@ -232,9 +241,10 @@
             // 
             this.picSuperAdminUsernameRegistration.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminUsernameRegistration.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminUsernameRegistration.Image")));
-            this.picSuperAdminUsernameRegistration.Location = new System.Drawing.Point(3, 7);
+            this.picSuperAdminUsernameRegistration.Location = new System.Drawing.Point(2, 6);
+            this.picSuperAdminUsernameRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminUsernameRegistration.Name = "picSuperAdminUsernameRegistration";
-            this.picSuperAdminUsernameRegistration.Size = new System.Drawing.Size(25, 32);
+            this.picSuperAdminUsernameRegistration.Size = new System.Drawing.Size(19, 26);
             this.picSuperAdminUsernameRegistration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminUsernameRegistration.TabIndex = 2;
             this.picSuperAdminUsernameRegistration.TabStop = false;
@@ -244,15 +254,16 @@
             this.tlpSuperAdminRegistration.ColumnCount = 3;
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.42285F));
             this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.57716F));
-            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tlpSuperAdminRegistration.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tlpSuperAdminRegistration.Controls.Add(this.btnSuperAdminRegistration, 1, 0);
             this.tlpSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSuperAdminRegistration.Location = new System.Drawing.Point(27, 565);
+            this.tlpSuperAdminRegistration.Location = new System.Drawing.Point(20, 464);
+            this.tlpSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpSuperAdminRegistration.Name = "tlpSuperAdminRegistration";
             this.tlpSuperAdminRegistration.RowCount = 1;
             this.tlpSuperAdminRegistration.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSuperAdminRegistration.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSuperAdminRegistration.Size = new System.Drawing.Size(571, 50);
+            this.tlpSuperAdminRegistration.Size = new System.Drawing.Size(430, 42);
             this.tlpSuperAdminRegistration.TabIndex = 5;
             // 
             // btnSuperAdminRegistration
@@ -263,9 +274,10 @@
             this.btnSuperAdminRegistration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuperAdminRegistration.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuperAdminRegistration.ForeColor = System.Drawing.Color.White;
-            this.btnSuperAdminRegistration.Location = new System.Drawing.Point(60, 3);
+            this.btnSuperAdminRegistration.Location = new System.Drawing.Point(45, 2);
+            this.btnSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuperAdminRegistration.Name = "btnSuperAdminRegistration";
-            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(440, 44);
+            this.btnSuperAdminRegistration.Size = new System.Drawing.Size(331, 38);
             this.btnSuperAdminRegistration.TabIndex = 0;
             this.btnSuperAdminRegistration.Text = "Register";
             this.btnSuperAdminRegistration.UseVisualStyleBackColor = false;
@@ -275,9 +287,10 @@
             // 
             this.pnlPasswordSuperAdminRegistration.Controls.Add(this.tlpRegistrationSuperAdminPasswordInput);
             this.pnlPasswordSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPasswordSuperAdminRegistration.Location = new System.Drawing.Point(27, 397);
+            this.pnlPasswordSuperAdminRegistration.Location = new System.Drawing.Point(20, 326);
+            this.pnlPasswordSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlPasswordSuperAdminRegistration.Name = "pnlPasswordSuperAdminRegistration";
-            this.pnlPasswordSuperAdminRegistration.Size = new System.Drawing.Size(571, 45);
+            this.pnlPasswordSuperAdminRegistration.Size = new System.Drawing.Size(430, 38);
             this.pnlPasswordSuperAdminRegistration.TabIndex = 8;
             this.pnlPasswordSuperAdminRegistration.Enter += new System.EventHandler(this.pnlPasswordSuperAdminRegistration_Enter);
             this.pnlPasswordSuperAdminRegistration.Leave += new System.EventHandler(this.pnlPasswordSuperAdminRegistration_Leave);
@@ -288,17 +301,18 @@
             this.tlpRegistrationSuperAdminPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.642729F));
             this.tlpRegistrationSuperAdminPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.74956F));
             this.tlpRegistrationSuperAdminPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.77058F));
-            this.tlpRegistrationSuperAdminPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationSuperAdminPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpRegistrationSuperAdminPasswordInput.Controls.Add(this.lblRegistrationSuperAdminPassword, 1, 0);
             this.tlpRegistrationSuperAdminPasswordInput.Controls.Add(this.txtRegistrationSuperAdminPassword, 2, 0);
             this.tlpRegistrationSuperAdminPasswordInput.Controls.Add(this.picSuperAdminPassword, 0, 0);
             this.tlpRegistrationSuperAdminPasswordInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminPasswordInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpRegistrationSuperAdminPasswordInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminPasswordInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminPasswordInput.Name = "tlpRegistrationSuperAdminPasswordInput";
             this.tlpRegistrationSuperAdminPasswordInput.RowCount = 1;
             this.tlpRegistrationSuperAdminPasswordInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminPasswordInput.Size = new System.Drawing.Size(571, 45);
+            this.tlpRegistrationSuperAdminPasswordInput.Size = new System.Drawing.Size(430, 38);
             this.tlpRegistrationSuperAdminPasswordInput.TabIndex = 6;
             // 
             // lblRegistrationSuperAdminPassword
@@ -307,9 +321,10 @@
             this.lblRegistrationSuperAdminPassword.AutoSize = true;
             this.lblRegistrationSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrationSuperAdminPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblRegistrationSuperAdminPassword.Location = new System.Drawing.Point(40, 10);
+            this.lblRegistrationSuperAdminPassword.Location = new System.Drawing.Point(30, 9);
+            this.lblRegistrationSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistrationSuperAdminPassword.Name = "lblRegistrationSuperAdminPassword";
-            this.lblRegistrationSuperAdminPassword.Size = new System.Drawing.Size(101, 25);
+            this.lblRegistrationSuperAdminPassword.Size = new System.Drawing.Size(81, 20);
             this.lblRegistrationSuperAdminPassword.TabIndex = 0;
             this.lblRegistrationSuperAdminPassword.Text = "Password :";
             // 
@@ -318,10 +333,11 @@
             this.txtRegistrationSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRegistrationSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminPassword.Location = new System.Drawing.Point(226, 7);
+            this.txtRegistrationSuperAdminPassword.Location = new System.Drawing.Point(170, 6);
+            this.txtRegistrationSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegistrationSuperAdminPassword.Name = "txtRegistrationSuperAdminPassword";
             this.txtRegistrationSuperAdminPassword.PasswordChar = '*';
-            this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(329, 30);
+            this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(248, 26);
             this.txtRegistrationSuperAdminPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminPassword.Text = "Enter Password";
             this.txtRegistrationSuperAdminPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Click);
@@ -330,9 +346,10 @@
             // 
             this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
-            this.picSuperAdminPassword.Location = new System.Drawing.Point(3, 7);
+            this.picSuperAdminPassword.Location = new System.Drawing.Point(2, 7);
+            this.picSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminPassword.Name = "picSuperAdminPassword";
-            this.picSuperAdminPassword.Size = new System.Drawing.Size(26, 30);
+            this.picSuperAdminPassword.Size = new System.Drawing.Size(20, 24);
             this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminPassword.TabIndex = 2;
             this.picSuperAdminPassword.TabStop = false;
@@ -341,9 +358,10 @@
             // 
             this.pnlEmailIdSuperAdminRegistration.Controls.Add(this.tlpRegistrationSuperAdminEmailIdInput);
             this.pnlEmailIdSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEmailIdSuperAdminRegistration.Location = new System.Drawing.Point(27, 345);
+            this.pnlEmailIdSuperAdminRegistration.Location = new System.Drawing.Point(20, 283);
+            this.pnlEmailIdSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEmailIdSuperAdminRegistration.Name = "pnlEmailIdSuperAdminRegistration";
-            this.pnlEmailIdSuperAdminRegistration.Size = new System.Drawing.Size(571, 46);
+            this.pnlEmailIdSuperAdminRegistration.Size = new System.Drawing.Size(430, 39);
             this.pnlEmailIdSuperAdminRegistration.TabIndex = 10;
             this.pnlEmailIdSuperAdminRegistration.Enter += new System.EventHandler(this.pnlEmailIdSuperAdminRegistration_Enter);
             this.pnlEmailIdSuperAdminRegistration.Leave += new System.EventHandler(this.pnlEmailIdSuperAdminRegistration_Leave);
@@ -354,17 +372,18 @@
             this.tlpRegistrationSuperAdminEmailIdInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.822262F));
             this.tlpRegistrationSuperAdminEmailIdInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.3993F));
             this.tlpRegistrationSuperAdminEmailIdInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.94571F));
-            this.tlpRegistrationSuperAdminEmailIdInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationSuperAdminEmailIdInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpRegistrationSuperAdminEmailIdInput.Controls.Add(this.lblEmailId, 1, 0);
             this.tlpRegistrationSuperAdminEmailIdInput.Controls.Add(this.txtRegistrationSuperAdminEmailId, 2, 0);
             this.tlpRegistrationSuperAdminEmailIdInput.Controls.Add(this.picSuperAdminEmailId, 0, 0);
             this.tlpRegistrationSuperAdminEmailIdInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminEmailIdInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpRegistrationSuperAdminEmailIdInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminEmailIdInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminEmailIdInput.Name = "tlpRegistrationSuperAdminEmailIdInput";
             this.tlpRegistrationSuperAdminEmailIdInput.RowCount = 1;
             this.tlpRegistrationSuperAdminEmailIdInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminEmailIdInput.Size = new System.Drawing.Size(571, 46);
+            this.tlpRegistrationSuperAdminEmailIdInput.Size = new System.Drawing.Size(430, 39);
             this.tlpRegistrationSuperAdminEmailIdInput.TabIndex = 4;
             // 
             // lblEmailId
@@ -373,9 +392,10 @@
             this.lblEmailId.AutoSize = true;
             this.lblEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblEmailId.Location = new System.Drawing.Point(41, 10);
+            this.lblEmailId.Location = new System.Drawing.Point(31, 9);
+            this.lblEmailId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmailId.Name = "lblEmailId";
-            this.lblEmailId.Size = new System.Drawing.Size(91, 25);
+            this.lblEmailId.Size = new System.Drawing.Size(71, 20);
             this.lblEmailId.TabIndex = 0;
             this.lblEmailId.Text = "Email Id :";
             // 
@@ -384,9 +404,10 @@
             this.txtRegistrationSuperAdminEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRegistrationSuperAdminEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminEmailId.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminEmailId.Location = new System.Drawing.Point(225, 8);
+            this.txtRegistrationSuperAdminEmailId.Location = new System.Drawing.Point(170, 6);
+            this.txtRegistrationSuperAdminEmailId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegistrationSuperAdminEmailId.Name = "txtRegistrationSuperAdminEmailId";
-            this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(329, 30);
+            this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(248, 26);
             this.txtRegistrationSuperAdminEmailId.TabIndex = 1;
             this.txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
             this.txtRegistrationSuperAdminEmailId.Click += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Click);
@@ -395,9 +416,10 @@
             // 
             this.picSuperAdminEmailId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminEmailId.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminEmailId.Image")));
-            this.picSuperAdminEmailId.Location = new System.Drawing.Point(3, 5);
+            this.picSuperAdminEmailId.Location = new System.Drawing.Point(2, 5);
+            this.picSuperAdminEmailId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminEmailId.Name = "picSuperAdminEmailId";
-            this.picSuperAdminEmailId.Size = new System.Drawing.Size(27, 35);
+            this.picSuperAdminEmailId.Size = new System.Drawing.Size(20, 28);
             this.picSuperAdminEmailId.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminEmailId.TabIndex = 2;
             this.picSuperAdminEmailId.TabStop = false;
@@ -406,9 +428,10 @@
             // 
             this.pnlMobileNoSuperAdminRegistration.Controls.Add(this.tlpRegistrationSuperAdminMobileNoInput);
             this.pnlMobileNoSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMobileNoSuperAdminRegistration.Location = new System.Drawing.Point(27, 292);
+            this.pnlMobileNoSuperAdminRegistration.Location = new System.Drawing.Point(20, 240);
+            this.pnlMobileNoSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMobileNoSuperAdminRegistration.Name = "pnlMobileNoSuperAdminRegistration";
-            this.pnlMobileNoSuperAdminRegistration.Size = new System.Drawing.Size(571, 47);
+            this.pnlMobileNoSuperAdminRegistration.Size = new System.Drawing.Size(430, 39);
             this.pnlMobileNoSuperAdminRegistration.TabIndex = 11;
             this.pnlMobileNoSuperAdminRegistration.Enter += new System.EventHandler(this.pnlMobileNoSuperAdminRegistration_Enter);
             this.pnlMobileNoSuperAdminRegistration.Leave += new System.EventHandler(this.pnlMobileNoSuperAdminRegistration_Leave);
@@ -419,17 +442,18 @@
             this.tlpRegistrationSuperAdminMobileNoInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.642729F));
             this.tlpRegistrationSuperAdminMobileNoInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.3993F));
             this.tlpRegistrationSuperAdminMobileNoInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.12084F));
-            this.tlpRegistrationSuperAdminMobileNoInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationSuperAdminMobileNoInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpRegistrationSuperAdminMobileNoInput.Controls.Add(this.lblMobileNo, 1, 0);
             this.tlpRegistrationSuperAdminMobileNoInput.Controls.Add(this.txtRegistrationSuperAdminMobileNo, 2, 0);
             this.tlpRegistrationSuperAdminMobileNoInput.Controls.Add(this.picSuperAdminMobileNo, 0, 0);
             this.tlpRegistrationSuperAdminMobileNoInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminMobileNoInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpRegistrationSuperAdminMobileNoInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminMobileNoInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminMobileNoInput.Name = "tlpRegistrationSuperAdminMobileNoInput";
             this.tlpRegistrationSuperAdminMobileNoInput.RowCount = 1;
             this.tlpRegistrationSuperAdminMobileNoInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminMobileNoInput.Size = new System.Drawing.Size(571, 47);
+            this.tlpRegistrationSuperAdminMobileNoInput.Size = new System.Drawing.Size(430, 39);
             this.tlpRegistrationSuperAdminMobileNoInput.TabIndex = 5;
             // 
             // lblMobileNo
@@ -438,9 +462,10 @@
             this.lblMobileNo.AutoSize = true;
             this.lblMobileNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobileNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblMobileNo.Location = new System.Drawing.Point(40, 11);
+            this.lblMobileNo.Location = new System.Drawing.Point(30, 9);
+            this.lblMobileNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMobileNo.Name = "lblMobileNo";
-            this.lblMobileNo.Size = new System.Drawing.Size(109, 25);
+            this.lblMobileNo.Size = new System.Drawing.Size(87, 20);
             this.lblMobileNo.TabIndex = 0;
             this.lblMobileNo.Text = "Mobile no :";
             // 
@@ -449,9 +474,10 @@
             this.txtRegistrationSuperAdminMobileNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRegistrationSuperAdminMobileNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminMobileNo.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminMobileNo.Location = new System.Drawing.Point(224, 8);
+            this.txtRegistrationSuperAdminMobileNo.Location = new System.Drawing.Point(169, 6);
+            this.txtRegistrationSuperAdminMobileNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegistrationSuperAdminMobileNo.Name = "txtRegistrationSuperAdminMobileNo";
-            this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(329, 30);
+            this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(248, 26);
             this.txtRegistrationSuperAdminMobileNo.TabIndex = 1;
             this.txtRegistrationSuperAdminMobileNo.Text = "Enter MobileNo";
             this.txtRegistrationSuperAdminMobileNo.Click += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Click);
@@ -460,9 +486,10 @@
             // 
             this.picSuperAdminMobileNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminMobileNo.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminMobileNo.Image")));
-            this.picSuperAdminMobileNo.Location = new System.Drawing.Point(3, 8);
+            this.picSuperAdminMobileNo.Location = new System.Drawing.Point(2, 7);
+            this.picSuperAdminMobileNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminMobileNo.Name = "picSuperAdminMobileNo";
-            this.picSuperAdminMobileNo.Size = new System.Drawing.Size(26, 30);
+            this.picSuperAdminMobileNo.Size = new System.Drawing.Size(20, 24);
             this.picSuperAdminMobileNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminMobileNo.TabIndex = 2;
             this.picSuperAdminMobileNo.TabStop = false;
@@ -471,9 +498,10 @@
             // 
             this.pnlConfermPasswordSuperAdminRegistration.Controls.Add(this.tlpRegistrationSuperAdminConfermPasswordInput);
             this.pnlConfermPasswordSuperAdminRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConfermPasswordSuperAdminRegistration.Location = new System.Drawing.Point(27, 482);
+            this.pnlConfermPasswordSuperAdminRegistration.Location = new System.Drawing.Point(20, 396);
+            this.pnlConfermPasswordSuperAdminRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlConfermPasswordSuperAdminRegistration.Name = "pnlConfermPasswordSuperAdminRegistration";
-            this.pnlConfermPasswordSuperAdminRegistration.Size = new System.Drawing.Size(571, 38);
+            this.pnlConfermPasswordSuperAdminRegistration.Size = new System.Drawing.Size(430, 32);
             this.pnlConfermPasswordSuperAdminRegistration.TabIndex = 12;
             this.pnlConfermPasswordSuperAdminRegistration.Enter += new System.EventHandler(this.pnlConfermPasswordSuperAdminRegistration_Enter);
             this.pnlConfermPasswordSuperAdminRegistration.Leave += new System.EventHandler(this.pnlConfermPasswordSuperAdminRegistration_Leave);
@@ -484,17 +512,18 @@
             this.tlpRegistrationSuperAdminConfermPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.642729F));
             this.tlpRegistrationSuperAdminConfermPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09982F));
             this.tlpRegistrationSuperAdminConfermPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.42031F));
-            this.tlpRegistrationSuperAdminConfermPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpRegistrationSuperAdminConfermPasswordInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpRegistrationSuperAdminConfermPasswordInput.Controls.Add(this.lblConferm, 1, 0);
             this.tlpRegistrationSuperAdminConfermPasswordInput.Controls.Add(this.txtRegistrationSuperAdminConfermPassword, 2, 0);
             this.tlpRegistrationSuperAdminConfermPasswordInput.Controls.Add(this.picSuperAdminConferm, 0, 0);
             this.tlpRegistrationSuperAdminConfermPasswordInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRegistrationSuperAdminConfermPasswordInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpRegistrationSuperAdminConfermPasswordInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpRegistrationSuperAdminConfermPasswordInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpRegistrationSuperAdminConfermPasswordInput.Name = "tlpRegistrationSuperAdminConfermPasswordInput";
             this.tlpRegistrationSuperAdminConfermPasswordInput.RowCount = 1;
             this.tlpRegistrationSuperAdminConfermPasswordInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRegistrationSuperAdminConfermPasswordInput.Size = new System.Drawing.Size(571, 38);
+            this.tlpRegistrationSuperAdminConfermPasswordInput.Size = new System.Drawing.Size(430, 32);
             this.tlpRegistrationSuperAdminConfermPasswordInput.TabIndex = 6;
             // 
             // lblConferm
@@ -503,9 +532,10 @@
             this.lblConferm.AutoSize = true;
             this.lblConferm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConferm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblConferm.Location = new System.Drawing.Point(40, 6);
+            this.lblConferm.Location = new System.Drawing.Point(30, 0);
+            this.lblConferm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConferm.Name = "lblConferm";
-            this.lblConferm.Size = new System.Drawing.Size(176, 25);
+            this.lblConferm.Size = new System.Drawing.Size(136, 32);
             this.lblConferm.TabIndex = 0;
             this.lblConferm.Text = "Confirm Password :";
             // 
@@ -514,10 +544,11 @@
             this.txtRegistrationSuperAdminConfermPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRegistrationSuperAdminConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegistrationSuperAdminConfermPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminConfermPassword.Location = new System.Drawing.Point(228, 4);
+            this.txtRegistrationSuperAdminConfermPassword.Location = new System.Drawing.Point(172, 3);
+            this.txtRegistrationSuperAdminConfermPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegistrationSuperAdminConfermPassword.Name = "txtRegistrationSuperAdminConfermPassword";
             this.txtRegistrationSuperAdminConfermPassword.PasswordChar = '*';
-            this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(329, 30);
+            this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(248, 26);
             this.txtRegistrationSuperAdminConfermPassword.TabIndex = 1;
             this.txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
             this.txtRegistrationSuperAdminConfermPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Click);
@@ -526,9 +557,10 @@
             // 
             this.picSuperAdminConferm.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminConferm.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminConferm.Image")));
-            this.picSuperAdminConferm.Location = new System.Drawing.Point(3, 4);
+            this.picSuperAdminConferm.Location = new System.Drawing.Point(2, 4);
+            this.picSuperAdminConferm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminConferm.Name = "picSuperAdminConferm";
-            this.picSuperAdminConferm.Size = new System.Drawing.Size(26, 30);
+            this.picSuperAdminConferm.Size = new System.Drawing.Size(20, 24);
             this.picSuperAdminConferm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminConferm.TabIndex = 2;
             this.picSuperAdminConferm.TabStop = false;
@@ -539,9 +571,10 @@
             this.chkShowPassword.AutoSize = true;
             this.chkShowPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkShowPassword.ForeColor = System.Drawing.Color.Black;
-            this.chkShowPassword.Location = new System.Drawing.Point(530, 450);
+            this.chkShowPassword.Location = new System.Drawing.Point(394, 370);
+            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(68, 24);
+            this.chkShowPassword.Size = new System.Drawing.Size(56, 19);
             this.chkShowPassword.TabIndex = 13;
             this.chkShowPassword.Text = "Show";
             this.chkShowPassword.UseVisualStyleBackColor = true;
@@ -553,9 +586,10 @@
             this.chkShowConfermPassword.AutoSize = true;
             this.chkShowConfermPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkShowConfermPassword.ForeColor = System.Drawing.Color.Black;
-            this.chkShowConfermPassword.Location = new System.Drawing.Point(530, 530);
+            this.chkShowConfermPassword.Location = new System.Drawing.Point(394, 436);
+            this.chkShowConfermPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkShowConfermPassword.Name = "chkShowConfermPassword";
-            this.chkShowConfermPassword.Size = new System.Drawing.Size(68, 24);
+            this.chkShowConfermPassword.Size = new System.Drawing.Size(56, 19);
             this.chkShowConfermPassword.TabIndex = 13;
             this.chkShowConfermPassword.Text = "Show";
             this.chkShowConfermPassword.UseVisualStyleBackColor = true;
@@ -563,13 +597,14 @@
             // 
             // FrmSuperAdminRegistration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 660);
+            this.ClientSize = new System.Drawing.Size(471, 543);
             this.Controls.Add(this.tlpRegistrationSuperAdminLoginEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(644, 707);
-            this.MinimumSize = new System.Drawing.Size(644, 707);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(487, 582);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(487, 582);
             this.Name = "FrmSuperAdminRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmSuperAdminRegistration_Load);

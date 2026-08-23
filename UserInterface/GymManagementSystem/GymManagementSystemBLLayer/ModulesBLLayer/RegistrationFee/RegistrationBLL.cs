@@ -36,7 +36,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.RegistrationFee
             return registrtionFeeDAL.InsertRegistrationFeeDAL();
         }
 
-        public string ValidateRegistrationFeesBLL(string feeAmount)
+        public string ValidateRegistrationFeesBLL(int feeAmount)
         {
             ValidationBll.CommonValidationMessage result;
 

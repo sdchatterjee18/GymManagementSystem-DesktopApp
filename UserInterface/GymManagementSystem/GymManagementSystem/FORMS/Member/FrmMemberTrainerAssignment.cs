@@ -133,9 +133,17 @@ namespace GymManagementSystem.FORMS.Member
                     dgvMemberTrainerAssignmentDetails.Rows[RowIndex].Cells["colTrainerName"].Value = dataRow["TrainerName"].ToString();
 
                 }
+                int totalHeight = dgvMemberTrainerAssignmentDetails.ColumnHeadersHeight;
 
+                foreach (DataGridViewRow row in dgvMemberTrainerAssignmentDetails.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        totalHeight += row.Height;
+                    }
+                }
 
-
+                dgvMemberTrainerAssignmentDetails.Height = totalHeight;
             }
             catch (Exception ex)
             {
@@ -188,6 +196,17 @@ namespace GymManagementSystem.FORMS.Member
                         .Cells["colTrainerName"].Value =
                         dataRow["TrainerName"].ToString();
                 }
+                int totalHeight = dgvMemberTrainerAssignmentDetails.ColumnHeadersHeight;
+
+                foreach (DataGridViewRow row in dgvMemberTrainerAssignmentDetails.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        totalHeight += row.Height;
+                    }
+                }
+
+                dgvMemberTrainerAssignmentDetails.Height = totalHeight;
             }
             catch (Exception ex)
             {

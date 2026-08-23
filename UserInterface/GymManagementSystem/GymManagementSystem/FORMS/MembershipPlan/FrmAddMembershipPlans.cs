@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.MembershipPlan.UI;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.MembershipPlan
 {
@@ -23,9 +24,28 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         public FrmAddMembershipPlans()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
         }
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+            {
+               this.txtPlanName,
+               this.txtDuration,
+               this.txtAmount,
+               this.txtDescription
+            };
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
 
-        // // Form Load
+                errorProvider1.SetIconPadding(
+                    control,
+                    15);
+            }
+        }
         private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
         {
             this.Text = "";
@@ -33,11 +53,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             LoadPlanTypes();
             this.ActiveControl = null;
         }
-        private void btnPageRemove_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         // Clear
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -56,87 +71,184 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // Submit
         private void pnlClickSubmit_Click(object sender, EventArgs e)
         {
-            if (ClickCountTxtPlanName == 0)
-                txtPlanName.Clear();
+            //CLEAR TEXTBOX IF IT CONTAINS DEFAULT PLACEHOLDER BEFORE REGISTRATION BUTTON CLICK
+            ValidationUI.ClearDefaultPlaceholderText(txtPlanName, ClickCountTxtPlanName);
+            ValidationUI.ClearDefaultPlaceholderText(txtDuration, ClickCountTxtDuration);
+            ValidationUI.ClearDefaultPlaceholderText(txtAmount, ClickCountTxtAmount);
+            ValidationUI.ClearDefaultPlaceholderText(txtDescription, ClickCountTxtDescription);
+            // VALIDATION
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+            errorProvider1.Clear();
 
-            if (ClickCountTxtDuration == 0)
-                txtDuration.Clear();
+            // Plan Name
+            result = ValidationUI.ValidateRequiredTextBox(txtPlanName);
 
-            if (ClickCountTxtAmount == 0)
-                txtAmount.Clear();
-
-            if (ClickCountTxtDescription == 0)
-                txtDescription.Clear();
-
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtPlanName,
-                txtDuration,
-                txtAmount,
-                txtDescription))
+            if (result != ValidationUI.ValidationResult.Valid)
             {
-                return;
+                errorProvider1.SetError(
+                    txtPlanName,
+                    "Plan Name " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
             }
 
-            if (cmbPlanType.SelectedIndex == -1)
+            // Duration
+            result = ValidationUI.ValidateRequiredTextBox(txtDuration);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtDuration,
+                    "Duration " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Amount
+            result = ValidationUI.ValidateRequiredTextBox(txtAmount);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtAmount,
+                    "Amount " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Description
+            result = ValidationUI.ValidateRequiredTextBox(txtDescription);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtDescription,
+                    "Description " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            // Gender
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbPlanType);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbPlanType,
+                    "Play Type " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            if (!isValid)
             {
                 MessageBox.Show(
-                    "Please select Membership Plan Type.",
-                    "Validation",
+                    "Please fill in all required fields.",
+                    "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 
-                cmbPlanType.Focus();
+                this.ActiveControl = null;
                 return;
             }
+            int duration;
+            decimal price;
+            if (!int.TryParse(txtDuration.Text.Trim(), out duration))
+            {
+                errorProvider1.SetError(
+                    txtDuration,
+                    "Duration must contain only numbers.");
 
-            //=============================
-            // Validation First
-            //=============================
+                MessageBox.Show(
+                    "Duration must contain only numbers.",
+                    "Validation Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+            if (!decimal.TryParse(txtAmount.Text.Trim(), out price))
+            {
+                errorProvider1.SetError(
+                    txtAmount,
+                    "Price must contain a valid numeric value.");
+
+                MessageBox.Show(
+                    "Price must contain a valid numeric value.",
+                    "Validation Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
 
             MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+            membershipPlanUI.MembershipPlanName = txtPlanName.Text.Trim();
+            membershipPlanUI.PlanTypeId = Convert.ToInt32(cmbPlanType.SelectedValue);
+            membershipPlanUI.DurationInDays = duration;
+            membershipPlanUI.Price = price;
+            membershipPlanUI.Description = txtDescription.Text.Trim();
 
-            string validationMessage =
-                membershipPlanUI.ValidateMembershipPlanUI(
-                    txtPlanName.Text.Trim(),
-                    txtDuration.Text.Trim(),
-                    txtAmount.Text.Trim(),
-                    txtDescription.Text.Trim());
+            ValidationResult finalResult =membershipPlanUI.InsertMembershipPlanUI();
 
-            if (validationMessage != string.Empty)
+            HandleMembershipPlanResult(finalResult);
+        }
+        private void HandleMembershipPlanResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
+
+            if (result.Result == ValidationBll.CommonValidationMessage.Valid)
             {
                 MessageBox.Show(
-                    validationMessage,
-                    "Validation",
+                    result.Message,
+                    "Membership Plan",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Information);
 
                 return;
             }
 
-            //=============================
-            // Validation Pass
-            // Now Convert
-            //=============================
-
-            membershipPlanUI.MembershipPlanName = txtPlanName.Text.Trim();
-            membershipPlanUI.PlanTypeId = Convert.ToInt32(cmbPlanType.SelectedValue);
-            membershipPlanUI.DurationInDays = Convert.ToInt32(txtDuration.Text.Trim());
-            membershipPlanUI.Price = Convert.ToDecimal(txtAmount.Text.Trim());
-            membershipPlanUI.Description = txtDescription.Text.Trim();
-
-            string message = membershipPlanUI.InsertMembershipPlanUI();
-            DialogResult result = MessageBox.Show(
-                message,
-                "Membership Plan",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            if (message == "Membership Plan Added Successfully.")
+            switch (result.FieldName)
             {
-                btnClear.PerformClick();
+                case "PlanName":
+                    errorProvider1.SetError(
+                        txtPlanName,
+                        result.Message);
+                    break;
+
+                case "Duration":
+                    errorProvider1.SetError(
+                        txtDuration,
+                        result.Message);
+                    break;
+
+                case "Amount":
+                    errorProvider1.SetError(
+                        txtAmount,
+                        result.Message);
+                    break;
+
+                case "Description":
+                    errorProvider1.SetError(
+                        txtDescription,
+                        result.Message);
+                    break;
             }
-            this.Close();
-            
+
+            MessageBox.Show(
+                result.Message,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
         }
+
 
         // TextBox Click Events
         private void txtPlanName_Click(object sender, EventArgs e)
@@ -200,6 +312,11 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         private void FrmAddMembershipPlans_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+        }
+
+        private void tlpNewMembarshipPlanDetails_Paint(object sender, PaintEventArgs e)
+        {
+
         }  
     }
 }

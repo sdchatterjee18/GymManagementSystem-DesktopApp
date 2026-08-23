@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.Locker;
-
+using GymManagementSystemBLLayer.Common;
 namespace GymManagementSystem.FORMS.Locker.UI
 {
     public class LockerUI
@@ -22,20 +22,11 @@ namespace GymManagementSystem.FORMS.Locker.UI
         }
 
         // Add New Locker through the business layer.
-        public string InserNewLockerUI(string lockerNo)
+        public ValidationResult InserNewLockerUI()
         {
-            try
-            {
-                LockerBLL lockerBLL = new LockerBLL();
-
-                return lockerBLL.InsertNewLockerBLL(
-                        lockerNo
-                    );
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            LockerBLL lockerBLL = new LockerBLL();
+            lockerBLL.LockerNo = this.LockerNo;
+            return lockerBLL.InsertNewLockerBLL();
         }
     }
 }

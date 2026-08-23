@@ -1256,7 +1256,7 @@
             this.cmbSelectMembershipPlan.Size = new System.Drawing.Size(271, 27);
             this.cmbSelectMembershipPlan.TabIndex = 1;
             this.cmbSelectMembershipPlan.Text = "   --- Select Membership Plan ---";
-            this.cmbSelectMembershipPlan.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMembershipPlan_SelectedIndexChanged);
+            this.cmbSelectMembershipPlan.SelectionChangeCommitted += new System.EventHandler(this.cmbSelectMembershipPlan_SelectionChangeCommitted);
             // 
             // picCurrentMembershipPlanSelect
             // 

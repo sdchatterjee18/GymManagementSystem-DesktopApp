@@ -172,6 +172,12 @@
       <DependentUpon>FrmSASettings.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsSuperAdmin\Settings\UI\SuperAdminChangePasswordUI.cs" />
+    <Compile Include="FORMS\Attendance\FrmAttendanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Attendance\FrmAttendanceHistory.Designer.cs">
+      <DependentUpon>FrmAttendanceHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\Attendance\FrmMarkAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsSuperAdmin\Settings\FrmSASettings.resx">
       <DependentUpon>FrmSASettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Attendance\FrmAttendanceHistory.resx">
+      <DependentUpon>FrmAttendanceHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Attendance\FrmMarkAttendance.resx">
       <DependentUpon>FrmMarkAttendance.cs</DependentUpon>

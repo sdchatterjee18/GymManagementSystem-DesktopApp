@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddLocker));
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtLockerNumber = new System.Windows.Forms.TextBox();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblAsterisk = new System.Windows.Forms.Label();
+            this.pnlsubmit = new System.Windows.Forms.Panel();
             this.tlpButton = new System.Windows.Forms.TableLayoutPanel();
             this.pnlButton = new System.Windows.Forms.Panel();
             this.lblSubmit = new System.Windows.Forms.Label();
+            this.picSubmit = new System.Windows.Forms.PictureBox();
+            this.lblAsterisk = new System.Windows.Forms.Label();
             this.lblAddNewLocker = new System.Windows.Forms.Label();
             this.tlpHeading = new System.Windows.Forms.TableLayoutPanel();
             this.tlpTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.picBoxLockerIcon = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.picSubmit = new System.Windows.Forms.PictureBox();
-            this.pnlsubmit = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlMain.SuspendLayout();
+            this.pnlsubmit.SuspendLayout();
             this.tlpButton.SuspendLayout();
             this.pnlButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).BeginInit();
             this.tlpHeading.SuspendLayout();
             this.tlpTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLockerIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).BeginInit();
-            this.pnlsubmit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -76,6 +79,7 @@
             this.txtLockerNumber.Name = "txtLockerNumber";
             this.txtLockerNumber.Size = new System.Drawing.Size(196, 29);
             this.txtLockerNumber.TabIndex = 2;
+            this.txtLockerNumber.Click += new System.EventHandler(this.txtLockerNumber_Click);
             // 
             // pnlMain
             // 
@@ -91,16 +95,16 @@
             this.pnlMain.Size = new System.Drawing.Size(344, 191);
             this.pnlMain.TabIndex = 0;
             // 
-            // lblAsterisk
+            // pnlsubmit
             // 
-            this.lblAsterisk.AutoSize = true;
-            this.lblAsterisk.ForeColor = System.Drawing.Color.Red;
-            this.lblAsterisk.Location = new System.Drawing.Point(128, 76);
-            this.lblAsterisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAsterisk.Name = "lblAsterisk";
-            this.lblAsterisk.Size = new System.Drawing.Size(11, 13);
-            this.lblAsterisk.TabIndex = 10;
-            this.lblAsterisk.Text = "*";
+            this.pnlsubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlsubmit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlsubmit.Controls.Add(this.tlpButton);
+            this.pnlsubmit.Location = new System.Drawing.Point(253, 154);
+            this.pnlsubmit.Name = "pnlsubmit";
+            this.pnlsubmit.Size = new System.Drawing.Size(79, 25);
+            this.pnlsubmit.TabIndex = 11;
+            this.pnlsubmit.Click += new System.EventHandler(this.tlpButton_Click);
             // 
             // tlpButton
             // 
@@ -152,6 +156,34 @@
             this.lblSubmit.Click += new System.EventHandler(this.tlpButton_Click);
             this.lblSubmit.MouseEnter += new System.EventHandler(this.tlpButton_MouseEnter);
             this.lblSubmit.MouseLeave += new System.EventHandler(this.tlpButton_MouseLeave);
+            // 
+            // picSubmit
+            // 
+            this.picSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.picSubmit.Image = global::GymManagementSystem.Properties.Resources.paper_plane;
+            this.picSubmit.Location = new System.Drawing.Point(5, 0);
+            this.picSubmit.Margin = new System.Windows.Forms.Padding(0);
+            this.picSubmit.Name = "picSubmit";
+            this.picSubmit.Size = new System.Drawing.Size(15, 23);
+            this.picSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSubmit.TabIndex = 1;
+            this.picSubmit.TabStop = false;
+            this.picSubmit.Click += new System.EventHandler(this.tlpButton_Click);
+            this.picSubmit.MouseEnter += new System.EventHandler(this.tlpButton_MouseEnter);
+            this.picSubmit.MouseLeave += new System.EventHandler(this.tlpButton_MouseLeave);
+            // 
+            // lblAsterisk
+            // 
+            this.lblAsterisk.AutoSize = true;
+            this.lblAsterisk.ForeColor = System.Drawing.Color.Red;
+            this.lblAsterisk.Location = new System.Drawing.Point(128, 76);
+            this.lblAsterisk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsterisk.Name = "lblAsterisk";
+            this.lblAsterisk.Size = new System.Drawing.Size(11, 13);
+            this.lblAsterisk.TabIndex = 10;
+            this.lblAsterisk.Text = "*";
             // 
             // lblAddNewLocker
             // 
@@ -239,31 +271,9 @@
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // picSubmit
+            // errorProvider1
             // 
-            this.picSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.picSubmit.Image = global::GymManagementSystem.Properties.Resources.paper_plane;
-            this.picSubmit.Location = new System.Drawing.Point(5, 0);
-            this.picSubmit.Margin = new System.Windows.Forms.Padding(0);
-            this.picSubmit.Name = "picSubmit";
-            this.picSubmit.Size = new System.Drawing.Size(15, 23);
-            this.picSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSubmit.TabIndex = 1;
-            this.picSubmit.TabStop = false;
-            this.picSubmit.MouseEnter += new System.EventHandler(this.tlpButton_MouseEnter);
-            this.picSubmit.MouseLeave += new System.EventHandler(this.tlpButton_MouseLeave);
-            // 
-            // pnlsubmit
-            // 
-            this.pnlsubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlsubmit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlsubmit.Controls.Add(this.tlpButton);
-            this.pnlsubmit.Location = new System.Drawing.Point(253, 154);
-            this.pnlsubmit.Name = "pnlsubmit";
-            this.pnlsubmit.Size = new System.Drawing.Size(79, 25);
-            this.pnlsubmit.TabIndex = 11;
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmAddLocker
             // 
@@ -282,15 +292,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            this.pnlsubmit.ResumeLayout(false);
             this.tlpButton.ResumeLayout(false);
             this.pnlButton.ResumeLayout(false);
             this.pnlButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).EndInit();
             this.tlpHeading.ResumeLayout(false);
             this.tlpTitle.ResumeLayout(false);
             this.tlpTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLockerIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).EndInit();
-            this.pnlsubmit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,5 +323,6 @@
         private System.Windows.Forms.PictureBox picBoxLockerIcon;
         private System.Windows.Forms.PictureBox picSubmit;
         private System.Windows.Forms.Panel pnlsubmit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

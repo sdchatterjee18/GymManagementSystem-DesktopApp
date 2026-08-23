@@ -92,12 +92,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
 
         private void tlpSubmit_MouseEnter(object sender, EventArgs e)
         {
-            tlpSubmit.BackColor = Color.FromArgb(70, 90, 130);
+            tlpSubmit.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
         }
 
         private void tlpSubmit_MouseLeave(object sender, EventArgs e)
         {
             tlpSubmit.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
         } 
     }
 }

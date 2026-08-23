@@ -32,7 +32,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
             }
 
             // Middle Name - Optional
-            result = ValidationBll.ValidateOptionalText(this.MiddleName);
+            //result = ValidationBll.ValidateOptionalText(this.MiddleName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {

@@ -14,7 +14,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Expense
         public string CategoryName { get; set; }
         public string Category { get; set; }
         public int CategoryId { get; set; }
-        public string ExpenseAmount { get; set; }
+        public decimal ExpenseAmount { get; set; }
         public string Notes { get; set; }
 
         //Retrieve Category Name for combobox
@@ -79,7 +79,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Expense
         }
 
         //Insert Expense
-        public string InsertExpenseBLL(int categoryId, string expenseAmount, string notes)
+        public string InsertExpenseBLL(int categoryId, decimal expenseAmount, string notes)
         {
             string InsertionMessage = null;
             CategoryId = categoryId;

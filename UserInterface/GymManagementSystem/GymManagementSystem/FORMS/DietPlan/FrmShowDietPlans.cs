@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using GymManagementSystem.FORMS.DietPlan.UI;
 using System.IO;
-
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.DietPlan
 {
@@ -22,6 +22,7 @@ namespace GymManagementSystem.FORMS.DietPlan
         public FrmShowDietPlans()
         {
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvDietPlan);
         }
         // Load Form
         private void FrmShowDietPlans_Load(object sender, EventArgs e)  

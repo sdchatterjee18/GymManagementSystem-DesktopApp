@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Attendance.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Attendance
 {
@@ -16,6 +17,7 @@ namespace GymManagementSystem.FORMS.Attendance
         public FrmViewAttendance()
         {
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvViewAttendance);   
         }
 
         private void FrmViewAttendance_Load(object sender, EventArgs e)

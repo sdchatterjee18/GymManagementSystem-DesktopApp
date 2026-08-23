@@ -46,12 +46,12 @@ namespace GymManagementSystem.FORMS.Workout
             //if (ClickCountTxtMuscleType == 0)
             //    txtMuscleType.Clear();
             // ValidationB
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtExerciseName,
-                txtMuscleType))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtExerciseName,
+            //    txtMuscleType))
+            //{
+            //    return;
+            //}
             WorkoutUI workoutUI = new WorkoutUI();
 
             string message =

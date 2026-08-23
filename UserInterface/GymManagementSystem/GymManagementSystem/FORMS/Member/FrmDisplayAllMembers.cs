@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using GymManagementSystem.FORMS.Main;
 using GymManagementSystem.FORMS.Member.UI;
 using GymManagementSystem.Common;
+using System.Reflection;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -24,8 +25,10 @@ namespace GymManagementSystem.FORMS.Member
         {
             InitializeComponent();
             AdminMainForm = mainform;
+            LookupUI.EnableDoubleBuffering(dgvDisplayMemberInformation);
+           
         }
-
+        
         public FrmDisplayAllMembers()
         {
             // TODO: Complete member initialization
@@ -47,7 +50,6 @@ namespace GymManagementSystem.FORMS.Member
             dgvDisplayMemberInformation.Columns["colIsActive"].ReadOnly = true;
             dgvDisplayMemberInformation.Columns["colMemberProfile"].ReadOnly = true;
             dgvDisplayMemberInformation.Columns["colUpdate"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colDeactivate"].ReadOnly = true;
 
             // Start editing when user starts typing
             dgvDisplayMemberInformation.EditMode =
@@ -81,7 +83,15 @@ namespace GymManagementSystem.FORMS.Member
                         row["EmailId"].ToString(),
                         status
                     );
-
+                    DataGridViewRow currentRow =dgvDisplayMemberInformation.Rows[ dgvDisplayMemberInformation.Rows.Count - 1];
+                    if (status == "Active")
+                    {
+                        currentRow.Cells["colIsActive"].Style.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        currentRow.Cells["colIsActive"].Style.ForeColor = Color.Red;
+                    }
                     slNo++;
                 }
 
@@ -129,10 +139,28 @@ namespace GymManagementSystem.FORMS.Member
                         row["EmailId"].ToString(),
                         status
                     );
-
+                    DataGridViewRow currentRow = dgvDisplayMemberInformation.Rows[dgvDisplayMemberInformation.Rows.Count - 1];
+                    if (status == "Active")
+                    {
+                        currentRow.Cells["colIsActive"].Style.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        currentRow.Cells["colIsActive"].Style.ForeColor = Color.Red;
+                    }
                     slNo++;
                 }
+                int totalHeight = dgvDisplayMemberInformation.ColumnHeadersHeight;
 
+                foreach (DataGridViewRow row in dgvDisplayMemberInformation.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        totalHeight += row.Height;
+                    }
+                }
+
+                dgvDisplayMemberInformation.Height = totalHeight;
                 dgvDisplayMemberInformation.ClearSelection();
             }
             catch (Exception ex)
@@ -151,12 +179,7 @@ namespace GymManagementSystem.FORMS.Member
         }
         private void dgvDisplayMemberInformation_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDisplayMemberInformation.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-               
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayMemberInformation.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
             }
@@ -164,13 +187,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void dgvDisplayMemberInformation_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvDisplayMemberInformation.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-                //dgvShowAllAddRegistrationFees.Columns[e.ColumnIndex].HeaderCell.Style.ForeColor = Color.Black;
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvDisplayMemberInformation.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -195,27 +212,6 @@ namespace GymManagementSystem.FORMS.Member
 
                 e.Handled = true;
 
-            }
-
-           
-
-
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvDisplayMemberInformation.Columns["colDeactivate"].Index)
-            {
-                e.PaintBackground(e.CellBounds, true);
-
-                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
-                    System.Windows.Forms.VisualStyles.PushButtonState.Normal);
-
-                TextRenderer.DrawText(
-                    e.Graphics,
-                    "Deactivate",
-                    dgvDisplayMemberInformation.Font,
-                    e.CellBounds,
-                    Color.Brown, // Your desired text color
-                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-
-                e.Handled = true;
             }
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvDisplayMemberInformation.Columns["colMemberProfile"].Index)
             {
@@ -433,52 +429,10 @@ namespace GymManagementSystem.FORMS.Member
                     );
                 }
             }
-
             // ==========================================
             // Deactivate Member
             // ==========================================
-            else if (columnName == "colDeactivate")
-            {
-                try
-                {
-                    int memberId = Convert.ToInt32(
-                        dgvDisplayMemberInformation.Rows[e.RowIndex]
-                        .Cells["colMemberId"]
-                        .Value
-                    );
-
-                    DialogResult result = MessageBox.Show(
-                        "Are you sure you want to deactivate this member?",
-                        "Deactivate Member",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-                    );
-
-                    if (result == DialogResult.Yes)
-                    {
-                        string message =
-                            memberUI.DeactivateMemberUI(memberId);
-
-                        MessageBox.Show(
-                            message,
-                            "Deactivate Member",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
-                        );
-
-                        RetrieveMemberDetails();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        ex.Message,
-                        "Deactivate Member",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
-            }
+            
 
             // ==========================================
             // Member Profile
@@ -525,6 +479,20 @@ namespace GymManagementSystem.FORMS.Member
         private void txtSearchMember_TextChanged(object sender, EventArgs e)
         {
             SearchMember();
+        }
+
+        private void pnlClickAddNewMember_MouseEnter(object sender, EventArgs e)
+        {
+            pnlClickAddNewMember.BackColor = Color.White;
+            lblAddNewMember.ForeColor = Color.MidnightBlue;
+            picAddIcon.Image = Properties.Resources.plusHOVER;
+        }
+
+        private void pnlClickAddNewMember_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClickAddNewMember.BackColor = Color.MidnightBlue;
+            lblAddNewMember.ForeColor = Color.White;
+            picAddIcon.Image = Properties.Resources.plus;
         }
     }
 }
