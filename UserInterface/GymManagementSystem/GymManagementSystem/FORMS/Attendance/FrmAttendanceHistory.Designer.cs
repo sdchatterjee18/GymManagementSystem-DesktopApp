@@ -33,15 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAttendanceHistory));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpAttendanceHistory = new System.Windows.Forms.TableLayoutPanel();
             this.dgvViewAttendanceHistory = new System.Windows.Forms.DataGridView();
-            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAttendanceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAttendanceHistoryHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picAttendanceHistory = new System.Windows.Forms.PictureBox();
             this.tlpAttendanceHistoryTitle = new System.Windows.Forms.TableLayoutPanel();
@@ -58,6 +53,12 @@
             this.tlpTotalAttendance = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotalAttendancePaymentHistory = new System.Windows.Forms.Label();
             this.lblOutputTotalAttendance = new System.Windows.Forms.Label();
+            this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShiftName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAttendanceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAttendanceHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewAttendanceHistory)).BeginInit();
             this.tlpAttendanceHistoryHeader.SuspendLayout();
@@ -120,6 +121,7 @@
             this.dgvViewAttendanceHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvViewAttendanceHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo,
+            this.colMemberId,
             this.colMemberName,
             this.colPhoneNo,
             this.colShiftName,
@@ -164,62 +166,6 @@
             this.dgvViewAttendanceHistory.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvViewAttendanceHistory_CellFormatting);
             this.dgvViewAttendanceHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAttendanceHistory_CellMouseEnter);
             this.dgvViewAttendanceHistory.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewAttendanceHistory_CellMouseLeave);
-            // 
-            // colSerialNo
-            // 
-            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colSerialNo.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSerialNo.FillWeight = 90F;
-            this.colSerialNo.HeaderText = "Sl No.";
-            this.colSerialNo.Name = "colSerialNo";
-            this.colSerialNo.ReadOnly = true;
-            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSerialNo.Width = 70;
-            // 
-            // colMemberName
-            // 
-            this.colMemberName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colMemberName.DataPropertyName = "MemberName";
-            this.colMemberName.FillWeight = 180F;
-            this.colMemberName.HeaderText = "Member Name";
-            this.colMemberName.Name = "colMemberName";
-            this.colMemberName.ReadOnly = true;
-            this.colMemberName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMemberName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMemberName.Width = 170;
-            // 
-            // colPhoneNo
-            // 
-            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPhoneNo.DataPropertyName = "PhoneNo";
-            this.colPhoneNo.HeaderText = "Phone No.";
-            this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.ReadOnly = true;
-            this.colPhoneNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colShiftName
-            // 
-            this.colShiftName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colShiftName.DataPropertyName = "ShiftName";
-            this.colShiftName.HeaderText = "Shift Name";
-            this.colShiftName.Name = "colShiftName";
-            this.colShiftName.ReadOnly = true;
-            this.colShiftName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colShiftName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colAttendanceDate
-            // 
-            this.colAttendanceDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colAttendanceDate.DataPropertyName = "AttendanceDate";
-            this.colAttendanceDate.HeaderText = "Attendance Date";
-            this.colAttendanceDate.Name = "colAttendanceDate";
-            this.colAttendanceDate.ReadOnly = true;
-            this.colAttendanceDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAttendanceDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tlpAttendanceHistoryHeader
             // 
@@ -333,6 +279,7 @@
             this.btnSearchAttendanceHistory.TabIndex = 5;
             this.btnSearchAttendanceHistory.Text = "Search";
             this.btnSearchAttendanceHistory.UseVisualStyleBackColor = false;
+            this.btnSearchAttendanceHistory.Click += new System.EventHandler(this.btnSearchAttendanceHistory_Click);
             // 
             // lblStartDateAttendanceHistory
             // 
@@ -439,13 +386,76 @@
             this.lblOutputTotalAttendance.TabIndex = 2;
             this.lblOutputTotalAttendance.Text = "---";
             // 
+            // colSerialNo
+            // 
+            this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colSerialNo.DataPropertyName = "SerialNo";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSerialNo.FillWeight = 90F;
+            this.colSerialNo.HeaderText = "Sl No.";
+            this.colSerialNo.Name = "colSerialNo";
+            this.colSerialNo.ReadOnly = true;
+            this.colSerialNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSerialNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSerialNo.Width = 70;
+            // 
+            // colMemberId
+            // 
+            this.colMemberId.HeaderText = "MemberId";
+            this.colMemberId.Name = "colMemberId";
+            this.colMemberId.ReadOnly = true;
+            this.colMemberId.Visible = false;
+            // 
+            // colMemberName
+            // 
+            this.colMemberName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colMemberName.DataPropertyName = "MemberName";
+            this.colMemberName.FillWeight = 180F;
+            this.colMemberName.HeaderText = "Member Name";
+            this.colMemberName.Name = "colMemberName";
+            this.colMemberName.ReadOnly = true;
+            this.colMemberName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMemberName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMemberName.Width = 170;
+            // 
+            // colPhoneNo
+            // 
+            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPhoneNo.DataPropertyName = "PhoneNo";
+            this.colPhoneNo.HeaderText = "Phone No.";
+            this.colPhoneNo.Name = "colPhoneNo";
+            this.colPhoneNo.ReadOnly = true;
+            this.colPhoneNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colShiftName
+            // 
+            this.colShiftName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colShiftName.DataPropertyName = "ShiftName";
+            this.colShiftName.HeaderText = "Shift Name";
+            this.colShiftName.Name = "colShiftName";
+            this.colShiftName.ReadOnly = true;
+            this.colShiftName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colShiftName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colAttendanceDate
+            // 
+            this.colAttendanceDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colAttendanceDate.DataPropertyName = "AttendanceDate";
+            this.colAttendanceDate.HeaderText = "Attendance Date";
+            this.colAttendanceDate.Name = "colAttendanceDate";
+            this.colAttendanceDate.ReadOnly = true;
+            this.colAttendanceDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAttendanceDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // FrmAttendanceHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 796);
             this.Controls.Add(this.tlpAttendanceHistory);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAttendanceHistory";
             this.Text = "FrmAttendanceHistory";
             this.Load += new System.EventHandler(this.FrmAttendanceHistory_Load);
@@ -470,11 +480,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpAttendanceHistory;
         private System.Windows.Forms.DataGridView dgvViewAttendanceHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colShiftName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAttendanceDate;
         private System.Windows.Forms.TableLayoutPanel tlpAttendanceHistoryHeader;
         private System.Windows.Forms.PictureBox picAttendanceHistory;
         private System.Windows.Forms.TableLayoutPanel tlpAttendanceHistoryTitle;
@@ -491,6 +496,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpTotalAttendance;
         private System.Windows.Forms.Label lblTotalAttendancePaymentHistory;
         private System.Windows.Forms.Label lblOutputTotalAttendance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSerialNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colShiftName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAttendanceDate;
 
 
     }

@@ -23,6 +23,11 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
         public string MarkAttendanceSPName { get; set; }
         public string RetrieveCurrentMonthAllPresentAttendanceSPName { get; set; }
         public string RetrieveMemberAttendanceByPhoneMonthYearSPName { get; set; }
+        public string RetrieveAllMemberDetailsWithShiftSPName { get; set; }
+        public string SearchMemberDetailsWithShiftSPName { get; set; }
+        public string RetrieveMemberAttendanceByDateRangeSPName { get; set; }
+        public string RetrieveMemberTotalAttendanceByDateRangeSPName { get; set; }
+        public string RetrieveMemberAttendanceTillTodaySPName { get; set; }
 
 
 
@@ -35,6 +40,11 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
             MarkAttendanceSPName = "spMarkMemberAttendance";
             RetrieveCurrentMonthAllPresentAttendanceSPName = "spRetrieveCurrentMonthAllPresentAttendance";
             RetrieveMemberAttendanceByPhoneMonthYearSPName = "spRetrieveMemberAttendanceByPhoneMonthYear";
+            RetrieveAllMemberDetailsWithShiftSPName = "spRetrieveAllMemberDetailsWithShift";
+            SearchMemberDetailsWithShiftSPName = "spSearchMemberDetailsWithShift";
+            RetrieveMemberAttendanceByDateRangeSPName = "spRetrieveMemberAttendanceByDateRange";
+            RetrieveMemberTotalAttendanceByDateRangeSPName = "spRetrieveMemberTotalAttendanceByDateRange";
+            RetrieveMemberAttendanceTillTodaySPName = "spRetrieveMemberAttendanceTillToday";
         }
 
         //Retrieve Shift data For combobox
@@ -170,6 +180,125 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Attendance
                 return GetMemberAttendanceDetails;
             }
         }
+        public DataTable RetrieveAllMemberDetailsWithShiftDAL()
+        {
+            DataTable AllMemberDetails = null;
 
+            try
+            {
+                AllMemberDetails =
+                    LookupDAL.RetrieveSpecificItem(
+                        RetrieveAllMemberDetailsWithShiftSPName
+                    );
+
+                return AllMemberDetails;
+            }
+            catch (Exception ex)
+            {
+                return AllMemberDetails;
+            }
+        }
+        // Search Member Details By Name, Phone No or Shift
+        public DataTable SearchMemberDetailsWithShiftDAL(string search)
+        {
+            DataTable MemberDetails = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@Search", search)
+                };
+
+                MemberDetails = LookupDAL.RetrieveSpecificDetails(
+                    SearchMemberDetailsWithShiftSPName,
+                    sqlParameters
+                );
+
+                return MemberDetails;
+            }
+            catch (Exception ex)
+            {
+                return MemberDetails;
+            }
+        }
+        public DataTable RetrieveMemberAttendanceByDateRangeDAL(int memberId,DateTime fromDate,DateTime toDate)
+        {
+            DataTable AttendanceDetails = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId", memberId),
+                    new SqlParameter("@FromDate", fromDate.Date),
+                    new SqlParameter("@ToDate", toDate.Date)
+                };
+
+                AttendanceDetails =
+                    LookupDAL.RetrieveSpecificDetails(
+                        RetrieveMemberAttendanceByDateRangeSPName,
+                        sqlParameters
+                    );
+
+                return AttendanceDetails;
+            }
+            catch (Exception ex)
+            {
+                return AttendanceDetails;
+            }
+        }
+        public DataTable RetrieveMemberTotalAttendanceByDateRangeDAL(int memberId,DateTime fromDate,DateTime toDate)
+        {
+            DataTable TotalAttendanceData = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+                    new SqlParameter[]
+            {
+                new SqlParameter("@MemberId", memberId),
+                new SqlParameter("@FromDate", fromDate.Date),
+                new SqlParameter("@ToDate", toDate.Date)
+            };
+
+                TotalAttendanceData =
+                    LookupDAL.RetrieveSpecificDetails(
+                        RetrieveMemberTotalAttendanceByDateRangeSPName,
+                        sqlParameters
+                    );
+
+                return TotalAttendanceData;
+            }
+            catch (Exception ex)
+            {
+                return TotalAttendanceData;
+            }
+        }
+        public DataTable RetrieveMemberAttendanceTillTodayDAL(int memberId)
+        {
+            DataTable AttendanceData = null;
+
+            try
+            {
+                SqlParameter[] sqlParameters =
+                    new SqlParameter[]
+                {
+                    new SqlParameter("@MemberId", memberId)
+                };
+
+                AttendanceData =
+                    LookupDAL.RetrieveSpecificDetails(
+                        RetrieveMemberAttendanceTillTodaySPName,
+                        sqlParameters
+                    );
+
+                return AttendanceData;
+            }
+            catch (Exception ex)
+            {
+                return AttendanceData;
+            }
+        }
     }
 }
