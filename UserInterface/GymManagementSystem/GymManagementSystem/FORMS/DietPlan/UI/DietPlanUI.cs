@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.DietPlan;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.DietPlan.UI
 {
@@ -49,22 +50,16 @@ namespace GymManagementSystem.FORMS.DietPlan.UI
             }
         }
 
-        // Inserts a new diet plan through the business layer.
-        //public string InsertDietPlanUI(int caloriesPerDay,byte[] dietPlanDocument,string conditionStatus)
-        //{
-        //    try
-        //    {
-        //        DietPlanBLL dietPlanBLL = new DietPlanBLL();
+         //Inserts a new diet plan through the business layer.
+        public ValidationResult InsertDietPlanUI()
+        {
+            DietPlanBLL dietPlanBLL = new DietPlanBLL();
 
-        //        return dietPlanBLL.InsertDietPlanBLL(
-        //            caloriesPerDay,
-        //            dietPlanDocument,
-        //            conditionStatus);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return ex.Message;
-        //    }
-        //}
+            dietPlanBLL.CaloriesPerDay = this.CaloriesPerDay;
+            dietPlanBLL.DietPlanDocument = this.DietPlanDocument;
+            dietPlanBLL.ConditionStatus = this.ConditionStatus;
+
+            return dietPlanBLL.InsertDietPlanBLL();
+        }
     }
 }

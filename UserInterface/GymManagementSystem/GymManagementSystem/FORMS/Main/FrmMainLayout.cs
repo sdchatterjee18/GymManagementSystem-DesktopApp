@@ -232,7 +232,7 @@ namespace GymManagementSystem.FORMS.Main
                 // DEFAULT FORM
                 // ==========================================
 
-                OpenChildForm(new FrmViewAttendance());
+                OpenChildForm(new FrmViewAttendance(this));
             }
         }
 
@@ -525,7 +525,7 @@ namespace GymManagementSystem.FORMS.Main
             ExpandIfCollapsed();
 
             // Open View Attendance
-            OpenChildForm(new FrmViewAttendance());
+            OpenChildForm(new FrmViewAttendance(this));
 
             // Select ONLY child panel
             SelectPanel(pnlViewMemberAttendance);
@@ -924,15 +924,7 @@ namespace GymManagementSystem.FORMS.Main
                     new FrmUserRoleSelection();
 
                 this.Hide();
-
-                MessageBox.Show(
-                    "Logout Successful.",
-                    "Logout",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
                 frmUserRoleSelection.ShowDialog();
-
                 this.Close();
             }
         }

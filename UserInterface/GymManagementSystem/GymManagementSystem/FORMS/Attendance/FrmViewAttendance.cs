@@ -8,14 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Attendance.UI;
 using GymManagementSystem.Common;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.FORMS.Attendance
 {
     public partial class FrmViewAttendance : Form
     {
         int monthNumber;
-        public FrmViewAttendance()
+        FrmMainLayout frmMainLayout = null;
+        public FrmViewAttendance(FrmMainLayout frmMainLayout)
         {
+            this.frmMainLayout = frmMainLayout;
             InitializeComponent();
             LookupUI.EnableDoubleBuffering(dgvViewAttendance);   
         }
@@ -237,10 +240,12 @@ namespace GymManagementSystem.FORMS.Attendance
                 // Open Attendance History Form
                 // =========================================================
 
-                FrmAttendanceHistory frmAttendanceHistory =
-                    new FrmAttendanceHistory(memberId);
+                //FrmAttendanceHistory frmAttendanceHistory =
+                //    new FrmAttendanceHistory(memberId);
 
-                frmAttendanceHistory.ShowDialog();
+                frmMainLayout.OpenChildForm(new FrmAttendanceHistory(memberId));
+
+                
             }
             catch (Exception ex)
             {

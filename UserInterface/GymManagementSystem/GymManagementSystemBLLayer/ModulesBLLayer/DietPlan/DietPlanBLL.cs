@@ -64,43 +64,50 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.DietPlan
             }
         }
 
-        // Inserts a new diet plan.
-        //public string InsertDietPlanBLL(int caloriesPerDay,byte[] dietPlanDocument, string conditionStatus)
-        //{
-        //    try
-        //    {
-        //        // Calories Validation
-        //        ValidationBll.CommonValidationMessage validationMessage =
-        //            ValidationBll.ValidateCalories(caloriesPerDay);
+         //Inserts a new diet plan.
+        public ValidationResult InsertDietPlanBLL()
+        {
+            ValidationBll.CommonValidationMessage result;
 
-        //        if (validationMessage !=
-        //            ValidationBll.CommonValidationMessage.Valid)
-        //        {
-        //            return ValidationBll.GetValidationMessage(validationMessage);
-        //        }
+            // Calories
+            result = ValidationBll.ValidateCalories(
+                this.CaloriesPerDay.ToString());
 
-        //        // Condition Status Validation
-        //        validationMessage =
-        //            ValidationBll.ValidateConditionStatus(conditionStatus);
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return new ValidationResult
+                {
+                    FieldName = "RequiredCalories",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
 
-        //        if (validationMessage !=
-        //            ValidationBll.CommonValidationMessage.Valid)
-        //        {
-        //            return ValidationBll.GetValidationMessage(validationMessage);
-        //        }
+            // Plan Condition
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(
+                this.ConditionStatus);
 
-        //        // Insert
-        //        DietPlanDAL dietPlanDAL = new DietPlanDAL();
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return new ValidationResult
+                {
+                    FieldName = "PlanCondition",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
 
-        //        return dietPlanDAL.InsertDietPlanDAL(
-        //            caloriesPerDay,
-        //            dietPlanDocument,
-        //            conditionStatus);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return ex.Message;
-        //    }
-        //}
+            // Insert
+            DietPlanDAL dietPlanDAL = new DietPlanDAL();
+            // CALL DAL INSERT METHOD
+            string message = dietPlanDAL.InsertDietPlanDAL(this.CaloriesPerDay, this.DietPlanDocument, this.ConditionStatus);
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
+        }
     }
 }

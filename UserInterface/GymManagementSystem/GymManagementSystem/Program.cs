@@ -21,7 +21,7 @@ using GymManagementSystem.FormsSuperAdmin.Salary;
 using GymManagementSystem.Authentication;
 using GymManagementSystem.FORMS.Trainer;
 using GymManagementSystem.FormsSuperAdmin.Settings;
-using GymManagementSystem.FORMS.Member;
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem
 {
@@ -52,8 +52,8 @@ namespace GymManagementSystem
             //Application.Run(new FrmSAAddNewEmployee());
             //Application.Run(new FrmSAPasswordChange());
             //Application.Run(new FrmSuperAdminRegistration());
-            Application.Run(new FrmMainLayout());
-            //Application.Run(new FrmSAExpense());
+            //Application.Run(new FrmMainLayout());
+            Application.Run(new FrmUserRoleSelection());
             //Application.Run(new FrmAttendanceHistory());
         }
     }
