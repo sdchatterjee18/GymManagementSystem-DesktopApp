@@ -198,7 +198,7 @@
             this.tlpChangeMembershipButtomPortion.Controls.Add(this.tlpChangeMembershipButtonSection, 1, 0);
             this.tlpChangeMembershipButtomPortion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpChangeMembershipButtomPortion.Location = new System.Drawing.Point(2, 552);
-            this.tlpChangeMembershipButtomPortion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpChangeMembershipButtomPortion.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeMembershipButtomPortion.Name = "tlpChangeMembershipButtomPortion";
             this.tlpChangeMembershipButtomPortion.RowCount = 1;
             this.tlpChangeMembershipButtomPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -213,7 +213,7 @@
             this.tlpCancleButtomPortionInChangeMembership.Controls.Add(this.pnlCancleButtomInChangeMembership, 0, 1);
             this.tlpCancleButtomPortionInChangeMembership.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleButtomPortionInChangeMembership.Location = new System.Drawing.Point(724, 2);
-            this.tlpCancleButtomPortionInChangeMembership.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleButtomPortionInChangeMembership.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleButtomPortionInChangeMembership.Name = "tlpCancleButtomPortionInChangeMembership";
             this.tlpCancleButtomPortionInChangeMembership.RowCount = 3;
             this.tlpCancleButtomPortionInChangeMembership.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -228,7 +228,7 @@
             this.pnlCancleButtomInChangeMembership.Controls.Add(this.tlpCancleSectionInChangeMembership);
             this.pnlCancleButtomInChangeMembership.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCancleButtomInChangeMembership.Location = new System.Drawing.Point(2, 12);
-            this.pnlCancleButtomInChangeMembership.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCancleButtomInChangeMembership.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCancleButtomInChangeMembership.Name = "pnlCancleButtomInChangeMembership";
             this.pnlCancleButtomInChangeMembership.Size = new System.Drawing.Size(94, 30);
             this.pnlCancleButtomInChangeMembership.TabIndex = 16;
@@ -245,7 +245,7 @@
             this.tlpCancleSectionInChangeMembership.Controls.Add(this.lblCancle, 1, 0);
             this.tlpCancleSectionInChangeMembership.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleSectionInChangeMembership.Location = new System.Drawing.Point(0, 0);
-            this.tlpCancleSectionInChangeMembership.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleSectionInChangeMembership.Margin = new System.Windows.Forms.Padding(2);
             this.tlpCancleSectionInChangeMembership.MaximumSize = new System.Drawing.Size(0, 32);
             this.tlpCancleSectionInChangeMembership.MinimumSize = new System.Drawing.Size(0, 32);
             this.tlpCancleSectionInChangeMembership.Name = "tlpCancleSectionInChangeMembership";
@@ -262,7 +262,7 @@
             this.picCancleInChangeMembership.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCancleInChangeMembership.Image = ((System.Drawing.Image)(resources.GetObject("picCancleInChangeMembership.Image")));
             this.picCancleInChangeMembership.Location = new System.Drawing.Point(2, 2);
-            this.picCancleInChangeMembership.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCancleInChangeMembership.Margin = new System.Windows.Forms.Padding(2);
             this.picCancleInChangeMembership.Name = "picCancleInChangeMembership";
             this.picCancleInChangeMembership.Size = new System.Drawing.Size(30, 28);
             this.picCancleInChangeMembership.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -295,7 +295,7 @@
             this.tlpChangeMembershipButtonSection.Controls.Add(this.pnlChangeMembershipButton, 0, 1);
             this.tlpChangeMembershipButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpChangeMembershipButtonSection.Location = new System.Drawing.Point(572, 2);
-            this.tlpChangeMembershipButtonSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpChangeMembershipButtonSection.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeMembershipButtonSection.Name = "tlpChangeMembershipButtonSection";
             this.tlpChangeMembershipButtonSection.RowCount = 3;
             this.tlpChangeMembershipButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.875F));
@@ -309,7 +309,7 @@
             this.pnlChangeMembershipButton.Controls.Add(this.tlpChangeMembershipButton);
             this.pnlChangeMembershipButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChangeMembershipButton.Location = new System.Drawing.Point(2, 13);
-            this.pnlChangeMembershipButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlChangeMembershipButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlChangeMembershipButton.Name = "pnlChangeMembershipButton";
             this.pnlChangeMembershipButton.Size = new System.Drawing.Size(124, 29);
             this.pnlChangeMembershipButton.TabIndex = 0;
@@ -325,7 +325,7 @@
             this.tlpChangeMembershipButton.Controls.Add(this.lblChangeMembership, 1, 0);
             this.tlpChangeMembershipButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpChangeMembershipButton.Location = new System.Drawing.Point(0, 0);
-            this.tlpChangeMembershipButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpChangeMembershipButton.Margin = new System.Windows.Forms.Padding(2);
             this.tlpChangeMembershipButton.MaximumSize = new System.Drawing.Size(0, 32);
             this.tlpChangeMembershipButton.MinimumSize = new System.Drawing.Size(0, 32);
             this.tlpChangeMembershipButton.Name = "tlpChangeMembershipButton";
@@ -390,7 +390,7 @@
             this.picChangeMembershipTitleIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picChangeMembershipTitleIcon.Image = ((System.Drawing.Image)(resources.GetObject("picChangeMembershipTitleIcon.Image")));
             this.picChangeMembershipTitleIcon.Location = new System.Drawing.Point(42, 2);
-            this.picChangeMembershipTitleIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picChangeMembershipTitleIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picChangeMembershipTitleIcon.Name = "picChangeMembershipTitleIcon";
             this.picChangeMembershipTitleIcon.Size = new System.Drawing.Size(56, 48);
             this.picChangeMembershipTitleIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1285,7 +1285,7 @@
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 97.85134F));
-            this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tlpMemberPaymentInfromationHeaderSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.picMemberPaymentInfromation, 1, 0);
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.lblPaymentInfromation, 2, 0);
             this.tlpMemberPaymentInfromationHeaderSection.Controls.Add(this.pnlMemberPaymentInformationBar, 3, 0);
@@ -1331,7 +1331,7 @@
             this.pnlMemberPaymentInformationBar.Location = new System.Drawing.Point(272, 22);
             this.pnlMemberPaymentInformationBar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMemberPaymentInformationBar.Name = "pnlMemberPaymentInformationBar";
-            this.pnlMemberPaymentInformationBar.Size = new System.Drawing.Size(477, 2);
+            this.pnlMemberPaymentInformationBar.Size = new System.Drawing.Size(476, 2);
             this.pnlMemberPaymentInformationBar.TabIndex = 4;
             // 
             // tlpMemberPaymentInfromationDetails
@@ -1391,7 +1391,7 @@
             this.tlpSelectMemberPaymentMethod.Controls.Add(this.cmbSelectMemberPaymentMethod, 0, 1);
             this.tlpSelectMemberPaymentMethod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSelectMemberPaymentMethod.Location = new System.Drawing.Point(224, 2);
-            this.tlpSelectMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpSelectMemberPaymentMethod.Margin = new System.Windows.Forms.Padding(2);
             this.tlpSelectMemberPaymentMethod.Name = "tlpSelectMemberPaymentMethod";
             this.tlpSelectMemberPaymentMethod.RowCount = 3;
             this.tlpSelectMemberPaymentMethod.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
@@ -1418,7 +1418,7 @@
             this.picMemberPaymentAmount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picMemberPaymentAmount.Image = ((System.Drawing.Image)(resources.GetObject("picMemberPaymentAmount.Image")));
             this.picMemberPaymentAmount.Location = new System.Drawing.Point(14, 51);
-            this.picMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picMemberPaymentAmount.Margin = new System.Windows.Forms.Padding(4);
             this.picMemberPaymentAmount.Name = "picMemberPaymentAmount";
             this.picMemberPaymentAmount.Size = new System.Drawing.Size(45, 33);
             this.picMemberPaymentAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
