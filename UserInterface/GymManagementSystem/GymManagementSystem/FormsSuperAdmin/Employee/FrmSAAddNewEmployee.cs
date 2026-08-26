@@ -18,7 +18,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         int ClickCountTxtFirstName = 0;
         int ClickCountTxtMiddleName = 0;
         int ClickCountTxtLastName = 0;
-        int ClickCountTxtDateOfBirth = 0;
+        int ClickCountDateOfBirth = 0;
         int ClickCountTxtPhoneNumber = 0;
         int ClickCountTxtEmailId = 0;
         int ClickCountTxtSalary = 0;
@@ -459,7 +459,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             ClickCountTxtFirstName = 0;
             ClickCountTxtMiddleName = 0;
             ClickCountTxtLastName = 0;
-            ClickCountTxtDateOfBirth = 0;
+            ClickCountDateOfBirth = 0;
             ClickCountTxtPhoneNumber = 0;
             ClickCountTxtEmailId = 0;
             ClickCountTxtSalary = 0;
@@ -520,11 +520,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             txtLastName.ForeColor = Color.Black;
         }
 
-        private void txtDateOfBirth_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtDateOfBirth = ValidationUI.ClearTextBoxWhenClicked(txtDateOfBirth,ClickCountTxtDateOfBirth);
-            txtDateOfBirth.ForeColor = Color.Black;
-        }
+        //private void txtDateOfBirth_Click(object sender, EventArgs e)
+        //{
+        //    ClickCountTxtDateOfBirth = ValidationUI.ClearTextBoxWhenClicked(dateTimePicker1,ClickCountTxtDateOfBirth);
+        //    txtDateOfBirth.ForeColor = Color.Black;
+        //}
 
 
         private void txtPhoneNumber_Click(object sender, EventArgs e)

@@ -65,11 +65,11 @@
             this.picMail = new System.Windows.Forms.PictureBox();
             this.picDateOfBirth = new System.Windows.Forms.PictureBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblEmailAddress = new System.Windows.Forms.Label();
             this.txtEmailId = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pnlFirstHeader = new System.Windows.Forms.Panel();
             this.picPersonalInformation = new System.Windows.Forms.PictureBox();
             this.pnlEmployeeDetailsMainPanel = new System.Windows.Forms.Panel();
@@ -709,11 +709,11 @@
             this.tlpSecondboxPersonalInformation.Controls.Add(this.picMail, 1, 2);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.picDateOfBirth, 1, 0);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.lblDateOfBirth, 2, 0);
-            this.tlpSecondboxPersonalInformation.Controls.Add(this.txtDateOfBirth, 3, 0);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.lblPhoneNumber, 2, 1);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.txtPhoneNumber, 3, 1);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.lblEmailAddress, 2, 2);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.txtEmailId, 3, 2);
+            this.tlpSecondboxPersonalInformation.Controls.Add(this.dateTimePicker1, 3, 0);
             this.tlpSecondboxPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSecondboxPersonalInformation.Location = new System.Drawing.Point(728, 60);
             this.tlpSecondboxPersonalInformation.Margin = new System.Windows.Forms.Padding(0);
@@ -774,20 +774,6 @@
             this.lblDateOfBirth.TabIndex = 6;
             this.lblDateOfBirth.Text = "Date Of Birth";
             // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateOfBirth.ForeColor = System.Drawing.Color.Gray;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(174, 9);
-            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(360, 30);
-            this.txtDateOfBirth.TabIndex = 7;
-            this.txtDateOfBirth.Text = "  ---Enter DOB---";
-            this.txtDateOfBirth.Click += new System.EventHandler(this.txtDateOfBirth_Click);
-            // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -839,6 +825,14 @@
             this.txtEmailId.TabIndex = 11;
             this.txtEmailId.Text = "  ---Enter Email Address---";
             this.txtEmailId.Click += new System.EventHandler(this.txtEmailId_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker1.Location = new System.Drawing.Point(177, 13);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(177, 22);
+            this.dateTimePicker1.TabIndex = 12;
             // 
             // pnlFirstHeader
             // 
@@ -2288,7 +2282,6 @@
         private System.Windows.Forms.PictureBox picPhoneNumber;
         private System.Windows.Forms.PictureBox picDateOfBirth;
         private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblEmailAddress;
@@ -2332,5 +2325,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpDocument;
         private System.Windows.Forms.Label lblDocument;
         private System.Windows.Forms.PictureBox picDocument;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
