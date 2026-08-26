@@ -71,30 +71,30 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                     // Employee Name
                     // =========================
 
-                    string firstName =
-                        dataRow["FirstName"].ToString();
+                //    string firstName =
+                //        dataRow["FirstName"].ToString();
 
-                    string middleName =
-                        dataRow["MiddleName"] == DBNull.Value
-                            ? ""
-                            : dataRow["MiddleName"].ToString();
+                //    string middleName =
+                //        dataRow["MiddleName"] == DBNull.Value
+                //            ? ""
+                //            : dataRow["MiddleName"].ToString();
 
-                    string lastName =
-                        dataRow["LastName"].ToString();
+                //    string lastName =
+                //        dataRow["LastName"].ToString();
 
-                    string fullName = string.Join(
-                        " ",
-                        new string[]
-                {
-                    firstName,
-                    middleName,
-                    lastName
-                }.Where(x =>
-                            !string.IsNullOrWhiteSpace(x))
-                    );
+                //    string fullName = string.Join(
+                //        " ",
+                //        new string[]
+                //{
+                //    firstName,
+                //    middleName,
+                //    lastName
+                //}.Where(x =>
+                //            !string.IsNullOrWhiteSpace(x))
+                //    );
 
                     dvgEmployeeDetails.Rows[rowIndex]
-                        .Cells["colName"].Value = fullName;
+                        .Cells["colName"].Value = dataRow["EmployeeName"].ToString(); 
 
 
                     // =========================
