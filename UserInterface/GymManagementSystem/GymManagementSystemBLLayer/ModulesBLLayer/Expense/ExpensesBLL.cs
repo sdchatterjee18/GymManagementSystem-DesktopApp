@@ -79,35 +79,39 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Expense
         }
 
         //Insert Expense
-        public string InsertExpenseBLL(int categoryId, decimal expenseAmount, string notes)
+        public ValidationResult InsertExpenseBLL()
         {
-            string InsertionMessage = null;
-            CategoryId = categoryId;
-            ExpenseAmount = expenseAmount;
-            Notes = notes;
-            ValidationBll.CommonValidationMessage ExpenseAmountResult = ValidationBll.ValidatePrice(ExpenseAmount);
-            ValidationBll.CommonValidationMessage NotesResult = ValidationBll.ValidateName(Notes);
-            if (ExpenseAmountResult != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(ExpenseAmountResult).ToString();
-            }
-            if (NotesResult != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(NotesResult).ToString();
-            }
-            try
-            {
-                ExpensesDAL ExpenseDAL = new ExpensesDAL();
+            ValidationBll.CommonValidationMessage result;
 
-                InsertionMessage = ExpenseDAL.InsertExpenseDAL(CategoryId, Convert.ToDecimal(ExpenseAmount), Notes);
-                return InsertionMessage;
-            }
-            catch (Exception Ex)
-            {
-                return InsertionMessage;
-            }
+            // Amount
+            result = ValidationBll.ValidatePrice(this.ExpenseAmount);
 
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return new ValidationResult
+                {
+                    FieldName = "Amount",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
+           ExpensesDAL expenseDAL = new ExpensesDAL();
+            // PASS BLL PROPERTIES TO DAL
+            expenseDAL.CategoryId = this.CategoryId;
+            expenseDAL.ExpenseAmount = this.ExpenseAmount;
+            expenseDAL.Notes = this.Notes;
+
+            // CALL DAL INSERT METHOD
+            string message =expenseDAL.InsertExpenseDAL();
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
+
+        
 
         // Super Admin
         public DataTable SARetrieveAllExpensesBLL()

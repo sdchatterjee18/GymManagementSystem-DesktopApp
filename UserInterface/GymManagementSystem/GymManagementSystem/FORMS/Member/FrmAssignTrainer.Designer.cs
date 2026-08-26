@@ -240,28 +240,26 @@
             this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.79188F));
             this.tlpAssignPersonalTrainerWholeDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.30964F));
-            this.tlpAssignPersonalTrainerWholeDetails.Size = new System.Drawing.Size(862, 609);
+            this.tlpAssignPersonalTrainerWholeDetails.Size = new System.Drawing.Size(1149, 750);
             this.tlpAssignPersonalTrainerWholeDetails.TabIndex = 4;
             // 
             // tlpAssignAndCancleSectionInButtom
             // 
             this.tlpAssignAndCancleSectionInButtom.ColumnCount = 5;
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.5122F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.48781F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.98338F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.0105F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.9623797F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.986F));
+            this.tlpAssignAndCancleSectionInButtom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.97025F));
             this.tlpAssignAndCancleSectionInButtom.Controls.Add(this.tlpCancleButtonSection, 3, 0);
             this.tlpAssignAndCancleSectionInButtom.Controls.Add(this.tlpAssignButtonSectionInAssignPersonalTrainer, 1, 0);
             this.tlpAssignAndCancleSectionInButtom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAssignAndCancleSectionInButtom.Location = new System.Drawing.Point(2, 535);
-            this.tlpAssignAndCancleSectionInButtom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAssignAndCancleSectionInButtom.Location = new System.Drawing.Point(3, 658);
+            this.tlpAssignAndCancleSectionInButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAssignAndCancleSectionInButtom.Name = "tlpAssignAndCancleSectionInButtom";
             this.tlpAssignAndCancleSectionInButtom.RowCount = 1;
             this.tlpAssignAndCancleSectionInButtom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAssignAndCancleSectionInButtom.Size = new System.Drawing.Size(858, 72);
+            this.tlpAssignAndCancleSectionInButtom.Size = new System.Drawing.Size(1143, 90);
             this.tlpAssignAndCancleSectionInButtom.TabIndex = 2;
             // 
             // tlpCancleButtonSection
@@ -270,24 +268,24 @@
             this.tlpCancleButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCancleButtonSection.Controls.Add(this.pnlCancleButtonCreateInAssignPersonalTrainer, 0, 1);
             this.tlpCancleButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCancleButtonSection.Location = new System.Drawing.Point(434, 2);
-            this.tlpCancleButtonSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleButtonSection.Location = new System.Drawing.Point(574, 2);
+            this.tlpCancleButtonSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpCancleButtonSection.Name = "tlpCancleButtonSection";
             this.tlpCancleButtonSection.RowCount = 3;
+            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.06977F));
+            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpCancleButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpCancleButtonSection.Size = new System.Drawing.Size(161, 68);
+            this.tlpCancleButtonSection.Size = new System.Drawing.Size(131, 86);
             this.tlpCancleButtonSection.TabIndex = 1;
             // 
             // pnlCancleButtonCreateInAssignPersonalTrainer
             // 
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Controls.Add(this.tlpCancleImageAndLevel);
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCancleButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(2, 15);
-            this.pnlCancleButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 27);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Name = "pnlCancleButtonCreateInAssignPersonalTrainer";
-            this.pnlCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(157, 36);
+            this.pnlCancleButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(125, 39);
             this.pnlCancleButtonCreateInAssignPersonalTrainer.TabIndex = 16;
             this.pnlCancleButtonCreateInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             // 
@@ -301,12 +299,12 @@
             this.tlpCancleImageAndLevel.Controls.Add(this.lblcancleInPersonalTrainerAssign, 1, 0);
             this.tlpCancleImageAndLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCancleImageAndLevel.Location = new System.Drawing.Point(0, 0);
-            this.tlpCancleImageAndLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpCancleImageAndLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpCancleImageAndLevel.Name = "tlpCancleImageAndLevel";
             this.tlpCancleImageAndLevel.RowCount = 1;
             this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleImageAndLevel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCancleImageAndLevel.Size = new System.Drawing.Size(157, 36);
+            this.tlpCancleImageAndLevel.Size = new System.Drawing.Size(125, 39);
             this.tlpCancleImageAndLevel.TabIndex = 3;
             this.tlpCancleImageAndLevel.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
             this.tlpCancleImageAndLevel.MouseEnter += new System.EventHandler(this.tlpCancleImageAndLevel_MouseEnter);
@@ -316,10 +314,10 @@
             // 
             this.picCancleInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCancleInAssignPersonalTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picCancleInAssignPersonalTrainer.Image")));
-            this.picCancleInAssignPersonalTrainer.Location = new System.Drawing.Point(2, 2);
-            this.picCancleInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCancleInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 2);
+            this.picCancleInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCancleInAssignPersonalTrainer.Name = "picCancleInAssignPersonalTrainer";
-            this.picCancleInAssignPersonalTrainer.Size = new System.Drawing.Size(47, 32);
+            this.picCancleInAssignPersonalTrainer.Size = new System.Drawing.Size(35, 35);
             this.picCancleInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancleInAssignPersonalTrainer.TabIndex = 0;
             this.picCancleInAssignPersonalTrainer.TabStop = false;
@@ -331,12 +329,11 @@
             // 
             this.lblcancleInPersonalTrainerAssign.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblcancleInPersonalTrainerAssign.AutoSize = true;
-            this.lblcancleInPersonalTrainerAssign.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcancleInPersonalTrainerAssign.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblcancleInPersonalTrainerAssign.ForeColor = System.Drawing.Color.White;
-            this.lblcancleInPersonalTrainerAssign.Location = new System.Drawing.Point(53, 8);
-            this.lblcancleInPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblcancleInPersonalTrainerAssign.Location = new System.Drawing.Point(44, 8);
             this.lblcancleInPersonalTrainerAssign.Name = "lblcancleInPersonalTrainerAssign";
-            this.lblcancleInPersonalTrainerAssign.Size = new System.Drawing.Size(61, 19);
+            this.lblcancleInPersonalTrainerAssign.Size = new System.Drawing.Size(73, 23);
             this.lblcancleInPersonalTrainerAssign.TabIndex = 1;
             this.lblcancleInPersonalTrainerAssign.Text = "CANCEL";
             this.lblcancleInPersonalTrainerAssign.Click += new System.EventHandler(this.pnlCancleButtonCreateInAssignPersonalTrainer_Click);
@@ -349,24 +346,24 @@
             this.tlpAssignButtonSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAssignButtonSectionInAssignPersonalTrainer.Controls.Add(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer, 0, 1);
             this.tlpAssignButtonSectionInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAssignButtonSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(261, 2);
-            this.tlpAssignButtonSectionInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(380, 2);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAssignButtonSectionInAssignPersonalTrainer.Name = "tlpAssignButtonSectionInAssignPersonalTrainer";
             this.tlpAssignButtonSectionInAssignPersonalTrainer.RowCount = 3;
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.06977F));
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpAssignButtonSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpAssignButtonSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(161, 68);
+            this.tlpAssignButtonSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(177, 86);
             this.tlpAssignButtonSectionInAssignPersonalTrainer.TabIndex = 0;
             // 
             // pnlAssignButtontoAssignTrainerInAssignPersonalTrainer
             // 
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Controls.Add(this.tlpAssignButtonCreateInAssignPersonalTrainer);
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Location = new System.Drawing.Point(2, 15);
-            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 27);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Name = "pnlAssignButtontoAssignTrainerInAssignPersonalTrainer";
-            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Size = new System.Drawing.Size(157, 36);
+            this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Size = new System.Drawing.Size(171, 39);
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.TabIndex = 0;
             this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             // 
@@ -374,18 +371,18 @@
             // 
             this.tlpAssignButtonCreateInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
             this.tlpAssignButtonCreateInAssignPersonalTrainer.ColumnCount = 2;
-            this.tlpAssignButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tlpAssignButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.37762F));
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.62238F));
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Controls.Add(this.picAssignButtonCreateInAssignPersonalTrainer, 0, 0);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Controls.Add(this.lblAssignTrainerButton, 1, 0);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
-            this.tlpAssignButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Name = "tlpAssignButtonCreateInAssignPersonalTrainer";
             this.tlpAssignButtonCreateInAssignPersonalTrainer.RowCount = 1;
             this.tlpAssignButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAssignButtonCreateInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAssignButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(157, 36);
+            this.tlpAssignButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(171, 39);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.TabIndex = 2;
             this.tlpAssignButtonCreateInAssignPersonalTrainer.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
             this.tlpAssignButtonCreateInAssignPersonalTrainer.MouseEnter += new System.EventHandler(this.tlpAssignButtonCreateInAssignPersonalTrainer_MouseEnter);
@@ -395,10 +392,10 @@
             // 
             this.picAssignButtonCreateInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAssignButtonCreateInAssignPersonalTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picAssignButtonCreateInAssignPersonalTrainer.Image")));
-            this.picAssignButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(2, 2);
-            this.picAssignButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAssignButtonCreateInAssignPersonalTrainer.Location = new System.Drawing.Point(3, 2);
+            this.picAssignButtonCreateInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAssignButtonCreateInAssignPersonalTrainer.Name = "picAssignButtonCreateInAssignPersonalTrainer";
-            this.picAssignButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(47, 32);
+            this.picAssignButtonCreateInAssignPersonalTrainer.Size = new System.Drawing.Size(32, 35);
             this.picAssignButtonCreateInAssignPersonalTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAssignButtonCreateInAssignPersonalTrainer.TabIndex = 0;
             this.picAssignButtonCreateInAssignPersonalTrainer.TabStop = false;
@@ -410,12 +407,11 @@
             // 
             this.lblAssignTrainerButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAssignTrainerButton.AutoSize = true;
-            this.lblAssignTrainerButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignTrainerButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblAssignTrainerButton.ForeColor = System.Drawing.Color.White;
-            this.lblAssignTrainerButton.Location = new System.Drawing.Point(53, 8);
-            this.lblAssignTrainerButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAssignTrainerButton.Location = new System.Drawing.Point(41, 8);
             this.lblAssignTrainerButton.Name = "lblAssignTrainerButton";
-            this.lblAssignTrainerButton.Size = new System.Drawing.Size(97, 19);
+            this.lblAssignTrainerButton.Size = new System.Drawing.Size(123, 23);
             this.lblAssignTrainerButton.TabIndex = 1;
             this.lblAssignTrainerButton.Text = "Assign Trainer";
             this.lblAssignTrainerButton.Click += new System.EventHandler(this.pnlAssignButtontoAssignTrainerInAssignPersonalTrainer_Click);
@@ -426,40 +422,40 @@
             // 
             this.tlpMiddleSectionInAssignPersonalTrainer.ColumnCount = 5;
             this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.30568F));
-            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpMiddleSectionInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.716157F));
             this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.pnlMiddleSectionLeftBarInAssignPersonalTrainer, 1, 0);
             this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.pnlMiddleSectionRightBarInAssignPersonalTrainer, 3, 0);
             this.tlpMiddleSectionInAssignPersonalTrainer.Controls.Add(this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate, 2, 0);
             this.tlpMiddleSectionInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMiddleSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 60);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 74);
             this.tlpMiddleSectionInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMiddleSectionInAssignPersonalTrainer.Name = "tlpMiddleSectionInAssignPersonalTrainer";
             this.tlpMiddleSectionInAssignPersonalTrainer.RowCount = 1;
             this.tlpMiddleSectionInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMiddleSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(862, 473);
+            this.tlpMiddleSectionInAssignPersonalTrainer.Size = new System.Drawing.Size(1149, 582);
             this.tlpMiddleSectionInAssignPersonalTrainer.TabIndex = 0;
             // 
             // pnlMiddleSectionLeftBarInAssignPersonalTrainer
             // 
             this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Location = new System.Drawing.Point(42, 0);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Location = new System.Drawing.Point(57, 0);
             this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Name = "pnlMiddleSectionLeftBarInAssignPersonalTrainer";
-            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 473);
+            this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.Size = new System.Drawing.Size(3, 582);
             this.pnlMiddleSectionLeftBarInAssignPersonalTrainer.TabIndex = 0;
             // 
             // pnlMiddleSectionRightBarInAssignPersonalTrainer
             // 
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Location = new System.Drawing.Point(818, 0);
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Location = new System.Drawing.Point(1091, 0);
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Name = "pnlMiddleSectionRightBarInAssignPersonalTrainer";
-            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Size = new System.Drawing.Size(2, 473);
+            this.pnlMiddleSectionRightBarInAssignPersonalTrainer.Size = new System.Drawing.Size(3, 582);
             this.pnlMiddleSectionRightBarInAssignPersonalTrainer.TabIndex = 1;
             // 
             // tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate
@@ -473,14 +469,14 @@
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.pnlMiddleSectionTopBarInAssignPersonalTrainer, 0, 0);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.pnlMiddleSectionButtomBarInAssignPersonalTrainer, 0, 2);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Controls.Add(this.tlpMemberAndTrainerAssignAndInformation, 0, 1);
-            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Location = new System.Drawing.Point(44, 0);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Location = new System.Drawing.Point(60, 0);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Name = "tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate";
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowCount = 3;
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Size = new System.Drawing.Size(774, 473);
+            this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.Size = new System.Drawing.Size(1031, 582);
             this.tlpMiddleSectionInAssignPersonalTrainerAndTopAndButtomBarCreate.TabIndex = 2;
             // 
             // pnlMiddleSectionTopBarInAssignPersonalTrainer
@@ -490,17 +486,17 @@
             this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 0);
             this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Name = "pnlMiddleSectionTopBarInAssignPersonalTrainer";
-            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Size = new System.Drawing.Size(774, 2);
+            this.pnlMiddleSectionTopBarInAssignPersonalTrainer.Size = new System.Drawing.Size(1031, 2);
             this.pnlMiddleSectionTopBarInAssignPersonalTrainer.TabIndex = 0;
             // 
             // pnlMiddleSectionButtomBarInAssignPersonalTrainer
             // 
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 471);
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Location = new System.Drawing.Point(0, 580);
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Name = "pnlMiddleSectionButtomBarInAssignPersonalTrainer";
-            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Size = new System.Drawing.Size(774, 2);
+            this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.Size = new System.Drawing.Size(1031, 2);
             this.pnlMiddleSectionButtomBarInAssignPersonalTrainer.TabIndex = 1;
             // 
             // tlpMemberAndTrainerAssignAndInformation
@@ -512,14 +508,14 @@
             this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.tlpSelectTrainerNamePortion, 0, 1);
             this.tlpMemberAndTrainerAssignAndInformation.Controls.Add(this.pnlTrainerInformationWholePortion, 0, 2);
             this.tlpMemberAndTrainerAssignAndInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberAndTrainerAssignAndInformation.Location = new System.Drawing.Point(2, 4);
-            this.tlpMemberAndTrainerAssignAndInformation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberAndTrainerAssignAndInformation.Location = new System.Drawing.Point(3, 4);
+            this.tlpMemberAndTrainerAssignAndInformation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberAndTrainerAssignAndInformation.Name = "tlpMemberAndTrainerAssignAndInformation";
             this.tlpMemberAndTrainerAssignAndInformation.RowCount = 3;
             this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpMemberAndTrainerAssignAndInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tlpMemberAndTrainerAssignAndInformation.Size = new System.Drawing.Size(770, 465);
+            this.tlpMemberAndTrainerAssignAndInformation.Size = new System.Drawing.Size(1025, 574);
             this.tlpMemberAndTrainerAssignAndInformation.TabIndex = 2;
             // 
             // tlpMemberInformationInAssignPersonalTrainer
@@ -538,30 +534,30 @@
             this.tlpMemberInformationInAssignPersonalTrainer.Name = "tlpMemberInformationInAssignPersonalTrainer";
             this.tlpMemberInformationInAssignPersonalTrainer.RowCount = 6;
             this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMemberInformationInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberInformationInAssignPersonalTrainer.Size = new System.Drawing.Size(770, 209);
+            this.tlpMemberInformationInAssignPersonalTrainer.Size = new System.Drawing.Size(1025, 258);
             this.tlpMemberInformationInAssignPersonalTrainer.TabIndex = 0;
             // 
             // tlpMemberInformationImageAndTitleSectionAndLine
             // 
             this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnCount = 3;
-            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
             this.tlpMemberInformationImageAndTitleSectionAndLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.picMemberInformation, 0, 0);
             this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.tlpMemberInformationLineBar, 2, 0);
             this.tlpMemberInformationImageAndTitleSectionAndLine.Controls.Add(this.lblMemberInformationTitle, 1, 0);
             this.tlpMemberInformationImageAndTitleSectionAndLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberInformationImageAndTitleSectionAndLine.Location = new System.Drawing.Point(16, 8);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Location = new System.Drawing.Point(21, 10);
             this.tlpMemberInformationImageAndTitleSectionAndLine.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMemberInformationImageAndTitleSectionAndLine.Name = "tlpMemberInformationImageAndTitleSectionAndLine";
             this.tlpMemberInformationImageAndTitleSectionAndLine.RowCount = 1;
             this.tlpMemberInformationImageAndTitleSectionAndLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMemberInformationImageAndTitleSectionAndLine.Size = new System.Drawing.Size(737, 37);
+            this.tlpMemberInformationImageAndTitleSectionAndLine.Size = new System.Drawing.Size(981, 46);
             this.tlpMemberInformationImageAndTitleSectionAndLine.TabIndex = 2;
             // 
             // picMemberInformation
@@ -571,7 +567,7 @@
             this.picMemberInformation.Location = new System.Drawing.Point(0, 0);
             this.picMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.picMemberInformation.Name = "picMemberInformation";
-            this.picMemberInformation.Size = new System.Drawing.Size(38, 37);
+            this.picMemberInformation.Size = new System.Drawing.Size(51, 46);
             this.picMemberInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberInformation.TabIndex = 0;
             this.picMemberInformation.TabStop = false;
@@ -582,24 +578,24 @@
             this.tlpMemberInformationLineBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberInformationLineBar.Controls.Add(this.pnlMemberInformationLineBar, 0, 1);
             this.tlpMemberInformationLineBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberInformationLineBar.Location = new System.Drawing.Point(224, 2);
-            this.tlpMemberInformationLineBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMemberInformationLineBar.Location = new System.Drawing.Point(299, 2);
+            this.tlpMemberInformationLineBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberInformationLineBar.Name = "tlpMemberInformationLineBar";
             this.tlpMemberInformationLineBar.RowCount = 3;
             this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tlpMemberInformationLineBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberInformationLineBar.Size = new System.Drawing.Size(511, 33);
+            this.tlpMemberInformationLineBar.Size = new System.Drawing.Size(679, 42);
             this.tlpMemberInformationLineBar.TabIndex = 2;
             // 
             // pnlMemberInformationLineBar
             // 
             this.pnlMemberInformationLineBar.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlMemberInformationLineBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMemberInformationLineBar.Location = new System.Drawing.Point(2, 17);
-            this.pnlMemberInformationLineBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMemberInformationLineBar.Location = new System.Drawing.Point(3, 21);
+            this.pnlMemberInformationLineBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMemberInformationLineBar.Name = "pnlMemberInformationLineBar";
-            this.pnlMemberInformationLineBar.Size = new System.Drawing.Size(507, 1);
+            this.pnlMemberInformationLineBar.Size = new System.Drawing.Size(673, 1);
             this.pnlMemberInformationLineBar.TabIndex = 0;
             // 
             // lblMemberInformationTitle
@@ -608,10 +604,9 @@
             this.lblMemberInformationTitle.AutoSize = true;
             this.lblMemberInformationTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberInformationTitle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblMemberInformationTitle.Location = new System.Drawing.Point(40, 8);
-            this.lblMemberInformationTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMemberInformationTitle.Location = new System.Drawing.Point(54, 10);
             this.lblMemberInformationTitle.Name = "lblMemberInformationTitle";
-            this.lblMemberInformationTitle.Size = new System.Drawing.Size(177, 20);
+            this.lblMemberInformationTitle.Size = new System.Drawing.Size(228, 25);
             this.lblMemberInformationTitle.TabIndex = 1;
             this.lblMemberInformationTitle.Text = "MEMBER INFORMATION";
             // 
@@ -623,13 +618,13 @@
             this.tlpMemberIdAndMemberNameInMemberInformation.Controls.Add(this.lblMemberNameInMemberInformation, 1, 0);
             this.tlpMemberIdAndMemberNameInMemberInformation.Controls.Add(this.lblMemberIDMemberInformation, 0, 0);
             this.tlpMemberIdAndMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberIdAndMemberNameInMemberInformation.Location = new System.Drawing.Point(16, 45);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Location = new System.Drawing.Point(21, 56);
             this.tlpMemberIdAndMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMemberIdAndMemberNameInMemberInformation.Name = "tlpMemberIdAndMemberNameInMemberInformation";
             this.tlpMemberIdAndMemberNameInMemberInformation.RowCount = 1;
             this.tlpMemberIdAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMemberIdAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberIdAndMemberNameInMemberInformation.Size = new System.Drawing.Size(737, 37);
+            this.tlpMemberIdAndMemberNameInMemberInformation.Size = new System.Drawing.Size(981, 46);
             this.tlpMemberIdAndMemberNameInMemberInformation.TabIndex = 4;
             // 
             // lblMemberNameInMemberInformation
@@ -638,10 +633,10 @@
             this.lblMemberNameInMemberInformation.AutoSize = true;
             this.lblMemberNameInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberNameInMemberInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblMemberNameInMemberInformation.Location = new System.Drawing.Point(368, 9);
+            this.lblMemberNameInMemberInformation.Location = new System.Drawing.Point(490, 11);
             this.lblMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblMemberNameInMemberInformation.Name = "lblMemberNameInMemberInformation";
-            this.lblMemberNameInMemberInformation.Size = new System.Drawing.Size(102, 19);
+            this.lblMemberNameInMemberInformation.Size = new System.Drawing.Size(126, 23);
             this.lblMemberNameInMemberInformation.TabIndex = 4;
             this.lblMemberNameInMemberInformation.Text = "Member Name";
             // 
@@ -651,10 +646,10 @@
             this.lblMemberIDMemberInformation.AutoSize = true;
             this.lblMemberIDMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberIDMemberInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblMemberIDMemberInformation.Location = new System.Drawing.Point(0, 9);
+            this.lblMemberIDMemberInformation.Location = new System.Drawing.Point(0, 11);
             this.lblMemberIDMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblMemberIDMemberInformation.Name = "lblMemberIDMemberInformation";
-            this.lblMemberIDMemberInformation.Size = new System.Drawing.Size(79, 19);
+            this.lblMemberIDMemberInformation.Size = new System.Drawing.Size(97, 23);
             this.lblMemberIDMemberInformation.TabIndex = 3;
             this.lblMemberIDMemberInformation.Text = "Member ID";
             // 
@@ -666,62 +661,62 @@
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tlpRetrieveMemberNameInAssignPersonalTrainer, 0, 0);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Controls.Add(this.tlpRetrieveMemberIDInAssignPersonalTrainer, 0, 0);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Location = new System.Drawing.Point(16, 82);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Location = new System.Drawing.Point(21, 102);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Name = "tlpRetrieveMemberIDAndMemberNameInMemberInformation";
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowCount = 1;
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Size = new System.Drawing.Size(737, 37);
+            this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.Size = new System.Drawing.Size(981, 46);
             this.tlpRetrieveMemberIDAndMemberNameInMemberInformation.TabIndex = 5;
             // 
             // tlpRetrieveMemberNameInAssignPersonalTrainer
             // 
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnCount = 5;
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.pnlLeftBarInRetrieveMemberName, 1, 0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberNameInformation, 2, 0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.picRetrieveMemberNameIcon, 0, 0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Controls.Add(this.pnlRightBarInMemberNameRetrieve, 3, 0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Location = new System.Drawing.Point(368, 0);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Location = new System.Drawing.Point(490, 0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.Name = "tlpRetrieveMemberNameInAssignPersonalTrainer";
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.RowCount = 1;
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Size = new System.Drawing.Size(369, 37);
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveMemberNameInAssignPersonalTrainer.Size = new System.Drawing.Size(491, 46);
             this.tlpRetrieveMemberNameInAssignPersonalTrainer.TabIndex = 2;
             // 
             // pnlLeftBarInRetrieveMemberName
             // 
             this.pnlLeftBarInRetrieveMemberName.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarInRetrieveMemberName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarInRetrieveMemberName.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarInRetrieveMemberName.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarInRetrieveMemberName.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInRetrieveMemberName.Name = "pnlLeftBarInRetrieveMemberName";
-            this.pnlLeftBarInRetrieveMemberName.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarInRetrieveMemberName.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarInRetrieveMemberName.TabIndex = 1;
             // 
             // tlpRetrieveMemberNameInformation
             // 
             this.tlpRetrieveMemberNameInformation.ColumnCount = 1;
-            this.tlpRetrieveMemberNameInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
+            this.tlpRetrieveMemberNameInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
             this.tlpRetrieveMemberNameInformation.Controls.Add(this.pnlTopBarInMemberNameRetrieve, 0, 0);
             this.tlpRetrieveMemberNameInformation.Controls.Add(this.pnButtomBarInMemberNameRetrieve, 0, 2);
             this.tlpRetrieveMemberNameInformation.Controls.Add(this.lblRetrieveMemberNameInMemberInformation, 0, 1);
             this.tlpRetrieveMemberNameInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMemberNameInformation.Location = new System.Drawing.Point(53, 0);
+            this.tlpRetrieveMemberNameInformation.Location = new System.Drawing.Point(71, 0);
             this.tlpRetrieveMemberNameInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMemberNameInformation.Name = "tlpRetrieveMemberNameInformation";
             this.tlpRetrieveMemberNameInformation.RowCount = 3;
             this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpRetrieveMemberNameInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberNameInformation.Size = new System.Drawing.Size(251, 37);
+            this.tlpRetrieveMemberNameInformation.Size = new System.Drawing.Size(335, 46);
             this.tlpRetrieveMemberNameInformation.TabIndex = 3;
             // 
             // pnlTopBarInMemberNameRetrieve
@@ -731,17 +726,17 @@
             this.pnlTopBarInMemberNameRetrieve.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInMemberNameRetrieve.Name = "pnlTopBarInMemberNameRetrieve";
-            this.pnlTopBarInMemberNameRetrieve.Size = new System.Drawing.Size(251, 2);
+            this.pnlTopBarInMemberNameRetrieve.Size = new System.Drawing.Size(335, 2);
             this.pnlTopBarInMemberNameRetrieve.TabIndex = 0;
             // 
             // pnButtomBarInMemberNameRetrieve
             // 
             this.pnButtomBarInMemberNameRetrieve.BackColor = System.Drawing.Color.ForestGreen;
             this.pnButtomBarInMemberNameRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnButtomBarInMemberNameRetrieve.Location = new System.Drawing.Point(0, 34);
+            this.pnButtomBarInMemberNameRetrieve.Location = new System.Drawing.Point(0, 41);
             this.pnButtomBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.pnButtomBarInMemberNameRetrieve.Name = "pnButtomBarInMemberNameRetrieve";
-            this.pnButtomBarInMemberNameRetrieve.Size = new System.Drawing.Size(251, 3);
+            this.pnButtomBarInMemberNameRetrieve.Size = new System.Drawing.Size(335, 5);
             this.pnButtomBarInMemberNameRetrieve.TabIndex = 1;
             // 
             // lblRetrieveMemberNameInMemberInformation
@@ -750,10 +745,10 @@
             this.lblRetrieveMemberNameInMemberInformation.AutoSize = true;
             this.lblRetrieveMemberNameInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberNameInMemberInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblRetrieveMemberNameInMemberInformation.Location = new System.Drawing.Point(85, 8);
+            this.lblRetrieveMemberNameInMemberInformation.Location = new System.Drawing.Point(119, 10);
             this.lblRetrieveMemberNameInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblRetrieveMemberNameInMemberInformation.Name = "lblRetrieveMemberNameInMemberInformation";
-            this.lblRetrieveMemberNameInMemberInformation.Size = new System.Drawing.Size(80, 19);
+            this.lblRetrieveMemberNameInMemberInformation.Size = new System.Drawing.Size(96, 23);
             this.lblRetrieveMemberNameInMemberInformation.TabIndex = 2;
             this.lblRetrieveMemberNameInMemberInformation.Text = "John Smith";
             // 
@@ -761,10 +756,10 @@
             // 
             this.picRetrieveMemberNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picRetrieveMemberNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberNameIcon.Image")));
-            this.picRetrieveMemberNameIcon.Location = new System.Drawing.Point(2, 2);
-            this.picRetrieveMemberNameIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetrieveMemberNameIcon.Location = new System.Drawing.Point(3, 3);
+            this.picRetrieveMemberNameIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picRetrieveMemberNameIcon.Name = "picRetrieveMemberNameIcon";
-            this.picRetrieveMemberNameIcon.Size = new System.Drawing.Size(33, 32);
+            this.picRetrieveMemberNameIcon.Size = new System.Drawing.Size(44, 39);
             this.picRetrieveMemberNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRetrieveMemberNameIcon.TabIndex = 0;
             this.picRetrieveMemberNameIcon.TabStop = false;
@@ -773,19 +768,19 @@
             // 
             this.pnlRightBarInMemberNameRetrieve.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInMemberNameRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInMemberNameRetrieve.Location = new System.Drawing.Point(304, 0);
+            this.pnlRightBarInMemberNameRetrieve.Location = new System.Drawing.Point(406, 0);
             this.pnlRightBarInMemberNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInMemberNameRetrieve.Name = "pnlRightBarInMemberNameRetrieve";
-            this.pnlRightBarInMemberNameRetrieve.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInMemberNameRetrieve.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInMemberNameRetrieve.TabIndex = 2;
             // 
             // tlpRetrieveMemberIDInAssignPersonalTrainer
             // 
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnCount = 5;
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.pnlLeftBarInMemberIDRetrieve, 1, 0);
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.Controls.Add(this.tlpRetrieveMemberIDInMemberInformation, 2, 0);
@@ -796,36 +791,36 @@
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.Name = "tlpRetrieveMemberIDInAssignPersonalTrainer";
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.RowCount = 1;
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Size = new System.Drawing.Size(368, 37);
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveMemberIDInAssignPersonalTrainer.Size = new System.Drawing.Size(490, 46);
             this.tlpRetrieveMemberIDInAssignPersonalTrainer.TabIndex = 1;
             // 
             // pnlLeftBarInMemberIDRetrieve
             // 
             this.pnlLeftBarInMemberIDRetrieve.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarInMemberIDRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarInMemberIDRetrieve.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarInMemberIDRetrieve.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarInMemberIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInMemberIDRetrieve.Name = "pnlLeftBarInMemberIDRetrieve";
-            this.pnlLeftBarInMemberIDRetrieve.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarInMemberIDRetrieve.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarInMemberIDRetrieve.TabIndex = 1;
             // 
             // tlpRetrieveMemberIDInMemberInformation
             // 
             this.tlpRetrieveMemberIDInMemberInformation.ColumnCount = 1;
-            this.tlpRetrieveMemberIDInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tlpRetrieveMemberIDInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.pnlTopBarInMemberIDRetrieve, 0, 0);
             this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.pnlButtomBarInMemberIDRetrieve1, 0, 2);
             this.tlpRetrieveMemberIDInMemberInformation.Controls.Add(this.lblRetrieveMemberIDInMemberInformation, 0, 1);
             this.tlpRetrieveMemberIDInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(53, 0);
+            this.tlpRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(71, 0);
             this.tlpRetrieveMemberIDInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMemberIDInMemberInformation.Name = "tlpRetrieveMemberIDInMemberInformation";
             this.tlpRetrieveMemberIDInMemberInformation.RowCount = 3;
             this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpRetrieveMemberIDInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(234, 37);
+            this.tlpRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(312, 46);
             this.tlpRetrieveMemberIDInMemberInformation.TabIndex = 3;
             // 
             // pnlTopBarInMemberIDRetrieve
@@ -835,17 +830,17 @@
             this.pnlTopBarInMemberIDRetrieve.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInMemberIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInMemberIDRetrieve.Name = "pnlTopBarInMemberIDRetrieve";
-            this.pnlTopBarInMemberIDRetrieve.Size = new System.Drawing.Size(234, 2);
+            this.pnlTopBarInMemberIDRetrieve.Size = new System.Drawing.Size(312, 2);
             this.pnlTopBarInMemberIDRetrieve.TabIndex = 0;
             // 
             // pnlButtomBarInMemberIDRetrieve1
             // 
             this.pnlButtomBarInMemberIDRetrieve1.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInMemberIDRetrieve1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInMemberIDRetrieve1.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInMemberIDRetrieve1.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInMemberIDRetrieve1.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInMemberIDRetrieve1.Name = "pnlButtomBarInMemberIDRetrieve1";
-            this.pnlButtomBarInMemberIDRetrieve1.Size = new System.Drawing.Size(234, 3);
+            this.pnlButtomBarInMemberIDRetrieve1.Size = new System.Drawing.Size(312, 5);
             this.pnlButtomBarInMemberIDRetrieve1.TabIndex = 1;
             // 
             // lblRetrieveMemberIDInMemberInformation
@@ -854,10 +849,10 @@
             this.lblRetrieveMemberIDInMemberInformation.AutoSize = true;
             this.lblRetrieveMemberIDInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberIDInMemberInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(97, 8);
+            this.lblRetrieveMemberIDInMemberInformation.Location = new System.Drawing.Point(134, 10);
             this.lblRetrieveMemberIDInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblRetrieveMemberIDInMemberInformation.Name = "lblRetrieveMemberIDInMemberInformation";
-            this.lblRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(39, 19);
+            this.lblRetrieveMemberIDInMemberInformation.Size = new System.Drawing.Size(44, 23);
             this.lblRetrieveMemberIDInMemberInformation.TabIndex = 2;
             this.lblRetrieveMemberIDInMemberInformation.Text = "1026";
             // 
@@ -865,10 +860,10 @@
             // 
             this.picRetrieveMemberId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picRetrieveMemberId.Image = ((System.Drawing.Image)(resources.GetObject("picRetrieveMemberId.Image")));
-            this.picRetrieveMemberId.Location = new System.Drawing.Point(2, 2);
-            this.picRetrieveMemberId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetrieveMemberId.Location = new System.Drawing.Point(3, 3);
+            this.picRetrieveMemberId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picRetrieveMemberId.Name = "picRetrieveMemberId";
-            this.picRetrieveMemberId.Size = new System.Drawing.Size(33, 32);
+            this.picRetrieveMemberId.Size = new System.Drawing.Size(44, 39);
             this.picRetrieveMemberId.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRetrieveMemberId.TabIndex = 0;
             this.picRetrieveMemberId.TabStop = false;
@@ -877,10 +872,10 @@
             // 
             this.pnlButtomBarInRetrieveMemberId.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInRetrieveMemberId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInRetrieveMemberId.Location = new System.Drawing.Point(287, 0);
+            this.pnlButtomBarInRetrieveMemberId.Location = new System.Drawing.Point(383, 0);
             this.pnlButtomBarInRetrieveMemberId.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInRetrieveMemberId.Name = "pnlButtomBarInRetrieveMemberId";
-            this.pnlButtomBarInRetrieveMemberId.Size = new System.Drawing.Size(2, 37);
+            this.pnlButtomBarInRetrieveMemberId.Size = new System.Drawing.Size(3, 46);
             this.pnlButtomBarInRetrieveMemberId.TabIndex = 2;
             // 
             // tlpCurrentShiftPortion
@@ -891,28 +886,28 @@
             this.tlpCurrentShiftPortion.Controls.Add(this.tlpMembershipStatusInMemberInformation, 0, 0);
             this.tlpCurrentShiftPortion.Controls.Add(this.tlpCurrentShiftTitleAndDisplayPortion, 0, 0);
             this.tlpCurrentShiftPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCurrentShiftPortion.Location = new System.Drawing.Point(16, 119);
+            this.tlpCurrentShiftPortion.Location = new System.Drawing.Point(21, 148);
             this.tlpCurrentShiftPortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpCurrentShiftPortion.Name = "tlpCurrentShiftPortion";
             this.tlpCurrentShiftPortion.RowCount = 1;
             this.tlpCurrentShiftPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCurrentShiftPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCurrentShiftPortion.Size = new System.Drawing.Size(737, 81);
+            this.tlpCurrentShiftPortion.Size = new System.Drawing.Size(981, 100);
             this.tlpCurrentShiftPortion.TabIndex = 6;
             // 
             // tlpMembershipStatusInMemberInformation
             // 
             this.tlpMembershipStatusInMemberInformation.ColumnCount = 2;
-            this.tlpMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 304F));
+            this.tlpMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 405F));
             this.tlpMembershipStatusInMemberInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMembershipStatusInMemberInformation.Controls.Add(this.tlpRetrieveMembershipStatusInMemberInformation, 0, 0);
             this.tlpMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMembershipStatusInMemberInformation.Location = new System.Drawing.Point(368, 0);
+            this.tlpMembershipStatusInMemberInformation.Location = new System.Drawing.Point(490, 0);
             this.tlpMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpMembershipStatusInMemberInformation.Name = "tlpMembershipStatusInMemberInformation";
             this.tlpMembershipStatusInMemberInformation.RowCount = 1;
             this.tlpMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMembershipStatusInMemberInformation.Size = new System.Drawing.Size(369, 81);
+            this.tlpMembershipStatusInMemberInformation.Size = new System.Drawing.Size(491, 100);
             this.tlpMembershipStatusInMemberInformation.TabIndex = 3;
             // 
             // tlpRetrieveMembershipStatusInMemberInformation
@@ -931,27 +926,27 @@
             this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
             this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tlpRetrieveMembershipStatusInMemberInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tlpRetrieveMembershipStatusInMemberInformation.Size = new System.Drawing.Size(304, 81);
+            this.tlpRetrieveMembershipStatusInMemberInformation.Size = new System.Drawing.Size(405, 100);
             this.tlpRetrieveMembershipStatusInMemberInformation.TabIndex = 3;
             // 
             // pnlTopBarInMembershipStatusInMemberInformation
             // 
             this.pnlTopBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlTopBarInMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTopBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 26);
+            this.pnlTopBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 32);
             this.pnlTopBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInMembershipStatusInMemberInformation.Name = "pnlTopBarInMembershipStatusInMemberInformation";
-            this.pnlTopBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(304, 2);
+            this.pnlTopBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(405, 2);
             this.pnlTopBarInMembershipStatusInMemberInformation.TabIndex = 0;
             // 
             // pnlButtomBarInMembershipStatusInMemberInformation
             // 
             this.pnlButtomBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInMembershipStatusInMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 80);
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 98);
             this.pnlButtomBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInMembershipStatusInMemberInformation.Name = "pnlButtomBarInMembershipStatusInMemberInformation";
-            this.pnlButtomBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(304, 1);
+            this.pnlButtomBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(405, 2);
             this.pnlButtomBarInMembershipStatusInMemberInformation.TabIndex = 1;
             // 
             // tlpRetrieveMembershipStatus
@@ -965,12 +960,12 @@
             this.tlpRetrieveMembershipStatus.Controls.Add(this.pnlRightBarInMembershipStatusInMemberInformation, 2, 0);
             this.tlpRetrieveMembershipStatus.Controls.Add(this.tlpRetrieveMembershipStatusPortion, 1, 0);
             this.tlpRetrieveMembershipStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMembershipStatus.Location = new System.Drawing.Point(0, 28);
+            this.tlpRetrieveMembershipStatus.Location = new System.Drawing.Point(0, 34);
             this.tlpRetrieveMembershipStatus.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveMembershipStatus.Name = "tlpRetrieveMembershipStatus";
             this.tlpRetrieveMembershipStatus.RowCount = 1;
             this.tlpRetrieveMembershipStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRetrieveMembershipStatus.Size = new System.Drawing.Size(304, 52);
+            this.tlpRetrieveMembershipStatus.Size = new System.Drawing.Size(405, 64);
             this.tlpRetrieveMembershipStatus.TabIndex = 2;
             // 
             // pnlLeftBarInMembershipStatusInMemberInformation
@@ -980,16 +975,16 @@
             this.pnlLeftBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(0, 0);
             this.pnlLeftBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInMembershipStatusInMemberInformation.Name = "pnlLeftBarInMembershipStatusInMemberInformation";
-            this.pnlLeftBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 52);
+            this.pnlLeftBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 64);
             this.pnlLeftBarInMembershipStatusInMemberInformation.TabIndex = 0;
             // 
             // pnlRightBarInMembershipStatusInMemberInformation
             // 
             this.pnlRightBarInMembershipStatusInMemberInformation.BackColor = System.Drawing.Color.ForestGreen;
-            this.pnlRightBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(303, 0);
+            this.pnlRightBarInMembershipStatusInMemberInformation.Location = new System.Drawing.Point(404, 0);
             this.pnlRightBarInMembershipStatusInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInMembershipStatusInMemberInformation.Name = "pnlRightBarInMembershipStatusInMemberInformation";
-            this.pnlRightBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 52);
+            this.pnlRightBarInMembershipStatusInMemberInformation.Size = new System.Drawing.Size(1, 64);
             this.pnlRightBarInMembershipStatusInMemberInformation.TabIndex = 1;
             // 
             // tlpRetrieveMembershipStatusPortion
@@ -1007,17 +1002,17 @@
             this.tlpRetrieveMembershipStatusPortion.Name = "tlpRetrieveMembershipStatusPortion";
             this.tlpRetrieveMembershipStatusPortion.RowCount = 1;
             this.tlpRetrieveMembershipStatusPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRetrieveMembershipStatusPortion.Size = new System.Drawing.Size(302, 52);
+            this.tlpRetrieveMembershipStatusPortion.Size = new System.Drawing.Size(403, 64);
             this.tlpRetrieveMembershipStatusPortion.TabIndex = 2;
             // 
             // picDoneMembershipStatusActivation
             // 
             this.picDoneMembershipStatusActivation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picDoneMembershipStatusActivation.Image = ((System.Drawing.Image)(resources.GetObject("picDoneMembershipStatusActivation.Image")));
-            this.picDoneMembershipStatusActivation.Location = new System.Drawing.Point(250, 2);
-            this.picDoneMembershipStatusActivation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDoneMembershipStatusActivation.Location = new System.Drawing.Point(334, 2);
+            this.picDoneMembershipStatusActivation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picDoneMembershipStatusActivation.Name = "picDoneMembershipStatusActivation";
-            this.picDoneMembershipStatusActivation.Size = new System.Drawing.Size(50, 48);
+            this.picDoneMembershipStatusActivation.Size = new System.Drawing.Size(66, 60);
             this.picDoneMembershipStatusActivation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDoneMembershipStatusActivation.TabIndex = 2;
             this.picDoneMembershipStatusActivation.TabStop = false;
@@ -1030,13 +1025,13 @@
             this.tlpRetrieveMembershipStatusSection.Controls.Add(this.lblRetrieveMemberActiveTime, 0, 1);
             this.tlpRetrieveMembershipStatusSection.Controls.Add(this.lblMemebrMembershipStatusTitle, 0, 0);
             this.tlpRetrieveMembershipStatusSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveMembershipStatusSection.Location = new System.Drawing.Point(54, 2);
-            this.tlpRetrieveMembershipStatusSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpRetrieveMembershipStatusSection.Location = new System.Drawing.Point(72, 2);
+            this.tlpRetrieveMembershipStatusSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpRetrieveMembershipStatusSection.Name = "tlpRetrieveMembershipStatusSection";
             this.tlpRetrieveMembershipStatusSection.RowCount = 2;
             this.tlpRetrieveMembershipStatusSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveMembershipStatusSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveMembershipStatusSection.Size = new System.Drawing.Size(192, 48);
+            this.tlpRetrieveMembershipStatusSection.Size = new System.Drawing.Size(256, 60);
             this.tlpRetrieveMembershipStatusSection.TabIndex = 0;
             // 
             // lblRetrieveMemberActiveTime
@@ -1044,10 +1039,10 @@
             this.lblRetrieveMemberActiveTime.AutoSize = true;
             this.lblRetrieveMemberActiveTime.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberActiveTime.ForeColor = System.Drawing.Color.Black;
-            this.lblRetrieveMemberActiveTime.Location = new System.Drawing.Point(0, 24);
+            this.lblRetrieveMemberActiveTime.Location = new System.Drawing.Point(0, 30);
             this.lblRetrieveMemberActiveTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblRetrieveMemberActiveTime.Name = "lblRetrieveMemberActiveTime";
-            this.lblRetrieveMemberActiveTime.Size = new System.Drawing.Size(118, 13);
+            this.lblRetrieveMemberActiveTime.Size = new System.Drawing.Size(152, 19);
             this.lblRetrieveMemberActiveTime.TabIndex = 1;
             this.lblRetrieveMemberActiveTime.Text = "Valid Till: 15 May 2025";
             // 
@@ -1060,7 +1055,7 @@
             this.lblMemebrMembershipStatusTitle.Location = new System.Drawing.Point(0, 11);
             this.lblMemebrMembershipStatusTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblMemebrMembershipStatusTitle.Name = "lblMemebrMembershipStatusTitle";
-            this.lblMemebrMembershipStatusTitle.Size = new System.Drawing.Size(185, 13);
+            this.lblMemebrMembershipStatusTitle.Size = new System.Drawing.Size(227, 19);
             this.lblMemebrMembershipStatusTitle.TabIndex = 0;
             this.lblMemebrMembershipStatusTitle.Text = "Member has an active membership";
             // 
@@ -1071,7 +1066,7 @@
             this.picRetrieveMembershipStatus.Location = new System.Drawing.Point(0, 0);
             this.picRetrieveMembershipStatus.Margin = new System.Windows.Forms.Padding(0);
             this.picRetrieveMembershipStatus.Name = "picRetrieveMembershipStatus";
-            this.picRetrieveMembershipStatus.Size = new System.Drawing.Size(52, 52);
+            this.picRetrieveMembershipStatus.Size = new System.Drawing.Size(69, 64);
             this.picRetrieveMembershipStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRetrieveMembershipStatus.TabIndex = 1;
             this.picRetrieveMembershipStatus.TabStop = false;
@@ -1088,8 +1083,8 @@
             this.tlpCurrentShiftTitleAndDisplayPortion.Name = "tlpCurrentShiftTitleAndDisplayPortion";
             this.tlpCurrentShiftTitleAndDisplayPortion.RowCount = 2;
             this.tlpCurrentShiftTitleAndDisplayPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCurrentShiftTitleAndDisplayPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpCurrentShiftTitleAndDisplayPortion.Size = new System.Drawing.Size(368, 81);
+            this.tlpCurrentShiftTitleAndDisplayPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpCurrentShiftTitleAndDisplayPortion.Size = new System.Drawing.Size(490, 100);
             this.tlpCurrentShiftTitleAndDisplayPortion.TabIndex = 0;
             // 
             // lblCurrentShiftInMemberInformation
@@ -1098,60 +1093,60 @@
             this.lblCurrentShiftInMemberInformation.AutoSize = true;
             this.lblCurrentShiftInMemberInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentShiftInMemberInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblCurrentShiftInMemberInformation.Location = new System.Drawing.Point(0, 12);
+            this.lblCurrentShiftInMemberInformation.Location = new System.Drawing.Point(0, 15);
             this.lblCurrentShiftInMemberInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblCurrentShiftInMemberInformation.Name = "lblCurrentShiftInMemberInformation";
-            this.lblCurrentShiftInMemberInformation.Size = new System.Drawing.Size(90, 19);
+            this.lblCurrentShiftInMemberInformation.Size = new System.Drawing.Size(108, 23);
             this.lblCurrentShiftInMemberInformation.TabIndex = 3;
             this.lblCurrentShiftInMemberInformation.Text = "Current Shift";
             // 
             // tlpRetrieveCurrentShiftInMemberInfromation
             // 
             this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnCount = 5;
-            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpRetrieveCurrentShiftInMemberInfromation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.pnlLeftBarInRetrieveCurrentShift, 1, 0);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.tlpRetrieveCurrentShift, 2, 0);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.picCurrentShiftIcon, 0, 0);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Controls.Add(this.pnlRightBarInCurrentShift, 3, 0);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveCurrentShiftInMemberInfromation.Location = new System.Drawing.Point(0, 44);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Location = new System.Drawing.Point(0, 54);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveCurrentShiftInMemberInfromation.Name = "tlpRetrieveCurrentShiftInMemberInfromation";
             this.tlpRetrieveCurrentShiftInMemberInfromation.RowCount = 1;
-            this.tlpRetrieveCurrentShiftInMemberInfromation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveCurrentShiftInMemberInfromation.Size = new System.Drawing.Size(368, 37);
+            this.tlpRetrieveCurrentShiftInMemberInfromation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveCurrentShiftInMemberInfromation.Size = new System.Drawing.Size(490, 46);
             this.tlpRetrieveCurrentShiftInMemberInfromation.TabIndex = 4;
             // 
             // pnlLeftBarInRetrieveCurrentShift
             // 
             this.pnlLeftBarInRetrieveCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarInRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarInRetrieveCurrentShift.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarInRetrieveCurrentShift.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInRetrieveCurrentShift.Name = "pnlLeftBarInRetrieveCurrentShift";
-            this.pnlLeftBarInRetrieveCurrentShift.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarInRetrieveCurrentShift.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarInRetrieveCurrentShift.TabIndex = 1;
             // 
             // tlpRetrieveCurrentShift
             // 
             this.tlpRetrieveCurrentShift.ColumnCount = 1;
-            this.tlpRetrieveCurrentShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tlpRetrieveCurrentShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tlpRetrieveCurrentShift.Controls.Add(this.pnlTopBarInRetrieveCurrentShift, 0, 0);
             this.tlpRetrieveCurrentShift.Controls.Add(this.pnlButtomBarInRetrieveCurrentShift, 0, 2);
             this.tlpRetrieveCurrentShift.Controls.Add(this.lblRetrieveMemberCurrentShiftTime, 0, 1);
             this.tlpRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveCurrentShift.Location = new System.Drawing.Point(53, 0);
+            this.tlpRetrieveCurrentShift.Location = new System.Drawing.Point(71, 0);
             this.tlpRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveCurrentShift.Name = "tlpRetrieveCurrentShift";
             this.tlpRetrieveCurrentShift.RowCount = 3;
             this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpRetrieveCurrentShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveCurrentShift.Size = new System.Drawing.Size(234, 37);
+            this.tlpRetrieveCurrentShift.Size = new System.Drawing.Size(312, 46);
             this.tlpRetrieveCurrentShift.TabIndex = 3;
             // 
             // pnlTopBarInRetrieveCurrentShift
@@ -1161,17 +1156,17 @@
             this.pnlTopBarInRetrieveCurrentShift.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInRetrieveCurrentShift.Name = "pnlTopBarInRetrieveCurrentShift";
-            this.pnlTopBarInRetrieveCurrentShift.Size = new System.Drawing.Size(234, 2);
+            this.pnlTopBarInRetrieveCurrentShift.Size = new System.Drawing.Size(312, 2);
             this.pnlTopBarInRetrieveCurrentShift.TabIndex = 0;
             // 
             // pnlButtomBarInRetrieveCurrentShift
             // 
             this.pnlButtomBarInRetrieveCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInRetrieveCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInRetrieveCurrentShift.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInRetrieveCurrentShift.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInRetrieveCurrentShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInRetrieveCurrentShift.Name = "pnlButtomBarInRetrieveCurrentShift";
-            this.pnlButtomBarInRetrieveCurrentShift.Size = new System.Drawing.Size(234, 3);
+            this.pnlButtomBarInRetrieveCurrentShift.Size = new System.Drawing.Size(312, 5);
             this.pnlButtomBarInRetrieveCurrentShift.TabIndex = 1;
             // 
             // lblRetrieveMemberCurrentShiftTime
@@ -1180,20 +1175,20 @@
             this.lblRetrieveMemberCurrentShiftTime.AutoSize = true;
             this.lblRetrieveMemberCurrentShiftTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveMemberCurrentShiftTime.ForeColor = System.Drawing.Color.Black;
-            this.lblRetrieveMemberCurrentShiftTime.Location = new System.Drawing.Point(2, 8);
+            this.lblRetrieveMemberCurrentShiftTime.Location = new System.Drawing.Point(18, 10);
             this.lblRetrieveMemberCurrentShiftTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblRetrieveMemberCurrentShiftTime.Name = "lblRetrieveMemberCurrentShiftTime";
-            this.lblRetrieveMemberCurrentShiftTime.Size = new System.Drawing.Size(230, 19);
+            this.lblRetrieveMemberCurrentShiftTime.Size = new System.Drawing.Size(275, 23);
             this.lblRetrieveMemberCurrentShiftTime.TabIndex = 2;
             this.lblRetrieveMemberCurrentShiftTime.Text = "Morning Shift (6:00 AM - 2:00 PM)";
             // 
             // picCurrentShiftIcon
             // 
             this.picCurrentShiftIcon.Image = ((System.Drawing.Image)(resources.GetObject("picCurrentShiftIcon.Image")));
-            this.picCurrentShiftIcon.Location = new System.Drawing.Point(2, 2);
-            this.picCurrentShiftIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCurrentShiftIcon.Location = new System.Drawing.Point(3, 2);
+            this.picCurrentShiftIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCurrentShiftIcon.Name = "picCurrentShiftIcon";
-            this.picCurrentShiftIcon.Size = new System.Drawing.Size(33, 32);
+            this.picCurrentShiftIcon.Size = new System.Drawing.Size(44, 39);
             this.picCurrentShiftIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCurrentShiftIcon.TabIndex = 0;
             this.picCurrentShiftIcon.TabStop = false;
@@ -1202,40 +1197,40 @@
             // 
             this.pnlRightBarInCurrentShift.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInCurrentShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInCurrentShift.Location = new System.Drawing.Point(287, 0);
+            this.pnlRightBarInCurrentShift.Location = new System.Drawing.Point(383, 0);
             this.pnlRightBarInCurrentShift.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInCurrentShift.Name = "pnlRightBarInCurrentShift";
-            this.pnlRightBarInCurrentShift.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInCurrentShift.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInCurrentShift.TabIndex = 2;
             // 
             // tlpSelectTrainerNamePortion
             // 
             this.tlpSelectTrainerNamePortion.ColumnCount = 5;
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tlpSelectTrainerNamePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSelectTrainerNamePortion.Controls.Add(this.picSelectTrainerName, 1, 0);
             this.tlpSelectTrainerNamePortion.Controls.Add(this.cmbSelectTrainer, 3, 0);
             this.tlpSelectTrainerNamePortion.Controls.Add(this.lblTrainerNameSelect, 2, 0);
             this.tlpSelectTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSelectTrainerNamePortion.Location = new System.Drawing.Point(0, 209);
+            this.tlpSelectTrainerNamePortion.Location = new System.Drawing.Point(0, 258);
             this.tlpSelectTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSelectTrainerNamePortion.Name = "tlpSelectTrainerNamePortion";
             this.tlpSelectTrainerNamePortion.RowCount = 1;
             this.tlpSelectTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSelectTrainerNamePortion.Size = new System.Drawing.Size(770, 46);
+            this.tlpSelectTrainerNamePortion.Size = new System.Drawing.Size(1025, 57);
             this.tlpSelectTrainerNamePortion.TabIndex = 1;
             // 
             // picSelectTrainerName
             // 
             this.picSelectTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picSelectTrainerName.Image = ((System.Drawing.Image)(resources.GetObject("picSelectTrainerName.Image")));
-            this.picSelectTrainerName.Location = new System.Drawing.Point(17, 2);
-            this.picSelectTrainerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picSelectTrainerName.Location = new System.Drawing.Point(23, 2);
+            this.picSelectTrainerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picSelectTrainerName.Name = "picSelectTrainerName";
-            this.picSelectTrainerName.Size = new System.Drawing.Size(40, 42);
+            this.picSelectTrainerName.Size = new System.Drawing.Size(53, 53);
             this.picSelectTrainerName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSelectTrainerName.TabIndex = 0;
             this.picSelectTrainerName.TabStop = false;
@@ -1246,10 +1241,10 @@
             this.cmbSelectTrainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectTrainer.ForeColor = System.Drawing.Color.Gray;
             this.cmbSelectTrainer.FormattingEnabled = true;
-            this.cmbSelectTrainer.Location = new System.Drawing.Point(183, 8);
-            this.cmbSelectTrainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSelectTrainer.Location = new System.Drawing.Point(245, 10);
+            this.cmbSelectTrainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSelectTrainer.Name = "cmbSelectTrainer";
-            this.cmbSelectTrainer.Size = new System.Drawing.Size(192, 29);
+            this.cmbSelectTrainer.Size = new System.Drawing.Size(255, 36);
             this.cmbSelectTrainer.TabIndex = 2;
             this.cmbSelectTrainer.Text = "   ---Select Trainer ---";
             this.cmbSelectTrainer.SelectedIndexChanged += new System.EventHandler(this.cmbSelectTrainer_SelectedIndexChanged);
@@ -1260,10 +1255,9 @@
             this.lblTrainerNameSelect.AutoSize = true;
             this.lblTrainerNameSelect.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerNameSelect.ForeColor = System.Drawing.Color.Green;
-            this.lblTrainerNameSelect.Location = new System.Drawing.Point(61, 12);
-            this.lblTrainerNameSelect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrainerNameSelect.Location = new System.Drawing.Point(82, 14);
             this.lblTrainerNameSelect.Name = "lblTrainerNameSelect";
-            this.lblTrainerNameSelect.Size = new System.Drawing.Size(107, 21);
+            this.lblTrainerNameSelect.Size = new System.Drawing.Size(133, 28);
             this.lblTrainerNameSelect.TabIndex = 3;
             this.lblTrainerNameSelect.Text = "Trainer Name";
             // 
@@ -1272,10 +1266,10 @@
             this.pnlTrainerInformationWholePortion.Controls.Add(this.pnlDefaultTrainerSectionShow);
             this.pnlTrainerInformationWholePortion.Controls.Add(this.pnlTrainerInformationSectionRetrieve);
             this.pnlTrainerInformationWholePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTrainerInformationWholePortion.Location = new System.Drawing.Point(0, 255);
+            this.pnlTrainerInformationWholePortion.Location = new System.Drawing.Point(0, 315);
             this.pnlTrainerInformationWholePortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTrainerInformationWholePortion.Name = "pnlTrainerInformationWholePortion";
-            this.pnlTrainerInformationWholePortion.Size = new System.Drawing.Size(770, 210);
+            this.pnlTrainerInformationWholePortion.Size = new System.Drawing.Size(1025, 259);
             this.pnlTrainerInformationWholePortion.TabIndex = 2;
             // 
             // pnlDefaultTrainerSectionShow
@@ -1283,9 +1277,9 @@
             this.pnlDefaultTrainerSectionShow.Controls.Add(this.lblSelectTrainerInDefaultTrainerSection);
             this.pnlDefaultTrainerSectionShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDefaultTrainerSectionShow.Location = new System.Drawing.Point(0, 0);
-            this.pnlDefaultTrainerSectionShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDefaultTrainerSectionShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDefaultTrainerSectionShow.Name = "pnlDefaultTrainerSectionShow";
-            this.pnlDefaultTrainerSectionShow.Size = new System.Drawing.Size(770, 210);
+            this.pnlDefaultTrainerSectionShow.Size = new System.Drawing.Size(1025, 259);
             this.pnlDefaultTrainerSectionShow.TabIndex = 4;
             // 
             // lblSelectTrainerInDefaultTrainerSection
@@ -1294,10 +1288,9 @@
             this.lblSelectTrainerInDefaultTrainerSection.AutoSize = true;
             this.lblSelectTrainerInDefaultTrainerSection.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelectTrainerInDefaultTrainerSection.ForeColor = System.Drawing.Color.Navy;
-            this.lblSelectTrainerInDefaultTrainerSection.Location = new System.Drawing.Point(300, 86);
-            this.lblSelectTrainerInDefaultTrainerSection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectTrainerInDefaultTrainerSection.Location = new System.Drawing.Point(399, 106);
             this.lblSelectTrainerInDefaultTrainerSection.Name = "lblSelectTrainerInDefaultTrainerSection";
-            this.lblSelectTrainerInDefaultTrainerSection.Size = new System.Drawing.Size(109, 21);
+            this.lblSelectTrainerInDefaultTrainerSection.Size = new System.Drawing.Size(133, 28);
             this.lblSelectTrainerInDefaultTrainerSection.TabIndex = 0;
             this.lblSelectTrainerInDefaultTrainerSection.Text = "Select Trainer";
             // 
@@ -1306,9 +1299,9 @@
             this.pnlTrainerInformationSectionRetrieve.Controls.Add(this.tlpRetrieveTrainerInformation);
             this.pnlTrainerInformationSectionRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTrainerInformationSectionRetrieve.Location = new System.Drawing.Point(0, 0);
-            this.pnlTrainerInformationSectionRetrieve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTrainerInformationSectionRetrieve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTrainerInformationSectionRetrieve.Name = "pnlTrainerInformationSectionRetrieve";
-            this.pnlTrainerInformationSectionRetrieve.Size = new System.Drawing.Size(770, 210);
+            this.pnlTrainerInformationSectionRetrieve.Size = new System.Drawing.Size(1025, 259);
             this.pnlTrainerInformationSectionRetrieve.TabIndex = 3;
             // 
             // tlpRetrieveTrainerInformation
@@ -1328,31 +1321,31 @@
             this.tlpRetrieveTrainerInformation.Name = "tlpRetrieveTrainerInformation";
             this.tlpRetrieveTrainerInformation.RowCount = 7;
             this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tlpRetrieveTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveTrainerInformation.Size = new System.Drawing.Size(770, 210);
+            this.tlpRetrieveTrainerInformation.Size = new System.Drawing.Size(1025, 259);
             this.tlpRetrieveTrainerInformation.TabIndex = 2;
             // 
             // tlpTrainerInformationTitle
             // 
             this.tlpTrainerInformationTitle.ColumnCount = 3;
-            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
             this.tlpTrainerInformationTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTrainerInformationTitle.Controls.Add(this.picTrainerInformationIcon, 0, 0);
             this.tlpTrainerInformationTitle.Controls.Add(this.tlpTrainerInformationLine, 2, 0);
             this.tlpTrainerInformationTitle.Controls.Add(this.lblTrainerInformationTitle, 1, 0);
             this.tlpTrainerInformationTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerInformationTitle.Location = new System.Drawing.Point(16, 12);
+            this.tlpTrainerInformationTitle.Location = new System.Drawing.Point(21, 14);
             this.tlpTrainerInformationTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerInformationTitle.Name = "tlpTrainerInformationTitle";
             this.tlpTrainerInformationTitle.RowCount = 1;
             this.tlpTrainerInformationTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTrainerInformationTitle.Size = new System.Drawing.Size(737, 37);
+            this.tlpTrainerInformationTitle.Size = new System.Drawing.Size(981, 46);
             this.tlpTrainerInformationTitle.TabIndex = 2;
             // 
             // picTrainerInformationIcon
@@ -1362,7 +1355,7 @@
             this.picTrainerInformationIcon.Location = new System.Drawing.Point(0, 0);
             this.picTrainerInformationIcon.Margin = new System.Windows.Forms.Padding(0);
             this.picTrainerInformationIcon.Name = "picTrainerInformationIcon";
-            this.picTrainerInformationIcon.Size = new System.Drawing.Size(38, 37);
+            this.picTrainerInformationIcon.Size = new System.Drawing.Size(51, 46);
             this.picTrainerInformationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainerInformationIcon.TabIndex = 0;
             this.picTrainerInformationIcon.TabStop = false;
@@ -1373,24 +1366,24 @@
             this.tlpTrainerInformationLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTrainerInformationLine.Controls.Add(this.pnlLineInTrainerInformationSection, 0, 1);
             this.tlpTrainerInformationLine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerInformationLine.Location = new System.Drawing.Point(224, 2);
-            this.tlpTrainerInformationLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpTrainerInformationLine.Location = new System.Drawing.Point(299, 2);
+            this.tlpTrainerInformationLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpTrainerInformationLine.Name = "tlpTrainerInformationLine";
             this.tlpTrainerInformationLine.RowCount = 3;
             this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tlpTrainerInformationLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrainerInformationLine.Size = new System.Drawing.Size(511, 33);
+            this.tlpTrainerInformationLine.Size = new System.Drawing.Size(679, 42);
             this.tlpTrainerInformationLine.TabIndex = 2;
             // 
             // pnlLineInTrainerInformationSection
             // 
             this.pnlLineInTrainerInformationSection.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLineInTrainerInformationSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLineInTrainerInformationSection.Location = new System.Drawing.Point(2, 17);
-            this.pnlLineInTrainerInformationSection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLineInTrainerInformationSection.Location = new System.Drawing.Point(3, 21);
+            this.pnlLineInTrainerInformationSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLineInTrainerInformationSection.Name = "pnlLineInTrainerInformationSection";
-            this.pnlLineInTrainerInformationSection.Size = new System.Drawing.Size(507, 1);
+            this.pnlLineInTrainerInformationSection.Size = new System.Drawing.Size(673, 1);
             this.pnlLineInTrainerInformationSection.TabIndex = 0;
             // 
             // lblTrainerInformationTitle
@@ -1399,10 +1392,9 @@
             this.lblTrainerInformationTitle.AutoSize = true;
             this.lblTrainerInformationTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerInformationTitle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblTrainerInformationTitle.Location = new System.Drawing.Point(40, 8);
-            this.lblTrainerInformationTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrainerInformationTitle.Location = new System.Drawing.Point(54, 10);
             this.lblTrainerInformationTitle.Name = "lblTrainerInformationTitle";
-            this.lblTrainerInformationTitle.Size = new System.Drawing.Size(175, 20);
+            this.lblTrainerInformationTitle.Size = new System.Drawing.Size(227, 25);
             this.lblTrainerInformationTitle.TabIndex = 1;
             this.lblTrainerInformationTitle.Text = "TRAINER INFORMATION";
             // 
@@ -1414,13 +1406,13 @@
             this.tlpTrainerIDAndTrainerNamePortion.Controls.Add(this.lblTrainerNameInTrainerInformation, 1, 0);
             this.tlpTrainerIDAndTrainerNamePortion.Controls.Add(this.lblTrainerIDInTrainerInformation, 0, 0);
             this.tlpTrainerIDAndTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerIDAndTrainerNamePortion.Location = new System.Drawing.Point(16, 49);
+            this.tlpTrainerIDAndTrainerNamePortion.Location = new System.Drawing.Point(21, 60);
             this.tlpTrainerIDAndTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerIDAndTrainerNamePortion.Name = "tlpTrainerIDAndTrainerNamePortion";
             this.tlpTrainerIDAndTrainerNamePortion.RowCount = 1;
             this.tlpTrainerIDAndTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTrainerIDAndTrainerNamePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrainerIDAndTrainerNamePortion.Size = new System.Drawing.Size(737, 37);
+            this.tlpTrainerIDAndTrainerNamePortion.Size = new System.Drawing.Size(981, 46);
             this.tlpTrainerIDAndTrainerNamePortion.TabIndex = 4;
             // 
             // lblTrainerNameInTrainerInformation
@@ -1429,10 +1421,10 @@
             this.lblTrainerNameInTrainerInformation.AutoSize = true;
             this.lblTrainerNameInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerNameInTrainerInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblTrainerNameInTrainerInformation.Location = new System.Drawing.Point(368, 9);
+            this.lblTrainerNameInTrainerInformation.Location = new System.Drawing.Point(490, 11);
             this.lblTrainerNameInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerNameInTrainerInformation.Name = "lblTrainerNameInTrainerInformation";
-            this.lblTrainerNameInTrainerInformation.Size = new System.Drawing.Size(93, 19);
+            this.lblTrainerNameInTrainerInformation.Size = new System.Drawing.Size(113, 23);
             this.lblTrainerNameInTrainerInformation.TabIndex = 4;
             this.lblTrainerNameInTrainerInformation.Text = "Trainer Name";
             // 
@@ -1442,10 +1434,10 @@
             this.lblTrainerIDInTrainerInformation.AutoSize = true;
             this.lblTrainerIDInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerIDInTrainerInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblTrainerIDInTrainerInformation.Location = new System.Drawing.Point(0, 9);
+            this.lblTrainerIDInTrainerInformation.Location = new System.Drawing.Point(0, 11);
             this.lblTrainerIDInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerIDInTrainerInformation.Name = "lblTrainerIDInTrainerInformation";
-            this.lblTrainerIDInTrainerInformation.Size = new System.Drawing.Size(70, 19);
+            this.lblTrainerIDInTrainerInformation.Size = new System.Drawing.Size(84, 23);
             this.lblTrainerIDInTrainerInformation.TabIndex = 3;
             this.lblTrainerIDInTrainerInformation.Text = "Trainer ID";
             // 
@@ -1457,62 +1449,62 @@
             this.tlpRetrieveTrainerIDAndTrainerName.Controls.Add(this.tlpRetrieveTrainerNameInTrainerInformation, 1, 0);
             this.tlpRetrieveTrainerIDAndTrainerName.Controls.Add(this.tlpRetrieveTrainerIDInTrainerInformation, 0, 0);
             this.tlpRetrieveTrainerIDAndTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveTrainerIDAndTrainerName.Location = new System.Drawing.Point(16, 86);
+            this.tlpRetrieveTrainerIDAndTrainerName.Location = new System.Drawing.Point(21, 106);
             this.tlpRetrieveTrainerIDAndTrainerName.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveTrainerIDAndTrainerName.Name = "tlpRetrieveTrainerIDAndTrainerName";
             this.tlpRetrieveTrainerIDAndTrainerName.RowCount = 1;
             this.tlpRetrieveTrainerIDAndTrainerName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveTrainerIDAndTrainerName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveTrainerIDAndTrainerName.Size = new System.Drawing.Size(737, 37);
+            this.tlpRetrieveTrainerIDAndTrainerName.Size = new System.Drawing.Size(981, 46);
             this.tlpRetrieveTrainerIDAndTrainerName.TabIndex = 5;
             // 
             // tlpRetrieveTrainerNameInTrainerInformation
             // 
             this.tlpRetrieveTrainerNameInTrainerInformation.ColumnCount = 5;
-            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpRetrieveTrainerNameInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.pnlLeftBarInTrainerNamePortion, 1, 0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.tlpTrainerNameRetrieveInTrainerInformation, 2, 0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.picTrainerNameIcon, 0, 0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Controls.Add(this.pnlRightBarInTrainerName, 3, 0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveTrainerNameInTrainerInformation.Location = new System.Drawing.Point(368, 0);
+            this.tlpRetrieveTrainerNameInTrainerInformation.Location = new System.Drawing.Point(490, 0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveTrainerNameInTrainerInformation.Name = "tlpRetrieveTrainerNameInTrainerInformation";
             this.tlpRetrieveTrainerNameInTrainerInformation.RowCount = 1;
-            this.tlpRetrieveTrainerNameInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerNameInTrainerInformation.Size = new System.Drawing.Size(369, 37);
+            this.tlpRetrieveTrainerNameInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerNameInTrainerInformation.Size = new System.Drawing.Size(491, 46);
             this.tlpRetrieveTrainerNameInTrainerInformation.TabIndex = 1;
             // 
             // pnlLeftBarInTrainerNamePortion
             // 
             this.pnlLeftBarInTrainerNamePortion.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarInTrainerNamePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarInTrainerNamePortion.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarInTrainerNamePortion.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarInTrainerNamePortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInTrainerNamePortion.Name = "pnlLeftBarInTrainerNamePortion";
-            this.pnlLeftBarInTrainerNamePortion.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarInTrainerNamePortion.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarInTrainerNamePortion.TabIndex = 1;
             // 
             // tlpTrainerNameRetrieveInTrainerInformation
             // 
             this.tlpTrainerNameRetrieveInTrainerInformation.ColumnCount = 1;
-            this.tlpTrainerNameRetrieveInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
             this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.pnlTopBarInTrainerName, 0, 0);
             this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.pnlButtomBarInTrainerName, 0, 2);
             this.tlpTrainerNameRetrieveInTrainerInformation.Controls.Add(this.lblTrainerNameRetrieve, 0, 1);
             this.tlpTrainerNameRetrieveInTrainerInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerNameRetrieveInTrainerInformation.Location = new System.Drawing.Point(53, 0);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Location = new System.Drawing.Point(71, 0);
             this.tlpTrainerNameRetrieveInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerNameRetrieveInTrainerInformation.Name = "tlpTrainerNameRetrieveInTrainerInformation";
             this.tlpTrainerNameRetrieveInTrainerInformation.RowCount = 3;
             this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpTrainerNameRetrieveInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpTrainerNameRetrieveInTrainerInformation.Size = new System.Drawing.Size(251, 37);
+            this.tlpTrainerNameRetrieveInTrainerInformation.Size = new System.Drawing.Size(335, 46);
             this.tlpTrainerNameRetrieveInTrainerInformation.TabIndex = 3;
             // 
             // pnlTopBarInTrainerName
@@ -1522,17 +1514,17 @@
             this.pnlTopBarInTrainerName.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInTrainerName.Name = "pnlTopBarInTrainerName";
-            this.pnlTopBarInTrainerName.Size = new System.Drawing.Size(251, 2);
+            this.pnlTopBarInTrainerName.Size = new System.Drawing.Size(335, 2);
             this.pnlTopBarInTrainerName.TabIndex = 0;
             // 
             // pnlButtomBarInTrainerName
             // 
             this.pnlButtomBarInTrainerName.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInTrainerName.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInTrainerName.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInTrainerName.Name = "pnlButtomBarInTrainerName";
-            this.pnlButtomBarInTrainerName.Size = new System.Drawing.Size(251, 3);
+            this.pnlButtomBarInTrainerName.Size = new System.Drawing.Size(335, 5);
             this.pnlButtomBarInTrainerName.TabIndex = 1;
             // 
             // lblTrainerNameRetrieve
@@ -1541,10 +1533,10 @@
             this.lblTrainerNameRetrieve.AutoSize = true;
             this.lblTrainerNameRetrieve.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerNameRetrieve.ForeColor = System.Drawing.Color.Black;
-            this.lblTrainerNameRetrieve.Location = new System.Drawing.Point(85, 8);
+            this.lblTrainerNameRetrieve.Location = new System.Drawing.Point(119, 10);
             this.lblTrainerNameRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerNameRetrieve.Name = "lblTrainerNameRetrieve";
-            this.lblTrainerNameRetrieve.Size = new System.Drawing.Size(80, 19);
+            this.lblTrainerNameRetrieve.Size = new System.Drawing.Size(96, 23);
             this.lblTrainerNameRetrieve.TabIndex = 2;
             this.lblTrainerNameRetrieve.Text = "John Smith";
             // 
@@ -1552,10 +1544,10 @@
             // 
             this.picTrainerNameIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerNameIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerNameIcon.Image")));
-            this.picTrainerNameIcon.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerNameIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerNameIcon.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerNameIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTrainerNameIcon.Name = "picTrainerNameIcon";
-            this.picTrainerNameIcon.Size = new System.Drawing.Size(33, 32);
+            this.picTrainerNameIcon.Size = new System.Drawing.Size(44, 39);
             this.picTrainerNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainerNameIcon.TabIndex = 0;
             this.picTrainerNameIcon.TabStop = false;
@@ -1564,19 +1556,19 @@
             // 
             this.pnlRightBarInTrainerName.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInTrainerName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInTrainerName.Location = new System.Drawing.Point(304, 0);
+            this.pnlRightBarInTrainerName.Location = new System.Drawing.Point(406, 0);
             this.pnlRightBarInTrainerName.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInTrainerName.Name = "pnlRightBarInTrainerName";
-            this.pnlRightBarInTrainerName.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInTrainerName.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInTrainerName.TabIndex = 2;
             // 
             // tlpRetrieveTrainerIDInTrainerInformation
             // 
             this.tlpRetrieveTrainerIDInTrainerInformation.ColumnCount = 5;
-            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpRetrieveTrainerIDInTrainerInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.pnlLeftBarInRetrieveTrainerID, 1, 0);
             this.tlpRetrieveTrainerIDInTrainerInformation.Controls.Add(this.tableLayoutPanel6, 2, 0);
@@ -1587,36 +1579,36 @@
             this.tlpRetrieveTrainerIDInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveTrainerIDInTrainerInformation.Name = "tlpRetrieveTrainerIDInTrainerInformation";
             this.tlpRetrieveTrainerIDInTrainerInformation.RowCount = 1;
-            this.tlpRetrieveTrainerIDInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpRetrieveTrainerIDInTrainerInformation.Size = new System.Drawing.Size(368, 37);
+            this.tlpRetrieveTrainerIDInTrainerInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpRetrieveTrainerIDInTrainerInformation.Size = new System.Drawing.Size(490, 46);
             this.tlpRetrieveTrainerIDInTrainerInformation.TabIndex = 0;
             // 
             // pnlLeftBarInRetrieveTrainerID
             // 
             this.pnlLeftBarInRetrieveTrainerID.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarInRetrieveTrainerID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarInRetrieveTrainerID.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarInRetrieveTrainerID.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarInRetrieveTrainerID.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarInRetrieveTrainerID.Name = "pnlLeftBarInRetrieveTrainerID";
-            this.pnlLeftBarInRetrieveTrainerID.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarInRetrieveTrainerID.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarInRetrieveTrainerID.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tableLayoutPanel6.Controls.Add(this.pnlTopBarInTrainerIDPortion, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.pnlButtomBarInTrainerIDPortion, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.lblTrainerIDRetrieve, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(53, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(71, 0);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(234, 37);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(312, 46);
             this.tableLayoutPanel6.TabIndex = 3;
             // 
             // pnlTopBarInTrainerIDPortion
@@ -1626,17 +1618,17 @@
             this.pnlTopBarInTrainerIDPortion.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInTrainerIDPortion.Name = "pnlTopBarInTrainerIDPortion";
-            this.pnlTopBarInTrainerIDPortion.Size = new System.Drawing.Size(234, 2);
+            this.pnlTopBarInTrainerIDPortion.Size = new System.Drawing.Size(312, 2);
             this.pnlTopBarInTrainerIDPortion.TabIndex = 0;
             // 
             // pnlButtomBarInTrainerIDPortion
             // 
             this.pnlButtomBarInTrainerIDPortion.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInTrainerIDPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInTrainerIDPortion.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInTrainerIDPortion.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInTrainerIDPortion.Name = "pnlButtomBarInTrainerIDPortion";
-            this.pnlButtomBarInTrainerIDPortion.Size = new System.Drawing.Size(234, 3);
+            this.pnlButtomBarInTrainerIDPortion.Size = new System.Drawing.Size(312, 5);
             this.pnlButtomBarInTrainerIDPortion.TabIndex = 1;
             // 
             // lblTrainerIDRetrieve
@@ -1645,10 +1637,10 @@
             this.lblTrainerIDRetrieve.AutoSize = true;
             this.lblTrainerIDRetrieve.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerIDRetrieve.ForeColor = System.Drawing.Color.Black;
-            this.lblTrainerIDRetrieve.Location = new System.Drawing.Point(97, 8);
+            this.lblTrainerIDRetrieve.Location = new System.Drawing.Point(134, 10);
             this.lblTrainerIDRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerIDRetrieve.Name = "lblTrainerIDRetrieve";
-            this.lblTrainerIDRetrieve.Size = new System.Drawing.Size(39, 19);
+            this.lblTrainerIDRetrieve.Size = new System.Drawing.Size(44, 23);
             this.lblTrainerIDRetrieve.TabIndex = 2;
             this.lblTrainerIDRetrieve.Text = "1026";
             // 
@@ -1656,10 +1648,10 @@
             // 
             this.picTrainerIDIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerIDIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerIDIcon.Image")));
-            this.picTrainerIDIcon.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerIDIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerIDIcon.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerIDIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTrainerIDIcon.Name = "picTrainerIDIcon";
-            this.picTrainerIDIcon.Size = new System.Drawing.Size(33, 32);
+            this.picTrainerIDIcon.Size = new System.Drawing.Size(44, 39);
             this.picTrainerIDIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainerIDIcon.TabIndex = 0;
             this.picTrainerIDIcon.TabStop = false;
@@ -1668,10 +1660,10 @@
             // 
             this.pnlRightBarInTrainerIDPortion.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInTrainerIDPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInTrainerIDPortion.Location = new System.Drawing.Point(287, 0);
+            this.pnlRightBarInTrainerIDPortion.Location = new System.Drawing.Point(383, 0);
             this.pnlRightBarInTrainerIDPortion.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInTrainerIDPortion.Name = "pnlRightBarInTrainerIDPortion";
-            this.pnlRightBarInTrainerIDPortion.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInTrainerIDPortion.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInTrainerIDPortion.TabIndex = 2;
             // 
             // tlpTrainerSpecializationAndExperienceSection
@@ -1682,13 +1674,13 @@
             this.tlpTrainerSpecializationAndExperienceSection.Controls.Add(this.lblExperienceTitleInTrainerInformation, 0, 0);
             this.tlpTrainerSpecializationAndExperienceSection.Controls.Add(this.lblSpecification, 0, 0);
             this.tlpTrainerSpecializationAndExperienceSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerSpecializationAndExperienceSection.Location = new System.Drawing.Point(16, 123);
+            this.tlpTrainerSpecializationAndExperienceSection.Location = new System.Drawing.Point(21, 152);
             this.tlpTrainerSpecializationAndExperienceSection.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerSpecializationAndExperienceSection.Name = "tlpTrainerSpecializationAndExperienceSection";
             this.tlpTrainerSpecializationAndExperienceSection.RowCount = 1;
             this.tlpTrainerSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTrainerSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTrainerSpecializationAndExperienceSection.Size = new System.Drawing.Size(737, 37);
+            this.tlpTrainerSpecializationAndExperienceSection.Size = new System.Drawing.Size(981, 46);
             this.tlpTrainerSpecializationAndExperienceSection.TabIndex = 6;
             // 
             // lblExperienceTitleInTrainerInformation
@@ -1697,10 +1689,10 @@
             this.lblExperienceTitleInTrainerInformation.AutoSize = true;
             this.lblExperienceTitleInTrainerInformation.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExperienceTitleInTrainerInformation.ForeColor = System.Drawing.Color.Black;
-            this.lblExperienceTitleInTrainerInformation.Location = new System.Drawing.Point(366, 9);
+            this.lblExperienceTitleInTrainerInformation.Location = new System.Drawing.Point(488, 11);
             this.lblExperienceTitleInTrainerInformation.Margin = new System.Windows.Forms.Padding(0);
             this.lblExperienceTitleInTrainerInformation.Name = "lblExperienceTitleInTrainerInformation";
-            this.lblExperienceTitleInTrainerInformation.Size = new System.Drawing.Size(76, 19);
+            this.lblExperienceTitleInTrainerInformation.Size = new System.Drawing.Size(93, 23);
             this.lblExperienceTitleInTrainerInformation.TabIndex = 5;
             this.lblExperienceTitleInTrainerInformation.Text = "Experience";
             // 
@@ -1710,10 +1702,10 @@
             this.lblSpecification.AutoSize = true;
             this.lblSpecification.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpecification.ForeColor = System.Drawing.Color.Black;
-            this.lblSpecification.Location = new System.Drawing.Point(0, 9);
+            this.lblSpecification.Location = new System.Drawing.Point(0, 11);
             this.lblSpecification.Margin = new System.Windows.Forms.Padding(0);
             this.lblSpecification.Name = "lblSpecification";
-            this.lblSpecification.Size = new System.Drawing.Size(97, 19);
+            this.lblSpecification.Size = new System.Drawing.Size(114, 23);
             this.lblSpecification.TabIndex = 4;
             this.lblSpecification.Text = "Specialization";
             // 
@@ -1725,62 +1717,62 @@
             this.tlpRetrieveSpecializationAndExperienceSection.Controls.Add(this.tlpTrainerExperienceRetrievePortion, 0, 0);
             this.tlpRetrieveSpecializationAndExperienceSection.Controls.Add(this.tlpSepcializationOfTrainer, 0, 0);
             this.tlpRetrieveSpecializationAndExperienceSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveSpecializationAndExperienceSection.Location = new System.Drawing.Point(16, 160);
+            this.tlpRetrieveSpecializationAndExperienceSection.Location = new System.Drawing.Point(21, 198);
             this.tlpRetrieveSpecializationAndExperienceSection.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveSpecializationAndExperienceSection.Name = "tlpRetrieveSpecializationAndExperienceSection";
             this.tlpRetrieveSpecializationAndExperienceSection.RowCount = 1;
             this.tlpRetrieveSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRetrieveSpecializationAndExperienceSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRetrieveSpecializationAndExperienceSection.Size = new System.Drawing.Size(737, 37);
+            this.tlpRetrieveSpecializationAndExperienceSection.Size = new System.Drawing.Size(981, 46);
             this.tlpRetrieveSpecializationAndExperienceSection.TabIndex = 7;
             // 
             // tlpTrainerExperienceRetrievePortion
             // 
             this.tlpTrainerExperienceRetrievePortion.ColumnCount = 5;
-            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpTrainerExperienceRetrievePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTrainerExperienceRetrievePortion.Controls.Add(this.pnlTrainerLeftBarOfRetrieveTrainerExprience, 1, 0);
             this.tlpTrainerExperienceRetrievePortion.Controls.Add(this.tlpRetrieveTrainerExpriencePortion, 2, 0);
             this.tlpTrainerExperienceRetrievePortion.Controls.Add(this.picTrainerExperienceRetrieve, 0, 0);
             this.tlpTrainerExperienceRetrievePortion.Controls.Add(this.pnlRightBarInTrainerExprience, 3, 0);
             this.tlpTrainerExperienceRetrievePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerExperienceRetrievePortion.Location = new System.Drawing.Point(368, 0);
+            this.tlpTrainerExperienceRetrievePortion.Location = new System.Drawing.Point(490, 0);
             this.tlpTrainerExperienceRetrievePortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerExperienceRetrievePortion.Name = "tlpTrainerExperienceRetrievePortion";
             this.tlpTrainerExperienceRetrievePortion.RowCount = 1;
-            this.tlpTrainerExperienceRetrievePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpTrainerExperienceRetrievePortion.Size = new System.Drawing.Size(369, 37);
+            this.tlpTrainerExperienceRetrievePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpTrainerExperienceRetrievePortion.Size = new System.Drawing.Size(491, 46);
             this.tlpTrainerExperienceRetrievePortion.TabIndex = 5;
             // 
             // pnlTrainerLeftBarOfRetrieveTrainerExprience
             // 
             this.pnlTrainerLeftBarOfRetrieveTrainerExprience.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Location = new System.Drawing.Point(51, 0);
+            this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Location = new System.Drawing.Point(68, 0);
             this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Name = "pnlTrainerLeftBarOfRetrieveTrainerExprience";
-            this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Size = new System.Drawing.Size(2, 37);
+            this.pnlTrainerLeftBarOfRetrieveTrainerExprience.Size = new System.Drawing.Size(3, 46);
             this.pnlTrainerLeftBarOfRetrieveTrainerExprience.TabIndex = 1;
             // 
             // tlpRetrieveTrainerExpriencePortion
             // 
             this.tlpRetrieveTrainerExpriencePortion.ColumnCount = 1;
-            this.tlpRetrieveTrainerExpriencePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tlpRetrieveTrainerExpriencePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tlpRetrieveTrainerExpriencePortion.Controls.Add(this.pnlTopBarInTrainerExperience, 0, 0);
             this.tlpRetrieveTrainerExpriencePortion.Controls.Add(this.pnlButtomBarInRetrieveTrainerExperience, 0, 2);
             this.tlpRetrieveTrainerExpriencePortion.Controls.Add(this.lblTrainerExprienceRetrieve, 0, 1);
             this.tlpRetrieveTrainerExpriencePortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRetrieveTrainerExpriencePortion.Location = new System.Drawing.Point(53, 0);
+            this.tlpRetrieveTrainerExpriencePortion.Location = new System.Drawing.Point(71, 0);
             this.tlpRetrieveTrainerExpriencePortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpRetrieveTrainerExpriencePortion.Name = "tlpRetrieveTrainerExpriencePortion";
             this.tlpRetrieveTrainerExpriencePortion.RowCount = 3;
             this.tlpRetrieveTrainerExpriencePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveTrainerExpriencePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpRetrieveTrainerExpriencePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpRetrieveTrainerExpriencePortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpRetrieveTrainerExpriencePortion.Size = new System.Drawing.Size(234, 37);
+            this.tlpRetrieveTrainerExpriencePortion.Size = new System.Drawing.Size(312, 46);
             this.tlpRetrieveTrainerExpriencePortion.TabIndex = 3;
             // 
             // pnlTopBarInTrainerExperience
@@ -1790,17 +1782,17 @@
             this.pnlTopBarInTrainerExperience.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInTrainerExperience.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInTrainerExperience.Name = "pnlTopBarInTrainerExperience";
-            this.pnlTopBarInTrainerExperience.Size = new System.Drawing.Size(234, 2);
+            this.pnlTopBarInTrainerExperience.Size = new System.Drawing.Size(312, 2);
             this.pnlTopBarInTrainerExperience.TabIndex = 0;
             // 
             // pnlButtomBarInRetrieveTrainerExperience
             // 
             this.pnlButtomBarInRetrieveTrainerExperience.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInRetrieveTrainerExperience.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInRetrieveTrainerExperience.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInRetrieveTrainerExperience.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInRetrieveTrainerExperience.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInRetrieveTrainerExperience.Name = "pnlButtomBarInRetrieveTrainerExperience";
-            this.pnlButtomBarInRetrieveTrainerExperience.Size = new System.Drawing.Size(234, 3);
+            this.pnlButtomBarInRetrieveTrainerExperience.Size = new System.Drawing.Size(312, 5);
             this.pnlButtomBarInRetrieveTrainerExperience.TabIndex = 1;
             // 
             // lblTrainerExprienceRetrieve
@@ -1809,10 +1801,10 @@
             this.lblTrainerExprienceRetrieve.AutoSize = true;
             this.lblTrainerExprienceRetrieve.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrainerExprienceRetrieve.ForeColor = System.Drawing.Color.Black;
-            this.lblTrainerExprienceRetrieve.Location = new System.Drawing.Point(90, 8);
+            this.lblTrainerExprienceRetrieve.Location = new System.Drawing.Point(124, 10);
             this.lblTrainerExprienceRetrieve.Margin = new System.Windows.Forms.Padding(0);
             this.lblTrainerExprienceRetrieve.Name = "lblTrainerExprienceRetrieve";
-            this.lblTrainerExprienceRetrieve.Size = new System.Drawing.Size(53, 19);
+            this.lblTrainerExprienceRetrieve.Size = new System.Drawing.Size(63, 23);
             this.lblTrainerExprienceRetrieve.TabIndex = 2;
             this.lblTrainerExprienceRetrieve.Text = "5 Years";
             // 
@@ -1820,10 +1812,10 @@
             // 
             this.picTrainerExperienceRetrieve.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerExperienceRetrieve.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerExperienceRetrieve.Image")));
-            this.picTrainerExperienceRetrieve.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerExperienceRetrieve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerExperienceRetrieve.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerExperienceRetrieve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTrainerExperienceRetrieve.Name = "picTrainerExperienceRetrieve";
-            this.picTrainerExperienceRetrieve.Size = new System.Drawing.Size(33, 32);
+            this.picTrainerExperienceRetrieve.Size = new System.Drawing.Size(44, 39);
             this.picTrainerExperienceRetrieve.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainerExperienceRetrieve.TabIndex = 0;
             this.picTrainerExperienceRetrieve.TabStop = false;
@@ -1832,19 +1824,19 @@
             // 
             this.pnlRightBarInTrainerExprience.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInTrainerExprience.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInTrainerExprience.Location = new System.Drawing.Point(287, 0);
+            this.pnlRightBarInTrainerExprience.Location = new System.Drawing.Point(383, 0);
             this.pnlRightBarInTrainerExprience.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInTrainerExprience.Name = "pnlRightBarInTrainerExprience";
-            this.pnlRightBarInTrainerExprience.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInTrainerExprience.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInTrainerExprience.TabIndex = 2;
             // 
             // tlpSepcializationOfTrainer
             // 
             this.tlpSepcializationOfTrainer.ColumnCount = 5;
-            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tlpSepcializationOfTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSepcializationOfTrainer.Controls.Add(this.pnlLeftBarOfTrainerSpecialization, 1, 0);
             this.tlpSepcializationOfTrainer.Controls.Add(this.tlpTrainerSpecializationPortion, 2, 0);
@@ -1855,36 +1847,36 @@
             this.tlpSepcializationOfTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSepcializationOfTrainer.Name = "tlpSepcializationOfTrainer";
             this.tlpSepcializationOfTrainer.RowCount = 1;
-            this.tlpSepcializationOfTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tlpSepcializationOfTrainer.Size = new System.Drawing.Size(368, 37);
+            this.tlpSepcializationOfTrainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpSepcializationOfTrainer.Size = new System.Drawing.Size(490, 46);
             this.tlpSepcializationOfTrainer.TabIndex = 4;
             // 
             // pnlLeftBarOfTrainerSpecialization
             // 
             this.pnlLeftBarOfTrainerSpecialization.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlLeftBarOfTrainerSpecialization.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLeftBarOfTrainerSpecialization.Location = new System.Drawing.Point(51, 0);
+            this.pnlLeftBarOfTrainerSpecialization.Location = new System.Drawing.Point(68, 0);
             this.pnlLeftBarOfTrainerSpecialization.Margin = new System.Windows.Forms.Padding(0);
             this.pnlLeftBarOfTrainerSpecialization.Name = "pnlLeftBarOfTrainerSpecialization";
-            this.pnlLeftBarOfTrainerSpecialization.Size = new System.Drawing.Size(2, 37);
+            this.pnlLeftBarOfTrainerSpecialization.Size = new System.Drawing.Size(3, 46);
             this.pnlLeftBarOfTrainerSpecialization.TabIndex = 1;
             // 
             // tlpTrainerSpecializationPortion
             // 
             this.tlpTrainerSpecializationPortion.ColumnCount = 1;
-            this.tlpTrainerSpecializationPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tlpTrainerSpecializationPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tlpTrainerSpecializationPortion.Controls.Add(this.pnlTopBarInTrainerSpecialization, 0, 0);
             this.tlpTrainerSpecializationPortion.Controls.Add(this.pnlButtomBarInTrainerSpecialization, 0, 2);
             this.tlpTrainerSpecializationPortion.Controls.Add(this.lblRetrieveTrainerSpecialization, 0, 1);
             this.tlpTrainerSpecializationPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTrainerSpecializationPortion.Location = new System.Drawing.Point(53, 0);
+            this.tlpTrainerSpecializationPortion.Location = new System.Drawing.Point(71, 0);
             this.tlpTrainerSpecializationPortion.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTrainerSpecializationPortion.Name = "tlpTrainerSpecializationPortion";
             this.tlpTrainerSpecializationPortion.RowCount = 3;
             this.tlpTrainerSpecializationPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpTrainerSpecializationPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpTrainerSpecializationPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tlpTrainerSpecializationPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
-            this.tlpTrainerSpecializationPortion.Size = new System.Drawing.Size(234, 37);
+            this.tlpTrainerSpecializationPortion.Size = new System.Drawing.Size(312, 46);
             this.tlpTrainerSpecializationPortion.TabIndex = 3;
             // 
             // pnlTopBarInTrainerSpecialization
@@ -1894,17 +1886,17 @@
             this.pnlTopBarInTrainerSpecialization.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBarInTrainerSpecialization.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTopBarInTrainerSpecialization.Name = "pnlTopBarInTrainerSpecialization";
-            this.pnlTopBarInTrainerSpecialization.Size = new System.Drawing.Size(234, 2);
+            this.pnlTopBarInTrainerSpecialization.Size = new System.Drawing.Size(312, 2);
             this.pnlTopBarInTrainerSpecialization.TabIndex = 0;
             // 
             // pnlButtomBarInTrainerSpecialization
             // 
             this.pnlButtomBarInTrainerSpecialization.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlButtomBarInTrainerSpecialization.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlButtomBarInTrainerSpecialization.Location = new System.Drawing.Point(0, 34);
+            this.pnlButtomBarInTrainerSpecialization.Location = new System.Drawing.Point(0, 41);
             this.pnlButtomBarInTrainerSpecialization.Margin = new System.Windows.Forms.Padding(0);
             this.pnlButtomBarInTrainerSpecialization.Name = "pnlButtomBarInTrainerSpecialization";
-            this.pnlButtomBarInTrainerSpecialization.Size = new System.Drawing.Size(234, 3);
+            this.pnlButtomBarInTrainerSpecialization.Size = new System.Drawing.Size(312, 5);
             this.pnlButtomBarInTrainerSpecialization.TabIndex = 1;
             // 
             // lblRetrieveTrainerSpecialization
@@ -1913,10 +1905,10 @@
             this.lblRetrieveTrainerSpecialization.AutoSize = true;
             this.lblRetrieveTrainerSpecialization.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetrieveTrainerSpecialization.ForeColor = System.Drawing.Color.Black;
-            this.lblRetrieveTrainerSpecialization.Location = new System.Drawing.Point(38, 8);
+            this.lblRetrieveTrainerSpecialization.Location = new System.Drawing.Point(60, 10);
             this.lblRetrieveTrainerSpecialization.Margin = new System.Windows.Forms.Padding(0);
             this.lblRetrieveTrainerSpecialization.Name = "lblRetrieveTrainerSpecialization";
-            this.lblRetrieveTrainerSpecialization.Size = new System.Drawing.Size(158, 19);
+            this.lblRetrieveTrainerSpecialization.Size = new System.Drawing.Size(192, 23);
             this.lblRetrieveTrainerSpecialization.TabIndex = 2;
             this.lblRetrieveTrainerSpecialization.Text = "Strenght And Condition";
             // 
@@ -1924,10 +1916,10 @@
             // 
             this.picTrainerSpecializationIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picTrainerSpecializationIcon.Image = ((System.Drawing.Image)(resources.GetObject("picTrainerSpecializationIcon.Image")));
-            this.picTrainerSpecializationIcon.Location = new System.Drawing.Point(2, 2);
-            this.picTrainerSpecializationIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTrainerSpecializationIcon.Location = new System.Drawing.Point(3, 3);
+            this.picTrainerSpecializationIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTrainerSpecializationIcon.Name = "picTrainerSpecializationIcon";
-            this.picTrainerSpecializationIcon.Size = new System.Drawing.Size(33, 32);
+            this.picTrainerSpecializationIcon.Size = new System.Drawing.Size(44, 39);
             this.picTrainerSpecializationIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainerSpecializationIcon.TabIndex = 0;
             this.picTrainerSpecializationIcon.TabStop = false;
@@ -1936,17 +1928,17 @@
             // 
             this.pnlRightBarInTrainerSpecialization.BackColor = System.Drawing.Color.ForestGreen;
             this.pnlRightBarInTrainerSpecialization.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRightBarInTrainerSpecialization.Location = new System.Drawing.Point(287, 0);
+            this.pnlRightBarInTrainerSpecialization.Location = new System.Drawing.Point(383, 0);
             this.pnlRightBarInTrainerSpecialization.Margin = new System.Windows.Forms.Padding(0);
             this.pnlRightBarInTrainerSpecialization.Name = "pnlRightBarInTrainerSpecialization";
-            this.pnlRightBarInTrainerSpecialization.Size = new System.Drawing.Size(2, 37);
+            this.pnlRightBarInTrainerSpecialization.Size = new System.Drawing.Size(3, 46);
             this.pnlRightBarInTrainerSpecialization.TabIndex = 2;
             // 
             // tlpAssignPersonalTrainerHeaderPortion
             // 
             this.tlpAssignPersonalTrainerHeaderPortion.ColumnCount = 4;
             this.tlpAssignPersonalTrainerHeaderPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tlpAssignPersonalTrainerHeaderPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tlpAssignPersonalTrainerHeaderPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpAssignPersonalTrainerHeaderPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tlpAssignPersonalTrainerHeaderPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpAssignPersonalTrainerHeaderPortion.Controls.Add(this.picPersonalTrainerAssignTitleIcon, 1, 0);
@@ -1957,17 +1949,17 @@
             this.tlpAssignPersonalTrainerHeaderPortion.Name = "tlpAssignPersonalTrainerHeaderPortion";
             this.tlpAssignPersonalTrainerHeaderPortion.RowCount = 1;
             this.tlpAssignPersonalTrainerHeaderPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAssignPersonalTrainerHeaderPortion.Size = new System.Drawing.Size(862, 60);
+            this.tlpAssignPersonalTrainerHeaderPortion.Size = new System.Drawing.Size(1149, 74);
             this.tlpAssignPersonalTrainerHeaderPortion.TabIndex = 1;
             // 
             // picPersonalTrainerAssignTitleIcon
             // 
             this.picPersonalTrainerAssignTitleIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picPersonalTrainerAssignTitleIcon.Image = ((System.Drawing.Image)(resources.GetObject("picPersonalTrainerAssignTitleIcon.Image")));
-            this.picPersonalTrainerAssignTitleIcon.Location = new System.Drawing.Point(42, 2);
-            this.picPersonalTrainerAssignTitleIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPersonalTrainerAssignTitleIcon.Location = new System.Drawing.Point(56, 2);
+            this.picPersonalTrainerAssignTitleIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPersonalTrainerAssignTitleIcon.Name = "picPersonalTrainerAssignTitleIcon";
-            this.picPersonalTrainerAssignTitleIcon.Size = new System.Drawing.Size(56, 56);
+            this.picPersonalTrainerAssignTitleIcon.Size = new System.Drawing.Size(74, 70);
             this.picPersonalTrainerAssignTitleIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPersonalTrainerAssignTitleIcon.TabIndex = 1;
             this.picPersonalTrainerAssignTitleIcon.TabStop = false;
@@ -1979,23 +1971,23 @@
             this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblSubTitleOfPersonalTrainerAssign, 0, 1);
             this.tlpTitlePortionOfPersonalTrainerAssign.Controls.Add(this.lblTitleOfPersonalTrainerAssign, 0, 0);
             this.tlpTitlePortionOfPersonalTrainerAssign.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTitlePortionOfPersonalTrainerAssign.Location = new System.Drawing.Point(100, 0);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Location = new System.Drawing.Point(133, 0);
             this.tlpTitlePortionOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTitlePortionOfPersonalTrainerAssign.Name = "tlpTitlePortionOfPersonalTrainerAssign";
             this.tlpTitlePortionOfPersonalTrainerAssign.RowCount = 2;
             this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tlpTitlePortionOfPersonalTrainerAssign.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.44444F));
-            this.tlpTitlePortionOfPersonalTrainerAssign.Size = new System.Drawing.Size(721, 60);
+            this.tlpTitlePortionOfPersonalTrainerAssign.Size = new System.Drawing.Size(962, 74);
             this.tlpTitlePortionOfPersonalTrainerAssign.TabIndex = 2;
             // 
             // lblSubTitleOfPersonalTrainerAssign
             // 
             this.lblSubTitleOfPersonalTrainerAssign.AutoSize = true;
             this.lblSubTitleOfPersonalTrainerAssign.ForeColor = System.Drawing.Color.Gray;
-            this.lblSubTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 33);
+            this.lblSubTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 41);
             this.lblSubTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
             this.lblSubTitleOfPersonalTrainerAssign.Name = "lblSubTitleOfPersonalTrainerAssign";
-            this.lblSubTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(183, 13);
+            this.lblSubTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(249, 17);
             this.lblSubTitleOfPersonalTrainerAssign.TabIndex = 1;
             this.lblSubTitleOfPersonalTrainerAssign.Text = "Assign a personal trainer to a member";
             // 
@@ -2008,16 +2000,17 @@
             this.lblTitleOfPersonalTrainerAssign.Location = new System.Drawing.Point(0, 3);
             this.lblTitleOfPersonalTrainerAssign.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitleOfPersonalTrainerAssign.Name = "lblTitleOfPersonalTrainerAssign";
-            this.lblTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(301, 30);
+            this.lblTitleOfPersonalTrainerAssign.Size = new System.Drawing.Size(381, 38);
             this.lblTitleOfPersonalTrainerAssign.TabIndex = 0;
             this.lblTitleOfPersonalTrainerAssign.Text = "ASSIGN PERSONAL TRAINER";
             // 
             // FrmAssignTrainer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 609);
+            this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpAssignPersonalTrainerWholeDetails);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAssignTrainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAssignTrainer";

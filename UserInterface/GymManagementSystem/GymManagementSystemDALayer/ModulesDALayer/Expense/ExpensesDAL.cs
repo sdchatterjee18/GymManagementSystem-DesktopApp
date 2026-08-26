@@ -85,16 +85,14 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Expense
         }
 
         //insert Expense
-        public string InsertExpenseDAL(int categoryId,decimal expenseAmount, string notes)
+        public string InsertExpenseDAL()
         {
-            CategoryId = categoryId;
-            ExpenseAmount = expenseAmount;
-            Notes = notes;
+           
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("@ExpenseCategoryId",CategoryId),
-                new SqlParameter("@ExpenseAmount",ExpenseAmount),
-                new SqlParameter("@Notes",Notes)
+                new SqlParameter("@ExpenseCategoryId",this.CategoryId),
+                new SqlParameter("@ExpenseAmount",this.ExpenseAmount),
+                new SqlParameter("@Notes",this.Notes)
             };
 
             string InsertionMessage = null;
