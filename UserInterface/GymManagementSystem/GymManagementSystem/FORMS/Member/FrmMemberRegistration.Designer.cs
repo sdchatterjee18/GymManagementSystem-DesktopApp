@@ -272,7 +272,7 @@
             this.tlpMemberPersonalDetails.Controls.Add(this.tlpMemberProfilePhotoUploadPortion, 0, 2);
             this.tlpMemberPersonalDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMemberPersonalDetails.Location = new System.Drawing.Point(5, 5);
-            this.tlpMemberPersonalDetails.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tlpMemberPersonalDetails.Margin = new System.Windows.Forms.Padding(5);
             this.tlpMemberPersonalDetails.Name = "tlpMemberPersonalDetails";
             this.tlpMemberPersonalDetails.RowCount = 3;
             this.tlpMemberPersonalDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.052661F));
@@ -908,8 +908,8 @@
             this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1546F));
             this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.0274F));
             this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.48337F));
-            this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.00783F));
-            this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.565558F));
+            this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.94129F));
+            this.tlpMemberProfilePhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.001957F));
             this.tlpMemberProfilePhotoUploadPortion.Controls.Add(this.tlpMemberProfilePhoto, 1, 0);
             this.tlpMemberProfilePhotoUploadPortion.Controls.Add(this.lblMemberProfilePhoto, 2, 0);
             this.tlpMemberProfilePhotoUploadPortion.Controls.Add(this.tlpMemberPhotoUploadPortion, 3, 0);
@@ -929,14 +929,14 @@
             this.tlpMemberProfilePhoto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberProfilePhoto.Controls.Add(this.picMemberProfilePhoto, 0, 1);
             this.tlpMemberProfilePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberProfilePhoto.Location = new System.Drawing.Point(11, 2);
+            this.tlpMemberProfilePhoto.Location = new System.Drawing.Point(10, 2);
             this.tlpMemberProfilePhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberProfilePhoto.Name = "tlpMemberProfilePhoto";
             this.tlpMemberProfilePhoto.RowCount = 3;
             this.tlpMemberProfilePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.45528F));
             this.tlpMemberProfilePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.27642F));
             this.tlpMemberProfilePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.0813F));
-            this.tlpMemberProfilePhoto.Size = new System.Drawing.Size(51, 119);
+            this.tlpMemberProfilePhoto.Size = new System.Drawing.Size(50, 119);
             this.tlpMemberProfilePhoto.TabIndex = 0;
             // 
             // picMemberProfilePhoto
@@ -946,7 +946,7 @@
             this.picMemberProfilePhoto.Location = new System.Drawing.Point(3, 35);
             this.picMemberProfilePhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMemberProfilePhoto.Name = "picMemberProfilePhoto";
-            this.picMemberProfilePhoto.Size = new System.Drawing.Size(45, 45);
+            this.picMemberProfilePhoto.Size = new System.Drawing.Size(44, 45);
             this.picMemberProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberProfilePhoto.TabIndex = 0;
             this.picMemberProfilePhoto.TabStop = false;
@@ -956,7 +956,7 @@
             this.lblMemberProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMemberProfilePhoto.AutoSize = true;
             this.lblMemberProfilePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberProfilePhoto.Location = new System.Drawing.Point(68, 50);
+            this.lblMemberProfilePhoto.Location = new System.Drawing.Point(66, 50);
             this.lblMemberProfilePhoto.Name = "lblMemberProfilePhoto";
             this.lblMemberProfilePhoto.Size = new System.Drawing.Size(110, 23);
             this.lblMemberProfilePhoto.TabIndex = 10;
@@ -970,14 +970,14 @@
             this.tlpMemberPhotoUploadPortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpMemberPhotoUploadPortion.Controls.Add(this.picMemberUploadedPhoto, 1, 1);
             this.tlpMemberPhotoUploadPortion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberPhotoUploadPortion.Location = new System.Drawing.Point(201, 2);
+            this.tlpMemberPhotoUploadPortion.Location = new System.Drawing.Point(197, 2);
             this.tlpMemberPhotoUploadPortion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberPhotoUploadPortion.Name = "tlpMemberPhotoUploadPortion";
             this.tlpMemberPhotoUploadPortion.RowCount = 3;
             this.tlpMemberPhotoUploadPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.07317F));
             this.tlpMemberPhotoUploadPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.41463F));
             this.tlpMemberPhotoUploadPortion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.69919F));
-            this.tlpMemberPhotoUploadPortion.Size = new System.Drawing.Size(114, 119);
+            this.tlpMemberPhotoUploadPortion.Size = new System.Drawing.Size(112, 119);
             this.tlpMemberPhotoUploadPortion.TabIndex = 11;
             // 
             // picMemberUploadedPhoto
@@ -988,7 +988,7 @@
             this.picMemberUploadedPhoto.Location = new System.Drawing.Point(14, 22);
             this.picMemberUploadedPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMemberUploadedPhoto.Name = "picMemberUploadedPhoto";
-            this.picMemberUploadedPhoto.Size = new System.Drawing.Size(85, 72);
+            this.picMemberUploadedPhoto.Size = new System.Drawing.Size(83, 72);
             this.picMemberUploadedPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberUploadedPhoto.TabIndex = 0;
             this.picMemberUploadedPhoto.TabStop = false;
@@ -999,14 +999,14 @@
             this.tlpMemberBrowsePhotoSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMemberBrowsePhotoSection.Controls.Add(this.pnlMemberBrowsePhoto, 0, 1);
             this.tlpMemberBrowsePhotoSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMemberBrowsePhotoSection.Location = new System.Drawing.Point(321, 2);
+            this.tlpMemberBrowsePhotoSection.Location = new System.Drawing.Point(315, 2);
             this.tlpMemberBrowsePhotoSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMemberBrowsePhotoSection.Name = "tlpMemberBrowsePhotoSection";
             this.tlpMemberBrowsePhotoSection.RowCount = 3;
-            this.tlpMemberBrowsePhotoSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.52032F));
-            this.tlpMemberBrowsePhotoSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.70732F));
+            this.tlpMemberBrowsePhotoSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.tlpMemberBrowsePhotoSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.13445F));
             this.tlpMemberBrowsePhotoSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.95935F));
-            this.tlpMemberBrowsePhotoSection.Size = new System.Drawing.Size(178, 119);
+            this.tlpMemberBrowsePhotoSection.Size = new System.Drawing.Size(145, 119);
             this.tlpMemberBrowsePhotoSection.TabIndex = 12;
             // 
             // pnlMemberBrowsePhoto
@@ -1014,10 +1014,10 @@
             this.pnlMemberBrowsePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMemberBrowsePhoto.Controls.Add(this.tlpMemberBrowsePhoto);
             this.pnlMemberBrowsePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMemberBrowsePhoto.Location = new System.Drawing.Point(3, 41);
+            this.pnlMemberBrowsePhoto.Location = new System.Drawing.Point(3, 36);
             this.pnlMemberBrowsePhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMemberBrowsePhoto.Name = "pnlMemberBrowsePhoto";
-            this.pnlMemberBrowsePhoto.Size = new System.Drawing.Size(172, 34);
+            this.pnlMemberBrowsePhoto.Size = new System.Drawing.Size(139, 39);
             this.pnlMemberBrowsePhoto.TabIndex = 0;
             this.pnlMemberBrowsePhoto.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             // 
@@ -1025,8 +1025,8 @@
             // 
             this.tlpMemberBrowsePhoto.BackColor = System.Drawing.Color.Purple;
             this.tlpMemberBrowsePhoto.ColumnCount = 2;
-            this.tlpMemberBrowsePhoto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.41618F));
-            this.tlpMemberBrowsePhoto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.58382F));
+            this.tlpMemberBrowsePhoto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.88235F));
+            this.tlpMemberBrowsePhoto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.11765F));
             this.tlpMemberBrowsePhoto.Controls.Add(this.lblMemberBrowsePhoto, 1, 0);
             this.tlpMemberBrowsePhoto.Controls.Add(this.picMemberBrowseIcon, 0, 0);
             this.tlpMemberBrowsePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1036,7 +1036,7 @@
             this.tlpMemberBrowsePhoto.RowCount = 1;
             this.tlpMemberBrowsePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMemberBrowsePhoto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMemberBrowsePhoto.Size = new System.Drawing.Size(170, 32);
+            this.tlpMemberBrowsePhoto.Size = new System.Drawing.Size(137, 37);
             this.tlpMemberBrowsePhoto.TabIndex = 0;
             this.tlpMemberBrowsePhoto.Click += new System.EventHandler(this.pnlMemberBrowsePhoto_Click);
             this.tlpMemberBrowsePhoto.MouseEnter += new System.EventHandler(this.tlpMemberBrowsePhoto_MouseEnter);
@@ -1048,7 +1048,7 @@
             this.lblMemberBrowsePhoto.AutoSize = true;
             this.lblMemberBrowsePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMemberBrowsePhoto.ForeColor = System.Drawing.Color.White;
-            this.lblMemberBrowsePhoto.Location = new System.Drawing.Point(64, 6);
+            this.lblMemberBrowsePhoto.Location = new System.Drawing.Point(38, 9);
             this.lblMemberBrowsePhoto.Name = "lblMemberBrowsePhoto";
             this.lblMemberBrowsePhoto.Size = new System.Drawing.Size(95, 19);
             this.lblMemberBrowsePhoto.TabIndex = 11;
@@ -1061,10 +1061,10 @@
             // 
             this.picMemberBrowseIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMemberBrowseIcon.Image = ((System.Drawing.Image)(resources.GetObject("picMemberBrowseIcon.Image")));
-            this.picMemberBrowseIcon.Location = new System.Drawing.Point(11, 3);
+            this.picMemberBrowseIcon.Location = new System.Drawing.Point(3, 6);
             this.picMemberBrowseIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picMemberBrowseIcon.Name = "picMemberBrowseIcon";
-            this.picMemberBrowseIcon.Size = new System.Drawing.Size(47, 25);
+            this.picMemberBrowseIcon.Size = new System.Drawing.Size(29, 25);
             this.picMemberBrowseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMemberBrowseIcon.TabIndex = 0;
             this.picMemberBrowseIcon.TabStop = false;
@@ -1277,7 +1277,7 @@
             this.tlpMemberSelectLockerOrNot.ColumnCount = 3;
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnNeedLocker, 0, 0);
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnDontNeedLocker, 1, 0);
             this.tlpMemberSelectLockerOrNot.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1310,10 +1310,10 @@
             this.rbtnDontNeedLocker.AutoSize = true;
             this.rbtnDontNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
             this.rbtnDontNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(168, 13);
+            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(166, 13);
             this.rbtnDontNeedLocker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnDontNeedLocker.Name = "rbtnDontNeedLocker";
-            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(168, 23);
+            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(167, 23);
             this.rbtnDontNeedLocker.TabIndex = 1;
             this.rbtnDontNeedLocker.TabStop = true;
             this.rbtnDontNeedLocker.Text = "No, I don\'t need a locker";
@@ -1592,13 +1592,13 @@
             // tlpMemberInfromationSubmitResetCanclePortion
             // 
             this.tlpMemberInfromationSubmitResetCanclePortion.ColumnCount = 7;
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.25253F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.16162F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.17172F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.16162F));
-            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.25253F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.0803F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.29834F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.712161F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.29834F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.662292F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.38583F));
+            this.tlpMemberInfromationSubmitResetCanclePortion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.54593F));
             this.tlpMemberInfromationSubmitResetCanclePortion.Controls.Add(this.tlpCancleFromSection, 5, 0);
             this.tlpMemberInfromationSubmitResetCanclePortion.Controls.Add(this.tlpRegisterButtonSection, 1, 0);
             this.tlpMemberInfromationSubmitResetCanclePortion.Controls.Add(this.tlpResetButtonSection, 3, 0);
@@ -1617,24 +1617,24 @@
             this.tlpCancleFromSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCancleFromSection.Controls.Add(this.pnlCancleButton, 0, 1);
             this.tlpCancleFromSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCancleFromSection.Location = new System.Drawing.Point(678, 2);
+            this.tlpCancleFromSection.Location = new System.Drawing.Point(620, 2);
             this.tlpCancleFromSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpCancleFromSection.Name = "tlpCancleFromSection";
             this.tlpCancleFromSection.RowCount = 3;
+            this.tlpCancleFromSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872F));
+            this.tlpCancleFromSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.74468F));
             this.tlpCancleFromSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpCancleFromSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpCancleFromSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpCancleFromSection.Size = new System.Drawing.Size(176, 94);
+            this.tlpCancleFromSection.Size = new System.Drawing.Size(147, 94);
             this.tlpCancleFromSection.TabIndex = 1;
             // 
             // pnlCancleButton
             // 
             this.pnlCancleButton.Controls.Add(this.tlpCancleButton);
             this.pnlCancleButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCancleButton.Location = new System.Drawing.Point(3, 20);
+            this.pnlCancleButton.Location = new System.Drawing.Point(3, 33);
             this.pnlCancleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCancleButton.Name = "pnlCancleButton";
-            this.pnlCancleButton.Size = new System.Drawing.Size(170, 52);
+            this.pnlCancleButton.Size = new System.Drawing.Size(141, 39);
             this.pnlCancleButton.TabIndex = 16;
             // 
             // tlpCancleButton
@@ -1652,7 +1652,7 @@
             this.tlpCancleButton.RowCount = 1;
             this.tlpCancleButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpCancleButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCancleButton.Size = new System.Drawing.Size(170, 52);
+            this.tlpCancleButton.Size = new System.Drawing.Size(141, 39);
             this.tlpCancleButton.TabIndex = 3;
             this.tlpCancleButton.MouseEnter += new System.EventHandler(this.tlpCancleButton_MouseEnter);
             this.tlpCancleButton.MouseLeave += new System.EventHandler(this.tlpCancleButton_MouseLeave);
@@ -1664,7 +1664,7 @@
             this.picCancle.Location = new System.Drawing.Point(3, 2);
             this.picCancle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picCancle.Name = "picCancle";
-            this.picCancle.Size = new System.Drawing.Size(50, 48);
+            this.picCancle.Size = new System.Drawing.Size(40, 35);
             this.picCancle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCancle.TabIndex = 0;
             this.picCancle.TabStop = false;
@@ -1677,7 +1677,7 @@
             this.lblCancle.AutoSize = true;
             this.lblCancle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCancle.ForeColor = System.Drawing.Color.White;
-            this.lblCancle.Location = new System.Drawing.Point(59, 14);
+            this.lblCancle.Location = new System.Drawing.Point(49, 8);
             this.lblCancle.Name = "lblCancle";
             this.lblCancle.Size = new System.Drawing.Size(73, 23);
             this.lblCancle.TabIndex = 1;
@@ -1691,24 +1691,24 @@
             this.tlpRegisterButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpRegisterButtonSection.Controls.Add(this.pnlRegisterButton, 0, 1);
             this.tlpRegisterButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpRegisterButtonSection.Location = new System.Drawing.Point(287, 2);
+            this.tlpRegisterButtonSection.Location = new System.Drawing.Point(266, 2);
             this.tlpRegisterButtonSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpRegisterButtonSection.Name = "tlpRegisterButtonSection";
             this.tlpRegisterButtonSection.RowCount = 3;
+            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872F));
+            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.74468F));
             this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpRegisterButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpRegisterButtonSection.Size = new System.Drawing.Size(176, 94);
+            this.tlpRegisterButtonSection.Size = new System.Drawing.Size(146, 94);
             this.tlpRegisterButtonSection.TabIndex = 0;
             // 
             // pnlRegisterButton
             // 
             this.pnlRegisterButton.Controls.Add(this.tlpRegisterButton);
             this.pnlRegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRegisterButton.Location = new System.Drawing.Point(3, 20);
+            this.pnlRegisterButton.Location = new System.Drawing.Point(3, 33);
             this.pnlRegisterButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRegisterButton.Name = "pnlRegisterButton";
-            this.pnlRegisterButton.Size = new System.Drawing.Size(170, 52);
+            this.pnlRegisterButton.Size = new System.Drawing.Size(140, 39);
             this.pnlRegisterButton.TabIndex = 0;
             this.pnlRegisterButton.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             // 
@@ -1727,7 +1727,7 @@
             this.tlpRegisterButton.RowCount = 1;
             this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRegisterButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpRegisterButton.Size = new System.Drawing.Size(170, 52);
+            this.tlpRegisterButton.Size = new System.Drawing.Size(140, 39);
             this.tlpRegisterButton.TabIndex = 2;
             this.tlpRegisterButton.Click += new System.EventHandler(this.pnlRegisterButton_Click);
             this.tlpRegisterButton.MouseEnter += new System.EventHandler(this.tlpRegisterButton_MouseEnter);
@@ -1740,7 +1740,7 @@
             this.picRegister.Location = new System.Drawing.Point(3, 2);
             this.picRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picRegister.Name = "picRegister";
-            this.picRegister.Size = new System.Drawing.Size(50, 48);
+            this.picRegister.Size = new System.Drawing.Size(40, 35);
             this.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRegister.TabIndex = 0;
             this.picRegister.TabStop = false;
@@ -1752,11 +1752,11 @@
             // 
             this.lblRegister.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.White;
-            this.lblRegister.Location = new System.Drawing.Point(59, 14);
+            this.lblRegister.Location = new System.Drawing.Point(49, 9);
             this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(85, 23);
+            this.lblRegister.Size = new System.Drawing.Size(78, 20);
             this.lblRegister.TabIndex = 1;
             this.lblRegister.Text = "REGISTER";
             this.lblRegister.Click += new System.EventHandler(this.pnlRegisterButton_Click);
@@ -1769,14 +1769,14 @@
             this.tlpResetButtonSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpResetButtonSection.Controls.Add(this.pnlResetButton, 0, 1);
             this.tlpResetButtonSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpResetButtonSection.Location = new System.Drawing.Point(477, 2);
+            this.tlpResetButtonSection.Location = new System.Drawing.Point(449, 2);
             this.tlpResetButtonSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpResetButtonSection.Name = "tlpResetButtonSection";
             this.tlpResetButtonSection.RowCount = 3;
+            this.tlpResetButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872F));
+            this.tlpResetButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.74468F));
             this.tlpResetButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpResetButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpResetButtonSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpResetButtonSection.Size = new System.Drawing.Size(187, 94);
+            this.tlpResetButtonSection.Size = new System.Drawing.Size(146, 94);
             this.tlpResetButtonSection.TabIndex = 1;
             // 
             // pnlResetButton
@@ -1784,10 +1784,10 @@
             this.pnlResetButton.Controls.Add(this.tlpResetButton);
             this.pnlResetButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlResetButton.Enabled = false;
-            this.pnlResetButton.Location = new System.Drawing.Point(3, 20);
+            this.pnlResetButton.Location = new System.Drawing.Point(3, 33);
             this.pnlResetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlResetButton.Name = "pnlResetButton";
-            this.pnlResetButton.Size = new System.Drawing.Size(181, 52);
+            this.pnlResetButton.Size = new System.Drawing.Size(140, 39);
             this.pnlResetButton.TabIndex = 0;
             this.pnlResetButton.MouseEnter += new System.EventHandler(this.pnlResetButton_MouseEnter);
             this.pnlResetButton.MouseLeave += new System.EventHandler(this.pnlResetButton_MouseLeave);
@@ -1807,7 +1807,7 @@
             this.tlpResetButton.Name = "tlpResetButton";
             this.tlpResetButton.RowCount = 1;
             this.tlpResetButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpResetButton.Size = new System.Drawing.Size(181, 52);
+            this.tlpResetButton.Size = new System.Drawing.Size(140, 39);
             this.tlpResetButton.TabIndex = 2;
             this.tlpResetButton.MouseEnter += new System.EventHandler(this.tlpResetButton_MouseEnter);
             this.tlpResetButton.MouseLeave += new System.EventHandler(this.tlpResetButton_MouseLeave);
@@ -1819,7 +1819,7 @@
             this.picReset.Location = new System.Drawing.Point(3, 2);
             this.picReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picReset.Name = "picReset";
-            this.picReset.Size = new System.Drawing.Size(53, 48);
+            this.picReset.Size = new System.Drawing.Size(40, 35);
             this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picReset.TabIndex = 0;
             this.picReset.TabStop = false;
@@ -1832,7 +1832,7 @@
             this.lblReset.AutoSize = true;
             this.lblReset.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReset.ForeColor = System.Drawing.Color.White;
-            this.lblReset.Location = new System.Drawing.Point(62, 14);
+            this.lblReset.Location = new System.Drawing.Point(49, 8);
             this.lblReset.Name = "lblReset";
             this.lblReset.Size = new System.Drawing.Size(57, 23);
             this.lblReset.TabIndex = 1;
@@ -1853,7 +1853,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpMemberRegistrationFeesWholeFrom);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmMemberRegistration";
             this.Text = "FrmMemberRegistration";
             this.Load += new System.EventHandler(this.FrmMemberRegistration_Load);
