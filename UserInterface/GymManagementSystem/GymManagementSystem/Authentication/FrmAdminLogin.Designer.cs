@@ -358,6 +358,7 @@
             this.cbShowPassword.TabIndex = 11;
             this.cbShowPassword.Text = "Show";
             this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // lblForgotPassword
             // 
