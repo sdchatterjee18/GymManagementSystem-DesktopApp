@@ -596,22 +596,24 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             SelectPanel(pnlSuperAdminPasswordChange);
 
             pnlSuperAdminPasswordChange.ForeColor = Color.White;
-            picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
-            FrmSAPasswordChange frmSAPasswordChange = new FrmSAPasswordChange();
+
+            picSuperAdminPasswordChange.Image =
+                Properties.Resources.recor_buttonW;
+
+            FrmSAPasswordChange frmSAPasswordChange =
+                new FrmSAPasswordChange();
+
             frmSAPasswordChange.ShowDialog();
         }
 
         private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
         {
-
         }
 
         private void pnlMinimize_MouseEnter(object sender, EventArgs e)
         {
-            pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
-        }
-        {
-            pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
+            pnlMinimize.BackColor =
+                Color.FromArgb(190, 205, 225);
         }
 
         private void pnlMinimize_MouseLeave(object sender, EventArgs e)
@@ -786,6 +788,15 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             picSettingsArrowe.Image =
                 Properties.Resources.downArrowW;
         }
+        //private void CloseAllDropdowns()
+        //{
+        //   pnlDropdownFinancialManagement.Visible = false;
+        //   pnlDropDownSettings.Visible = false;
+        //   isFinancialManagementExpanded = false;
+        //   isSettingsExpanded = false;
+        //   picFinancialManagementArrow.Image =Properties.Resources.downArrowW;
+        //   picSettingsArrowe.Image = Properties.Resources.downArrowW;
+        //}
 
         private void pnlExit_Click(object sender, EventArgs e)
         {
