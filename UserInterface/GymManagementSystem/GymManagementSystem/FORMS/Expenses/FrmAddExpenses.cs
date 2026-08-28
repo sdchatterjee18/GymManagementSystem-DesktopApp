@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using GymManagementSystem.FORMS.Expenses.UI;
 using GymManagementSystem.Common;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Expenses
 {
@@ -18,6 +19,7 @@ namespace GymManagementSystem.FORMS.Expenses
         public FrmAddExpenses()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
         }
 
         int clickCountTxtAmount = 0;
@@ -36,7 +38,26 @@ namespace GymManagementSystem.FORMS.Expenses
             RetrieveAllExpense();
             dgvExpenses.ClearSelection();
         }
+        // Set Error Provider Alignment
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+            {
+               this.txtAmount,
+               this.cmbCateogory,
+               this.txtExpenseDefination
+            };
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
 
+                errorProvider1.SetIconPadding(
+                    control,
+                    150);
+            }
+        }
 
         //Retrieve Category Name for combobox
         public void RetrieveCategoryName()
@@ -45,7 +66,8 @@ namespace GymManagementSystem.FORMS.Expenses
             try
             {
                 ExpensesUI ExpenseUI = new ExpensesUI();
-                cmbCateogory.DataSource = ExpenseUI.RetrieveCategoryNameUI();
+                CategoryName = ExpenseUI.RetrieveCategoryNameUI();
+                cmbCateogory.DataSource = CategoryName;
                 cmbCateogory.DisplayMember = "CategoryName";
                 cmbCateogory.ValueMember = "ExpenseCategoryID";
                 cmbCateogory.SelectedIndex = -1;
@@ -92,7 +114,7 @@ namespace GymManagementSystem.FORMS.Expenses
             try
             {
                 ExpensesUI ExpenseUI = new ExpensesUI();
-                InsertionMessage = ExpenseUI.InsertExpenseUI(Convert.ToInt32(cmbCateogory.SelectedValue), txtAmount.Text,txtExpenseDefination.Text);
+                //InsertionMessage = ExpenseUI.InsertExpenseUI(Convert.ToInt32(cmbCateogory.SelectedValue), txtAmount.Text,txtExpenseDefination.Text);
                 DialogResult Result = MessageBox.Show(InsertionMessage, "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 
             }
@@ -201,15 +223,84 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             ValidationUI.ClearDefaultPlaceholderText(txtExpenseDefination, clickCountTxtNote);
             ValidationUI.ClearDefaultPlaceholderText(txtAmount, clickCountTxtAmount);
-            if (!ValidationUI.ValidateRequiredComboBoxes(cmbCateogory))
+          
+            // VALIDATION
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+            errorProvider1.Clear();
+
+            // Amount
+            result = ValidationUI.ValidateRequiredTextBox(txtAmount);
+
+            if (result != ValidationUI.ValidationResult.Valid)
             {
+                errorProvider1.SetError(
+                    txtAmount,
+                    "Amount " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            //select combo box
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbCateogory,
+                    "Category " +
+                    ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+            //  Expense Defination
+            result = ValidationUI.ValidateRequiredTextBox(txtExpenseDefination);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtExpenseDefination,
+                    "Description " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill up all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
                 return;
             }
-            if (!ValidationUI.ValidateRequiredTextBoxes(txtAmount, txtExpenseDefination))
+            decimal price;
+            if (!decimal.TryParse(txtAmount.Text.Trim(), out price))
             {
+                errorProvider1.SetError(
+                    txtAmount,
+                    "Price must contain a valid numeric value.");
+
+                MessageBox.Show(
+                    "Price must contain a valid numeric value.",
+                    "Validation Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 return;
             }
-            InsertExpense();
+            ExpensesUI expenseUI = new ExpensesUI();
+            expenseUI.ExpenseAmount = Convert.ToDecimal(this.txtAmount.Text.Trim());
+            expenseUI.CategoryId = Convert.ToInt32(cmbCateogory.SelectedValue);
+            expenseUI.Notes = this.txtExpenseDefination.Text.Trim();
+
+            ValidationResult finalResult = expenseUI.InsertExpenseUI();
+
+            if (finalResult.FieldName == "")
+            {
+                MessageBox.Show(finalResult.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             RetrieveAllExpense();
 
         }

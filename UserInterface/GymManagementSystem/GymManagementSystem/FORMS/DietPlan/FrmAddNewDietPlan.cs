@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.DietPlan.UI;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.DietPlan
 {
@@ -18,6 +19,27 @@ namespace GymManagementSystem.FORMS.DietPlan
         public FrmAddNewDietPlan()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
+        }
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+    {
+        this.txtRequiredCalories,
+        this.txtPlanCondition,
+        this.tlpChooseFile
+    };
+
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
+
+                errorProvider1.SetIconPadding(
+                    control,
+                    15);
+            }
         }
         // Form Load
         private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
@@ -147,77 +169,197 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Submit Form
         private void tlpSubmit_Click(object sender, EventArgs e)
         {
-            // ==============================
+            // =========================================
             // Clear Placeholder Text
-            // ==============================
+            // =========================================
 
-            if (ClickCountTxtRequiredCalories == 0)
-                txtRequiredCalories.Clear();
-
-            if (ClickCountTxtPlanCondition == 0)
-                txtPlanCondition.Clear();
-
-
-            // ==============================
-            // Common UI Validation
-            // ==============================
-
-            if (!ValidationUI.ValidateRequiredTextBoxes(
+            ValidationUI.ClearDefaultPlaceholderText(
                 txtRequiredCalories,
-                txtPlanCondition))
+                ClickCountTxtRequiredCalories);
+
+            ValidationUI.ClearDefaultPlaceholderText(
+                txtPlanCondition,
+                ClickCountTxtPlanCondition);
+
+
+            // =========================================
+            // UI REQUIRED VALIDATION
+            // =========================================
+
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+
+            errorProvider1.Clear();
+
+
+            // =========================================
+            // Required Calories
+            // =========================================
+
+            result =
+                ValidationUI.ValidateRequiredTextBox(
+                    txtRequiredCalories);
+
+            if (result != ValidationUI.ValidationResult.Valid)
             {
+                errorProvider1.SetError(
+                    txtRequiredCalories,
+                    "Required Calories " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+
+            // =========================================
+            // Plan Condition
+            // =========================================
+
+            result =
+                ValidationUI.ValidateRequiredTextBox(
+                    txtPlanCondition);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtPlanCondition,
+                    "Plan Condition " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+
+            // =========================================
+            // Diet Plan Document
+            // =========================================
+
+            if (dietPlanDocument == null ||
+                dietPlanDocument.Length == 0)
+            {
+                errorProvider1.SetError(
+                    tlpChooseFile,
+                    "Diet Plan Document is required.");
+
+                isValid = false;
+            }
+
+
+            // =========================================
+            // If Required Validation Failed
+            // =========================================
+
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
                 return;
             }
 
 
-            // ==============================
-            // Convert + DietPlanUI
-            // ==============================
+            // =========================================
+            // Convert Required Calories
+            // =========================================
 
-            try
+            int requiredCalories;
+
+            if (!int.TryParse(
+                txtRequiredCalories.Text.Trim(),
+                out requiredCalories))
             {
-                int requiredCalories =
-                    Convert.ToInt32(
-                        txtRequiredCalories.Text.Trim());
-
-                string planCondition =
-                    txtPlanCondition.Text.Trim();
-
-
-                DietPlanUI dietPlanUI =
-                    new DietPlanUI();
-
-
-                string result =
-                    dietPlanUI.InsertDietPlanUI(
-                        requiredCalories,
-                        dietPlanDocument,
-                        planCondition);
-
+                errorProvider1.SetError(
+                    txtRequiredCalories,
+                    "Required Calories must contain only numbers.");
 
                 MessageBox.Show(
-                    result,
+                    "Required Calories must contain only numbers.",
+                    "Validation Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
+                return;
+            }
+
+
+            // =========================================
+            // Create DietPlan UI
+            // =========================================
+
+            DietPlanUI dietPlanUI =
+                new DietPlanUI();
+
+            dietPlanUI.CaloriesPerDay =
+                requiredCalories;
+
+            dietPlanUI.ConditionStatus =
+                txtPlanCondition.Text.Trim();
+
+            dietPlanUI.DietPlanDocument =
+                dietPlanDocument;
+
+
+            // =========================================
+            // Insert
+            // =========================================
+
+            ValidationResult finalResult =
+                dietPlanUI.InsertDietPlanUI();
+
+
+            // =========================================
+            // Handle Result
+            // =========================================
+
+            HandleDietPlanResult(finalResult);
+        }
+
+        private void HandleDietPlanResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
+
+            if (result.Result ==
+                ValidationBll.CommonValidationMessage.Valid)
+            {
+                MessageBox.Show(
+                    result.Message,
                     "Diet Plan",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                // ==============================
-                // Successful Insert
-                // ==============================
 
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+                return;
             }
-            catch (Exception ex)
+
+            switch (result.FieldName)
             {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                case "RequiredCalories":
+                    errorProvider1.SetError(
+                        txtRequiredCalories,
+                        result.Message);
+                    break;
+
+                case "PlanCondition":
+                    errorProvider1.SetError(
+                        txtPlanCondition,
+                        result.Message);
+                    break;
             }
+
+            MessageBox.Show(
+                result.Message,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
         }
         // Clear Form
         private void tlpClear_Click(object sender, EventArgs e)

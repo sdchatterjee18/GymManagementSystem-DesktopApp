@@ -34,13 +34,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainLayout));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlExitRestoreMinimize = new System.Windows.Forms.Panel();
-            this.pnlMinimize = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tlpExit = new System.Windows.Forms.TableLayoutPanel();
             this.pnlExit = new System.Windows.Forms.Panel();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.pnlRestore = new System.Windows.Forms.Panel();
             this.picRestore = new System.Windows.Forms.PictureBox();
+            this.pnlMinimize = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.pnlLogout = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
@@ -121,18 +122,18 @@
             this.pnlSpecer = new System.Windows.Forms.Panel();
             this.pnlMainPanel = new System.Windows.Forms.Panel();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
             this.tlpTopbar.SuspendLayout();
-            this.pnlExitRestoreMinimize.SuspendLayout();
-            this.pnlMinimize.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tlpExit.SuspendLayout();
             this.pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.pnlRestore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRestore)).BeginInit();
+            this.pnlMinimize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
@@ -189,7 +190,6 @@
             this.pnlDropDownSettings.SuspendLayout();
             this.pnlAdminPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPasswordChange)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMemberAttendance
@@ -243,9 +243,9 @@
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tlpTopbar.Controls.Add(this.pnlExitRestoreMinimize, 4, 0);
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tlpTopbar.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlpTopbar.Controls.Add(this.tlpExit, 4, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTopbar.Location = new System.Drawing.Point(0, 0);
             this.tlpTopbar.Margin = new System.Windows.Forms.Padding(0);
@@ -255,68 +255,61 @@
             this.tlpTopbar.Size = new System.Drawing.Size(1027, 45);
             this.tlpTopbar.TabIndex = 0;
             // 
-            // pnlExitRestoreMinimize
+            // pictureBox1
             // 
-            this.pnlExitRestoreMinimize.Controls.Add(this.pnlMinimize);
-            this.pnlExitRestoreMinimize.Controls.Add(this.pnlExit);
-            this.pnlExitRestoreMinimize.Controls.Add(this.pnlRestore);
-            this.pnlExitRestoreMinimize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlExitRestoreMinimize.Location = new System.Drawing.Point(866, 0);
-            this.pnlExitRestoreMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlExitRestoreMinimize.Name = "pnlExitRestoreMinimize";
-            this.pnlExitRestoreMinimize.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.pnlExitRestoreMinimize.Size = new System.Drawing.Size(161, 45);
-            this.pnlExitRestoreMinimize.TabIndex = 6;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
-            // pnlMinimize
+            // tlpExit
             // 
-            this.pnlMinimize.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlMinimize.Controls.Add(this.picMinimize);
-            this.pnlMinimize.Location = new System.Drawing.Point(36, 7);
-            this.pnlMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlMinimize.Name = "pnlMinimize";
-            this.pnlMinimize.Size = new System.Drawing.Size(38, 30);
-            this.pnlMinimize.TabIndex = 2;
-            this.pnlMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
-            this.pnlMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
-            this.pnlMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
-            this.picMinimize.Location = new System.Drawing.Point(7, 4);
-            this.picMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(22, 22);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMinimize.TabIndex = 0;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
-            this.picMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
-            this.picMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
+            this.tlpExit.ColumnCount = 5;
+            this.tlpExit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpExit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpExit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpExit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpExit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.tlpExit.Controls.Add(this.pnlExit, 3, 0);
+            this.tlpExit.Controls.Add(this.pnlRestore, 2, 0);
+            this.tlpExit.Controls.Add(this.pnlMinimize, 1, 0);
+            this.tlpExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpExit.Location = new System.Drawing.Point(866, 0);
+            this.tlpExit.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpExit.Name = "tlpExit";
+            this.tlpExit.RowCount = 1;
+            this.tlpExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpExit.Size = new System.Drawing.Size(161, 45);
+            this.tlpExit.TabIndex = 8;
             // 
             // pnlExit
             // 
-            this.pnlExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlExit.Controls.Add(this.picExit);
-            this.pnlExit.Location = new System.Drawing.Point(116, 7);
-            this.pnlExit.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlExit.Location = new System.Drawing.Point(116, 3);
+            this.pnlExit.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pnlExit.Name = "pnlExit";
-            this.pnlExit.Size = new System.Drawing.Size(38, 29);
-            this.pnlExit.TabIndex = 0;
+            this.pnlExit.Size = new System.Drawing.Size(40, 35);
+            this.pnlExit.TabIndex = 1;
             this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
+            this.pnlExit.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlExit_Paint);
             this.pnlExit.MouseEnter += new System.EventHandler(this.pnlExit_MouseEnter);
             this.pnlExit.MouseLeave += new System.EventHandler(this.pnlExit_MouseLeave);
             // 
             // picExit
             // 
+            this.picExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picExit.BackColor = System.Drawing.Color.Transparent;
             this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
-            this.picExit.Location = new System.Drawing.Point(8, 4);
+            this.picExit.Location = new System.Drawing.Point(12, 10);
             this.picExit.Margin = new System.Windows.Forms.Padding(0);
             this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(22, 21);
+            this.picExit.Size = new System.Drawing.Size(15, 15);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picExit.TabIndex = 0;
             this.picExit.TabStop = false;
@@ -326,12 +319,13 @@
             // 
             // pnlRestore
             // 
-            this.pnlRestore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlRestore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRestore.Controls.Add(this.picRestore);
-            this.pnlRestore.Location = new System.Drawing.Point(76, 7);
-            this.pnlRestore.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlRestore.Location = new System.Drawing.Point(76, 3);
+            this.pnlRestore.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.pnlRestore.Name = "pnlRestore";
-            this.pnlRestore.Size = new System.Drawing.Size(38, 30);
+            this.pnlRestore.Size = new System.Drawing.Size(40, 35);
             this.pnlRestore.TabIndex = 1;
             this.pnlRestore.Click += new System.EventHandler(this.pnlRestore_Click);
             this.pnlRestore.MouseEnter += new System.EventHandler(this.pnlRestore_MouseEnter);
@@ -339,18 +333,49 @@
             // 
             // picRestore
             // 
+            this.picRestore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picRestore.BackColor = System.Drawing.Color.Transparent;
             this.picRestore.Image = ((System.Drawing.Image)(resources.GetObject("picRestore.Image")));
-            this.picRestore.Location = new System.Drawing.Point(7, 4);
+            this.picRestore.Location = new System.Drawing.Point(12, 10);
             this.picRestore.Margin = new System.Windows.Forms.Padding(0);
             this.picRestore.Name = "picRestore";
-            this.picRestore.Size = new System.Drawing.Size(22, 22);
+            this.picRestore.Size = new System.Drawing.Size(15, 15);
             this.picRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRestore.TabIndex = 0;
             this.picRestore.TabStop = false;
             this.picRestore.Click += new System.EventHandler(this.pnlRestore_Click);
             this.picRestore.MouseEnter += new System.EventHandler(this.pnlRestore_MouseEnter);
             this.picRestore.MouseLeave += new System.EventHandler(this.pnlRestore_MouseLeave);
+            // 
+            // pnlMinimize
+            // 
+            this.pnlMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMinimize.Controls.Add(this.picMinimize);
+            this.pnlMinimize.Location = new System.Drawing.Point(36, 3);
+            this.pnlMinimize.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.pnlMinimize.Name = "pnlMinimize";
+            this.pnlMinimize.Size = new System.Drawing.Size(40, 35);
+            this.pnlMinimize.TabIndex = 1;
+            this.pnlMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
+            this.pnlMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
+            this.pnlMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
+            this.picMinimize.Location = new System.Drawing.Point(12, 10);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(18, 15);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimize.TabIndex = 0;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.pnlMinimize_Click);
+            this.picMinimize.MouseEnter += new System.EventHandler(this.pnlMinimize_MouseEnter);
+            this.picMinimize.MouseLeave += new System.EventHandler(this.pnlMinimize_MouseLeave);
             // 
             // pnlSidebar
             // 
@@ -1461,17 +1486,6 @@
             // 
             this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1488,13 +1502,14 @@
             this.Load += new System.EventHandler(this.FrmMainLayout_Load);
             this.pnlTopbar.ResumeLayout(false);
             this.tlpTopbar.ResumeLayout(false);
-            this.pnlExitRestoreMinimize.ResumeLayout(false);
-            this.pnlMinimize.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tlpExit.ResumeLayout(false);
             this.pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.pnlRestore.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picRestore)).EndInit();
+            this.pnlMinimize.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogout.ResumeLayout(false);
             this.pnlLogout.PerformLayout();
@@ -1574,7 +1589,6 @@
             this.pnlAdminPasswordChange.ResumeLayout(false);
             this.pnlAdminPasswordChange.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPasswordChange)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1663,14 +1677,14 @@
         private System.Windows.Forms.Panel pnlAdminPasswordChange;
         private System.Windows.Forms.PictureBox picAdminPasswordChange;
         private System.Windows.Forms.Label lblChangePassword;
-        private System.Windows.Forms.Panel pnlExitRestoreMinimize;
-        private System.Windows.Forms.Panel pnlMinimize;
         private System.Windows.Forms.PictureBox picMinimize;
-        private System.Windows.Forms.Panel pnlExit;
         private System.Windows.Forms.PictureBox picExit;
-        private System.Windows.Forms.Panel pnlRestore;
         private System.Windows.Forms.PictureBox picRestore;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tlpExit;
+        private System.Windows.Forms.Panel pnlExit;
+        private System.Windows.Forms.Panel pnlRestore;
+        private System.Windows.Forms.Panel pnlMinimize;
 
     }
 }

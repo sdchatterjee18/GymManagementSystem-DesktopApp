@@ -39,11 +39,11 @@
             this.pnlSpaceing = new System.Windows.Forms.Panel();
             this.tlpDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDisplayLocker = new System.Windows.Forms.DataGridView();
-            this.pnlFooter = new System.Windows.Forms.Panel();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAllocatedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFooter = new System.Windows.Forms.Panel();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpTitle.SuspendLayout();
@@ -69,6 +69,7 @@
             // 
             // tlpHeading
             // 
+            this.tlpHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpHeading.ColumnCount = 4;
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpHeading.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.12354F));
@@ -172,6 +173,8 @@
             this.pnlAddNew.Size = new System.Drawing.Size(90, 29);
             this.pnlAddNew.TabIndex = 9;
             this.pnlAddNew.Click += new System.EventHandler(this.pnlAddNew_Click);
+            this.pnlAddNew.MouseEnter += new System.EventHandler(this.pnlAddNew_MouseEnter);
+            this.pnlAddNew.MouseLeave += new System.EventHandler(this.pnlAddNew_MouseLeave);
             // 
             // tlpAddNew
             // 
@@ -189,6 +192,8 @@
             this.tlpAddNew.Size = new System.Drawing.Size(88, 27);
             this.tlpAddNew.TabIndex = 4;
             this.tlpAddNew.Click += new System.EventHandler(this.pnlAddNew_Click);
+            this.tlpAddNew.MouseEnter += new System.EventHandler(this.pnlAddNew_MouseEnter);
+            this.tlpAddNew.MouseLeave += new System.EventHandler(this.pnlAddNew_MouseLeave);
             // 
             // lblAddNew
             // 
@@ -203,6 +208,8 @@
             this.lblAddNew.TabIndex = 0;
             this.lblAddNew.Text = "Add New";
             this.lblAddNew.Click += new System.EventHandler(this.pnlAddNew_Click);
+            this.lblAddNew.MouseEnter += new System.EventHandler(this.pnlAddNew_MouseEnter);
+            this.lblAddNew.MouseLeave += new System.EventHandler(this.pnlAddNew_MouseLeave);
             // 
             // picAddButton
             // 
@@ -216,6 +223,8 @@
             this.picAddButton.TabIndex = 1;
             this.picAddButton.TabStop = false;
             this.picAddButton.Click += new System.EventHandler(this.pnlAddNew_Click);
+            this.picAddButton.MouseEnter += new System.EventHandler(this.pnlAddNew_MouseEnter);
+            this.picAddButton.MouseLeave += new System.EventHandler(this.pnlAddNew_MouseLeave);
             // 
             // pnlSpaceing
             // 
@@ -229,6 +238,7 @@
             // 
             // tlpDataGridView
             // 
+            this.tlpDataGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpDataGridView.ColumnCount = 3;
             this.tlpDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpDataGridView.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -320,16 +330,6 @@
             this.dgvDisplayLocker.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayLocker_CellMouseLeave);
             this.dgvDisplayLocker.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
-            // pnlFooter
-            // 
-            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 663);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1198, 29);
-            this.pnlFooter.TabIndex = 2;
-            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
-            // 
             // colSlNo
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -372,6 +372,16 @@
             this.colLStatus.Name = "colLStatus";
             this.colLStatus.ReadOnly = true;
             this.colLStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pnlFooter
+            // 
+            this.pnlFooter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(0, 663);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1198, 29);
+            this.pnlFooter.TabIndex = 2;
+            this.pnlFooter.Click += new System.EventHandler(this.dgvDisplayLocker_Click);
             // 
             // FrmDisplayLocker
             // 

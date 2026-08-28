@@ -231,7 +231,7 @@ namespace GymManagementSystem.FORMS.Dashboard
 
             // Series Properties
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(145, 145, 170);
+            series.Color = Color.FromArgb(24, 40, 84);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 9, FontStyle.Bold);
@@ -392,7 +392,7 @@ namespace GymManagementSystem.FORMS.Dashboard
 
             // Series Properties
             series.ChartType = SeriesChartType.Column;
-            series.Color = Color.FromArgb(190, 145, 158);
+            series.Color = Color.FromArgb(24, 40, 84);
             series.BorderWidth = 0;
             series.IsValueShownAsLabel = true;
             series.Font =

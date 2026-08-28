@@ -18,7 +18,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         int ClickCountTxtFirstName = 0;
         int ClickCountTxtMiddleName = 0;
         int ClickCountTxtLastName = 0;
-        int ClickCountTxtDateOfBirth = 0;
+        int ClickCountDateOfBirth = 0;
         int ClickCountTxtPhoneNumber = 0;
         int ClickCountTxtEmailId = 0;
         int ClickCountTxtSalary = 0;
@@ -176,16 +176,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // REQUIRED TEXTBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtFirstName,
-                txtLastName,
-                txtPhoneNumber,
-                txtEmailId,
-                txtSalary,
-                txtBankAccountNo))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtFirstName,
+            //    txtLastName,
+            //    txtPhoneNumber,
+            //    txtEmailId,
+            //    txtSalary,
+            //    txtBankAccountNo))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================
@@ -205,11 +205,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             // REQUIRED ROLE COMBOBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredComboBoxes(
-                cmbEmployeeType))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredComboBoxes(
+            //    cmbEmployeeType))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================
@@ -309,13 +309,13 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
             if (selectedRole == "Admin")
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtUserName,
-                    txtPassword,
-                    txtConfirmPassword))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredTextBoxes(
+                //    txtUserName,
+                //    txtPassword,
+                //    txtConfirmPassword))
+                //{
+                //    return;
+                //}
 
                 if (txtPassword.Text.Trim() !=
                     txtConfirmPassword.Text.Trim())
@@ -346,17 +346,17 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
             if (selectedRole == "Trainer")
             {
-                if (!ValidationUI.ValidateRequiredTextBoxes(
-                    txtSpecialization))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredTextBoxes(
+                //    txtSpecialization))
+                //{
+                //    return;
+                //}
 
-                if (!ValidationUI.ValidateRequiredComboBoxes(
-                    cmbTrainerType))
-                {
-                    return;
-                }
+                //if (!ValidationUI.ValidateRequiredComboBoxes(
+                //    cmbTrainerType))
+                //{
+                //    return;
+                //}
 
                 employeeUI.TrainerType =
                     cmbTrainerType.Text.Trim();
@@ -459,7 +459,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             ClickCountTxtFirstName = 0;
             ClickCountTxtMiddleName = 0;
             ClickCountTxtLastName = 0;
-            ClickCountTxtDateOfBirth = 0;
+            ClickCountDateOfBirth = 0;
             ClickCountTxtPhoneNumber = 0;
             ClickCountTxtEmailId = 0;
             ClickCountTxtSalary = 0;
@@ -520,11 +520,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             txtLastName.ForeColor = Color.Black;
         }
 
-        private void txtDateOfBirth_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtDateOfBirth = ValidationUI.ClearTextBoxWhenClicked(txtDateOfBirth,ClickCountTxtDateOfBirth);
-            txtDateOfBirth.ForeColor = Color.Black;
-        }
+        //private void txtDateOfBirth_Click(object sender, EventArgs e)
+        //{
+        //    ClickCountTxtDateOfBirth = ValidationUI.ClearTextBoxWhenClicked(dateTimePicker1,ClickCountTxtDateOfBirth);
+        //    txtDateOfBirth.ForeColor = Color.Black;
+        //}
 
 
         private void txtPhoneNumber_Click(object sender, EventArgs e)

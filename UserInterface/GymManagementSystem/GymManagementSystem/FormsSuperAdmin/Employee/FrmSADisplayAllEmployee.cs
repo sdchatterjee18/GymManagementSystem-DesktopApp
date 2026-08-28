@@ -9,106 +9,350 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
-using GymManagementSystem.FormsSuperAdmin.Employee;
+using GymManagementSystem.FormsSuperAdmin.Employee.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FormsSuperAdmin.Employee
 {
     public partial class FrmSADisplayAllEmployee : Form
     {
         private FrmSAMainForm SuperAdmnMainForm;
+        private int ClickCountTxtSearch = 0;
         public FrmSADisplayAllEmployee(FrmSAMainForm mainform)
         {
             InitializeComponent();
             SuperAdmnMainForm = mainform;
         }
-
-        private void getEmployeeDetails()
+        private void FrmSADisplayAllEmployee_Load(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
-            SqlConnection sqlConnection = null;
-
+            LoadEmployeeDetails();
+            this.dvgEmployeeDetails.ClearSelection();
+        }
+        private void LoadEmployeeDetails()
+        {
             try
             {
-                sqlConnection = new SqlConnection(connectionString);
-                string queryStr = "spDisplayAllEmployeeDetails";
+                EmployeeUI employeeUI = new EmployeeUI();
 
-                using (SqlCommand sqlCommand = new SqlCommand(queryStr, sqlConnection))
+                DataTable dtEmployees =
+                    employeeUI.DisplayAllEmployeeDetailsUI();
+
+                dvgEmployeeDetails.Rows.Clear();
+
+                int serialNo = 1;
+
+                foreach (DataRow dataRow in dtEmployees.Rows)
                 {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand))
+                    int rowIndex =
+                        dvgEmployeeDetails.Rows.Add();
+
+                    // =========================
+                    // SI No.
+                    // =========================
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colSlNo"].Value = serialNo++;
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colSlNo"]
+                        .Style.ForeColor = Color.Blue;
+
+
+                    // =========================
+                    // Employee Id
+                    // =========================
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colEmployeeId"].Value =
+                        dataRow["EmployeeId"];
+
+
+                    // =========================
+                    // Employee Name
+                    // =========================
+
+                //    string firstName =
+                //        dataRow["FirstName"].ToString();
+
+                //    string middleName =
+                //        dataRow["MiddleName"] == DBNull.Value
+                //            ? ""
+                //            : dataRow["MiddleName"].ToString();
+
+                //    string lastName =
+                //        dataRow["LastName"].ToString();
+
+                //    string fullName = string.Join(
+                //        " ",
+                //        new string[]
+                //{
+                //    firstName,
+                //    middleName,
+                //    lastName
+                //}.Where(x =>
+                //            !string.IsNullOrWhiteSpace(x))
+                //    );
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colName"].Value = dataRow["EmployeeName"].ToString(); 
+
+
+                    // =========================
+                    // Gender
+                    // =========================
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colGender"].Value =
+                        dataRow["GenderName"].ToString();
+
+
+                    // =========================
+                    // Phone
+                    // =========================
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colPhoneNo"].Value =
+                        dataRow["PhoneNo"].ToString();
+
+
+                    // =========================
+                    // Joining Date
+                    // =========================
+
+                    if (dataRow["JoiningDate"] != DBNull.Value)
                     {
-                        DataTable dtEmployees = new DataTable();
-                        adapter.Fill(dtEmployees);
+                        DateTime joiningDate =
+                            Convert.ToDateTime(
+                                dataRow["JoiningDate"]
+                            );
 
-                        DataRowCollection dataRows = dtEmployees.Rows;
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colJoiningDate"].Value =
+                            joiningDate.ToString("dd-MM-yyyy");
+                    }
+                    else
+                    {
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colJoiningDate"].Value = "";
+                    }
 
-                        dvgEmployeeDetails.Rows.Clear();
 
-                        int serialNo = 1;
+                    // =========================
+                    // Role
+                    // =========================
 
-                        foreach (DataRow dataRow in dataRows)
-                        {
-                            int rowIndex = dvgEmployeeDetails.Rows.Add();
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colRole"].Value =
+                        dataRow["RoleName"].ToString();
 
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Value = serialNo++;
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colSlNo"].Style.ForeColor = Color.Blue;
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colName"].Value = dataRow["EmployeeName"].ToString();
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colGender"].Value = dataRow["GenderName"].ToString();
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colPhoneNo"].Value = dataRow["PhoneNo"].ToString();
 
-                            object joiningDateValue = dataRow["JoiningDate"];
-                            if (joiningDateValue != null && joiningDateValue != DBNull.Value)
-                            {
-                                DateTime joiningDate = Convert.ToDateTime(joiningDateValue);
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colJoiningDate"].Value = joiningDate.ToString("dd-MM-yyyy");
-                            }
-                            else
-                            {
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colJoiningDate"].Value = "";
-                            }
+                    // =========================
+                    // Bank Account
+                    // =========================
 
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colRole"].Value = dataRow["RoleName"].ToString();
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colBankAccount"].Value = dataRow["BankAccountNo"].ToString();
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colBankAccount"].Value =
+                        dataRow["BankAccountNo"].ToString();
 
-                            bool isActive = Convert.ToBoolean(dataRow["IsActive"]);
 
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colStatus"].Value = isActive ? "Active" : "Inactive";
-                            dvgEmployeeDetails.Rows[rowIndex].Cells["colStatus"].Style.ForeColor = isActive ? Color.Green : Color.Red;
+                    // =========================
+                    // Status
+                    // =========================
 
-                            if (isActive)
-                            {
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colUpdate"].Value = "📝Update";
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colUpdate"].Style.ForeColor = Color.RoyalBlue;
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colDeactivate"].Value = "Deactivate";
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colDeactivate"].Style.ForeColor = Color.Red;
-                            }
-                            else
-                            {
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colUpdate"].Value = "";
-                                dvgEmployeeDetails.Rows[rowIndex].Cells["colDeactivate"].Value = "";
-                            }
+                    bool isActive =
+                        Convert.ToBoolean(
+                            dataRow["IsActive"]
+                        );
 
-                            dvgEmployeeDetails.Rows[rowIndex].Tag = dataRow["EmployeeId"];
-                        }
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colStatus"].Value =
+                        isActive
+                            ? "Active"
+                            : "Inactive";
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colStatus"]
+                        .Style.ForeColor =
+                        isActive
+                            ? Color.Green
+                            : Color.Red;
+
+
+                    // =========================
+                    // Update / Deactivate
+                    // =========================
+
+                    if (isActive)
+                    {
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"].Value =
+                            "📝 Update";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"]
+                            .Style.ForeColor =
+                            Color.RoyalBlue;
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"].Value =
+                            "📝 Deactivate";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"]
+                            .Style.ForeColor =
+                            Color.Red;
+                    }
+                    else
+                    {
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"].Value = "";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"].Value = "";
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Exception");
-            }
-            finally
-            {
-                if (sqlConnection != null)
-                    sqlConnection.Close();
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
-
-        private void FrmSADisplayAllEmployee_Load(object sender, EventArgs e)
+        private void LoadEmployeeDetailsByPhoneNo(string phoneNo)
         {
-            getEmployeeDetails();
-            this.dvgEmployeeDetails.ClearSelection();
-        }
+            try
+            {
+                EmployeeUI employeeUI = new EmployeeUI();
 
+                DataTable dtEmployees =
+                    employeeUI.DisplayEmployeeDetailsByPhoneNoUI(phoneNo);
+
+                dvgEmployeeDetails.Rows.Clear();
+
+                int serialNo = 1;
+
+                foreach (DataRow dataRow in dtEmployees.Rows)
+                {
+                    int rowIndex = dvgEmployeeDetails.Rows.Add();
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colSlNo"].Value = serialNo++;
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colSlNo"]
+                        .Style.ForeColor = Color.Blue;
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colEmployeeId"].Value =
+                        dataRow["EmployeeId"];
+
+                    string firstName =
+                        dataRow["FirstName"].ToString();
+
+                    string middleName =
+                        dataRow["MiddleName"] == DBNull.Value
+                            ? ""
+                            : dataRow["MiddleName"].ToString();
+
+                    string lastName =
+                        dataRow["LastName"].ToString();
+
+                    string fullName = string.Join(
+                        " ",
+                        new string[]
+                {
+                    firstName,
+                    middleName,
+                    lastName
+                }.Where(x =>
+                            !string.IsNullOrWhiteSpace(x))
+                    );
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colName"].Value = fullName;
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colGender"].Value =
+                        dataRow["GenderName"].ToString();
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colPhoneNo"].Value =
+                        dataRow["PhoneNo"].ToString();
+
+                    if (dataRow["JoiningDate"] != DBNull.Value)
+                    {
+                        DateTime joiningDate =
+                            Convert.ToDateTime(dataRow["JoiningDate"]);
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colJoiningDate"].Value =
+                            joiningDate.ToString("dd-MM-yyyy");
+                    }
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colRole"].Value =
+                        dataRow["RoleName"].ToString();
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colBankAccount"].Value =
+                        dataRow["BankAccountNo"].ToString();
+
+                    bool isActive =
+                        Convert.ToBoolean(dataRow["IsActive"]);
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colStatus"].Value =
+                        isActive ? "Active" : "Inactive";
+
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colStatus"]
+                        .Style.ForeColor =
+                        isActive ? Color.Green : Color.Red;
+
+                    if (isActive)
+                    {
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"].Value =
+                            "📝 Update";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"].Value =
+                            "📝 Deactivate";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"]
+                            .Style.ForeColor =
+                            Color.RoyalBlue;
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"]
+                            .Style.ForeColor =
+                            Color.Red;
+                    }
+                    else
+                    {
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colUpdate"].Value = "";
+
+                        dvgEmployeeDetails.Rows[rowIndex]
+                            .Cells["colDeactivate"].Value = "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if (txtSearch.Text == "Enter Mobile No")
@@ -215,6 +459,85 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private void pnlAddNewEmployee_Click(object sender, EventArgs e)
         {
             SuperAdmnMainForm.OpenChildForm(new FrmSAAddNewEmployee());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string phoneNo = txtSearch.Text.Trim();
+            if (string.IsNullOrWhiteSpace(phoneNo) ||
+                phoneNo == "Enter Mobile No")
+            {
+                MessageBox.Show(
+                    "Please Enter Mobile No.",
+                    "Validation",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+                txtSearch.Focus();
+                return;
+            }
+            LoadEmployeeDetailsByPhoneNo(phoneNo);
+            if (dvgEmployeeDetails.Rows.Count == 0)
+            {
+                MessageBox.Show(
+                    "No Employee Found with this Mobile No.",
+                    "Search Result",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                LoadEmployeeDetails();
+            }
+
+            dvgEmployeeDetails.ClearSelection();
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtSearch =
+                ValidationUI.ClearTextBoxWhenClicked(txtSearch,ClickCountTxtSearch);
+            txtSearch.ForeColor = Color.Black;
+        }
+
+        private void dvgEmployeeDetails_CellContentClick(object sender,DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dvgEmployeeDetails.Columns[e.ColumnIndex].Name == "colDeactivate")
+            {
+                int employeeId = Convert.ToInt32(
+                    dvgEmployeeDetails.Rows[e.RowIndex]
+                        .Cells["colEmployeeId"].Value
+                );
+
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to change this employee's active status?",
+                    "Employee Status",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    EmployeeUI employeeUI = new EmployeeUI();
+
+                    string message =
+                        employeeUI.ToggleEmployeeActiveStatusUI(employeeId);
+
+                    MessageBox.Show(
+                        message,
+                        "Employee Status",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    LoadEmployeeDetails();
+
+                    dvgEmployeeDetails.ClearSelection();
+                }
+            }
         }
     }
 }

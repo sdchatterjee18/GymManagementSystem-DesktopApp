@@ -348,6 +348,7 @@ namespace GymManagementSystem.FORMS.Attendance
         private void txtMarkMemberMobileNumber_Click(object sender, EventArgs e)
         {
             clickCountSearch = ValidationUI.ClearTextBoxWhenClicked(txtMarkMemberMobileNumber,clickCountSearch);
+            txtMarkMemberMobileNumber.ForeColor = Color.Black;
         }
 
     }

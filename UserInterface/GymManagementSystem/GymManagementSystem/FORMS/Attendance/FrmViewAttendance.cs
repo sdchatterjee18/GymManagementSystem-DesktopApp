@@ -7,106 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Attendance.UI;
+using GymManagementSystem.Common;
+using GymManagementSystem.FORMS.Main;
 
 namespace GymManagementSystem.FORMS.Attendance
 {
     public partial class FrmViewAttendance : Form
     {
         int monthNumber;
-        public FrmViewAttendance()
+        FrmMainLayout frmMainLayout = null;
+        public FrmViewAttendance(FrmMainLayout frmMainLayout)
         {
+            this.frmMainLayout = frmMainLayout;
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvViewAttendance);   
         }
 
         private void FrmViewAttendance_Load(object sender, EventArgs e)
         {
-            CurrentMonthAllPresentAttendace();
-            GetMonths();
+            LoadAllMemberDetails();
         }
 
         private void FrmViewAttendance_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
           
-        }
-
-        //Retrieve Current Month All Present Attendance 
-        private void  CurrentMonthAllPresentAttendace()
-        {
-            DataTable AllAttendence = null;
-            try
-            {
-                AttendanceUI AttendanceUI = new AttendanceUI();
-                AllAttendence = AttendanceUI.CurrentMonthAllPresentAttendaceUI();
-                int SerialNo = 1;
-                foreach (DataRow row in AllAttendence.Rows)
-                {
-                    dgvViewAttendance.Rows.Add
-                    (
-                        SerialNo++,
-                        row["MemberName"].ToString(),
-                        row["PhoneNo"].ToString(),
-                        row["ShiftName"].ToString(),
-                        Convert.ToDateTime(row["AttendanceDate"]).ToString("dd-MM-yyyy")
-                    );
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                AllAttendence = null;
-            }
-
-        }
-
-        private void GetMonths()
-        {
-            try
-            {
-                AttendanceUI AttendanceUI = new AttendanceUI();
-                
-               cmbViewAttendanceShiftSearch .DataSource = AttendanceUI.GetMonthsUI();
-               cmbViewAttendanceShiftSearch.DisplayMember = "MonthName";
-               cmbViewAttendanceShiftSearch.ValueMember = "MonthNumber";
-               cmbViewAttendanceShiftSearch.SelectedIndex = -1;
-            }
-            catch (Exception Ex)
-            {
-                cmbViewAttendanceShiftSearch.DataSource = null;
-            }
-        }
-
-        private void RetrieveSpecificMemberAttendanceDetails()
-        {
-            DataTable GetMemberAttendanceDetails = null;
-            try
-            {
-                string PhoneNo = txtViewMemberMobileNumber.Text;
-                int MonthNo = monthNumber;
-                int Year = Convert.ToInt32(txtYearSearch.Text);
-                AttendanceUI AttendanceUI = new AttendanceUI();
-                GetMemberAttendanceDetails = AttendanceUI.RetrieveSpecificMemberAttendanceDetailsUI(PhoneNo, MonthNo, Year);
-                int SerialNo = 1;
-                dgvViewAttendance.Rows.Clear();
-                foreach (DataRow row in GetMemberAttendanceDetails.Rows)
-                {
-                    dgvViewAttendance.Rows.Add
-                    (
-                        SerialNo++,
-                        row["MemberName"].ToString(),
-                        row["PhoneNo"].ToString(),
-                        row["ShiftName"].ToString(),
-                        Convert.ToDateTime(row["AttendanceDate"]).ToString("dd-MM-yyyy")
-                    );
-                }
-               
-            }
-            catch (Exception ex)
-            {
-                GetMemberAttendanceDetails = null;
-            }
-        }
-       
+        }      
         private void txtViewMemberMobileNumber_Enter(object sender, EventArgs e)
         {
             if (txtViewMemberMobileNumber.Text.Trim() == "Enter Mobile No.")
@@ -125,54 +51,211 @@ namespace GymManagementSystem.FORMS.Attendance
             }
         }
 
-        private void cmbViewAttendanceShiftSearch_Enter(object sender, EventArgs e)
+      
+        private void dgvViewAttendance_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (cmbViewAttendanceShiftSearch.Text.Trim() == "---Select Month---")
+            if (dgvViewAttendance.Columns[e.ColumnIndex].Name == "colSerialNo")
             {
-                cmbViewAttendanceShiftSearch.Text = "";
-                cmbViewAttendanceShiftSearch.ForeColor = Color.Gray;
-            }
+                e.CellStyle.ForeColor = Color.Navy;
+            }    
         }
 
-        private void cmbViewAttendanceShiftSearch_Leave(object sender, EventArgs e)
+        private void dgvViewAttendance_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbViewAttendanceShiftSearch.Text))
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvViewAttendance.Columns["colAction"].Index)
             {
-                cmbViewAttendanceShiftSearch.Text = "---Select Month---";
-                cmbViewAttendanceShiftSearch.ForeColor = Color.Gray;
+                e.PaintBackground(e.CellBounds, true);
+
+                ButtonRenderer.DrawButton(e.Graphics, e.CellBounds,
+                    System.Windows.Forms.VisualStyles.PushButtonState.Normal);
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "View",
+                    dgvViewAttendance.Font,
+                    e.CellBounds,
+                    Color.Blue, // Your desired text color
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+                e.Handled = true;
             }
         }
-
-        private void txtYearSearch_Enter(object sender, EventArgs e)
+        private void LoadAllMemberDetails()
         {
-            if (txtYearSearch.Text.Trim() == "Enter The Year .")
+            try
             {
-                txtYearSearch.Text = "";
-                txtYearSearch.ForeColor = Color.Black;
+                AttendanceUI attendanceUI = new AttendanceUI();
+
+                DataTable dt = attendanceUI.RetrieveAllMemberDetailsWithShiftUI();
+
+                dgvViewAttendance.Rows.Clear();
+
+                if (dt == null || dt.Rows.Count == 0)
+                    return;
+
+                int serialNo = 1;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    int rowIndex = dgvViewAttendance.Rows.Add();
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colSerialNo"].Value =
+                        serialNo++;
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colMemberId"].Value =
+                        row["MemberId"].ToString();
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colMemberName"].Value =
+                        row["MemberName"].ToString();
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colPhoneNo"].Value =
+                        row["PhoneNo"].ToString();
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colShiftName"].Value =
+                        row["ShiftName"].ToString();
+
+                    dgvViewAttendance.Rows[rowIndex].Cells["colAction"].Value =
+                        "View";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
-
-        private void txtYearSearch_Leave(object sender, EventArgs e)
+        private void txtViewMemberMobileNumber_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtYearSearch.Text))
-            {
-                txtYearSearch.Text = "Enter The Year .";
-                txtYearSearch.ForeColor = Color.Gray;
-            }
-        }
+            AttendanceUI AttendanceUI = new AttendanceUI();
 
+            DataTable dt =
+                AttendanceUI.SearchMemberDetailsWithShiftUI(
+                    txtViewMemberMobileNumber.Text.Trim()
+                );
 
-        private void cmbViewAttendanceShiftSearch_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (cmbViewAttendanceShiftSearch.SelectedValue == null)
+            dgvViewAttendance.Rows.Clear();
+
+            if (dt == null || dt.Rows.Count == 0)
                 return;
 
-            monthNumber = Convert.ToInt32(cmbViewAttendanceShiftSearch.SelectedValue);
-        }
+            int serialNo = 1;
 
-        private void btnViewAttendanceSearch_Click(object sender, EventArgs e)
+            foreach (DataRow row in dt.Rows)
+            {
+                int rowIndex = dgvViewAttendance.Rows.Add();
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colSerialNo"].Value =
+                    serialNo++;
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colMemberId"].Value =
+                    row["MemberId"].ToString();
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colMemberName"].Value =
+                    row["MemberName"].ToString();
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colPhoneNo"].Value =
+                    row["PhoneNo"].ToString();
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colShiftName"].Value =
+                    row["ShiftName"].ToString();
+
+                dgvViewAttendance.Rows[rowIndex].Cells["colAction"].Value =
+                    "View";
+            }
+        }
+        private void dgvViewAttendance_CellContentClick(object sender,DataGridViewCellEventArgs e)
         {
-            RetrieveSpecificMemberAttendanceDetails();
+            try
+            {
+                // =========================================================
+                // Ignore Header Row
+                // =========================================================
+
+                if (e.RowIndex < 0)
+                    return;
+
+
+                // =========================================================
+                // Check Action Column
+                // =========================================================
+
+                if (e.ColumnIndex < 0)
+                    return;
+
+                if (dgvViewAttendance.Columns[e.ColumnIndex].Name != "colAction")
+                    return;
+
+
+                // =========================================================
+                // Get MemberId From colMemberId
+                // =========================================================
+
+                object memberIdValue =
+                    dgvViewAttendance.Rows[e.RowIndex]
+                        .Cells["colMemberId"]
+                        .Value;
+
+
+                // =========================================================
+                // Validate MemberId
+                // =========================================================
+
+                if (memberIdValue == null ||
+                    memberIdValue == DBNull.Value ||
+                    string.IsNullOrWhiteSpace(memberIdValue.ToString()))
+                {
+                    MessageBox.Show(
+                        "Member ID not found.",
+                        "Attendance History",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    return;
+                }
+
+
+                int memberId =
+                    Convert.ToInt32(memberIdValue);
+
+
+                if (memberId <= 0)
+                {
+                    MessageBox.Show(
+                        "Invalid Member ID.",
+                        "Attendance History",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    return;
+                }
+
+
+                // =========================================================
+                // Open Attendance History Form
+                // =========================================================
+
+                //FrmAttendanceHistory frmAttendanceHistory =
+                //    new FrmAttendanceHistory(memberId);
+
+                frmMainLayout.OpenChildForm(new FrmAttendanceHistory(memberId));
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }

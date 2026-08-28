@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddNewDietPlan));
             this.tlpAddNewDietPlan = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRequiredCaloriesPerDaySection = new System.Windows.Forms.Panel();
@@ -62,6 +63,7 @@
             this.picSubmit = new System.Windows.Forms.PictureBox();
             this.tlpInputPlanConditionAndShowMessaage = new System.Windows.Forms.TableLayoutPanel();
             this.txtPlanCondition = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tlpAddNewDietPlan.SuspendLayout();
             this.pnlRequiredCaloriesPerDaySection.SuspendLayout();
             this.tlpCaloriesSection.SuspendLayout();
@@ -85,10 +87,12 @@
             this.tlpSubmit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).BeginInit();
             this.tlpInputPlanConditionAndShowMessaage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpAddNewDietPlan
             // 
+            this.tlpAddNewDietPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpAddNewDietPlan.ColumnCount = 1;
             this.tlpAddNewDietPlan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpAddNewDietPlan.Controls.Add(this.pnlRequiredCaloriesPerDaySection, 0, 1);
@@ -374,7 +378,7 @@
             this.tlpAddDietPlanHeader.Name = "tlpAddDietPlanHeader";
             this.tlpAddDietPlanHeader.RowCount = 1;
             this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpAddDietPlanHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tlpAddDietPlanHeader.Size = new System.Drawing.Size(334, 87);
             this.tlpAddDietPlanHeader.TabIndex = 7;
             // 
@@ -598,6 +602,10 @@
             this.txtPlanCondition.Text = "  Enter Plan Condition";
             this.txtPlanCondition.Click += new System.EventHandler(this.txtPlanCondition_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmAddNewDietPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,6 +650,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSubmit)).EndInit();
             this.tlpInputPlanConditionAndShowMessaage.ResumeLayout(false);
             this.tlpInputPlanConditionAndShowMessaage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,5 +690,6 @@
         private System.Windows.Forms.PictureBox picImageIcon;
         private System.Windows.Forms.Panel pnlsubmit;
         private System.Windows.Forms.Label lblPlanDocument;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

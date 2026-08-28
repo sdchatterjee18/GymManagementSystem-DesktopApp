@@ -46,7 +46,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Authentication
         {
             try
             {
-                        SqlParameter[] sqlParameters =
+                SqlParameter[] sqlParameters =
                 {
                     new SqlParameter("@UserName", userName),
                     new SqlParameter("@PasswordHash", passwordHash),
@@ -54,14 +54,16 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Authentication
                     new SqlParameter("@PhoneNumber", phoneNumber)
                 };
 
-                object result =LookupDAL.GetSingleData("spRegisterNewSuperAdmin",sqlParameters);
+                object result = LookupDAL.GetSingleData(
+                    "spRegisterNewSuperAdmin",
+                    sqlParameters);
 
-                if (result != null)
+                if (result == null || result == DBNull.Value)
                 {
-                    return result.ToString();
+                    return "Registration failed.";
                 }
 
-                return "Unable to register Super Admin.";
+                return Convert.ToString(result);
             }
             catch (Exception ex)
             {

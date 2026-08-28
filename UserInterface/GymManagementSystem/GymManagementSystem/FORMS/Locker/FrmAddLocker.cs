@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.Locker.UI;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Locker
 {
@@ -20,7 +21,7 @@ namespace GymManagementSystem.FORMS.Locker
         {
             InitializeComponent();
         }
-
+        int clickCountTxtLocker = 0;
 
         private void pnlClose_Click(object sender, EventArgs e)
         {
@@ -35,68 +36,91 @@ namespace GymManagementSystem.FORMS.Locker
         // Submit Form
         private void tlpButton_Click(object sender, EventArgs e)
         {
+            ValidationUI.ClearDefaultPlaceholderText(txtLockerNumber,clickCountTxtLocker);
 
-            // ==============================
-            // Clear Placeholder Text
-            // ==============================
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+            errorProvider1.Clear();
 
-            //if (checklockerno == 0)
-            //    this.txtLockerNumber.clear();
+            // Plan Name
+            result = ValidationUI.ValidateRequiredTextBox(txtLockerNumber);
 
-            // ==============================
-            // Common UI Validation
-            // ==============================
-
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                this.txtLockerNumber))
+            if (result != ValidationUI.ValidationResult.Valid)
             {
+                errorProvider1.SetError(
+                    txtLockerNumber,
+                    "Locker " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
                 return;
             }
+            LockerUI lockerUI = new LockerUI();
+            lockerUI.LockerNo = txtLockerNumber.Text.Trim();
+            ValidationResult lockerResult = lockerUI.InserNewLockerUI();
+            HandleLockerResult(lockerResult);
+        }
+        private void HandleLockerResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
 
-
-            // ==============================
-            // Convert + DietPlanUI
-            // ==============================
-
-            try
+            if (result.Result == ValidationBll.CommonValidationMessage.Valid)
             {
-                string LockerNumber =
-                        txtLockerNumber.Text.Trim();
-
-                LockerUI lockerUI =
-                    new LockerUI();
-
-                string result =
-                    lockerUI.InserNewLockerUI(
-                            LockerNumber
-                        );
-
-
                 MessageBox.Show(
-                    result,
+                    result.Message,
                     "Locker",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-
-                // ==============================
-                // Successful Insert
-                // ==============================
-
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                return;
             }
-            catch (Exception ex)
+
+            switch (result.FieldName)
             {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                case "LockerNumber":
+                    errorProvider1.SetError(
+                        txtLockerNumber,
+                        result.Message);
+                    break;
             }
+
+            MessageBox.Show(
+                result.Message,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
+        }
+
+
+        private void tlpButton_MouseEnter(object sender, EventArgs e)
+        {
+            tlpButton.BackColor = Color.White;
+            lblSubmit.ForeColor = Color.MidnightBlue;
+            picSubmit.Image = Properties.Resources.paper_planeHOVER;
+        }
+
+        private void tlpButton_MouseLeave(object sender, EventArgs e)
+        {
+            tlpButton.BackColor = Color.MidnightBlue;
+            lblSubmit.ForeColor = Color.White;
+            picSubmit.Image = Properties.Resources.paper_plane;
+        }
+
+        private void txtLockerNumber_Click(object sender, EventArgs e)
+        {
+           clickCountTxtLocker= ValidationUI.ClearTextBoxWhenClicked(txtLockerNumber,clickCountTxtLocker);
         }
 
     }

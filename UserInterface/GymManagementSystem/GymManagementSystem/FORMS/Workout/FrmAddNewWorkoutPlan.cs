@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.Workout.UI;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Workout
 {
@@ -16,6 +17,17 @@ namespace GymManagementSystem.FORMS.Workout
         public FrmAddNewWorkoutPlan()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
+        }
+        private void SetErrorProviderAlignment()
+        {
+            errorProvider1.SetIconAlignment(
+                txtWorkoutPlanName,
+                ErrorIconAlignment.MiddleRight);
+
+            errorProvider1.SetIconPadding(
+                txtWorkoutPlanName,
+                15);
         }
         // Workout Plan Name Click
       private void txtWorkoutPlanName_Click( object sender, EventArgs e)
@@ -52,43 +64,123 @@ namespace GymManagementSystem.FORMS.Workout
                 ClickCountTxtDescription);
 
 
-            // Required Validation
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtWorkoutPlanName,
-                txtDescription))
+            // =========================
+            // REQUIRED VALIDATION
+            // =========================
+
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+
+            errorProvider1.Clear();
+
+            // Workout Plan Name
+            result = ValidationUI.ValidateRequiredTextBox(
+                txtWorkoutPlanName);
+
+            if (result != ValidationUI.ValidationResult.Valid)
             {
+                errorProvider1.SetError(
+                    txtWorkoutPlanName,
+                    "Workout Plan Name " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            result = ValidationUI.ValidateRequiredTextBox(
+                txtDescription);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    txtDescription,
+                    "Description " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            // Stop if required validation failed
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
                 return;
             }
 
 
-            // Workout UI
-            WorkoutUI workoutUI =
-                new WorkoutUI();
+            // =========================
+            // CREATE UI OBJECT
+            // =========================
+
+            WorkoutUI workoutUI = new WorkoutUI();
+
+            workoutUI.WorkoutName =
+                txtWorkoutPlanName.Text.Trim();
+
+            workoutUI.Description =
+                txtDescription.Text.Trim();
 
 
-            // Insert Workout Plan
-            string message =
-                workoutUI.InsertWorkoutPlanUI(
-                    txtWorkoutPlanName.Text.Trim(),
-                    txtDescription.Text.Trim());
+            // =========================
+            // CALL UI
+            // =========================
+
+            ValidationResult validationResult =
+                workoutUI.InsertWorkoutPlanUI();
 
 
-            // Show Result
-            MessageBox.Show(
-                message,
-                "Workout Plan",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            // =========================
+            // HANDLE RESULT
+            // =========================
 
+            HandleWorkoutPlanResult(validationResult);
+        }
+        private void HandleWorkoutPlanResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
 
-            // Only close when insertion is successful
-            if (message == "Record inserted successfuly")
+            if (result.Result ==
+                ValidationBll.CommonValidationMessage.Valid)
             {
-                this.DialogResult =
-                    DialogResult.OK;
+                MessageBox.Show(
+                    result.Message,
+                    "Workout Plan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
+
+                return;
             }
+
+            switch (result.FieldName)
+            {
+                case "WorkoutPlanName":
+                    errorProvider1.SetError(
+                        txtWorkoutPlanName,
+                        result.Message);
+                    break;
+
+                case "Description":
+                    errorProvider1.SetError(
+                        txtDescription,
+                        result.Message);
+                    break;
+            }
+
+            MessageBox.Show(
+                result.Message,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
         }
         // Clear Button
         private void btnClearWorkoutPlan_Click(object sender,EventArgs e)

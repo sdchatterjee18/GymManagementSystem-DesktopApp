@@ -32,13 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSAMainForm));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlExitMinimizeRestore = new System.Windows.Forms.Panel();
-            this.pnlMinimize = new System.Windows.Forms.Panel();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
-            this.pnlRestore = new System.Windows.Forms.Panel();
-            this.picRestore = new System.Windows.Forms.PictureBox();
-            this.pnlExit = new System.Windows.Forms.Panel();
-            this.picExit = new System.Windows.Forms.PictureBox();
             this.picGymLogo = new System.Windows.Forms.PictureBox();
             this.pnlDateTime = new System.Windows.Forms.Panel();
             this.pnlSidebar = new System.Windows.Forms.Panel();
@@ -82,15 +75,15 @@
             this.lblSuperAdminPasswordChange = new System.Windows.Forms.Label();
             this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             this.pnlMainPanel = new System.Windows.Forms.Panel();
+            this.tlpExit = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlExit = new System.Windows.Forms.Panel();
+            this.picExit = new System.Windows.Forms.PictureBox();
+            this.pnlRestore = new System.Windows.Forms.Panel();
+            this.picRestore = new System.Windows.Forms.PictureBox();
+            this.pnlMinimize = new System.Windows.Forms.Panel();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.pnlTopbar.SuspendLayout();
             this.tlpTopbar.SuspendLayout();
-            this.pnlExitMinimizeRestore.SuspendLayout();
-            this.pnlMinimize.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
-            this.pnlRestore.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestore)).BeginInit();
-            this.pnlExit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).BeginInit();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogout.SuspendLayout();
@@ -120,6 +113,13 @@
             this.pnlDropDownSettings.SuspendLayout();
             this.pnlSuperAdminPasswordChange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSuperAdminPasswordChange)).BeginInit();
+            this.tlpExit.SuspendLayout();
+            this.pnlExit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
+            this.pnlRestore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestore)).BeginInit();
+            this.pnlMinimize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopbar
@@ -141,9 +141,9 @@
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.49413F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.45315F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.05272F));
-            this.tlpTopbar.Controls.Add(this.pnlExitMinimizeRestore, 4, 0);
             this.tlpTopbar.Controls.Add(this.picGymLogo, 0, 0);
             this.tlpTopbar.Controls.Add(this.pnlDateTime, 3, 0);
+            this.tlpTopbar.Controls.Add(this.tlpExit, 4, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpTopbar.Location = new System.Drawing.Point(0, 0);
             this.tlpTopbar.Margin = new System.Windows.Forms.Padding(0);
@@ -852,13 +852,6 @@
             this.Load += new System.EventHandler(this.FrmSAMainForm_Load_1);
             this.pnlTopbar.ResumeLayout(false);
             this.tlpTopbar.ResumeLayout(false);
-            this.pnlExitMinimizeRestore.ResumeLayout(false);
-            this.pnlMinimize.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
-            this.pnlRestore.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRestore)).EndInit();
-            this.pnlExit.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGymLogo)).EndInit();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlLogout.ResumeLayout(false);
@@ -938,13 +931,11 @@
         private System.Windows.Forms.Panel pnlSuperAdminPasswordChange;
         private System.Windows.Forms.PictureBox picSuperAdminPasswordChange;
         private System.Windows.Forms.Label lblSuperAdminPasswordChange;
-        private System.Windows.Forms.Panel pnlExitMinimizeRestore;
         private System.Windows.Forms.Panel pnlDateTime;
-        private System.Windows.Forms.Panel pnlMinimize;
-        private System.Windows.Forms.Panel pnlRestore;
+        private System.Windows.Forms.TableLayoutPanel tlpExit;
         private System.Windows.Forms.Panel pnlExit;
         private System.Windows.Forms.PictureBox picExit;
-        private System.Windows.Forms.PictureBox picMinimize;
+        private System.Windows.Forms.Panel pnlRestore;
         private System.Windows.Forms.PictureBox picRestore;
         private System.Windows.Forms.PictureBox picFinancialManagementArrow;
         private System.Windows.Forms.Panel pnlDropdownFinancialManagement;
@@ -957,6 +948,7 @@
         private System.Windows.Forms.Panel pnlExpense;
         private System.Windows.Forms.PictureBox picExpense;
         private System.Windows.Forms.Label lblExpense;
-
+        private System.Windows.Forms.Panel pnlMinimize;
+        private System.Windows.Forms.PictureBox picMinimize;
     }
 }

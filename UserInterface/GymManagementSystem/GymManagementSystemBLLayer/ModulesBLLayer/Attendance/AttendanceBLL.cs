@@ -130,5 +130,107 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Attendance
                 return GetMemberAttendanceDetails;
             }
         }
+        // Retrieve All Member Details With Shift
+        public DataTable RetrieveAllMemberDetailsWithShiftBLL()
+        {
+            DataTable AllMemberDetails = null;
+
+            try
+            {
+                AttendanceDAL AttendanceDAL = new AttendanceDAL();
+
+                AllMemberDetails =
+                    AttendanceDAL.RetrieveAllMemberDetailsWithShiftDAL();
+
+                return AllMemberDetails;
+            }
+            catch (Exception ex)
+            {
+                return AllMemberDetails;
+            }
+        }
+        public DataTable SearchMemberDetailsWithShiftBLL(string search)
+        {
+            DataTable MemberDetails = null;
+
+            try
+            {
+                AttendanceDAL AttendanceDAL = new AttendanceDAL();
+
+                MemberDetails =
+                    AttendanceDAL.SearchMemberDetailsWithShiftDAL(search);
+
+                return MemberDetails;
+            }
+            catch (Exception ex)
+            {
+                return MemberDetails;
+            }
+        }
+        public DataTable RetrieveMemberAttendanceByDateRangeBLL(int memberId,DateTime fromDate,DateTime toDate)
+        {
+            DataTable AttendanceDetails = null;
+
+            try
+            {
+                AttendanceDAL AttendanceDAL = new AttendanceDAL();
+
+                AttendanceDetails =
+                    AttendanceDAL.RetrieveMemberAttendanceByDateRangeDAL(
+                        memberId,
+                        fromDate,
+                        toDate
+                    );
+
+                return AttendanceDetails;
+            }
+            catch (Exception ex)
+            {
+                return AttendanceDetails;
+            }
+        }
+        public DataTable RetrieveMemberTotalAttendanceByDateRangeBLL(int memberId,DateTime fromDate,DateTime toDate)
+        {
+            DataTable TotalAttendanceData = null;
+
+            try
+            {
+                AttendanceDAL AttendanceDAL = new AttendanceDAL();
+
+                TotalAttendanceData =
+                    AttendanceDAL.RetrieveMemberTotalAttendanceByDateRangeDAL(
+                        memberId,
+                        fromDate,
+                        toDate
+                    );
+
+                return TotalAttendanceData;
+            }
+            catch (Exception ex)
+            {
+                return TotalAttendanceData;
+            }
+        }
+        public DataTable RetrieveMemberAttendanceTillTodayBLL(int memberId)
+        {
+            DataTable AttendanceData = null;
+
+            try
+            {
+                AttendanceDAL AttendanceDAL =
+                    new AttendanceDAL();
+
+                AttendanceData =
+                    AttendanceDAL.RetrieveMemberAttendanceTillTodayDAL(
+                        memberId
+                    );
+
+                return AttendanceData;
+            }
+            catch (Exception ex)
+            {
+                return AttendanceData;
+            }
+        }
     }
 }

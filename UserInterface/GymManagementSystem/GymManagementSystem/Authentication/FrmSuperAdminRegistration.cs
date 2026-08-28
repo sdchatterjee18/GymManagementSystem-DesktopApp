@@ -25,12 +25,9 @@ namespace GymManagementSystem.Authentication
 
         private void FrmSuperAdminRegistration_Load(object sender, EventArgs e)
         {
-
-        }
-
-       
-        
-
+            this.ShowIcon = false;
+            this.Text = "";
+        }  
         private void FrmSuperAdminRegistration_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -144,15 +141,15 @@ namespace GymManagementSystem.Authentication
             // REQUIRED TEXTBOX VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtRegistrationSuperAdminUsername,
-                txtRegistrationSuperAdminMobileNo,
-                txtRegistrationSuperAdminEmailId,
-                txtRegistrationSuperAdminPassword,
-                txtRegistrationSuperAdminConfermPassword))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtRegistrationSuperAdminUsername,
+            //    txtRegistrationSuperAdminMobileNo,B
+            //    txtRegistrationSuperAdminEmailId,
+            //    txtRegistrationSuperAdminPassword,
+            //    txtRegistrationSuperAdminConfermPassword))
+            //{
+            //    return;
+            //}
 
 
             // ==========================================
@@ -218,6 +215,7 @@ namespace GymManagementSystem.Authentication
                     "Super Admin Registration",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

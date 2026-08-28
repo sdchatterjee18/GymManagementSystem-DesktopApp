@@ -43,11 +43,11 @@ namespace GymManagementSystem.FORMS.RegistrationFee
             // Required Field Validation
             // ==============================
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtFeesAmountInAddRegistrationFee))
-            {
-                return;
-            }
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtFeesAmountInAddRegistrationFee))
+            //{
+            //    return;
+            //}
 
 
             try
@@ -61,25 +61,25 @@ namespace GymManagementSystem.FORMS.RegistrationFee
 
 
                 // ==============================
-                // BLL Validation
+                // BLL ValidationB
                 // ==============================
 
-                string validationMessage =
-                    registrationFeeUI.ValidateRegistrationFeeUI(
-                        txtFeesAmountInAddRegistrationFee.Text.Trim());
+                //string validationMessage =
+                //    registrationFeeUI.ValidateRegistrationFeeUI(
+                //        txtFeesAmountInAddRegistrationFee.Text.Trim());
 
 
-                if (!string.IsNullOrEmpty(validationMessage))
-                {
-                    MessageBox.Show(
-                        validationMessage,
-                        "Validation",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                //if (!string.IsNullOrEmpty(validationMessage))
+                //{
+                //    MessageBox.Show(
+                //        validationMessage,
+                //        "Validation",
+                //        MessageBoxButtons.OK,
+                //        MessageBoxIcon.Warning);
 
-                    txtFeesAmountInAddRegistrationFee.Focus();
-                    return;
-                }
+                //    txtFeesAmountInAddRegistrationFee.Focus();
+                //    return;
+                //}
 
 
                 // ==============================

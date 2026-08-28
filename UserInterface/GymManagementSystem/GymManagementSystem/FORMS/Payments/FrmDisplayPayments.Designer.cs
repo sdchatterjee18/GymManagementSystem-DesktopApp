@@ -67,7 +67,7 @@
             // 
             // tlpPaymentsEntireForm
             // 
-            this.tlpPaymentsEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpPaymentsEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpPaymentsEntireForm.ColumnCount = 3;
             this.tlpPaymentsEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpPaymentsEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
@@ -169,7 +169,6 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.dgvPaymentsManagement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPaymentsManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaymentsManagement.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvPaymentsManagement.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPaymentsManagement.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -228,9 +227,9 @@
             this.dgvPaymentsManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPaymentsManagement.Size = new System.Drawing.Size(772, 442);
             this.dgvPaymentsManagement.TabIndex = 9;
-            this.dgvPaymentsManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPaymentsManagement_CellFormatting);
             this.dgvPaymentsManagement.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentsManagement_CellMouseEnter);
             this.dgvPaymentsManagement.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentsManagement_CellMouseLeave);
+            this.dgvPaymentsManagement.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPaymentsManagement_CellPainting);
             // 
             // colSerialNo
             // 
@@ -342,7 +341,7 @@
             this.txtPhoneNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtPhoneNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNo.ForeColor = System.Drawing.Color.Gray;
+            this.txtPhoneNo.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNo.Location = new System.Drawing.Point(27, 6);
             this.txtPhoneNo.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.txtPhoneNo.Name = "txtPhoneNo";

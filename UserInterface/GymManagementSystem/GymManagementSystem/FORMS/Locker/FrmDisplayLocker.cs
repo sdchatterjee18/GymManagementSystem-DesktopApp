@@ -137,5 +137,19 @@ namespace GymManagementSystem.FORMS.Locker
                 this.getLockersDetails();
             }
         }
+
+        private void pnlAddNew_MouseEnter(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.White;
+            lblAddNew.ForeColor = Color.MidnightBlue;
+            picAddButton.Image = Properties.Resources.plusHOVER;
+        }
+
+        private void pnlAddNew_MouseLeave(object sender, EventArgs e)
+        {
+            pnlAddNew.BackColor = Color.MidnightBlue;
+            lblAddNew.ForeColor = Color.White;
+            picAddButton.Image = Properties.Resources.plus;
+        }
     }
 }

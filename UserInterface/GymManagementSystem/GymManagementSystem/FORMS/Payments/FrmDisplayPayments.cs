@@ -18,6 +18,7 @@ namespace GymManagementSystem.FORMS.Payments
         public FrmDisplayPayments()
         {
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvPaymentsManagement);
         }
         int clickCountTxtSearch = 0;
         private void FrmDisplayPayments_Load(object sender, EventArgs e)
@@ -91,31 +92,6 @@ namespace GymManagementSystem.FORMS.Payments
                 
             }
         }
-
-        private void dgvPaymentsManagement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
-            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colSerialNo")
-            {
-                e.CellStyle.ForeColor = Color.Navy;
-            }
-
-            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colAmount")
-            {
-                e.CellStyle.ForeColor = Color.Red;
-            }
-
-            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colPaymentMethod")
-            {
-                e.CellStyle.ForeColor = Color.Blue;
-            }
-            if (dgvPaymentsManagement.Columns[e.ColumnIndex].Name == "colFeesType")
-            {
-                e.CellStyle.ForeColor = Color.Green;
-            }
-        }
-
         private void txtPhoneNo_TextChanged(object sender, EventArgs e)
         {
             dgvPaymentsManagement.Rows.Clear();
@@ -125,6 +101,31 @@ namespace GymManagementSystem.FORMS.Payments
         private void txtPhoneNo_Click(object sender, EventArgs e)
         {
             clickCountTxtSearch = ValidationUI.ClearTextBoxWhenClicked(txtPhoneNo,clickCountTxtSearch);
+        }
+
+        private void dgvPaymentsManagement_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            string columnName = dgvPaymentsManagement.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "colSerialNo")
+            {
+                e.CellStyle.ForeColor = Color.Navy;
+            }
+            else if (columnName == "colAmount")
+            {
+                e.CellStyle.ForeColor = Color.Red;
+            }
+            else if (columnName == "colPaymentMethod")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
+            else if (columnName == "colFeesType")
+            {
+                e.CellStyle.ForeColor = Color.Green;
+            }
         }
 
 

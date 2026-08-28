@@ -23,29 +23,28 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
         public static DataTable GetActivityDetailsBLL()
         {
             DataTable dataTable = new DataTable();
-
+            
             dataTable.Columns.Add("Activity");
 
             dataTable.Rows.Add(
                 "Basal Metabolic Rate (BMR)");
+            dataTable.Rows.Add(
+                "Sedentary");
 
             dataTable.Rows.Add(
-                "Sedentary: little or no exercise");
+                "Light");
 
             dataTable.Rows.Add(
-                "Light: exercise 1-3 times/week");
+                "Moderate");
 
             dataTable.Rows.Add(
-                "Moderate: exercise 4-5 times/week");
+                "Active");
 
             dataTable.Rows.Add(
-                "Active: daily exercise or intense exercise 3-4 times/week");
+                "Very Active");
 
             dataTable.Rows.Add(
-                "Very Active: intense exercise 6-7 times/week");
-
-            dataTable.Rows.Add(
-                "Extra Active: very intense exercise daily, or physical job");
+                "Extra Active");
 
             return dataTable;
         }
@@ -288,7 +287,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Sedentary
             else if (Activity ==
-                "Sedentary: little or no exercise")
+                "Sedentary")
             {
                 tdee =
                     bmr * 1.20m;
@@ -297,7 +296,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Light
             else if (Activity ==
-                "Light: exercise 1-3 times/week")
+                "Light")
             {
                 tdee =
                     bmr * 1.375m;
@@ -306,7 +305,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Moderate
             else if (Activity ==
-                "Moderate: exercise 4-5 times/week")
+                "Moderate")
             {
                 tdee =
                     bmr * 1.55m;
@@ -315,7 +314,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Active
             else if (Activity ==
-                "Active: daily exercise or intense exercise 3-4 times/week")
+                "Active")
             {
                 tdee =
                     bmr * 1.65m;
@@ -324,7 +323,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Very Active
             else if (Activity ==
-                "Very Active: intense exercise 6-7 times/week")
+                "Very Active")
             {
                 tdee =
                     bmr * 1.725m;
@@ -333,7 +332,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.FitnessTest
 
             // Extra Active
             else if (Activity ==
-                "Extra Active: very intense exercise daily, or physical job")
+                "Extra Active")
             {
                 tdee =
                     bmr * 1.90m;

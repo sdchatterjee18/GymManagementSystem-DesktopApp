@@ -157,14 +157,16 @@ namespace GymManagementSystem.FORMS.Member
             this.Dispose();
         }
 
-        private void cmbCaloriesPerDay_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RetrieveConditionStatusByDietPlanId();
-        }
+
 
         private void pnlChangeMemberDietPlanButton_Click(object sender, EventArgs e)
         {
             ChangeMemberDietPlan();
+        }
+
+        private void cmbCaloriesPerDay_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            RetrieveConditionStatusByDietPlanId();
         }
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Common\LookupBLL.cs" />
     <Compile Include="Common\PasswordHelperBLL.cs" />
     <Compile Include="Common\ValidationBll.cs" />
+    <Compile Include="Common\ValidationResult.cs" />
     <Compile Include="ModulesBLLayer\Attendance\AttendanceBLL.cs" />
     <Compile Include="ModulesBLLayer\Authentication\AuthenticationBLL.cs" />
     <Compile Include="ModulesBLLayer\Dashboard\DashboardBLL.cs" />

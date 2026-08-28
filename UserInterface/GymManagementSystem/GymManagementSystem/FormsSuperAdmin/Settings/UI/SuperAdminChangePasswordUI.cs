@@ -18,9 +18,18 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings.UI
         // ==========================================
         // CHANGE SUPER ADMIN PASSWORD
         // ==========================================
-        public string ChangeSuperAdminPasswordUI(string userName, string currentPassword, string newPassword)
+        public bool ChangeSuperAdminPasswordUI(string userName,string currentPassword,string newPassword,string confirmPassword,out string message)
         {
-            return authenticationBLL.ChangeSuperAdminPasswordBLL(userName, currentPassword, newPassword);
+            bool result =
+                authenticationBLL.ChangeSuperAdminPasswordBLL(
+                    userName,
+                    currentPassword,
+                    newPassword,
+                    confirmPassword);
+
+            message = authenticationBLL.Message;
+
+            return result;
         }
     }
 }

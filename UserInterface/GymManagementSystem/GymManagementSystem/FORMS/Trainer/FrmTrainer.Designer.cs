@@ -58,7 +58,6 @@
             this.tlpSearchBar = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearchBar = new System.Windows.Forms.TextBox();
-            this.lblSearchTrainertext = new System.Windows.Forms.Label();
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.tlpShowTrainers = new System.Windows.Forms.TableLayoutPanel();
             this.pnlSearch = new System.Windows.Forms.Panel();
@@ -98,6 +97,7 @@
             // 
             // tlpTrainer
             // 
+            this.tlpTrainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpTrainer.ColumnCount = 1;
             this.tlpTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTrainer.Controls.Add(this.tlpTrainerDetails, 0, 0);
@@ -230,7 +230,7 @@
             // 
             // tlpSelectTrainer
             // 
-            this.tlpSelectTrainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpSelectTrainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpSelectTrainer.ColumnCount = 5;
             this.tlpSelectTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.55452F));
             this.tlpSelectTrainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.81261F));
@@ -496,7 +496,6 @@
             this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
             this.tlpSearch.Controls.Add(this.txtSearchBar, 1, 0);
-            this.tlpSearch.Controls.Add(this.lblSearchTrainertext, 2, 0);
             this.tlpSearch.Controls.Add(this.picSearch, 0, 0);
             this.tlpSearch.Location = new System.Drawing.Point(0, 0);
             this.tlpSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -519,21 +518,6 @@
             this.txtSearchBar.TabIndex = 1;
             this.txtSearchBar.Click += new System.EventHandler(this.txtSearchBar_Click);
             this.txtSearchBar.TextChanged += new System.EventHandler(this.txtSearchBar_TextChanged);
-            // 
-            // lblSearchTrainertext
-            // 
-            this.lblSearchTrainertext.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSearchTrainertext.BackColor = System.Drawing.Color.MidnightBlue;
-            this.lblSearchTrainertext.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSearchTrainertext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblSearchTrainertext.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchTrainertext.ForeColor = System.Drawing.Color.White;
-            this.lblSearchTrainertext.Location = new System.Drawing.Point(216, 5);
-            this.lblSearchTrainertext.Name = "lblSearchTrainertext";
-            this.lblSearchTrainertext.Size = new System.Drawing.Size(123, 26);
-            this.lblSearchTrainertext.TabIndex = 3;
-            this.lblSearchTrainertext.Text = "Search Trainer";
-            this.lblSearchTrainertext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picSearch
             // 
@@ -813,7 +797,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpSearchBar;
         private System.Windows.Forms.TableLayoutPanel tlpSearch;
         private System.Windows.Forms.PictureBox picSearch;
-        private System.Windows.Forms.Label lblSearchTrainertext;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSlNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrainerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSpecialization;

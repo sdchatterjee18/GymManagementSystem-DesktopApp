@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using GymManagementSystem.Common;
 using GymManagementSystem.Authentication.UI;
+using GymManagementSystem.FormsSuperAdmin.MainLayout;
 
 namespace GymManagementSystem.Authentication
 {
@@ -16,16 +17,18 @@ namespace GymManagementSystem.Authentication
     {
         int ClickCountTxtSuperAdminUsername = 0;
         int ClickCountTxtSuperAdminPassword = 0;
-
-        public FrmSuperAdminLogin()
+        FrmUserRoleSelection frmUserRoleSelection = null;
+        public FrmSuperAdminLogin(FrmUserRoleSelection frmUserRoleSelection)
         {
+            this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
         }
             
 
         private void FrmSuperAdminLogin_Load(object sender, EventArgs e)
         {
-           
+            this.ShowIcon = false;
+            this.Text = "";
         }
 
         private void txtSuperAdminUsername_Enter(object sender, EventArgs e)
@@ -97,66 +100,54 @@ namespace GymManagementSystem.Authentication
 
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
-            // ==========================================
-            // CLEAR DEFAULT PLACEHOLDER TEXT
-            // ==========================================
 
+            // CLEAR DEFAULT PLACEHOLDER TEXT
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminUsername,
                 ClickCountTxtSuperAdminUsername);
-
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminPassword,
                 ClickCountTxtSuperAdminPassword);
 
-
-            // ==========================================
             // REQUIRED TEXTBOX VALIDATION
-            // ==========================================
+            //if (!ValidationUI.ValidateRequiredTextBoxes(
+            //    txtSuperAdminUsername,
+            //    txtSuperAdminPassword))
+            //{
+            //    return;
+            //}
 
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                txtSuperAdminUsername,
-                txtSuperAdminPassword))
-            {
-                return;
-            }
-
-
-            // ==========================================
             // CREATE AUTHENTICATION UI OBJECT
-            // ==========================================
-
             AuthenticationUI authenticationUI =
                 new AuthenticationUI();
 
-
-            // ==========================================
             // GET LOGIN VALUES
-            // ==========================================
-
             string userName =
                 txtSuperAdminUsername.Text.Trim();
 
             string password =
                 txtSuperAdminPassword.Text.Trim();
 
-
-            // ==========================================
             // SUPER ADMIN LOGIN
-            // ==========================================
-
             try
             {
-                string message =
-                    authenticationUI.SuperAdminLoginUI(
-                        userName,
-                        password);
+                bool Result =authenticationUI.SuperAdminLoginUI(userName,password);
 
-                MessageBox.Show(
-                    message,
-                    "Super Admin Login",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                if (Result)
+                {
+                    FrmSAMainForm frmSAMainForm = new FrmSAMainForm(frmUserRoleSelection);
+                    this.Close();
+                    frmSAMainForm.Show();
+                    frmUserRoleSelection.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Invalid UserName or Password",
+                        "Super Admin Login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {

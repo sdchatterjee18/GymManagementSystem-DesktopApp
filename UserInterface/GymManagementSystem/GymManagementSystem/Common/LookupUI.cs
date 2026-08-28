@@ -9,8 +9,10 @@ using GymManagementSystemBLLayer.ModulesBLLayer.Shift;
 using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
 using GymManagementSystemBLLayer.ModulesBLLayer.DietPlan;
 using GymManagementSystem.FORMS.DietPlan.UI;
-
+using System.Reflection;
+using System.Windows.Forms;
 using GymManagementSystemBLLayer.Common;
+
 namespace GymManagementSystem.Common
 {
     public class LookupUI
@@ -26,6 +28,14 @@ namespace GymManagementSystem.Common
         public static DataTable GetMonths()
         {
             return LookupBLL.GetMonths();
+        }
+        public static void EnableDoubleBuffering(DataGridView dgv)
+        {
+            typeof(DataGridView)
+                .GetProperty(
+                    "DoubleBuffered",
+                    BindingFlags.Instance | BindingFlags.NonPublic)
+                .SetValue(dgv, true, null);
         }
     }
 }

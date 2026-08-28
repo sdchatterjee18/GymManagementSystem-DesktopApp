@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.Expense;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Expenses.UI
 {
@@ -14,7 +15,7 @@ namespace GymManagementSystem.FORMS.Expenses.UI
         public string CategoryName { get; set; }
         public string Category { get; set; }
         public int CategoryId { get; set; }
-        public string ExpenseAmount { get; set; }
+        public decimal ExpenseAmount { get; set; }
         public string Notes { get; set; }
 
        //Retrieve Category Name for combobox
@@ -69,23 +70,16 @@ namespace GymManagementSystem.FORMS.Expenses.UI
        }
 
        //Insert Expense
-       public string InsertExpenseUI(int categoryId, string expenseAmount, string notes)
+       public ValidationResult InsertExpenseUI()
        {
-           string InsertionMessage = null;
-           CategoryId = categoryId;
-           ExpenseAmount = expenseAmount;
-           Notes = notes;
-           try
-           {
-               ExpensesBLL ExpenseBLL = new ExpensesBLL();
-               InsertionMessage = ExpenseBLL.InsertExpenseBLL(CategoryId, ExpenseAmount, Notes);
-               return InsertionMessage;
-           }
-           catch (Exception ex)
-           {
-               return InsertionMessage;
-           }
+        
+           ExpensesBLL ExpenseBLL = new ExpensesBLL();
+           ExpenseBLL.CategoryId = this.CategoryId;
+           ExpenseBLL.ExpenseAmount = this.ExpenseAmount;
+           ExpenseBLL.Notes = this.Notes; 
 
+           return ExpenseBLL.InsertExpenseBLL();
+         
        }
     }
 }

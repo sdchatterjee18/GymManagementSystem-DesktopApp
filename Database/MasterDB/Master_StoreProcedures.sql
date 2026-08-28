@@ -486,7 +486,6 @@ GO
 -----------------------
 -- SP: spInsertEmployee
 -----------------------
-
 CREATE PROC spInsertEmployee
 (
     @FirstName VARCHAR(150),
@@ -834,40 +833,34 @@ BEGIN
 END
 GO
 
-
-
 ----------------------------------
 -- SP: spDisplayAllEmployeeDetails
 ----------------------------------
-
-CREATE PROC spDisplayAllEmployeeDetails
-AS
-BEGIN
-
-    SELECT
-        E.EmployeeId,
-        E.FirstName,
-        E.MiddleName,
-        E.LastName,
-        G.GenderName,
-        E.PhoneNo,
-        E.EmailId,
-        E.JoiningDate,
-        E.IsActive,
-        R.Role AS RoleName,
-        E.BankAccountNo,
-        S.Amount AS Salary
-    FROM tblEmployee E
-    INNER JOIN tblGender G
-        ON E.GenderId = G.GenderId
-    INNER JOIN tblEmployeeRoleType R
-        ON E.RoleId = R.RoleId
-    INNER JOIN tblSalary S
-        ON E.EmployeeId = S.EmployeeId
-    ORDER BY E.EmployeeId;
+CREATE PROC spDisplayAllEmployeeDetails  
+AS  
+BEGIN  
+  
+    SELECT  
+        E.EmployeeId,  
+        E.FirstName + ' ' +ISNULL(E.MiddleName + ' ', '') +E.LastName AS EmployeeName,  
+        G.GenderName,  
+        E.PhoneNo,  
+        E.EmailId,  
+        E.JoiningDate,  
+        E.IsActive,  
+        R.Role AS RoleName,  
+        E.BankAccountNo,  
+        S.Amount AS Salary  
+    FROM tblEmployee E  
+    INNER JOIN tblGender G  
+        ON E.GenderId = G.GenderId  
+    INNER JOIN tblEmployeeRoleType R  
+        ON E.RoleId = R.RoleId  
+    INNER JOIN tblSalary S  
+        ON E.EmployeeId = S.EmployeeId  
+    ORDER BY E.EmployeeId;  
 END
 GO
-
 
 ------------------------------------------------
 -- SP: spUpdateEmployeeContactDetailsByEmployeeId
@@ -3377,7 +3370,7 @@ CREATE PROC spRegisterNewMember
 
 	-- Payment
     @PaymentMethod VARCHAR(50),
-    @FeesType VARCHAR(50),
+    @FeesType VARCHAR(50)=null,
 
     -- Shift
     @ShiftId INT,
@@ -3420,11 +3413,6 @@ BEGIN TRY
 	IF LTRIM(RTRIM(@PaymentMethod))=''
 	BEGIN
 		SELECT 'Payment Method Required.' AS Message;
-		RETURN;
-	END
-	IF LTRIM(RTRIM(@FeesType)) = ''
-	BEGIN
-		SELECT 'Fees Type Required.' AS Message;
 		RETURN;
 	END
     IF NOT EXISTS
@@ -3653,7 +3641,7 @@ BEGIN TRY
 		@MembershipPlanId,
 		@PaymentMethod,
 		@TotalAmount,
-		@FeesType
+        'New Registration'
 	);
     INSERT INTO tblMemberDietAssignment
     (
@@ -3730,7 +3718,6 @@ END CATCH
 
 END
 GO
-
 -----------------------------------------
 --SP: spRetrieveShiftWiseMemberNumbers--
 -----------------------------------------
@@ -3765,6 +3752,57 @@ BEGIN
 
     END CATCH
 END
+GO
+
+-----------------------------------------
+--SP: spSearchMemberByPhoneAndName--
+-----------------------------------------
+CREATE PROC spSearchMemberByPhoneAndName
+(
+    @Search VARCHAR(100)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @Search = LTRIM(RTRIM(@Search));
+
+        SELECT
+            M.MemberId,
+
+            M.FirstName + ' ' +
+            ISNULL(M.MiddleName + ' ', '') +
+            M.LastName AS MemberName,
+
+            M.PhoneNo,
+            M.EmailId,
+
+            M.IsActive AS MemberIsActive
+
+        FROM tblMember M
+
+        WHERE
+        (
+            M.FirstName LIKE @Search + '%'
+            OR M.MiddleName LIKE @Search + '%'
+            OR M.LastName LIKE @Search + '%'
+            OR M.PhoneNo LIKE @Search + '%'
+        )
+
+        ORDER BY
+            M.IsActive DESC,
+            M.JoiningDate DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
 GO
 -----------------------------------------
 --SP: spRetrieveCurrentMonthNewMembers--
@@ -4331,28 +4369,39 @@ GO
 ---------------------------------
   --SP: spRetrieveActiveMembers--
 ---------------------------------
-CREATE PROC spRetrieveAllMemberDetails
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    BEGIN TRY
-
-        SELECT
-            M.MemberId,
-            M.FirstName + ' ' +
-            ISNULL(M.MiddleName + ' ', '') +
-            M.LastName AS MemberName,
+CREATE PROC spRetrieveAllMemberDetails 
+AS 
+BEGIN 
+    SET NOCOUNT ON; 
+ 
+    BEGIN TRY 
+ 
+        SELECT 
+            M.MemberId, 
+            
+            M.FirstName + ' ' + 
+            ISNULL(M.MiddleName + ' ', '') + 
+            M.LastName AS MemberName, 
+            
             M.PhoneNo,
-            M.IsActive AS MemberIsActive
-        FROM tblMember M
-        ORDER BY M.IsActive DESC,
-        M.JoiningDate DESC;
-    END TRY
-    BEGIN CATCH
-        SELECT ERROR_MESSAGE() AS Message;
-    END CATCH
-END;
+            M.EmailId,
+            
+            M.IsActive AS MemberIsActive 
+            
+        FROM tblMember M 
+        
+        ORDER BY 
+            M.IsActive DESC, 
+            M.JoiningDate DESC; 
+        
+    END TRY 
+    
+    BEGIN CATCH 
+    
+        SELECT ERROR_MESSAGE() AS Message; 
+        
+    END CATCH 
+END; 
 GO
 
 ----------------------------------------
@@ -5848,6 +5897,312 @@ GO
 -------------------------------------------------------------------------------
                    -- AttendanceManagement SPs --
 -------------------------------------------------------------------------------
+
+---------------------------------------------
+  --SP: spRetrieveMemberAttendanceTillToday--
+----------------------------------------------
+CREATE PROC spRetrieveMemberAttendanceTillToday
+(
+    @MemberId INT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+        SELECT
+            MA.AttendanceId,
+            M.MemberId,
+
+            LTRIM(RTRIM(
+                CONCAT(
+                    ISNULL(M.FirstName, ''),
+                    ' ',
+                    ISNULL(M.MiddleName, ''),
+                    ' ',
+                    ISNULL(M.LastName, '')
+                )
+            )) AS MemberName,
+
+            M.PhoneNo,
+
+            MA.ShiftId,
+            S.ShiftName,
+            S.StartTime,
+            S.EndTime,
+
+            CAST(MA.AttendanceDate AS DATE) AS AttendanceDate
+
+        FROM tblMemberAttendance MA
+
+        INNER JOIN tblMember M
+            ON M.MemberId = MA.MemberId
+
+        INNER JOIN tblShift S
+            ON S.ShiftId = MA.ShiftId
+
+        WHERE MA.MemberId = @MemberId
+          AND MA.AttendanceDate < DATEADD(DAY, 1, CAST(GETDATE() AS DATE))
+
+        ORDER BY
+            MA.AttendanceDate DESC,
+            MA.AttendanceId DESC;
+
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+-----------------------------------------
+  --SP: spSearchMemberDetailsWithShift--
+-----------------------------------------
+CREATE PROC spSearchMemberDetailsWithShift
+(
+    @Search VARCHAR(100) = NULL
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @Search = NULLIF(LTRIM(RTRIM(@Search)), '');
+
+        SELECT
+            M.MemberId,
+
+            LTRIM(RTRIM(
+                CONCAT(
+                    ISNULL(M.FirstName, ''),
+                    ' ',
+                    ISNULL(M.MiddleName, ''),
+                    ' ',
+                    ISNULL(M.LastName, '')
+                )
+            )) AS MemberName,
+
+            M.PhoneNo,
+
+            S.ShiftName
+
+        FROM tblMember M
+
+        LEFT JOIN tblMemberShift MS
+            ON M.MemberId = MS.MemberId
+            AND MS.IsActive = 1
+
+        LEFT JOIN tblShift S
+            ON MS.ShiftId = S.ShiftId
+
+        WHERE
+            @Search IS NULL
+            OR LTRIM(RTRIM(
+                CONCAT(
+                    ISNULL(M.FirstName, ''),
+                    ' ',
+                    ISNULL(M.MiddleName, ''),
+                    ' ',
+                    ISNULL(M.LastName, '')
+                )
+            )) LIKE '%' + @Search + '%'
+
+            OR M.PhoneNo LIKE '%' + @Search + '%'
+
+            OR S.ShiftName LIKE '%' + @Search + '%'
+
+        ORDER BY
+            M.IsActive DESC,
+            M.JoiningDate DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+-----------------------------------------------------
+  --SP: spRetrieveMemberTotalAttendanceByDateRange--
+-----------------------------------------------------
+CREATE PROC spRetrieveAllMemberDetailsWithShift
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT
+            M.MemberId,
+
+            LTRIM(RTRIM(
+                CONCAT(
+                    ISNULL(M.FirstName, ''),
+                    ' ',
+                    ISNULL(M.MiddleName, ''),
+                    ' ',
+                    ISNULL(M.LastName, '')
+                )
+            )) AS MemberName,
+
+            M.PhoneNo,
+
+            S.ShiftName
+
+        FROM tblMember M
+
+        LEFT JOIN tblMemberShift MS
+            ON M.MemberId = MS.MemberId
+            AND MS.IsActive = 1
+
+        LEFT JOIN tblShift S
+            ON MS.ShiftId = S.ShiftId
+
+        ORDER BY
+            M.IsActive DESC,
+            M.JoiningDate DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
+-----------------------------------------------------
+  --SP: spRetrieveMemberTotalAttendanceByDateRange--
+-----------------------------------------------------
+CREATE PROC spRetrieveMemberTotalAttendanceByDateRange
+(
+    @MemberId INT,
+    @FromDate DATE,
+    @ToDate DATE
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SELECT COUNT(MA.AttendanceId) AS TotalAttendance
+        FROM tblMemberAttendance MA
+        WHERE MA.MemberId = @MemberId
+          AND MA.AttendanceDate >= @FromDate
+          AND MA.AttendanceDate < DATEADD(DAY, 1, @ToDate);
+
+    END TRY
+
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS Message;
+    END CATCH
+END;
+GO
+------------------------------------------------
+  --SP: spRetrieveMemberAttendanceByDateRange--
+------------------------------------------------
+CREATE PROC spRetrieveMemberAttendanceByDateRange
+(
+    @MemberId INT,
+    @FromDate DATE,
+    @ToDate DATE
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        -- 1. Validate Member
+        IF NOT EXISTS
+        (
+            SELECT 1
+            FROM tblMember
+            WHERE MemberId = @MemberId
+        )
+        BEGIN
+            SELECT 'Invalid Member.' AS Message;
+            RETURN;
+        END;
+
+        -- 2. Validate Date Range
+        IF @FromDate IS NULL OR @ToDate IS NULL
+        BEGIN
+            SELECT 'From Date and To Date are required.' AS Message;
+            RETURN;
+        END;
+
+        IF @FromDate > @ToDate
+        BEGIN
+            SELECT 'From Date cannot be greater than To Date.' AS Message;
+            RETURN;
+        END;
+
+        -- 3. Retrieve Attendance
+        SELECT
+            MA.AttendanceId,
+            M.MemberId,
+
+            LTRIM(RTRIM(
+                CONCAT(
+                    ISNULL(M.FirstName, ''),
+                    ' ',
+                    ISNULL(M.MiddleName, ''),
+                    ' ',
+                    ISNULL(M.LastName, '')
+                )
+            )) AS MemberName,
+
+            M.PhoneNo,
+
+            MA.ShiftId,
+            S.ShiftName,
+            S.StartTime,
+            S.EndTime,
+
+            CAST(MA.AttendanceDate AS DATE) AS AttendanceDate
+
+        FROM tblMemberAttendance MA
+
+        INNER JOIN tblMember M
+            ON M.MemberId = MA.MemberId
+
+        INNER JOIN tblShift S
+            ON S.ShiftId = MA.ShiftId
+
+        WHERE MA.MemberId = @MemberId
+          AND MA.AttendanceDate >= @FromDate
+          AND MA.AttendanceDate < DATEADD(DAY, 1, @ToDate)
+
+        ORDER BY
+            MA.AttendanceDate ASC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
 -----------------------------------------
   --SP: spRetrieveTodayMemberAttendance--
 -----------------------------------------
@@ -5891,13 +6246,7 @@ CREATE  PROC spRetrievePresentAbsentMembersOnCurrentDateByShift
 AS  
 BEGIN  
     SET NOCOUNT ON;  
-  
-    BEGIN TRY  
-  
-        /* ============================================  
-           1. Validate ShiftId  
-           ============================================ */  
-  
+    BEGIN TRY
         IF @ShiftId IS NULL OR @ShiftId <= 0  
         BEGIN  
             SELECT  
@@ -5905,12 +6254,6 @@ BEGIN
                 AS Message;  
             RETURN;  
         END;  
-  
-  
-        /* ============================================  
-           2. Check Shift Exists  
-           ============================================ */  
-  
         IF NOT EXISTS  
         (  
             SELECT 1  
@@ -5923,11 +6266,6 @@ BEGIN
                 AS Message;  
             RETURN;  
         END;  
-  
-  
-        /* ============================================  
-           3. Retrieve Present & Absent Members  
-           ============================================ */  
   
         SELECT DISTINCT  
   
@@ -5972,17 +6310,14 @@ BEGIN
         ORDER BY  
             AttendanceStatus,  
             MemberName;  
-  
     END TRY  
-  
     BEGIN CATCH  
-  
         SELECT  
             ERROR_MESSAGE() AS Message;  
-  
     END CATCH  
 END;
 GO
+
 -----------------------------------------------------------
   --SP: spRetrieveAbsentPresentMembersOnCurrentDateByShift--
 -----------------------------------------------------------

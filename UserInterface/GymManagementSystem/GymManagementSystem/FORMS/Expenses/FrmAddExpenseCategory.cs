@@ -20,12 +20,6 @@ namespace GymManagementSystem.FORMS.Expenses
         }
         int clickCountCategory = 0;
         int clickCountCategoryName = 0;
-        private void lblClear_Click(object sender, EventArgs e)
-        {
-            txtRequiredCategoryName.Clear();
-            txtInputCategory.Clear();
-        }
-
         private void txtRequiredCategoryName_Click(object sender, EventArgs e)
         {
             clickCountCategoryName = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCategoryName,clickCountCategoryName);
@@ -88,11 +82,28 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             ValidationUI.ClearDefaultPlaceholderText(txtRequiredCategoryName,clickCountCategoryName);
             ValidationUI.ClearDefaultPlaceholderText(txtInputCategory,clickCountCategory);
-            if(!ValidationUI.ValidateRequiredTextBoxes(txtInputCategory,txtRequiredCategoryName))
-            {
-                return;
-            }
+            //if(!ValidationUI.ValidateRequiredTextBoxes(txtInputCategory,txtRequiredCategoryName))
+            //{
+            //    return;
+            //}
             InsertExpenseCatogory();      
+        }
+        private void pnlClear_Click(object sender, EventArgs e)
+        {
+            txtRequiredCategoryName.Clear();
+            txtInputCategory.Clear();
+        }
+
+        private void pnlClear_MouseEnter(object sender, EventArgs e)
+        {
+            tlpClear.BackColor = Color.White;
+            lblClear.ForeColor = Color.MidnightBlue;
+        }
+
+        private void pnlClear_MouseLeave(object sender, EventArgs e)
+        {
+            tlpClear.BackColor = Color.MidnightBlue;
+            lblClear.ForeColor = Color.White;
         }
     }
 }

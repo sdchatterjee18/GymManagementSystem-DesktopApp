@@ -39,43 +39,49 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Workout
             return workoutDAL.RetrieveSpecificExerciseDAL(Search);
         }
         // Insert Exercise
-        public string InsertExerciseBLL(string exerciseName,string muscleType)
+        public ValidationResult InsertExerciseBLL()
         {
-            try
+            ValidationBll.CommonValidationMessage result;
+
+            // Exercise Name
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.ExerciseName);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                // Exercise Name Validation
-                ValidationBll.CommonValidationMessage validationMessage = ValidationBll.ValidateName(exerciseName);
-
-                if (validationMessage != ValidationBll.CommonValidationMessage.Valid)
+                return new ValidationResult
                 {
-                    return ValidationBll.GetValidationMessage(
-                        validationMessage);
-                }
-
-
-                // Muscle Type Validation
-                validationMessage =
-                    ValidationBll.ValidateName(muscleType);
-
-                if (validationMessage !=
-                    ValidationBll.CommonValidationMessage.Valid)
-                {
-                    return ValidationBll.GetValidationMessage(
-                        validationMessage);
-                }
-
-
-                // Insert
-                WorkoutDAL workoutDAL = new WorkoutDAL();
-
-                return workoutDAL.InsertExerciseDAL(
-                    exerciseName,
-                    muscleType);
+                    FieldName = "ExerciseName",
+                    Result = result,
+                    Message = "Exercise Name " +ValidationBll.GetValidationMessage(result)
+                };
             }
-            catch (Exception ex)
+
+            // Muscle Type
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.MuscleType);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ex.Message;
+                return new ValidationResult
+                {
+                    FieldName = "MuscleType",
+                    Result = result,
+                    Message = "Muscle Type " + ValidationBll.GetValidationMessage(result)
+                };
             }
+
+            // Insert
+            WorkoutDAL workoutDAL = new WorkoutDAL();
+
+            string message = workoutDAL.InsertExerciseDAL(
+                this.ExerciseName,
+                this.MuscleType);
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
 
         // Retrieves all workout plan records.
@@ -97,38 +103,41 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Workout
             return workoutDAL.RetrieveSpecificWorkoutPlanDAL(Search);
         }
         // Insert Workout Plan
-        public string InsertWorkoutPlanBLL(string workoutName, string description)
+        public ValidationResult InsertWorkoutPlanBLL()
         {
-            try
-            {
-                // Workout Name Validation
-                ValidationBll.CommonValidationMessage validationMessage =
-                    ValidationBll.ValidateName(workoutName);
+            ValidationBll.CommonValidationMessage result;
 
-                if (validationMessage !=
-                    ValidationBll.CommonValidationMessage.Valid)
-                {
-                    return ValidationBll.GetValidationMessage(
-                        validationMessage);
-                }
-                // Description Validation
-                validationMessage =
-                    ValidationBll.ValidateName(description);
+            // Workout Plan Name
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(
+                this.WorkoutName);
 
-                if (validationMessage !=
-                    ValidationBll.CommonValidationMessage.Valid)
-                {
-                    return ValidationBll.GetValidationMessage(
-                        validationMessage);
-                }
-                // Insert
-                WorkoutDAL workoutDAL = new WorkoutDAL();
-                return workoutDAL.InsertWorkoutPlanDAL(workoutName,description);
-            }
-            catch (Exception ex)
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ex.Message;
+                return new ValidationResult
+                {
+                    FieldName = "WorkoutPlanName",
+                    Result = result,
+                    Message = "Workout Plan Name " +
+                              ValidationBll.GetValidationMessage(result)
+                };
             }
+
+            // Description
+            // No BLL validation required
+
+            // Insert
+            WorkoutDAL workoutDAL = new WorkoutDAL();
+
+            string message = workoutDAL.InsertWorkoutPlanDAL(
+                this.WorkoutName,
+                this.Description);
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
 
         // Retrieves all workout schedule records.

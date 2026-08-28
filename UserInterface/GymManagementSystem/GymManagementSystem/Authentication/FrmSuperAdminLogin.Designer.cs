@@ -63,9 +63,10 @@
             // 
             this.pnlPasswordSuperAdmin.Controls.Add(this.tlpPasswordSuperAdmin);
             this.pnlPasswordSuperAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPasswordSuperAdmin.Location = new System.Drawing.Point(25, 354);
+            this.pnlPasswordSuperAdmin.Location = new System.Drawing.Point(18, 290);
+            this.pnlPasswordSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlPasswordSuperAdmin.Name = "pnlPasswordSuperAdmin";
-            this.pnlPasswordSuperAdmin.Size = new System.Drawing.Size(512, 61);
+            this.pnlPasswordSuperAdmin.Size = new System.Drawing.Size(386, 51);
             this.pnlPasswordSuperAdmin.TabIndex = 8;
             this.pnlPasswordSuperAdmin.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
             this.pnlPasswordSuperAdmin.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
@@ -76,17 +77,18 @@
             this.tlpPasswordSuperAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.602339F));
             this.tlpPasswordSuperAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.04483F));
             this.tlpPasswordSuperAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.35283F));
-            this.tlpPasswordSuperAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPasswordSuperAdmin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpPasswordSuperAdmin.Controls.Add(this.lblSuperAdminPassword, 1, 0);
             this.tlpPasswordSuperAdmin.Controls.Add(this.txtSuperAdminPassword, 2, 0);
             this.tlpPasswordSuperAdmin.Controls.Add(this.picSuperAdminPassword, 0, 0);
             this.tlpPasswordSuperAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPasswordSuperAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpPasswordSuperAdmin.Location = new System.Drawing.Point(0, 0);
+            this.tlpPasswordSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpPasswordSuperAdmin.Name = "tlpPasswordSuperAdmin";
             this.tlpPasswordSuperAdmin.RowCount = 1;
             this.tlpPasswordSuperAdmin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPasswordSuperAdmin.Size = new System.Drawing.Size(512, 61);
+            this.tlpPasswordSuperAdmin.Size = new System.Drawing.Size(386, 51);
             this.tlpPasswordSuperAdmin.TabIndex = 5;
             this.tlpPasswordSuperAdmin.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
             this.tlpPasswordSuperAdmin.MouseLeave += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseLeave);
@@ -97,9 +99,10 @@
             this.lblSuperAdminPassword.AutoSize = true;
             this.lblSuperAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuperAdminPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblSuperAdminPassword.Location = new System.Drawing.Point(41, 15);
+            this.lblSuperAdminPassword.Location = new System.Drawing.Point(31, 13);
+            this.lblSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSuperAdminPassword.Name = "lblSuperAdminPassword";
-            this.lblSuperAdminPassword.Size = new System.Drawing.Size(116, 30);
+            this.lblSuperAdminPassword.Size = new System.Drawing.Size(99, 25);
             this.lblSuperAdminPassword.TabIndex = 0;
             this.lblSuperAdminPassword.Text = "Password :";
             this.lblSuperAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordSuperAdmin_MouseEnter);
@@ -109,9 +112,10 @@
             // 
             this.txtSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSuperAdminPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtSuperAdminPassword.Location = new System.Drawing.Point(189, 13);
+            this.txtSuperAdminPassword.Location = new System.Drawing.Point(143, 11);
+            this.txtSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSuperAdminPassword.Name = "txtSuperAdminPassword";
-            this.txtSuperAdminPassword.Size = new System.Drawing.Size(320, 34);
+            this.txtSuperAdminPassword.Size = new System.Drawing.Size(241, 29);
             this.txtSuperAdminPassword.TabIndex = 1;
             this.txtSuperAdminPassword.Text = "Enter Password";
             this.txtSuperAdminPassword.Click += new System.EventHandler(this.txtSuperAdminPassword_Click);
@@ -124,9 +128,10 @@
             // 
             this.picSuperAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picSuperAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminPassword.Image")));
-            this.picSuperAdminPassword.Location = new System.Drawing.Point(5, 13);
+            this.picSuperAdminPassword.Location = new System.Drawing.Point(5, 11);
+            this.picSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminPassword.Name = "picSuperAdminPassword";
-            this.picSuperAdminPassword.Size = new System.Drawing.Size(30, 35);
+            this.picSuperAdminPassword.Size = new System.Drawing.Size(22, 28);
             this.picSuperAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminPassword.TabIndex = 2;
             this.picSuperAdminPassword.TabStop = false;
@@ -137,9 +142,10 @@
             // 
             this.pnlUsernameSuperAdmin.Controls.Add(this.tlpSuperAdminUsernameInput);
             this.pnlUsernameSuperAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUsernameSuperAdmin.Location = new System.Drawing.Point(25, 289);
+            this.pnlUsernameSuperAdmin.Location = new System.Drawing.Point(18, 237);
+            this.pnlUsernameSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlUsernameSuperAdmin.Name = "pnlUsernameSuperAdmin";
-            this.pnlUsernameSuperAdmin.Size = new System.Drawing.Size(512, 59);
+            this.pnlUsernameSuperAdmin.Size = new System.Drawing.Size(386, 49);
             this.pnlUsernameSuperAdmin.TabIndex = 7;
             this.pnlUsernameSuperAdmin.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
             this.pnlUsernameSuperAdmin.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
@@ -150,17 +156,18 @@
             this.tlpSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.602339F));
             this.tlpSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.04483F));
             this.tlpSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.35283F));
-            this.tlpSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSuperAdminUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tlpSuperAdminUsernameInput.Controls.Add(this.lblSuperAdminUsername, 1, 0);
             this.tlpSuperAdminUsernameInput.Controls.Add(this.txtSuperAdminUsername, 2, 0);
             this.tlpSuperAdminUsernameInput.Controls.Add(this.picSuperAdminUsername, 0, 0);
             this.tlpSuperAdminUsernameInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminUsernameInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpSuperAdminUsernameInput.Location = new System.Drawing.Point(0, 0);
+            this.tlpSuperAdminUsernameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpSuperAdminUsernameInput.Name = "tlpSuperAdminUsernameInput";
             this.tlpSuperAdminUsernameInput.RowCount = 1;
             this.tlpSuperAdminUsernameInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSuperAdminUsernameInput.Size = new System.Drawing.Size(512, 59);
+            this.tlpSuperAdminUsernameInput.Size = new System.Drawing.Size(386, 49);
             this.tlpSuperAdminUsernameInput.TabIndex = 4;
             this.tlpSuperAdminUsernameInput.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
             this.tlpSuperAdminUsernameInput.MouseLeave += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseLeave);
@@ -171,9 +178,10 @@
             this.lblSuperAdminUsername.AutoSize = true;
             this.lblSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuperAdminUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblSuperAdminUsername.Location = new System.Drawing.Point(41, 14);
+            this.lblSuperAdminUsername.Location = new System.Drawing.Point(31, 12);
+            this.lblSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSuperAdminUsername.Name = "lblSuperAdminUsername";
-            this.lblSuperAdminUsername.Size = new System.Drawing.Size(123, 30);
+            this.lblSuperAdminUsername.Size = new System.Drawing.Size(105, 25);
             this.lblSuperAdminUsername.TabIndex = 0;
             this.lblSuperAdminUsername.Text = "Username :";
             this.lblSuperAdminUsername.MouseEnter += new System.EventHandler(this.pnlUsernameSuperAdmin_MouseEnter);
@@ -183,9 +191,10 @@
             // 
             this.txtSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtSuperAdminUsername.Location = new System.Drawing.Point(189, 12);
+            this.txtSuperAdminUsername.Location = new System.Drawing.Point(143, 10);
+            this.txtSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSuperAdminUsername.Name = "txtSuperAdminUsername";
-            this.txtSuperAdminUsername.Size = new System.Drawing.Size(320, 34);
+            this.txtSuperAdminUsername.Size = new System.Drawing.Size(241, 29);
             this.txtSuperAdminUsername.TabIndex = 1;
             this.txtSuperAdminUsername.Text = "Enter Username";
             this.txtSuperAdminUsername.Click += new System.EventHandler(this.txtSuperAdminUsername_Click);
@@ -198,9 +207,10 @@
             // 
             this.picSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSuperAdminUsername.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminUsername.Image")));
-            this.picSuperAdminUsername.Location = new System.Drawing.Point(3, 10);
+            this.picSuperAdminUsername.Location = new System.Drawing.Point(2, 9);
+            this.picSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminUsername.Name = "picSuperAdminUsername";
-            this.picSuperAdminUsername.Size = new System.Drawing.Size(32, 38);
+            this.picSuperAdminUsername.Size = new System.Drawing.Size(24, 31);
             this.picSuperAdminUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminUsername.TabIndex = 2;
             this.picSuperAdminUsername.TabStop = false;
@@ -211,9 +221,10 @@
             // 
             this.picthreeDotSuperAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picthreeDotSuperAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picthreeDotSuperAdmin.Image")));
-            this.picthreeDotSuperAdmin.Location = new System.Drawing.Point(246, 192);
+            this.picthreeDotSuperAdmin.Location = new System.Drawing.Point(185, 158);
+            this.picthreeDotSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picthreeDotSuperAdmin.Name = "picthreeDotSuperAdmin";
-            this.picthreeDotSuperAdmin.Size = new System.Drawing.Size(69, 30);
+            this.picthreeDotSuperAdmin.Size = new System.Drawing.Size(52, 24);
             this.picthreeDotSuperAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picthreeDotSuperAdmin.TabIndex = 6;
             this.picthreeDotSuperAdmin.TabStop = false;
@@ -225,9 +236,10 @@
             this.lblSuperAdmin.BackColor = System.Drawing.Color.Cornsilk;
             this.lblSuperAdmin.Font = new System.Drawing.Font("Eras Bold ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuperAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblSuperAdmin.Location = new System.Drawing.Point(119, 233);
+            this.lblSuperAdmin.Location = new System.Drawing.Point(85, 192);
+            this.lblSuperAdmin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSuperAdmin.Name = "lblSuperAdmin";
-            this.lblSuperAdmin.Size = new System.Drawing.Size(324, 35);
+            this.lblSuperAdmin.Size = new System.Drawing.Size(252, 28);
             this.lblSuperAdmin.TabIndex = 2;
             this.lblSuperAdmin.Text = "        Super Admin      ";
             // 
@@ -236,15 +248,16 @@
             this.tlpSuperAdminLogin.ColumnCount = 3;
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.84716F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.15284F));
-            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tlpSuperAdminLogin.Controls.Add(this.btnSuperAdminLogin, 1, 0);
             this.tlpSuperAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSuperAdminLogin.Location = new System.Drawing.Point(25, 473);
+            this.tlpSuperAdminLogin.Location = new System.Drawing.Point(18, 388);
+            this.tlpSuperAdminLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpSuperAdminLogin.Name = "tlpSuperAdminLogin";
             this.tlpSuperAdminLogin.RowCount = 1;
             this.tlpSuperAdminLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSuperAdminLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSuperAdminLogin.Size = new System.Drawing.Size(512, 57);
+            this.tlpSuperAdminLogin.Size = new System.Drawing.Size(386, 48);
             this.tlpSuperAdminLogin.TabIndex = 5;
             // 
             // btnSuperAdminLogin
@@ -255,9 +268,10 @@
             this.btnSuperAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuperAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuperAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnSuperAdminLogin.Location = new System.Drawing.Point(68, 3);
+            this.btnSuperAdminLogin.Location = new System.Drawing.Point(51, 2);
+            this.btnSuperAdminLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuperAdminLogin.Name = "btnSuperAdminLogin";
-            this.btnSuperAdminLogin.Size = new System.Drawing.Size(370, 51);
+            this.btnSuperAdminLogin.Size = new System.Drawing.Size(279, 44);
             this.btnSuperAdminLogin.TabIndex = 0;
             this.btnSuperAdminLogin.Text = "Log in";
             this.btnSuperAdminLogin.UseVisualStyleBackColor = false;
@@ -268,24 +282,26 @@
             this.tlpSuperAdminImage.BackColor = System.Drawing.Color.Cornsilk;
             this.tlpSuperAdminImage.ColumnCount = 3;
             this.tlpSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tlpSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tlpSuperAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSuperAdminImage.Controls.Add(this.picSuperAdminImage, 1, 0);
             this.tlpSuperAdminImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSuperAdminImage.Location = new System.Drawing.Point(25, 19);
+            this.tlpSuperAdminImage.Location = new System.Drawing.Point(18, 15);
+            this.tlpSuperAdminImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpSuperAdminImage.Name = "tlpSuperAdminImage";
             this.tlpSuperAdminImage.RowCount = 1;
             this.tlpSuperAdminImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSuperAdminImage.Size = new System.Drawing.Size(512, 167);
+            this.tlpSuperAdminImage.Size = new System.Drawing.Size(386, 139);
             this.tlpSuperAdminImage.TabIndex = 0;
             // 
             // picSuperAdminImage
             // 
             this.picSuperAdminImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picSuperAdminImage.Image = ((System.Drawing.Image)(resources.GetObject("picSuperAdminImage.Image")));
-            this.picSuperAdminImage.Location = new System.Drawing.Point(139, 3);
+            this.picSuperAdminImage.Location = new System.Drawing.Point(105, 2);
+            this.picSuperAdminImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picSuperAdminImage.Name = "picSuperAdminImage";
-            this.picSuperAdminImage.Size = new System.Drawing.Size(234, 161);
+            this.picSuperAdminImage.Size = new System.Drawing.Size(176, 135);
             this.picSuperAdminImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminImage.TabIndex = 0;
             this.picSuperAdminImage.TabStop = false;
@@ -305,6 +321,7 @@
             this.tlpSuperAdminLoginEntireForm.Controls.Add(this.pnlPasswordSuperAdmin, 1, 5);
             this.tlpSuperAdminLoginEntireForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLoginEntireForm.Location = new System.Drawing.Point(0, 0);
+            this.tlpSuperAdminLoginEntireForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpSuperAdminLoginEntireForm.Name = "tlpSuperAdminLoginEntireForm";
             this.tlpSuperAdminLoginEntireForm.RowCount = 9;
             this.tlpSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.841248F));
@@ -316,18 +333,19 @@
             this.tlpSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.20354F));
             this.tlpSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.26442F));
             this.tlpSuperAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.165994F));
-            this.tlpSuperAdminLoginEntireForm.Size = new System.Drawing.Size(562, 565);
+            this.tlpSuperAdminLoginEntireForm.Size = new System.Drawing.Size(423, 466);
             this.tlpSuperAdminLoginEntireForm.TabIndex = 2;
             // 
             // FrmSuperAdminLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 565);
+            this.ClientSize = new System.Drawing.Size(423, 466);
             this.Controls.Add(this.tlpSuperAdminLoginEntireForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(580, 612);
-            this.MinimumSize = new System.Drawing.Size(580, 612);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(439, 505);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(439, 505);
             this.Name = "FrmSuperAdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSuperAdminLogin";

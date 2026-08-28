@@ -10,39 +10,24 @@ namespace GymManagementSystem.Common
 {
     public class ValidationUI
     {
-        public static bool ValidateRequiredTextBoxes(params TextBox[] textBoxes)
+        //ENUM FOR VALIDATION MESSEGE
+        public enum ValidationResult
         {
-            bool isValid = true;
-
-            foreach (TextBox textBox in textBoxes)
-            {
-                if (string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    isValid = false;
-                }
-            }
-            if (!isValid)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Please fill in all the required fields.",
-                    "Required Fields",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                foreach (TextBox textBox in textBoxes)
-                {
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
-                    {
-                        textBox.BackColor = Color.FromArgb(255, 240, 240);
-                    }
-                    else
-                    {
-                        textBox.BackColor = Color.White;
-                    }
-                }
-            }
-
-            return isValid;
+            Valid,
+            IsRequired
         }
+
+
+        public static ValidationResult ValidateRequiredTextBox(TextBox textBox)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                return ValidationResult.IsRequired;
+            }
+
+            return ValidationResult.Valid;
+        }
+
         public static int ClearTextBoxWhenClicked(TextBox textBox,int count)
         {
             textBox.BackColor = Color.White;
@@ -54,55 +39,36 @@ namespace GymManagementSystem.Common
             }
             return 1;
         }
-        public static bool ValidateRadioButtonSelection(params RadioButton[] radioButtons)
+
+        public static ValidationResult ValidateRadioButtonSelection(
+            params RadioButton[] radioButtons)
         {
             foreach (RadioButton radioButton in radioButtons)
             {
                 if (radioButton.Checked)
                 {
-                    return true;
+                    return ValidationResult.Valid;
                 }
             }
 
-            MessageBox.Show("Please Choose Locker Needed or not!",
-                            "Validation",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-
-            return false;
+            return ValidationResult.IsRequired;
         }
-        public static bool ValidateRequiredComboBoxes(params ComboBox[] comboBoxes)
+
+        public static ValidationResult ValidateRequiredComboBox(ComboBox comboBox)
         {
-            bool isValid = true;
-
-            foreach (ComboBox comboBox in comboBoxes)
+            if (comboBox.SelectedIndex == -1)
             {
-                if (comboBox.SelectedIndex == -1)
-                {
-                    comboBox.BackColor = Color.FromArgb(255, 240, 240);
-                    isValid = false;
-                }
-                else
-                {
-                    comboBox.BackColor = Color.White;
-                }
+                return ValidationResult.IsRequired;
             }
 
-            if (!isValid)
-            {
-                MessageBox.Show("Please select all required options.",
-                                "Validation",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-            }
-
-            return isValid;
+            return ValidationResult.Valid;
         }
         public static void ClearDefaultPlaceholderText(TextBox textBox, int clickCount)
         {
             if (clickCount == 0)
             {
                 textBox.Clear();
+                clickCount++;
             }
         }
         public static bool ValidateGenderRadioButtonSelection(params RadioButton[] radioButtons)
@@ -121,6 +87,20 @@ namespace GymManagementSystem.Common
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             return false;
+        }
+        public static string GetValidationMessage(ValidationResult result)
+        {
+            switch (result)
+            {
+                case ValidationResult.IsRequired:
+                    return "is required.";
+
+                case ValidationResult.Valid:
+                    return "";
+
+                default:
+                    return "";
+            }
         }
     }
 }

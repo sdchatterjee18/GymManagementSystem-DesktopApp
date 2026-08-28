@@ -25,6 +25,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         public FrmDisplayMembershipPlan()
         {
             InitializeComponent();
+            LookupUI.EnableDoubleBuffering(dgvMembershipPlan);
         }
         // Form Load
         private void FrmDisplayMembershipPlan_Load(object sender, EventArgs e)

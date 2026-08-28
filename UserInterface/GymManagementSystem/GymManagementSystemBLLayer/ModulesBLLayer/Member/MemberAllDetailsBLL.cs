@@ -69,65 +69,165 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
         public string DietPlanDocument { get; set; }
         public string ConditionStatus { get; set; }
 
-        public string RegisterNewMemberBLL()
+
+
+        public ValidationResult RegisterNewMemberBLL()
         {
             ValidationBll.CommonValidationMessage result;
 
+            // =========================================================
+            // FIRST NAME
+            // =========================================================
             result = ValidationBll.ValidateName(this.FirstName);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "FirstName",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            result = ValidationBll.ValidateName(this.MiddleName);
-            if (result != ValidationBll.CommonValidationMessage.Valid)
+
+            // =========================================================
+            // MIDDLE NAME
+            // =========================================================
+            if (!string.IsNullOrWhiteSpace(this.MiddleName))
             {
-                return ValidationBll.GetValidationMessage(result);
+                result = ValidationBll.ValidateName(this.MiddleName);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "MiddleName",
+                        Result = result,
+                        Message = ValidationBll.GetValidationMessage(result)
+                    };
+                }
             }
 
+
+            // =========================================================
+            // LAST NAME
+            // =========================================================
             result = ValidationBll.ValidateName(this.LastName);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "LastName",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
+
+            // =========================================================
+            // DISTRICT
+            // =========================================================
             result = ValidationBll.ValidateName(this.District);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "District",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
+
+            // =========================================================
+            // STATE
+            // =========================================================
             result = ValidationBll.ValidateName(this.State);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "State",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
+
+            // =========================================================
+            // CITY
+            // =========================================================
             result = ValidationBll.ValidateName(this.City);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "City",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
+
+            // =========================================================
+            // PHONE NUMBER
+            // =========================================================
             result = ValidationBll.ValidatePhoneNumber(this.PhoneNo);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "PhoneNo",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            result = ValidationBll.ValidatePhoneNumber(this.EmergencyContact);
-            if (result != ValidationBll.CommonValidationMessage.Valid)
+
+            // =========================================================
+            // EMERGENCY CONTACT
+            // =========================================================
+            if (!string.IsNullOrWhiteSpace(this.EmergencyContact))
             {
-                return ValidationBll.GetValidationMessage(result);
+                result = ValidationBll.ValidatePhoneNumber(this.EmergencyContact);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "EmergencyContact",
+                        Result = result,
+                        Message = ValidationBll.GetValidationMessage(result)
+                    };
+                }
             }
 
+
+            // =========================================================
+            // EMAIL
+            // =========================================================
             result = ValidationBll.ValidateEmail(this.EmailId);
+
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "EmailId",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            // Convert BLL object to DAL object
+
+            // =========================================================
+            // CONVERT BLL OBJECT TO DAL OBJECT
+            // =========================================================
             MemberAllDetailsDAL memberDAL = new MemberAllDetailsDAL();
 
             memberDAL.FirstName = this.FirstName;
@@ -141,13 +241,28 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Member
             memberDAL.State = this.State;
             memberDAL.EmergencyContact = this.EmergencyContact;
             memberDAL.ProfilePhoto = this.ProfilePhoto;
+
             memberDAL.MembershipPlanId = this.MembershipPlanId;
+
             memberDAL.PaymentMethod = this.PaymentMethod;
-            memberDAL.FeesType = this.FeesType;
+
             memberDAL.ShiftId = this.ShiftId;
+
             memberDAL.DietPlanId = this.DietPlanId;
+
             memberDAL.NeedLocker = this.NeedLocker;
-            return memberDAL.InsertMembershipPlanDAL();
+
+            // =========================================================
+            // DAL CALL
+            // =========================================================
+            string message = memberDAL.InsertNewMemberDAL();
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
 
         public DataTable GetMemberDetailsByMemberId(int memberId)

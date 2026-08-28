@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using GymManagementSystemBLLayer.ModulesBLLayer.MembershipPlan;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.MembershipPlan.UI
 {
@@ -42,7 +43,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             return membershipPlanBLL.DeactivateMembershipPlanByMembershipPlanIdBLL();
         }
         // Insert Membership Plan
-        public string InsertMembershipPlanUI()
+        public ValidationResult InsertMembershipPlanUI()
         {
             MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
 
@@ -53,12 +54,6 @@ namespace GymManagementSystem.FORMS.MembershipPlan.UI
             membershipPlanBLL.Description = this.Description;
 
             return membershipPlanBLL.InsertMembershipPlanBLL();
-        }
-        // Validate Membership Plan
-        public string ValidateMembershipPlanUI(string membershipPlanName, string duration, string price, string description)
-        {
-            MembershipPlanBLL membershipPlanBLL = new MembershipPlanBLL();
-            return membershipPlanBLL.ValidateMembershipPlanBLL(membershipPlanName, duration, price, description);
         }
         // Retrieve Membership Plan By Id
         public DataTable RetrieveMembershipPlanDetailsByMembershipPlanDetails(string search)

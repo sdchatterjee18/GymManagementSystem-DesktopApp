@@ -12,6 +12,7 @@ using GymManagementSystem.FORMS.MembershipPlan.UI;
 using GymManagementSystem.FORMS.DietPlan.UI;
 using GymManagementSystem.FORMS.Member.UI;
 using GymManagementSystem.Common;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FORMS.Member
 {
@@ -21,6 +22,36 @@ namespace GymManagementSystem.FORMS.Member
         public FrmMemberRegistration()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
+        }
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+    {
+        this.txtEnterMemberFirstName,
+        this.txtEnterMemberLastName,
+        this.txtEnterMemberPhoneNumber,
+        this.txtEnterMemberEmailId,
+        this.txtEnterMemberState,
+        this.txtEnterMemberCity,
+        this.txtEnterMemberDistrict,
+
+        this.cmbSelectMemberMemberMembershipPlan,
+        this.cmbSelectMemberShiftTime,
+        this.cmbSelectMemberDietPlan,
+        this.cmbSelectMemberPaymentMethod,
+        this.cmbSelectMemberGender
+    };
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
+
+                errorProvider1.SetIconPadding(
+                    control,
+                    15);
+            }
         }
         //CLICK COUNT VARIABLES OF TEXTBOXES
         int ClickCountTxtFirstName = 0;
@@ -71,11 +102,6 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberPaymentMethod.DataSource = LookupUI.GetPaymentMethods();
             cmbSelectMemberPaymentMethod.SelectedIndex = -1;
         }
-        private void LoadFeesTypeComboBox()
-        {
-            cmbSelectMemberPaymentFeesType.DataSource = LookupUI.GetFeesType();
-            cmbSelectMemberPaymentFeesType.SelectedIndex = -1;
-        }
 
         private void FrmMemberRegistration_Load(object sender, EventArgs e)
         {
@@ -85,7 +111,6 @@ namespace GymManagementSystem.FORMS.Member
             LoadDietPlanComboBox();
             LoadGenderComboBox();
             LoadPaymentMethodComboBox();
-            LoadFeesTypeComboBox();
         }
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
@@ -211,42 +236,164 @@ namespace GymManagementSystem.FORMS.Member
             ValidationUI.ClearDefaultPlaceholderText(txtEnterMemberCity, ClickCountTxtCity);
             ValidationUI.ClearDefaultPlaceholderText(txtEnterMemberDistrict, ClickCountTxtDistrict);
 
-            //REQUIRED TEXTBOX CHECK VALIDATION
-            if (!ValidationUI.ValidateRequiredTextBoxes(
-                this.txtEnterMemberFirstName,
-                this.txtEnterMemberLastName,
-                this.txtEnterMemberPhoneNumber,
-                this.txtEnterMemberEmailId,
-                this.txtEnterMemberState,
-                this.txtEnterMemberCity,
-                this.txtEnterMemberDistrict
-                ))
+            //VALIDATION
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+            errorProvider1.Clear();
+            //VALIDATION OF ALL TEXTBOXES CHECKING NULL AND WHITE SPACES
+            // First Name
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberFirstName);
+            if (result != ValidationUI.ValidationResult.Valid)
             {
-                return;
+                errorProvider1.SetError(txtEnterMemberFirstName,"First Name " +ValidationUI.GetValidationMessage(result));
+                isValid = false;
             }
 
-
-            //REQUIRED RADIO BUTTON CHECK VALIDATION
-            if (!ValidationUI.ValidateRadioButtonSelection(
-                    rbtnNeedLocker,
-                    rbtnDontNeedLocker))
+            // Last Name
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberLastName);
+            if (result != ValidationUI.ValidationResult.Valid)
             {
-                return;
-            }
-            
-            //REQUIRED COMBOBOX VALIDATION
-            if (!ValidationUI.ValidateRequiredComboBoxes(
-                cmbSelectMemberMemberMembershipPlan,
-                cmbSelectMemberShiftTime,
-                cmbSelectMemberDietPlan,
-                cmbSelectMemberPaymentMethod,
-                cmbSelectMemberPaymentFeesType,
-                cmbSelectMemberGender
-                ))
-            {
-                return;
+                errorProvider1.SetError(txtEnterMemberLastName,"Last Name " +ValidationUI.GetValidationMessage(result));
+                isValid = false;
             }
 
+            // Phone Number
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberPhoneNumber);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtEnterMemberPhoneNumber,"Phone Number " +ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+
+            // Email ID
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberEmailId);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtEnterMemberEmailId,"Email ID " + ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+
+            // State
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberState);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtEnterMemberState,"State " +ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // City
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberCity);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtEnterMemberCity,"City " +ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+
+            // District
+            result = ValidationUI.ValidateRequiredTextBox(txtEnterMemberDistrict);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtEnterMemberDistrict,"District " +ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+
+            //VALIDATION OF ALL COMBO BOXES CHECKING IF NOT SELECTED
+            // Membership Plan
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbSelectMemberMemberMembershipPlan);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbSelectMemberMemberMembershipPlan,
+                    "Membership Plan " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Shift Time
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbSelectMemberShiftTime);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbSelectMemberShiftTime,
+                    "Shift Time " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Diet Plan
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbSelectMemberDietPlan);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbSelectMemberDietPlan,
+                    "Diet Plan " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Payment Method
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbSelectMemberPaymentMethod);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbSelectMemberPaymentMethod,
+                    "Payment Method " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            // Gender
+            result = ValidationUI.ValidateRequiredComboBox(
+                cmbSelectMemberGender);
+
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    cmbSelectMemberGender,
+                    "Gender " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+
+            result = ValidationUI.ValidateRadioButtonSelection(rbtnNeedLocker, rbtnDontNeedLocker);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(
+                    rbtnDontNeedLocker,
+                    "Locker selection " +
+                    ValidationUI.GetValidationMessage(result));
+
+                isValid = false;
+            }
+            // Stop only after checking ALL textboxes
+            if (!isValid)
+            {
+                MessageBox.Show("Please fill in all required fields.",
+                                "Required Fields",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning);
+                this.ActiveControl = null;
+                return;
+            }
 
             //OBJECT CREATION
             MemberAllDetailsUI memberAllDetailsUI = new MemberAllDetailsUI();
@@ -266,7 +413,6 @@ namespace GymManagementSystem.FORMS.Member
             memberAllDetailsUI.MembershipPlanId = Convert.ToInt32(cmbSelectMemberMemberMembershipPlan.SelectedValue);
             //PAYMENT
             memberAllDetailsUI.PaymentMethod =cmbSelectMemberPaymentMethod.Text;
-            memberAllDetailsUI.FeesType =cmbSelectMemberPaymentFeesType.Text;
             // SHIFT
             memberAllDetailsUI.ShiftId = Convert.ToInt32(cmbSelectMemberShiftTime.SelectedValue);
             // DIET
@@ -284,15 +430,83 @@ namespace GymManagementSystem.FORMS.Member
             }
            
             //MEMBER REGISTRATION METHOD CALL FROM UI
-            string message = memberAllDetailsUI.RegisterNewMemberUI();
-
-            //DISPLAY MESSEGE BOX
-            MessageBox.Show(message,
-                            "Registration",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+            ValidationResult Finalresult =memberAllDetailsUI.RegisterNewMemberUI();
+            HandleRegistrationResult(Finalresult);
+            
         }
+        private void HandleRegistrationResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
 
+            if (result.Result == ValidationBll.CommonValidationMessage.Valid)
+            {
+                MessageBox.Show(
+                    result.Message,
+                    "Registration",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                return;
+            }
+
+            switch (result.FieldName)
+            {
+                case "FirstName":
+                    errorProvider1.SetError(
+                        txtEnterMemberFirstName,
+                        result.Message);
+                    break;
+
+                case "LastName":
+                    errorProvider1.SetError(
+                        txtEnterMemberLastName,
+                        result.Message);
+                    break;
+
+                case "PhoneNo":
+                    errorProvider1.SetError(
+                        txtEnterMemberPhoneNumber,
+                        result.Message);
+                    break;
+
+                case "EmailId":
+                    errorProvider1.SetError(
+                        txtEnterMemberEmailId,
+                        result.Message);
+                    break;
+
+                case "City":
+                    errorProvider1.SetError(
+                        txtEnterMemberCity,
+                        result.Message);
+                    break;
+
+                case "District":
+                    errorProvider1.SetError(
+                        txtEnterMemberDistrict,
+                        result.Message);
+                    break;
+
+                case "State":
+                    errorProvider1.SetError(
+                        txtEnterMemberState,
+                        result.Message);
+                    break;
+
+                case "EmergencyContact":
+                    errorProvider1.SetError(
+                        txtEnterMemberEmergencyContact,
+                        result.Message);
+                    break;
+            }
+            MessageBox.Show(
+        result.Message,
+        "Validation Error",
+        MessageBoxButtons.OK,
+        MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
+        }
         private void cmbSelectMemberShiftTime_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -342,10 +556,6 @@ namespace GymManagementSystem.FORMS.Member
                 selectedImagePath = openFileDialog.FileName;
                picMemberUploadedPhoto.Image = Image.FromFile(openFileDialog.FileName);
             }
-        }
-        private void cmbSelectMemberPaymentFeesType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
         }
     }
 }

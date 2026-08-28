@@ -31,7 +31,6 @@ namespace GymManagementSystem.FORMS.Member
             RetrieveCurrentExpiredMembershipPlan();
             LoadMembershipPlanComboBox();
             LoadPaymentMethodComboBox();
-            LoadFeesTypeComboBox();
         }
 
         private void ShowMemberIdAndName()
@@ -88,12 +87,6 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberPaymentMethod.DataSource = LookupUI.GetPaymentMethods();
             cmbSelectMemberPaymentMethod.SelectedIndex = -1;
         }
-        private void LoadFeesTypeComboBox()
-        {
-            cmbSelectMemberPaymentFeesType.DataSource = LookupUI.GetFeesType();
-            cmbSelectMemberPaymentFeesType.SelectedIndex = -1;
-        }
-
         private void RenewalMemberShipPlan()
         {
             ComboBox[] combobox = new ComboBox[]
@@ -101,38 +94,38 @@ namespace GymManagementSystem.FORMS.Member
                 cmbSelectMembershipPlan,
                 cmbSelectMemberPaymentMethod
             };
-            if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
-            {
-                return;
-            }
-            else
-            {
-                int MemberId = Convert.ToInt32(lblRetrieveMemberIDInChangePersonalTrainer.Text);
-                int MemberShipPlanId = Convert.ToInt32(cmbSelectMembershipPlan.SelectedIndex + 1);
-                string PaymentMethod = cmbSelectMemberPaymentMethod.Text;
+            //if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    int MemberId = Convert.ToInt32(lblRetrieveMemberIDInChangePersonalTrainer.Text);
+            //    int MemberShipPlanId = Convert.ToInt32(cmbSelectMembershipPlan.SelectedIndex + 1);
+            //    string PaymentMethod = cmbSelectMemberPaymentMethod.Text;
 
 
-                string RenewalMessage = null;
-                DialogResult result = MessageBox.Show(RenewalConfirmationMessage, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-                try
-                {
-                    MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
-                    RenewalMessage = MemberAllDetailsUI.RenewalMemberShipPlanUI(MemberId, MemberShipPlanId, PaymentMethod);
-                    DialogResult Result = MessageBox.Show(RenewalMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (Result == DialogResult.OK)
-                        {
-                            this.Dispose();
-                        }
-                }
-                catch (Exception ex)
-                {
-                    RenewalMessage = null;
-                }
-            }
+            //    string RenewalMessage = null;
+            //    DialogResult result = MessageBox.Show(RenewalConfirmationMessage, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result != DialogResult.Yes)
+            //    {
+            //        return;
+            //    }
+            //    try
+            //    {
+            //        MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
+            //        RenewalMessage = MemberAllDetailsUI.RenewalMemberShipPlanUI(MemberId, MemberShipPlanId, PaymentMethod);
+            //        DialogResult Result = MessageBox.Show(RenewalMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            if (Result == DialogResult.OK)
+            //            {
+            //                this.Dispose();
+            //            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        RenewalMessage = null;
+            //    }
+            //}
         }
 
         private void tlpChangeMembershipButton_MouseEnter(object sender, EventArgs e)
@@ -169,20 +162,6 @@ namespace GymManagementSystem.FORMS.Member
             }
         }
 
-        private void cmbSelectMemberPaymentFeesType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-            cmbSelectMembershipPlan.ForeColor = Color.Black;
-            //CHANGE PRICE IN PAYMENT SECTION BASED ON SELECTED MEMBERSHIP PLAN
-            if (cmbSelectMembershipPlan.SelectedIndex >= 0)
-            {
-                        int MembershipPlanId = Convert.ToInt32(((DataRowView)cmbSelectMembershipPlan.SelectedItem)["MembershipPlanId"]);
-                    string MembershipPlanPrice = MembershipPlanUI.GetPriceByMembershipPlanId(MembershipPlanId).ToString();
-
-                    lblRetrieveMemberPaymentAmount.Text = string.Format("₹ {0:N2}", MembershipPlanPrice);
-            }
-        }
-
         private void pnlChangeMembershipButton_Click(object sender, EventArgs e)
         {
             RenewalMemberShipPlan();
@@ -191,6 +170,11 @@ namespace GymManagementSystem.FORMS.Member
         private void pnlCancleButtomInChangeMembership_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void lblMemberPaymentAmount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

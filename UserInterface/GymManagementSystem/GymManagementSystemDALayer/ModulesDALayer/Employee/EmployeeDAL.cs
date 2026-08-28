@@ -103,5 +103,33 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Employee
             }
             
         }
+        public DataTable DisplayAllEmployeeDetailsDAL()
+        {
+            return LookupDAL.GetComboBoxDetails(
+                "spDisplayAllEmployeeDetails"
+            );
+        }
+        public DataTable DisplayEmployeeDetailsByPhoneNoDAL(string phoneNo)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@PhoneNo", phoneNo)
+            };
+            return LookupDAL.RetrieveSpecificDetails(
+                "spDisplayEmployeeDetailsByPhoneNo",
+                sqlParameters
+            );
+        }
+        public string ToggleEmployeeActiveStatusDAL(int employeeId)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@EmployeeId", employeeId)
+            };
+            return LookupDAL.UpdateSpecificItem(
+                "spToggleEmployeeActiveStatus",
+                sqlParameters
+            );
+        }
     }
 }
