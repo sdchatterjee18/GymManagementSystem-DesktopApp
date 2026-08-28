@@ -159,5 +159,20 @@ namespace GymManagementSystem.Authentication
                     MessageBoxIcon.Error);
             }
         }
+
+        private void tlpForgotPassword_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpForgotPassword_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
