@@ -21,6 +21,7 @@ namespace GymManagementSystem.Authentication
         {
             InitializeComponent();
             this.frmUserRoleSelection = frmUserRoleSelection;
+            txtAdminPassword.UseSystemPasswordChar = true;
         }
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
@@ -158,6 +159,26 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void tlpForgotPassword_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpForgotPassword_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }

@@ -22,6 +22,7 @@ namespace GymManagementSystem.Authentication
         {
             this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
+            txtSuperAdminPassword.UseSystemPasswordChar = true;
         }
             
 
@@ -157,6 +158,21 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }
