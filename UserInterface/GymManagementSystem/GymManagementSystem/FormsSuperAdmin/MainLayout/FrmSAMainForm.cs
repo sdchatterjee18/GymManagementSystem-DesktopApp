@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +18,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 {
     public partial class FrmSAMainForm : Form
     {
+        private bool isFinancialManagementExpanded = false;
         private bool isSettingsExpanded = false;
         private const int ExpandedWidth = 280;
         private const int CollapsedWidth = 70;
@@ -215,9 +216,12 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlDashboard_Click(object sender, EventArgs e)
         {
+            CloseAllDropdowns();
+
             SelectPanel(pnlDashboard);
             pnlDashboard.ForeColor = Color.White;
             picDashboard.Image = Properties.Resources.dashboard;
+
             ExpandIfCollapsed();
             OpenChildForm(new FrmSADashboard());
         }
@@ -244,6 +248,8 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlEmployeeManagement_Click(object sender, EventArgs e)
         {
+            CloseAllDropdowns();
+
             SelectPanel(pnlEmployeeManagement);
 
             pnlEmployeeManagement.ForeColor = Color.White;
@@ -252,7 +258,6 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             ExpandIfCollapsed();
             OpenChildForm(new FrmSADisplayAllEmployee(this));
         }
-
         private void pnlEmployeeSalaryManagement_MouseEnter(object sender, EventArgs e)
         {
             if (selectedPanel != pnlEmployeeSalaryManagement)
@@ -275,6 +280,8 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlEmployeeSalaryManagement_Click(object sender, EventArgs e)
         {
+            CloseAllDropdowns();
+
             SelectPanel(pnlEmployeeSalaryManagement);
 
             pnlEmployeeSalaryManagement.ForeColor = Color.White;
@@ -286,74 +293,210 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlFinancialManagement_MouseEnter(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlFinancialManagement)
+            if (selectedPanel != pnlFinancialManagement &&
+                selectedPanel != pnlProfitLoss &&
+                selectedPanel != pnlPayment &&
+                selectedPanel != pnlExpense &&
+                !isFinancialManagementExpanded)
             {
-                pnlFinancialManagement.BackColor = Color.FromArgb(190, 216, 230);
-                pnlFinancialManagement.ForeColor = Color.Black;
-                picFinancialManagement.Image = Properties.Resources.FinancialsHOVER;
+                pnlFinancialManagement.BackColor =
+                    Color.FromArgb(190, 216, 230);
+
+                pnlFinancialManagement.ForeColor =
+                    Color.Black;
+
+                picFinancialManagement.Image =
+                    Properties.Resources.FinancialsHOVER;
+
+                picFinancialManagementArrow.Image =
+                    Properties.Resources.downArrowB;
             }
         }
 
         private void pnlFinancialManagement_MouseLeave(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlFinancialManagement)
+            if (selectedPanel != pnlFinancialManagement &&
+                selectedPanel != pnlProfitLoss &&
+                selectedPanel != pnlPayment &&
+                selectedPanel != pnlExpense &&
+                !isFinancialManagementExpanded)
             {
-                pnlFinancialManagement.BackColor = Color.Transparent;
-                pnlFinancialManagement.ForeColor = Color.White;
-                picFinancialManagement.Image = Properties.Resources.Financials;
+                pnlFinancialManagement.BackColor =
+                    Color.Transparent;
+
+                pnlFinancialManagement.ForeColor =
+                    Color.White;
+
+                picFinancialManagement.Image =
+                    Properties.Resources.Financials;
+
+                picFinancialManagementArrow.Image =
+                    Properties.Resources.downArrowW;
             }
         }
 
         private void pnlFinancialManagement_Click(object sender, EventArgs e)
         {
-            SelectPanel(pnlFinancialManagement);
-
-            pnlFinancialManagement.ForeColor = Color.White;
-            picFinancialManagement.Image = Properties.Resources.Financials;
-
             ExpandIfCollapsed();
-            OpenChildForm(new FrmSAProfitLoss());
+
+            if (isFinancialManagementExpanded)
+            {
+                // ==========================================
+                // CLOSE FINANCIAL MANAGEMENT DROPDOWN
+                // ==========================================
+
+                pnlDropdownFinancialManagement.Visible = false;
+
+                picFinancialManagementArrow.Image =
+                    Properties.Resources.downArrowW;
+
+                isFinancialManagementExpanded = false;
+
+                // Select MAIN Financial Management panel
+                SelectPanel(pnlFinancialManagement);
+
+                pnlFinancialManagement.BackColor =
+                    Color.FromArgb(68, 97, 174);
+
+                pnlFinancialManagement.ForeColor =
+                    Color.White;
+
+                picFinancialManagement.Image =
+                    Properties.Resources.Financials;
+            }
+            else
+            {
+                // ==========================================
+                // OPEN FINANCIAL MANAGEMENT DROPDOWN
+                // ==========================================
+
+                CloseAllDropdowns();
+
+                // Select MAIN Financial Management panel
+                SelectPanel(pnlFinancialManagement);
+
+                pnlFinancialManagement.BackColor =
+                    Color.FromArgb(68, 97, 174);
+
+                pnlFinancialManagement.ForeColor =
+                    Color.White;
+
+                picFinancialManagement.Image =
+                    Properties.Resources.Financials;
+
+                // Open dropdown
+                pnlDropdownFinancialManagement.Visible = true;
+
+                picFinancialManagementArrow.Image =
+                    Properties.Resources.topArrowW;
+
+                isFinancialManagementExpanded = true;
+
+                // ==========================================
+                // DEFAULT FORM
+                // ==========================================
+
+                OpenChildForm(new FrmSAProfitLoss());
+            }
         }
         private void pnlSettings_MouseEnter(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlSettings && selectedPanel != pnlSuperAdminPasswordChange)
+            if (selectedPanel != pnlSettings &&
+                selectedPanel != pnlSuperAdminPasswordChange)
             {
-                pnlSettings.BackColor = Color.FromArgb(190, 216, 230);
-                pnlSettings.ForeColor = Color.Black;
-                picSettingsArrowe.Image = Properties.Resources.downArrowB;
-                picSettings.Image = Properties.Resources.settingHOVER;
-            }
+                pnlSettings.BackColor =
+                    Color.FromArgb(190, 216, 230);
 
+                pnlSettings.ForeColor = Color.Black;
+
+                picSettings.Image =
+                    Properties.Resources.settingHOVER;
+
+                if (isSettingsExpanded)
+                {
+                    picSettingsArrowe.Image =
+                        Properties.Resources.topArrowB;
+                }
+                else
+                {
+                    picSettingsArrowe.Image =
+                        Properties.Resources.downArrowB;
+                }
+            }
         }
 
         private void pnlSettings_MouseLeave(object sender, EventArgs e)
         {
-            if (selectedPanel != pnlSettings && selectedPanel != pnlSuperAdminPasswordChange)
+            if (selectedPanel != pnlSettings &&
+                selectedPanel != pnlSuperAdminPasswordChange)
             {
                 pnlSettings.BackColor = Color.Transparent;
-                pnlSettings.ForeColor = Color.White;
-                picSettings.Image = Properties.Resources.setting;
-                picSettingsArrowe.Image = Properties.Resources.downArrowW;
-            }
 
+                pnlSettings.ForeColor = Color.White;
+
+                picSettings.Image =
+                    Properties.Resources.setting;
+
+                if (isSettingsExpanded)
+                {
+                    picSettingsArrowe.Image =
+                        Properties.Resources.topArrowW;
+                }
+                else
+                {
+                    picSettingsArrowe.Image =
+                        Properties.Resources.downArrowW;
+                }
+            }
         }
         private void pnlSettings_Click(object sender, EventArgs e)
         {
-            SelectPanel(pnlSettings);
-            pnlSettings.ForeColor = Color.White;
-            picSettings.Image = Properties.Resources.setting;
             ExpandIfCollapsed();
-            if (!isSettingsExpanded)
+
+            if (isSettingsExpanded)
             {
-                pnlDropDownSettings.Visible = true;
-                picSettingsArrowe.Image = Properties.Resources.topArrowW;
-                isSettingsExpanded = true;
+                // ==========================================
+                // CLOSE SETTINGS DROPDOWN
+                // ==========================================
+
+                pnlDropDownSettings.Visible = false;
+
+                picSettingsArrowe.Image =
+                    Properties.Resources.downArrowW;
+
+                isSettingsExpanded = false;
+
+                // Select MAIN Settings panel
+                SelectPanel(pnlSettings);
+
+                pnlSettings.ForeColor = Color.White;
+
+                picSettings.Image =
+                    Properties.Resources.setting;
             }
             else
             {
-                pnlDropDownSettings.Visible = false;
-                picSettingsArrowe.Image = Properties.Resources.downArrowW;
-                isSettingsExpanded = false;
+                // ==========================================
+                // OPEN SETTINGS DROPDOWN
+                // ==========================================
+
+                CloseAllDropdowns();
+
+                // Select MAIN Settings panel
+                SelectPanel(pnlSettings);
+
+                pnlSettings.ForeColor = Color.White;
+
+                picSettings.Image =
+                    Properties.Resources.setting;
+
+                // Open dropdown
+                pnlDropDownSettings.Visible = true;
+
+                picSettingsArrowe.Image =
+                    Properties.Resources.topArrowW;
+
+                isSettingsExpanded = true;
             }
         }
         private void pnlLogout_MouseEnter(object sender, EventArgs e)
@@ -372,6 +515,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlLogout_Click(object sender, EventArgs e)
         {
+            CloseAllDropdowns();
             ExpandIfCollapsed();
 
             // ==========================================
@@ -383,10 +527,6 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
                 "Confirm Logout",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
-
-            // ==========================================
-            // USER CLICKED NO
-            // ==========================================
 
             if (result != DialogResult.Yes)
             {
@@ -401,10 +541,6 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
             bool logoutResult =
                 authenticationUI.SuperAdminLogoutUI();
-
-            // ==========================================
-            // LOGOUT SUCCESS
-            // ==========================================
 
             if (logoutResult)
             {
@@ -423,10 +559,6 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             }
             else
             {
-                // ==========================================
-                // LOGOUT FAILED
-                // ==========================================
-
                 MessageBox.Show(
                     "Logout Failed.",
                     "Logout",
@@ -458,19 +590,26 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
         private void pnlSuperAdminPasswordChange_Click(object sender, EventArgs e)
         {
+            CloseAllDropdowns();
             ExpandIfCollapsed();
+
             SelectPanel(pnlSuperAdminPasswordChange);
-            selectedPanel = pnlSuperAdminPasswordChange;
+
             pnlSuperAdminPasswordChange.ForeColor = Color.White;
             picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
             FrmSAPasswordChange frmSAPasswordChange = new FrmSAPasswordChange();
             frmSAPasswordChange.ShowDialog();
         }
+
         private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
         {
 
         }
+
         private void pnlMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
+        }
         {
             pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
         }
@@ -517,10 +656,140 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             pnlExit.BackColor = Color.Transparent;
         }
 
+        private void pnlProfitLoss_Click(object sender, EventArgs e)
+        {
+            //CloseAllDropdowns();
+            ExpandIfCollapsed();
+
+            OpenChildForm(new FrmSAProfitLoss());
+
+            SelectPanel(pnlProfitLoss);
+
+            pnlProfitLoss.ForeColor = Color.White;
+            picProfitLoss.Image = Properties.Resources.recor_buttonW;
+        }
+
+        private void pnlProfitLoss_MouseEnter(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlProfitLoss)
+            {
+                pnlProfitLoss.BackColor =
+                    Color.FromArgb(190, 216, 230);
+
+                pnlProfitLoss.ForeColor = Color.Black;
+
+                picProfitLoss.Image =
+                    Properties.Resources.record_button;
+            }
+        }
+
+        private void pnlProfitLoss_MouseLeave(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlProfitLoss)
+            {
+                pnlProfitLoss.BackColor = Color.Transparent;
+
+                pnlProfitLoss.ForeColor = Color.White;
+
+                picProfitLoss.Image =
+                    Properties.Resources.recor_buttonW;
+            }
+        }
+
+        private void pnlPayment_Click(object sender, EventArgs e)
+        {
+        //    CloseAllDropdowns();
+            ExpandIfCollapsed();
+
+            OpenChildForm(new FrmSAPayment());
+
+            SelectPanel(pnlPayment);
+
+            pnlPayment.ForeColor = Color.White;
+            picPayment.Image = Properties.Resources.recor_buttonW;
+        }
+        private void pnlPayment_MouseEnter(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlPayment)
+            {
+                pnlPayment.BackColor =
+                    Color.FromArgb(190, 216, 230);
+
+                pnlPayment.ForeColor = Color.Black;
+
+                picPayment.Image =
+                    Properties.Resources.record_button;
+            }
+        }
+
+        private void pnlPayment_MouseLeave(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlPayment)
+            {
+                pnlPayment.BackColor = Color.Transparent;
+
+                pnlPayment.ForeColor = Color.White;
+
+                picPayment.Image =
+                    Properties.Resources.recor_buttonW;
+            }
+        }
+        private void pnlExpense_Click(object sender, EventArgs e)
+        {
+            //CloseAllDropdowns();
+            ExpandIfCollapsed();
+
+            OpenChildForm(new FrmSAExpense());
+
+            SelectPanel(pnlExpense);
+
+            pnlExpense.ForeColor = Color.White;
+            picExpense.Image = Properties.Resources.recor_buttonW;
+        }
+        private void pnlExpense_MouseEnter(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlExpense)
+            {
+                pnlExpense.BackColor =
+                    Color.FromArgb(190, 216, 230);
+
+                pnlExpense.ForeColor = Color.Black;
+
+                picExpense.Image =
+                    Properties.Resources.record_button;
+            }
+        }
+
+        private void pnlExpense_MouseLeave(object sender, EventArgs e)
+        {
+            if (selectedPanel != pnlExpense)
+            {
+                pnlExpense.BackColor = Color.Transparent;
+
+                pnlExpense.ForeColor = Color.White;
+
+                picExpense.Image =
+                    Properties.Resources.recor_buttonW;
+            }
+        }
+        private void CloseAllDropdowns()
+        {
+            pnlDropdownFinancialManagement.Visible = false;
+            pnlDropDownSettings.Visible = false;
+
+            isFinancialManagementExpanded = false;
+            isSettingsExpanded = false;
+
+            picFinancialManagementArrow.Image =
+                Properties.Resources.downArrowW;
+
+            picSettingsArrowe.Image =
+                Properties.Resources.downArrowW;
+        }
+
         private void pnlExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
     }
 }
