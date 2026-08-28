@@ -251,6 +251,10 @@
     <Compile Include="FORMS\Main\FrmMainLayout.Designer.cs">
       <DependentUpon>FrmMainLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Main\InvisibleScrollFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\Main\ScrollBarHelper.cs" />
     <Compile Include="FORMS\MembershipPlan\FrmAddMembershipPlans.cs">
       <SubType>Form</SubType>
     </Compile>

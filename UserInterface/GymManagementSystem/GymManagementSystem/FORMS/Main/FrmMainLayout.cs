@@ -41,7 +41,6 @@ namespace GymManagementSystem.FORMS.Main
 
             timerSidebar.Interval = 10;
         }
-
         private Form activeForm = null;
         private Panel selectedPanel = null;
         private void SelectPanel(Panel panel)
@@ -81,26 +80,26 @@ namespace GymManagementSystem.FORMS.Main
             childForm.BringToFront();
             childForm.Show();
         }
-       
-        
+
+
         private void FrmMainLayout_Load(object sender, EventArgs e)
         {
-          
-            //Color borderColor = Color.FromArgb(15, 15, 15);
+            ScrollBarHelper.HideScrollBar(fnlSidebar);
+
             Panel topBorder = new Panel();
             topBorder.Dock = DockStyle.Bottom;
             topBorder.Height = 1;
-            //topBorder.BackColor = borderColor;
             pnlTopbar.Controls.Add(topBorder);
+
             Panel mainLeftBorder = new Panel();
             mainLeftBorder.Dock = DockStyle.Left;
             mainLeftBorder.Width = 1;
-            //mainLeftBorder.BackColor = borderColor;
             pnlMainPanel.Controls.Add(mainLeftBorder);
+
             pnlSidebar.Width = ExpandedWidth;
+
             OpenChildForm(new FrmDashboard());
         }
-
         private void pnlMembers_MouseEnter(object sender, EventArgs e)
         {
             if (pnlMembers != selectedPanel && selectedPanel != pnlViewAllMembers && selectedPanel != pnlMemberTrainerAssignment)
@@ -1046,11 +1045,6 @@ namespace GymManagementSystem.FORMS.Main
         {
             this.Close();
         }
-
-    
-      
-     
-
         private void pnlAdminChangePassword_MouseEnter(object sender, EventArgs e)
         {
             if (selectedPanel != pnlAdminPasswordChange)
