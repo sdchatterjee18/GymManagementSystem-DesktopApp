@@ -87,12 +87,6 @@ namespace GymManagementSystem.Authentication
         {
             this.Dispose();
         }
-
-        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
-        }
-
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
             // CLEAR DEFAULT PLACEHOLDER TEXT
@@ -102,15 +96,6 @@ namespace GymManagementSystem.Authentication
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminPassword,
                 ClickCountTxtSuperAdminPassword);
-
-            // REQUIRED TEXTBOX VALIDATION
-            //if (!ValidationUI.ValidateRequiredTextBoxes(
-            //    txtSuperAdminUsername,
-            //    txtSuperAdminPassword))
-            //{
-            //    return;
-            //}
-
             // CREATE AUTHENTICATION UI OBJECT
             AuthenticationUI authenticationUI =
                 new AuthenticationUI();
@@ -155,9 +140,7 @@ namespace GymManagementSystem.Authentication
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
-            frmForgotPassword.ShowDialog();
-            this.Hide();
+            
         }
 
         private void txtSuperAdminUsername_Click(object sender, EventArgs e)
@@ -180,6 +163,17 @@ namespace GymManagementSystem.Authentication
             txtSuperAdminPassword.ForeColor = Color.Black;
             txtSuperAdminPassword.UseSystemPasswordChar = true;
         }
+
+        private void lblForgotPassword_Click_1(object sender, EventArgs e)
+        {
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Hide();
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }
