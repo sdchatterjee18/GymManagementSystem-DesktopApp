@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using GymManagementSystem.Common;
 using GymManagementSystem.FormsSuperAdmin.Employee.UI;
 using System.IO;
+using GymManagementSystemBLLayer.Common;
 
 namespace GymManagementSystem.FormsSuperAdmin.Employee
 {
@@ -29,12 +30,45 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         int ClickCountTxtPassword = 0;
         int ClickCountTxtConfirmPassword = 0;
         private byte[] selectedFileBytes;
+        private bool isDateOfBirthSelected = false;
 
         public FrmSAAddNewEmployee()
         {
             InitializeComponent();
+            SetErrorProviderAlignment();
         }
+        private void SetErrorProviderAlignment()
+        {
+            Control[] controls =
+            {
+                txtFirstName,
+                txtFirstName,
+                txtLastName,
+                txtPhoneNumber,
+                txtEmailId,
+                txtSalary,
+                txtBankAccountNo,
 
+                cmbEmployeeType,
+
+                txtUserName,
+                txtPassword,
+                txtConfirmPassword,
+
+                cmbTrainerType,
+                txtSpecialization
+            };
+            foreach (Control control in controls)
+            {
+                errorProvider1.SetIconAlignment(
+                    control,
+                    ErrorIconAlignment.MiddleRight);
+
+                errorProvider1.SetIconPadding(
+                    control,
+                    15);
+            }
+        }
         private void FrmSAAddNewEmployee_Load(object sender, EventArgs e)
         {
             // Employee Type
@@ -44,7 +78,13 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             LoadTrainerTypes();
             //pnlDefault.Visible = true;
             pnlDefault.BringToFront();
-         
+
+            // ==========================================
+            // DATE OF BIRTH DEFAULT
+            // ==========================================
+            dtpDOB.Format = DateTimePickerFormat.Custom;
+            dtpDOB.CustomFormat = " ";
+            isDateOfBirthSelected = false;
             this.ActiveControl = null;   
         }
         // Load Employee cmb
@@ -171,73 +211,224 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                 txtConfirmPassword,
                 ClickCountTxtConfirmPassword);
 
-
             // ==========================================
-            // REQUIRED TEXTBOX VALIDATION
-            // ==========================================
-
-            //if (!ValidationUI.ValidateRequiredTextBoxes(
-            //    txtFirstName,
-            //    txtLastName,
-            //    txtPhoneNumber,
-            //    txtEmailId,
-            //    txtSalary,
-            //    txtBankAccountNo))
-            //{
-            //    return;
-            //}
-
-
-            // ==========================================
-            // REQUIRED GENDER RADIO BUTTON VALIDATION
+            // VALIDATION
             // ==========================================
 
-            if (!ValidationUI.ValidateGenderRadioButtonSelection(
-                rdoMale,
-                rdoFemale,
-                rdoOthers))
+            ValidationUI.ValidationResult result;
+            bool isValid = true;
+            errorProvider1.Clear();
+
+            //TEXT_BOXES
+            result = ValidationUI.ValidateRequiredTextBox(txtFirstName);
+            if (result != ValidationUI.ValidationResult.Valid)
             {
+                errorProvider1.SetError(txtFirstName,"First Name " + ValidationUI.GetValidationMessage(result));
+                isValid = false;
+            }
+            result = ValidationUI.ValidateRequiredTextBox(txtLastName);
+
+           if (result != ValidationUI.ValidationResult.Valid)
+           {
+             errorProvider1.SetError(txtLastName,"Last Name " + ValidationUI.GetValidationMessage(result));
+             isValid = false;
+           }
+
+           result = ValidationUI.ValidateRequiredTextBox(txtPhoneNumber);
+           if (result != ValidationUI.ValidationResult.Valid)
+           {
+            errorProvider1.SetError(txtPhoneNumber,"Phone Number " + ValidationUI.GetValidationMessage(result));
+            isValid = false;
+           }
+
+           result = ValidationUI.ValidateRequiredTextBox(txtEmailId);
+           if (result != ValidationUI.ValidationResult.Valid)
+           {
+            errorProvider1.SetError(txtEmailId,"Email ID " + ValidationUI.GetValidationMessage(result));
+            isValid = false;
+           }
+
+          result = ValidationUI.ValidateRequiredTextBox(txtSalary);
+          if (result != ValidationUI.ValidationResult.Valid)
+          {
+                errorProvider1.SetError(
+                    txtSalary,
+                    "Salary " + ValidationUI.GetValidationMessage(result));
+                isValid = false;
+          }
+
+        result = ValidationUI.ValidateRequiredTextBox(txtBankAccountNo);
+
+        if (result != ValidationUI.ValidationResult.Valid)
+        {
+            errorProvider1.SetError(
+                txtBankAccountNo,
+                "Bank Account Number " +
+                ValidationUI.GetValidationMessage(result));
+
+            isValid = false;
+        }
+        
+        //COMBO_BOXES
+        result = ValidationUI.ValidateRequiredComboBox(cmbEmployeeType);
+        if (result != ValidationUI.ValidationResult.Valid)
+        {
+            errorProvider1.SetError(
+                cmbEmployeeType,
+                "Employee Type " +
+                ValidationUI.GetValidationMessage(result));
+
+            isValid = false;
+        }
+
+        //RADIO_BUTTON
+        result = ValidationUI.ValidateRadioButtonSelection(rdoMale,rdoFemale,rdoOthers);
+        if (result != ValidationUI.ValidationResult.Valid)
+        {
+            errorProvider1.SetError(
+                rdoOthers,
+                "Gender selection " +
+                ValidationUI.GetValidationMessage(result));
+
+            isValid = false;
+        }
+        
+        //DATE TIME PICKER
+        if (!isDateOfBirthSelected)
+        {
+            errorProvider1.SetError(
+                dtpDOB,
+                "Date of Birth is required.");
+
+            isValid = false;
+        }
+            // ROLE BASED DATA
+            string selectedRole =cmbEmployeeType.Text.Trim();
+
+            // ==========================================
+            // ADMIN DETAILS
+            // ==========================================
+            if (selectedRole == "Admin")
+            {
+                result = ValidationUI.ValidateRequiredTextBox(txtUserName);
+
+                if (result != ValidationUI.ValidationResult.Valid)
+                {
+                    errorProvider1.SetError(
+                        txtUserName,
+                        "Username " +
+                        ValidationUI.GetValidationMessage(result));
+                    isValid = false;
+                }
+
+
+                result = ValidationUI.ValidateRequiredTextBox(txtPassword);
+
+                if (result != ValidationUI.ValidationResult.Valid)
+                {
+                    errorProvider1.SetError(
+                        txtPassword,
+                        "Password " +
+                        ValidationUI.GetValidationMessage(result));
+                    isValid = false;
+                }
+
+
+                result = ValidationUI.ValidateRequiredTextBox(txtConfirmPassword);
+
+                if (result != ValidationUI.ValidationResult.Valid)
+                {
+                    errorProvider1.SetError(
+                        txtConfirmPassword,
+                        "Confirm Password " +
+                        ValidationUI.GetValidationMessage(result));
+                    isValid = false;
+                }
+
+                if (txtPassword.Text.Trim() !=txtConfirmPassword.Text.Trim())
+                {
+                    errorProvider1.SetError(txtConfirmPassword,"Password and Confirm Password do not match.");
+                    MessageBox.Show(
+                    "Password and Confirm Password do not match",
+                    "Invalid Salary",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                    txtConfirmPassword.Focus();
+                    return; 
+                }
+            }
+            // ==========================================
+            // TRAINER DETAILS
+            // ==========================================
+            if (selectedRole == "Trainer")
+            {
+                result = ValidationUI.ValidateRequiredComboBox(cmbTrainerType);
+
+                if (result != ValidationUI.ValidationResult.Valid)
+                {
+                    errorProvider1.SetError(
+                        cmbTrainerType,
+                        "Trainer Type " +
+                        ValidationUI.GetValidationMessage(result));
+
+                    isValid = false;
+                }
+
+
+                result = ValidationUI.ValidateRequiredTextBox(txtSpecialization);
+
+                if (result != ValidationUI.ValidationResult.Valid)
+                {
+                    errorProvider1.SetError(
+                        txtSpecialization,
+                        "Specialization " +
+                        ValidationUI.GetValidationMessage(result));
+
+                    isValid = false;
+                }
+            }
+            if (!isValid)
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Required Fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                this.ActiveControl = null;
+
                 return;
             }
 
+            //salary validation
+            decimal salary;
+            if (!decimal.TryParse(txtSalary.Text.Trim(), out salary))
+            {
+                errorProvider1.SetError(
+                    txtSalary,
+                    "Please enter a valid salary amount.");
 
-            // ==========================================
-            // REQUIRED ROLE COMBOBOX VALIDATION
-            // ==========================================
+                MessageBox.Show(
+                "Please enter a valid salary amount.",
+                "Invalid Salary",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
 
-            //if (!ValidationUI.ValidateRequiredComboBoxes(
-            //    cmbEmployeeType))
-            //{
-            //    return;
-            //}
-
+                txtSalary.Focus();
+                return;
+            }
 
             // ==========================================
             // CREATE EMPLOYEE UI OBJECT
             // ==========================================
+            EmployeeUI employeeUI = new EmployeeUI();
 
-            EmployeeUI employeeUI =
-                new EmployeeUI();
-
-
-            // ==========================================
             // EMPLOYEE PERSONAL DETAILS
-            // ==========================================
-
-            employeeUI.FirstName =
-                txtFirstName.Text.Trim();
-
-            employeeUI.MiddleName =
-                txtMiddleName.Text.Trim();
-
-            employeeUI.LastName =
-                txtLastName.Text.Trim();
-
-
-            // ==========================================
-            // GENDER
-            // ==========================================
-
+            employeeUI.FirstName = txtFirstName.Text.Trim();
+            employeeUI.MiddleName = txtMiddleName.Text.Trim();
+            employeeUI.LastName = txtLastName.Text.Trim();
+            employeeUI.DateOfBirth = dtpDOB.Value;
             if (rdoMale.Checked)
             {
                 employeeUI.GenderId = 1;
@@ -251,147 +442,197 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                 employeeUI.GenderId = 3;
             }
 
-
-            employeeUI.PhoneNo =
-                txtPhoneNumber.Text.Trim();
-
-            employeeUI.EmailId =
-                txtEmailId.Text.Trim();
-
-            employeeUI.BankAccountNo =
-                txtBankAccountNo.Text.Trim();
+            employeeUI.PhoneNo = txtPhoneNumber.Text.Trim();
+            employeeUI.EmailId = txtEmailId.Text.Trim();
+            employeeUI.BankAccountNo = txtBankAccountNo.Text.Trim();
 
 
             // ==========================================
             // EMPLOYEE ROLE
             // ==========================================
-
             employeeUI.RoleId =
                 Convert.ToInt32(cmbEmployeeType.SelectedValue);
 
-
-            // ==========================================
             // SALARY
-            // ==========================================
-
-            decimal salary;
-
-            if (!decimal.TryParse(
-                txtSalary.Text.Trim(),
-                out salary))
-            {
-                MessageBox.Show(
-                    "Please enter a valid salary amount.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                txtSalary.BackColor =
-                    Color.FromArgb(255, 240, 240);
-
-                return;
-            }
-
             employeeUI.Amount = salary;
 
-
-            // ==========================================
-            // ROLE BASED DATA
-            // ==========================================
-
-            string selectedRole =
-                cmbEmployeeType.Text.Trim();
-
-
-            // ==========================================
             // ADMIN DETAILS
-            // ==========================================
-
             if (selectedRole == "Admin")
             {
-                //if (!ValidationUI.ValidateRequiredTextBoxes(
-                //    txtUserName,
-                //    txtPassword,
-                //    txtConfirmPassword))
-                //{
-                //    return;
-                //}
-
-                if (txtPassword.Text.Trim() !=
-                    txtConfirmPassword.Text.Trim())
-                {
-                    MessageBox.Show(
-                        "Password and Confirm Password do not match.",
-                        "Validation",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-
-                    txtConfirmPassword.BackColor =
-                        Color.FromArgb(255, 240, 240);
-
-                    return;
-                }
-
                 employeeUI.UserName =
                     txtUserName.Text.Trim();
 
-                employeeUI.PasswordHash =
+                employeeUI.Password =
                     txtPassword.Text.Trim();
             }
 
-
-            // ==========================================
             // TRAINER DETAILS
-            // ==========================================
-
             if (selectedRole == "Trainer")
             {
-                //if (!ValidationUI.ValidateRequiredTextBoxes(
-                //    txtSpecialization))
-                //{
-                //    return;
-                //}
-
-                //if (!ValidationUI.ValidateRequiredComboBoxes(
-                //    cmbTrainerType))
-                //{
-                //    return;
-                //}
-
                 employeeUI.TrainerType =
                     cmbTrainerType.Text.Trim();
 
                 employeeUI.Specialization =
                     txtSpecialization.Text.Trim();
-                employeeUI.Document = selectedFileBytes;
+
+                employeeUI.Document =
+                    selectedFileBytes;
             }
 
+            // CALL UI METHOD
+            ValidationResult finalResult =employeeUI.InsertEmployeeUI();
+            HandleRegistrationResult(finalResult);
+        }
+        private void HandleRegistrationResult(ValidationResult result)
+        {
+            errorProvider1.Clear();
 
-             //==========================================
-             //EMPLOYEE INSERT
-             //==========================================
+            // ==========================================
+            // SUCCESS
+            // ==========================================
 
-            try
+            if (result.Result ==
+                ValidationBll.CommonValidationMessage.Valid)
             {
-                string message =
-                    employeeUI.InsertEmployeeUI();
-
                 MessageBox.Show(
-                    message,
+                    result.Message,
                     "Employee Registration",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
 
+                this.ActiveControl = null;
+
+                return;
+            }
+
+
+            // ==========================================
+            // DISPLAY ERROR PROVIDER
+            // ==========================================
+
+            switch (result.FieldName)
+            {
+                case "FirstName":
+
+                    errorProvider1.SetError(
+                        txtFirstName,
+                        result.Message);
+
+                    break;
+
+
+                case "MiddleName":
+
+                    errorProvider1.SetError(
+                        txtMiddleName,
+                        result.Message);
+
+                    break;
+
+
+                case "LastName":
+
+                    errorProvider1.SetError(
+                        txtLastName,
+                        result.Message);
+
+                    break;
+
+
+                case "PhoneNo":
+
+                    errorProvider1.SetError(
+                        txtPhoneNumber,
+                        result.Message);
+
+                    break;
+
+
+                case "EmailId":
+
+                    errorProvider1.SetError(
+                        txtEmailId,
+                        result.Message);
+
+                    break;
+
+
+                case "Salary":
+
+                    errorProvider1.SetError(
+                        txtSalary,
+                        result.Message);
+
+                    break;
+
+
+                case "BankAccountNo":
+
+                    errorProvider1.SetError(
+                        txtBankAccountNo,
+                        result.Message);
+
+                    break;
+
+
+                case "UserName":
+
+                    errorProvider1.SetError(
+                        txtUserName,
+                        result.Message);
+
+                    break;
+
+
+                case "Password":
+
+                    errorProvider1.SetError(
+                        txtPassword,
+                        result.Message);
+
+                    break;
+
+
+                case "ConfirmPassword":
+
+                    errorProvider1.SetError(
+                        txtConfirmPassword,
+                        result.Message);
+
+                    break;
+
+
+                case "TrainerType":
+
+                    errorProvider1.SetError(
+                        cmbTrainerType,
+                        result.Message);
+
+                    break;
+
+
+                case "Specialization":
+
+                    errorProvider1.SetError(
+                        txtSpecialization,
+                        result.Message);
+
+                    break;
+            }
+
+
+            // ==========================================
+            // SHOW VALIDATION MESSAGE
+            // ==========================================
+
+            MessageBox.Show(
+                result.Message,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            this.ActiveControl = null;
+        }
         private void pnlReset_MouseEnter(object sender, EventArgs e)
         {
             pnlReset.BackColor = Color.FromArgb(41, 128, 185);
@@ -591,6 +832,13 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         {
             ClickCountTxtConfirmPassword = ValidationUI.ClearTextBoxWhenClicked(txtConfirmPassword,ClickCountTxtConfirmPassword);
             txtConfirmPassword.ForeColor = Color.Black;
+        }
+
+        private void dtpDOB_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDOB.CustomFormat = "dd/MM/yyyy";
+            isDateOfBirthSelected = true;
+            errorProvider1.SetError(dtpDOB, "");
         }
 
        
