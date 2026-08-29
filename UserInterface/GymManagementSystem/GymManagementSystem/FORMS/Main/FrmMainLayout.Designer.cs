@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainLayout));
             System.Windows.Forms.Label lblMemberAttendance;
             System.Windows.Forms.Label lblExerciseAndWorkout;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainLayout));
             this.pnlTopbar = new System.Windows.Forms.Panel();
             this.tlpTopbar = new System.Windows.Forms.TableLayoutPanel();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -46,6 +46,8 @@
             this.pnlLogout = new System.Windows.Forms.Panel();
             this.lblLogout = new System.Windows.Forms.Label();
             this.picLogout = new System.Windows.Forms.PictureBox();
+            this.pnlMainPanel = new System.Windows.Forms.Panel();
+            this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             this.fnlSidebar = new GymManagementSystem.FORMS.Main.InvisibleScrollFlowLayoutPanel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -120,8 +122,6 @@
             this.picAdminPasswordChange = new System.Windows.Forms.PictureBox();
             this.lblChangePassword = new System.Windows.Forms.Label();
             this.pnlSpecer = new System.Windows.Forms.Panel();
-            this.pnlMainPanel = new System.Windows.Forms.Panel();
-            this.timerSidebar = new System.Windows.Forms.Timer(this.components);
             lblMemberAttendance = new System.Windows.Forms.Label();
             lblExerciseAndWorkout = new System.Windows.Forms.Label();
             this.pnlTopbar.SuspendLayout();
@@ -192,38 +192,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPasswordChange)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblMemberAttendance
-            // 
-            lblMemberAttendance.AutoSize = true;
-            lblMemberAttendance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblMemberAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            lblMemberAttendance.Location = new System.Drawing.Point(51, 10);
-            lblMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
-            lblMemberAttendance.Name = "lblMemberAttendance";
-            lblMemberAttendance.Size = new System.Drawing.Size(199, 28);
-            lblMemberAttendance.TabIndex = 4;
-            lblMemberAttendance.Text = "Member Attendance";
-            lblMemberAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            lblMemberAttendance.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
-            lblMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
-            lblMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
-            // 
-            // lblExerciseAndWorkout
-            // 
-            lblExerciseAndWorkout.AutoSize = true;
-            lblExerciseAndWorkout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblExerciseAndWorkout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            lblExerciseAndWorkout.Location = new System.Drawing.Point(49, 10);
-            lblExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
-            lblExerciseAndWorkout.Name = "lblExerciseAndWorkout";
-            lblExerciseAndWorkout.Size = new System.Drawing.Size(189, 28);
-            lblExerciseAndWorkout.TabIndex = 4;
-            lblExerciseAndWorkout.Text = "Exercise && Workout";
-            lblExerciseAndWorkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            lblExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
-            lblExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
-            lblExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
-            // 
             // pnlTopbar
             // 
             this.pnlTopbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
@@ -243,7 +211,7 @@
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tlpTopbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
             this.tlpTopbar.Controls.Add(this.picLogo, 0, 0);
             this.tlpTopbar.Controls.Add(this.tlpExit, 4, 0);
             this.tlpTopbar.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -297,7 +265,6 @@
             this.pnlExit.Size = new System.Drawing.Size(53, 43);
             this.pnlExit.TabIndex = 1;
             this.pnlExit.Click += new System.EventHandler(this.pnlExit_Click);
-            this.pnlExit.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlExit_Paint);
             this.pnlExit.MouseEnter += new System.EventHandler(this.pnlExit_MouseEnter);
             this.pnlExit.MouseLeave += new System.EventHandler(this.pnlExit_MouseLeave);
             // 
@@ -387,7 +354,7 @@
             this.pnlSidebar.Location = new System.Drawing.Point(0, 55);
             this.pnlSidebar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnlSidebar.Padding = new System.Windows.Forms.Padding(5);
             this.pnlSidebar.Size = new System.Drawing.Size(317, 676);
             this.pnlSidebar.TabIndex = 1;
             // 
@@ -434,6 +401,19 @@
             this.picLogout.Click += new System.EventHandler(this.pnlLogout_Click);
             this.picLogout.MouseEnter += new System.EventHandler(this.pnlLogout_MouseEnter);
             this.picLogout.MouseLeave += new System.EventHandler(this.pnlLogout_MouseLeave);
+            // 
+            // pnlMainPanel
+            // 
+            this.pnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainPanel.Location = new System.Drawing.Point(317, 55);
+            this.pnlMainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMainPanel.Name = "pnlMainPanel";
+            this.pnlMainPanel.Size = new System.Drawing.Size(1052, 676);
+            this.pnlMainPanel.TabIndex = 2;
+            // 
+            // timerSidebar
+            // 
+            this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
             // 
             // fnlSidebar
             // 
@@ -805,6 +785,22 @@
             this.pnlMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
             this.pnlMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
             // 
+            // lblMemberAttendance
+            // 
+            lblMemberAttendance.AutoSize = true;
+            lblMemberAttendance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblMemberAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblMemberAttendance.Location = new System.Drawing.Point(51, 10);
+            lblMemberAttendance.Margin = new System.Windows.Forms.Padding(0);
+            lblMemberAttendance.Name = "lblMemberAttendance";
+            lblMemberAttendance.Size = new System.Drawing.Size(199, 28);
+            lblMemberAttendance.TabIndex = 4;
+            lblMemberAttendance.Text = "Member Attendance";
+            lblMemberAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblMemberAttendance.Click += new System.EventHandler(this.pnlMemberAttendance_Click);
+            lblMemberAttendance.MouseEnter += new System.EventHandler(this.pnlMemberAttendance_MouseEnter);
+            lblMemberAttendance.MouseLeave += new System.EventHandler(this.pnlMemberAttendance_MouseLeave);
+            // 
             // picMemberAttendance
             // 
             this.picMemberAttendance.Image = ((System.Drawing.Image)(resources.GetObject("picMemberAttendance.Image")));
@@ -1066,6 +1062,22 @@
             this.pnlExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
             this.pnlExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
             this.pnlExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
+            // 
+            // lblExerciseAndWorkout
+            // 
+            lblExerciseAndWorkout.AutoSize = true;
+            lblExerciseAndWorkout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblExerciseAndWorkout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblExerciseAndWorkout.Location = new System.Drawing.Point(49, 10);
+            lblExerciseAndWorkout.Margin = new System.Windows.Forms.Padding(0);
+            lblExerciseAndWorkout.Name = "lblExerciseAndWorkout";
+            lblExerciseAndWorkout.Size = new System.Drawing.Size(189, 28);
+            lblExerciseAndWorkout.TabIndex = 4;
+            lblExerciseAndWorkout.Text = "Exercise && Workout";
+            lblExerciseAndWorkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblExerciseAndWorkout.Click += new System.EventHandler(this.pnlExerciseAndWorkout_Click);
+            lblExerciseAndWorkout.MouseEnter += new System.EventHandler(this.pnlExerciseAndWorkout_MouseEnter);
+            lblExerciseAndWorkout.MouseLeave += new System.EventHandler(this.pnlExerciseAndWorkout_MouseLeave);
             // 
             // picExerciseAndWorkout
             // 
@@ -1470,19 +1482,6 @@
             this.pnlSpecer.Size = new System.Drawing.Size(307, 65);
             this.pnlSpecer.TabIndex = 17;
             // 
-            // pnlMainPanel
-            // 
-            this.pnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainPanel.Location = new System.Drawing.Point(317, 55);
-            this.pnlMainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlMainPanel.Name = "pnlMainPanel";
-            this.pnlMainPanel.Size = new System.Drawing.Size(1052, 676);
-            this.pnlMainPanel.TabIndex = 2;
-            // 
-            // timerSidebar
-            // 
-            this.timerSidebar.Tick += new System.EventHandler(this.timerSidebar_Tick);
-            // 
             // FrmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1492,7 +1491,7 @@
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTopbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1369, 727);
             this.Name = "FrmMainLayout";
             this.Text = "FrmMainLayout";

@@ -1091,16 +1091,7 @@ namespace GymManagementSystem.FORMS.Main
             picExerciseAndWorkoutArrowe.Image = Properties.Resources.downArrowW;
             picSettingsArrowe.Image = Properties.Resources.downArrowW;
         }
-        private void picRestore_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void picMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+     
         private void pnlExit_MouseEnter(object sender, EventArgs e)
         {
             pnlExit.BackColor = Color.Red;
@@ -1114,11 +1105,6 @@ namespace GymManagementSystem.FORMS.Main
         private void pnlExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void pnlExit_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void pnlMinimize_MouseEnter(object sender, EventArgs e)
@@ -1141,10 +1127,12 @@ namespace GymManagementSystem.FORMS.Main
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
+                picRestore.Image = Properties.Resources.rectangle;
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+                picRestore.Image = Properties.Resources.copy;
             }
         }
 

@@ -609,55 +609,6 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
         {
         }
-
-        private void pnlMinimize_MouseEnter(object sender, EventArgs e)
-        {
-            pnlMinimize.BackColor =
-                Color.FromArgb(190, 205, 225);
-        }
-
-        private void pnlMinimize_MouseLeave(object sender, EventArgs e)
-        {
-            pnlMinimize.BackColor = Color.Transparent;
-        }
-
-        private void pnlMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void pnlRestore_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void pnlRestore_MouseEnter(object sender, EventArgs e)
-        {
-            pnlRestore.BackColor = Color.FromArgb(190, 205, 225);
-        }
-
-        private void pnlRestore_MouseLeave(object sender, EventArgs e)
-        {
-            pnlRestore.BackColor = Color.Transparent;
-        }
-
-        private void pnlExit_MouseEnter(object sender, EventArgs e)
-        {
-            pnlExit.BackColor = Color.Red;
-        }
-
-        private void pnlExit_MouseLeave(object sender, EventArgs e)
-        {
-            pnlExit.BackColor = Color.Transparent;
-        }
-
         private void pnlProfitLoss_Click(object sender, EventArgs e)
         {
             //CloseAllDropdowns();
@@ -798,9 +749,58 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         //   picSettingsArrowe.Image = Properties.Resources.downArrowW;
         //}
 
+        private void pnlExit_MouseEnter(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.Red;
+        }
+
+        private void pnlExit_MouseLeave(object sender, EventArgs e)
+        {
+            pnlExit.BackColor = Color.Transparent;
+        }
+
         private void pnlExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pnlMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.FromArgb(190, 205, 225);
+        }
+
+        private void pnlMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            pnlMinimize.BackColor = Color.Transparent;
+        }
+
+        private void pnlMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnlRestore_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                picRestore.Image = Properties.Resources.rectangle;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                picRestore.Image = Properties.Resources.copy;
+            }
+        }
+
+        private void pnlRestore_MouseEnter(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.FromArgb(190, 205, 225);
+        }
+
+        private void pnlRestore_MouseLeave(object sender, EventArgs e)
+        {
+            pnlRestore.BackColor = Color.Transparent;
         }
     }
 }
