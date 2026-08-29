@@ -2434,7 +2434,7 @@ GO
 ---------------------------------------------
 --SP: spRetrieveExpenseStatementByDateRange--
 ---------------------------------------------
-CREATE PROC spRetrieveExpenseStatementByDateRange 
+CREATE PROC spRetrieveExpenseStatementByDateRange
 (
     @FromDate DATE,
     @ToDate DATE
@@ -2480,7 +2480,7 @@ BEGIN
         FROM tblExpense E
         INNER JOIN tblExpensesCategories EC
             ON E.ExpenseCategoryId = EC.ExpenseCategoryId
-        WHERE E.ExpenseDate BETWEEN @FromDate AND @ToDate
+        WHERE E.ExpenseDate >= @FromDate AND E.ExpenseDate < DATEADD(DAY, 1, @ToDate)
         ORDER BY
             E.ExpenseDate DESC
     END TRY
@@ -2488,7 +2488,6 @@ BEGIN
     BEGIN CATCH
 
         SELECT ERROR_MESSAGE() AS Message;
-
     END CATCH
 END;
 GO
@@ -5560,7 +5559,7 @@ GO
 ------------------------------------------------------------------------------------------------
   --SP: spRetrieveSubscriptionPaymentDetailsBetweenDateRange--
 --------------------------------------------------------------
-CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange 
+CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange
     @StartDate DATE,
     @EndDate DATE
 AS

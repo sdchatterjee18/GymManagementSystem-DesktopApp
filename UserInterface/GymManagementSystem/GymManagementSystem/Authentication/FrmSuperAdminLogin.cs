@@ -98,10 +98,23 @@ namespace GymManagementSystem.Authentication
             txtSuperAdminPassword.ForeColor =
                 Color.Black;
         }
+        private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+        }
 
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
-
             // CLEAR DEFAULT PLACEHOLDER TEXT
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminUsername,
@@ -132,7 +145,7 @@ namespace GymManagementSystem.Authentication
             // SUPER ADMIN LOGIN
             try
             {
-                bool Result =authenticationUI.SuperAdminLoginUI(userName,password);
+                bool Result = authenticationUI.SuperAdminLoginUI(userName, password);
 
                 if (Result)
                 {
@@ -158,21 +171,6 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-        }
-
-        private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }
