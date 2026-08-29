@@ -77,27 +77,6 @@ namespace GymManagementSystem.Authentication
         {
             pnlPasswordSuperAdmin.BackColor = Color.FloralWhite;
         }
-
-        private void txtSuperAdminUsername_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtSuperAdminUsername =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtSuperAdminUsername,
-                    ClickCountTxtSuperAdminUsername);
-
-            txtSuperAdminUsername.ForeColor = Color.Black;
-        }
-
-        private void txtSuperAdminPassword_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtSuperAdminPassword =
-               ValidationUI.ClearTextBoxWhenClicked(
-                   txtSuperAdminPassword,
-                   ClickCountTxtSuperAdminPassword);
-
-            txtSuperAdminPassword.ForeColor =
-                Color.Black;
-        }
         private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
         {
 
@@ -149,7 +128,7 @@ namespace GymManagementSystem.Authentication
 
                 if (Result)
                 {
-                    FrmSAMainForm frmSAMainForm = new FrmSAMainForm(frmUserRoleSelection);
+                    FrmSAMainForm frmSAMainForm = new FrmSAMainForm();
                     this.Close();
                     frmSAMainForm.Show();
                     frmUserRoleSelection.Hide();
@@ -171,6 +150,28 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSuperAdminUsername_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtSuperAdminUsername =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtSuperAdminUsername,
+                    ClickCountTxtSuperAdminUsername);
+
+            txtSuperAdminUsername.ForeColor = Color.Black;
+            
+        }
+
+        private void txtSuperAdminPassword_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtSuperAdminPassword =
+               ValidationUI.ClearTextBoxWhenClicked(
+                   txtSuperAdminPassword,
+                   ClickCountTxtSuperAdminPassword);
+
+            txtSuperAdminPassword.ForeColor =
+                Color.Black;
         }
     }
 }

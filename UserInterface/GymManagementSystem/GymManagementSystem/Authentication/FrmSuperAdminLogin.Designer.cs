@@ -183,7 +183,7 @@
             this.tlpSuperAdminLogin.ColumnCount = 3;
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.89049F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.10951F));
-            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tlpSuperAdminLogin.Controls.Add(this.btnSuperAdminLogin, 1, 0);
             this.tlpSuperAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLogin.Location = new System.Drawing.Point(16, 316);
@@ -203,10 +203,10 @@
             this.btnSuperAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuperAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuperAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnSuperAdminLogin.Location = new System.Drawing.Point(107, 2);
+            this.btnSuperAdminLogin.Location = new System.Drawing.Point(106, 2);
             this.btnSuperAdminLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuperAdminLogin.Name = "btnSuperAdminLogin";
-            this.btnSuperAdminLogin.Size = new System.Drawing.Size(86, 31);
+            this.btnSuperAdminLogin.Size = new System.Drawing.Size(85, 31);
             this.btnSuperAdminLogin.TabIndex = 0;
             this.btnSuperAdminLogin.Text = "Login";
             this.btnSuperAdminLogin.UseVisualStyleBackColor = false;
@@ -279,6 +279,7 @@
             this.txtSuperAdminUsername.Size = new System.Drawing.Size(213, 25);
             this.txtSuperAdminUsername.TabIndex = 1;
             this.txtSuperAdminUsername.Text = "Enter Username";
+            this.txtSuperAdminUsername.Click += new System.EventHandler(this.txtSuperAdminUsername_Click);
             // 
             // picSuperAdminUsername
             // 
@@ -347,6 +348,7 @@
             this.txtSuperAdminPassword.Size = new System.Drawing.Size(214, 25);
             this.txtSuperAdminPassword.TabIndex = 1;
             this.txtSuperAdminPassword.Text = "Enter Password";
+            this.txtSuperAdminPassword.Click += new System.EventHandler(this.txtSuperAdminPassword_Click);
             // 
             // picSuperAdminPassword
             // 
