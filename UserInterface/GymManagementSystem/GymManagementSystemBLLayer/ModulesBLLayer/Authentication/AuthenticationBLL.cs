@@ -15,6 +15,9 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
         public string PhoneNumber { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; }
+        public string EmailId { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmedPassword { get; set; }
 
         private AuthenticationDAL authenticationDAL = new AuthenticationDAL();
         public bool AdminLoginBLL(string userName, string password)
@@ -309,6 +312,51 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
 
             Message = "Password Change Failed.";
             return false;
+        }
+
+        public string MatchEmailIdFromDatabaseBLL()
+        {
+            AuthenticationDAL authenticationDAL = new AuthenticationDAL();
+            authenticationDAL.EmailId = this.EmailId;
+            string Message = null;
+            try
+            {
+                Message = authenticationDAL.MatchEmailIdFromDatabaseDAL();
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string ChangePasswordByEmailIdBLL()
+        {
+            AuthenticationDAL authenticationDAL = new AuthenticationDAL();
+            authenticationDAL.EmailId = this.EmailId;
+            string HashPassword = null;
+            string Message = null;
+            if (this.NewPassword != this.ConfirmedPassword)
+            {
+               Message ="New Password and Confirm Password do not match.";
+               return Message;
+            }
+            else
+            {
+                HashPassword = PasswordHelperBLL.HashPassword(this.NewPassword);
+                authenticationDAL.NewPassword = HashPassword;
+               
+                try
+                {
+                    Message = authenticationDAL.ChangePasswordByEmailIdDAL();
+                    return Message;
+                }
+                catch (Exception ex)
+                {
+                    return ex.Message;
+                }
+
+
+            }
         }
     }
 

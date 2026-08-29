@@ -12,6 +12,9 @@ namespace GymManagementSystem.Authentication.UI
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
         public string PhoneNumber { get; set; }
+        public string EmailId { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmedPassword { get; set; }
 
         private AuthenticationBLL authenticationBLL =new AuthenticationBLL();
         // ==========================================
@@ -56,6 +59,40 @@ namespace GymManagementSystem.Authentication.UI
         {
             return authenticationBLL.SuperAdminLogoutBLL();
         }
-       
+
+
+        public string MatchEmailIdFromDatabaseUI()
+        {
+            AuthenticationBLL authenticationBLL = new AuthenticationBLL();
+            authenticationBLL.EmailId = this.EmailId;
+            string Message = null;
+            try
+            {
+                Message = authenticationBLL.MatchEmailIdFromDatabaseBLL();
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public string ChangePasswordByEmailIdUI()
+        {
+            AuthenticationBLL authenticationBLL = new AuthenticationBLL();
+            authenticationBLL.EmailId = this.EmailId;
+            string Message = null;
+            authenticationBLL.NewPassword = this.NewPassword;
+            authenticationBLL.ConfirmedPassword = this.ConfirmedPassword;
+                try
+                {
+                    Message = authenticationBLL.ChangePasswordByEmailIdBLL();
+                    return Message;
+                }
+                catch (Exception ex)
+                {
+                    return ex.Message;
+                }
+        }
     }
 }

@@ -34,7 +34,6 @@
             this.picAdmin = new System.Windows.Forms.PictureBox();
             this.tblAdminLogin = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdminLogin = new System.Windows.Forms.Button();
-            this.lblAdmin = new System.Windows.Forms.Label();
             this.picThreeDotAdmin = new System.Windows.Forms.PictureBox();
             this.pnlUsernameAdmin = new System.Windows.Forms.Panel();
             this.tlpUsernameInput = new System.Windows.Forms.TableLayoutPanel();
@@ -46,10 +45,11 @@
             this.lblAdminPassword = new System.Windows.Forms.Label();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.picAdminPassword = new System.Windows.Forms.PictureBox();
-            this.pnlHeader = new System.Windows.Forms.Panel();
             this.tlpForgotPassword = new System.Windows.Forms.TableLayoutPanel();
-            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.lblForgotPassword = new System.Windows.Forms.Label();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.tlpAdminLoginEntireForm.SuspendLayout();
             this.tlpAdminImage.SuspendLayout();
@@ -62,8 +62,8 @@
             this.pnlPasswordAdmin.SuspendLayout();
             this.tlpAdminPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPassword)).BeginInit();
-            this.pnlHeader.SuspendLayout();
             this.tlpForgotPassword.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpAdminLoginEntireForm
@@ -126,7 +126,7 @@
             this.tblAdminLogin.ColumnCount = 3;
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.39645F));
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.60355F));
-            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tblAdminLogin.Controls.Add(this.btnAdminLogin, 1, 0);
             this.tblAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblAdminLogin.Location = new System.Drawing.Point(24, 467);
@@ -147,23 +147,11 @@
             this.btnAdminLogin.ForeColor = System.Drawing.Color.White;
             this.btnAdminLogin.Location = new System.Drawing.Point(205, 3);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(144, 40);
+            this.btnAdminLogin.Size = new System.Drawing.Size(143, 40);
             this.btnAdminLogin.TabIndex = 0;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.Color.White;
-            this.lblAdmin.Location = new System.Drawing.Point(164, 0);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(248, 46);
-            this.lblAdmin.TabIndex = 2;
-            this.lblAdmin.Text = "       Admin       ";
             // 
             // picThreeDotAdmin
             // 
@@ -319,17 +307,6 @@
             this.picAdminPassword.MouseEnter += new System.EventHandler(this.pnlPasswordAdmin_MouseEnter);
             this.picAdminPassword.MouseLeave += new System.EventHandler(this.pnlPasswordAdmin_MouseLeave);
             // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
-            this.pnlHeader.Controls.Add(this.btnClose);
-            this.pnlHeader.Controls.Add(this.lblAdmin);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(580, 54);
-            this.pnlHeader.TabIndex = 2;
-            // 
             // tlpForgotPassword
             // 
             this.tlpForgotPassword.ColumnCount = 1;
@@ -346,6 +323,19 @@
             this.tlpForgotPassword.Size = new System.Drawing.Size(530, 109);
             this.tlpForgotPassword.TabIndex = 10;
             // 
+            // lblForgotPassword
+            // 
+            this.lblForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblForgotPassword.AutoSize = true;
+            this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassword.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblForgotPassword.Location = new System.Drawing.Point(381, 70);
+            this.lblForgotPassword.Name = "lblForgotPassword";
+            this.lblForgotPassword.Size = new System.Drawing.Size(146, 23);
+            this.lblForgotPassword.TabIndex = 12;
+            this.lblForgotPassword.Text = "Forgot Password?";
+            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click_1);
+            // 
             // cbShowPassword
             // 
             this.cbShowPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -360,17 +350,28 @@
             this.cbShowPassword.UseVisualStyleBackColor = true;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
-            // lblForgotPassword
+            // lblAdmin
             // 
-            this.lblForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblForgotPassword.AutoSize = true;
-            this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgotPassword.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblForgotPassword.Location = new System.Drawing.Point(381, 70);
-            this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(146, 23);
-            this.lblForgotPassword.TabIndex = 12;
-            this.lblForgotPassword.Text = "Forgot Password?";
+            this.lblAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.ForeColor = System.Drawing.Color.White;
+            this.lblAdmin.Location = new System.Drawing.Point(164, 0);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(245, 45);
+            this.lblAdmin.TabIndex = 2;
+            this.lblAdmin.Text = "       Admin       ";
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
+            this.pnlHeader.Controls.Add(this.btnClose);
+            this.pnlHeader.Controls.Add(this.lblAdmin);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(580, 54);
+            this.pnlHeader.TabIndex = 2;
             // 
             // btnClose
             // 
@@ -417,10 +418,10 @@
             this.tlpAdminPassword.ResumeLayout(false);
             this.tlpAdminPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdminPassword)).EndInit();
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
             this.tlpForgotPassword.ResumeLayout(false);
             this.tlpForgotPassword.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

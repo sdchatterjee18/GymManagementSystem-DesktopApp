@@ -10,6 +10,7 @@ using System.Drawing.Drawing2D;
 using GymManagementSystem.Common;
 using GymManagementSystem.Authentication.UI;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem.Authentication
 {
@@ -22,7 +23,7 @@ namespace GymManagementSystem.Authentication
         {
             this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
-            txtSuperAdminPassword.UseSystemPasswordChar = true;
+           
         }
             
 
@@ -171,6 +172,31 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSuperAdminUsername_Click_1(object sender, EventArgs e)
+        {
+            ClickCountTxtSuperAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtSuperAdminUsername, ClickCountTxtSuperAdminUsername);
+            txtSuperAdminUsername.ForeColor = Color.Black;
+        }
+
+        private void txtSuperAdminPassword_Click_1(object sender, EventArgs e)
+        {
+            ClickCountTxtSuperAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtSuperAdminPassword, ClickCountTxtSuperAdminPassword);
+            txtSuperAdminPassword.ForeColor = Color.Black;
+            txtSuperAdminPassword.UseSystemPasswordChar = true;
+        }
+
+        private void lblForgotPassword_Click_1(object sender, EventArgs e)
+        {
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Hide();
         }
     }
 }

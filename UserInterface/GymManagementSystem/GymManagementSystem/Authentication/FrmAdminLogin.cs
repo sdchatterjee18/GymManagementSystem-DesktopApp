@@ -21,7 +21,7 @@ namespace GymManagementSystem.Authentication
         {
             InitializeComponent();
             this.frmUserRoleSelection = frmUserRoleSelection;
-            txtAdminPassword.UseSystemPasswordChar = true;
+            
         }
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
@@ -75,6 +75,7 @@ namespace GymManagementSystem.Authentication
         {
             ClickCountTxtAdminPassword =ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword,ClickCountTxtAdminPassword);
             txtAdminPassword.ForeColor = Color.Black;
+            txtAdminPassword.UseSystemPasswordChar = true;
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -179,6 +180,18 @@ namespace GymManagementSystem.Authentication
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void lblForgotPassword_Click_1(object sender, EventArgs e)
+        {
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Hide();
         }
     }
 }
