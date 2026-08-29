@@ -184,6 +184,7 @@
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.89049F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.10951F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+
             this.tlpSuperAdminLogin.Controls.Add(this.btnSuperAdminLogin, 1, 0);
             this.tlpSuperAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLogin.Location = new System.Drawing.Point(22, 390);
@@ -278,6 +279,7 @@
             this.txtSuperAdminUsername.Size = new System.Drawing.Size(282, 29);
             this.txtSuperAdminUsername.TabIndex = 1;
             this.txtSuperAdminUsername.Text = "Enter Username";
+            this.txtSuperAdminUsername.Click += new System.EventHandler(this.txtSuperAdminUsername_Click);
             // 
             // picSuperAdminUsername
             // 
@@ -345,6 +347,7 @@
             this.txtSuperAdminPassword.Size = new System.Drawing.Size(284, 29);
             this.txtSuperAdminPassword.TabIndex = 1;
             this.txtSuperAdminPassword.Text = "Enter Password";
+            this.txtSuperAdminPassword.Click += new System.EventHandler(this.txtSuperAdminPassword_Click);
             // 
             // picSuperAdminPassword
             // 

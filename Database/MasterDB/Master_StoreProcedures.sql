@@ -491,6 +491,7 @@ CREATE PROC spInsertEmployee
     @FirstName VARCHAR(150),
     @MiddleName VARCHAR(50) = NULL,
     @LastName VARCHAR(50),
+    @DateOfBirth DATE,
     @GenderId INT,
     @PhoneNo VARCHAR(20),
     @EmailId VARCHAR(150),
@@ -569,6 +570,18 @@ BEGIN
         SELECT 'Last Name is Required.' AS Message
         RETURN
     END
+
+    IF @DateOfBirth IS NULL
+        BEGIN
+            SELECT 'Date Of Birth is Required.' AS Message
+            RETURN
+        END
+
+    IF @DateOfBirth >= CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'Date Of Birth Must Be A Past Date.' AS Message
+            RETURN
+        END
 
     IF @GenderId IS NULL
     BEGIN
@@ -713,6 +726,7 @@ BEGIN
             FirstName,
             MiddleName,
             LastName,
+            DateOfBirth,
             GenderId,
             PhoneNo,
             EmailId,
@@ -724,6 +738,7 @@ BEGIN
             @FirstName,
             @MiddleName,
             @LastName,
+            @DateOfBirth,
             @GenderId,
             @PhoneNo,
             @EmailId,

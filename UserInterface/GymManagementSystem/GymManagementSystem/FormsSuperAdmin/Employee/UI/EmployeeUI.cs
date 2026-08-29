@@ -5,7 +5,7 @@ using System.Text;
 using GymManagementSystem.FormsSuperAdmin.Employee.UI;
 using GymManagementSystemBLLayer.ModulesBLLayer.Employee;
 using System.Data;
-
+using GymManagementSystemBLLayer.Common;
 namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
 {
     public class EmployeeUI
@@ -21,11 +21,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
         public bool IsActive { get; set; }
         public string BankAccountNo { get; set; }
         public decimal Amount { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public int AdminId { get; set; }
         public int SuperAdminID { get; set; }
         public string UserName { get; set; }
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
         public DateTime LastLogin { get; set; }
 
         public int TrainerId { get; set; }
@@ -54,8 +55,8 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
             return trainerBLL.GetTrainerTypesBLL();
         }
 
-       
-        public string InsertEmployeeUI()
+
+        public ValidationResult InsertEmployeeUI()
         {
             try
             {
@@ -66,10 +67,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                 {
                     TrainerBLL trainerBLL = new TrainerBLL();
 
+                    // =========================
                     // Employee Information
+                    // =========================
+
                     trainerBLL.FirstName = FirstName;
                     trainerBLL.MiddleName = MiddleName;
                     trainerBLL.LastName = LastName;
+                    trainerBLL.DateOfBirth = this.DateOfBirth;
                     trainerBLL.GenderId = GenderId;
                     trainerBLL.RoleId = RoleId;
                     trainerBLL.PhoneNo = PhoneNo;
@@ -77,7 +82,10 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                     trainerBLL.BankAccountNo = BankAccountNo;
                     trainerBLL.Amount = Amount;
 
+                    // =========================
                     // Trainer Information
+                    // =========================
+
                     trainerBLL.TrainerId = TrainerId;
                     trainerBLL.TrainerType = TrainerType;
                     trainerBLL.Specialization = Specialization;
@@ -93,10 +101,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                 {
                     AdminBLL adminBLL = new AdminBLL();
 
+                    // =========================
                     // Employee Information
+                    // =========================
+
                     adminBLL.FirstName = FirstName;
                     adminBLL.MiddleName = MiddleName;
                     adminBLL.LastName = LastName;
+                    adminBLL.DateOfBirth = this.DateOfBirth;
                     adminBLL.GenderId = GenderId;
                     adminBLL.RoleId = RoleId;
                     adminBLL.PhoneNo = PhoneNo;
@@ -104,11 +116,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                     adminBLL.BankAccountNo = BankAccountNo;
                     adminBLL.Amount = Amount;
 
+                    // =========================
                     // Admin Information
+                    // =========================
+
                     adminBLL.AdminId = AdminId;
                     adminBLL.SuperAdminID = SuperAdminID;
                     adminBLL.UserName = UserName;
-                    adminBLL.PasswordHash = PasswordHash;
+                    adminBLL.Password = Password;
                     adminBLL.LastLogin = LastLogin;
 
                     return adminBLL.InsertAdminBLL();
@@ -121,9 +136,14 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                 {
                     EmployeeBLL employeeBLL = new EmployeeBLL();
 
+                    // =========================
+                    // Employee Information
+                    // =========================
+
                     employeeBLL.FirstName = FirstName;
                     employeeBLL.MiddleName = MiddleName;
                     employeeBLL.LastName = LastName;
+                    employeeBLL.DateOfBirth = this.DateOfBirth;
                     employeeBLL.GenderId = GenderId;
                     employeeBLL.RoleId = RoleId;
                     employeeBLL.PhoneNo = PhoneNo;
@@ -134,11 +154,25 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                     return employeeBLL.InsertEmployeeBLL();
                 }
 
-                return "Invalid Employee Role.";
+                // =========================
+                // INVALID ROLE
+                // =========================
+
+                return new ValidationResult
+                {
+                    FieldName = "RoleId",
+                    Result = ValidationBll.CommonValidationMessage.TextRequired,
+                    Message = "Invalid Employee Role."
+                };
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return new ValidationResult
+                {
+                    FieldName = "",
+                    Result = ValidationBll.CommonValidationMessage.TextRequired,
+                    Message = ex.Message
+                };
             }
         }
         public DataTable DisplayAllEmployeeDetailsUI()

@@ -23,6 +23,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
         public bool IsActive { get; set; }
         public string BankAccountNo { get; set; }
         public decimal Amount { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public DataTable RetrieveEmployeeRoleTypesBLL()
         {
@@ -30,56 +31,86 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
 
             return employeeDAL.RetrieveEmployeeRoleTypesDAL();
         }
-        public string InsertEmployeeBLL()
+        public ValidationResult InsertEmployeeBLL()
         {
             ValidationBll.CommonValidationMessage result;
 
-            // First Name
-            result = ValidationBll.ValidateName(this.FirstName);
+            // COMMON EMPLOYEE VALIDATION
+            //------------------------------
+            // FIRST NAME
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.FirstName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "FirstName",
+                    Result = result,
+                    Message = "FirstName"+ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            // Middle Name
-            result = ValidationBll.ValidateName(this.MiddleName);
+            // MIDDLE NAME - OPTIONAL
+            if (!string.IsNullOrWhiteSpace(this.MiddleName))
+            {
+                result = ValidationBll.ValidateOnlyLettersAndSpaces(this.MiddleName);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "MiddleName",
+                        Result = result,
+                        Message = "MiddleName"+ValidationBll.GetValidationMessage(result)
+                    };
+                }
+            }
+
+            // LAST NAME
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.LastName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "LastName",
+                    Result = result,
+                    Message = "LastName"+ValidationBll.GetValidationMessage(result)
+                };
             }
-
-            // Last Name
-            result = ValidationBll.ValidateName(this.LastName);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-            // Phone Number
+            // PHONE NUMBER
             result = ValidationBll.ValidatePhoneNumber(this.PhoneNo);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "PhoneNo",
+                    Result = result,
+                    Message = "PhoneNo"+ValidationBll.GetValidationMessage(result)
+                };
             }
-
-            // Email
+            // EMAIL
             result = ValidationBll.ValidateEmail(this.EmailId);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "EmailId",
+                    Result = result,
+                    Message = "EmailId"+ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            // Convert BLL object to DAL object
+            // OBJECT CREATION
             EmployeeDAL employeeDAL = new EmployeeDAL();
 
+            // EMPLOYEE INFORMATION
             employeeDAL.FirstName = this.FirstName;
             employeeDAL.MiddleName = this.MiddleName;
             employeeDAL.LastName = this.LastName;
+            employeeDAL.DateOfBirth = this.DateOfBirth;
             employeeDAL.GenderId = this.GenderId;
             employeeDAL.RoleId = this.RoleId;
             employeeDAL.PhoneNo = this.PhoneNo;
@@ -87,8 +118,17 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
             employeeDAL.BankAccountNo = this.BankAccountNo;
             employeeDAL.Amount = this.Amount;
 
-            return employeeDAL.InsertEmployeeDAL();
+            // INSERT
+            string message =employeeDAL.InsertEmployeeDAL();
+            // RETURN SUCCESS RESULT
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
+
 
         public DataTable DisplayAllEmployeeDetailsBLL()
         {

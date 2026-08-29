@@ -22,6 +22,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Employee
         public bool IsActive { get; set; }
         public string BankAccountNo { get; set; }
         public decimal Amount { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public int AdminId { get; set; }
         public int SuperAdminID { get; set; }
@@ -55,41 +56,30 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Employee
                     string.IsNullOrWhiteSpace(MiddleName)
                         ? (object)DBNull.Value
                         : MiddleName),
-
                 new SqlParameter("@LastName", LastName),
-
+                new SqlParameter("@DateOfBirth",DateOfBirth),
                 new SqlParameter("@GenderId", GenderId),
-
                 new SqlParameter("@PhoneNo", PhoneNo),
-
                 new SqlParameter("@EmailId", EmailId),
-
                 new SqlParameter("@BankAccountNo", BankAccountNo),
-
                 new SqlParameter("@RoleId", RoleId),
-
                 new SqlParameter("@Amount", Amount),
-
                 new SqlParameter("@UserName",
                     string.IsNullOrWhiteSpace(UserName)
                         ? (object)DBNull.Value
                         : UserName),
-
                 new SqlParameter("@PasswordHash",
                     string.IsNullOrWhiteSpace(PasswordHash)
                         ? (object)DBNull.Value
                         : PasswordHash),
-
                 new SqlParameter("@TrainerType",
                     string.IsNullOrWhiteSpace(TrainerType)
                         ? (object)DBNull.Value
                         : TrainerType),
-
                 new SqlParameter("@Specialization",
                     string.IsNullOrWhiteSpace(Specialization)
                         ? (object)DBNull.Value
                         : Specialization),
-
                 documentParam
             };
 

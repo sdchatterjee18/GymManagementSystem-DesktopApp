@@ -25,9 +25,9 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         private bool sidebarExpand = true;
         private Form activeForm = null;
         FrmUserRoleSelection frmUserRoleSelection = null;
-        public FrmSAMainForm(FrmUserRoleSelection frmUserRoleSelection)
+        public FrmSAMainForm()
         {
-            this.frmUserRoleSelection = frmUserRoleSelection;
+            //this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
         }
         private Panel selectedPanel = null;
