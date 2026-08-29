@@ -22,65 +22,112 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
             return trainerTypes;
         }
 
-        public string InsertTrainerBLL()
+        public ValidationResult InsertTrainerBLL()
         {
             ValidationBll.CommonValidationMessage result;
 
             // =========================
-            // Common Employee Validation
+            // COMMON EMPLOYEE VALIDATION
             // =========================
 
-            result = ValidationBll.ValidateName(this.FirstName);
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.FirstName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "FirstName",
+                    Result = result,
+                    Message = "FirstName"+ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            result = ValidationBll.ValidateName(this.MiddleName);
+
+            // =========================
+            // MIDDLE NAME VALIDATION
+            // =========================
+
+            // Middle Name is optional, so validate only if entered
+
+            if (!string.IsNullOrWhiteSpace(this.MiddleName))
+            {
+                result = ValidationBll.ValidateOnlyLettersAndSpaces(this.MiddleName);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "MiddleName",
+                        Result = result,
+                        Message = "MiddleName"+ValidationBll.GetValidationMessage(result)
+                    };
+                }
+            }
+
+
+            // =========================
+            // LAST NAME VALIDATION
+            // =========================
+
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.LastName);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "LastName",
+                    Result = result,
+                    Message = "LastName"+ValidationBll.GetValidationMessage(result)
+                };
             }
 
-            result = ValidationBll.ValidateName(this.LastName);
 
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
-            }
+            // =========================
+            // PHONE NUMBER VALIDATION
+            // =========================
 
             result = ValidationBll.ValidatePhoneNumber(this.PhoneNo);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "PhoneNo",
+                    Result = result,
+                    Message = "PhoneNo"+ValidationBll.GetValidationMessage(result)
+                };
             }
+
+
+            // =========================
+            // EMAIL VALIDATION
+            // =========================
 
             result = ValidationBll.ValidateEmail(this.EmailId);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "EmailId",
+                    Result = result,
+                    Message = "EmailId"+ValidationBll.GetValidationMessage(result)
+                };
             }
-
             // =========================
-            // Trainer Specific Validation
+            // SALARY VALIDATION
             // =========================
 
-            result = ValidationBll.ValidateName(this.TrainerType);
+            result = ValidationBll.ValidatePrice(this.Amount);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(result);
-            }
-
-            result = ValidationBll.ValidateName(this.Specialization);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(result);
+                return new ValidationResult
+                {
+                    FieldName = "Amount",
+                    Result = result,
+                    Message = "Amount"+ValidationBll.GetValidationMessage(result)
+                };
             }
 
             // =========================
@@ -89,9 +136,15 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
 
             EmployeeDAL employeeDAL = new EmployeeDAL();
 
+
+            // =========================
+            // EMPLOYEE INFORMATION
+            // =========================
+
             employeeDAL.FirstName = this.FirstName;
             employeeDAL.MiddleName = this.MiddleName;
             employeeDAL.LastName = this.LastName;
+            employeeDAL.DateOfBirth = this.DateOfBirth;
             employeeDAL.GenderId = this.GenderId;
             employeeDAL.RoleId = this.RoleId;
             employeeDAL.PhoneNo = this.PhoneNo;
@@ -99,13 +152,24 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
             employeeDAL.BankAccountNo = this.BankAccountNo;
             employeeDAL.Amount = this.Amount;
 
-            // Trainer Details
+
+            // =========================
+            // TRAINER INFORMATION
+            // =========================
+
             employeeDAL.TrainerId = this.TrainerId;
             employeeDAL.TrainerType = this.TrainerType;
             employeeDAL.Specialization = this.Specialization;
             employeeDAL.Document = this.Document;
 
-            return employeeDAL.InsertEmployeeDAL();
+            string message = employeeDAL.InsertEmployeeDAL();
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
       
     }

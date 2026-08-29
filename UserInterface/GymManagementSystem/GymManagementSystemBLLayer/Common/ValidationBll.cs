@@ -33,6 +33,7 @@ namespace GymManagementSystemBLLayer.Common
             // Email
             // =========================
             InvalidEmail,
+            EmailMustContainOnlyLowercaseLetters,
 
             // =========================
             // Phone Number
@@ -89,7 +90,14 @@ namespace GymManagementSystemBLLayer.Common
             NumberMustBeGreaterThanZero,
 
             LockerNumberMustContainOnlyLettersAndNumbers,
-            TextMustContainOnlyLettersAndSpaces
+            TextMustContainOnlyLettersAndSpaces,
+
+            // =========================
+            // Date Of Birth
+            // =========================
+            DateOfBirthCannotBeFuture,
+            EmployeeMustBeAtLeast18YearsOld,
+            InvalidDateOfBirth,
         }
 
 
@@ -140,7 +148,31 @@ namespace GymManagementSystemBLLayer.Common
             return CommonValidationMessage.Valid;
         }
 
+        public static CommonValidationMessage ValidateDateOfBirth(DateTime dateOfBirth)
+        {
+            if (dateOfBirth > DateTime.Today)
+            {
+                return CommonValidationMessage.DateOfBirthCannotBeFuture;
+            }
+            else
+            {
+                int age = DateTime.Today.Year - dateOfBirth.Year;
 
+                if (dateOfBirth.Date > DateTime.Today.AddYears(-age))
+                {
+                    age--;
+                }
+
+                if (age < 18)
+                {
+                    return CommonValidationMessage.EmployeeMustBeAtLeast18YearsOld;
+                }
+                else
+                {
+                    return CommonValidationMessage.Valid;
+                }
+            }
+        }
         // =========================================================
         // LETTERS AND NUMBERS ONLY
         // =========================================================
@@ -182,16 +214,27 @@ namespace GymManagementSystemBLLayer.Common
         // =========================================================
         public static CommonValidationMessage ValidateEmail(string email)
         {
-            string pattern =
-                @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-
-            if (!Regex.IsMatch(email, pattern))
+            // Check if email contains uppercase letters
+            if (email != email.ToLower())
             {
-                return CommonValidationMessage.InvalidEmail;
+            return CommonValidationMessage.EmailMustContainOnlyLowercaseLetters;
+            }
+            else
+            {
+                string pattern =@"^[^@\s]+@[^@\s]+.[^@\s]+$";
+
+                if (!Regex.IsMatch(email, pattern))
+                {
+                    return CommonValidationMessage.InvalidEmail;
+                }
+                else
+                {
+                    return CommonValidationMessage.Valid;
+                }
             }
 
-            return CommonValidationMessage.Valid;
         }
+
 
 
         // =========================================================
@@ -439,6 +482,8 @@ namespace GymManagementSystemBLLayer.Common
                 case CommonValidationMessage.InvalidEmail:
                     return "Please enter a valid email address.";
 
+                case CommonValidationMessage.EmailMustContainOnlyLowercaseLetters:
+                    return "Email must contain only lowercase letters.";
 
                 // =========================
                 // Phone
@@ -457,12 +502,16 @@ namespace GymManagementSystemBLLayer.Common
                 // Price
                 // =========================
                 case CommonValidationMessage.PriceMustBeNumeric:
-                    return "Price must contain only numbers.";
+                    return "Amount must contain only numbers.";
 
                 case CommonValidationMessage.PriceMustBeGreaterThanZero:
-                    return "Price must be greater than zero.";
+                    return "Amount must be greater than zero.";
 
+                    case CommonValidationMessage.DateOfBirthCannotBeFuture:
+                        return "Date of birth cannot be today or a future date.";
 
+                    case CommonValidationMessage.EmployeeMustBeAtLeast18YearsOld:
+                        return "Employee must be at least 18 years old.";
                 // =========================
                 // Duration
                 // =========================

@@ -491,6 +491,7 @@ CREATE PROC spInsertEmployee
     @FirstName VARCHAR(150),
     @MiddleName VARCHAR(50) = NULL,
     @LastName VARCHAR(50),
+    @DateOfBirth DATE,
     @GenderId INT,
     @PhoneNo VARCHAR(20),
     @EmailId VARCHAR(150),
@@ -569,6 +570,18 @@ BEGIN
         SELECT 'Last Name is Required.' AS Message
         RETURN
     END
+
+    IF @DateOfBirth IS NULL
+        BEGIN
+            SELECT 'Date Of Birth is Required.' AS Message
+            RETURN
+        END
+
+    IF @DateOfBirth >= CAST(GETDATE() AS DATE)
+        BEGIN
+            SELECT 'Date Of Birth Must Be A Past Date.' AS Message
+            RETURN
+        END
 
     IF @GenderId IS NULL
     BEGIN
@@ -713,6 +726,7 @@ BEGIN
             FirstName,
             MiddleName,
             LastName,
+            DateOfBirth,
             GenderId,
             PhoneNo,
             EmailId,
@@ -724,6 +738,7 @@ BEGIN
             @FirstName,
             @MiddleName,
             @LastName,
+            @DateOfBirth,
             @GenderId,
             @PhoneNo,
             @EmailId,
@@ -2434,7 +2449,7 @@ GO
 ---------------------------------------------
 --SP: spRetrieveExpenseStatementByDateRange--
 ---------------------------------------------
-CREATE PROC spRetrieveExpenseStatementByDateRange 
+CREATE PROC spRetrieveExpenseStatementByDateRange
 (
     @FromDate DATE,
     @ToDate DATE
@@ -2480,7 +2495,7 @@ BEGIN
         FROM tblExpense E
         INNER JOIN tblExpensesCategories EC
             ON E.ExpenseCategoryId = EC.ExpenseCategoryId
-        WHERE E.ExpenseDate BETWEEN @FromDate AND @ToDate
+        WHERE E.ExpenseDate >= @FromDate AND E.ExpenseDate < DATEADD(DAY, 1, @ToDate)
         ORDER BY
             E.ExpenseDate DESC
     END TRY
@@ -2488,7 +2503,6 @@ BEGIN
     BEGIN CATCH
 
         SELECT ERROR_MESSAGE() AS Message;
-
     END CATCH
 END;
 GO
@@ -5560,7 +5574,7 @@ GO
 ------------------------------------------------------------------------------------------------
   --SP: spRetrieveSubscriptionPaymentDetailsBetweenDateRange--
 --------------------------------------------------------------
-CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange 
+CREATE PROC spRetrieveSubscriptionPaymentDetailsBetweenDateRange
     @StartDate DATE,
     @EndDate DATE
 AS

@@ -60,6 +60,12 @@
     <Compile Include="Authentication\FrmAdminLogin.Designer.cs">
       <DependentUpon>FrmAdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Authentication\FrmForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentication\FrmForgotPassword.Designer.cs">
+      <DependentUpon>FrmForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Authentication\FrmSuperAdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Authentication\FrmAdminLogin.resx">
       <DependentUpon>FrmAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentication\FrmForgotPassword.resx">
+      <DependentUpon>FrmForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentication\FrmSuperAdminLogin.resx">
       <DependentUpon>FrmSuperAdminLogin.cs</DependentUpon>

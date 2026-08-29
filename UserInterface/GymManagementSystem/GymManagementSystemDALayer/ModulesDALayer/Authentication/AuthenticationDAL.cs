@@ -14,6 +14,9 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Authentication
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
         public string PhoneNumber { get; set; }
+        public string EmailId { get; set; }
+        public string NewPassword{get;set;}
+        
 
         public bool AdminLoginDAL(string userName, string passwordHash)
         {
@@ -174,6 +177,43 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Authentication
             catch
             {
                 return false;
+            }
+        }
+
+        public string MatchEmailIdFromDatabaseDAL()
+        {
+            SqlParameter[] sqlParameter = new SqlParameter[]
+            {
+                new SqlParameter("@EmailId",EmailId)
+            };
+            string Message = null;
+            try
+            {
+                Message = LookupDAL.GetSingleData("spCheckActiveEmailForPasswordReset", sqlParameter).ToString();
+                return Message;
+            }
+            catch (Exception Ex)
+            {
+                return Ex.Message;
+            }
+        }
+
+        public string ChangePasswordByEmailIdDAL()
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@EmailId",EmailId),
+                new SqlParameter("@PasswordHash",NewPassword)
+            };
+            string Message = null;
+            try
+            {
+                Message = LookupDAL.UpdateSpecificItem("spUpdatePasswordByEmail", sqlParameters);
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
             }
         }
     }

@@ -10,6 +10,7 @@ using System.Drawing.Drawing2D;
 using GymManagementSystem.Common;
 using GymManagementSystem.Authentication.UI;
 using GymManagementSystem.FormsSuperAdmin.MainLayout;
+using GymManagementSystem.Authentication;
 
 namespace GymManagementSystem.Authentication
 {
@@ -22,7 +23,7 @@ namespace GymManagementSystem.Authentication
         {
             this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
-            txtSuperAdminPassword.UseSystemPasswordChar = true;
+           
         }
             
 
@@ -77,31 +78,17 @@ namespace GymManagementSystem.Authentication
         {
             pnlPasswordSuperAdmin.BackColor = Color.FloralWhite;
         }
-
-        private void txtSuperAdminUsername_Click(object sender, EventArgs e)
+        private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
         {
-            ClickCountTxtSuperAdminUsername =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtSuperAdminUsername,
-                    ClickCountTxtSuperAdminUsername);
 
-            txtSuperAdminUsername.ForeColor = Color.Black;
         }
 
-        private void txtSuperAdminPassword_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            ClickCountTxtSuperAdminPassword =
-               ValidationUI.ClearTextBoxWhenClicked(
-                   txtSuperAdminPassword,
-                   ClickCountTxtSuperAdminPassword);
-
-            txtSuperAdminPassword.ForeColor =
-                Color.Black;
+            this.Dispose();
         }
-
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
-
             // CLEAR DEFAULT PLACEHOLDER TEXT
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminUsername,
@@ -109,15 +96,6 @@ namespace GymManagementSystem.Authentication
             ValidationUI.ClearDefaultPlaceholderText(
                 txtSuperAdminPassword,
                 ClickCountTxtSuperAdminPassword);
-
-            // REQUIRED TEXTBOX VALIDATION
-            //if (!ValidationUI.ValidateRequiredTextBoxes(
-            //    txtSuperAdminUsername,
-            //    txtSuperAdminPassword))
-            //{
-            //    return;
-            //}
-
             // CREATE AUTHENTICATION UI OBJECT
             AuthenticationUI authenticationUI =
                 new AuthenticationUI();
@@ -132,11 +110,11 @@ namespace GymManagementSystem.Authentication
             // SUPER ADMIN LOGIN
             try
             {
-                bool Result =authenticationUI.SuperAdminLoginUI(userName,password);
+                bool Result = authenticationUI.SuperAdminLoginUI(userName, password);
 
                 if (Result)
                 {
-                    FrmSAMainForm frmSAMainForm = new FrmSAMainForm(frmUserRoleSelection);
+                    FrmSAMainForm frmSAMainForm = new FrmSAMainForm();
                     this.Close();
                     frmSAMainForm.Show();
                     frmUserRoleSelection.Hide();
@@ -160,14 +138,37 @@ namespace GymManagementSystem.Authentication
             }
         }
 
-        private void tlpSuperAdminLoginEntireForm_Paint(object sender, PaintEventArgs e)
+        private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void txtSuperAdminUsername_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            ClickCountTxtSuperAdminUsername =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtSuperAdminUsername,
+                    ClickCountTxtSuperAdminUsername);
+
+            txtSuperAdminUsername.ForeColor = Color.Black;
+        }
+
+        private void txtSuperAdminPassword_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtSuperAdminPassword =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtSuperAdminPassword,
+                    ClickCountTxtSuperAdminPassword);
+
+            txtSuperAdminPassword.ForeColor = Color.Black;
+            txtSuperAdminPassword.UseSystemPasswordChar = true;
+        }
+
+        private void lblForgotPassword_Click_1(object sender, EventArgs e)
+        {
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Hide();
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
