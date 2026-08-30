@@ -182,7 +182,7 @@
             this.tblAdminLogin.ColumnCount = 3;
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.39645F));
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.60355F));
-            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tblAdminLogin.Controls.Add(this.btnAdminLogin, 1, 0);
             this.tblAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblAdminLogin.Location = new System.Drawing.Point(15, 315);
@@ -202,13 +202,14 @@
             this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Location = new System.Drawing.Point(111, 2);
+            this.btnAdminLogin.Location = new System.Drawing.Point(109, 2);
             this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdminLogin.Name = "btnAdminLogin";
             this.btnAdminLogin.Size = new System.Drawing.Size(76, 39);
             this.btnAdminLogin.TabIndex = 0;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // picThreeDotAdmin
             // 

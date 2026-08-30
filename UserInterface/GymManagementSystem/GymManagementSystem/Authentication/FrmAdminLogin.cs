@@ -64,6 +64,37 @@ namespace GymManagementSystem.Authentication
         {
             pnlUsernameAdmin.BackColor = Color.FloralWhite;
         }
+     
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Hide();
+        }
+
+        private void txtAdminUsername_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
+            txtAdminUsername.ForeColor = Color.Black;
+            
+        }
+
+        private void txtAdminPassword_Click(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
+            txtAdminPassword.ForeColor = Color.Black;
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+        }
+
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
             // ==========================================
@@ -133,35 +164,6 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void lblForgotPassword_Click(object sender, EventArgs e)
-        {
-            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
-            frmForgotPassword.ShowDialog();
-            this.Hide();
-        }
-
-        private void txtAdminUsername_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
-            txtAdminUsername.ForeColor = Color.Black;
-            
-        }
-
-        private void txtAdminPassword_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
-            txtAdminPassword.ForeColor = Color.Black;
-        }
-
-        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }

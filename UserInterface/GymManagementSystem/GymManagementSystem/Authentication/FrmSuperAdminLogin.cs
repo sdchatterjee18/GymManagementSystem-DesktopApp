@@ -85,7 +85,7 @@ namespace GymManagementSystem.Authentication
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
         private void btnSuperAdminLogin_Click(object sender, EventArgs e)
         {
