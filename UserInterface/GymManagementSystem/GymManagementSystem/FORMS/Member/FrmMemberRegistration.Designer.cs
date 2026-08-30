@@ -1277,7 +1277,7 @@
             this.tlpMemberSelectLockerOrNot.ColumnCount = 3;
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnNeedLocker, 0, 0);
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnDontNeedLocker, 1, 0);
             this.tlpMemberSelectLockerOrNot.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1310,10 +1310,10 @@
             this.rbtnDontNeedLocker.AutoSize = true;
             this.rbtnDontNeedLocker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(199)))), ((int)(((byte)(132)))));
             this.rbtnDontNeedLocker.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(166, 13);
+            this.rbtnDontNeedLocker.Location = new System.Drawing.Point(165, 13);
             this.rbtnDontNeedLocker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtnDontNeedLocker.Name = "rbtnDontNeedLocker";
-            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(167, 23);
+            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(165, 23);
             this.rbtnDontNeedLocker.TabIndex = 1;
             this.rbtnDontNeedLocker.TabStop = true;
             this.rbtnDontNeedLocker.Text = "No, I don\'t need a locker";

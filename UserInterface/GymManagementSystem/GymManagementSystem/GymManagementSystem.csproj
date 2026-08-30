@@ -274,6 +274,9 @@
       <DependentUpon>FrmDisplayMembershipPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\MembershipPlan\UI\MembershipPlanUI.cs" />
+    <Compile Include="FORMS\Member\FlickerFreePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FORMS\Member\FrmAssignTrainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +300,12 @@
     </Compile>
     <Compile Include="FORMS\Member\FrmChangeTrainer.Designer.cs">
       <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmCropImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Member\FrmCropImage.Designer.cs">
+      <DependentUpon>FrmCropImage.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\Member\FrmDisplayAllMembers.cs">
       <SubType>Form</SubType>
@@ -523,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmChangeTrainer.resx">
       <DependentUpon>FrmChangeTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Member\FrmCropImage.resx">
+      <DependentUpon>FrmCropImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Member\FrmDisplayAllMembers.resx">
       <DependentUpon>FrmDisplayAllMembers.cs</DependentUpon>

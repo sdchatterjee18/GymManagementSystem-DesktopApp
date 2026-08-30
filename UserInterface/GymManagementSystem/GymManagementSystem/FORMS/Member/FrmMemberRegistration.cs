@@ -19,6 +19,7 @@ namespace GymManagementSystem.FORMS.Member
     public partial class FrmMemberRegistration : Form
     {
         private string selectedImagePath = string.Empty;
+        private byte[] selectedProfilePhoto = null;
         public FrmMemberRegistration()
         {
             InitializeComponent();
@@ -422,13 +423,13 @@ namespace GymManagementSystem.FORMS.Member
                 memberAllDetailsUI.NeedLocker = 1;
             else
                 memberAllDetailsUI.NeedLocker = 0;
-            //PROFILE PHOTO
-            if (!string.IsNullOrEmpty(selectedImagePath))
+            // PROFILE PHOTO
+            if (selectedProfilePhoto != null &&
+                selectedProfilePhoto.Length > 0)
             {
                 memberAllDetailsUI.ProfilePhoto =
-                    File.ReadAllBytes(selectedImagePath);
+                    selectedProfilePhoto;
             }
-           
             //MEMBER REGISTRATION METHOD CALL FROM UI
             ValidationResult Finalresult =memberAllDetailsUI.RegisterNewMemberUI();
             HandleRegistrationResult(Finalresult);
@@ -545,16 +546,73 @@ namespace GymManagementSystem.FORMS.Member
             cmbSelectMemberPaymentMethod.ForeColor = Color.Black;
         }
 
-        //OPEN FILE DIALOG TO SELECT PROFILE PHOTO
+        // OPEN FILE DIALOG TO SELECT PROFILE PHOTO
         private void pnlMemberBrowsePhoto_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
             openFileDialog.Title = "Select Member Photo";
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+            openFileDialog.Filter =
+                "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            selectedImagePath = openFileDialog.FileName;
+
+            // Open selected image
+            using (Image originalImage =
+                   Image.FromFile(selectedImagePath))
             {
-                selectedImagePath = openFileDialog.FileName;
-               picMemberUploadedPhoto.Image = Image.FromFile(openFileDialog.FileName);
+                // Create independent copy
+                using (Bitmap imageCopy =
+                       new Bitmap(originalImage))
+                {
+                    // Open crop form
+                    using (FrmCropImage frmCropImage =
+                           new FrmCropImage(imageCopy))
+                    {
+                        if (frmCropImage.ShowDialog() == DialogResult.OK)
+                        {
+                            if (frmCropImage.CroppedImage == null)
+                                return;
+
+                            // Remove previous image
+                            if (picMemberUploadedPhoto.Image != null)
+                            {
+                                Image oldImage =
+                                    picMemberUploadedPhoto.Image;
+
+                                picMemberUploadedPhoto.Image = null;
+
+                                oldImage.Dispose();
+                            }
+
+                            // Show cropped image
+                            picMemberUploadedPhoto.Image =
+                                new Bitmap(
+                                    frmCropImage.CroppedImage
+                                );
+
+                            picMemberUploadedPhoto.SizeMode =
+                                PictureBoxSizeMode.Zoom;
+
+                            // Convert cropped image to byte[]
+                            using (MemoryStream ms =
+                                   new MemoryStream())
+                            {
+                                frmCropImage.CroppedImage.Save(
+                                    ms,
+                                    System.Drawing.Imaging.ImageFormat.Png
+                                );
+
+                                selectedProfilePhoto =
+                                    ms.ToArray();
+                            }
+                        }
+                    }
+                }
             }
         }
     }

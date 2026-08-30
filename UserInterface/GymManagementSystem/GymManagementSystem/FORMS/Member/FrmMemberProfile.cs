@@ -242,6 +242,8 @@ namespace GymManagementSystem.FORMS.Member
         }
         private void FrmMemberProfile_Load(object sender, EventArgs e)
         {
+            PicMemberPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            MakePictureBoxCircle();
             LoadMemberDetails();
         }
 
@@ -442,10 +444,12 @@ namespace GymManagementSystem.FORMS.Member
             this.memberAllDetailsUI = member;
             LoadMemberDetails();
         }
-
-        
-
+        private void MakePictureBoxCircle()
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0,0,PicMemberPicture.Width,PicMemberPicture.Height);
+            PicMemberPicture.Region = new Region(path);
+            path.Dispose();
+        }
     }
-
-
 }
