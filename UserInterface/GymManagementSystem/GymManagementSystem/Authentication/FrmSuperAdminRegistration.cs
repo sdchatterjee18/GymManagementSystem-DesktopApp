@@ -35,52 +35,52 @@ namespace GymManagementSystem.Authentication
 
         private void pnlConfermPasswordSuperAdminRegistration_Enter(object sender, EventArgs e)
         {
-            pnlConfermPasswordSuperAdminRegistration.BackColor = Color.PapayaWhip;
+            //pnlConfermPasswordSuperAdminRegistration.BackColor = Color.PapayaWhip;
         }
 
         private void pnlConfermPasswordSuperAdminRegistration_Leave(object sender, EventArgs e)
         {
-            pnlConfermPasswordSuperAdminRegistration.BackColor = Color.FloralWhite;
+            //pnlConfermPasswordSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
 
         private void pnlEmailIdSuperAdminRegistration_Enter(object sender, EventArgs e)
         {
-            pnlEmailIdSuperAdminRegistration.BackColor = Color.PapayaWhip;
+            //pnlEmailIdSuperAdminRegistration.BackColor = Color.PapayaWhip;
         }
 
         private void pnlEmailIdSuperAdminRegistration_Leave(object sender, EventArgs e)
         {
-            pnlEmailIdSuperAdminRegistration.BackColor = Color.FloralWhite;
+            //pnlEmailIdSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
 
         private void pnlMobileNoSuperAdminRegistration_Enter(object sender, EventArgs e)
         {
-            pnlMobileNoSuperAdminRegistration.BackColor = Color.PapayaWhip;
+            //pnlMobileNoSuperAdminRegistration.BackColor = Color.PapayaWhip;
         }
 
         private void pnlMobileNoSuperAdminRegistration_Leave(object sender, EventArgs e)
         {
-            pnlMobileNoSuperAdminRegistration.BackColor = Color.FloralWhite;
+            //pnlMobileNoSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
 
         private void pnlPasswordSuperAdminRegistration_Enter(object sender, EventArgs e)
         {
-            pnlPasswordSuperAdminRegistration.BackColor = Color.PapayaWhip;
+            //pnlPasswordSuperAdminRegistration.BackColor = Color.PapayaWhip;
         }
 
         private void pnlPasswordSuperAdminRegistration_Leave(object sender, EventArgs e)
         {
-            pnlPasswordSuperAdminRegistration.BackColor = Color.FloralWhite;
+            //pnlPasswordSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
 
         private void pnlUsernameSuperAdminRegistration_Enter(object sender, EventArgs e)
         {
-            pnlUsernameSuperAdminRegistration.BackColor = Color.PapayaWhip;
+            //pnlUsernameSuperAdminRegistration.BackColor = Color.PapayaWhip;
         }
 
         private void pnlUsernameSuperAdminRegistration_Leave(object sender, EventArgs e)
         {
-            pnlUsernameSuperAdminRegistration.BackColor = Color.FloralWhite;
+            //pnlUsernameSuperAdminRegistration.BackColor = Color.FloralWhite;
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)

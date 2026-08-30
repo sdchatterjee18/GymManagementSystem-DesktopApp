@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSADashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tlpDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.pnlRunningShift = new System.Windows.Forms.Panel();
             this.tlpRunningShift = new System.Windows.Forms.TableLayoutPanel();
@@ -327,7 +327,7 @@
             // 
             // pnlRunningShiftDetails
             // 
-            this.pnlRunningShiftDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(1)))), ((int)(((byte)(128)))));
+            this.pnlRunningShiftDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(40)))), ((int)(((byte)(84)))));
             this.pnlRunningShiftDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlRunningShiftDetails.Controls.Add(this.tlpRunningShiftDetails);
             this.pnlRunningShiftDetails.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -492,7 +492,7 @@
             // 
             // pnlTotalIncome
             // 
-            this.pnlTotalIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(81)))), ((int)(((byte)(252)))));
+            this.pnlTotalIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(73)))), ((int)(((byte)(140)))));
             this.pnlTotalIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTotalIncome.Controls.Add(this.tlpTotalIncome);
             this.pnlTotalIncome.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -580,7 +580,7 @@
             // 
             // pnlActiveEmployees
             // 
-            this.pnlActiveEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(81)))), ((int)(((byte)(252)))));
+            this.pnlActiveEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(73)))), ((int)(((byte)(140)))));
             this.pnlActiveEmployees.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlActiveEmployees.Controls.Add(this.tlpActiveEmployees);
             this.pnlActiveEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -667,7 +667,7 @@
             // 
             // pnlExpense
             // 
-            this.pnlExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(81)))), ((int)(((byte)(252)))));
+            this.pnlExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(73)))), ((int)(((byte)(140)))));
             this.pnlExpense.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlExpense.Controls.Add(this.tlpExpense);
             this.pnlExpense.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -755,7 +755,7 @@
             // 
             // pnlTrainers
             // 
-            this.pnlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(81)))), ((int)(((byte)(252)))));
+            this.pnlTrainers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(73)))), ((int)(((byte)(140)))));
             this.pnlTrainers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTrainers.Controls.Add(this.tlpTrainer);
             this.pnlTrainers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -885,7 +885,7 @@
             // 
             // pnlIncomeAndExpenseDoughnutChart
             // 
-            this.pnlIncomeAndExpenseDoughnutChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(152)))), ((int)(((byte)(230)))));
+            this.pnlIncomeAndExpenseDoughnutChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(252)))));
             this.pnlIncomeAndExpenseDoughnutChart.Controls.Add(this.chartIncomeExpense);
             this.pnlIncomeAndExpenseDoughnutChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlIncomeAndExpenseDoughnutChart.Location = new System.Drawing.Point(0, 48);
@@ -897,33 +897,33 @@
             // 
             // chartIncomeExpense
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartIncomeExpense.ChartAreas.Add(chartArea5);
+            chartArea1.Name = "ChartArea1";
+            this.chartIncomeExpense.ChartAreas.Add(chartArea1);
             this.chartIncomeExpense.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Alignment = System.Drawing.StringAlignment.Center;
-            legend5.BorderWidth = 0;
-            legend5.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend5.IsTextAutoFit = false;
-            legend5.Name = "Legend1";
-            this.chartIncomeExpense.Legends.Add(legend5);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BorderWidth = 0;
+            legend1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chartIncomeExpense.Legends.Add(legend1);
             this.chartIncomeExpense.Location = new System.Drawing.Point(10, 10);
             this.chartIncomeExpense.Margin = new System.Windows.Forms.Padding(0);
             this.chartIncomeExpense.Name = "chartIncomeExpense";
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "IncomeExpenseSeries";
-            this.chartIncomeExpense.Series.Add(series5);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "IncomeExpenseSeries";
+            this.chartIncomeExpense.Series.Add(series1);
             this.chartIncomeExpense.Size = new System.Drawing.Size(394, 194);
             this.chartIncomeExpense.TabIndex = 0;
             this.chartIncomeExpense.Text = "chartIncomeExpense";
             // 
             // pnlIncomeAndExpeseLable
             // 
-            this.pnlIncomeAndExpeseLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(152)))), ((int)(((byte)(230)))));
+            this.pnlIncomeAndExpeseLable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(252)))));
             this.pnlIncomeAndExpeseLable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlIncomeAndExpeseLable.Controls.Add(this.picIncomeAndExpense);
             this.pnlIncomeAndExpeseLable.Controls.Add(this.lblIncomeAndExpense);
@@ -952,7 +952,7 @@
             this.lblIncomeAndExpense.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIncomeAndExpense.AutoSize = true;
             this.lblIncomeAndExpense.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncomeAndExpense.ForeColor = System.Drawing.Color.White;
+            this.lblIncomeAndExpense.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblIncomeAndExpense.Location = new System.Drawing.Point(41, 20);
             this.lblIncomeAndExpense.Margin = new System.Windows.Forms.Padding(0);
             this.lblIncomeAndExpense.Name = "lblIncomeAndExpense";
@@ -963,7 +963,7 @@
             // 
             // pnlMonthlyRevenueChart
             // 
-            this.pnlMonthlyRevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(152)))), ((int)(((byte)(230)))));
+            this.pnlMonthlyRevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(234)))), ((int)(((byte)(252)))));
             this.pnlMonthlyRevenueChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMonthlyRevenueChart.Controls.Add(this.pnlMonthlyRevenueGraphChart);
             this.pnlMonthlyRevenueChart.Controls.Add(this.pnlMonthlyRevenueLabel);
@@ -988,21 +988,21 @@
             // 
             // chartMonthlyRevenue
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartMonthlyRevenue.ChartAreas.Add(chartArea6);
+            chartArea2.Name = "ChartArea1";
+            this.chartMonthlyRevenue.ChartAreas.Add(chartArea2);
             this.chartMonthlyRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chartMonthlyRevenue.Legends.Add(legend6);
+            legend2.Name = "Legend1";
+            this.chartMonthlyRevenue.Legends.Add(legend2);
             this.chartMonthlyRevenue.Location = new System.Drawing.Point(10, 10);
             this.chartMonthlyRevenue.Margin = new System.Windows.Forms.Padding(0);
             this.chartMonthlyRevenue.Name = "chartMonthlyRevenue";
-            series6.BorderWidth = 3;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.IsXValueIndexed = true;
-            series6.Legend = "Legend1";
-            series6.Name = "RevenueSeries";
-            this.chartMonthlyRevenue.Series.Add(series6);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsXValueIndexed = true;
+            series2.Legend = "Legend1";
+            series2.Name = "RevenueSeries";
+            this.chartMonthlyRevenue.Series.Add(series2);
             this.chartMonthlyRevenue.Size = new System.Drawing.Size(394, 194);
             this.chartMonthlyRevenue.TabIndex = 0;
             this.chartMonthlyRevenue.Text = "chart1";
@@ -1038,7 +1038,7 @@
             this.lblMonthlyRevenueChart.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMonthlyRevenueChart.AutoSize = true;
             this.lblMonthlyRevenueChart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthlyRevenueChart.ForeColor = System.Drawing.Color.White;
+            this.lblMonthlyRevenueChart.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblMonthlyRevenueChart.Location = new System.Drawing.Point(41, 20);
             this.lblMonthlyRevenueChart.Margin = new System.Windows.Forms.Padding(0);
             this.lblMonthlyRevenueChart.Name = "lblMonthlyRevenueChart";
@@ -1078,7 +1078,7 @@
             // 
             // pnlMonthlyRevenue
             // 
-            this.pnlMonthlyRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(200)))), ((int)(((byte)(247)))));
+            this.pnlMonthlyRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
             this.pnlMonthlyRevenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMonthlyRevenue.Controls.Add(this.tlpMonthlyRevenue);
             this.pnlMonthlyRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1373,7 +1373,7 @@
             // 
             // pnlYearlyRevenue
             // 
-            this.pnlYearlyRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(200)))), ((int)(((byte)(247)))));
+            this.pnlYearlyRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
             this.pnlYearlyRevenue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlYearlyRevenue.Controls.Add(this.tlpYearlyRevenue);
             this.pnlYearlyRevenue.Dock = System.Windows.Forms.DockStyle.Fill;

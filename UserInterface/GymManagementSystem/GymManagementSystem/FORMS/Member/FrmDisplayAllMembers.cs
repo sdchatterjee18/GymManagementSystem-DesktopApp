@@ -36,25 +36,17 @@ namespace GymManagementSystem.FORMS.Member
 
         private void FrmDisplayAllMembers_Load(object sender, EventArgs e)
         {
-            // DataGridView editable
+            // Start editing when user starts typing
             dgvDisplayMemberInformation.ReadOnly = false;
 
-            // Only Phone No and Email Id will be editable
             dgvDisplayMemberInformation.Columns["colPhoneNo"].ReadOnly = false;
             dgvDisplayMemberInformation.Columns["colEmailId"].ReadOnly = false;
 
-            // Other columns will remain read-only
-            dgvDisplayMemberInformation.Columns["colSlNo"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colMemberId"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colMemberName"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colIsActive"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colMemberProfile"].ReadOnly = true;
-            dgvDisplayMemberInformation.Columns["colUpdate"].ReadOnly = true;
+            dgvDisplayMemberInformation.SelectionMode =
+                DataGridViewSelectionMode.CellSelect;
 
-            // Start editing when user starts typing
             dgvDisplayMemberInformation.EditMode =
-                DataGridViewEditMode.EditOnKeystrokeOrF2;
-
+                DataGridViewEditMode.EditOnEnter;
             RetrieveMemberDetails();
         }
 
@@ -352,8 +344,7 @@ namespace GymManagementSystem.FORMS.Member
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
-            string columnName =
-                dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name;
+            string columnName =dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name;
 
             // ==========================================
             // Phone No / Email Id Edit
@@ -361,10 +352,8 @@ namespace GymManagementSystem.FORMS.Member
             if (columnName == "colPhoneNo" ||
                 columnName == "colEmailId")
             {
-                dgvDisplayMemberInformation.CurrentCell =
-                    dgvDisplayMemberInformation.Rows[e.RowIndex]
-                    .Cells[e.ColumnIndex];
-
+                dgvDisplayMemberInformation.ReadOnly = false;
+                dgvDisplayMemberInformation.CurrentCell =dgvDisplayMemberInformation.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 dgvDisplayMemberInformation.BeginEdit(true);
             }
 

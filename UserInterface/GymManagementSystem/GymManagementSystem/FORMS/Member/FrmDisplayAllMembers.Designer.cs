@@ -139,7 +139,6 @@
             this.dgvDisplayMemberInformation.Location = new System.Drawing.Point(46, 133);
             this.dgvDisplayMemberInformation.MultiSelect = false;
             this.dgvDisplayMemberInformation.Name = "dgvDisplayMemberInformation";
-            this.dgvDisplayMemberInformation.ReadOnly = true;
             this.dgvDisplayMemberInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
@@ -412,7 +411,6 @@
             this.colPhoneNo.FillWeight = 80.83756F;
             this.colPhoneNo.HeaderText = "Mobile No";
             this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.ReadOnly = true;
             this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colPhoneNo.Width = 120;
             // 
@@ -424,7 +422,6 @@
             this.colEmailId.DefaultCellStyle = dataGridViewCellStyle6;
             this.colEmailId.HeaderText = "Email Id";
             this.colEmailId.Name = "colEmailId";
-            this.colEmailId.ReadOnly = true;
             // 
             // colIsActive
             // 
@@ -441,7 +438,6 @@
             this.colMemberProfile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colMemberProfile.HeaderText = "Profile";
             this.colMemberProfile.Name = "colMemberProfile";
-            this.colMemberProfile.ReadOnly = true;
             this.colMemberProfile.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMemberProfile.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMemberProfile.Text = "🙎‍♂️Profile";
@@ -457,7 +453,6 @@
             this.colUpdate.DefaultCellStyle = dataGridViewCellStyle8;
             this.colUpdate.HeaderText = "Action";
             this.colUpdate.Name = "colUpdate";
-            this.colUpdate.ReadOnly = true;
             this.colUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colUpdate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colUpdate.Text = "✏️Update";

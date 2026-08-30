@@ -221,30 +221,6 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Authentication
             ValidationBll.CommonValidationMessage result;
 
             // ==========================================
-            // USERNAME VALIDATION
-            // ==========================================
-
-            result = ValidationBll.ValidateUserName(userName);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                Message = ValidationBll.GetValidationMessage(result);
-                return false;
-            }
-
-            // ==========================================
-            // CURRENT PASSWORD VALIDATION
-            // ==========================================
-
-            result = ValidationBll.ValidatePassword(currentPassword);
-
-            if (result != ValidationBll.CommonValidationMessage.Valid)
-            {
-                Message = ValidationBll.GetValidationMessage(result);
-                return false;
-            }
-
-            // ==========================================
             // NEW PASSWORD VALIDATION
             // ==========================================
 

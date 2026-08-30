@@ -443,12 +443,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
         private void pnlAddNewEmployee_MouseEnter(object sender, EventArgs e)
         {
-            this.pnlAddNewEmployee.BackColor = Color.FromArgb(220,225,230);
+            pnlAddNewEmployee.BackColor = Color.White;
+            picBoxPluseIcon.Image = Properties.Resources.plusHOVER;
+            lblAddNewEmployee.ForeColor = Color.MidnightBlue;
         }
 
         private void pnlAddNewEmployee_MouseLeave(object sender, EventArgs e)
         {
-            this.pnlAddNewEmployee.BackColor = Color.FromArgb(236, 240, 243);
+            pnlAddNewEmployee.BackColor = Color.MidnightBlue;
+            picBoxPluseIcon.Image = Properties.Resources.plus;
+            lblAddNewEmployee.ForeColor = Color.White;
         }
 
         private void tlpAddNewEmployee_Click(object sender, EventArgs e)
@@ -463,34 +467,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string phoneNo = txtSearch.Text.Trim();
-            if (string.IsNullOrWhiteSpace(phoneNo) ||
-                phoneNo == "Enter Mobile No")
-            {
-                MessageBox.Show(
-                    "Please Enter Mobile No.",
-                    "Validation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
 
-                txtSearch.Focus();
-                return;
-            }
-            LoadEmployeeDetailsByPhoneNo(phoneNo);
-            if (dvgEmployeeDetails.Rows.Count == 0)
-            {
-                MessageBox.Show(
-                    "No Employee Found with this Mobile No.",
-                    "Search Result",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-
-                LoadEmployeeDetails();
-            }
-
-            dvgEmployeeDetails.ClearSelection();
         }
 
         private void txtSearch_Click(object sender, EventArgs e)

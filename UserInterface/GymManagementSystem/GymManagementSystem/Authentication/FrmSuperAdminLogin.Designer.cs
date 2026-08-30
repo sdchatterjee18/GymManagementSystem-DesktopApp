@@ -122,7 +122,7 @@
             // 
             // tlpSuperAdminLoginEntireForm
             // 
-            this.tlpSuperAdminLoginEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tlpSuperAdminLoginEntireForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpSuperAdminLoginEntireForm.ColumnCount = 3;
             this.tlpSuperAdminLoginEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.007782F));
             this.tlpSuperAdminLoginEntireForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.33241F));
@@ -183,7 +183,7 @@
             this.tlpSuperAdminLogin.ColumnCount = 3;
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.89049F));
             this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.10951F));
-            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tlpSuperAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tlpSuperAdminLogin.Controls.Add(this.btnSuperAdminLogin, 1, 0);
             this.tlpSuperAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSuperAdminLogin.Location = new System.Drawing.Point(16, 316);
@@ -203,7 +203,7 @@
             this.btnSuperAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuperAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuperAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnSuperAdminLogin.Location = new System.Drawing.Point(106, 2);
+            this.btnSuperAdminLogin.Location = new System.Drawing.Point(105, 2);
             this.btnSuperAdminLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuperAdminLogin.Name = "btnSuperAdminLogin";
             this.btnSuperAdminLogin.Size = new System.Drawing.Size(84, 31);
