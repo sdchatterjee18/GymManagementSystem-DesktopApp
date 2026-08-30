@@ -137,12 +137,6 @@ namespace GymManagementSystem.Authentication
                     MessageBoxIcon.Error);
             }
         }
-
-        private void lblForgotPassword_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtSuperAdminUsername_Click(object sender, EventArgs e)
         {
             ClickCountTxtSuperAdminUsername =
@@ -168,7 +162,7 @@ namespace GymManagementSystem.Authentication
         {
             FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
             frmForgotPassword.ShowDialog();
-            this.Hide();
+            this.Close();
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)

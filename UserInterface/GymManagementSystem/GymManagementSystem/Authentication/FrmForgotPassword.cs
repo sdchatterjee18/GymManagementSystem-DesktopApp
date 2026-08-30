@@ -23,7 +23,6 @@ namespace GymManagementSystem.Authentication
         public FrmForgotPassword()
         {
             InitializeComponent();
-            this.btnClose.Click += (s, e) => this.Close();
         }
 
         private void FrmForgotPassword_Load(object sender, EventArgs e)
@@ -229,6 +228,12 @@ namespace GymManagementSystem.Authentication
         private void btnBackToLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
 
       

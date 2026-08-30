@@ -63,17 +63,12 @@ namespace GymManagementSystem.Authentication
         {
             FrmSuperAdminLogin frmSuperAdminLogin = new FrmSuperAdminLogin(this);
             frmSuperAdminLogin.ShowDialog();
-            //this.Close();
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
             FrmAdminLogin frmAdminLogin = new FrmAdminLogin(this);
             frmAdminLogin.ShowDialog();
-            //FrmMainLayout frmMainLayout = new FrmMainLayout();
-            //this.Hide();
-            //frmMainLayout.ShowDialog();
-            //this.Close();
         }
     }
 }

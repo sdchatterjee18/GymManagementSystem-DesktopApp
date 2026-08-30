@@ -182,7 +182,7 @@
             this.tblAdminLogin.ColumnCount = 3;
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.39645F));
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.60355F));
-            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tblAdminLogin.Controls.Add(this.btnAdminLogin, 1, 0);
             this.tblAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblAdminLogin.Location = new System.Drawing.Point(15, 315);
@@ -205,7 +205,7 @@
             this.btnAdminLogin.Location = new System.Drawing.Point(109, 2);
             this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(76, 39);
+            this.btnAdminLogin.Size = new System.Drawing.Size(75, 39);
             this.btnAdminLogin.TabIndex = 0;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
@@ -380,12 +380,12 @@
             // 
             this.lblForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblForgotPassword.AutoSize = true;
-            this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblForgotPassword.Location = new System.Drawing.Point(204, 36);
+            this.lblForgotPassword.Location = new System.Drawing.Point(223, 38);
             this.lblForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(119, 19);
+            this.lblForgotPassword.Size = new System.Drawing.Size(100, 15);
             this.lblForgotPassword.TabIndex = 12;
             this.lblForgotPassword.Text = "Forgot Password?";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
