@@ -44,9 +44,11 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Form Load
         private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
         {
+            txtRequiredCalories.Focus();
             this.Text = "";
             this.ShowIcon = false;
             this.ActiveControl = null;
+            
         }
         // Prevent Default Selection In formLoad
         private void FrmAddNewDietPlan_Shown(object sender, EventArgs e)
@@ -57,14 +59,24 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Required Calories Click
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
-            ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
-            txtRequiredCalories.ForeColor = Color.Black;
+          
+            if (txtRequiredCalories.ForeColor == Color.Gray)
+            {
+                txtRequiredCalories.Clear();
+                txtRequiredCalories.ForeColor = Color.Black;
+            }
+            
         }
         // Plan Condition Click
         private void txtPlanCondition_Click(object sender, EventArgs e)
         {
-            ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
-            txtPlanCondition.ForeColor = Color.Black;
+            
+            if (txtPlanCondition.ForeColor == Color.Gray)
+            {
+                txtPlanCondition.Clear();
+                txtPlanCondition.ForeColor = Color.Black;
+            }
+            
         }
         // Choose File
         private void tlpChooseFile_Click(object sender, EventArgs e)
@@ -431,6 +443,24 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             lblClear.ForeColor = Color.White;
             lblClear.BackColor = Color.MidnightBlue;
+        }
+
+        private void txtRequiredCalories_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRequiredCalories.Text))
+            {
+                txtRequiredCalories.Text = "Enter Required Calories";
+                txtRequiredCalories.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPlanCondition_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPlanCondition.Text))
+            {
+                txtPlanCondition.Text = "Enter Plan Condition";
+                txtPlanCondition.ForeColor = Color.Gray;
+            }
         }
     }
 }

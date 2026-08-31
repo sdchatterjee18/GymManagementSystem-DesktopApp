@@ -21,11 +21,12 @@ namespace GymManagementSystem.Authentication
         {
             InitializeComponent();
             this.frmUserRoleSelection = frmUserRoleSelection;
-            
+           
         }
 
         private void FrmAdminLogin_Load(object sender, EventArgs e)
         {
+            txtAdminUsername.Focus();
             this.ShowIcon = false;
             this.Text = "";
         }
@@ -79,15 +80,21 @@ namespace GymManagementSystem.Authentication
 
         private void txtAdminUsername_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
-            txtAdminUsername.ForeColor = Color.Black;
-            
+            if (txtAdminUsername.ForeColor == Color.Gray)
+            {
+                txtAdminUsername.Clear();
+                txtAdminUsername.ForeColor = Color.Black;
+            }
         }
 
         private void txtAdminPassword_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
-            txtAdminPassword.ForeColor = Color.Black;
+            if (txtAdminPassword.ForeColor == Color.Gray)
+            {
+                txtAdminPassword.Clear();
+                txtAdminPassword.ForeColor = Color.Black;
+            }
+            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -163,6 +170,15 @@ namespace GymManagementSystem.Authentication
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAdminUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAdminUsername.Text))
+            {
+                txtAdminUsername.Text = "Enter UserName";
+                txtAdminUsername.ForeColor = Color.Gray;
             }
         }
     }

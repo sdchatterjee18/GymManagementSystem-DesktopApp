@@ -64,12 +64,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Salary
             // =========================================
             // LOAD SALARY DATA
             // =========================================
-
+            isFormLoading = false;
             RetrieveAllEmployeeSalary();
 
             dgvEmployeeSalaryDetails.ClearSelection();
 
-            isFormLoading = false;
+            
 
             cmbPaymentMode.DroppedDown = false;
         }

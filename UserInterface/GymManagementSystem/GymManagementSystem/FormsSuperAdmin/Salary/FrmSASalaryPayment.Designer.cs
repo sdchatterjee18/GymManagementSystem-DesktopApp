@@ -31,10 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSASalaryPayment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpSalary = new System.Windows.Forms.TableLayoutPanel();
             this.tlpEmployeeSalary = new System.Windows.Forms.TableLayoutPanel();
             this.tlpSalaryManagement = new System.Windows.Forms.TableLayoutPanel();
@@ -51,14 +55,14 @@
             this.txtSearchBar = new System.Windows.Forms.TextBox();
             this.tlpShowEmployeeSalary = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEmployeeSalaryDetails = new System.Windows.Forms.DataGridView();
+            this.pnlPaymentMode = new System.Windows.Forms.Panel();
+            this.cmbPaymentMode = new System.Windows.Forms.ComboBox();
             this.colSLNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmployeeFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pnlPaymentMode = new System.Windows.Forms.Panel();
-            this.cmbPaymentMode = new System.Windows.Forms.ComboBox();
             this.tlpSalary.SuspendLayout();
             this.tlpEmployeeSalary.SuspendLayout();
             this.tlpSalaryManagement.SuspendLayout();
@@ -87,12 +91,12 @@
             this.tlpSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tlpSalary.Controls.Add(this.tlpEmployeeSalary, 1, 0);
             this.tlpSalary.Location = new System.Drawing.Point(-1, 0);
-            this.tlpSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpSalary.Name = "tlpSalary";
             this.tlpSalary.RowCount = 1;
             this.tlpSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 598F));
-            this.tlpSalary.Size = new System.Drawing.Size(862, 645);
+            this.tlpSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 736F));
+            this.tlpSalary.Size = new System.Drawing.Size(1149, 794);
             this.tlpSalary.TabIndex = 0;
             this.tlpSalary.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -107,7 +111,7 @@
             this.tlpEmployeeSalary.Controls.Add(this.tlpSearchSection, 0, 1);
             this.tlpEmployeeSalary.Controls.Add(this.tlpShowEmployeeSalary, 0, 3);
             this.tlpEmployeeSalary.Controls.Add(this.pnlPaymentMode, 0, 4);
-            this.tlpEmployeeSalary.Location = new System.Drawing.Point(43, 0);
+            this.tlpEmployeeSalary.Location = new System.Drawing.Point(57, 0);
             this.tlpEmployeeSalary.Margin = new System.Windows.Forms.Padding(0);
             this.tlpEmployeeSalary.Name = "tlpEmployeeSalary";
             this.tlpEmployeeSalary.RowCount = 5;
@@ -116,9 +120,9 @@
             this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.029318F));
             this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.4341F));
             this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.297229F));
-            this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpEmployeeSalary.Size = new System.Drawing.Size(775, 645);
+            this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpEmployeeSalary.Size = new System.Drawing.Size(1034, 794);
             this.tlpEmployeeSalary.TabIndex = 1;
             this.tlpEmployeeSalary.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -129,15 +133,15 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSalaryManagement.ColumnCount = 1;
             this.tlpSalaryManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSalaryManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpSalaryManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpSalaryManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSalaryManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSalaryManagement.Controls.Add(this.tlpEmployeeSalaryHeader, 0, 0);
             this.tlpSalaryManagement.Location = new System.Drawing.Point(0, 0);
             this.tlpSalaryManagement.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSalaryManagement.Name = "tlpSalaryManagement";
             this.tlpSalaryManagement.RowCount = 1;
             this.tlpSalaryManagement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSalaryManagement.Size = new System.Drawing.Size(775, 71);
+            this.tlpSalaryManagement.Size = new System.Drawing.Size(1034, 87);
             this.tlpSalaryManagement.TabIndex = 0;
             this.tlpSalaryManagement.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -147,7 +151,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpEmployeeSalaryHeader.ColumnCount = 2;
-            this.tlpEmployeeSalaryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlpEmployeeSalaryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tlpEmployeeSalaryHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpEmployeeSalaryHeader.Controls.Add(this.picSalary, 0, 0);
             this.tlpEmployeeSalaryHeader.Controls.Add(this.tlpSalaryTitleAndSubTitle, 1, 0);
@@ -156,7 +160,7 @@
             this.tlpEmployeeSalaryHeader.Name = "tlpEmployeeSalaryHeader";
             this.tlpEmployeeSalaryHeader.RowCount = 1;
             this.tlpEmployeeSalaryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEmployeeSalaryHeader.Size = new System.Drawing.Size(775, 71);
+            this.tlpEmployeeSalaryHeader.Size = new System.Drawing.Size(1034, 87);
             this.tlpEmployeeSalaryHeader.TabIndex = 0;
             this.tlpEmployeeSalaryHeader.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -169,7 +173,7 @@
             this.picSalary.Location = new System.Drawing.Point(0, 0);
             this.picSalary.Margin = new System.Windows.Forms.Padding(0);
             this.picSalary.Name = "picSalary";
-            this.picSalary.Size = new System.Drawing.Size(49, 71);
+            this.picSalary.Size = new System.Drawing.Size(65, 87);
             this.picSalary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSalary.TabIndex = 0;
             this.picSalary.TabStop = false;
@@ -184,13 +188,13 @@
             this.tlpSalaryTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSalaryTitleAndSubTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSalaryTitleAndSubTitle.Controls.Add(this.tlpSalaryTitleAndSubTitleSection, 0, 0);
-            this.tlpSalaryTitleAndSubTitle.Location = new System.Drawing.Point(49, 0);
+            this.tlpSalaryTitleAndSubTitle.Location = new System.Drawing.Point(65, 0);
             this.tlpSalaryTitleAndSubTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSalaryTitleAndSubTitle.Name = "tlpSalaryTitleAndSubTitle";
             this.tlpSalaryTitleAndSubTitle.RowCount = 1;
             this.tlpSalaryTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSalaryTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tlpSalaryTitleAndSubTitle.Size = new System.Drawing.Size(726, 71);
+            this.tlpSalaryTitleAndSubTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tlpSalaryTitleAndSubTitle.Size = new System.Drawing.Size(969, 87);
             this.tlpSalaryTitleAndSubTitle.TabIndex = 1;
             this.tlpSalaryTitleAndSubTitle.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -201,16 +205,16 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSalaryTitleAndSubTitleSection.ColumnCount = 1;
             this.tlpSalaryTitleAndSubTitleSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSalaryTitleAndSubTitleSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpSalaryTitleAndSubTitleSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSalaryTitleAndSubTitleSection.Controls.Add(this.lblTrainerDetails, 0, 0);
             this.tlpSalaryTitleAndSubTitleSection.Controls.Add(this.lblSubTitle, 0, 1);
-            this.tlpSalaryTitleAndSubTitleSection.Location = new System.Drawing.Point(4, 0);
-            this.tlpSalaryTitleAndSubTitleSection.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.tlpSalaryTitleAndSubTitleSection.Location = new System.Drawing.Point(5, 0);
+            this.tlpSalaryTitleAndSubTitleSection.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.tlpSalaryTitleAndSubTitleSection.Name = "tlpSalaryTitleAndSubTitleSection";
             this.tlpSalaryTitleAndSubTitleSection.RowCount = 2;
             this.tlpSalaryTitleAndSubTitleSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.92958F));
             this.tlpSalaryTitleAndSubTitleSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.07042F));
-            this.tlpSalaryTitleAndSubTitleSection.Size = new System.Drawing.Size(359, 71);
+            this.tlpSalaryTitleAndSubTitleSection.Size = new System.Drawing.Size(479, 87);
             this.tlpSalaryTitleAndSubTitleSection.TabIndex = 0;
             this.tlpSalaryTitleAndSubTitleSection.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -218,10 +222,9 @@
             // 
             this.lblTrainerDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTrainerDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrainerDetails.Location = new System.Drawing.Point(2, 6);
-            this.lblTrainerDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrainerDetails.Location = new System.Drawing.Point(3, 8);
             this.lblTrainerDetails.Name = "lblTrainerDetails";
-            this.lblTrainerDetails.Size = new System.Drawing.Size(196, 32);
+            this.lblTrainerDetails.Size = new System.Drawing.Size(261, 39);
             this.lblTrainerDetails.TabIndex = 0;
             this.lblTrainerDetails.Text = "Salary Payment";
             this.lblTrainerDetails.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -234,10 +237,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubTitle.AutoSize = true;
             this.lblSubTitle.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblSubTitle.Location = new System.Drawing.Point(4, 38);
-            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubTitle.Location = new System.Drawing.Point(5, 47);
+            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSubTitle.Name = "lblSubTitle";
-            this.lblSubTitle.Size = new System.Drawing.Size(351, 33);
+            this.lblSubTitle.Size = new System.Drawing.Size(469, 40);
             this.lblSubTitle.TabIndex = 1;
             this.lblSubTitle.Text = "Search Employee and Pay Salary";
             this.lblSubTitle.Click += new System.EventHandler(this.tlpSalary_Click);
@@ -249,15 +252,15 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSearchSection.ColumnCount = 1;
             this.tlpSearchSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpSearchSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpSearchSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSearchSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpSearchSection.Controls.Add(this.tlpSearchBar, 0, 0);
-            this.tlpSearchSection.Location = new System.Drawing.Point(0, 71);
+            this.tlpSearchSection.Location = new System.Drawing.Point(0, 87);
             this.tlpSearchSection.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSearchSection.Name = "tlpSearchSection";
             this.tlpSearchSection.RowCount = 1;
             this.tlpSearchSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchSection.Size = new System.Drawing.Size(775, 33);
+            this.tlpSearchSection.Size = new System.Drawing.Size(1034, 40);
             this.tlpSearchSection.TabIndex = 2;
             this.tlpSearchSection.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -275,7 +278,7 @@
             this.tlpSearchBar.Name = "tlpSearchBar";
             this.tlpSearchBar.RowCount = 1;
             this.tlpSearchBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearchBar.Size = new System.Drawing.Size(775, 33);
+            this.tlpSearchBar.Size = new System.Drawing.Size(1034, 40);
             this.tlpSearchBar.TabIndex = 0;
             this.tlpSearchBar.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -285,9 +288,9 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpSearch.ColumnCount = 3;
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
-            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 339F));
+            this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
             this.tlpSearch.Controls.Add(this.picSearch, 0, 0);
             this.tlpSearch.Controls.Add(this.txtSearchBar, 1, 0);
             this.tlpSearch.Location = new System.Drawing.Point(0, 0);
@@ -295,7 +298,7 @@
             this.tlpSearch.Name = "tlpSearch";
             this.tlpSearch.RowCount = 1;
             this.tlpSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSearch.Size = new System.Drawing.Size(507, 33);
+            this.tlpSearch.Size = new System.Drawing.Size(676, 40);
             this.tlpSearch.TabIndex = 0;
             this.tlpSearch.Click += new System.EventHandler(this.tlpSalary_Click);
             // 
@@ -303,10 +306,10 @@
             // 
             this.picSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
-            this.picSearch.Location = new System.Drawing.Point(0, 10);
+            this.picSearch.Location = new System.Drawing.Point(0, 12);
             this.picSearch.Margin = new System.Windows.Forms.Padding(0);
             this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(28, 23);
+            this.picSearch.Size = new System.Drawing.Size(37, 28);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearch.TabIndex = 2;
             this.picSearch.TabStop = false;
@@ -318,10 +321,10 @@
             this.txtSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchBar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearchBar.Location = new System.Drawing.Point(31, 10);
+            this.txtSearchBar.Location = new System.Drawing.Point(41, 13);
             this.txtSearchBar.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearchBar.Name = "txtSearchBar";
-            this.txtSearchBar.Size = new System.Drawing.Size(231, 23);
+            this.txtSearchBar.Size = new System.Drawing.Size(307, 27);
             this.txtSearchBar.TabIndex = 1;
             this.txtSearchBar.Text = "Enter Pnone No";
             this.txtSearchBar.Click += new System.EventHandler(this.txtSearchBar_Click);
@@ -334,15 +337,15 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpShowEmployeeSalary.ColumnCount = 1;
             this.tlpShowEmployeeSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShowEmployeeSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tlpShowEmployeeSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpShowEmployeeSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpShowEmployeeSalary.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpShowEmployeeSalary.Controls.Add(this.dgvEmployeeSalaryDetails, 0, 0);
-            this.tlpShowEmployeeSalary.Location = new System.Drawing.Point(0, 110);
+            this.tlpShowEmployeeSalary.Location = new System.Drawing.Point(0, 135);
             this.tlpShowEmployeeSalary.Margin = new System.Windows.Forms.Padding(0);
             this.tlpShowEmployeeSalary.Name = "tlpShowEmployeeSalary";
             this.tlpShowEmployeeSalary.RowCount = 1;
             this.tlpShowEmployeeSalary.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpShowEmployeeSalary.Size = new System.Drawing.Size(775, 493);
+            this.tlpShowEmployeeSalary.Size = new System.Drawing.Size(1034, 607);
             this.tlpShowEmployeeSalary.TabIndex = 3;
             // 
             // dgvEmployeeSalaryDetails
@@ -353,7 +356,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEmployeeSalaryDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -381,50 +383,75 @@
             this.colPhoneNo,
             this.colSalary,
             this.colAction});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmployeeSalaryDetails.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmployeeSalaryDetails.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmployeeSalaryDetails.EnableHeadersVisualStyles = false;
             this.dgvEmployeeSalaryDetails.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvEmployeeSalaryDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvEmployeeSalaryDetails.Margin = new System.Windows.Forms.Padding(0);
             this.dgvEmployeeSalaryDetails.Name = "dgvEmployeeSalaryDetails";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployeeSalaryDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployeeSalaryDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEmployeeSalaryDetails.RowHeadersVisible = false;
             this.dgvEmployeeSalaryDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.dgvEmployeeSalaryDetails.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dgvEmployeeSalaryDetails.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvEmployeeSalaryDetails.RowTemplate.Height = 30;
-            this.dgvEmployeeSalaryDetails.Size = new System.Drawing.Size(775, 493);
+            this.dgvEmployeeSalaryDetails.Size = new System.Drawing.Size(1034, 607);
             this.dgvEmployeeSalaryDetails.TabIndex = 0;
             this.dgvEmployeeSalaryDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeSalaryDetails_CellContentClick);
             this.dgvEmployeeSalaryDetails.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeSalaryDetails_CellMouseEnter);
             this.dgvEmployeeSalaryDetails.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeSalaryDetails_CellMouseLeave);
             this.dgvEmployeeSalaryDetails.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvEmployeeSalaryDetails_CellPainting);
             // 
+            // pnlPaymentMode
+            // 
+            this.pnlPaymentMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlPaymentMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPaymentMode.Controls.Add(this.cmbPaymentMode);
+            this.pnlPaymentMode.Location = new System.Drawing.Point(835, 742);
+            this.pnlPaymentMode.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlPaymentMode.Name = "pnlPaymentMode";
+            this.pnlPaymentMode.Size = new System.Drawing.Size(199, 51);
+            this.pnlPaymentMode.TabIndex = 4;
+            // 
+            // cmbPaymentMode
+            // 
+            this.cmbPaymentMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPaymentMode.FormattingEnabled = true;
+            this.cmbPaymentMode.Location = new System.Drawing.Point(75, 0);
+            this.cmbPaymentMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbPaymentMode.Name = "cmbPaymentMode";
+            this.cmbPaymentMode.Size = new System.Drawing.Size(121, 24);
+            this.cmbPaymentMode.TabIndex = 4;
+            this.cmbPaymentMode.Text = "  ---Select Payment Mode---";
+            this.cmbPaymentMode.Visible = false;
+            this.cmbPaymentMode.SelectionChangeCommitted += new System.EventHandler(this.cmbPaymentMode_SelectionChangeCommitted);
+            // 
             // colSLNo
             // 
-            this.colSLNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colSLNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.colSLNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSLNo.HeaderText = "SL No";
             this.colSLNo.Name = "colSLNo";
             this.colSLNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSLNo.Width = 42;
+            this.colSLNo.Width = 59;
             // 
             // colEmployeeId
             // 
@@ -436,6 +463,8 @@
             // 
             this.colEmployeeFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colEmployeeFullName.DataPropertyName = "EmployeeName";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
+            this.colEmployeeFullName.DefaultCellStyle = dataGridViewCellStyle4;
             this.colEmployeeFullName.HeaderText = "Employee Name";
             this.colEmployeeFullName.Name = "colEmployeeFullName";
             this.colEmployeeFullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -444,6 +473,8 @@
             // 
             this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colPhoneNo.DataPropertyName = "PhoneNo";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
+            this.colPhoneNo.DefaultCellStyle = dataGridViewCellStyle5;
             this.colPhoneNo.HeaderText = "Phone No";
             this.colPhoneNo.Name = "colPhoneNo";
             this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -452,53 +483,32 @@
             // 
             this.colSalary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSalary.DataPropertyName = "SalaryAmount";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(110, 0, 0, 0);
+            this.colSalary.DefaultCellStyle = dataGridViewCellStyle6;
             this.colSalary.HeaderText = "Salary";
             this.colSalary.Name = "colSalary";
+            this.colSalary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colAction
             // 
             this.colAction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colAction.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colAction.DefaultCellStyle = dataGridViewCellStyle7;
             this.colAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colAction.HeaderText = "Action";
             this.colAction.Name = "colAction";
             this.colAction.Text = "₹ Pay";
             this.colAction.UseColumnTextForButtonValue = true;
             // 
-            // pnlPaymentMode
-            // 
-            this.pnlPaymentMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPaymentMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlPaymentMode.Controls.Add(this.cmbPaymentMode);
-            this.pnlPaymentMode.Location = new System.Drawing.Point(625, 603);
-            this.pnlPaymentMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlPaymentMode.Name = "pnlPaymentMode";
-            this.pnlPaymentMode.Size = new System.Drawing.Size(150, 42);
-            this.pnlPaymentMode.TabIndex = 4;
-            // 
-            // cmbPaymentMode
-            // 
-            this.cmbPaymentMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPaymentMode.FormattingEnabled = true;
-            this.cmbPaymentMode.Location = new System.Drawing.Point(56, 0);
-            this.cmbPaymentMode.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbPaymentMode.Name = "cmbPaymentMode";
-            this.cmbPaymentMode.Size = new System.Drawing.Size(92, 21);
-            this.cmbPaymentMode.TabIndex = 4;
-            this.cmbPaymentMode.Text = "  ---Select Payment Mode---";
-            this.cmbPaymentMode.Visible = false;
-            this.cmbPaymentMode.SelectionChangeCommitted += new System.EventHandler(this.cmbPaymentMode_SelectionChangeCommitted);
-            // 
             // FrmSASalaryPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(862, 609);
+            this.ClientSize = new System.Drawing.Size(1149, 750);
             this.Controls.Add(this.tlpSalary);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmSASalaryPayment";
             this.Text = "FrmSASalaryPayment";
             this.Load += new System.EventHandler(this.FrmSASalaryPayment_Load);
@@ -542,12 +552,12 @@
         private System.Windows.Forms.TableLayoutPanel tlpShowEmployeeSalary;
         private System.Windows.Forms.DataGridView dgvEmployeeSalaryDetails;
         private System.Windows.Forms.ComboBox cmbPaymentMode;
+        private System.Windows.Forms.Panel pnlPaymentMode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSLNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSalary;
         private System.Windows.Forms.DataGridViewButtonColumn colAction;
-        private System.Windows.Forms.Panel pnlPaymentMode;
     }
 }

@@ -158,26 +158,23 @@ namespace GymManagementSystem.Authentication
 
         private void txtNewPassword_Click(object sender, EventArgs e)
         {
-            ClickCountTxtNewPassword =
-            ValidationUI.ClearTextBoxWhenClicked(
-                txtNewPassword,
-                ClickCountTxtNewPassword);
-
-            txtNewPassword.ForeColor =
-                Color.Black;
-            txtNewPassword.UseSystemPasswordChar = true;
+            if (txtNewPassword.ForeColor == Color.Gray)
+            {
+                txtNewPassword.Clear();
+                txtNewPassword.ForeColor = Color.Black;
+            }
+            txtNewPassword.UseSystemPasswordChar =  !cbNewPasswordShow.Checked;
         }
 
         private void txtConfirmedPassword_Click(object sender, EventArgs e)
         {
-            ClickCountTxtConfirmedPassword =
-            ValidationUI.ClearTextBoxWhenClicked(
-                txtConfirmedPassword,
-                ClickCountTxtConfirmedPassword);
+            if (txtConfirmedPassword.ForeColor == Color.Gray)
+            {
+                txtConfirmedPassword.Clear();
+                txtConfirmedPassword.ForeColor = Color.Black;
+            }
 
-            txtConfirmedPassword.ForeColor =
-                Color.Black;
-            txtConfirmedPassword.UseSystemPasswordChar = true;
+            txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
         }
 
         private void txtEmail_Click(object sender, EventArgs e)
@@ -186,6 +183,7 @@ namespace GymManagementSystem.Authentication
             if (Click == 1)
             {
                 txtEmail.Clear();
+                txtEmail.ForeColor = Color.Black;
                 Click++;
             }
         }
@@ -217,7 +215,11 @@ namespace GymManagementSystem.Authentication
             }
             else if (Message == "Password is Updated Successfully")
             {
-                MessageBox.Show(Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               DialogResult Result = MessageBox.Show(Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               if (Result == DialogResult.OK)
+               {
+                   this.Close();
+               }
             }
             else
             {
@@ -234,6 +236,29 @@ namespace GymManagementSystem.Authentication
         {
             this.Close();
 
+        }
+
+        private void txtOTP_Click(object sender, EventArgs e)
+        {
+            txtOTP.ForeColor = Color.Black;
+        }
+
+        private void txtNewPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNewPassword.Text))
+            {
+                txtNewPassword.Text = "Enter New Password";
+                txtNewPassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtConfirmedPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtConfirmedPassword.Text))
+            {
+                txtConfirmedPassword.Text = "Enter Confirm Password";
+                txtConfirmedPassword.ForeColor = Color.Gray;
+            }
         }
 
       

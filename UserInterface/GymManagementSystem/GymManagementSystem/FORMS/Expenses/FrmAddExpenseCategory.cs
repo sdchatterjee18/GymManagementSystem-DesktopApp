@@ -17,6 +17,7 @@ namespace GymManagementSystem.FORMS.Expenses
         public FrmAddExpenseCategory()
         {
             InitializeComponent();
+            txtRequiredCategoryName.Focus();
         }
         int clickCountCategory = 0;
         int clickCountCategoryName = 0;
@@ -32,6 +33,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void FrmAddExpenseCategory_Load(object sender, EventArgs e)
         {
+           
             txtInputCategory.Select(0, 0);
             txtInputCategory.DeselectAll();
 
@@ -43,7 +45,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void lblCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void InsertExpenseCatogory()
@@ -56,7 +58,7 @@ namespace GymManagementSystem.FORMS.Expenses
                 DialogResult Result = MessageBox.Show(InsertionMessage, "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (Result == DialogResult.OK)
                 {
-                    this.Dispose();
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -82,10 +84,7 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             ValidationUI.ClearDefaultPlaceholderText(txtRequiredCategoryName,clickCountCategoryName);
             ValidationUI.ClearDefaultPlaceholderText(txtInputCategory,clickCountCategory);
-            //if(!ValidationUI.ValidateRequiredTextBoxes(txtInputCategory,txtRequiredCategoryName))
-            //{
-            //    return;
-            //}
+       
             InsertExpenseCatogory();      
         }
         private void pnlClear_Click(object sender, EventArgs e)
