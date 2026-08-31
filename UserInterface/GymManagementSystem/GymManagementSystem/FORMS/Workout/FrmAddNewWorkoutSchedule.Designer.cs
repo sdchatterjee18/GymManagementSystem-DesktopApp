@@ -133,12 +133,12 @@
             // tlpSubmitionWorkoutSchedule
             // 
             this.tlpSubmitionWorkoutSchedule.ColumnCount = 3;
-            this.tlpSubmitionWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSubmitionWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.72789F));
+            this.tlpSubmitionWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.07198F));
+            this.tlpSubmitionWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.33676F));
             this.tlpSubmitionWorkoutSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.27211F));
             this.tlpSubmitionWorkoutSchedule.Controls.Add(this.pnlClickSubmitWorkoutSchedule, 2, 0);
-            this.tlpSubmitionWorkoutSchedule.Controls.Add(this.btnClearWorkoutSchedule, 1, 0);
             this.tlpSubmitionWorkoutSchedule.Controls.Add(this.lblMessageBoxWorkoutSchedule, 0, 0);
+            this.tlpSubmitionWorkoutSchedule.Controls.Add(this.btnClearWorkoutSchedule, 1, 0);
             this.tlpSubmitionWorkoutSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSubmitionWorkoutSchedule.Location = new System.Drawing.Point(22, 308);
             this.tlpSubmitionWorkoutSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,10 +212,10 @@
             this.btnClearWorkoutSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearWorkoutSchedule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearWorkoutSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnClearWorkoutSchedule.Location = new System.Drawing.Point(197, 10);
+            this.btnClearWorkoutSchedule.Location = new System.Drawing.Point(190, 10);
             this.btnClearWorkoutSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearWorkoutSchedule.Name = "btnClearWorkoutSchedule";
-            this.btnClearWorkoutSchedule.Size = new System.Drawing.Size(70, 28);
+            this.btnClearWorkoutSchedule.Size = new System.Drawing.Size(77, 28);
             this.btnClearWorkoutSchedule.TabIndex = 5;
             this.btnClearWorkoutSchedule.Text = "Clear";
             this.btnClearWorkoutSchedule.UseVisualStyleBackColor = false;
@@ -252,6 +252,7 @@
             this.cmbWorkoutName.Name = "cmbWorkoutName";
             this.cmbWorkoutName.Size = new System.Drawing.Size(389, 24);
             this.cmbWorkoutName.TabIndex = 10;
+            this.cmbWorkoutName.Enter += new System.EventHandler(this.cmbWorkoutName_Enter);
             // 
             // cmbExerciseName
             // 
@@ -262,6 +263,7 @@
             this.cmbExerciseName.Name = "cmbExerciseName";
             this.cmbExerciseName.Size = new System.Drawing.Size(389, 24);
             this.cmbExerciseName.TabIndex = 10;
+            this.cmbExerciseName.Enter += new System.EventHandler(this.cmbExerciseName_Enter);
             // 
             // cmbWorkoutDays
             // 
@@ -272,6 +274,7 @@
             this.cmbWorkoutDays.Name = "cmbWorkoutDays";
             this.cmbWorkoutDays.Size = new System.Drawing.Size(389, 24);
             this.cmbWorkoutDays.TabIndex = 10;
+            this.cmbWorkoutDays.Enter += new System.EventHandler(this.cmbWorkoutDays_Enter);
             // 
             // pnlSubNewWorkoutScheduleTitle
             // 
@@ -362,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 449);
             this.Controls.Add(this.pnlAddNewWorkoutScheduleForm);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(474, 496);
             this.MinimizeBox = false;

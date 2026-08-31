@@ -214,5 +214,20 @@ namespace GymManagementSystem.FORMS.Workout
             btnClearWorkoutSchedule.BackColor = Color.MidnightBlue;
             btnClearWorkoutSchedule.ForeColor = Color.White;
         }
+
+        private void cmbWorkoutName_Enter(object sender, EventArgs e)
+        {
+            cmbWorkoutName.DroppedDown = true;
+        }
+
+        private void cmbExerciseName_Enter(object sender, EventArgs e)
+        {
+            cmbExerciseName.DroppedDown = true;
+        }
+
+        private void cmbWorkoutDays_Enter(object sender, EventArgs e)
+        {
+            cmbWorkoutDays.DroppedDown = true;
+        }
     }
 }
