@@ -367,7 +367,7 @@
             this.lblEmployeeRegistration.AutoSize = true;
             this.lblEmployeeRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEmployeeRegistration.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeRegistration.ForeColor = System.Drawing.Color.Blue;
+            this.lblEmployeeRegistration.ForeColor = System.Drawing.Color.Black;
             this.lblEmployeeRegistration.Location = new System.Drawing.Point(0, 0);
             this.lblEmployeeRegistration.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.lblEmployeeRegistration.Name = "lblEmployeeRegistration";
@@ -393,8 +393,8 @@
             this.tlpPersonalDetails.ColumnCount = 5;
             this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.5F));
             this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.756098F));
-            this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.02439F));
+            this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.825203F));
+            this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.95528F));
             this.tlpPersonalDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.707317F));
             this.tlpPersonalDetails.Controls.Add(this.pnlFivethHeader, 4, 0);
             this.tlpPersonalDetails.Controls.Add(this.pnlFourthHeader, 3, 0);
@@ -429,10 +429,10 @@
             // 
             this.pnlFourthHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(220)))), ((int)(((byte)(245)))));
             this.pnlFourthHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFourthHeader.Location = new System.Drawing.Point(533, 0);
+            this.pnlFourthHeader.Location = new System.Drawing.Point(514, 0);
             this.pnlFourthHeader.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFourthHeader.Name = "pnlFourthHeader";
-            this.pnlFourthHeader.Size = new System.Drawing.Size(384, 43);
+            this.pnlFourthHeader.Size = new System.Drawing.Size(403, 43);
             this.pnlFourthHeader.TabIndex = 13;
             // 
             // pnlThirdHeader
@@ -442,7 +442,7 @@
             this.pnlThirdHeader.Location = new System.Drawing.Point(437, 0);
             this.pnlThirdHeader.Margin = new System.Windows.Forms.Padding(0);
             this.pnlThirdHeader.Name = "pnlThirdHeader";
-            this.pnlThirdHeader.Size = new System.Drawing.Size(96, 43);
+            this.pnlThirdHeader.Size = new System.Drawing.Size(77, 43);
             this.pnlThirdHeader.TabIndex = 12;
             // 
             // pnlSecondHeader
@@ -474,8 +474,8 @@
             // 
             this.tlpPersonalInformationFirstBox.ColumnCount = 5;
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tlpPersonalInformationFirstBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpPersonalInformationFirstBox.Controls.Add(this.picFirstName, 1, 0);
@@ -509,7 +509,7 @@
             this.picFirstName.Location = new System.Drawing.Point(0, 3);
             this.picFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.picFirstName.Name = "picFirstName";
-            this.picFirstName.Size = new System.Drawing.Size(30, 32);
+            this.picFirstName.Size = new System.Drawing.Size(27, 32);
             this.picFirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFirstName.TabIndex = 2;
             this.picFirstName.TabStop = false;
@@ -519,7 +519,7 @@
             this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(30, 10);
+            this.lblFirstName.Location = new System.Drawing.Point(27, 10);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(77, 19);
@@ -547,7 +547,7 @@
             this.picMiddleName.Location = new System.Drawing.Point(0, 42);
             this.picMiddleName.Margin = new System.Windows.Forms.Padding(0);
             this.picMiddleName.Name = "picMiddleName";
-            this.picMiddleName.Size = new System.Drawing.Size(30, 32);
+            this.picMiddleName.Size = new System.Drawing.Size(27, 32);
             this.picMiddleName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMiddleName.TabIndex = 5;
             this.picMiddleName.TabStop = false;
@@ -557,7 +557,7 @@
             this.lblMiddleName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(30, 49);
+            this.lblMiddleName.Location = new System.Drawing.Point(27, 49);
             this.lblMiddleName.Margin = new System.Windows.Forms.Padding(0);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(94, 19);
@@ -585,7 +585,7 @@
             this.picLastName.Location = new System.Drawing.Point(0, 81);
             this.picLastName.Margin = new System.Windows.Forms.Padding(0);
             this.picLastName.Name = "picLastName";
-            this.picLastName.Size = new System.Drawing.Size(30, 32);
+            this.picLastName.Size = new System.Drawing.Size(27, 32);
             this.picLastName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLastName.TabIndex = 8;
             this.picLastName.TabStop = false;
@@ -595,7 +595,7 @@
             this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(30, 88);
+            this.lblLastName.Location = new System.Drawing.Point(27, 88);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(0);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(75, 19);
@@ -623,7 +623,7 @@
             this.picGender.Location = new System.Drawing.Point(0, 122);
             this.picGender.Margin = new System.Windows.Forms.Padding(0);
             this.picGender.Name = "picGender";
-            this.picGender.Size = new System.Drawing.Size(30, 32);
+            this.picGender.Size = new System.Drawing.Size(27, 32);
             this.picGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGender.TabIndex = 2;
             this.picGender.TabStop = false;
@@ -633,7 +633,7 @@
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(30, 128);
+            this.lblGender.Location = new System.Drawing.Point(27, 128);
             this.lblGender.Margin = new System.Windows.Forms.Padding(0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(54, 19);
@@ -704,8 +704,8 @@
             // 
             this.tlpSecondboxPersonalInformation.ColumnCount = 5;
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270F));
             this.tlpSecondboxPersonalInformation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpSecondboxPersonalInformation.Controls.Add(this.picPhoneNumber, 1, 1);
@@ -718,22 +718,22 @@
             this.tlpSecondboxPersonalInformation.Controls.Add(this.txtEmailId, 3, 2);
             this.tlpSecondboxPersonalInformation.Controls.Add(this.dtpDOB, 3, 0);
             this.tlpSecondboxPersonalInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSecondboxPersonalInformation.Location = new System.Drawing.Point(533, 49);
+            this.tlpSecondboxPersonalInformation.Location = new System.Drawing.Point(514, 49);
             this.tlpSecondboxPersonalInformation.Margin = new System.Windows.Forms.Padding(0);
             this.tlpSecondboxPersonalInformation.Name = "tlpSecondboxPersonalInformation";
             this.tlpSecondboxPersonalInformation.RowCount = 4;
-            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSecondboxPersonalInformation.Size = new System.Drawing.Size(384, 159);
+            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.04403F));
+            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.04403F));
+            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.15723F));
+            this.tlpSecondboxPersonalInformation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.75472F));
+            this.tlpSecondboxPersonalInformation.Size = new System.Drawing.Size(403, 159);
             this.tlpSecondboxPersonalInformation.TabIndex = 9;
             // 
             // picPhoneNumber
             // 
             this.picPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picPhoneNumber.Image = ((System.Drawing.Image)(resources.GetObject("picPhoneNumber.Image")));
-            this.picPhoneNumber.Location = new System.Drawing.Point(-5, 40);
+            this.picPhoneNumber.Location = new System.Drawing.Point(1, 46);
             this.picPhoneNumber.Margin = new System.Windows.Forms.Padding(0);
             this.picPhoneNumber.Name = "picPhoneNumber";
             this.picPhoneNumber.Size = new System.Drawing.Size(30, 37);
@@ -745,7 +745,7 @@
             // 
             this.picMail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picMail.Image = ((System.Drawing.Image)(resources.GetObject("picMail.Image")));
-            this.picMail.Location = new System.Drawing.Point(-5, 81);
+            this.picMail.Location = new System.Drawing.Point(1, 89);
             this.picMail.Margin = new System.Windows.Forms.Padding(0);
             this.picMail.Name = "picMail";
             this.picMail.Size = new System.Drawing.Size(30, 32);
@@ -755,12 +755,12 @@
             // 
             // picDateOfBirth
             // 
-            this.picDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.picDateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picDateOfBirth.Image = ((System.Drawing.Image)(resources.GetObject("picDateOfBirth.Image")));
-            this.picDateOfBirth.Location = new System.Drawing.Point(3, 7);
+            this.picDateOfBirth.Location = new System.Drawing.Point(0, 0);
             this.picDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
             this.picDateOfBirth.Name = "picDateOfBirth";
-            this.picDateOfBirth.Size = new System.Drawing.Size(22, 24);
+            this.picDateOfBirth.Size = new System.Drawing.Size(31, 43);
             this.picDateOfBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDateOfBirth.TabIndex = 5;
             this.picDateOfBirth.TabStop = false;
@@ -770,7 +770,7 @@
             this.lblDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(25, 10);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(31, 12);
             this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(0);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(92, 19);
@@ -782,10 +782,10 @@
             this.lblPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(25, 49);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(31, 45);
             this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(103, 19);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(60, 38);
             this.lblPhoneNumber.TabIndex = 8;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
@@ -795,7 +795,7 @@
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Gray;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(128, 45);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(133, 51);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(240, 26);
@@ -808,7 +808,7 @@
             this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailAddress.Location = new System.Drawing.Point(25, 88);
+            this.lblEmailAddress.Location = new System.Drawing.Point(31, 96);
             this.lblEmailAddress.Margin = new System.Windows.Forms.Padding(0);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(96, 19);
@@ -821,7 +821,7 @@
             this.txtEmailId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmailId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailId.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmailId.Location = new System.Drawing.Point(128, 84);
+            this.txtEmailId.Location = new System.Drawing.Point(133, 92);
             this.txtEmailId.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.txtEmailId.Name = "txtEmailId";
             this.txtEmailId.Size = new System.Drawing.Size(240, 26);
@@ -832,7 +832,7 @@
             // dtpDOB
             // 
             this.dtpDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDOB.Location = new System.Drawing.Point(128, 9);
+            this.dtpDOB.Location = new System.Drawing.Point(133, 11);
             this.dtpDOB.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(240, 20);
@@ -1240,10 +1240,10 @@
             // 
             this.picTrainer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picTrainer.Image = ((System.Drawing.Image)(resources.GetObject("picTrainer.Image")));
-            this.picTrainer.Location = new System.Drawing.Point(16, 12);
+            this.picTrainer.Location = new System.Drawing.Point(20, 15);
             this.picTrainer.Margin = new System.Windows.Forms.Padding(0);
             this.picTrainer.Name = "picTrainer";
-            this.picTrainer.Size = new System.Drawing.Size(34, 37);
+            this.picTrainer.Size = new System.Drawing.Size(30, 32);
             this.picTrainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTrainer.TabIndex = 0;
             this.picTrainer.TabStop = false;
@@ -1960,10 +1960,11 @@
             // 
             // lblRegister
             // 
+            this.lblRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.White;
-            this.lblRegister.Location = new System.Drawing.Point(38, 8);
+            this.lblRegister.Location = new System.Drawing.Point(33, 7);
             this.lblRegister.Margin = new System.Windows.Forms.Padding(0);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(60, 19);
@@ -1976,9 +1977,10 @@
             // 
             // picSubmitForm
             // 
+            this.picSubmitForm.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picSubmitForm.Image = ((System.Drawing.Image)(resources.GetObject("picSubmitForm.Image")));
-            this.picSubmitForm.Location = new System.Drawing.Point(14, 6);
-            this.picSubmitForm.Margin = new System.Windows.Forms.Padding(0);
+            this.picSubmitForm.Location = new System.Drawing.Point(11, 6);
+            this.picSubmitForm.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.picSubmitForm.Name = "picSubmitForm";
             this.picSubmitForm.Size = new System.Drawing.Size(19, 20);
             this.picSubmitForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

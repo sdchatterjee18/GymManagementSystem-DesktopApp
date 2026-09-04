@@ -566,12 +566,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
         private void dgvRevenue_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvRevenue.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvRevenue.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -579,17 +574,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
         private void dgvRevenue_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvRevenue.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvRevenue.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-
-
             }
         }
 

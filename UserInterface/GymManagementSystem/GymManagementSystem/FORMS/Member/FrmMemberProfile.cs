@@ -243,7 +243,7 @@ namespace GymManagementSystem.FORMS.Member
         private void FrmMemberProfile_Load(object sender, EventArgs e)
         {
             PicMemberPicture.SizeMode = PictureBoxSizeMode.Zoom;
-            MakePictureBoxCircle();
+            //MakePictureBoxCircle();
             LoadMemberDetails();
         }
 

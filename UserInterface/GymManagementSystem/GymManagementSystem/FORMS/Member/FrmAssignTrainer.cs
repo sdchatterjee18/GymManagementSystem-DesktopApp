@@ -69,38 +69,38 @@ namespace GymManagementSystem.FORMS.Member
 
             //if (!ValidationUI.ValidateRequiredComboBoxes(combobox))
             //{
-            //    return;  
+            //    return;
             //}
             //else
             //{
-            //    int trainerId = Convert.ToInt32(cmbSelectTrainer.SelectedValue);
-            //    DialogResult result = MessageBox.Show
-            //        (
-            //         AssignConfirmationMessage,
-            //         "Confirmation",
-            //         MessageBoxButtons.YesNo,
-            //         MessageBoxIcon.Question
-            //        );
+                int trainerId = Convert.ToInt32(cmbSelectTrainer.SelectedValue);
+                DialogResult result = MessageBox.Show
+                    (
+                     AssignConfirmationMessage,
+                     "Confirmation",
+                     MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Question
+                    );
 
-            //    if (result != DialogResult.Yes)
-            //    {
-            //        return;
-            //    }
-            //    try
-            //    {
-            //        MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
-            //        AssignTrainerMessage = MemberAllDetailsUI.AssignTrainerToMemberUI(MemberId, trainerId);
-            //       DialogResult Result= MessageBox.Show(AssignTrainerMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //       if (Result == DialogResult.OK)
-            //       {
-            //           this.Dispose();
-                       
-            //       }
-            //    }
-            //    catch (Exception Ex)
-            //    {
-            //        AssignTrainerMessage = null;
-            //    }
+                if (result != DialogResult.Yes)
+                {
+                    return;
+                }
+                try
+                {
+                    MemberAllDetailsUI MemberAllDetailsUI = new MemberAllDetailsUI();
+                    AssignTrainerMessage = MemberAllDetailsUI.AssignTrainerToMemberUI(MemberId, trainerId);
+                    DialogResult Result = MessageBox.Show(AssignTrainerMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (Result == DialogResult.OK)
+                    {
+                        this.Dispose();
+
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    AssignTrainerMessage = null;
+                }
             //}
         }
 

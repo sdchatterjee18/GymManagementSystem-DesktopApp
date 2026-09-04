@@ -24,7 +24,7 @@
 -------------------------------------------------------------------
 
 --------------------------------
--- SP: spSuperAdminLogin
+-- SP: spSuperAdminLogin--
 --------------------------------
 CREATE PROC spSuperAdminLogin
 (
@@ -88,6 +88,116 @@ BEGIN
 END;
 GO
 
+----------------------------------
+-- SP: spUpdatePasswordByEmail--
+----------------------------------
+CREATE PROCEDURE spUpdatePasswordByEmail
+(
+    @EmailId VARCHAR(150),
+    @PasswordHash VARCHAR(255)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Email VARCHAR(150);
+
+    SET @Email = LTRIM(RTRIM(@EmailId));
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblSuperAdmin
+        WHERE EmailId = @Email
+    )
+    BEGIN
+
+        UPDATE tblSuperAdmin
+        SET PasswordHash = @PasswordHash
+        WHERE EmailId = @Email
+
+        SELECT
+            'Password is Updated Successfully' AS Message;
+
+        RETURN;
+    END;
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblAdmin A
+        INNER JOIN tblEmployee E
+            ON A.EmployeeId = E.EmployeeId
+        WHERE E.EmailId = @Email
+          AND E.IsActive = 1
+    )
+    BEGIN
+
+        UPDATE A
+        SET A.PasswordHash = @PasswordHash
+        FROM tblAdmin A
+        INNER JOIN tblEmployee E
+            ON A.EmployeeId = E.EmployeeId
+        WHERE E.EmailId = @Email
+          AND E.IsActive = 1;
+
+        SELECT
+            'Password is Updated Successfully' AS Message;
+
+        RETURN;
+    END;
+END;
+GO
+--------------------------------------------
+-- SP: spCheckActiveEmailForPasswordReset--
+--------------------------------------------
+CREATE PROCEDURE spCheckActiveEmailForPasswordReset 
+(
+    @EmailId VARCHAR(150)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Email VARCHAR(150);
+
+    SET @Email = LTRIM(RTRIM(@EmailId));
+
+
+    -- Check Active Admin
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblAdmin A
+        INNER JOIN tblEmployee E
+            ON A.EmployeeId = E.EmployeeId
+        WHERE E.EmailId = @Email
+          AND E.IsActive = 1
+    )
+    BEGIN
+        SELECT
+            'Active' AS Message;
+        RETURN;
+    END;
+
+
+    -- Check Active SuperAdmin
+    IF EXISTS
+    (
+        SELECT 1
+        FROM tblSuperAdmin SA
+        WHERE SA.EmailId = @Email
+    )
+    BEGIN
+        SELECT
+            'Active' AS Message;
+        RETURN;
+    END;
+
+
+    -- Email not found / inactive
+    SELECT
+        'NotFound' AS Message;
+END;
+GO
 --------------------------------
 -- SP: spSuperAdminLogout
 --------------------------------
