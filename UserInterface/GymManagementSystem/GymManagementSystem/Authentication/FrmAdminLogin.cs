@@ -77,26 +77,6 @@ namespace GymManagementSystem.Authentication
             frmForgotPassword.ShowDialog();
             this.Hide();
         }
-
-        private void txtAdminUsername_Click(object sender, EventArgs e)
-        {
-            if (txtAdminUsername.ForeColor == Color.Gray)
-            {
-                txtAdminUsername.Clear();
-                txtAdminUsername.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtAdminPassword_Click(object sender, EventArgs e)
-        {
-            if (txtAdminPassword.ForeColor == Color.Gray)
-            {
-                txtAdminPassword.Clear();
-                txtAdminPassword.ForeColor = Color.Black;
-            }
-            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
-        }
-
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
@@ -108,13 +88,8 @@ namespace GymManagementSystem.Authentication
             // CLEAR DEFAULT PLACEHOLDER TEXT
             // ==========================================
 
-            ValidationUI.ClearDefaultPlaceholderText(
-                txtAdminUsername,
-                ClickCountTxtAdminUsername);
-
-            ValidationUI.ClearDefaultPlaceholderText(
-                txtAdminPassword,
-                ClickCountTxtAdminPassword);
+            ValidationUI.ClearDefaultPlaceholderText(txtAdminUsername,ClickCountTxtAdminUsername);
+            ValidationUI.ClearDefaultPlaceholderText(txtAdminPassword,ClickCountTxtAdminPassword);
 
             // ==========================================
             // CREATE AUTHENTICATION UI OBJECT
@@ -180,6 +155,26 @@ namespace GymManagementSystem.Authentication
                 txtAdminUsername.Text = "Enter UserName";
                 txtAdminUsername.ForeColor = Color.Gray;
             }
+        }
+
+        private void txtAdminUsername_Click(object sender, EventArgs e)
+        {
+            //ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked();
+            if (txtAdminUsername.ForeColor == Color.Gray)
+            {
+                txtAdminUsername.Clear();
+                txtAdminUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtAdminPassword_Click(object sender, EventArgs e)
+        {
+            if (txtAdminPassword.ForeColor == Color.Gray)
+            {
+                txtAdminPassword.Clear();
+                txtAdminPassword.ForeColor = Color.Black;
+            }
+            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }
