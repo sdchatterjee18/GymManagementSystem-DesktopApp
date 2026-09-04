@@ -139,12 +139,11 @@ namespace GymManagementSystem.Authentication
         }
         private void txtSuperAdminUsername_Click(object sender, EventArgs e)
         {
-            ClickCountTxtSuperAdminUsername =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtSuperAdminUsername,
-                    ClickCountTxtSuperAdminUsername);
-
-            txtSuperAdminUsername.ForeColor = Color.Black;
+            if (txtSuperAdminUsername.ForeColor == Color.Gray)
+            {
+                txtSuperAdminUsername.Clear();
+                txtSuperAdminUsername.ForeColor = Color.Black;
+            }
         }
 
         private void txtSuperAdminPassword_Click(object sender, EventArgs e)
@@ -155,7 +154,7 @@ namespace GymManagementSystem.Authentication
                     ClickCountTxtSuperAdminPassword);
 
             txtSuperAdminPassword.ForeColor = Color.Black;
-            txtSuperAdminPassword.UseSystemPasswordChar = true;
+            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
 
         private void lblForgotPassword_Click_1(object sender, EventArgs e)
@@ -168,6 +167,16 @@ namespace GymManagementSystem.Authentication
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+        }
+
+        private void txtSuperAdminUsername_Leave_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSuperAdminUsername.Text))
+            {
+                txtSuperAdminUsername.Text = "Enter UserName";
+                txtSuperAdminUsername.ForeColor = Color.Gray;
+            }
+            
         }
     }
 }

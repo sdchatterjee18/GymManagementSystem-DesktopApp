@@ -74,10 +74,9 @@
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmin.ForeColor = System.Drawing.Color.White;
-            this.lblAdmin.Location = new System.Drawing.Point(82, 0);
-            this.lblAdmin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdmin.Location = new System.Drawing.Point(109, 0);
             this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(196, 37);
+            this.lblAdmin.Size = new System.Drawing.Size(245, 45);
             this.lblAdmin.TabIndex = 2;
             this.lblAdmin.Text = "       Admin       ";
             // 
@@ -88,9 +87,9 @@
             this.pnlHeader.Controls.Add(this.lblAdmin);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(360, 44);
+            this.pnlHeader.Size = new System.Drawing.Size(480, 54);
             this.pnlHeader.TabIndex = 2;
             // 
             // btnClose
@@ -101,11 +100,12 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(332, 2);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(443, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(26, 26);
+            this.btnClose.Size = new System.Drawing.Size(35, 32);
             this.btnClose.TabIndex = 4;
+            this.btnClose.TabStop = false;
             this.btnClose.Text = "✕";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -115,9 +115,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
             this.panel1.Controls.Add(this.tlpAdminLoginEntireForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 44);
+            this.panel1.Location = new System.Drawing.Point(0, 54);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 386);
+            this.panel1.Size = new System.Drawing.Size(480, 475);
             this.panel1.TabIndex = 3;
             // 
             // tlpAdminLoginEntireForm
@@ -133,8 +134,8 @@
             this.tlpAdminLoginEntireForm.Controls.Add(this.pnlUsernameAdmin, 1, 4);
             this.tlpAdminLoginEntireForm.Controls.Add(this.pnlPasswordAdmin, 1, 5);
             this.tlpAdminLoginEntireForm.Controls.Add(this.tlpForgotPassword, 1, 6);
-            this.tlpAdminLoginEntireForm.Location = new System.Drawing.Point(2, 0);
-            this.tlpAdminLoginEntireForm.Margin = new System.Windows.Forms.Padding(5, 2, 2, 2);
+            this.tlpAdminLoginEntireForm.Location = new System.Drawing.Point(3, 0);
+            this.tlpAdminLoginEntireForm.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
             this.tlpAdminLoginEntireForm.Name = "tlpAdminLoginEntireForm";
             this.tlpAdminLoginEntireForm.RowCount = 9;
             this.tlpAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.980198F));
@@ -146,7 +147,7 @@
             this.tlpAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.96875F));
             this.tlpAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.23958F));
             this.tlpAdminLoginEntireForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.18455F));
-            this.tlpAdminLoginEntireForm.Size = new System.Drawing.Size(356, 384);
+            this.tlpAdminLoginEntireForm.Size = new System.Drawing.Size(475, 473);
             this.tlpAdminLoginEntireForm.TabIndex = 2;
             // 
             // tlpAdminImage
@@ -154,25 +155,25 @@
             this.tlpAdminImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tlpAdminImage.ColumnCount = 3;
             this.tlpAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tlpAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
             this.tlpAdminImage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAdminImage.Controls.Add(this.picAdmin, 1, 0);
-            this.tlpAdminImage.Location = new System.Drawing.Point(15, 9);
-            this.tlpAdminImage.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpAdminImage.Location = new System.Drawing.Point(20, 11);
+            this.tlpAdminImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAdminImage.Name = "tlpAdminImage";
             this.tlpAdminImage.RowCount = 1;
             this.tlpAdminImage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAdminImage.Size = new System.Drawing.Size(325, 81);
+            this.tlpAdminImage.Size = new System.Drawing.Size(433, 100);
             this.tlpAdminImage.TabIndex = 0;
             // 
             // picAdmin
             // 
             this.picAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picAdmin.Image")));
-            this.picAdmin.Location = new System.Drawing.Point(74, 2);
-            this.picAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.picAdmin.Location = new System.Drawing.Point(99, 2);
+            this.picAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAdmin.Name = "picAdmin";
-            this.picAdmin.Size = new System.Drawing.Size(176, 77);
+            this.picAdmin.Size = new System.Drawing.Size(234, 96);
             this.picAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAdmin.TabIndex = 0;
             this.picAdmin.TabStop = false;
@@ -182,16 +183,16 @@
             this.tblAdminLogin.ColumnCount = 3;
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.39645F));
             this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.60355F));
-            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tblAdminLogin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tblAdminLogin.Controls.Add(this.btnAdminLogin, 1, 0);
             this.tblAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblAdminLogin.Location = new System.Drawing.Point(15, 315);
-            this.tblAdminLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.tblAdminLogin.Location = new System.Drawing.Point(20, 388);
+            this.tblAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblAdminLogin.Name = "tblAdminLogin";
             this.tblAdminLogin.RowCount = 1;
             this.tblAdminLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblAdminLogin.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblAdminLogin.Size = new System.Drawing.Size(325, 43);
+            this.tblAdminLogin.Size = new System.Drawing.Size(433, 54);
             this.tblAdminLogin.TabIndex = 5;
             // 
             // btnAdminLogin
@@ -202,11 +203,12 @@
             this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Location = new System.Drawing.Point(109, 2);
-            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdminLogin.Location = new System.Drawing.Point(144, 2);
+            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(75, 39);
+            this.btnAdminLogin.Size = new System.Drawing.Size(99, 50);
             this.btnAdminLogin.TabIndex = 0;
+            this.btnAdminLogin.TabStop = false;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
@@ -215,10 +217,10 @@
             // 
             this.picThreeDotAdmin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picThreeDotAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picThreeDotAdmin.Image")));
-            this.picThreeDotAdmin.Location = new System.Drawing.Point(151, 94);
-            this.picThreeDotAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.picThreeDotAdmin.Location = new System.Drawing.Point(202, 115);
+            this.picThreeDotAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picThreeDotAdmin.Name = "picThreeDotAdmin";
-            this.picThreeDotAdmin.Size = new System.Drawing.Size(52, 24);
+            this.picThreeDotAdmin.Size = new System.Drawing.Size(69, 30);
             this.picThreeDotAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picThreeDotAdmin.TabIndex = 7;
             this.picThreeDotAdmin.TabStop = false;
@@ -227,10 +229,10 @@
             // 
             this.pnlUsernameAdmin.Controls.Add(this.tlpUsernameInput);
             this.pnlUsernameAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUsernameAdmin.Location = new System.Drawing.Point(15, 158);
-            this.pnlUsernameAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUsernameAdmin.Location = new System.Drawing.Point(20, 194);
+            this.pnlUsernameAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUsernameAdmin.Name = "pnlUsernameAdmin";
-            this.pnlUsernameAdmin.Size = new System.Drawing.Size(325, 41);
+            this.pnlUsernameAdmin.Size = new System.Drawing.Size(433, 52);
             this.pnlUsernameAdmin.TabIndex = 8;
             // 
             // tlpUsernameInput
@@ -239,18 +241,18 @@
             this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.992203F));
             this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.23077F));
             this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.07692F));
-            this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpUsernameInput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpUsernameInput.Controls.Add(this.lblAdminUsernameI, 1, 0);
             this.tlpUsernameInput.Controls.Add(this.txtAdminUsername, 2, 0);
             this.tlpUsernameInput.Controls.Add(this.picAdminUsernameI, 0, 0);
             this.tlpUsernameInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpUsernameInput.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpUsernameInput.Location = new System.Drawing.Point(0, 0);
-            this.tlpUsernameInput.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpUsernameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpUsernameInput.Name = "tlpUsernameInput";
             this.tlpUsernameInput.RowCount = 1;
             this.tlpUsernameInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUsernameInput.Size = new System.Drawing.Size(325, 41);
+            this.tlpUsernameInput.Size = new System.Drawing.Size(433, 52);
             this.tlpUsernameInput.TabIndex = 4;
             // 
             // lblAdminUsernameI
@@ -259,10 +261,9 @@
             this.lblAdminUsernameI.AutoSize = true;
             this.lblAdminUsernameI.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdminUsernameI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
-            this.lblAdminUsernameI.Location = new System.Drawing.Point(27, 12);
-            this.lblAdminUsernameI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminUsernameI.Location = new System.Drawing.Point(37, 14);
             this.lblAdminUsernameI.Name = "lblAdminUsernameI";
-            this.lblAdminUsernameI.Size = new System.Drawing.Size(76, 17);
+            this.lblAdminUsernameI.Size = new System.Drawing.Size(96, 23);
             this.lblAdminUsernameI.TabIndex = 0;
             this.lblAdminUsernameI.Text = "Username :";
             // 
@@ -271,22 +272,24 @@
             this.txtAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAdminUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtAdminUsername.Location = new System.Drawing.Point(108, 8);
-            this.txtAdminUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAdminUsername.Location = new System.Drawing.Point(145, 11);
+            this.txtAdminUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdminUsername.Name = "txtAdminUsername";
-            this.txtAdminUsername.Size = new System.Drawing.Size(215, 25);
+            this.txtAdminUsername.Size = new System.Drawing.Size(285, 29);
             this.txtAdminUsername.TabIndex = 1;
             this.txtAdminUsername.Text = "Enter Username";
             this.txtAdminUsername.Click += new System.EventHandler(this.txtAdminUsername_Click);
+            this.txtAdminUsername.Enter += new System.EventHandler(this.txtAdminUsername_Click);
+            this.txtAdminUsername.Leave += new System.EventHandler(this.txtAdminUsername_Leave);
             // 
             // picAdminUsernameI
             // 
             this.picAdminUsernameI.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picAdminUsernameI.Image = ((System.Drawing.Image)(resources.GetObject("picAdminUsernameI.Image")));
-            this.picAdminUsernameI.Location = new System.Drawing.Point(2, 5);
-            this.picAdminUsernameI.Margin = new System.Windows.Forms.Padding(2);
+            this.picAdminUsernameI.Location = new System.Drawing.Point(3, 7);
+            this.picAdminUsernameI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAdminUsernameI.Name = "picAdminUsernameI";
-            this.picAdminUsernameI.Size = new System.Drawing.Size(21, 31);
+            this.picAdminUsernameI.Size = new System.Drawing.Size(28, 38);
             this.picAdminUsernameI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAdminUsernameI.TabIndex = 2;
             this.picAdminUsernameI.TabStop = false;
@@ -295,10 +298,10 @@
             // 
             this.pnlPasswordAdmin.Controls.Add(this.tlpAdminPassword);
             this.pnlPasswordAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPasswordAdmin.Location = new System.Drawing.Point(15, 203);
-            this.pnlPasswordAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlPasswordAdmin.Location = new System.Drawing.Point(20, 250);
+            this.pnlPasswordAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPasswordAdmin.Name = "pnlPasswordAdmin";
-            this.pnlPasswordAdmin.Size = new System.Drawing.Size(325, 39);
+            this.pnlPasswordAdmin.Size = new System.Drawing.Size(433, 49);
             this.pnlPasswordAdmin.TabIndex = 9;
             // 
             // tlpAdminPassword
@@ -313,12 +316,12 @@
             this.tlpAdminPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpAdminPassword.Location = new System.Drawing.Point(0, 0);
-            this.tlpAdminPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpAdminPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpAdminPassword.Name = "tlpAdminPassword";
             this.tlpAdminPassword.RowCount = 1;
             this.tlpAdminPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAdminPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tlpAdminPassword.Size = new System.Drawing.Size(325, 39);
+            this.tlpAdminPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlpAdminPassword.Size = new System.Drawing.Size(433, 49);
             this.tlpAdminPassword.TabIndex = 5;
             // 
             // lblAdminPassword
@@ -327,10 +330,9 @@
             this.lblAdminPassword.AutoSize = true;
             this.lblAdminPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdminPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
-            this.lblAdminPassword.Location = new System.Drawing.Point(29, 11);
-            this.lblAdminPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminPassword.Location = new System.Drawing.Point(39, 13);
             this.lblAdminPassword.Name = "lblAdminPassword";
-            this.lblAdminPassword.Size = new System.Drawing.Size(73, 17);
+            this.lblAdminPassword.Size = new System.Drawing.Size(91, 23);
             this.lblAdminPassword.TabIndex = 0;
             this.lblAdminPassword.Text = "Password :";
             // 
@@ -339,22 +341,24 @@
             this.txtAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAdminPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdminPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtAdminPassword.Location = new System.Drawing.Point(108, 6);
-            this.txtAdminPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAdminPassword.Location = new System.Drawing.Point(144, 9);
+            this.txtAdminPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(215, 26);
-            this.txtAdminPassword.TabIndex = 1;
+            this.txtAdminPassword.Size = new System.Drawing.Size(285, 30);
+            this.txtAdminPassword.TabIndex = 2;
             this.txtAdminPassword.Text = "Enter Password";
             this.txtAdminPassword.Click += new System.EventHandler(this.txtAdminPassword_Click);
+            this.txtAdminPassword.Enter += new System.EventHandler(this.txtAdminPassword_Click);
+            this.txtAdminPassword.Leave += new System.EventHandler(this.txtAdminPassword_Leave);
             // 
             // picAdminPassword
             // 
             this.picAdminPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAdminPassword.Image = ((System.Drawing.Image)(resources.GetObject("picAdminPassword.Image")));
-            this.picAdminPassword.Location = new System.Drawing.Point(2, 2);
-            this.picAdminPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.picAdminPassword.Location = new System.Drawing.Point(3, 2);
+            this.picAdminPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picAdminPassword.Name = "picAdminPassword";
-            this.picAdminPassword.Size = new System.Drawing.Size(23, 35);
+            this.picAdminPassword.Size = new System.Drawing.Size(30, 45);
             this.picAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAdminPassword.TabIndex = 2;
             this.picAdminPassword.TabStop = false;
@@ -363,17 +367,17 @@
             // 
             this.tlpForgotPassword.ColumnCount = 1;
             this.tlpForgotPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpForgotPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tlpForgotPassword.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpForgotPassword.Controls.Add(this.lblForgotPassword, 0, 1);
             this.tlpForgotPassword.Controls.Add(this.cbShowPassword, 0, 0);
             this.tlpForgotPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpForgotPassword.Location = new System.Drawing.Point(15, 246);
-            this.tlpForgotPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpForgotPassword.Location = new System.Drawing.Point(20, 303);
+            this.tlpForgotPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpForgotPassword.Name = "tlpForgotPassword";
             this.tlpForgotPassword.RowCount = 2;
             this.tlpForgotPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.07692F));
             this.tlpForgotPassword.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.92308F));
-            this.tlpForgotPassword.Size = new System.Drawing.Size(325, 65);
+            this.tlpForgotPassword.Size = new System.Drawing.Size(433, 81);
             this.tlpForgotPassword.TabIndex = 10;
             // 
             // lblForgotPassword
@@ -382,11 +386,10 @@
             this.lblForgotPassword.AutoSize = true;
             this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblForgotPassword.Location = new System.Drawing.Point(223, 38);
-            this.lblForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblForgotPassword.Location = new System.Drawing.Point(300, 47);
             this.lblForgotPassword.Name = "lblForgotPassword";
-            this.lblForgotPassword.Size = new System.Drawing.Size(100, 15);
-            this.lblForgotPassword.TabIndex = 12;
+            this.lblForgotPassword.Size = new System.Drawing.Size(130, 20);
+            this.lblForgotPassword.TabIndex = 3;
             this.lblForgotPassword.Text = "Forgot Password?";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
@@ -396,25 +399,27 @@
             this.cbShowPassword.AutoSize = true;
             this.cbShowPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(65)))), ((int)(((byte)(122)))));
-            this.cbShowPassword.Location = new System.Drawing.Point(268, 2);
-            this.cbShowPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.cbShowPassword.Location = new System.Drawing.Point(363, 2);
+            this.cbShowPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(55, 19);
+            this.cbShowPassword.Size = new System.Drawing.Size(67, 24);
             this.cbShowPassword.TabIndex = 11;
+            this.cbShowPassword.TabStop = false;
             this.cbShowPassword.Text = "Show";
             this.cbShowPassword.UseVisualStyleBackColor = true;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // FrmAdminLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 430);
+            this.ClientSize = new System.Drawing.Size(480, 529);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(435, 497);
-            this.MinimumSize = new System.Drawing.Size(360, 430);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(580, 612);
+            this.MinimumSize = new System.Drawing.Size(480, 529);
             this.Name = "FrmAdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdminLogin";

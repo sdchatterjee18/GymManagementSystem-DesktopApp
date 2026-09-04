@@ -20,12 +20,14 @@ namespace GymManagementSystem.FORMS.Expenses
         {
             InitializeComponent();
             SetErrorProviderAlignment();
+           
         }
 
         int clickCountTxtAmount = 0;
         int clickCountTxtNote = 0;
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
+            txtAmount.Focus();
             //for Amount Text
             txtAmount.Select(0, 0);
             txtAmount.DeselectAll();
@@ -127,12 +129,10 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            int AmountClick = 1;
-            if (AmountClick == 1)
+            if (txtAmount.ForeColor == Color.Gray)
             {
                 txtAmount.Clear();
                 txtAmount.ForeColor = Color.Black;
-                
             }
         }
 
@@ -143,8 +143,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtExpenseDefination_Click(object sender, EventArgs e)
         {
-            int ClickDefination = 1;
-            if (ClickDefination == 1)
+            if (txtExpenseDefination.ForeColor == Color.Gray)
             {
                 txtExpenseDefination.Clear();
                 txtExpenseDefination.ForeColor = Color.Black;
@@ -371,6 +370,30 @@ namespace GymManagementSystem.FORMS.Expenses
                 e.CellStyle.ForeColor = Color.Blue;
             }
             
+        }
+
+        private void cmbCateogory_Enter(object sender, EventArgs e)
+        {
+            cmbCateogory.DroppedDown = true;
+        }
+
+        private void txtAmount_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                txtAmount.Text = "Enter Amount";
+                txtAmount.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtExpenseDefination_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtExpenseDefination.Text))
+            {
+                txtExpenseDefination.Text = "Enter a note about expense";
+                txtExpenseDefination.ForeColor = Color.Gray;
+            }
+
         } 
 
     }

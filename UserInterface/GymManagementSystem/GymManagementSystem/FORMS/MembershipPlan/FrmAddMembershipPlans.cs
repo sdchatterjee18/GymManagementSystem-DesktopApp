@@ -48,6 +48,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         }
         private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
         {
+            txtPlanName.Focus();
             this.Text = "";
             this.ShowIcon = false;
             LoadPlanTypes();
@@ -253,23 +254,42 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // TextBox Click Events
         private void txtPlanName_Click(object sender, EventArgs e)
         {
-            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
-            txtPlanName.ForeColor = Color.Black;
+            
+            if (txtPlanName.ForeColor == Color.Gray)
+            {
+                txtPlanName.Clear();
+                txtPlanName.ForeColor = Color.Black;
+            }
+            
         }
         private void txtDuration_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
-            txtDuration.ForeColor = Color.Black;
+           
+            if (txtDuration.ForeColor == Color.Gray)
+            {
+                txtDuration.Clear();
+                txtDuration.ForeColor = Color.Black;
+            }
+            
         }
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
-            txtAmount.ForeColor = Color.Black;
+           
+            if (txtAmount.ForeColor == Color.Gray)
+            {
+                txtAmount.Clear();
+                txtAmount.ForeColor = Color.Black;
+            }
+            
         }
         private void txtDescription_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
-            txtDescription.ForeColor = Color.Black;
+            
+            if (txtDescription.ForeColor == Color.Gray)
+            {
+                txtDescription.Clear();
+                txtDescription.ForeColor = Color.Black;
+            }
         }
 
         // Load Membership Plan Types
@@ -316,6 +336,48 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void tlpNewMembarshipPlanDetails_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void cmbPlanType_Enter(object sender, EventArgs e)
+        {
+            cmbPlanType.DroppedDown = true;
+        }
+
+        private void txtPlanName_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPlanName.Text))
+            {
+                txtPlanName.Text = "Enter Plan Name";
+                txtPlanName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtDuration_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDuration.Text))
+            {
+                txtDuration.Text = "Enter Duration";
+                txtDuration.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtAmount_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                txtAmount.Text = "Enter Amount";
+                txtAmount.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                txtDescription.Text = "Enter Description";
+                txtDescription.ForeColor = Color.Gray;
+            }
 
         }  
     }

@@ -285,7 +285,7 @@ The database follows normalization principles to minimize data redundancy, impro
 | PaymentId | INT | PRIMARY KEY, IDENTITY(1,1) | ❌ No | Unique identifier for the payment transaction. |
 | MemberId | INT | FOREIGN KEY | ❌ No | References the member who made the payment. |
 | MembershipPlanId | INT | FOREIGN KEY | ❌ No | References the membership plan purchased. |
-| SubscriptionId | INT | FOREIGN KEY | ❌ No | References the MembershipSubscription that was purchased. |
+| MemberSubscriptionId | INT | FOREIGN KEY | ❌ No | References the MembershipSubscription that was purchased. |
 | PaymentDate | DATETIME | DEFAULT(GETDATE()) | ❌ No | Date and time when the payment was made. |
 | PaymentMethod | VARCHAR(50) | - | ❌ No | Method used for payment (Cash, UPI, Card, Bank Transfer, etc.). |
 | Amount | DECIMAL(10,2) | CHECK(Amount >= 0) | ❌ No | Total amount paid by the member. |

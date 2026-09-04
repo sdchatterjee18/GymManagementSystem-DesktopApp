@@ -71,6 +71,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         }
         private void FrmSAAddNewEmployee_Load(object sender, EventArgs e)
         {
+            txtFirstName.Focus();
             // Employee Type
             LoadEmployeeRoles();
             cmbEmployeeType.SelectedIndex = -1;
@@ -839,6 +840,42 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             dtpDOB.CustomFormat = "dd/MM/yyyy";
             isDateOfBirthSelected = true;
             errorProvider1.SetError(dtpDOB, "");
+        }
+
+        private void txtFirstName_Leave(object sender, EventArgs e)
+        {
+            txtMiddleName.Focus();
+        }
+
+        private void txtMiddleName_Leave(object sender, EventArgs e)
+        {
+            txtLastName.Focus();
+        }
+
+        private void txtLastName_Leave(object sender, EventArgs e)
+        {
+            txtPhoneNumber.Focus();
+        }
+
+        private void txtPhoneNumber_Leave(object sender, EventArgs e)
+        {
+            txtEmailId.Focus();
+        }
+
+        private void txtEmailId_Leave(object sender, EventArgs e)
+        {
+            cmbEmployeeType.Focus();
+            cmbEmployeeType.DroppedDown = true;
+        }
+
+        private void cmbEmployeeType_Leave(object sender, EventArgs e)
+        {
+            txtSalary.Focus();
+        }
+
+        private void txtSpecialization_Leave(object sender, EventArgs e)
+        {
+            txtBankAccountNo.Focus();
         }
 
        

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GymManagementSystem.FORMS.Workout.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS.Workout
 {
@@ -102,43 +103,43 @@ namespace GymManagementSystem.FORMS.Workout
 
         private void pnlClickSubmitWorkoutSchedule_Click(object sender, EventArgs e)
         {
-            try
+            
+            ValidationUI.ValidationResult result;
+            bool IsValid = true;
+            errorProvider1.Clear();
+
+            result = ValidationUI.ValidateRequiredComboBox(cmbWorkoutName);
+            if( result != ValidationUI.ValidationResult.Valid)
             {
-                if (cmbWorkoutName.SelectedIndex == -1)
-                {
-                    MessageBox.Show(
-                        "Please select Workout Name.",
-                        "Validation",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                errorProvider1.SetError(cmbWorkoutName,"Is required" + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
 
-                    cmbWorkoutName.Focus();
-                    return;
-                }
+            result = ValidationUI.ValidateRequiredComboBox(cmbExerciseName);
 
-                if (cmbExerciseName.SelectedIndex == -1)
-                {
-                    MessageBox.Show(
-                        "Please select Exercise Name.",
-                        "Validation",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+            if(result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(cmbExerciseName,"is required" + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
 
-                    cmbExerciseName.Focus();
-                    return;
-                }
+             result = ValidationUI.ValidateRequiredComboBox(cmbWorkoutDays);
 
-                if (cmbWorkoutDays.SelectedIndex == -1)
-                {
-                    MessageBox.Show(
-                        "Please select Workout Day.",
-                        "Validation",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+            if(result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(cmbWorkoutDays,"is required" + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
 
-                    cmbWorkoutDays.Focus();
-                    return;
-                }
+            if (!IsValid)
+            {
+                MessageBox.Show("Please fill in all required fields.",
+                                "Required Fields",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning);
+                this.ActiveControl = null;
+                return;
+            }
 
                 int workoutPlanId =
                     Convert.ToInt32(cmbWorkoutName.SelectedValue);
@@ -176,15 +177,8 @@ namespace GymManagementSystem.FORMS.Workout
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            
+           
         }
         // Clear Button Click Event
         private void btnClearWorkoutSchedule_Click(object sender, EventArgs e)
@@ -219,6 +213,21 @@ namespace GymManagementSystem.FORMS.Workout
         {
             btnClearWorkoutSchedule.BackColor = Color.MidnightBlue;
             btnClearWorkoutSchedule.ForeColor = Color.White;
+        }
+
+        private void cmbWorkoutName_Enter(object sender, EventArgs e)
+        {
+            cmbWorkoutName.DroppedDown = true;
+        }
+
+        private void cmbExerciseName_Enter(object sender, EventArgs e)
+        {
+            cmbExerciseName.DroppedDown = true;
+        }
+
+        private void cmbWorkoutDays_Enter(object sender, EventArgs e)
+        {
+            cmbWorkoutDays.DroppedDown = true;
         }
     }
 }

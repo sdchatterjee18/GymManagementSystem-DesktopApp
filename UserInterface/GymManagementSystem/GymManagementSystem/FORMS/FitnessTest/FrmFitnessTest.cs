@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using GymManagementSystem.FORMS.Gender;
 using GymManagementSystem.Common;
 using GymManagementSystem.FORMS.FitnessTest.UI;
+using GymManagementSystem.Common;
 
 namespace GymManagementSystem.FORMS
 {
@@ -29,6 +30,7 @@ namespace GymManagementSystem.FORMS
 
         private void FrmFitnessTest_Load(object sender, EventArgs e)
         {
+            txtHightInput.Focus();
             this.ActiveControl = null;
             LoadGender();
             LoadActivity();
@@ -37,6 +39,7 @@ namespace GymManagementSystem.FORMS
 
         private void cmbActivityInput_Enter(object sender, EventArgs e)
         {
+            cmbActivityInput.DroppedDown = true;
             if (cmbActivityInput.Text.Trim() == "---select---")
             {
                 cmbActivityInput.Text = "";
@@ -55,6 +58,7 @@ namespace GymManagementSystem.FORMS
 
         private void cmbGoalInput_Enter(object sender, EventArgs e)
         {
+            cmbGoalInput.DroppedDown = true;
             if (cmbGoalInput.Text.Trim() == "---select---")
             {
                 cmbGoalInput.Text = "";
@@ -112,7 +116,11 @@ namespace GymManagementSystem.FORMS
             txtHightInput,
             ClickCountTxtHeight);
 
-            txtHightInput.ForeColor = Color.Black;
+            if (txtHightInput.ForeColor == Color.Gray)
+            {
+                txtHightInput.Clear();
+                txtHightInput.ForeColor = Color.Black;
+            }
         }
 
         private void txtWeightInput_Click(object sender, EventArgs e)
@@ -121,7 +129,11 @@ namespace GymManagementSystem.FORMS
                txtWeightInput,
                ClickCountTxtWeight);
 
-            txtWeightInput.ForeColor = Color.Black;
+            if (txtWeightInput.ForeColor == Color.Gray)
+            {
+                txtWeightInput.Clear();
+                txtWeightInput.ForeColor = Color.Black;
+            }
         }
 
         private void txtAgeInput_Click(object sender, EventArgs e)
@@ -130,9 +142,16 @@ namespace GymManagementSystem.FORMS
                txtAgeInput,
                ClickCountTxtAge);
 
-            txtAgeInput.ForeColor = Color.Black;
+            if (txtAgeInput.ForeColor == Color.Gray)
+            {
+                txtAgeInput.Clear();
+                txtAgeInput.ForeColor = Color.Black;
+            }
         }
 
+        int ClickCountHight = 0;
+        int ClickCountWeight = 0;
+        int ClickCountAge = 0;
         private void btnCalculateFitnessTest_Click(object sender, EventArgs e)
         {
             // =========================================================
@@ -153,20 +172,62 @@ namespace GymManagementSystem.FORMS
             // Required Field Validation
             // =========================================================
 
-            //if (!ValidationUI.ValidateRequiredTextBoxes(
-            //    txtHightInput,
-            //    txtWeightInput,
-            //    txtAgeInput))
-            //{
-            //    MessageBox.Show(
-            //        "Please fill up all things.",
-            //        "Validation",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Warning);
+           
 
-            //    return;
-            //}
+            ValidationUI.ClearDefaultPlaceholderText(txtHightInput, ClickCountHight);
+            ValidationUI.ClearDefaultPlaceholderText(txtWeightInput, ClickCountWeight);
+            ValidationUI.ClearDefaultPlaceholderText(txtAgeInput, ClickCountAge);
+            ValidationUI.ValidationResult result;
+            bool IsValid = true;
+            errorProvider1.Clear();
+            result = ValidationUI.ValidateRequiredTextBox(txtHightInput);
+            if (result != Common.ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtHightInput, "Hight " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
+            result = ValidationUI.ValidateRequiredTextBox(txtWeightInput);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtWeightInput, "Weight " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
+            result = ValidationUI.ValidateRequiredComboBox(cmbGenderInput);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(cmbGenderInput, "Gender " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
+            result = ValidationUI.ValidateRequiredTextBox(txtAgeInput);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(txtAgeInput, "Age " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
 
+            result = ValidationUI.ValidateRequiredComboBox(cmbActivityInput);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(cmbActivityInput, "Activity " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
+
+            result = ValidationUI.ValidateRequiredComboBox(cmbGoalInput);
+            if (result != ValidationUI.ValidationResult.Valid)
+            {
+                errorProvider1.SetError(cmbGoalInput, "Goal " + ValidationUI.GetValidationMessage(result));
+                IsValid = false;
+            }
+
+            if (!IsValid)
+            {
+                MessageBox.Show("Please fill in all required fields.",
+                                "Required Fields",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning);
+                this.ActiveControl = null;
+                return;
+            }
 
             // =========================================================
             // ComboBox Validation
@@ -344,6 +405,39 @@ namespace GymManagementSystem.FORMS
 
 
       
+        }
+
+        private void txtHightInput_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtHightInput.Text))
+            {
+                txtHightInput.Text = "Enter Hight";
+                txtHightInput.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtWeightInput_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtWeightInput.Text))
+            {
+                txtWeightInput.Text = "Enter Weight";
+                txtWeightInput.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtAgeInput_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAgeInput.Text))
+            {
+                txtAgeInput.Text = "Enter Age";
+                txtAgeInput.ForeColor = Color.Gray;
+            }
+        }
+
+        private void cmbGenderInput_Enter(object sender, EventArgs e)
+        {
+            cmbGenderInput.DroppedDown = true;
+
         }
     }
 }
