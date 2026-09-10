@@ -175,6 +175,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
                 };
             }
         }
+
+        //public void UpdateEmployeePhoneNoAndEmailIdByEmployeeIdUI()
+        //{
+
+        //}
         public DataTable DisplayAllEmployeeDetailsUI()
         {
             EmployeeBLL employeeBLL = new EmployeeBLL();

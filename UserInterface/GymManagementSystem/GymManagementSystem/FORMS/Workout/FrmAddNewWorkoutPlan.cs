@@ -102,12 +102,17 @@ namespace GymManagementSystem.FORMS.Workout
             // Stop if required validation failed
             if (!isValid)
             {
-                MessageBox.Show(
+               DialogResult Result= MessageBox.Show(
                     "Please fill in all required fields.",
                     "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+               if (Result == DialogResult.OK)
+               {
+                   txtWorkoutPlanName.Text = "Enter Workout Name";
+                   txtDescription.Text = "Description";
 
+               }
                 this.ActiveControl = null;
                 return;
             }
@@ -222,6 +227,7 @@ namespace GymManagementSystem.FORMS.Workout
         // Form Load
         private void FrmAddNewWorkoutPlan_Load( object sender,EventArgs e)
         {
+            lblWorkoutName.Focus();
             this.ShowIcon = false;
             this.Text = "";
             this.ActiveControl = null;
@@ -252,6 +258,38 @@ namespace GymManagementSystem.FORMS.Workout
             pnlClickSubmitWorkoutPlan.BackColor = Color.MidnightBlue;
             lblAddNewWorkoutPlan.ForeColor = Color.White;
             picAddButtonWorkoutPlan.Image = Properties.Resources.paper_plane; 
+        }
+
+        private void txtWorkoutPlanName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtWorkoutPlanName = ValidationUI.ClearTextBoxWhenClicked(txtWorkoutPlanName, ClickCountTxtWorkoutPlanName);
+        }
+
+        private void txtWorkoutPlanName_Leave(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtWorkoutPlanName.Text))
+            {
+                ClickCountTxtWorkoutPlanName = 0;
+                txtWorkoutPlanName.Text = "Enter Workout Name";
+                txtWorkoutPlanName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                ClickCountTxtDescription = 0;
+                txtDescription.Text = "Description";
+                txtDescription.ForeColor = Color.Gray;
+            }
         }
 
     }

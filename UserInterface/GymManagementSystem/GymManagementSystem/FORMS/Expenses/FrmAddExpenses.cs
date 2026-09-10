@@ -27,7 +27,7 @@ namespace GymManagementSystem.FORMS.Expenses
         int clickCountTxtNote = 0;
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
-            txtAmount.Focus();
+            lblAmount.Focus();
             //for Amount Text
             txtAmount.Select(0, 0);
             txtAmount.DeselectAll();
@@ -129,11 +129,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            if (txtAmount.ForeColor == Color.Gray)
-            {
-                txtAmount.Clear();
-                txtAmount.ForeColor = Color.Black;
-            }
+            clickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, clickCountTxtAmount);
         }
 
         private void cmbCateogory_Click(object sender, EventArgs e)
@@ -143,11 +139,7 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtExpenseDefination_Click(object sender, EventArgs e)
         {
-            if (txtExpenseDefination.ForeColor == Color.Gray)
-            {
-                txtExpenseDefination.Clear();
-                txtExpenseDefination.ForeColor = Color.Black;
-            }
+            clickCountTxtNote = ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
         }
 
         private void dgvExpenses_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -182,15 +174,6 @@ namespace GymManagementSystem.FORMS.Expenses
            
         }
 
-
-
-        private void pnlAddExpenseCategory_Click_1(object sender, EventArgs e)
-        {
-            FrmAddExpenseCategory frmAddExpenseCategory = new FrmAddExpenseCategory();
-            frmAddExpenseCategory.ShowDialog();
-            RetrieveCategoryName();
-        }
-
         private void tlpAddButton_MouseEnter(object sender, EventArgs e)
         {
             this.tlpAddButton.BackColor = Color.FromArgb(220, 225, 230);
@@ -203,26 +186,9 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
-            
-            
-        }
-
-        private void tlpSelectCategory_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tlpSearchBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSubmit_Click_1(object sender, EventArgs e)
-        {
             ValidationUI.ClearDefaultPlaceholderText(txtExpenseDefination, clickCountTxtNote);
             ValidationUI.ClearDefaultPlaceholderText(txtAmount, clickCountTxtAmount);
-          
+
             // VALIDATION
             ValidationUI.ValidationResult result;
             bool isValid = true;
@@ -262,14 +228,19 @@ namespace GymManagementSystem.FORMS.Expenses
 
                 isValid = false;
             }
-            
+
             if (!isValid)
             {
-                MessageBox.Show(
+               DialogResult Result = MessageBox.Show(
                     "Please fill up all required fields.",
                     "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+               if (Result == DialogResult.OK)
+               {
+                   txtAmount.Text = "Enter Amount";
+                   txtExpenseDefination.Text = "Enter Expense Defination";
+               }
 
                 this.ActiveControl = null;
                 return;
@@ -301,9 +272,19 @@ namespace GymManagementSystem.FORMS.Expenses
                 MessageBox.Show(finalResult.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             RetrieveAllExpense();
+            
+            
+        }
+
+        private void tlpSelectCategory_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 
+        private void tlpSearchBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
         private void pnlAddExpenseCategory_MouseEnter(object sender, EventArgs e)
         {
             pnlAddExpenseCategory.BackColor = Color.White;
@@ -336,19 +317,6 @@ namespace GymManagementSystem.FORMS.Expenses
             btnSubmit.BackColor = Color.MidnightBlue;
             btnSubmit.ForeColor = Color.White;
         }
-
-        private void txtAmount_Click_1(object sender, EventArgs e)
-        {
-           clickCountTxtAmount= ValidationUI.ClearTextBoxWhenClicked(txtAmount, clickCountTxtAmount);
-           txtAmount.ForeColor = Color.Black;
-        }
-
-        private void txtExpenseDefination_Click_1(object sender, EventArgs e)
-        {
-            clickCountTxtNote=ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
-            txtExpenseDefination.ForeColor = Color.Black;
-        }
-
         private void dgvExpenses_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvExpenses.Columns[e.ColumnIndex].Name == "colNotes")
@@ -374,26 +342,45 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void cmbCateogory_Enter(object sender, EventArgs e)
         {
-            cmbCateogory.DroppedDown = true;
+            //cmbCateogory.DroppedDown = true;
         }
 
         private void txtAmount_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAmount.Text))
-            {
+            { 
+                clickCountTxtAmount = 0;
                 txtAmount.Text = "Enter Amount";
                 txtAmount.ForeColor = Color.Gray;
             }
+            
         }
 
         private void txtExpenseDefination_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtExpenseDefination.Text))
             {
+                clickCountTxtNote = 0;
                 txtExpenseDefination.Text = "Enter a note about expense";
                 txtExpenseDefination.ForeColor = Color.Gray;
             }
 
+        }
+
+        private void txtAmount_Enter(object sender, EventArgs e)
+        {
+            clickCountTxtAmount =
+               ValidationUI.ClearTextBoxWhenClicked(
+                   txtAmount,
+                   clickCountTxtAmount);
+        }
+
+        private void txtExpenseDefination_Enter(object sender, EventArgs e)
+        {
+            clickCountTxtNote =
+              ValidationUI.ClearTextBoxWhenClicked(
+                  txtExpenseDefination,
+                  clickCountTxtNote);
         } 
 
     }

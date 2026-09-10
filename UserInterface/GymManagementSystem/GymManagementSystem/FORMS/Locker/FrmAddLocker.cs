@@ -35,9 +35,7 @@ namespace GymManagementSystem.FORMS.Locker
 
         // Submit Form
         private void tlpButton_Click(object sender, EventArgs e)
-        {
-            ValidationUI.ClearDefaultPlaceholderText(txtLockerNumber,clickCountTxtLocker);
-
+        { 
             ValidationUI.ValidationResult result;
             bool isValid = true;
             errorProvider1.Clear();
@@ -76,12 +74,18 @@ namespace GymManagementSystem.FORMS.Locker
 
             if (result.Result == ValidationBll.CommonValidationMessage.Valid)
             {
-                MessageBox.Show(
+               DialogResult Result = MessageBox.Show(
                     result.Message,
                     "Locker",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-
+               if (Result == DialogResult.OK)
+               {
+                   this.Close();
+                   
+                   FrmDisplayLocker frmDisplayLocker = new FrmDisplayLocker();
+                   frmDisplayLocker.Show();  
+               }
                 return;
             }
 

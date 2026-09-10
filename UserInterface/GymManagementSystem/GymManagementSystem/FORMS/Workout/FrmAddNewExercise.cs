@@ -43,16 +43,14 @@ namespace GymManagementSystem.FORMS.Workout
         {
             ClickCountTxtExerciseName =ValidationUI.ClearTextBoxWhenClicked( txtExerciseName,ClickCountTxtExerciseName);
 
-            txtExerciseName.ForeColor =
-                Color.Black;
+           
         }
         // Muscle Type TextBox Click Event
         private void txtMuscleType_Click(object sender, EventArgs e)
         {
             ClickCountTxtMuscleType =ValidationUI.ClearTextBoxWhenClicked( txtMuscleType,ClickCountTxtMuscleType);
 
-            txtMuscleType.ForeColor =
-                Color.Black;
+            
         }
         // Submit Exercise
         private void pnlClickSubmitExercise_Click(object sender, EventArgs e)
@@ -105,12 +103,16 @@ namespace GymManagementSystem.FORMS.Workout
             // Stop if required validation failed
             if (!isValid)
             {
-                MessageBox.Show(
+              DialogResult Result =  MessageBox.Show(
                     "Please fill in all required fields.",
                     "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-
+              if (Result == DialogResult.OK)
+              {
+                  txtExerciseName.Text = "Enter Exercise Name";
+                  txtMuscleType.Text = "Enter Muscle Type";
+              }
                 this.ActiveControl = null;
                 return;
             }
@@ -204,6 +206,7 @@ namespace GymManagementSystem.FORMS.Workout
         // Form Load Event
         private void FrmAddNewExercise_Load_1(object sender, EventArgs e)
         {
+            
             this.ShowIcon = false;
             this.Text = "";
             this.ActiveControl = null;
@@ -233,6 +236,39 @@ namespace GymManagementSystem.FORMS.Workout
         {
             btnClearExercise.BackColor = Color.MidnightBlue;
             btnClearExercise.ForeColor = Color.White;
+        }
+
+        private void txtExerciseName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtExerciseName = ValidationUI.ClearTextBoxWhenClicked(txtExerciseName, ClickCountTxtExerciseName);
+        }
+
+        private void txtExerciseName_Leave(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtExerciseName.Text))
+            {
+                ClickCountTxtExerciseName = 0;
+                txtExerciseName.Text = "Enter Exercise Name";
+                txtExerciseName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtMuscleType_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtMuscleType = ValidationUI.ClearTextBoxWhenClicked(txtMuscleType, ClickCountTxtMuscleType);
+        }
+
+        private void txtMuscleType_Leave(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtMuscleType.Text))
+            {
+                ClickCountTxtMuscleType = 0;
+                txtMuscleType.Text = "Enter Muscle Type";
+                txtMuscleType.ForeColor = Color.Gray;
+            }
+
         }
     }
 }

@@ -148,11 +148,19 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             }
             if (!isValid)
             {
-                MessageBox.Show(
+               DialogResult Result= MessageBox.Show(
                     "Please fill in all required fields.",
                     "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+               if (Result == DialogResult.OK)
+               {
+                   txtPlanName.Text = "Enter Plan name";
+                   txtDuration.Text = "Enter Duration";
+                   txtAmount.Text = "Enter Amount";
+                   txtDescription.Text = "Enter Description";
+                   
+               }
 
                 this.ActiveControl = null;
                 return;
@@ -254,42 +262,21 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         // TextBox Click Events
         private void txtPlanName_Click(object sender, EventArgs e)
         {
-            
-            if (txtPlanName.ForeColor == Color.Gray)
-            {
-                txtPlanName.Clear();
-                txtPlanName.ForeColor = Color.Black;
-            }
+
+            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
             
         }
         private void txtDuration_Click(object sender, EventArgs e)
         {
-           
-            if (txtDuration.ForeColor == Color.Gray)
-            {
-                txtDuration.Clear();
-                txtDuration.ForeColor = Color.Black;
-            }
-            
+            ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
         }
         private void txtAmount_Click(object sender, EventArgs e)
         {
-           
-            if (txtAmount.ForeColor == Color.Gray)
-            {
-                txtAmount.Clear();
-                txtAmount.ForeColor = Color.Black;
-            }
-            
+            ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
         }
         private void txtDescription_Click(object sender, EventArgs e)
         {
-            
-            if (txtDescription.ForeColor == Color.Gray)
-            {
-                txtDescription.Clear();
-                txtDescription.ForeColor = Color.Black;
-            }
+            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
         }
 
         // Load Membership Plan Types
@@ -341,13 +328,14 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void cmbPlanType_Enter(object sender, EventArgs e)
         {
-            cmbPlanType.DroppedDown = true;
+            //cmbPlanType.DroppedDown = true;
         }
 
         private void txtPlanName_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPlanName.Text))
             {
+                ClickCountTxtPlanName = 0;
                 txtPlanName.Text = "Enter Plan Name";
                 txtPlanName.ForeColor = Color.Gray;
             }
@@ -357,15 +345,17 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             if (string.IsNullOrWhiteSpace(txtDuration.Text))
             {
+                ClickCountTxtDuration = 0;
                 txtDuration.Text = "Enter Duration";
                 txtDuration.ForeColor = Color.Gray;
             }
         }
 
         private void txtAmount_Leave(object sender, EventArgs e)
-        {
+        { 
             if (string.IsNullOrWhiteSpace(txtAmount.Text))
             {
+                ClickCountTxtAmount = 0;
                 txtAmount.Text = "Enter Amount";
                 txtAmount.ForeColor = Color.Gray;
             }
@@ -375,10 +365,39 @@ namespace GymManagementSystem.FORMS.MembershipPlan
         {
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
+                ClickCountTxtDescription = 0;
                 txtDescription.Text = "Enter Description";
                 txtDescription.ForeColor = Color.Gray;
             }
+        }
 
+        private void txtPlanName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
+        }
+
+        private void txtDuration_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtDuration =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtDuration,
+                    ClickCountTxtDescription);
+        }
+
+        private void txtAmount_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtAmount =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtAmount,
+                    ClickCountTxtAmount);
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription,ClickCountTxtDescription);
         }  
     }
 }

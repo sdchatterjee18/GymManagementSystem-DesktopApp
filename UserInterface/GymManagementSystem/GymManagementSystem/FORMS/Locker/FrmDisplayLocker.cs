@@ -21,7 +21,7 @@ namespace GymManagementSystem.FORMS.Locker
             InitializeComponent();
         }
 
-        private void FrmDisplayLocker_Load(object sender, EventArgs e)
+        public void FrmDisplayLocker_Load(object sender, EventArgs e)
         {
             this.getLockersDetails();
             this.dgvDisplayLocker.ClearSelection();
@@ -76,7 +76,7 @@ namespace GymManagementSystem.FORMS.Locker
         }
 
         //Retrieve Locker Details
-        private void getLockersDetails()
+        public  void getLockersDetails()
         {
             try
             {

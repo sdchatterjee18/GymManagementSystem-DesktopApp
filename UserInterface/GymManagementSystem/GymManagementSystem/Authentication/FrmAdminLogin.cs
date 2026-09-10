@@ -16,6 +16,7 @@ namespace GymManagementSystem.Authentication
     {
         int ClickCountTxtAdminUsername = 0;
         int ClickCountTxtAdminPassword = 0;
+        int checkedShow = 0;
         FrmUserRoleSelection frmUserRoleSelection = null;
         public FrmAdminLogin(FrmUserRoleSelection frmUserRoleSelection)
         {
@@ -33,12 +34,14 @@ namespace GymManagementSystem.Authentication
 
         private void txtAdminPassword_Leave(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(txtAdminPassword.Text))
             {
+                ClickCountTxtAdminPassword = 0;
                 txtAdminPassword.Text = "Enter Password";
                 txtAdminPassword.ForeColor = Color.Gray;
+                txtAdminPassword.UseSystemPasswordChar = false;
             }
+            
         }
 
         private void FrmAdminLogin_Shown(object sender, EventArgs e)
@@ -79,7 +82,11 @@ namespace GymManagementSystem.Authentication
         }
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+            if (txtAdminPassword.Text != "Enter Password")
+            {
+                txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+                checkedShow = 1;
+            }
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -152,6 +159,7 @@ namespace GymManagementSystem.Authentication
         {
             if (string.IsNullOrWhiteSpace(txtAdminUsername.Text))
             {
+                ClickCountTxtAdminUsername = 0;
                 txtAdminUsername.Text = "Enter UserName";
                 txtAdminUsername.ForeColor = Color.Gray;
             }
@@ -159,22 +167,36 @@ namespace GymManagementSystem.Authentication
 
         private void txtAdminUsername_Click(object sender, EventArgs e)
         {
-            //ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked();
-            if (txtAdminUsername.ForeColor == Color.Gray)
-            {
-                txtAdminUsername.Clear();
-                txtAdminUsername.ForeColor = Color.Black;
-            }
+            ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
+            
         }
 
         private void txtAdminPassword_Click(object sender, EventArgs e)
         {
-            if (txtAdminPassword.ForeColor == Color.Gray)
+
+            ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
+            
+        }
+
+        private void txtAdminUsername_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminUsername =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtAdminUsername,
+                    ClickCountTxtAdminUsername);
+        }
+
+        private void txtAdminPassword_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtAdminPassword =ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword,ClickCountTxtAdminPassword);
+        }
+
+        private void txtAdminPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (checkedShow == 0)
             {
-                txtAdminPassword.Clear();
-                txtAdminPassword.ForeColor = Color.Black;
+                txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
             }
-            txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
         }
     }
 }

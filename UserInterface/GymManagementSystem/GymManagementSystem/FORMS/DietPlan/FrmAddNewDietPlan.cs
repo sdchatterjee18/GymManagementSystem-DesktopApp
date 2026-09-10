@@ -44,7 +44,7 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Form Load
         private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
         {
-            txtRequiredCalories.Focus();
+            lblRequiredCalories.Focus();
             this.Text = "";
             this.ShowIcon = false;
             this.ActiveControl = null;
@@ -59,24 +59,12 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Required Calories Click
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
-          
-            if (txtRequiredCalories.ForeColor == Color.Gray)
-            {
-                txtRequiredCalories.Clear();
-                txtRequiredCalories.ForeColor = Color.Black;
-            }
-            
+            ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
         }
         // Plan Condition Click
         private void txtPlanCondition_Click(object sender, EventArgs e)
         {
-            
-            if (txtPlanCondition.ForeColor == Color.Gray)
-            {
-                txtPlanCondition.Clear();
-                txtPlanCondition.ForeColor = Color.Black;
-            }
-            
+            ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
         }
         // Choose File
         private void tlpChooseFile_Click(object sender, EventArgs e)
@@ -263,11 +251,16 @@ namespace GymManagementSystem.FORMS.DietPlan
 
             if (!isValid)
             {
-                MessageBox.Show(
+               DialogResult Result = MessageBox.Show(
                     "Please fill in all required fields.",
                     "Required Fields",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                if(Result == DialogResult.OK)
+                {
+                    txtRequiredCalories.Text = "Enter Required Calories";
+                    txtPlanCondition.Text = "Enter Plan Condition";
+                }
 
                 this.ActiveControl = null;
                 return;
@@ -449,18 +442,37 @@ namespace GymManagementSystem.FORMS.DietPlan
         {
             if (string.IsNullOrWhiteSpace(txtRequiredCalories.Text))
             {
+                ClickCountTxtRequiredCalories = 0;
                 txtRequiredCalories.Text = "Enter Required Calories";
                 txtRequiredCalories.ForeColor = Color.Gray;
-            }
+            } 
         }
 
         private void txtPlanCondition_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPlanCondition.Text))
             {
+                ClickCountTxtPlanCondition = 0;
                 txtPlanCondition.Text = "Enter Plan Condition";
                 txtPlanCondition.ForeColor = Color.Gray;
             }
+        }
+
+        private void txtRequiredCalories_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtRequiredCalories =
+               ValidationUI.ClearTextBoxWhenClicked(
+                   txtRequiredCalories,
+                   ClickCountTxtRequiredCalories);
+        }
+
+        private void txtPlanCondition_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtPlanCondition =
+                ValidationUI.ClearTextBoxWhenClicked(
+                    txtPlanCondition,
+                    ClickCountTxtPlanCondition);
         }
     }
 }

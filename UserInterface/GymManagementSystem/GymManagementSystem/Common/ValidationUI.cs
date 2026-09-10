@@ -31,6 +31,7 @@ namespace GymManagementSystem.Common
         public static int ClearTextBoxWhenClicked(TextBox textBox,int count)
         {
             textBox.BackColor = Color.White;
+            textBox.ForeColor = Color.Black;
             if (count == 0)
             {
                 textBox.Clear();
@@ -40,8 +41,7 @@ namespace GymManagementSystem.Common
             return 1;
         }
 
-        public static ValidationResult ValidateRadioButtonSelection(
-            params RadioButton[] radioButtons)
+        public static ValidationResult ValidateRadioButtonSelection(params RadioButton[] radioButtons)
         {
             foreach (RadioButton radioButton in radioButtons)
             {
@@ -63,6 +63,7 @@ namespace GymManagementSystem.Common
 
             return ValidationResult.Valid;
         }
+
         public static void ClearDefaultPlaceholderText(TextBox textBox, int clickCount)
         {
             if (clickCount == 0)
@@ -71,6 +72,7 @@ namespace GymManagementSystem.Common
                 clickCount++;
             }
         }
+
         public static bool ValidateGenderRadioButtonSelection(params RadioButton[] radioButtons)
         {
             foreach (RadioButton radioButton in radioButtons)
@@ -88,6 +90,7 @@ namespace GymManagementSystem.Common
                 MessageBoxIcon.Warning);
             return false;
         }
+
         public static string GetValidationMessage(ValidationResult result)
         {
             switch (result)

@@ -53,20 +53,21 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblAddNewEmployee = new System.Windows.Forms.Label();
             this.tlpEmployeeDataGrid = new System.Windows.Forms.TableLayoutPanel();
             this.dvgEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.picBoxSearchIcon = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.colSlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJoiningDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBankAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colDeactivate = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.picBoxSearchIcon = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlHeading.SuspendLayout();
             this.tlpHeading.SuspendLayout();
             this.tlpHeaderSpace.SuspendLayout();
@@ -230,7 +231,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.picBoxPluseIcon.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.picBoxPluseIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxPluseIcon.Image = global::GymManagementSystem.Properties.Resources.plus;
-            this.picBoxPluseIcon.Location = new System.Drawing.Point(8, 6);
+            this.picBoxPluseIcon.Location = new System.Drawing.Point(7, 6);
             this.picBoxPluseIcon.Margin = new System.Windows.Forms.Padding(0);
             this.picBoxPluseIcon.Name = "picBoxPluseIcon";
             this.picBoxPluseIcon.Size = new System.Drawing.Size(15, 15);
@@ -247,7 +248,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.lblAddNewEmployee.AutoSize = true;
             this.lblAddNewEmployee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddNewEmployee.ForeColor = System.Drawing.Color.White;
-            this.lblAddNewEmployee.Location = new System.Drawing.Point(25, 6);
+            this.lblAddNewEmployee.Location = new System.Drawing.Point(24, 6);
             this.lblAddNewEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddNewEmployee.Name = "lblAddNewEmployee";
             this.lblAddNewEmployee.Size = new System.Drawing.Size(58, 15);
@@ -311,6 +312,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colName,
             this.colGender,
             this.colPhoneNo,
+            this.colEmailId,
             this.colJoiningDate,
             this.colRole,
             this.colBankAccount,
@@ -356,131 +358,11 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.dvgEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dvgEmployeeDetails.Size = new System.Drawing.Size(711, 328);
             this.dvgEmployeeDetails.TabIndex = 0;
+            this.dvgEmployeeDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellClick);
             this.dvgEmployeeDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellContentClick);
             this.dvgEmployeeDetails.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseEnter);
             this.dvgEmployeeDetails.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgEmployeeDetails_CellMouseLeave);
             this.dvgEmployeeDetails.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dvgEmployeeDetails_CellPainting);
-            // 
-            // colSlNo
-            // 
-            this.colSlNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.colSlNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colSlNo.FillWeight = 60F;
-            this.colSlNo.HeaderText = "Sl No.";
-            this.colSlNo.Name = "colSlNo";
-            this.colSlNo.ReadOnly = true;
-            this.colSlNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSlNo.Width = 50;
-            // 
-            // colEmployeeId
-            // 
-            this.colEmployeeId.DataPropertyName = "EmployeeId";
-            this.colEmployeeId.HeaderText = "Employee Id";
-            this.colEmployeeId.Name = "colEmployeeId";
-            this.colEmployeeId.Visible = false;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colName.DataPropertyName = "EmployeeName";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.colName.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colName.FillWeight = 130F;
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colName.Width = 130;
-            // 
-            // colGender
-            // 
-            this.colGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colGender.DataPropertyName = "GenderName";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.colGender.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colGender.FillWeight = 70F;
-            this.colGender.HeaderText = "Gender";
-            this.colGender.Name = "colGender";
-            this.colGender.ReadOnly = true;
-            this.colGender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colGender.Width = 70;
-            // 
-            // colPhoneNo
-            // 
-            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colPhoneNo.DataPropertyName = "PhoneNo";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPhoneNo.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colPhoneNo.HeaderText = "Mobile No";
-            this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.ReadOnly = true;
-            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colPhoneNo.Width = 120;
-            // 
-            // colJoiningDate
-            // 
-            this.colJoiningDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colJoiningDate.DataPropertyName = "JoiningDate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colJoiningDate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colJoiningDate.FillWeight = 90F;
-            this.colJoiningDate.HeaderText = "Joining Date";
-            this.colJoiningDate.Name = "colJoiningDate";
-            this.colJoiningDate.ReadOnly = true;
-            this.colJoiningDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colRole
-            // 
-            this.colRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRole.DataPropertyName = "RoleName";
-            this.colRole.FillWeight = 90F;
-            this.colRole.HeaderText = "Role";
-            this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
-            this.colRole.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colBankAccount
-            // 
-            this.colBankAccount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankAccount.DataPropertyName = "BankAccountNo";
-            this.colBankAccount.FillWeight = 110F;
-            this.colBankAccount.HeaderText = "Bank A/C";
-            this.colBankAccount.Name = "colBankAccount";
-            this.colBankAccount.ReadOnly = true;
-            this.colBankAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colStatus
-            // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colStatus.FillWeight = 80F;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colStatus.Width = 80;
-            // 
-            // colUpdate
-            // 
-            this.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colUpdate.FillWeight = 80F;
-            this.colUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colUpdate.HeaderText = "Action";
-            this.colUpdate.Name = "colUpdate";
-            this.colUpdate.ReadOnly = true;
-            this.colUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colUpdate.Width = 80;
-            // 
-            // colDeactivate
-            // 
-            this.colDeactivate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDeactivate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDeactivate.HeaderText = "Action";
-            this.colDeactivate.Name = "colDeactivate";
-            this.colDeactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDeactivate.Width = 80;
             // 
             // tlpSearch
             // 
@@ -532,6 +414,138 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
+            // colSlNo
+            // 
+            this.colSlNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSlNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colSlNo.FillWeight = 60F;
+            this.colSlNo.HeaderText = "Sl No.";
+            this.colSlNo.Name = "colSlNo";
+            this.colSlNo.ReadOnly = true;
+            this.colSlNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSlNo.Width = 50;
+            // 
+            // colEmployeeId
+            // 
+            this.colEmployeeId.DataPropertyName = "EmployeeId";
+            this.colEmployeeId.HeaderText = "Employee Id";
+            this.colEmployeeId.Name = "colEmployeeId";
+            this.colEmployeeId.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colName.DataPropertyName = "EmployeeName";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.colName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colName.FillWeight = 130F;
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colName.Width = 48;
+            // 
+            // colGender
+            // 
+            this.colGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colGender.DataPropertyName = "GenderName";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.colGender.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colGender.FillWeight = 70F;
+            this.colGender.HeaderText = "Gender";
+            this.colGender.Name = "colGender";
+            this.colGender.ReadOnly = true;
+            this.colGender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colGender.Width = 56;
+            // 
+            // colPhoneNo
+            // 
+            this.colPhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colPhoneNo.DataPropertyName = "PhoneNo";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPhoneNo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colPhoneNo.HeaderText = "Mobile No";
+            this.colPhoneNo.Name = "colPhoneNo";
+            this.colPhoneNo.ReadOnly = true;
+            this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPhoneNo.Width = 75;
+            // 
+            // colEmailId
+            // 
+            this.colEmailId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colEmailId.DataPropertyName = "EmailId";
+            this.colEmailId.HeaderText = "EmailId";
+            this.colEmailId.Name = "colEmailId";
+            this.colEmailId.ReadOnly = true;
+            this.colEmailId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colEmailId.Width = 56;
+            // 
+            // colJoiningDate
+            // 
+            this.colJoiningDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colJoiningDate.DataPropertyName = "JoiningDate";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colJoiningDate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colJoiningDate.FillWeight = 90F;
+            this.colJoiningDate.HeaderText = "Joining Date";
+            this.colJoiningDate.Name = "colJoiningDate";
+            this.colJoiningDate.ReadOnly = true;
+            this.colJoiningDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colJoiningDate.Width = 87;
+            // 
+            // colRole
+            // 
+            this.colRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colRole.DataPropertyName = "RoleName";
+            this.colRole.FillWeight = 90F;
+            this.colRole.HeaderText = "Role";
+            this.colRole.Name = "colRole";
+            this.colRole.ReadOnly = true;
+            this.colRole.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colRole.Width = 38;
+            // 
+            // colBankAccount
+            // 
+            this.colBankAccount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankAccount.DataPropertyName = "BankAccountNo";
+            this.colBankAccount.FillWeight = 110F;
+            this.colBankAccount.HeaderText = "Bank A/C";
+            this.colBankAccount.Name = "colBankAccount";
+            this.colBankAccount.ReadOnly = true;
+            this.colBankAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colStatus.FillWeight = 80F;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colStatus.Width = 5;
+            // 
+            // colUpdate
+            // 
+            this.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colUpdate.FillWeight = 80F;
+            this.colUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colUpdate.HeaderText = "Action";
+            this.colUpdate.Name = "colUpdate";
+            this.colUpdate.ReadOnly = true;
+            this.colUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUpdate.Width = 51;
+            // 
+            // colDeactivate
+            // 
+            this.colDeactivate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colDeactivate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDeactivate.HeaderText = "Action";
+            this.colDeactivate.Name = "colDeactivate";
+            this.colDeactivate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDeactivate.Width = 51;
             // 
             // FrmSADisplayAllEmployee
             // 
@@ -589,6 +603,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmailId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJoiningDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBankAccount;

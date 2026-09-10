@@ -18,8 +18,10 @@ namespace GymManagementSystem.Authentication
         private string UserEmail;
         private string GeneratedOTP;
         int CountDown = 30;
+        int ClickCountTxtEmali = 0;
         int ClickCountTxtNewPassword= 0;
         int ClickCountTxtConfirmedPassword = 0;
+        int checkedShow = 0;
         public FrmForgotPassword()
         {
             InitializeComponent();
@@ -148,44 +150,37 @@ namespace GymManagementSystem.Authentication
 
         private void cbNewPasswordShow_CheckedChanged(object sender, EventArgs e)
         {
-            txtNewPassword.UseSystemPasswordChar = !cbNewPasswordShow.Checked;
+            if (txtConfirmedPassword.Text != "Enter New Password")
+            {
+                txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
+                checkedShow = 1;
+            }
+            txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
         }
 
         private void cbComfirmedPasswordShow_CheckedChanged(object sender, EventArgs e)
         {
+            if (txtConfirmedPassword.Text != "Enter Confirmed Password")
+            {
+                txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
+                checkedShow = 1;
+            }
             txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
         }
 
         private void txtNewPassword_Click(object sender, EventArgs e)
         {
-            if (txtNewPassword.ForeColor == Color.Gray)
-            {
-                txtNewPassword.Clear();
-                txtNewPassword.ForeColor = Color.Black;
-            }
-            txtNewPassword.UseSystemPasswordChar =  !cbNewPasswordShow.Checked;
+            ClickCountTxtNewPassword = ValidationUI.ClearTextBoxWhenClicked(txtNewPassword, ClickCountTxtNewPassword);
         }
 
         private void txtConfirmedPassword_Click(object sender, EventArgs e)
         {
-            if (txtConfirmedPassword.ForeColor == Color.Gray)
-            {
-                txtConfirmedPassword.Clear();
-                txtConfirmedPassword.ForeColor = Color.Black;
-            }
-
-            txtConfirmedPassword.UseSystemPasswordChar = !cbComfirmedPasswordShow.Checked;
+            ClickCountTxtConfirmedPassword = ValidationUI.ClearTextBoxWhenClicked(txtConfirmedPassword, ClickCountTxtConfirmedPassword);
         }
 
         private void txtEmail_Click(object sender, EventArgs e)
         {
-            int Click = 1;
-            if (Click == 1)
-            {
-                txtEmail.Clear();
-                txtEmail.ForeColor = Color.Black;
-                Click++;
-            }
+            ClickCountTxtEmali = ValidationUI.ClearTextBoxWhenClicked(txtEmail, ClickCountTxtEmali);
         }
 
         public string ChangePasswordByEmailId()
@@ -247,18 +242,56 @@ namespace GymManagementSystem.Authentication
         {
             if (string.IsNullOrWhiteSpace(txtNewPassword.Text))
             {
+                ClickCountTxtNewPassword = 0;
                 txtNewPassword.Text = "Enter New Password";
                 txtNewPassword.ForeColor = Color.Gray;
+                txtNewPassword.UseSystemPasswordChar = false;
             }
+           
         }
 
         private void txtConfirmedPassword_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtConfirmedPassword.Text))
             {
+                ClickCountTxtConfirmedPassword = 0;
                 txtConfirmedPassword.Text = "Enter Confirm Password";
                 txtConfirmedPassword.ForeColor = Color.Gray;
+                txtConfirmedPassword.UseSystemPasswordChar = false;
             }
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtEmali = ValidationUI.ClearTextBoxWhenClicked(txtEmail, ClickCountTxtEmali);
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                ClickCountTxtEmali = 0;
+                txtEmail.Text = "name@example.com";
+                txtEmail.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtNewPassword_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtNewPassword =
+               ValidationUI.ClearTextBoxWhenClicked(
+                    txtNewPassword,
+                   ClickCountTxtNewPassword);
+        }
+
+        private void txtConfirmedPassword_Enter(object sender, EventArgs e)
+        {
+
+            ClickCountTxtConfirmedPassword =
+               ValidationUI.ClearTextBoxWhenClicked(
+                   txtConfirmedPassword,
+                   ClickCountTxtConfirmedPassword);
         }
 
       

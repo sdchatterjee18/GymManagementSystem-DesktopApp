@@ -18,40 +18,53 @@ namespace GymManagementSystem.Authentication
     {
         int ClickCountTxtSuperAdminUsername = 0;
         int ClickCountTxtSuperAdminPassword = 0;
+        int checkedShow = 0;
         FrmUserRoleSelection frmUserRoleSelection = null;
         public FrmSuperAdminLogin(FrmUserRoleSelection frmUserRoleSelection)
         {
             this.frmUserRoleSelection = frmUserRoleSelection;
             InitializeComponent();
-           
         }
-            
-
         private void FrmSuperAdminLogin_Load(object sender, EventArgs e)
         {
             this.ShowIcon = false;
             this.Text = "";
+            lblForgotPassword.Focus();
+            txtSuperAdminPassword.UseSystemPasswordChar = false;
         }
 
         private void txtSuperAdminUsername_Enter(object sender, EventArgs e)
         {
-            txtSuperAdminUsername.ForeColor = Color.Gray;
+            ClickCountTxtSuperAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtSuperAdminUsername, ClickCountTxtSuperAdminUsername);
         }
 
         private void txtSuperAdminUsername_Leave(object sender, EventArgs e)
         {
-            txtSuperAdminUsername.ForeColor = Color.Gray;
+            if (string.IsNullOrWhiteSpace(txtSuperAdminUsername.Text))
+            {
+                ClickCountTxtSuperAdminUsername = 0;
+                txtSuperAdminUsername.Text = "Enter UserName";
+                txtSuperAdminUsername.ForeColor = Color.Gray;
+            }
         }
 
         private void txtSuperAdminPassword_Enter(object sender, EventArgs e)
         {
-
-            txtSuperAdminPassword.ForeColor = Color.Gray;
+            ClickCountTxtSuperAdminPassword =
+               ValidationUI.ClearTextBoxWhenClicked(
+                   txtSuperAdminPassword,
+                   ClickCountTxtSuperAdminPassword);
         }
 
         private void txtSuperAdminPassword_Leave(object sender, EventArgs e)
         {
-            txtSuperAdminPassword.ForeColor = Color.Gray;
+            if (string.IsNullOrWhiteSpace(txtSuperAdminPassword.Text))
+            {
+                ClickCountTxtSuperAdminPassword = 0;
+                txtSuperAdminPassword.Text = "Enter Password";
+                txtSuperAdminPassword.ForeColor = Color.Gray;
+                txtSuperAdminPassword.UseSystemPasswordChar = false;
+            }
         }
 
         private void FrmSuperAdminLogin_Shown(object sender, EventArgs e)
@@ -139,44 +152,36 @@ namespace GymManagementSystem.Authentication
         }
         private void txtSuperAdminUsername_Click(object sender, EventArgs e)
         {
-            if (txtSuperAdminUsername.ForeColor == Color.Gray)
-            {
-                txtSuperAdminUsername.Clear();
-                txtSuperAdminUsername.ForeColor = Color.Black;
-            }
+            ClickCountTxtSuperAdminUsername =ValidationUI.ClearTextBoxWhenClicked(txtSuperAdminUsername,ClickCountTxtSuperAdminUsername);
         }
 
         private void txtSuperAdminPassword_Click(object sender, EventArgs e)
         {
-            ClickCountTxtSuperAdminPassword =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtSuperAdminPassword,
-                    ClickCountTxtSuperAdminPassword);
-
-            txtSuperAdminPassword.ForeColor = Color.Black;
-            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
-        }
-
-        private void lblForgotPassword_Click_1(object sender, EventArgs e)
-        {
-            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
-            frmForgotPassword.ShowDialog();
-            this.Close();
+            ClickCountTxtSuperAdminPassword =ValidationUI.ClearTextBoxWhenClicked(txtSuperAdminPassword,ClickCountTxtSuperAdminPassword);
+            txtSuperAdminPassword.ForeColor = Color.Black;  
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+            if (txtSuperAdminPassword.Text != "Enter Password")
+            {
+                txtSuperAdminPassword.UseSystemPasswordChar =!cbShowPassword.Checked;
+                checkedShow = 1;
+            }
+        } 
+        private void txtSuperAdminPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (checkedShow==0)
+            {
+                txtSuperAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+            }
         }
 
-        private void txtSuperAdminUsername_Leave_1(object sender, EventArgs e)
+        private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtSuperAdminUsername.Text))
-            {
-                txtSuperAdminUsername.Text = "Enter UserName";
-                txtSuperAdminUsername.ForeColor = Color.Gray;
-            }
-            
+            FrmForgotPassword frmForgotPassword = new FrmForgotPassword();
+            frmForgotPassword.ShowDialog();
+            this.Close();
         }
     }
 }

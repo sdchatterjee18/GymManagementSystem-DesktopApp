@@ -114,7 +114,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                         .Cells["colPhoneNo"].Value =
                         dataRow["PhoneNo"].ToString();
 
-
+                    //=====================
+                    // EmailId
+                    //=====================
+                    dvgEmployeeDetails.Rows[rowIndex]
+                        .Cells["colEmailId"].Value =
+                        dataRow["EmailId"].ToString();
                     // =========================
                     // Joining Date
                     // =========================
@@ -515,6 +520,72 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
                     dvgEmployeeDetails.ClearSelection();
                 }
             }
+        }
+
+        private void dvgEmployeeDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        ////     if (e.RowIndex < 0 || e.ColumnIndex < 0)
+        ////        return;
+
+        ////    string columnName = dvgEmployeeDetails.Columns[e.ColumnIndex].Name;
+        ////    if (columnName == "colUpdate")
+        ////    {
+        ////        try
+        ////        {
+        ////            dvgEmployeeDetails.EndEdit();
+
+        ////            int EmployeeId = Convert.ToInt32(
+        ////                dvgEmployeeDetails.Rows[e.RowIndex]
+        ////                .Cells["colEmployeeId"]
+        ////                .Value
+        ////            );
+
+        ////            string phoneNo =
+        ////                dvgEmployeeDetails.Rows[e.RowIndex]
+        ////                .Cells["colPhoneNo"]
+        ////                .Value == null
+        ////                ? ""
+        ////                : dvgEmployeeDetails.Rows[e.RowIndex]
+        ////                .Cells["colPhoneNo"]
+        ////                .Value.ToString()
+        ////                .Trim();
+
+        ////            string emailId =
+        ////                dvgEmployeeDetails.Rows[e.RowIndex]
+        ////                .Cells["colEmailId"]
+        ////                .Value == null
+        ////                ? ""
+        ////                : dvgEmployeeDetails.Rows[e.RowIndex]
+        ////                .Cells["colEmailId"]
+        ////                .Value.ToString()
+        ////                .Trim();
+
+        ////            string message =
+        ////                EmployeeUI.UpdateMemberContactInfoUI(
+        ////                    EmployeeId,
+        ////                    phoneNo,
+        ////                    emailId
+        ////                );
+
+        ////            MessageBox.Show(
+        ////                message,
+        ////                "Update Employee",
+        ////                MessageBoxButtons.OK,
+        ////                MessageBoxIcon.Information
+        ////            );
+
+        ////            RetrieveMemberDetails();
+        ////        }
+        ////        catch (Exception ex)
+        ////        {
+        ////            MessageBox.Show(
+        ////                ex.Message,
+        ////                "Update Employee",
+        ////                MessageBoxButtons.OK,
+        ////                MessageBoxIcon.Error
+        ////            );
+        ////        }
+        ////    }
         }
     }
 }

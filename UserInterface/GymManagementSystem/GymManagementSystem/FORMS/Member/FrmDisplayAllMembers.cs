@@ -31,23 +31,31 @@ namespace GymManagementSystem.FORMS.Member
         
         public FrmDisplayAllMembers()
         {
-            // TODO: Complete member initialization
+            InitializeComponent();
+           
         }
 
         private void FrmDisplayAllMembers_Load(object sender, EventArgs e)
         {
-            // Start editing when user starts typing
+            RetrieveMemberDetails();
+
             dgvDisplayMemberInformation.ReadOnly = false;
+
+            foreach (DataGridViewColumn col in
+                     dgvDisplayMemberInformation.Columns)
+            {
+                col.ReadOnly = true;
+            }
 
             dgvDisplayMemberInformation.Columns["colPhoneNo"].ReadOnly = false;
             dgvDisplayMemberInformation.Columns["colEmailId"].ReadOnly = false;
 
-            dgvDisplayMemberInformation.SelectionMode =
-                DataGridViewSelectionMode.CellSelect;
-
             dgvDisplayMemberInformation.EditMode =
                 DataGridViewEditMode.EditOnEnter;
-            RetrieveMemberDetails();
+
+            dgvDisplayMemberInformation.SelectionMode =
+                DataGridViewSelectionMode.CellSelect;
+            
         }
 
         private void RetrieveMemberDetails()
@@ -344,23 +352,8 @@ namespace GymManagementSystem.FORMS.Member
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
-            string columnName =dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name;
-
-            // ==========================================
-            // Phone No / Email Id Edit
-            // ==========================================
-            if (columnName == "colPhoneNo" ||
-                columnName == "colEmailId")
-            {
-                dgvDisplayMemberInformation.ReadOnly = false;
-                dgvDisplayMemberInformation.CurrentCell =dgvDisplayMemberInformation.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                dgvDisplayMemberInformation.BeginEdit(true);
-            }
-
-            // ==========================================
-            // Update Member
-            // ==========================================
-            else if (columnName == "colUpdate")
+            string columnName = dgvDisplayMemberInformation.Columns[e.ColumnIndex].Name;
+            if (columnName == "colUpdate")
             {
                 try
                 {

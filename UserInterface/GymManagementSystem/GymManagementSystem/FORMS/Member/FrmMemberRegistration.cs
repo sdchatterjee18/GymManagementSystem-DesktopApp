@@ -118,83 +118,47 @@ namespace GymManagementSystem.FORMS.Member
 
         private void txtEnterMemberFirstName_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberFirstName.ForeColor == Color.Gray)
-            {
-                txtEnterMemberFirstName.Clear();
-                txtEnterMemberFirstName.ForeColor = Color.Black;
-            }
+            ClickCountTxtFirstName = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberFirstName, ClickCountTxtFirstName);
         }
 
         private void txtEnterMemberMiddleName_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberMiddleName.ForeColor == Color.Gray)
-            {
-                txtEnterMemberMiddleName.Clear();
-                txtEnterMemberMiddleName.ForeColor = Color.Black;
-            }
+            ClickCountTxtMiddleName = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberMiddleName, ClickCountTxtMiddleName);
         }
 
         private void txtEnterMemberLastName_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberLastName.ForeColor == Color.Gray)
-            {
-                txtEnterMemberLastName.Clear();
-                txtEnterMemberLastName.ForeColor = Color.Black;
-            }
+            ClickCountTxtLastName = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberLastName, ClickCountTxtLastName);
         }
 
         private void txtEnterMemberPhoneNumber_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberPhoneNumber.ForeColor == Color.Gray)
-            {
-                txtEnterMemberPhoneNumber.Clear();
-                txtEnterMemberPhoneNumber.ForeColor = Color.Black;
-            }
+            ClickCountTxtPhoneNumber = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberPhoneNumber, ClickCountTxtPhoneNumber);
         }
 
         private void txtEnterMemberEmailId_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberEmailId.ForeColor == Color.Gray)
-            {
-                txtEnterMemberEmailId.Clear();
-                txtEnterMemberEmailId.ForeColor = Color.Black;
-            }
+            ClickCountTxtEmailId = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberEmailId, ClickCountTxtEmailId);
         }
 
         private void txtEnterMemberCity_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberCity.ForeColor == Color.Gray)
-            {
-                txtEnterMemberCity.Clear();
-                txtEnterMemberCity.ForeColor = Color.Black;
-            }
+            ClickCountTxtCity = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberCity, ClickCountTxtCity);
         }
 
         private void txtEnterMemberDistrict_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberDistrict.ForeColor == Color.Gray)
-            {
-                txtEnterMemberDistrict.Clear();
-                txtEnterMemberDistrict.ForeColor = Color.Black;
-            }
+            ClickCountTxtDistrict = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberDistrict, ClickCountTxtDistrict);
         }
 
         private void txtEnterMemberState_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberState.ForeColor == Color.Gray)
-            {
-                txtEnterMemberState.Clear();
-                txtEnterMemberState.ForeColor = Color.Black;
-            }
+            ClickCountTxtState = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberState, ClickCountTxtState);
         }
 
         private void txtEnterMemberEmergencyContact_Click(object sender, EventArgs e)
         {
-            if (txtEnterMemberEmergencyContact.ForeColor == Color.Gray)
-            {
-                txtEnterMemberEmergencyContact.Clear();
-                txtEnterMemberEmergencyContact.ForeColor = Color.Black;
-            }
+            ClickCountTxtEmergencyContact = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberEmergencyContact, ClickCountTxtEmergencyContact);
         }
 
         private void FrmMemberRegistration_Shown(object sender, EventArgs e)
@@ -647,7 +611,7 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberGender_Enter(object sender, EventArgs e)
         {
-            cmbSelectMemberGender.DroppedDown = true;
+            //cmbSelectMemberGender.DroppedDown = true;
         }
 
         private void cmbSelectMemberGender_KeyDown(object sender, KeyEventArgs e)
@@ -662,52 +626,56 @@ namespace GymManagementSystem.FORMS.Member
 
         private void txtEnterMemberLastName_Leave(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtEnterMemberLastName.Text))
             {
+                ClickCountTxtLastName = 0;
                 txtEnterMemberLastName.Text = "Enter Last Name";
                 txtEnterMemberLastName.ForeColor = Color.Gray;
             }
-            cmbSelectMemberGender.Focus();
+            //cmbSelectMemberGender.Focus();
         }
 
         private void cmbSelectMemberGender_Leave(object sender, EventArgs e)
         {
-            txtEnterMemberPhoneNumber.Focus();
+            //txtEnterMemberPhoneNumber.Focus();
         }
 
         private void txtEnterMemberEmergencyContact_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtEnterMemberEmergencyContact.Text))
             {
+                ClickCountTxtEmergencyContact = 0;
                 txtEnterMemberEmergencyContact.Text = "Enter Emergency Contact";
                 txtEnterMemberEmergencyContact.ForeColor = Color.Gray;
             }
-            cmbSelectMemberMemberMembershipPlan.Focus();
+            
+            //cmbSelectMemberMemberMembershipPlan.Focus();
         }
 
         private void cmbSelectMemberMemberMembershipPlan_Enter(object sender, EventArgs e)
         {
-            cmbSelectMemberMemberMembershipPlan.DroppedDown = true;
+            //cmbSelectMemberMemberMembershipPlan.DroppedDown = true;
         }
 
         private void cmbSelectMemberMemberMembershipPlan_Leave(object sender, EventArgs e)
         {
-            cmbSelectMemberShiftTime.Focus();
+            //cmbSelectMemberShiftTime.Focus();
         }
 
         private void cmbSelectMemberShiftTime_Leave(object sender, EventArgs e)
         {
-            cmbSelectMemberDietPlan.Focus();
+           // cmbSelectMemberDietPlan.Focus();
         }
 
         private void cmbSelectMemberDietPlan_Enter(object sender, EventArgs e)
         {
-            cmbSelectMemberDietPlan.DroppedDown = true;
+            //cmbSelectMemberDietPlan.DroppedDown = true;
         }
 
         private void cmbSelectMemberDietPlan_Leave(object sender, EventArgs e)
         {
-            cmbSelectMemberPaymentMethod.Focus();
+            //cmbSelectMemberPaymentMethod.Focus();
         }
 
         private void rbtnNeedLocker_Leave(object sender, EventArgs e)
@@ -722,27 +690,29 @@ namespace GymManagementSystem.FORMS.Member
 
         private void cmbSelectMemberShiftTime_Enter(object sender, EventArgs e)
         {
-            cmbSelectMemberShiftTime.DroppedDown = true;
+            //cmbSelectMemberShiftTime.DroppedDown = true;
         }
 
         private void cmbSelectMemberPaymentMethod_Enter(object sender, EventArgs e)
         {
-            cmbSelectMemberPaymentMethod.DroppedDown = true;
+            //cmbSelectMemberPaymentMethod.DroppedDown = true;
         }
 
         private void txtEnterMemberFirstName_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEnterMemberFirstName.Text))
+             if (string.IsNullOrWhiteSpace(txtEnterMemberFirstName.Text))
             {
+                ClickCountTxtFirstName = 0;
                 txtEnterMemberFirstName.Text = "Enter First Name";
                 txtEnterMemberFirstName.ForeColor = Color.Gray;
-            }
+            } 
         }
 
         private void txtEnterMemberMiddleName_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtEnterMemberMiddleName.Text))
             {
+                ClickCountTxtMiddleName = 0;
                 txtEnterMemberMiddleName.Text = "Enter Middle Name";
                 txtEnterMemberMiddleName.ForeColor = Color.Gray;
             }
@@ -750,8 +720,10 @@ namespace GymManagementSystem.FORMS.Member
 
         private void txtEnterMemberPhoneNumber_Leave(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(txtEnterMemberPhoneNumber.Text))
             {
+                ClickCountTxtPhoneNumber = 0;
                 txtEnterMemberPhoneNumber.Text = "Enter Phone Number";
                 txtEnterMemberPhoneNumber.ForeColor = Color.Gray;
             }
@@ -759,17 +731,20 @@ namespace GymManagementSystem.FORMS.Member
 
         private void txtEnterMemberEmailId_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEnterMemberEmailId.Text))
+             if (string.IsNullOrWhiteSpace(txtEnterMemberEmailId.Text))
             {
+                ClickCountTxtEmailId = 0;
                 txtEnterMemberEmailId.Text = "Enter EmailId";
                 txtEnterMemberEmailId.ForeColor = Color.Gray;
             }
+            
         }
 
         private void txtEnterMemberCity_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtEnterMemberCity.Text))
             {
+                ClickCountTxtCity = 0;
                 txtEnterMemberCity.Text = "Enter City";
                 txtEnterMemberCity.ForeColor = Color.Gray;
             }
@@ -779,6 +754,7 @@ namespace GymManagementSystem.FORMS.Member
         {
             if (string.IsNullOrWhiteSpace(txtEnterMemberDistrict.Text))
             {
+                ClickCountTxtDistrict = 0;
                 txtEnterMemberDistrict.Text = "Enter District";
                 txtEnterMemberDistrict.ForeColor = Color.Gray;
             }
@@ -788,9 +764,55 @@ namespace GymManagementSystem.FORMS.Member
         {
             if (string.IsNullOrWhiteSpace(txtEnterMemberState.Text))
             {
+                ClickCountTxtState = 0;
                 txtEnterMemberState.Text = "Enter State";
                 txtEnterMemberState.ForeColor = Color.Gray;
             }
+        }
+
+        private void txtEnterMemberFirstName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtFirstName =ValidationUI.ClearTextBoxWhenClicked( txtEnterMemberFirstName, ClickCountTxtFirstName);
+        }
+
+        private void txtEnterMemberMiddleName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtMiddleName =ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberMiddleName,ClickCountTxtMiddleName);
+        }
+
+        private void txtEnterMemberLastName_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtLastName = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberLastName, ClickCountTxtLastName);
+        }
+
+        private void txtEnterMemberPhoneNumber_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtPhoneNumber = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberPhoneNumber, ClickCountTxtPhoneNumber);
+        }
+
+        private void txtEnterMemberEmailId_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtEmailId = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberEmailId, ClickCountTxtEmailId);
+        }
+
+        private void txtEnterMemberCity_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtCity = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberCity, ClickCountTxtCity);
+        }
+
+        private void txtEnterMemberDistrict_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtDistrict = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberDistrict, ClickCountTxtDistrict);
+        }
+
+        private void txtEnterMemberState_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtState = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberState, ClickCountTxtState);
+        }
+
+        private void txtEnterMemberEmergencyContact_Enter(object sender, EventArgs e)
+        {
+            ClickCountTxtEmergencyContact = ValidationUI.ClearTextBoxWhenClicked(txtEnterMemberEmergencyContact, ClickCountTxtEmergencyContact);
         }
     }
 }
