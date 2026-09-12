@@ -35,12 +35,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
         private void dgvExpensesHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvExpensesHistory.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvExpensesHistory.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightBlue;
             }
@@ -48,17 +43,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
 
         private void dgvExpensesHistory_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1 && e.ColumnIndex >= 0)
-            {
-                dgvExpensesHistory.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.FromArgb(210, 215, 255);
-
-            }
-            else if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvExpensesHistory.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Empty;
-
-
-
             }
         }
 
@@ -69,7 +56,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Financials
                 if (e.Value != null)
                 {
                     string status = e.Value.ToString();
-
                     e.CellStyle.ForeColor = Color.Navy;
 
                 }

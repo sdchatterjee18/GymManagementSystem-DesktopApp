@@ -182,7 +182,9 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             if (selectedPanel != pnlMenu)
             {
-                pnlMenu.BackColor = Color.FromArgb(190, 216, 230); // Hover Color
+                pnlMenu.BackColor = Color.FromArgb(190, 216, 230);
+                lblMenu.ForeColor = Color.Black;
+                picMenu.Image = Properties.Resources.menuHOVER;
             }
         }
 
@@ -191,6 +193,8 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             if (selectedPanel != pnlMenu)
             {
                 pnlMenu.BackColor = Color.Transparent;
+                lblMenu.ForeColor = Color.White;
+                picMenu.Image = Properties.Resources.menu;
             }
         }
 
@@ -544,15 +548,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
 
             if (logoutResult)
             {
-                MessageBox.Show(
-                    "Logout Successful.",
-                    "Logout",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                FrmUserRoleSelection frmUserRoleSelection =
-                    new FrmUserRoleSelection();
-
+                FrmUserRoleSelection frmUserRoleSelection =new FrmUserRoleSelection();
                 this.Hide();
                 frmUserRoleSelection.ShowDialog();
                 this.Close();
@@ -561,7 +557,7 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
             {
                 MessageBox.Show(
                     "Logout Failed.",
-                    "Logout",
+                    "Logout Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -592,20 +588,12 @@ namespace GymManagementSystem.FormsSuperAdmin.MainLayout
         {
             CloseAllDropdowns();
             ExpandIfCollapsed();
-
             SelectPanel(pnlSuperAdminPasswordChange);
-
             pnlSuperAdminPasswordChange.ForeColor = Color.White;
-
-            picSuperAdminPasswordChange.Image =
-                Properties.Resources.recor_buttonW;
-
-            FrmSAPasswordChange frmSAPasswordChange =
-                new FrmSAPasswordChange();
-
+            picSuperAdminPasswordChange.Image = Properties.Resources.recor_buttonW;
+            FrmSAPasswordChange frmSAPasswordChange = new FrmSAPasswordChange();
             frmSAPasswordChange.ShowDialog();
         }
-
         private void picSettingsArrowe_MouseEnter(object sender, EventArgs e)
         {
         }

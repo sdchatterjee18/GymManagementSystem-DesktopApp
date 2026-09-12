@@ -147,5 +147,64 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Employee
             EmployeeDAL employeeDAL = new EmployeeDAL();
             return employeeDAL.ToggleEmployeeActiveStatusDAL(employeeId);
         }
+        public ValidationResult UpdatePhoneNoAndEmailIdAndBankAccountNoByEmployeeIdBLL()
+        {  
+                //Validate Update Item
+                ValidationBll.CommonValidationMessage result;
+                // PHONE NUMBER
+                result = ValidationBll.ValidatePhoneNumber(this.PhoneNo);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "PhoneNo",
+                        Result = result,
+                        Message = "PhoneNo:" + ValidationBll.GetValidationMessage(result)
+                    };
+                }
+                // EMAIL
+                result = ValidationBll.ValidateEmail(this.EmailId);
+
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "EmailId",
+                        Result = result,
+                        Message = ValidationBll.GetValidationMessage(result)
+                    };
+                }
+
+                //BankAccount No
+                result = ValidationBll.ValidateNumber(this.BankAccountNo);
+                if (result != ValidationBll.CommonValidationMessage.Valid)
+                {
+                    return new ValidationResult
+                    {
+                        FieldName = "BankAccountNo",
+                        Result = result,
+                        Message = "Bank Account No: " + ValidationBll.GetValidationMessage(result)
+                    };
+                }
+                EmployeeDAL employeeDAL = new EmployeeDAL();
+                employeeDAL.EmployeeId = this.EmployeeId;
+                employeeDAL.PhoneNo = this.PhoneNo;
+                employeeDAL.EmailId = this.EmailId;
+                employeeDAL.BankAccountNo = this.BankAccountNo;
+                string message = employeeDAL.UpdatePhoneNoAndEmailIdAndBankAccountNoByEmployeeIdDAL();
+                return new ValidationResult
+                {
+                    FieldName = "",
+                    Message = message
+                };
+        }
+
+        public DataTable SearchEmployeesBLL(string search)
+        {
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+
+            return employeeDAL.SearchEmployeesDAL(search);
+        }
     }
 }

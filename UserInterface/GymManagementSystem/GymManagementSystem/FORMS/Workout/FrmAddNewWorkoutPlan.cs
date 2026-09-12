@@ -32,24 +32,18 @@ namespace GymManagementSystem.FORMS.Workout
         // Workout Plan Name Click
       private void txtWorkoutPlanName_Click( object sender, EventArgs e)
         {
-            ClickCountTxtWorkoutPlanName =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtWorkoutPlanName,
-                    ClickCountTxtWorkoutPlanName);
-
-            txtWorkoutPlanName.ForeColor =
-                Color.Black;
+            if (ClickCountTxtWorkoutPlanName != 1)
+            {
+                ClickCountTxtWorkoutPlanName = ValidationUI.ClearTextBoxWhenClicked(txtWorkoutPlanName, ClickCountTxtWorkoutPlanName);
+            } 
         }
         // Description Click
         private void txtDescription_Click(object sender,EventArgs e)
-        {
-            ClickCountTxtDescription =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtDescription,
-                    ClickCountTxtDescription);
-
-            txtDescription.ForeColor =
-                Color.Black;
+       {
+          if (ClickCountTxtDescription != 1)
+          {
+              ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+          }
         }
         // Submit Workout Plan
         private void pnlClickSubmitWorkoutPlan_Click(object sender, EventArgs e)
@@ -109,8 +103,18 @@ namespace GymManagementSystem.FORMS.Workout
                     MessageBoxIcon.Warning);
                if (Result == DialogResult.OK)
                {
-                   txtWorkoutPlanName.Text = "Enter Workout Name";
-                   txtDescription.Text = "Description";
+                   if(string.IsNullOrWhiteSpace(txtDescription.Text))
+                   {
+                       txtDescription.Text="---Enter Description---";
+                       ClickCountTxtDescription=0;
+                       txtDescription.ForeColor=Color.Gray;
+                   }
+                   if (string.IsNullOrWhiteSpace(txtWorkoutPlanName.Text))
+                   {
+                       txtWorkoutPlanName.Text = "---Enter Workout Name---";
+                       ClickCountTxtWorkoutPlanName = 0;
+                       txtWorkoutPlanName.ForeColor = Color.Gray;
+                   }
 
                }
                 this.ActiveControl = null;
@@ -262,7 +266,10 @@ namespace GymManagementSystem.FORMS.Workout
 
         private void txtWorkoutPlanName_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtWorkoutPlanName = ValidationUI.ClearTextBoxWhenClicked(txtWorkoutPlanName, ClickCountTxtWorkoutPlanName);
+            if (ClickCountTxtWorkoutPlanName != 1)
+            {
+                ClickCountTxtWorkoutPlanName = ValidationUI.ClearTextBoxWhenClicked(txtWorkoutPlanName, ClickCountTxtWorkoutPlanName);
+            } 
         }
 
         private void txtWorkoutPlanName_Leave(object sender, EventArgs e)
@@ -278,7 +285,10 @@ namespace GymManagementSystem.FORMS.Workout
 
         private void txtDescription_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+            if (ClickCountTxtDescription != 1)
+            {
+                ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+            }
         }
 
         private void txtDescription_Leave(object sender, EventArgs e)

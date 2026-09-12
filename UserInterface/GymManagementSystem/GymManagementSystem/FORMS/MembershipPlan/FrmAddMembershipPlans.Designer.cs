@@ -89,7 +89,7 @@
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.63265F));
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tlpMainNewMembarshipPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.picNewMembershipPlans, 1, 0);
             this.tlpMainNewMembarshipPlanTitle.Controls.Add(this.pnlTitle, 2, 0);
             this.tlpMainNewMembarshipPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -108,7 +108,7 @@
             this.picNewMembershipPlans.Location = new System.Drawing.Point(13, 4);
             this.picNewMembershipPlans.Margin = new System.Windows.Forms.Padding(4);
             this.picNewMembershipPlans.Name = "picNewMembershipPlans";
-            this.picNewMembershipPlans.Size = new System.Drawing.Size(33, 46);
+            this.picNewMembershipPlans.Size = new System.Drawing.Size(31, 46);
             this.picNewMembershipPlans.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewMembershipPlans.TabIndex = 2;
             this.picNewMembershipPlans.TabStop = false;
@@ -117,7 +117,7 @@
             // 
             this.pnlTitle.Controls.Add(this.tlpTitle);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTitle.Location = new System.Drawing.Point(50, 0);
+            this.pnlTitle.Location = new System.Drawing.Point(48, 0);
             this.pnlTitle.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(185, 54);
@@ -181,7 +181,7 @@
             this.tlpNewMembarshipPlanDetails.ColumnCount = 3;
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.954825F));
             this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.04517F));
-            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tlpNewMembarshipPlanDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblDescription, 1, 8);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblAmount, 1, 6);
             this.tlpNewMembarshipPlanDetails.Controls.Add(this.lblDuration, 1, 4);
@@ -211,7 +211,6 @@
             this.tlpNewMembarshipPlanDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tlpNewMembarshipPlanDetails.Size = new System.Drawing.Size(344, 364);
             this.tlpNewMembarshipPlanDetails.TabIndex = 1;
-            this.tlpNewMembarshipPlanDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpNewMembarshipPlanDetails_Paint);
             // 
             // lblDescription
             // 
@@ -272,7 +271,7 @@
             this.txtPlanName.Location = new System.Drawing.Point(20, 31);
             this.txtPlanName.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlanName.Name = "txtPlanName";
-            this.txtPlanName.Size = new System.Drawing.Size(290, 21);
+            this.txtPlanName.Size = new System.Drawing.Size(288, 21);
             this.txtPlanName.TabIndex = 1;
             this.txtPlanName.Text = "Enter Plan Name";
             this.txtPlanName.Click += new System.EventHandler(this.txtPlanName_Click);
@@ -287,7 +286,7 @@
             this.cmbPlanType.Location = new System.Drawing.Point(20, 81);
             this.cmbPlanType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPlanType.Name = "cmbPlanType";
-            this.cmbPlanType.Size = new System.Drawing.Size(290, 20);
+            this.cmbPlanType.Size = new System.Drawing.Size(288, 20);
             this.cmbPlanType.TabIndex = 2;
             this.cmbPlanType.Enter += new System.EventHandler(this.cmbPlanType_Enter);
             // 
@@ -298,7 +297,7 @@
             this.txtAmount.Location = new System.Drawing.Point(20, 181);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(290, 21);
+            this.txtAmount.Size = new System.Drawing.Size(288, 21);
             this.txtAmount.TabIndex = 4;
             this.txtAmount.Text = "Enter Amount";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
@@ -321,7 +320,7 @@
             this.tlpSubmition.RowCount = 1;
             this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSubmition.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tlpSubmition.Size = new System.Drawing.Size(290, 24);
+            this.tlpSubmition.Size = new System.Drawing.Size(288, 24);
             this.tlpSubmition.TabIndex = 6;
             // 
             // pnlClickSubmit
@@ -330,7 +329,7 @@
             this.pnlClickSubmit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlClickSubmit.Controls.Add(this.tlpSubmitBox);
             this.pnlClickSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClickSubmit.Location = new System.Drawing.Point(214, 0);
+            this.pnlClickSubmit.Location = new System.Drawing.Point(212, 0);
             this.pnlClickSubmit.Margin = new System.Windows.Forms.Padding(0);
             this.pnlClickSubmit.Name = "pnlClickSubmit";
             this.pnlClickSubmit.Size = new System.Drawing.Size(76, 24);
@@ -411,10 +410,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(157, 0);
+            this.btnClear.Location = new System.Drawing.Point(156, 0);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(54, 24);
+            this.btnClear.Size = new System.Drawing.Size(53, 24);
             this.btnClear.TabIndex = 5;
             this.btnClear.TabStop = false;
             this.btnClear.Text = "Clear";
@@ -443,7 +442,7 @@
             this.txtDuration.Location = new System.Drawing.Point(20, 131);
             this.txtDuration.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(290, 21);
+            this.txtDuration.Size = new System.Drawing.Size(288, 21);
             this.txtDuration.TabIndex = 3;
             this.txtDuration.Text = "Enter Duration";
             this.txtDuration.Click += new System.EventHandler(this.txtDuration_Click);
@@ -458,7 +457,7 @@
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(290, 54);
+            this.txtDescription.Size = new System.Drawing.Size(288, 54);
             this.txtDescription.TabIndex = 5;
             this.txtDescription.Text = "Enter Description";
             this.txtDescription.Click += new System.EventHandler(this.txtDescription_Click);

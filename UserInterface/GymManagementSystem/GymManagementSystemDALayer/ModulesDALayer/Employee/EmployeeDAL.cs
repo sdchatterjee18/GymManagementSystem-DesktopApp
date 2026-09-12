@@ -34,6 +34,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Employee
         public string TrainerType { get; set; }
         public string Specialization { get; set; }
         public byte[] Document { get; set; }
+        public int EmployeeId { get; set; }
 
         public DataTable RetrieveEmployeeRoleTypesDAL()
         {
@@ -120,6 +121,40 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Employee
                 "spToggleEmployeeActiveStatus",
                 sqlParameters
             );
+        }
+
+        public string UpdatePhoneNoAndEmailIdAndBankAccountNoByEmployeeIdDAL()
+        {
+            try
+            {
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@EmployeeId",this.EmployeeId),
+                    new SqlParameter("@PhoneNo",this.PhoneNo),
+                    new SqlParameter("@EmailId",this.EmailId),
+                    new SqlParameter("@BankAccountNo",this.BankAccountNo)
+                };
+                return LookupDAL.UpdateSpecificItem("spUpdateEmployeeContactDetailsByEmployeeId", sqlParameters);
+            }
+            catch (Exception e)
+            {
+               return e.Message;
+            }
+        }
+
+        public DataTable SearchEmployeesDAL(string search)
+        {
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@Search", search)
+            };
+
+            DataTable dataTable =
+                LookupDAL.RetrieveSpecificDetails(
+                    "spSearchEmployee",
+                    sqlParameters);
+
+            return dataTable;
         }
     }
 }

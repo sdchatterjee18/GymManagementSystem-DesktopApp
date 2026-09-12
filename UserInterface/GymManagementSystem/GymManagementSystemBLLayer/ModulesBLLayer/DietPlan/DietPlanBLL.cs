@@ -84,8 +84,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.DietPlan
             }
 
             // Plan Condition
-            result = ValidationBll.ValidateOnlyLettersAndSpaces(
-                this.ConditionStatus);
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.ConditionStatus);
 
             if (result != ValidationBll.CommonValidationMessage.Valid)
             {
@@ -93,7 +92,7 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.DietPlan
                 {
                     FieldName = "PlanCondition",
                     Result = result,
-                    Message = ValidationBll.GetValidationMessage(result)
+                    Message ="Plan Condition "+ValidationBll.GetValidationMessage(result)
                 };
             }
 

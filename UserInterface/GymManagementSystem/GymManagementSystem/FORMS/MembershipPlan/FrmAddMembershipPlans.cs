@@ -46,6 +46,18 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                     15);
             }
         }
+
+        //Load Membership Plan Types
+        private void LoadPlanTypes()
+        {
+            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
+
+            cmbPlanType.DataSource = membershipPlanUI.GetMembershipPlanTypeDetailsForComboBox();
+            cmbPlanType.DisplayMember = "PlanType";
+            cmbPlanType.ValueMember = "PlanTypeId";
+            cmbPlanType.SelectedIndex = -1;
+        }
+
         private void FrmAddMembershipPlans_Load(object sender, EventArgs e)
         {
             txtPlanName.Focus();
@@ -54,16 +66,18 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             LoadPlanTypes();
             this.ActiveControl = null;
         }
+
         // Clear
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtPlanName.Clear();
             txtAmount.Clear();
             txtDescription.Clear();
-
-            cmbPlanType.Text = "";
+            txtDuration.Clear();
+            cmbPlanType.SelectedIndex = -1;
             txtPlanName.Focus();
         }
+
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -155,11 +169,30 @@ namespace GymManagementSystem.FORMS.MembershipPlan
                     MessageBoxIcon.Warning);
                if (Result == DialogResult.OK)
                {
-                   txtPlanName.Text = "Enter Plan name";
-                   txtDuration.Text = "Enter Duration";
-                   txtAmount.Text = "Enter Amount";
-                   txtDescription.Text = "Enter Description";
-                   
+                   if (string.IsNullOrWhiteSpace(txtPlanName.Text))
+                   {
+                       txtPlanName.Text = "Enter Plan name";
+                       ClickCountTxtPlanName = 0;
+                       txtPlanName.ForeColor = Color.Gray;
+                   }
+                   if (string.IsNullOrWhiteSpace(txtDuration.Text))
+                   {
+                       txtDuration.Text = "Enter Duration";
+                       ClickCountTxtDuration = 0;
+                       txtDuration.ForeColor = Color.Gray;
+                   }
+                   if (string.IsNullOrWhiteSpace(txtAmount.Text))
+                   {
+                       txtAmount.Text = "Enter Amount";
+                       ClickCountTxtAmount = 0;
+                       txtAmount.ForeColor = Color.Gray;
+                   }
+                   if (string.IsNullOrWhiteSpace(txtDescription.Text))
+                   {
+                       txtDescription.Text = "Enter Description";
+                       ClickCountTxtDescription = 0;
+                       txtDescription.ForeColor = Color.Gray;
+                   }   
                }
 
                 this.ActiveControl = null;
@@ -207,6 +240,7 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
             HandleMembershipPlanResult(finalResult);
         }
+
         private void HandleMembershipPlanResult(ValidationResult result)
         {
             errorProvider1.Clear();
@@ -258,36 +292,39 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             this.ActiveControl = null;
         }
 
-
         // TextBox Click Events
         private void txtPlanName_Click(object sender, EventArgs e)
         {
-
-            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
-            
+            if(ClickCountTxtPlanName!=1)
+            {
+                ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
+            }
         }
+
         private void txtDuration_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
+            if (ClickCountTxtDuration != 1)
+            {
+                ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDuration);
+            }
+            
         }
+
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
+            if (ClickCountTxtAmount != 1)
+            {
+                ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
+            }
         }
+
         private void txtDescription_Click(object sender, EventArgs e)
         {
-            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
-        }
-
-        // Load Membership Plan Types
-        private void LoadPlanTypes()
-        {
-            MembershipPlanUI membershipPlanUI = new MembershipPlanUI();
-
-            cmbPlanType.DataSource = membershipPlanUI.GetMembershipPlanTypeDetailsForComboBox();
-            cmbPlanType.DisplayMember = "PlanType";
-            cmbPlanType.ValueMember = "PlanTypeId";
-            cmbPlanType.SelectedIndex = -1;
+            if(ClickCountTxtDescription!=1)
+            {
+                ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+            }
+            
         }
 
         private void btnClear_MouseEnter(object sender, EventArgs e)
@@ -321,14 +358,9 @@ namespace GymManagementSystem.FORMS.MembershipPlan
             this.ActiveControl = null;
         }
 
-        private void tlpNewMembarshipPlanDetails_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void cmbPlanType_Enter(object sender, EventArgs e)
         {
-            //cmbPlanType.DroppedDown = true;
+            cmbPlanType.DroppedDown = true;
         }
 
         private void txtPlanName_Leave(object sender, EventArgs e)
@@ -373,31 +405,34 @@ namespace GymManagementSystem.FORMS.MembershipPlan
 
         private void txtPlanName_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
+            if (ClickCountTxtPlanName != 1)
+            {
+                ClickCountTxtPlanName = ValidationUI.ClearTextBoxWhenClicked(txtPlanName, ClickCountTxtPlanName);
+            }
         }
 
         private void txtDuration_Enter(object sender, EventArgs e)
         {
-
-            ClickCountTxtDuration =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtDuration,
-                    ClickCountTxtDescription);
+            if(ClickCountTxtDuration!=1)
+            {
+                ClickCountTxtDuration = ValidationUI.ClearTextBoxWhenClicked(txtDuration, ClickCountTxtDescription);
+            }
         }
 
         private void txtAmount_Enter(object sender, EventArgs e)
         {
-
-            ClickCountTxtAmount =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtAmount,
-                    ClickCountTxtAmount);
+            if (ClickCountTxtAmount != 1)
+            {
+                ClickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, ClickCountTxtAmount);
+            }
         }
 
         private void txtDescription_Enter(object sender, EventArgs e)
         {
-
-            ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription,ClickCountTxtDescription);
+            if (ClickCountTxtDescription != 1)
+            {
+                ClickCountTxtDescription = ValidationUI.ClearTextBoxWhenClicked(txtDescription, ClickCountTxtDescription);
+            }
         }  
     }
 }

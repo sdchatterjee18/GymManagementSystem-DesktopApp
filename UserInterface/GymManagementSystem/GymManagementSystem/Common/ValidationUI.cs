@@ -32,12 +32,7 @@ namespace GymManagementSystem.Common
         {
             textBox.BackColor = Color.White;
             textBox.ForeColor = Color.Black;
-            if (count == 0)
-            {
                 textBox.Clear();
-                count++;
-                return count;
-            }
             return 1;
         }
 
@@ -69,7 +64,6 @@ namespace GymManagementSystem.Common
             if (clickCount == 0)
             {
                 textBox.Clear();
-                clickCount++;
             }
         }
 

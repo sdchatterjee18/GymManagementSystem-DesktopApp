@@ -398,12 +398,6 @@
     <Compile Include="FORMS\Workout\FrmAddNewWorkoutSchedule.Designer.cs">
       <DependentUpon>FrmAddNewWorkoutSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayExercise.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMS\Workout\FrmDisplayExercise.Designer.cs">
-      <DependentUpon>FrmDisplayExercise.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMS\Workout\FrmDisplayWorkoutPlans.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,9 +572,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Workout\FrmAddNewWorkoutSchedule.resx">
       <DependentUpon>FrmAddNewWorkoutSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMS\Workout\FrmDisplayExercise.resx">
-      <DependentUpon>FrmDisplayExercise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\Workout\FrmDisplayWorkoutPlans.resx">
       <DependentUpon>FrmDisplayWorkoutPlans.cs</DependentUpon>

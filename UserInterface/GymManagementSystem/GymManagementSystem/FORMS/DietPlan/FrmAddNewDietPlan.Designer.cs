@@ -359,8 +359,7 @@
             this.txtRequiredCalories.Margin = new System.Windows.Forms.Padding(2);
             this.txtRequiredCalories.Name = "txtRequiredCalories";
             this.txtRequiredCalories.Size = new System.Drawing.Size(265, 23);
-            this.txtRequiredCalories.TabIndex = 1;
-            this.txtRequiredCalories.TabStop = false;
+            this.txtRequiredCalories.TabIndex = 0;
             this.txtRequiredCalories.Text = "Enter Required Calories";
             this.txtRequiredCalories.Click += new System.EventHandler(this.txtRequiredCalories_Click);
             this.txtRequiredCalories.Enter += new System.EventHandler(this.txtRequiredCalories_Enter);
@@ -601,8 +600,7 @@
             this.txtPlanCondition.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlanCondition.Name = "txtPlanCondition";
             this.txtPlanCondition.Size = new System.Drawing.Size(267, 23);
-            this.txtPlanCondition.TabIndex = 2;
-            this.txtPlanCondition.TabStop = false;
+            this.txtPlanCondition.TabIndex = 1;
             this.txtPlanCondition.Text = "  Enter Plan Condition";
             this.txtPlanCondition.Click += new System.EventHandler(this.txtPlanCondition_Click);
             this.txtPlanCondition.Enter += new System.EventHandler(this.txtPlanCondition_Enter);

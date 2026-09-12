@@ -270,7 +270,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(238, 25);
             this.txtAmount.TabIndex = 0;
-            this.txtAmount.Text = " Enter Amount";
+            this.txtAmount.Text = " ---Enter Amount---";
             this.txtAmount.Click += new System.EventHandler(this.txtAmount_Click);
             this.txtAmount.Enter += new System.EventHandler(this.txtAmount_Enter);
             this.txtAmount.Leave += new System.EventHandler(this.txtAmount_Leave);
@@ -328,6 +328,7 @@
             this.cmbCateogory.Name = "cmbCateogory";
             this.cmbCateogory.Size = new System.Drawing.Size(238, 25);
             this.cmbCateogory.TabIndex = 1;
+            this.cmbCateogory.Click += new System.EventHandler(this.cmbCateogory_Click);
             this.cmbCateogory.Enter += new System.EventHandler(this.cmbCateogory_Enter);
             // 
             // pnlDefinition
@@ -372,6 +373,7 @@
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(88, 28);
             this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabStop = false;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -405,7 +407,7 @@
             this.txtExpenseDefination.Name = "txtExpenseDefination";
             this.txtExpenseDefination.Size = new System.Drawing.Size(281, 34);
             this.txtExpenseDefination.TabIndex = 2;
-            this.txtExpenseDefination.Text = "Enter a note about expense";
+            this.txtExpenseDefination.Text = "---Enter a Note about Expense---";
             this.txtExpenseDefination.Click += new System.EventHandler(this.txtExpenseDefination_Click);
             this.txtExpenseDefination.Enter += new System.EventHandler(this.txtExpenseDefination_Enter);
             this.txtExpenseDefination.Leave += new System.EventHandler(this.txtExpenseDefination_Leave);

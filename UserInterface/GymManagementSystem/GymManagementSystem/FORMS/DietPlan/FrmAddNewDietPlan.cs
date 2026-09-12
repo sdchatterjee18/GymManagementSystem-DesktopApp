@@ -44,10 +44,12 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Form Load
         private void FrmAddNewDietPlan_Load(object sender, EventArgs e)
         {
-            lblRequiredCalories.Focus();
+            //lblRequiredCalories.Focus();
             this.Text = "";
             this.ShowIcon = false;
             this.ActiveControl = null;
+            txtRequiredCalories.TabIndex = 0;
+            txtPlanCondition.TabIndex = 1;
             
         }
         // Prevent Default Selection In formLoad
@@ -59,12 +61,18 @@ namespace GymManagementSystem.FORMS.DietPlan
         // Required Calories Click
         private void txtRequiredCalories_Click(object sender, EventArgs e)
         {
-            ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
+            if (ClickCountTxtRequiredCalories != 1)
+            {
+                ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
+            }
         }
         // Plan Condition Click
         private void txtPlanCondition_Click(object sender, EventArgs e)
         {
-            ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
+            if (ClickCountTxtPlanCondition != 1)
+            {
+                ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
+            }
         }
         // Choose File
         private void tlpChooseFile_Click(object sender, EventArgs e)
@@ -156,13 +164,7 @@ namespace GymManagementSystem.FORMS.DietPlan
                         picPlanDocument.SizeMode =
                             PictureBoxSizeMode.Zoom;
                     }
-
-
-                    MessageBox.Show(
-                        "Diet Plan Document Selected Successfully.",
-                        "Success",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    this.ActiveControl = null;
                 }
             }
         }
@@ -238,7 +240,7 @@ namespace GymManagementSystem.FORMS.DietPlan
                 dietPlanDocument.Length == 0)
             {
                 errorProvider1.SetError(
-                    tlpChooseFile,
+                    picImageIcon,
                     "Diet Plan Document is required.");
 
                 isValid = false;
@@ -258,8 +260,19 @@ namespace GymManagementSystem.FORMS.DietPlan
                     MessageBoxIcon.Warning);
                 if(Result == DialogResult.OK)
                 {
-                    txtRequiredCalories.Text = "Enter Required Calories";
-                    txtPlanCondition.Text = "Enter Plan Condition";
+                    if(string.IsNullOrWhiteSpace(txtRequiredCalories.Text))
+                    {
+                        txtRequiredCalories.Text = "Enter Required Calories";
+                        ClickCountTxtRequiredCalories = 0;
+                        txtRequiredCalories.ForeColor = Color.Gray;
+                    }
+                    if (string.IsNullOrWhiteSpace(txtPlanCondition.Text))
+                    {
+                        txtPlanCondition.Text = "Enter Plan Condition";
+                        ClickCountTxtPlanCondition = 0;
+                        txtPlanCondition.ForeColor = Color.Gray;
+                    }
+                    
                 }
 
                 this.ActiveControl = null;
@@ -460,19 +473,18 @@ namespace GymManagementSystem.FORMS.DietPlan
 
         private void txtRequiredCalories_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtRequiredCalories =
-               ValidationUI.ClearTextBoxWhenClicked(
-                   txtRequiredCalories,
-                   ClickCountTxtRequiredCalories);
+            if (ClickCountTxtRequiredCalories != 1)
+            {
+                ClickCountTxtRequiredCalories = ValidationUI.ClearTextBoxWhenClicked(txtRequiredCalories, ClickCountTxtRequiredCalories);
+            }
         }
 
         private void txtPlanCondition_Enter(object sender, EventArgs e)
         {
-
-            ClickCountTxtPlanCondition =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtPlanCondition,
-                    ClickCountTxtPlanCondition);
+            if (ClickCountTxtPlanCondition != 1)
+            {
+                ClickCountTxtPlanCondition = ValidationUI.ClearTextBoxWhenClicked(txtPlanCondition, ClickCountTxtPlanCondition);
+            }
         }
     }
 }

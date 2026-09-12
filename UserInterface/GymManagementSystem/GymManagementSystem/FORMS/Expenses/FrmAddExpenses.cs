@@ -39,6 +39,7 @@ namespace GymManagementSystem.FORMS.Expenses
             RetrieveCategoryName();
             RetrieveAllExpense();
             dgvExpenses.ClearSelection();
+            this.ActiveControl = null;
         }
         // Set Error Provider Alignment
         private void SetErrorProviderAlignment()
@@ -129,19 +130,18 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtAmount_Click(object sender, EventArgs e)
         {
-            clickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, clickCountTxtAmount);
+            if (clickCountTxtNote != 1)
+            {
+                clickCountTxtNote = ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
+            }
         }
-
-        private void cmbCateogory_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtExpenseDefination_Click(object sender, EventArgs e)
         {
-            clickCountTxtNote = ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
+            if (clickCountTxtNote != 1)
+            {
+                clickCountTxtNote = ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
+            }
         }
-
         private void dgvExpenses_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -150,7 +150,6 @@ namespace GymManagementSystem.FORMS.Expenses
             }
 
         }
-
         private void dgvExpenses_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -166,8 +165,6 @@ namespace GymManagementSystem.FORMS.Expenses
 
             }
         }
-
-
         private void tlpAddExpenses_Click(object sender, EventArgs e)
         {
             dgvExpenses.ClearSelection();
@@ -208,6 +205,7 @@ namespace GymManagementSystem.FORMS.Expenses
             }
 
             //select combo box
+            result = ValidationUI.ValidateRequiredComboBox(cmbCateogory);
             if (result != ValidationUI.ValidationResult.Valid)
             {
                 errorProvider1.SetError(
@@ -238,8 +236,18 @@ namespace GymManagementSystem.FORMS.Expenses
                     MessageBoxIcon.Warning);
                if (Result == DialogResult.OK)
                {
-                   txtAmount.Text = "Enter Amount";
-                   txtExpenseDefination.Text = "Enter Expense Defination";
+                   if (string.IsNullOrWhiteSpace(txtAmount.Text))
+                   {
+                       txtAmount.Text = "---Enter Amount---";
+                       txtAmount.ForeColor = Color.Gray;
+                       clickCountTxtAmount = 0;
+                   }
+                   if(string.IsNullOrWhiteSpace(txtExpenseDefination.Text))
+                   {
+                       txtExpenseDefination.Text = "---Enter a Note about Expense---";
+                       txtExpenseDefination.ForeColor = Color.Gray;
+                       clickCountTxtNote = 0;
+                   }
                }
 
                 this.ActiveControl = null;
@@ -339,12 +347,6 @@ namespace GymManagementSystem.FORMS.Expenses
             }
             
         }
-
-        private void cmbCateogory_Enter(object sender, EventArgs e)
-        {
-            //cmbCateogory.DroppedDown = true;
-        }
-
         private void txtAmount_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAmount.Text))
@@ -369,19 +371,28 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void txtAmount_Enter(object sender, EventArgs e)
         {
-            clickCountTxtAmount =
-               ValidationUI.ClearTextBoxWhenClicked(
-                   txtAmount,
-                   clickCountTxtAmount);
+            if (clickCountTxtAmount != 1)
+            {
+                clickCountTxtAmount = ValidationUI.ClearTextBoxWhenClicked(txtAmount, clickCountTxtAmount);
+            }
         }
 
         private void txtExpenseDefination_Enter(object sender, EventArgs e)
         {
-            clickCountTxtNote =
-              ValidationUI.ClearTextBoxWhenClicked(
-                  txtExpenseDefination,
-                  clickCountTxtNote);
-        } 
+            if (clickCountTxtNote != 1)
+            {
+                clickCountTxtNote = ValidationUI.ClearTextBoxWhenClicked(txtExpenseDefination, clickCountTxtNote);
+            }
+        }
 
+        private void cmbCateogory_Click(object sender, EventArgs e)
+        {
+            cmbCateogory.DroppedDown = true;
+        }
+
+        private void cmbCateogory_Enter(object sender, EventArgs e)
+        {
+            cmbCateogory.DroppedDown = true;
+        }
     }
 }

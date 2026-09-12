@@ -19,6 +19,14 @@ namespace GymManagementSystem.FORMS.Workout
             InitializeComponent();
             SetErrorProviderAlignment();
         }
+
+        private void FrmAddNewExercise_Load(object sender, EventArgs e)
+        {
+            this.ShowIcon = false;
+            this.Text = "";
+            this.ActiveControl = null;
+        }
+
         private void SetErrorProviderAlignment()
         {
             Control[] controls =
@@ -38,19 +46,21 @@ namespace GymManagementSystem.FORMS.Workout
                     15);
             }
         }
-        // Exercise Name TextBox Click Event
+
         private void txtExerciseName_Click(object sender, EventArgs e)
         {
-            ClickCountTxtExerciseName =ValidationUI.ClearTextBoxWhenClicked( txtExerciseName,ClickCountTxtExerciseName);
-
-           
+            if (ClickCountTxtExerciseName != 1)
+            {
+                ClickCountTxtExerciseName = ValidationUI.ClearTextBoxWhenClicked(txtExerciseName, ClickCountTxtExerciseName);
+            }
         }
         // Muscle Type TextBox Click Event
         private void txtMuscleType_Click(object sender, EventArgs e)
         {
-            ClickCountTxtMuscleType =ValidationUI.ClearTextBoxWhenClicked( txtMuscleType,ClickCountTxtMuscleType);
-
-            
+            if (ClickCountTxtMuscleType != 1)
+            {
+                ClickCountTxtMuscleType = ValidationUI.ClearTextBoxWhenClicked(txtMuscleType, ClickCountTxtMuscleType);
+            } 
         }
         // Submit Exercise
         private void pnlClickSubmitExercise_Click(object sender, EventArgs e)
@@ -110,8 +120,18 @@ namespace GymManagementSystem.FORMS.Workout
                     MessageBoxIcon.Warning);
               if (Result == DialogResult.OK)
               {
-                  txtExerciseName.Text = "Enter Exercise Name";
-                  txtMuscleType.Text = "Enter Muscle Type";
+                  if (string.IsNullOrWhiteSpace(txtExerciseName.Text))
+                  {
+                      txtExerciseName.Text = "Enter Exercise Name";
+                      ClickCountTxtExerciseName = 0; ;
+                      txtExerciseName.ForeColor = Color.Gray;
+                  }
+                  if (string.IsNullOrWhiteSpace(txtMuscleType.Text))
+                  {
+                      txtMuscleType.Text = "Enter Muscle Type";
+                      ClickCountTxtMuscleType = 0; ;
+                      txtMuscleType.ForeColor = Color.Gray;
+                  }
               }
                 this.ActiveControl = null;
                 return;
@@ -203,15 +223,6 @@ namespace GymManagementSystem.FORMS.Workout
         {
             this.ActiveControl = null;
         }
-        // Form Load Event
-        private void FrmAddNewExercise_Load_1(object sender, EventArgs e)
-        {
-            
-            this.ShowIcon = false;
-            this.Text = "";
-            this.ActiveControl = null;
-        }
-
         private void pnlClickSubmitExercise_MouseEnter(object sender, EventArgs e)
         {
             pnlClickSubmitExercise.BackColor = Color.White;
@@ -240,7 +251,10 @@ namespace GymManagementSystem.FORMS.Workout
 
         private void txtExerciseName_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtExerciseName = ValidationUI.ClearTextBoxWhenClicked(txtExerciseName, ClickCountTxtExerciseName);
+            if (ClickCountTxtExerciseName != 1)
+            {
+                ClickCountTxtExerciseName = ValidationUI.ClearTextBoxWhenClicked(txtExerciseName, ClickCountTxtExerciseName);
+            }
         }
 
         private void txtExerciseName_Leave(object sender, EventArgs e)
@@ -256,7 +270,10 @@ namespace GymManagementSystem.FORMS.Workout
 
         private void txtMuscleType_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtMuscleType = ValidationUI.ClearTextBoxWhenClicked(txtMuscleType, ClickCountTxtMuscleType);
+            if (ClickCountTxtMuscleType != 1)
+            {
+                ClickCountTxtMuscleType = ValidationUI.ClearTextBoxWhenClicked(txtMuscleType, ClickCountTxtMuscleType);
+            } 
         }
 
         private void txtMuscleType_Leave(object sender, EventArgs e)
@@ -270,5 +287,6 @@ namespace GymManagementSystem.FORMS.Workout
             }
 
         }
+
     }
 }

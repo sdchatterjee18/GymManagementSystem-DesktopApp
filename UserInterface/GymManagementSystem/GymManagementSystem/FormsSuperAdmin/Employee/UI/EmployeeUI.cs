@@ -33,6 +33,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
         public string TrainerType { get; set; }
         public string Specialization { get; set; }
         public byte[] Document { get; set; }
+        public int EmployeeId { get; set; }
 
         public EmployeeUI()
         {
@@ -176,10 +177,28 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
             }
         }
 
-        //public void UpdateEmployeePhoneNoAndEmailIdByEmployeeIdUI()
-        //{
+        public ValidationResult UpdateEmployeePhoneNoAndEmailIdByEmployeeIdUI()
+        {
+            try
+            {
+                EmployeeBLL employeeBLL = new EmployeeBLL();
+                employeeBLL.EmployeeId = this.EmployeeId;
+                employeeBLL.PhoneNo = this.PhoneNo;
+                employeeBLL.EmailId = this.EmailId;
+                employeeBLL.BankAccountNo = this.BankAccountNo;
 
-        //}
+                ValidationResult result = employeeBLL.UpdatePhoneNoAndEmailIdAndBankAccountNoByEmployeeIdBLL();
+                return result;
+            }
+            catch (Exception E)
+            {
+                return new ValidationResult
+                {
+                    FieldName = "",
+                    Message = E.Message
+                };
+            }
+        }
         public DataTable DisplayAllEmployeeDetailsUI()
         {
             EmployeeBLL employeeBLL = new EmployeeBLL();
@@ -196,6 +215,12 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee.UI
         {
             EmployeeBLL employeeBLL = new EmployeeBLL();
             return employeeBLL.ToggleEmployeeActiveStatusBLL(employeeId);
+        }
+        public DataTable SearchEmployeesUI(string search)
+        {
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+
+            return employeeBLL.SearchEmployeesBLL(search);
         }
      }
  }

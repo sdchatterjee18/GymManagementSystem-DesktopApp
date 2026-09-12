@@ -80,7 +80,7 @@
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.picAddWorkoutPlan, 1, 0);
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.tlpNewWorkoutPlanTitle, 2, 0);
             this.tlpMainNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -110,7 +110,7 @@
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblViewWorkoutPlan, 0, 1);
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblNewWorkoutPlan, 0, 0);
             this.tlpNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(54, 2);
+            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(53, 2);
             this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanTitle.Name = "tlpNewWorkoutPlanTitle";
             this.tlpNewWorkoutPlanTitle.RowCount = 3;
@@ -194,7 +194,7 @@
             this.txtWorkoutPlanName.Name = "txtWorkoutPlanName";
             this.txtWorkoutPlanName.Size = new System.Drawing.Size(284, 22);
             this.txtWorkoutPlanName.TabIndex = 1;
-            this.txtWorkoutPlanName.Text = "Enter Workout Name ";
+            this.txtWorkoutPlanName.Text = "---Enter Workout Name---";
             this.txtWorkoutPlanName.Click += new System.EventHandler(this.txtWorkoutPlanName_Click);
             this.txtWorkoutPlanName.Enter += new System.EventHandler(this.txtWorkoutPlanName_Enter);
             this.txtWorkoutPlanName.Leave += new System.EventHandler(this.txtWorkoutPlanName_Leave);
@@ -337,7 +337,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(284, 21);
             this.txtDescription.TabIndex = 2;
-            this.txtDescription.Text = "Description";
+            this.txtDescription.Text = "---Enter Description---";
             this.txtDescription.Click += new System.EventHandler(this.txtDescription_Click);
             this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);

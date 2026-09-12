@@ -328,6 +328,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dvgEmployeeDetails.DefaultCellStyle = dataGridViewCellStyle8;
             this.dvgEmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgEmployeeDetails.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dvgEmployeeDetails.EnableHeadersVisualStyles = false;
             this.dvgEmployeeDetails.GridColor = System.Drawing.Color.Gainsboro;
             this.dvgEmployeeDetails.Location = new System.Drawing.Point(30, 49);
@@ -353,7 +354,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dvgEmployeeDetails.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dvgEmployeeDetails.RowTemplate.Height = 30;
-            this.dvgEmployeeDetails.RowTemplate.ReadOnly = true;
             this.dvgEmployeeDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dvgEmployeeDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dvgEmployeeDetails.Size = new System.Drawing.Size(711, 328);
@@ -412,6 +412,7 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Text = "Enter Mobile No";
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
@@ -423,7 +424,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colSlNo.FillWeight = 60F;
             this.colSlNo.HeaderText = "Sl No.";
             this.colSlNo.Name = "colSlNo";
-            this.colSlNo.ReadOnly = true;
             this.colSlNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colSlNo.Width = 50;
             // 
@@ -444,7 +444,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colName.FillWeight = 130F;
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
             this.colName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colName.Width = 48;
             // 
@@ -458,7 +457,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colGender.FillWeight = 70F;
             this.colGender.HeaderText = "Gender";
             this.colGender.Name = "colGender";
-            this.colGender.ReadOnly = true;
             this.colGender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colGender.Width = 56;
             // 
@@ -470,7 +468,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colPhoneNo.DefaultCellStyle = dataGridViewCellStyle6;
             this.colPhoneNo.HeaderText = "Mobile No";
             this.colPhoneNo.Name = "colPhoneNo";
-            this.colPhoneNo.ReadOnly = true;
             this.colPhoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colPhoneNo.Width = 75;
             // 
@@ -480,7 +477,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colEmailId.DataPropertyName = "EmailId";
             this.colEmailId.HeaderText = "EmailId";
             this.colEmailId.Name = "colEmailId";
-            this.colEmailId.ReadOnly = true;
             this.colEmailId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colEmailId.Width = 56;
             // 
@@ -493,7 +489,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colJoiningDate.FillWeight = 90F;
             this.colJoiningDate.HeaderText = "Joining Date";
             this.colJoiningDate.Name = "colJoiningDate";
-            this.colJoiningDate.ReadOnly = true;
             this.colJoiningDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colJoiningDate.Width = 87;
             // 
@@ -504,7 +499,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colRole.FillWeight = 90F;
             this.colRole.HeaderText = "Role";
             this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
             this.colRole.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colRole.Width = 38;
             // 
@@ -515,17 +509,16 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colBankAccount.FillWeight = 110F;
             this.colBankAccount.HeaderText = "Bank A/C";
             this.colBankAccount.Name = "colBankAccount";
-            this.colBankAccount.ReadOnly = true;
             this.colBankAccount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colStatus
             // 
-            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colStatus.FillWeight = 80F;
             this.colStatus.HeaderText = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colStatus.Width = 5;
+            this.colStatus.Width = 50;
             // 
             // colUpdate
             // 
@@ -534,7 +527,6 @@ namespace GymManagementSystem.FormsSuperAdmin.Employee
             this.colUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colUpdate.HeaderText = "Action";
             this.colUpdate.Name = "colUpdate";
-            this.colUpdate.ReadOnly = true;
             this.colUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colUpdate.Width = 51;
             // 
