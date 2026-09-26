@@ -60,14 +60,12 @@ namespace GymManagementSystemDALayer.ModulesDALayer.Expense
         }
 
         //Insert Expense Category
-        public string InsertExpenseCategoryDAL(string categoryName,string category)
+        public string InsertExpenseCategoryDAL()
         {
-            CategoryName = categoryName;
-            Category = category;
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("@CategoryName",CategoryName),
-                new SqlParameter("@Category",Category)
+                new SqlParameter("@CategoryName",this.CategoryName),
+                new SqlParameter("@Category",this.Category)
             };
 
             string InsertionMessage = null;

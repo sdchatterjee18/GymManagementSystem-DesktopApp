@@ -80,7 +80,7 @@
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tlpMainNewWorkoutPlanTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.picAddWorkoutPlan, 1, 0);
             this.tlpMainNewWorkoutPlanTitle.Controls.Add(this.tlpNewWorkoutPlanTitle, 2, 0);
             this.tlpMainNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -98,7 +98,7 @@
             this.picAddWorkoutPlan.Location = new System.Drawing.Point(9, 2);
             this.picAddWorkoutPlan.Margin = new System.Windows.Forms.Padding(2);
             this.picAddWorkoutPlan.Name = "picAddWorkoutPlan";
-            this.picAddWorkoutPlan.Size = new System.Drawing.Size(40, 58);
+            this.picAddWorkoutPlan.Size = new System.Drawing.Size(38, 58);
             this.picAddWorkoutPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddWorkoutPlan.TabIndex = 2;
             this.picAddWorkoutPlan.TabStop = false;
@@ -110,7 +110,7 @@
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblViewWorkoutPlan, 0, 1);
             this.tlpNewWorkoutPlanTitle.Controls.Add(this.lblNewWorkoutPlan, 0, 0);
             this.tlpNewWorkoutPlanTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(53, 2);
+            this.tlpNewWorkoutPlanTitle.Location = new System.Drawing.Point(51, 2);
             this.tlpNewWorkoutPlanTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewWorkoutPlanTitle.Name = "tlpNewWorkoutPlanTitle";
             this.tlpNewWorkoutPlanTitle.RowCount = 3;
@@ -187,12 +187,12 @@
             // 
             // txtWorkoutPlanName
             // 
-            this.txtWorkoutPlanName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorkoutPlanName.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtWorkoutPlanName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkoutPlanName.ForeColor = System.Drawing.Color.Gray;
             this.txtWorkoutPlanName.Location = new System.Drawing.Point(16, 29);
             this.txtWorkoutPlanName.Margin = new System.Windows.Forms.Padding(2);
             this.txtWorkoutPlanName.Name = "txtWorkoutPlanName";
-            this.txtWorkoutPlanName.Size = new System.Drawing.Size(284, 22);
+            this.txtWorkoutPlanName.Size = new System.Drawing.Size(260, 22);
             this.txtWorkoutPlanName.TabIndex = 1;
             this.txtWorkoutPlanName.Text = "---Enter Workout Name---";
             this.txtWorkoutPlanName.Click += new System.EventHandler(this.txtWorkoutPlanName_Click);
@@ -330,12 +330,12 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtDescription.ForeColor = System.Drawing.Color.Gray;
             this.txtDescription.Location = new System.Drawing.Point(16, 84);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(284, 21);
+            this.txtDescription.Size = new System.Drawing.Size(260, 22);
             this.txtDescription.TabIndex = 2;
             this.txtDescription.Text = "---Enter Description---";
             this.txtDescription.Click += new System.EventHandler(this.txtDescription_Click);

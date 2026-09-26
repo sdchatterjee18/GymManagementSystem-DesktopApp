@@ -51,22 +51,14 @@ namespace GymManagementSystem.FORMS.Expenses.UI
        }
 
        //Insert Expeses Category 
-       public string InsertExpenseCategoryUI(string categoryName, string category)
+       public ValidationResult InsertExpenseCategoryUI()
        {
-           string InsertionMessage = null;
-           CategoryName = categoryName;
-           Category = category;
-           try
-           {
-               ExpensesBLL ExpenseBLL = new ExpensesBLL();
-               InsertionMessage = ExpenseBLL.InsertExpenseCategoryBLL(CategoryName, Category);
-               return InsertionMessage;
-           }
-           catch (Exception ex)
-           {
-               return InsertionMessage;
-           }
+           ExpensesBLL expensesBLL = new ExpensesBLL();
 
+           expensesBLL.CategoryName = this.CategoryName;
+           expensesBLL.Category = this.Category;
+
+           return expensesBLL.InsertExpenseCategoryBLL();
        }
 
        //Insert Expense

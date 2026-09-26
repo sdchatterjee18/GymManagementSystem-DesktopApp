@@ -27,7 +27,6 @@ namespace GymManagementSystem.FORMS.Expenses
         int clickCountTxtNote = 0;
         private void FrmAddExpenses_Load(object sender, EventArgs e)
         {
-            lblAmount.Focus();
             //for Amount Text
             txtAmount.Select(0, 0);
             txtAmount.DeselectAll();
@@ -392,7 +391,15 @@ namespace GymManagementSystem.FORMS.Expenses
 
         private void cmbCateogory_Enter(object sender, EventArgs e)
         {
-            cmbCateogory.DroppedDown = true;
+            if (!MouseButtons.Equals(MouseButtons.Left))
+            {
+                cmbCateogory.DroppedDown = true;
+            }
+        }
+
+        private void FrmAddExpenses_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }

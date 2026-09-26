@@ -1319,7 +1319,7 @@
             this.tlpMemberSelectLockerOrNot.ColumnCount = 3;
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61538F));
             this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38462F));
-            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpMemberSelectLockerOrNot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnNeedLocker, 0, 0);
             this.tlpMemberSelectLockerOrNot.Controls.Add(this.rbtnDontNeedLocker, 1, 0);
             this.tlpMemberSelectLockerOrNot.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1356,7 +1356,7 @@
             this.rbtnDontNeedLocker.Location = new System.Drawing.Point(120, 11);
             this.rbtnDontNeedLocker.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnDontNeedLocker.Name = "rbtnDontNeedLocker";
-            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(121, 17);
+            this.rbtnDontNeedLocker.Size = new System.Drawing.Size(120, 17);
             this.rbtnDontNeedLocker.TabIndex = 16;
             this.rbtnDontNeedLocker.TabStop = true;
             this.rbtnDontNeedLocker.Text = "No, I don\'t need a locker";

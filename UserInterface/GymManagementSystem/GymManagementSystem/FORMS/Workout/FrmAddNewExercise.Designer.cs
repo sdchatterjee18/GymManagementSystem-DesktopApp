@@ -78,9 +78,9 @@
             this.tlpMainNewExerciseTitle.ColumnCount = 5;
             this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
             this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
-            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tlpMainNewExerciseTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tlpMainNewExerciseTitle.Controls.Add(this.picAddExercise, 1, 0);
             this.tlpMainNewExerciseTitle.Controls.Add(this.tlpNewExerciseTitle, 2, 0);
             this.tlpMainNewExerciseTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -94,11 +94,12 @@
             // 
             // picAddExercise
             // 
+            this.picAddExercise.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picAddExercise.Image = ((System.Drawing.Image)(resources.GetObject("picAddExercise.Image")));
-            this.picAddExercise.Location = new System.Drawing.Point(9, 2);
+            this.picAddExercise.Location = new System.Drawing.Point(10, 2);
             this.picAddExercise.Margin = new System.Windows.Forms.Padding(2);
             this.picAddExercise.Name = "picAddExercise";
-            this.picAddExercise.Size = new System.Drawing.Size(30, 58);
+            this.picAddExercise.Size = new System.Drawing.Size(36, 59);
             this.picAddExercise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAddExercise.TabIndex = 2;
             this.picAddExercise.TabStop = false;
@@ -110,14 +111,14 @@
             this.tlpNewExerciseTitle.Controls.Add(this.lblViewExercise, 0, 1);
             this.tlpNewExerciseTitle.Controls.Add(this.lblNewExercise, 0, 0);
             this.tlpNewExerciseTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNewExerciseTitle.Location = new System.Drawing.Point(43, 2);
+            this.tlpNewExerciseTitle.Location = new System.Drawing.Point(50, 2);
             this.tlpNewExerciseTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpNewExerciseTitle.Name = "tlpNewExerciseTitle";
             this.tlpNewExerciseTitle.RowCount = 3;
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.93221F));
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.33898F));
             this.tlpNewExerciseTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.05263F));
-            this.tlpNewExerciseTitle.Size = new System.Drawing.Size(146, 59);
+            this.tlpNewExerciseTitle.Size = new System.Drawing.Size(138, 59);
             this.tlpNewExerciseTitle.TabIndex = 3;
             // 
             // lblViewExercise
@@ -186,14 +187,14 @@
             // 
             // txtExerciseName
             // 
-            this.txtExerciseName.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExerciseName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExerciseName.ForeColor = System.Drawing.Color.Gray;
             this.txtExerciseName.Location = new System.Drawing.Point(30, 29);
             this.txtExerciseName.Margin = new System.Windows.Forms.Padding(2);
             this.txtExerciseName.Name = "txtExerciseName";
-            this.txtExerciseName.Size = new System.Drawing.Size(212, 21);
+            this.txtExerciseName.Size = new System.Drawing.Size(260, 22);
             this.txtExerciseName.TabIndex = 1;
-            this.txtExerciseName.Text = "Enter Exercise Name";
+            this.txtExerciseName.Text = "---Enter Exercise Name---";
             this.txtExerciseName.Click += new System.EventHandler(this.txtExerciseName_Click);
             this.txtExerciseName.Enter += new System.EventHandler(this.txtExerciseName_Enter);
             this.txtExerciseName.Leave += new System.EventHandler(this.txtExerciseName_Leave);
@@ -327,14 +328,14 @@
             // 
             // txtMuscleType
             // 
-            this.txtMuscleType.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMuscleType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMuscleType.ForeColor = System.Drawing.Color.Gray;
             this.txtMuscleType.Location = new System.Drawing.Point(30, 85);
             this.txtMuscleType.Margin = new System.Windows.Forms.Padding(2);
             this.txtMuscleType.Name = "txtMuscleType";
-            this.txtMuscleType.Size = new System.Drawing.Size(212, 21);
+            this.txtMuscleType.Size = new System.Drawing.Size(260, 22);
             this.txtMuscleType.TabIndex = 2;
-            this.txtMuscleType.Text = "Enter Muscle Type";
+            this.txtMuscleType.Text = "---Enter Muscle Type---";
             this.txtMuscleType.Click += new System.EventHandler(this.txtMuscleType_Click);
             this.txtMuscleType.Enter += new System.EventHandler(this.txtMuscleType_Enter);
             this.txtMuscleType.Leave += new System.EventHandler(this.txtMuscleType_Leave);

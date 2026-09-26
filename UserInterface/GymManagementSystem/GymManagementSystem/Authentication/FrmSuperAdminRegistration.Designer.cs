@@ -37,8 +37,8 @@
             this.pnlUsernameSuperAdminRegistration = new System.Windows.Forms.Panel();
             this.tlpRegistrationSuperAdminUsernameInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblRegistrationSuperAdminUsername = new System.Windows.Forms.Label();
-            this.txtRegistrationSuperAdminUsername = new System.Windows.Forms.TextBox();
             this.picSuperAdminUsernameRegistration = new System.Windows.Forms.PictureBox();
+            this.txtRegistrationSuperAdminUsername = new System.Windows.Forms.TextBox();
             this.pnlPasswordSuperAdminRegistration = new System.Windows.Forms.Panel();
             this.tlpRegistrationSuperAdminPasswordInput = new System.Windows.Forms.TableLayoutPanel();
             this.lblRegistrationSuperAdminPassword = new System.Windows.Forms.Label();
@@ -146,7 +146,7 @@
             this.picSuperAdminImageRegistration.Location = new System.Drawing.Point(87, 2);
             this.picSuperAdminImageRegistration.Margin = new System.Windows.Forms.Padding(2);
             this.picSuperAdminImageRegistration.Name = "picSuperAdminImageRegistration";
-            this.picSuperAdminImageRegistration.Size = new System.Drawing.Size(176, 68);
+            this.picSuperAdminImageRegistration.Size = new System.Drawing.Size(176, 77);
             this.picSuperAdminImageRegistration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminImageRegistration.TabIndex = 0;
             this.picSuperAdminImageRegistration.TabStop = false;
@@ -222,19 +222,6 @@
             this.lblRegistrationSuperAdminUsername.TabIndex = 0;
             this.lblRegistrationSuperAdminUsername.Text = "Username :";
             // 
-            // txtRegistrationSuperAdminUsername
-            // 
-            this.txtRegistrationSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(152, 4);
-            this.txtRegistrationSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRegistrationSuperAdminUsername.Name = "txtRegistrationSuperAdminUsername";
-            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(196, 23);
-            this.txtRegistrationSuperAdminUsername.TabIndex = 1;
-            this.txtRegistrationSuperAdminUsername.Text = "Enter Username";
-            this.txtRegistrationSuperAdminUsername.Click += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Click);
-            // 
             // picSuperAdminUsernameRegistration
             // 
             this.picSuperAdminUsernameRegistration.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -246,6 +233,21 @@
             this.picSuperAdminUsernameRegistration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSuperAdminUsernameRegistration.TabIndex = 2;
             this.picSuperAdminUsernameRegistration.TabStop = false;
+            // 
+            // txtRegistrationSuperAdminUsername
+            // 
+            this.txtRegistrationSuperAdminUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRegistrationSuperAdminUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistrationSuperAdminUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtRegistrationSuperAdminUsername.Location = new System.Drawing.Point(152, 4);
+            this.txtRegistrationSuperAdminUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRegistrationSuperAdminUsername.Name = "txtRegistrationSuperAdminUsername";
+            this.txtRegistrationSuperAdminUsername.Size = new System.Drawing.Size(196, 23);
+            this.txtRegistrationSuperAdminUsername.TabIndex = 0;
+            this.txtRegistrationSuperAdminUsername.Text = "---Enter Username---";
+            this.txtRegistrationSuperAdminUsername.Click += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Click);
+            this.txtRegistrationSuperAdminUsername.Enter += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Enter);
+            this.txtRegistrationSuperAdminUsername.Leave += new System.EventHandler(this.txtRegistrationSuperAdminUsername_Leave);
             // 
             // pnlPasswordSuperAdminRegistration
             // 
@@ -300,11 +302,12 @@
             this.txtRegistrationSuperAdminPassword.Location = new System.Drawing.Point(153, 4);
             this.txtRegistrationSuperAdminPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistrationSuperAdminPassword.Name = "txtRegistrationSuperAdminPassword";
-            this.txtRegistrationSuperAdminPassword.PasswordChar = '*';
             this.txtRegistrationSuperAdminPassword.Size = new System.Drawing.Size(195, 23);
-            this.txtRegistrationSuperAdminPassword.TabIndex = 1;
-            this.txtRegistrationSuperAdminPassword.Text = "Enter Password";
+            this.txtRegistrationSuperAdminPassword.TabIndex = 3;
+            this.txtRegistrationSuperAdminPassword.Text = "---Enter Password---";
             this.txtRegistrationSuperAdminPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Click);
+            this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
+            this.txtRegistrationSuperAdminPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Leave);
             // 
             // picSuperAdminPassword
             // 
@@ -372,9 +375,11 @@
             this.txtRegistrationSuperAdminEmailId.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistrationSuperAdminEmailId.Name = "txtRegistrationSuperAdminEmailId";
             this.txtRegistrationSuperAdminEmailId.Size = new System.Drawing.Size(194, 23);
-            this.txtRegistrationSuperAdminEmailId.TabIndex = 1;
-            this.txtRegistrationSuperAdminEmailId.Text = "Enter Email Id";
+            this.txtRegistrationSuperAdminEmailId.TabIndex = 2;
+            this.txtRegistrationSuperAdminEmailId.Text = "---Enter Email Id---";
             this.txtRegistrationSuperAdminEmailId.Click += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Click);
+            this.txtRegistrationSuperAdminEmailId.Enter += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Enter);
+            this.txtRegistrationSuperAdminEmailId.Leave += new System.EventHandler(this.txtRegistrationSuperAdminEmailId_Leave);
             // 
             // picSuperAdminEmailId
             // 
@@ -443,8 +448,10 @@
             this.txtRegistrationSuperAdminMobileNo.Name = "txtRegistrationSuperAdminMobileNo";
             this.txtRegistrationSuperAdminMobileNo.Size = new System.Drawing.Size(195, 23);
             this.txtRegistrationSuperAdminMobileNo.TabIndex = 1;
-            this.txtRegistrationSuperAdminMobileNo.Text = "Enter MobileNo";
+            this.txtRegistrationSuperAdminMobileNo.Text = "---Enter MobileNo---";
             this.txtRegistrationSuperAdminMobileNo.Click += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Click);
+            this.txtRegistrationSuperAdminMobileNo.Enter += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Enter);
+            this.txtRegistrationSuperAdminMobileNo.Leave += new System.EventHandler(this.txtRegistrationSuperAdminMobileNo_Leave);
             // 
             // picSuperAdminMobileNo
             // 
@@ -510,11 +517,12 @@
             this.txtRegistrationSuperAdminConfermPassword.Location = new System.Drawing.Point(154, 2);
             this.txtRegistrationSuperAdminConfermPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistrationSuperAdminConfermPassword.Name = "txtRegistrationSuperAdminConfermPassword";
-            this.txtRegistrationSuperAdminConfermPassword.PasswordChar = '*';
             this.txtRegistrationSuperAdminConfermPassword.Size = new System.Drawing.Size(194, 23);
-            this.txtRegistrationSuperAdminConfermPassword.TabIndex = 1;
-            this.txtRegistrationSuperAdminConfermPassword.Text = "Confirm Password";
+            this.txtRegistrationSuperAdminConfermPassword.TabIndex = 4;
+            this.txtRegistrationSuperAdminConfermPassword.Text = "---Confirm Password---";
             this.txtRegistrationSuperAdminConfermPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Click);
+            this.txtRegistrationSuperAdminConfermPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Enter);
+            this.txtRegistrationSuperAdminConfermPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminConfermPassword_Leave);
             // 
             // picSuperAdminConferm
             // 
@@ -573,6 +581,7 @@
             this.btnSuperAdminRegistration.TabIndex = 14;
             this.btnSuperAdminRegistration.Text = "Register";
             this.btnSuperAdminRegistration.UseVisualStyleBackColor = false;
+            this.btnSuperAdminRegistration.Click += new System.EventHandler(this.btnSuperAdminRegistration_Click);
             // 
             // FrmSuperAdminRegistration
             // 

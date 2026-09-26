@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSAPayment));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpPaymentHistory = new System.Windows.Forms.TableLayoutPanel();
             this.tlpPaymentHistoryHeader = new System.Windows.Forms.TableLayoutPanel();
             this.picPaymentHistory = new System.Windows.Forms.PictureBox();
@@ -61,6 +62,11 @@
             this.picStartDatePaymentHistory = new System.Windows.Forms.PictureBox();
             this.picEndDatePaymentHistory = new System.Windows.Forms.PictureBox();
             this.dgvPaymentHistory = new System.Windows.Forms.DataGridView();
+            this.tlpTotalPaymentHistoryAndExport = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExportPaymentHistory = new System.Windows.Forms.Button();
+            this.lblTotalPaymentHistory = new System.Windows.Forms.Label();
+            this.lblOutputTotalExpencePaymentHistory = new System.Windows.Forms.Label();
+            this.picTotalPaymentHistory = new System.Windows.Forms.PictureBox();
             this.colSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPaymentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMembershipPlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,11 +74,6 @@
             this.colPaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFeesType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlpTotalPaymentHistoryAndExport = new System.Windows.Forms.TableLayoutPanel();
-            this.btnExportPaymentHistory = new System.Windows.Forms.Button();
-            this.lblTotalPaymentHistory = new System.Windows.Forms.Label();
-            this.lblOutputTotalExpencePaymentHistory = new System.Windows.Forms.Label();
-            this.picTotalPaymentHistory = new System.Windows.Forms.PictureBox();
             this.tlpPaymentHistory.SuspendLayout();
             this.tlpPaymentHistoryHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPaymentHistory)).BeginInit();
@@ -105,7 +106,7 @@
             this.tlpPaymentHistory.Controls.Add(this.tlpTotalPaymentHistoryAndExport, 1, 5);
             this.tlpPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPaymentHistory.Location = new System.Drawing.Point(0, 0);
-            this.tlpPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPaymentHistory.Name = "tlpPaymentHistory";
             this.tlpPaymentHistory.RowCount = 8;
             this.tlpPaymentHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.323657F));
@@ -131,7 +132,7 @@
             this.tlpPaymentHistoryHeader.Controls.Add(this.tlpPaymentHistoryTitle, 1, 0);
             this.tlpPaymentHistoryHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPaymentHistoryHeader.Location = new System.Drawing.Point(13, 7);
-            this.tlpPaymentHistoryHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPaymentHistoryHeader.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPaymentHistoryHeader.Name = "tlpPaymentHistoryHeader";
             this.tlpPaymentHistoryHeader.RowCount = 1;
             this.tlpPaymentHistoryHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -158,7 +159,7 @@
             this.tlpPaymentHistoryTitle.Controls.Add(this.lblPaymentHistory, 0, 0);
             this.tlpPaymentHistoryTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpPaymentHistoryTitle.Location = new System.Drawing.Point(53, 2);
-            this.tlpPaymentHistoryTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpPaymentHistoryTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tlpPaymentHistoryTitle.Name = "tlpPaymentHistoryTitle";
             this.tlpPaymentHistoryTitle.RowCount = 3;
             this.tlpPaymentHistoryTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
@@ -212,7 +213,7 @@
             this.tlpMonthYearSearchPaymentHistory.Controls.Add(this.picYearPaymentHistory, 3, 0);
             this.tlpMonthYearSearchPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMonthYearSearchPaymentHistory.Location = new System.Drawing.Point(13, 64);
-            this.tlpMonthYearSearchPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMonthYearSearchPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMonthYearSearchPaymentHistory.Name = "tlpMonthYearSearchPaymentHistory";
             this.tlpMonthYearSearchPaymentHistory.RowCount = 1;
             this.tlpMonthYearSearchPaymentHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -246,9 +247,9 @@
             this.lblMonthPaymentHistory.Location = new System.Drawing.Point(30, 9);
             this.lblMonthPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonthPaymentHistory.Name = "lblMonthPaymentHistory";
-            this.lblMonthPaymentHistory.Size = new System.Drawing.Size(66, 19);
+            this.lblMonthPaymentHistory.Size = new System.Drawing.Size(58, 19);
             this.lblMonthPaymentHistory.TabIndex = 0;
-            this.lblMonthPaymentHistory.Text = "Mounth :";
+            this.lblMonthPaymentHistory.Text = "Month :";
             // 
             // cmbMonthPaymentHistory
             // 
@@ -257,7 +258,7 @@
             this.cmbMonthPaymentHistory.ForeColor = System.Drawing.Color.Gray;
             this.cmbMonthPaymentHistory.FormattingEnabled = true;
             this.cmbMonthPaymentHistory.Location = new System.Drawing.Point(109, 5);
-            this.cmbMonthPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMonthPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMonthPaymentHistory.Name = "cmbMonthPaymentHistory";
             this.cmbMonthPaymentHistory.Size = new System.Drawing.Size(195, 27);
             this.cmbMonthPaymentHistory.TabIndex = 3;
@@ -282,7 +283,7 @@
             this.txtYearPaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearPaymentHistory.ForeColor = System.Drawing.Color.Gray;
             this.txtYearPaymentHistory.Location = new System.Drawing.Point(397, 5);
-            this.txtYearPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYearPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.txtYearPaymentHistory.Name = "txtYearPaymentHistory";
             this.txtYearPaymentHistory.Size = new System.Drawing.Size(144, 26);
             this.txtYearPaymentHistory.TabIndex = 4;
@@ -294,7 +295,7 @@
             this.picMonthPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picMonthPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picMonthPaymentHistory.Image")));
             this.picMonthPaymentHistory.Location = new System.Drawing.Point(2, 3);
-            this.picMonthPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMonthPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.picMonthPaymentHistory.Name = "picMonthPaymentHistory";
             this.picMonthPaymentHistory.Size = new System.Drawing.Size(23, 30);
             this.picMonthPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,7 +307,7 @@
             this.picYearPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picYearPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picYearPaymentHistory.Image")));
             this.picYearPaymentHistory.Location = new System.Drawing.Point(315, 3);
-            this.picYearPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picYearPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.picYearPaymentHistory.Name = "picYearPaymentHistory";
             this.picYearPaymentHistory.Size = new System.Drawing.Size(22, 30);
             this.picYearPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -323,7 +324,7 @@
             this.tlpDateRangePaymentHistory.Controls.Add(this.picDateRangePaymentHistory, 0, 0);
             this.tlpDateRangePaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDateRangePaymentHistory.Location = new System.Drawing.Point(13, 105);
-            this.tlpDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpDateRangePaymentHistory.Name = "tlpDateRangePaymentHistory";
             this.tlpDateRangePaymentHistory.RowCount = 1;
             this.tlpDateRangePaymentHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -332,14 +333,13 @@
             // 
             // lblDateRangePaymentHistory
             // 
-            this.lblDateRangePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDateRangePaymentHistory.AutoSize = true;
+            this.lblDateRangePaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDateRangePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateRangePaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblDateRangePaymentHistory.Location = new System.Drawing.Point(30, 0);
-            this.lblDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDateRangePaymentHistory.Location = new System.Drawing.Point(30, 9);
+            this.lblDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
             this.lblDateRangePaymentHistory.Name = "lblDateRangePaymentHistory";
-            this.lblDateRangePaymentHistory.Size = new System.Drawing.Size(105, 37);
+            this.lblDateRangePaymentHistory.Size = new System.Drawing.Size(105, 20);
             this.lblDateRangePaymentHistory.TabIndex = 0;
             this.lblDateRangePaymentHistory.Text = "Date Range - - -";
             // 
@@ -348,7 +348,7 @@
             this.picDateRangePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picDateRangePaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picDateRangePaymentHistory.Image")));
             this.picDateRangePaymentHistory.Location = new System.Drawing.Point(2, 3);
-            this.picDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDateRangePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.picDateRangePaymentHistory.Name = "picDateRangePaymentHistory";
             this.picDateRangePaymentHistory.Size = new System.Drawing.Size(23, 30);
             this.picDateRangePaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,7 +375,7 @@
             this.tlpStartAndEndDatePaymentHistory.Controls.Add(this.picEndDatePaymentHistory, 3, 0);
             this.tlpStartAndEndDatePaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpStartAndEndDatePaymentHistory.Location = new System.Drawing.Point(13, 146);
-            this.tlpStartAndEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpStartAndEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.tlpStartAndEndDatePaymentHistory.Name = "tlpStartAndEndDatePaymentHistory";
             this.tlpStartAndEndDatePaymentHistory.RowCount = 1;
             this.tlpStartAndEndDatePaymentHistory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -418,7 +418,7 @@
             this.dtpStartDatePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpStartDatePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDatePaymentHistory.Location = new System.Drawing.Point(126, 5);
-            this.dtpStartDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpStartDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dtpStartDatePaymentHistory.Name = "dtpStartDatePaymentHistory";
             this.dtpStartDatePaymentHistory.Size = new System.Drawing.Size(240, 26);
             this.dtpStartDatePaymentHistory.TabIndex = 1;
@@ -441,7 +441,7 @@
             this.dtpEndDatePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpEndDatePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDatePaymentHistory.Location = new System.Drawing.Point(499, 5);
-            this.dtpEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEndDatePaymentHistory.Name = "dtpEndDatePaymentHistory";
             this.dtpEndDatePaymentHistory.Size = new System.Drawing.Size(245, 26);
             this.dtpEndDatePaymentHistory.TabIndex = 0;
@@ -451,7 +451,7 @@
             this.picStartDatePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picStartDatePaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picStartDatePaymentHistory.Image")));
             this.picStartDatePaymentHistory.Location = new System.Drawing.Point(2, 4);
-            this.picStartDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picStartDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.picStartDatePaymentHistory.Name = "picStartDatePaymentHistory";
             this.picStartDatePaymentHistory.Size = new System.Drawing.Size(23, 29);
             this.picStartDatePaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -463,7 +463,7 @@
             this.picEndDatePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.picEndDatePaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picEndDatePaymentHistory.Image")));
             this.picEndDatePaymentHistory.Location = new System.Drawing.Point(380, 4);
-            this.picEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEndDatePaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.picEndDatePaymentHistory.Name = "picEndDatePaymentHistory";
             this.picEndDatePaymentHistory.Size = new System.Drawing.Size(23, 29);
             this.picEndDatePaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -475,23 +475,23 @@
             this.dgvPaymentHistory.AllowUserToAddRows = false;
             this.dgvPaymentHistory.AllowUserToDeleteRows = false;
             this.dgvPaymentHistory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvPaymentHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvPaymentHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPaymentHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaymentHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dgvPaymentHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPaymentHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaymentHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvPaymentHistory.ColumnHeadersHeight = 50;
+            this.dgvPaymentHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPaymentHistory.ColumnHeadersHeight = 40;
             this.dgvPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPaymentHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSerialNo,
@@ -501,37 +501,37 @@
             this.colPaymentMethod,
             this.colAmount,
             this.colFeesType});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentHistory.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentHistory.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPaymentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPaymentHistory.EnableHeadersVisualStyles = false;
             this.dgvPaymentHistory.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvPaymentHistory.Location = new System.Drawing.Point(13, 228);
-            this.dgvPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPaymentHistory.MultiSelect = false;
             this.dgvPaymentHistory.Name = "dgvPaymentHistory";
             this.dgvPaymentHistory.ReadOnly = true;
             this.dgvPaymentHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaymentHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPaymentHistory.RowHeadersVisible = false;
             this.dgvPaymentHistory.RowHeadersWidth = 50;
             this.dgvPaymentHistory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvPaymentHistory.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvPaymentHistory.RowTemplate.Height = 50;
-            this.dgvPaymentHistory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvPaymentHistory.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPaymentHistory.RowTemplate.Height = 30;
+            this.dgvPaymentHistory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPaymentHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPaymentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPaymentHistory.Size = new System.Drawing.Size(833, 357);
@@ -540,12 +540,88 @@
             this.dgvPaymentHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentHistory_CellMouseEnter);
             this.dgvPaymentHistory.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentHistory_CellMouseLeave);
             // 
+            // tlpTotalPaymentHistoryAndExport
+            // 
+            this.tlpTotalPaymentHistoryAndExport.ColumnCount = 5;
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.btnExportPaymentHistory, 4, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblTotalPaymentHistory, 1, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblOutputTotalExpencePaymentHistory, 2, 0);
+            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.picTotalPaymentHistory, 0, 0);
+            this.tlpTotalPaymentHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTotalPaymentHistoryAndExport.Location = new System.Drawing.Point(13, 187);
+            this.tlpTotalPaymentHistoryAndExport.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpTotalPaymentHistoryAndExport.Name = "tlpTotalPaymentHistoryAndExport";
+            this.tlpTotalPaymentHistoryAndExport.RowCount = 1;
+            this.tlpTotalPaymentHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTotalPaymentHistoryAndExport.Size = new System.Drawing.Size(833, 37);
+            this.tlpTotalPaymentHistoryAndExport.TabIndex = 18;
+            // 
+            // btnExportPaymentHistory
+            // 
+            this.btnExportPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnExportPaymentHistory.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnExportPaymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExportPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnExportPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPaymentHistory.ForeColor = System.Drawing.Color.White;
+            this.btnExportPaymentHistory.Location = new System.Drawing.Point(745, 2);
+            this.btnExportPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnExportPaymentHistory.Name = "btnExportPaymentHistory";
+            this.btnExportPaymentHistory.Size = new System.Drawing.Size(88, 32);
+            this.btnExportPaymentHistory.TabIndex = 5;
+            this.btnExportPaymentHistory.Text = "Export";
+            this.btnExportPaymentHistory.UseVisualStyleBackColor = false;
+            this.btnExportPaymentHistory.Click += new System.EventHandler(this.btnExportPaymentHistory_Click);
+            // 
+            // lblTotalPaymentHistory
+            // 
+            this.lblTotalPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTotalPaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblTotalPaymentHistory.Location = new System.Drawing.Point(30, 10);
+            this.lblTotalPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lblTotalPaymentHistory.Name = "lblTotalPaymentHistory";
+            this.lblTotalPaymentHistory.Size = new System.Drawing.Size(108, 19);
+            this.lblTotalPaymentHistory.TabIndex = 0;
+            this.lblTotalPaymentHistory.Text = "Total Payments :";
+            // 
+            // lblOutputTotalExpencePaymentHistory
+            // 
+            this.lblOutputTotalExpencePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblOutputTotalExpencePaymentHistory.AutoSize = true;
+            this.lblOutputTotalExpencePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutputTotalExpencePaymentHistory.ForeColor = System.Drawing.Color.Gray;
+            this.lblOutputTotalExpencePaymentHistory.Location = new System.Drawing.Point(142, 9);
+            this.lblOutputTotalExpencePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOutputTotalExpencePaymentHistory.Name = "lblOutputTotalExpencePaymentHistory";
+            this.lblOutputTotalExpencePaymentHistory.Size = new System.Drawing.Size(27, 19);
+            this.lblOutputTotalExpencePaymentHistory.TabIndex = 2;
+            this.lblOutputTotalExpencePaymentHistory.Text = "---";
+            // 
+            // picTotalPaymentHistory
+            // 
+            this.picTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picTotalPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalPaymentHistory.Image")));
+            this.picTotalPaymentHistory.Location = new System.Drawing.Point(2, 4);
+            this.picTotalPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.picTotalPaymentHistory.Name = "picTotalPaymentHistory";
+            this.picTotalPaymentHistory.Size = new System.Drawing.Size(23, 28);
+            this.picTotalPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTotalPaymentHistory.TabIndex = 3;
+            this.picTotalPaymentHistory.TabStop = false;
+            // 
             // colSerialNo
             // 
             this.colSerialNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSerialNo.DataPropertyName = "SerialNo";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
-            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.colSerialNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.colSerialNo.FillWeight = 90F;
             this.colSerialNo.HeaderText = "Sl No.";
             this.colSerialNo.Name = "colSerialNo";
@@ -564,6 +640,9 @@
             // 
             this.colMembershipPlanName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colMembershipPlanName.DataPropertyName = "MembershipPlanName";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.colMembershipPlanName.DefaultCellStyle = dataGridViewCellStyle4;
             this.colMembershipPlanName.FillWeight = 180F;
             this.colMembershipPlanName.HeaderText = "Membership Plan Name";
             this.colMembershipPlanName.Name = "colMembershipPlanName";
@@ -612,90 +691,13 @@
             this.colFeesType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colFeesType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // tlpTotalPaymentHistoryAndExport
-            // 
-            this.tlpTotalPaymentHistoryAndExport.ColumnCount = 5;
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalPaymentHistoryAndExport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.btnExportPaymentHistory, 4, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblTotalPaymentHistory, 1, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.lblOutputTotalExpencePaymentHistory, 2, 0);
-            this.tlpTotalPaymentHistoryAndExport.Controls.Add(this.picTotalPaymentHistory, 0, 0);
-            this.tlpTotalPaymentHistoryAndExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTotalPaymentHistoryAndExport.Location = new System.Drawing.Point(13, 187);
-            this.tlpTotalPaymentHistoryAndExport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tlpTotalPaymentHistoryAndExport.Name = "tlpTotalPaymentHistoryAndExport";
-            this.tlpTotalPaymentHistoryAndExport.RowCount = 1;
-            this.tlpTotalPaymentHistoryAndExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTotalPaymentHistoryAndExport.Size = new System.Drawing.Size(833, 37);
-            this.tlpTotalPaymentHistoryAndExport.TabIndex = 18;
-            // 
-            // btnExportPaymentHistory
-            // 
-            this.btnExportPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnExportPaymentHistory.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnExportPaymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnExportPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnExportPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportPaymentHistory.ForeColor = System.Drawing.Color.White;
-            this.btnExportPaymentHistory.Location = new System.Drawing.Point(745, 2);
-            this.btnExportPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnExportPaymentHistory.Name = "btnExportPaymentHistory";
-            this.btnExportPaymentHistory.Size = new System.Drawing.Size(88, 32);
-            this.btnExportPaymentHistory.TabIndex = 5;
-            this.btnExportPaymentHistory.Text = "Export";
-            this.btnExportPaymentHistory.UseVisualStyleBackColor = false;
-            this.btnExportPaymentHistory.Click += new System.EventHandler(this.btnExportPaymentHistory_Click);
-            // 
-            // lblTotalPaymentHistory
-            // 
-            this.lblTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTotalPaymentHistory.AutoSize = true;
-            this.lblTotalPaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblTotalPaymentHistory.Location = new System.Drawing.Point(30, 0);
-            this.lblTotalPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalPaymentHistory.Name = "lblTotalPaymentHistory";
-            this.lblTotalPaymentHistory.Size = new System.Drawing.Size(108, 37);
-            this.lblTotalPaymentHistory.TabIndex = 0;
-            this.lblTotalPaymentHistory.Text = "Total Payments :";
-            // 
-            // lblOutputTotalExpencePaymentHistory
-            // 
-            this.lblOutputTotalExpencePaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblOutputTotalExpencePaymentHistory.AutoSize = true;
-            this.lblOutputTotalExpencePaymentHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutputTotalExpencePaymentHistory.ForeColor = System.Drawing.Color.Gray;
-            this.lblOutputTotalExpencePaymentHistory.Location = new System.Drawing.Point(142, 9);
-            this.lblOutputTotalExpencePaymentHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblOutputTotalExpencePaymentHistory.Name = "lblOutputTotalExpencePaymentHistory";
-            this.lblOutputTotalExpencePaymentHistory.Size = new System.Drawing.Size(27, 19);
-            this.lblOutputTotalExpencePaymentHistory.TabIndex = 2;
-            this.lblOutputTotalExpencePaymentHistory.Text = "---";
-            // 
-            // picTotalPaymentHistory
-            // 
-            this.picTotalPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.picTotalPaymentHistory.Image = ((System.Drawing.Image)(resources.GetObject("picTotalPaymentHistory.Image")));
-            this.picTotalPaymentHistory.Location = new System.Drawing.Point(2, 4);
-            this.picTotalPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picTotalPaymentHistory.Name = "picTotalPaymentHistory";
-            this.picTotalPaymentHistory.Size = new System.Drawing.Size(23, 28);
-            this.picTotalPaymentHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTotalPaymentHistory.TabIndex = 3;
-            this.picTotalPaymentHistory.TabStop = false;
-            // 
             // FrmSAPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 609);
             this.Controls.Add(this.tlpPaymentHistory);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmSAPayment";
             this.Text = "FrmSAPayment";
             this.Load += new System.EventHandler(this.FrmSAPayment_Load);
@@ -710,7 +712,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMonthPaymentHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picYearPaymentHistory)).EndInit();
             this.tlpDateRangePaymentHistory.ResumeLayout(false);
-            this.tlpDateRangePaymentHistory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDateRangePaymentHistory)).EndInit();
             this.tlpStartAndEndDatePaymentHistory.ResumeLayout(false);
             this.tlpStartAndEndDatePaymentHistory.PerformLayout();

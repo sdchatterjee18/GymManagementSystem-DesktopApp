@@ -50,32 +50,51 @@ namespace GymManagementSystemBLLayer.ModulesBLLayer.Expense
         }
 
         //Insert Expense Category 
-        public string InsertExpenseCategoryBLL(string categoryName,string category) 
+        public ValidationResult InsertExpenseCategoryBLL()
         {
-            string InsertionMessage = null;
-            CategoryName = categoryName;
-            Category = category;
-            ValidationBll.CommonValidationMessage CategoryNameResult = ValidationBll.ValidateName(CategoryName);
-            ValidationBll.CommonValidationMessage CategoryResult = ValidationBll.ValidateName(Category);
-            if (CategoryNameResult != ValidationBll.CommonValidationMessage.Valid)
+            ValidationBll.CommonValidationMessage result;
+
+            // Category Name
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.CategoryName);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
             {
-                return ValidationBll.GetValidationMessage(CategoryNameResult).ToString();
-            }
-            if (CategoryResult != ValidationBll.CommonValidationMessage.Valid)
-            {
-                return ValidationBll.GetValidationMessage(CategoryResult).ToString();
-            }
-            try
-            {
-                ExpensesDAL ExpenseDAL = new ExpensesDAL();
-                InsertionMessage = ExpenseDAL.InsertExpenseCategoryDAL(CategoryName, Category);
-                return InsertionMessage;
-            }
-            catch (Exception Ex)
-            {
-                return InsertionMessage;
+                return new ValidationResult
+                {
+                    FieldName = "CategoryName",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
             }
 
+            // Category
+            result = ValidationBll.ValidateOnlyLettersAndSpaces(this.Category);
+
+            if (result != ValidationBll.CommonValidationMessage.Valid)
+            {
+                return new ValidationResult
+                {
+                    FieldName = "Category",
+                    Result = result,
+                    Message = ValidationBll.GetValidationMessage(result)
+                };
+            }
+
+            ExpensesDAL expensesDAL = new ExpensesDAL();
+
+            // PASS BLL PROPERTIES TO DAL
+            expensesDAL.CategoryName = this.CategoryName;
+            expensesDAL.Category = this.Category;
+
+            // CALL DAL INSERT METHOD
+            string message = expensesDAL.InsertExpenseCategoryDAL();
+
+            return new ValidationResult
+            {
+                FieldName = "",
+                Result = ValidationBll.CommonValidationMessage.Valid,
+                Message = message
+            };
         }
 
         //Insert Expense

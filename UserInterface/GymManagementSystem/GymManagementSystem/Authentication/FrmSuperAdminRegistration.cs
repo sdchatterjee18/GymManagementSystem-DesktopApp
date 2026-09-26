@@ -27,6 +27,9 @@ namespace GymManagementSystem.Authentication
         {
             this.ShowIcon = false;
             this.Text = "";
+            txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = false;
+            txtRegistrationSuperAdminPassword.UseSystemPasswordChar = false;
+            this.ActiveControl = null;
         }  
         private void FrmSuperAdminRegistration_Shown(object sender, EventArgs e)
         {
@@ -89,11 +92,10 @@ namespace GymManagementSystem.Authentication
             if (chkShowPassword.Checked)
             {
                 txtRegistrationSuperAdminPassword.PasswordChar = '\0';
-                chkShowPassword.BackColor = Color.PapayaWhip;
             }
             else
             {
-                txtRegistrationSuperAdminPassword.PasswordChar = '*';
+                txtRegistrationSuperAdminPassword.PasswordChar = '●';
             }
         }
 
@@ -102,20 +104,157 @@ namespace GymManagementSystem.Authentication
             if (chkShowConfermPassword.Checked)
             {
                 txtRegistrationSuperAdminConfermPassword.PasswordChar = '\0';
-                chkShowConfermPassword.BackColor = Color.PapayaWhip;
             }
             else
             {
-                txtRegistrationSuperAdminConfermPassword.PasswordChar = '*';
+                txtRegistrationSuperAdminConfermPassword.PasswordChar = '●';
             }
+        }
+        private void txtRegistrationSuperAdminUsername_Click(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminUsername!=1)
+            {
+                ClickCountTxtRegistrationSuperAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminUsername,
+             ClickCountTxtRegistrationSuperAdminUsername);
+            }
+        }
+
+        private void txtRegistrationSuperAdminMobileNo_Click(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminMobileNo != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminMobileNo =
+             ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminMobileNo, ClickCountTxtRegistrationSuperAdminMobileNo);
+            }            
+        }
+
+        private void txtRegistrationSuperAdminEmailId_Click(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminEmailId != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminEmailId =
+            ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminEmailId, ClickCountTxtRegistrationSuperAdminEmailId);
+            }
+        }
+
+        private void txtRegistrationSuperAdminPassword_Click(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminPassword!=1)
+            {
+                ClickCountTxtRegistrationSuperAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminPassword, ClickCountTxtRegistrationSuperAdminPassword);
+            }
+        }
+
+        private void txtRegistrationSuperAdminConfermPassword_Click(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminConfermPassword!=1)
+            {
+                ClickCountTxtRegistrationSuperAdminConfermPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminConfermPassword,
+           ClickCountTxtRegistrationSuperAdminConfermPassword);
+            }
+        }
+
+        private void txtRegistrationSuperAdminUsername_Enter(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminUsername != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminUsername,
+             ClickCountTxtRegistrationSuperAdminUsername);
+            }
+        }
+
+        private void txtRegistrationSuperAdminMobileNo_Enter(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminMobileNo != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminMobileNo =
+             ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminMobileNo, ClickCountTxtRegistrationSuperAdminMobileNo);
+            }  
+        }
+
+        private void txtRegistrationSuperAdminEmailId_Enter(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminEmailId != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminEmailId =
+            ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminEmailId, ClickCountTxtRegistrationSuperAdminEmailId);
+            }
+        }
+
+        private void txtRegistrationSuperAdminPassword_Enter(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminPassword != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminPassword, ClickCountTxtRegistrationSuperAdminPassword);
+            }
+        }
+
+        private void txtRegistrationSuperAdminConfermPassword_Enter(object sender, EventArgs e)
+        {
+            if (ClickCountTxtRegistrationSuperAdminConfermPassword != 1)
+            {
+                ClickCountTxtRegistrationSuperAdminConfermPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminConfermPassword,
+           ClickCountTxtRegistrationSuperAdminConfermPassword);
+            }
+        }
+
+        private void txtRegistrationSuperAdminUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminUsername.Text))
+            {
+                txtRegistrationSuperAdminUsername.Text = "---Enter Username---";
+                txtRegistrationSuperAdminUsername.ForeColor = Color.Gray;
+                ClickCountTxtRegistrationSuperAdminUsername = 0;
+            }
+            txtRegistrationSuperAdminMobileNo.Focus();
+        }
+
+        private void txtRegistrationSuperAdminMobileNo_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminMobileNo.Text))
+            {
+                txtRegistrationSuperAdminMobileNo.Text = "---Enter MobileNo---";
+                txtRegistrationSuperAdminMobileNo.ForeColor = Color.Gray;
+                ClickCountTxtRegistrationSuperAdminMobileNo = 0;
+            }
+            txtRegistrationSuperAdminEmailId.Focus();
+        }
+
+        private void txtRegistrationSuperAdminEmailId_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminEmailId.Text))
+            {
+                txtRegistrationSuperAdminEmailId.Text = "---Enter EmailId---";
+                txtRegistrationSuperAdminEmailId.ForeColor = Color.Gray;
+                ClickCountTxtRegistrationSuperAdminEmailId = 0;
+            }
+            txtRegistrationSuperAdminPassword.Focus();
+        }
+
+        private void txtRegistrationSuperAdminConfermPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminConfermPassword.Text))
+            {
+                txtRegistrationSuperAdminConfermPassword.Text = "---Confirm Password---";
+                txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Gray;
+                ClickCountTxtRegistrationSuperAdminConfermPassword = 0;
+            }
+            txtRegistrationSuperAdminUsername.Focus();
+        }
+
+        private void txtRegistrationSuperAdminPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminPassword.Text))
+            {
+                txtRegistrationSuperAdminPassword.Text = "---Confirm Password---";
+                txtRegistrationSuperAdminPassword.ForeColor = Color.Gray;
+                ClickCountTxtRegistrationSuperAdminPassword = 0;
+            }
+            txtRegistrationSuperAdminConfermPassword.Focus();
         }
 
         private void btnSuperAdminRegistration_Click(object sender, EventArgs e)
         {
-            // ==========================================
-            // CLEAR DEFAULT PLACEHOLDER TEXT
-            // ==========================================
-
             ValidationUI.ClearDefaultPlaceholderText(
                 txtRegistrationSuperAdminUsername,
                 ClickCountTxtRegistrationSuperAdminUsername);
@@ -225,56 +364,6 @@ namespace GymManagementSystem.Authentication
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-        }
-
-        private void txtRegistrationSuperAdminUsername_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtRegistrationSuperAdminUsername =
-             ValidationUI.ClearTextBoxWhenClicked(
-             txtRegistrationSuperAdminUsername,
-             ClickCountTxtRegistrationSuperAdminUsername);
-
-            txtRegistrationSuperAdminUsername.ForeColor = Color.Black;
-        }
-
-        private void txtRegistrationSuperAdminMobileNo_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtRegistrationSuperAdminMobileNo =
-             ValidationUI.ClearTextBoxWhenClicked(
-            txtRegistrationSuperAdminMobileNo,
-            ClickCountTxtRegistrationSuperAdminMobileNo);
-
-            txtRegistrationSuperAdminMobileNo.ForeColor = Color.Black;
-        }
-
-        private void txtRegistrationSuperAdminEmailId_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtRegistrationSuperAdminEmailId =
-            ValidationUI.ClearTextBoxWhenClicked(
-            txtRegistrationSuperAdminEmailId,
-            ClickCountTxtRegistrationSuperAdminEmailId);
-
-            txtRegistrationSuperAdminEmailId.ForeColor = Color.Black;
-        }
-
-        private void txtRegistrationSuperAdminPassword_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtRegistrationSuperAdminPassword =
-           ValidationUI.ClearTextBoxWhenClicked(
-          txtRegistrationSuperAdminPassword,
-          ClickCountTxtRegistrationSuperAdminPassword);
-
-            txtRegistrationSuperAdminPassword.ForeColor = Color.Black;
-        }
-
-        private void txtRegistrationSuperAdminConfermPassword_Click(object sender, EventArgs e)
-        {
-            ClickCountTxtRegistrationSuperAdminConfermPassword =
-            ValidationUI.ClearTextBoxWhenClicked(
-           txtRegistrationSuperAdminConfermPassword,
-           ClickCountTxtRegistrationSuperAdminConfermPassword);
-
-            txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Black;
         }
     }
 }

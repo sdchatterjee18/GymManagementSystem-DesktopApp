@@ -278,7 +278,7 @@ namespace GymManagementSystem.FORMS.Workout
             if (string.IsNullOrWhiteSpace(txtWorkoutPlanName.Text))
             {
                 ClickCountTxtWorkoutPlanName = 0;
-                txtWorkoutPlanName.Text = "Enter Workout Name";
+                txtWorkoutPlanName.Text = "---Enter Workout Name---";
                 txtWorkoutPlanName.ForeColor = Color.Gray;
             }
         }

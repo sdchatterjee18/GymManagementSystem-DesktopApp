@@ -593,9 +593,9 @@ GO
                    -- EMPLOYEE MANAGEMENT SPs --
 -------------------------------------------------------------------
 
------------------------
--- SP: spInsertEmployee
------------------------
+--------------------------
+-- SP: spInsertEmployee--
+--------------------------
 CREATE PROC spInsertEmployee
 (
     @FirstName VARCHAR(150),
@@ -983,10 +983,81 @@ BEGIN
         ON E.RoleId = R.RoleId  
     INNER JOIN tblSalary S  
         ON E.EmployeeId = S.EmployeeId  
-    ORDER BY E.EmployeeId;  
+    ORDER BY  E.IsActive DESC,
+              E.JoiningDate DESC;           
 END
 GO
 
+----------------------------------
+-- SP: spSearchEmployee
+----------------------------------
+CREATE PROC spSearchEmployee 
+(
+    @Search VARCHAR(100)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+
+        SET @Search = LTRIM(RTRIM(@Search));
+
+        SELECT
+            E.EmployeeId,
+
+            CONCAT(
+                E.FirstName, ' ',
+                ISNULL(E.MiddleName + ' ', ''),
+                E.LastName
+            ) AS EmployeeName,
+
+            E.DateOfBirth,
+            G.GenderName,
+            E.PhoneNo,
+            E.EmailId,
+            E.JoiningDate,
+            R.Role As RoleName,
+            E.IsActive,
+            E.BankAccountNo
+
+        FROM tblEmployee E
+
+        INNER JOIN tblEmployeeRoleType R
+            ON E.RoleId = R.RoleId
+
+        INNER JOIN tblGender G
+            ON E.GenderId = G.GenderId
+
+        WHERE
+        (
+            E.FirstName LIKE @Search + '%'
+            OR E.MiddleName LIKE @Search + '%'
+            OR E.LastName LIKE @Search + '%'
+            OR
+            (
+                E.FirstName + ' ' +
+                ISNULL(E.MiddleName + ' ', '') +
+                E.LastName
+            ) LIKE @Search + '%'
+            OR R.Role LIKE '%' + @Search + '%'
+            OR E.PhoneNo LIKE '%' + @Search + '%'
+            OR E.EmailId LIKE '%' + @Search + '%'
+        )
+
+        ORDER BY
+            E.IsActive DESC,
+            E.JoiningDate DESC;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT ERROR_MESSAGE() AS Message;
+
+    END CATCH
+END;
+GO
 ------------------------------------------------
 -- SP: spUpdateEmployeeContactDetailsByEmployeeId
 ------------------------------------------------
@@ -1476,46 +1547,6 @@ BEGIN
 END;
 GO
 
-----------------------------------------
--- SP: spGetAvailableTrainerCountByShift
-----------------------------------------
-CREATE OR ALTER PROC spRetrieveFreeTrainerByShift
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    BEGIN TRY
-
-        SELECT
-            S.ShiftId,
-            S.ShiftName,
-            COUNT(
-                CASE
-                    WHEN E.IsActive = 1 THEN TS.TrainerId
-                END
-            ) AS TotalFreeTrainer
-
-        FROM tblShift S
-
-        LEFT JOIN tblTrainerShift TS
-            ON S.ShiftId = TS.ShiftId
-            AND TS.IsActive = 1
-        LEFT JOIN tblTrainer T
-            ON TS.TrainerId = T.TrainerId
-        LEFT JOIN tblEmployee E
-            ON T.EmployeeId = E.EmployeeId
-        GROUP BY
-            S.ShiftId,
-            S.ShiftName,
-            S.StartTime
-        ORDER BY
-            S.StartTime;
-    END TRY
-    BEGIN CATCH
-        SELECT ERROR_MESSAGE() AS Message;
-    END CATCH
-END
-GO
 --------------------------------------------------
 -- SP: spDisplayAssingedTrainersToMembersWithShift
 --------------------------------------------------
@@ -8309,33 +8340,9 @@ GO
 ---------------------------------------
   --SP: spSearchWorkoutPlan--
 ---------------------------------------
-CREATE PROCEDURE spSearchWorkoutPlan
-(
+CREATE PROCEDURE spSearchWorkoutPlan (
     @SearchText VARCHAR(200) = NULL
-)
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    SELECT
-        WorkoutPlanId,
-        WorkoutName,
-        Description
-    FROM tblWorkoutPlans
-    WHERE
-        @SearchText IS NULL
-        OR LTRIM(RTRIM(@SearchText)) = ''
-        OR WorkoutName LIKE '%' + @SearchText + '%'
-        OR Description LIKE '%' + @SearchText + '%';
-END
-GO
-
----------------------------------------
-  --SP: spSearchWorkoutPlan--
----------------------------------------
-CREATE PROCEDURE spSearchWorkoutPlan 
-    @SearchText VARCHAR(200) = NULL
-)
+    )
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -8372,7 +8379,6 @@ BEGIN
         ExerciseName LIKE '%' + @SearchText + '%'
         OR MuscleType LIKE '%' + @SearchText + '%';
 END
-GO
 GO
 -------------------------------------------------------------------------------
                    -- DietPlanManagement SPs --
@@ -8756,36 +8762,6 @@ BEGIN
 END;
 GO
 ----------------------------------------------------------------------
-
------------------------------------------
-	--spGetCurrentShift--
------------------------------------------
-CREATE PROC spGetCurrentShift  
-AS  
-BEGIN  
-    SET NOCOUNT ON;  
-  
-    BEGIN TRY  
-  
-        DECLARE @CurrentTime TIME = CAST(GETDATE() AS TIME);  
-  
-        SELECT  
-            ShiftId,  
-            ShiftName,  
-            FORMAT(CAST(StartTime AS DATETIME), 'hh:mm tt') AS StartTime,  
-            FORMAT(CAST(EndTime AS DATETIME), 'hh:mm tt') AS EndTime  
-        FROM tblShift  
-        WHERE @CurrentTime BETWEEN StartTime AND EndTime;  
-  
-    END TRY  
-    BEGIN CATCH  
-  
-        SELECT ERROR_MESSAGE() AS Message;  
-  
-    END CATCH  
-END;  
-GO
-
 -----------------------------------------
 	--pRetrieveEmployeeRoleTypes--
 -----------------------------------------
@@ -8840,38 +8816,6 @@ BEGIN
     INNER JOIN tblEmployee E    
         ON T.EmployeeId = E.EmployeeId    
     WHERE E.IsActive = 1;    
-END
-GO
- -----------------------------------------
-	--spRetrieveCurrentMonthNewMembers--
------------------------------------------
-CREATE PROC spRetrieveCurrentMonthNewMembers  
-AS  
-BEGIN  
-    SET NOCOUNT ON;  
-  
-    BEGIN TRY  
-  
-        DECLARE @StartOfMonth DATE =  
-            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1);  
-  
-        DECLARE @StartOfNextMonth DATE =  
-            DATEADD(MONTH, 1, @StartOfMonth);  
-  
-        SELECT  
-            COUNT(*) AS NewMembers  
-        FROM tblMember  
-        WHERE JoiningDate >= @StartOfMonth  
-          AND JoiningDate < @StartOfNextMonth;  
-  
-    END TRY  
-  
-    BEGIN CATCH  
-  
-        SELECT  
-            ERROR_MESSAGE() AS Message;  
-  
-    END CATCH  
 END
 GO
  -----------------------------------------

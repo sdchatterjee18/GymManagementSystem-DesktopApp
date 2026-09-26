@@ -263,7 +263,7 @@ namespace GymManagementSystem.FORMS.Workout
             if (string.IsNullOrWhiteSpace(txtExerciseName.Text))
             {
                 ClickCountTxtExerciseName = 0;
-                txtExerciseName.Text = "Enter Exercise Name";
+                txtExerciseName.Text = "---Enter Exercise Name---";
                 txtExerciseName.ForeColor = Color.Gray;
             }
         }
@@ -282,7 +282,7 @@ namespace GymManagementSystem.FORMS.Workout
             if (string.IsNullOrWhiteSpace(txtMuscleType.Text))
             {
                 ClickCountTxtMuscleType = 0;
-                txtMuscleType.Text = "Enter Muscle Type";
+                txtMuscleType.Text = "---Enter Muscle Type---";
                 txtMuscleType.ForeColor = Color.Gray;
             }
 

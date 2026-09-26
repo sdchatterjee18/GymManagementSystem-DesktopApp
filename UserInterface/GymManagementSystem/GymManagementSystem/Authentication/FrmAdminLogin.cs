@@ -37,11 +37,11 @@ namespace GymManagementSystem.Authentication
             if (string.IsNullOrWhiteSpace(txtAdminPassword.Text))
             {
                 ClickCountTxtAdminPassword = 0;
-                txtAdminPassword.Text = "Enter Password";
+                txtAdminPassword.Text = "---Enter Password---";
                 txtAdminPassword.ForeColor = Color.Gray;
                 txtAdminPassword.UseSystemPasswordChar = false;
             }
-            
+            txtAdminUsername.Focus();
         }
 
         private void FrmAdminLogin_Shown(object sender, EventArgs e)
@@ -82,11 +82,12 @@ namespace GymManagementSystem.Authentication
         }
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (txtAdminPassword.Text != "Enter Password")
+            if (txtAdminPassword.Text != "---Enter Password---")
             {
                 txtAdminPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
                 checkedShow = 1;
             }
+            txtAdminPassword.Focus();
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -138,11 +139,28 @@ namespace GymManagementSystem.Authentication
                 }
                 else
                 {
-                    MessageBox.Show(
+                    DialogResult result = MessageBox.Show(
                         "Invalid UserName or Password",
                         "Admin Login",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        if (string.IsNullOrWhiteSpace(txtAdminUsername.Text))
+                        {
+                            txtAdminUsername.Text = "---Enter Username---";
+                            txtAdminUsername.ForeColor = Color.Gray;
+                            ClickCountTxtAdminUsername = 0;
+                        }
+
+                        if (string.IsNullOrWhiteSpace(txtAdminPassword.Text))
+                        {
+                            txtAdminPassword.Text = "---Enter Password---";
+                            txtAdminPassword.ForeColor = Color.Gray;
+                            ClickCountTxtAdminPassword = 0;
+                            txtAdminPassword.UseSystemPasswordChar = false;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -160,35 +178,41 @@ namespace GymManagementSystem.Authentication
             if (string.IsNullOrWhiteSpace(txtAdminUsername.Text))
             {
                 ClickCountTxtAdminUsername = 0;
-                txtAdminUsername.Text = "Enter UserName";
+                txtAdminUsername.Text = "---Enter UserName---";
                 txtAdminUsername.ForeColor = Color.Gray;
             }
         }
 
         private void txtAdminUsername_Click(object sender, EventArgs e)
         {
-            ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
-            
+            if (ClickCountTxtAdminUsername != 1)
+            {
+                ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
+            }
         }
 
         private void txtAdminPassword_Click(object sender, EventArgs e)
         {
-
-            ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
-            
+            if (ClickCountTxtAdminPassword != 1)
+            {
+                ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
+            }
         }
 
         private void txtAdminUsername_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtAdminUsername =
-                ValidationUI.ClearTextBoxWhenClicked(
-                    txtAdminUsername,
-                    ClickCountTxtAdminUsername);
+            if (ClickCountTxtAdminUsername != 1)
+            {
+                ClickCountTxtAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtAdminUsername, ClickCountTxtAdminUsername);
+            }
         }
 
         private void txtAdminPassword_Enter(object sender, EventArgs e)
         {
-            ClickCountTxtAdminPassword =ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword,ClickCountTxtAdminPassword);
+            if (ClickCountTxtAdminPassword != 1)
+            {
+                ClickCountTxtAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtAdminPassword, ClickCountTxtAdminPassword);
+            }
         }
 
         private void txtAdminPassword_TextChanged(object sender, EventArgs e)

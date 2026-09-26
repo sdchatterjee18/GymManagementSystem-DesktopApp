@@ -49,7 +49,6 @@ namespace GymManagementSystem.FORMS.Main
             if (selectedPanel != null)
             {
                 selectedPanel.BackColor = Color.Transparent; // Default color
-
             }
 
             // Highlight the new panel
