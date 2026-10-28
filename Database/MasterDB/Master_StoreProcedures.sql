@@ -8765,7 +8765,7 @@ GO
 -----------------------------------------
 	--pRetrieveEmployeeRoleTypes--
 -----------------------------------------
-CREATE PROC pRetrieveEmployeeRoleTypes    
+CREATE PROC spRetrieveEmployeeRoleTypes    
 AS    
 BEGIN    
     SET NOCOUNT ON;    
