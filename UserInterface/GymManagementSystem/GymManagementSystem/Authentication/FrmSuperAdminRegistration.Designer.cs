@@ -306,7 +306,7 @@
             this.txtRegistrationSuperAdminPassword.TabIndex = 3;
             this.txtRegistrationSuperAdminPassword.Text = "---Enter Password---";
             this.txtRegistrationSuperAdminPassword.Click += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Click);
-            this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
+             this.txtRegistrationSuperAdminPassword.Enter += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Enter);
             this.txtRegistrationSuperAdminPassword.Leave += new System.EventHandler(this.txtRegistrationSuperAdminPassword_Leave);
             // 
             // picSuperAdminPassword

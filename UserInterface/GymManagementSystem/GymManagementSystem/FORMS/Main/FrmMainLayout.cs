@@ -56,26 +56,59 @@ namespace GymManagementSystem.FORMS.Main
             selectedPanel.BackColor = Color.FromArgb(68, 97, 174); // Selected color
         }
 
+        //public void OpenChildForm(Form childForm)
+        //{
+        //    // If the same form is already active, do nothing
+        //    if (activeForm == childForm)
+        //        return;
+
+        //    // Prepare new child form
+        //    childForm.TopLevel = false;
+        //    childForm.FormBorderStyle = FormBorderStyle.None;
+        //    childForm.Dock = DockStyle.Fill;
+
+        //    // Remove previous child from panel
+        //    pnlMainPanel.Controls.Clear();
+
+        //    // Add new child
+        //    pnlMainPanel.Controls.Add(childForm);
+        //    pnlMainPanel.Tag = childForm;
+
+        //    activeForm = childForm;
+
+        //    childForm.BringToFront();
+        //    childForm.Show();
+        //}
         public void OpenChildForm(Form childForm)
         {
             // If the same form is already active, do nothing
             if (activeForm == childForm)
                 return;
 
+            // Close and dispose previous child form
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm.Dispose();
+                activeForm = null;
+            }
+
+            // Remove previous child controls from panel
+            pnlMainPanel.Controls.Clear();
+
             // Prepare new child form
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
 
-            // Remove previous child from panel
-            pnlMainPanel.Controls.Clear();
-
-            // Add new child
+            // Add new child form
             pnlMainPanel.Controls.Add(childForm);
             pnlMainPanel.Tag = childForm;
 
+            // Set as active form
             activeForm = childForm;
 
+            // Show new child form
             childForm.BringToFront();
             childForm.Show();
         }

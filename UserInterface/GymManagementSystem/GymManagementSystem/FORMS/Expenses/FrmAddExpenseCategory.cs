@@ -135,11 +135,15 @@ namespace GymManagementSystem.FORMS.Expenses
 
             if (result.Result == ValidationBll.CommonValidationMessage.Valid)
             {
-                MessageBox.Show(
+                DialogResult Result= MessageBox.Show(
                     result.Message,
                     "Expense Category",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                if (Result == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
 
                 return;
             }

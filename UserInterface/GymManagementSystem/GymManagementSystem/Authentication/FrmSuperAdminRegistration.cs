@@ -18,6 +18,8 @@ namespace GymManagementSystem.Authentication
         int ClickCountTxtRegistrationSuperAdminEmailId = 0;
         int ClickCountTxtRegistrationSuperAdminPassword = 0;
         int ClickCountTxtRegistrationSuperAdminConfermPassword = 0;
+        int checkedShow = 0;
+        int checkedShowConfirmed = 0;
         public FrmSuperAdminRegistration()
         {
             InitializeComponent();
@@ -27,8 +29,8 @@ namespace GymManagementSystem.Authentication
         {
             this.ShowIcon = false;
             this.Text = "";
-            txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = false;
-            txtRegistrationSuperAdminPassword.UseSystemPasswordChar = false;
+            //txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = false;
+            //txtRegistrationSuperAdminPassword.UseSystemPasswordChar = true;
             this.ActiveControl = null;
         }  
         private void FrmSuperAdminRegistration_Shown(object sender, EventArgs e)
@@ -88,32 +90,29 @@ namespace GymManagementSystem.Authentication
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-
-            if (chkShowPassword.Checked)
+            checkedShow = 1;
+            if (txtRegistrationSuperAdminPassword.Text != "---Enter Password---")
             {
-                txtRegistrationSuperAdminPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtRegistrationSuperAdminPassword.PasswordChar = '●';
+                txtRegistrationSuperAdminPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
+                
             }
         }
 
         private void chkShowConfermPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkShowConfermPassword.Checked)
+            checkedShowConfirmed = 1;
+            if (txtRegistrationSuperAdminConfermPassword.Text != "---Confirm Password---")
             {
-                txtRegistrationSuperAdminConfermPassword.PasswordChar = '\0';
+                txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = !chkShowConfermPassword.Checked;
+                
             }
-            else
-            {
-                txtRegistrationSuperAdminConfermPassword.PasswordChar = '●';
-            }
+            
         }
         private void txtRegistrationSuperAdminUsername_Click(object sender, EventArgs e)
         {
             if (ClickCountTxtRegistrationSuperAdminUsername!=1)
             {
+                
                 ClickCountTxtRegistrationSuperAdminUsername = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminUsername,
              ClickCountTxtRegistrationSuperAdminUsername);
             }
@@ -139,8 +138,11 @@ namespace GymManagementSystem.Authentication
 
         private void txtRegistrationSuperAdminPassword_Click(object sender, EventArgs e)
         {
+          
+            
             if (ClickCountTxtRegistrationSuperAdminPassword!=1)
             {
+                
                 ClickCountTxtRegistrationSuperAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminPassword, ClickCountTxtRegistrationSuperAdminPassword);
             }
         }
@@ -187,6 +189,10 @@ namespace GymManagementSystem.Authentication
             {
                 ClickCountTxtRegistrationSuperAdminPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminPassword, ClickCountTxtRegistrationSuperAdminPassword);
             }
+            if(checkedShow==0)
+            {
+                txtRegistrationSuperAdminPassword.UseSystemPasswordChar = true;
+            }
         }
 
         private void txtRegistrationSuperAdminConfermPassword_Enter(object sender, EventArgs e)
@@ -195,6 +201,10 @@ namespace GymManagementSystem.Authentication
             {
                 ClickCountTxtRegistrationSuperAdminConfermPassword = ValidationUI.ClearTextBoxWhenClicked(txtRegistrationSuperAdminConfermPassword,
            ClickCountTxtRegistrationSuperAdminConfermPassword);
+            }
+            if (checkedShowConfirmed == 0)
+            {
+                txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = true;
             }
         }
 
@@ -205,8 +215,9 @@ namespace GymManagementSystem.Authentication
                 txtRegistrationSuperAdminUsername.Text = "---Enter Username---";
                 txtRegistrationSuperAdminUsername.ForeColor = Color.Gray;
                 ClickCountTxtRegistrationSuperAdminUsername = 0;
+              
             }
-            txtRegistrationSuperAdminMobileNo.Focus();
+            //txtRegistrationSuperAdminMobileNo.Focus();
         }
 
         private void txtRegistrationSuperAdminMobileNo_Leave(object sender, EventArgs e)
@@ -217,7 +228,7 @@ namespace GymManagementSystem.Authentication
                 txtRegistrationSuperAdminMobileNo.ForeColor = Color.Gray;
                 ClickCountTxtRegistrationSuperAdminMobileNo = 0;
             }
-            txtRegistrationSuperAdminEmailId.Focus();
+            //txtRegistrationSuperAdminEmailId.Focus();
         }
 
         private void txtRegistrationSuperAdminEmailId_Leave(object sender, EventArgs e)
@@ -228,7 +239,7 @@ namespace GymManagementSystem.Authentication
                 txtRegistrationSuperAdminEmailId.ForeColor = Color.Gray;
                 ClickCountTxtRegistrationSuperAdminEmailId = 0;
             }
-            txtRegistrationSuperAdminPassword.Focus();
+           // txtRegistrationSuperAdminPassword.Focus();
         }
 
         private void txtRegistrationSuperAdminConfermPassword_Leave(object sender, EventArgs e)
@@ -238,19 +249,23 @@ namespace GymManagementSystem.Authentication
                 txtRegistrationSuperAdminConfermPassword.Text = "---Confirm Password---";
                 txtRegistrationSuperAdminConfermPassword.ForeColor = Color.Gray;
                 ClickCountTxtRegistrationSuperAdminConfermPassword = 0;
+                txtRegistrationSuperAdminConfermPassword.UseSystemPasswordChar = false;
+                checkedShowConfirmed = 0;
             }
-            txtRegistrationSuperAdminUsername.Focus();
+            //txtRegistrationSuperAdminUsername.Focus();
         }
 
         private void txtRegistrationSuperAdminPassword_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtRegistrationSuperAdminPassword.Text))
             {
-                txtRegistrationSuperAdminPassword.Text = "---Confirm Password---";
+                txtRegistrationSuperAdminPassword.Text = "---Enter Password---";
                 txtRegistrationSuperAdminPassword.ForeColor = Color.Gray;
                 ClickCountTxtRegistrationSuperAdminPassword = 0;
+                txtRegistrationSuperAdminPassword.UseSystemPasswordChar = false;
+                checkedShow = 0;
             }
-            txtRegistrationSuperAdminConfermPassword.Focus();
+           // txtRegistrationSuperAdminConfermPassword.Focus();
         }
 
         private void btnSuperAdminRegistration_Click(object sender, EventArgs e)
@@ -365,5 +380,7 @@ namespace GymManagementSystem.Authentication
                     MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

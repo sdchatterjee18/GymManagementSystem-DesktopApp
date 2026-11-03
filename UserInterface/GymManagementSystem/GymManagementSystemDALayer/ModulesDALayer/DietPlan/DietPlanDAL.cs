@@ -67,7 +67,7 @@ namespace GymManagementSystemDALayer.ModulesDALayer.DietPlan
                         new SqlParameter("@ConditionStatus", conditionStatus)
                     };
 
-                return LookupDAL.InsertSpecificItem("spInsertDietPlan",sqlParameter);
+                return LookupDAL.InsertSpecificItem("spInsertNewDietPlan", sqlParameter);
             }
             catch (Exception ex)
             {
