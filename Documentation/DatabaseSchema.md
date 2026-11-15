@@ -7,7 +7,7 @@
 
 The Gym Management System database is designed using a relational database model to efficiently manage gym operations, member activities, staff management, workout planning, diet planning, attendance tracking, payments, and expense management.
 
-The database follows normalization principles to minimize data redundancy, improve consistency, and maintain scalability. Foreign key relationships are used throughout the schema to enforce referential integrity and ensure reliable data management across all modules of the Gym Management System.
+The database follows normalization principles upto 3NF to minimize data redundancy, improve consistency, and maintain scalability. Foreign key relationships are used throughout the schema to enforce referential integrity and ensure reliable data management across all modules of the Gym Management System.
 
 ---
 
