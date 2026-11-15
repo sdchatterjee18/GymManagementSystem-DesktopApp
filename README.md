@@ -270,7 +270,7 @@ This project was developed through the collaborative effort of our dedicated tea
 
 | Name | Role | Responsibilities |
 | :--- | :--- | :--- |
-| **Soumadip Chatterjee** | 👑 **Project Manager** | Architecture Design, Project Coordination, Database Modeling & Integration |
+| **Soumadip Chatterjee** | 👨‍💼 **Project Manager** | Architecture Design, Project Coordination, Database Modeling & Integration |
 | **Priya Chowdhury** | 💻 **Team Member** | Business Logic Implementation, UI/UX Forms & Workflows |
 | **Santanu Khaskel** | 💻 **Team Member** | Database Stored Procedures, Data Access Layer & Testing |
 | **Deepjyoti Das** | 💻 **Team Member** | Member Management, Profile Processing & Image Cropping |
