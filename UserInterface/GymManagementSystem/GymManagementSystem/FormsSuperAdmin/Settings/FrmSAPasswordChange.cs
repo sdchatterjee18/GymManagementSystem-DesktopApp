@@ -28,10 +28,9 @@ namespace GymManagementSystem.FormsSuperAdmin.Settings
         private void FrmSAPasswordChange_Load(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+            this.Text = "";
+            this.ShowIcon = false;
         }
-
-        
-
         private void FrmSAPasswordChange_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
