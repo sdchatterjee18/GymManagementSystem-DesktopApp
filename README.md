@@ -300,8 +300,3 @@ Contributions make the open-source community an incredible place to learn, inspi
 5. Open a Pull Request
 
 ---
-
-## 📄 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
