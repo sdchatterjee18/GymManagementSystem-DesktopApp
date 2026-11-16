@@ -5,7 +5,6 @@
 [![UI Platform](https://img.shields.io/badge/Platform-Windows%20Forms-0078D6?logo=windows&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/)
 [![Database](https://img.shields.io/badge/Database-Microsoft%20SQL%20Server-CC292B?logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/en-us/sql-server/)
 [![Architecture](https://img.shields.io/badge/Architecture-3--Tier%20Architecture-brightgreen)](#-architecture-overview)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > A comprehensive, feature-rich desktop application engineered to automate and streamline daily gym operations, member registrations, personal training, scheduling, billing, lockers, and financial accounting.
 

@@ -1374,6 +1374,43 @@ GO
                    -- ADMIN MANAGEMENT SPs --
 -------------------------------------------------------------------
 
+CREATE PROC spAdminLogin    
+    @UserName VARCHAR(100),    
+    @PasswordHash VARCHAR(255)    
+AS    
+BEGIN    
+    SET NOCOUNT ON;    
+    
+    BEGIN TRY    
+    
+        IF EXISTS    
+        (    
+            SELECT 1    
+            FROM tblAdmin    
+            WHERE UserName = @UserName    
+              AND PasswordHash = @PasswordHash    
+        )    
+        BEGIN    
+            -- Update Last Login    
+            UPDATE tblAdmin    
+            SET LastLogin = GETDATE()    
+            WHERE UserName = @UserName;    
+    
+            -- Successful Login    
+            SELECT 1 AS LoginStatus;    
+        END    
+        ELSE    
+        BEGIN    
+            -- Unsuccessful Login    
+            SELECT 0 AS LoginStatus;    
+        END    
+    
+    END TRY    
+    BEGIN CATCH    
+        SELECT 0 AS LoginStatus;    
+    END CATCH    
+END
+GO
 ----------------------------
 -- SP: spUpdateAdminPassword
 ----------------------------
@@ -1998,6 +2035,7 @@ BEGIN
     BEGIN TRY
 
         SELECT
+            S.ShiftId,
             S.ShiftName,
             COUNT(
                 CASE 
